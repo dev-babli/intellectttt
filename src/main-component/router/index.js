@@ -35,6 +35,7 @@ import BankingAndFinancial from "../BankingAndFinancial/BankingAndFinancial";
 import App from "../../App";
 import OurJourny from "../OurJourney/OurJourny";
 import LeaderShipTeam from "../LeaderShipTeam/LeaderShipTeam";
+import GlobalPresence from "../../components/GlobalPresence/GlobalPresence";
 
 import NewsAndAnnouncement from "../NewsAndAnnouncement/NewsAndAnnouncement";
 import Whitepapers from "../Whitepapers/Whitepapers";
@@ -285,7 +286,8 @@ const AllRoute = () => {
             <Route path="Company">
               <Route path="our-journey" element={<OurJourny />} />
               <Route path="leadership-team" element={<LeaderShipTeam />} />
-              <Route path="leadership-team" element={<LeaderShipTeam />} />
+              <Route path="global-presence" element={<GlobalPresence />} />
+              <Route path="our-companies" element={<GroupCompani />} />
             </Route>
             <Route path="insights">
               <Route path="blog" element={<BlogPage />} />

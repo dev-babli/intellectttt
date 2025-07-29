@@ -453,7 +453,7 @@ const MegaMenuSectionContent = styled.div`
 
 const MegaMenuGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 0.75rem;
 
   @media (max-width: 768px) {
@@ -466,10 +466,13 @@ const MegaMenuServiceItem = styled.div`
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 6px;
-  padding: 0.875rem;
+  padding: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     border-color: rgba(99, 102, 241, 0.2);
@@ -485,10 +488,12 @@ const MegaMenuServiceTitle = styled.h4`
   font-weight: 600;
   font-family: 'Manrope', sans-serif;
   margin-bottom: 0.375rem;
-  line-height: 1.3;
+  line-height: 1.4;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.375rem;
+  word-wrap: break-word;
+  hyphens: auto;
 
   &::before {
     content: '';
@@ -497,6 +502,7 @@ const MegaMenuServiceTitle = styled.h4`
     background: #6366f1;
     border-radius: 50%;
     flex-shrink: 0;
+    margin-top: 0.25rem;
   }
 `;
 
@@ -912,21 +918,21 @@ const menuData = {
         description: "Learn about our journey in AI innovation",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Company Overview", "Vision & Mission", "Core Values"],
-        url:"/company/our-journey"
+        url:"/Company/our-journey"
       },
       {
         title: "Leadership Team",
         description: "Meet our executive leadership",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Executive Team", "Board of Directors", "Advisory Board"],
-        url:"/company/leadership-team"
+        url:"/Company/leadership-team"
       },
       {
         title: "Global Presence",
         description: "Our worldwide locations and partnerships",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Office Locations", "Global Partners", "Regional Expertise"],
-        url: "/company/global-presence"
+        url: "/Company/global-presence"
       },
       {
         title: "Our Companies",
@@ -934,6 +940,7 @@ const menuData = {
         image: "/placeholder.svg?height=80&width=280",
         items: ["Lumin Inc.", "Lumin Innovations"],
         hasDropdown: true,
+        url: "/Company/our-companies",
         companies: [
           {
             name: "Lumin Inc.",
@@ -979,43 +986,50 @@ const menuData = {
           "AI Automation (AI + RPA)",
           "AI Advisory & Responsible AI"
         ],
+        url: "/service/ai-and-gen-ai",
         hasDropdown: true,
         services: [
           {
             name: "GenAI & LLM Integration",
             description: "Enterprise-grade GPT and Azure OpenAI implementations for intelligent automation",
             focus: "AI & GenAI Practice",
-            color: "rgba(147, 51, 234, 0.1)"
+            color: "rgba(147, 51, 234, 0.1)",
+            url: "/service/ai-and-gen-ai/llm"
           },
           {
             name: "Agentic AI & AI Agents",
             description: "Advanced autonomous AI agents for complex business process automation",
             focus: "AI & GenAI Practice",
-            color: "rgba(59, 130, 246, 0.1)"
+            color: "rgba(59, 130, 246, 0.1)",
+            url: "/service/ai-and-gen-ai/agents"
           },
           {
             name: "NLP & Computer Vision",
             description: "Natural language processing and computer vision solutions for intelligent data analysis",
             focus: "AI & GenAI Practice",
-            color: "rgba(16, 185, 129, 0.1)"
+            color: "rgba(16, 185, 129, 0.1)",
+            url: "/service/ai-and-gen-ai/nlp"
           },
           {
             name: "ML Engineering & MLOps",
             description: "Scalable machine learning operations and model deployment infrastructure",
             focus: "AI & GenAI Practice",
-            color: "rgba(245, 158, 11, 0.1)"
+            color: "rgba(245, 158, 11, 0.1)",
+            url: "/service/ai-and-gen-ai/mlops"
           },
           {
             name: "AI Automation (AI + RPA)",
             description: "Intelligent robotic process automation powered by artificial intelligence",
             focus: "AI & GenAI Practice",
-            color: "rgba(239, 68, 68, 0.1)"
+            color: "rgba(239, 68, 68, 0.1)",
+            url: "/service/ai-and-gen-ai/automation"
           },
           {
             name: "AI Advisory & Responsible AI",
             description: "Strategic AI consulting and ethical AI implementation frameworks",
             focus: "AI & GenAI Practice",
-            color: "rgba(168, 85, 247, 0.1)"
+            color: "rgba(168, 85, 247, 0.1)",
+            url: "/service/ai-and-gen-ai/responsible"
           }
         ]
       },
@@ -1024,6 +1038,7 @@ const menuData = {
         description: "Multi-cloud expertise and modern applications",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Azure, AWS, GCP Engineering", "DevOps & DevSecOps", "App Modernization", "API Services"],
+        url: "/service/cloud-and-application-services",
         hasDropdown: true,
         services: [
           {
@@ -1057,6 +1072,7 @@ const menuData = {
         description: "Enterprise SAP solutions and support",
         image: "/placeholder.svg?height=80&width=280",
         items: ["S/4HANA Migration", "BTP Development", "AMS & Support"],
+        url: "/service/sap-services",
         hasDropdown: true,
         services: [
           {
@@ -1084,6 +1100,7 @@ const menuData = {
         description: "Advanced data engineering and BI solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Data Engineering", "BI & ETL", "Governance & Security"],
+        url: "/service/data-and-analytics",
         hasDropdown: true,
         services: [
           {
@@ -1179,24 +1196,28 @@ const menuData = {
         description: "Comprehensive healthcare IT solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Clinical Systems", "Medical Imaging", "Regulatory Compliance"],
+        url: "/industries/helthcare-and-life-sciences"
       },
       {
         title: "Manufacturing & Automotive",
         description: "Smart manufacturing and Industry 4.0",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Smart Factory", "Quality Management", "Supply Chain"],
+        url: "/industries/menufacturing-and-automotive"
       },
       {
         title: "Aerospace & Defense",
         description: "Mission-critical aerospace solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Avionics Systems", "Defense Solutions", "Compliance"],
+        url: "/industries/aerospace-and-defense"
       },
       {
         title: "Financial Services",
         description: "Banking and fintech solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Digital Banking", "Risk Management", "Compliance"],
+        url: "/industries/banking-and-financial-services"
       },
     ],
     sideItems: [
@@ -1213,18 +1234,21 @@ const menuData = {
         description: "Latest thoughts from our experts",
         image: "/placeholder.svg?height=80&width=280",
         items: ["AI Trends", "Industry Analysis", "Best Practices"],
+        url: "/insights/blog"
       },
       {
         title: "Whitepapers & Case Studies",
         description: "In-depth research and success stories",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Technical Papers", "Client Success", "ROI Analysis"],
+        url: "/insights/whitepapers-and-case-studies"
       },
       {
         title: "News & Events",
         description: "Company updates and industry events",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Press Releases", "Webinars", "Conferences"],
+        url: "/insights/news-and-announcements"
       },
     ],
     sideItems: [
@@ -1401,16 +1425,10 @@ function MegaMenuIntellectt() {
               <MegaMenuSection key={item.title}>
                 <MegaMenuSectionTitle
                   isExpanded={isExpanded}
-                  onClick={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? undefined : () => toggleMegaMenuSection(menuName, item.title)}
-                  style={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? { cursor: 'default' } : {}}
+                  onClick={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? () => { if (item.url) { window.location.href = item.url; } } : () => toggleMegaMenuSection(menuName, item.title)}
+                  style={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? { cursor: 'pointer' } : {}}
                 >
-                  {["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? (
-                    <Link to={item.url} style={{ color: 'inherit', textDecoration: 'none' }}>
-                      {item.title}
-                    </Link>
-                  ) : (
-                    item.title
-                  )}
+                  {item.title}
                   {!["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) && <ChevronDown />}
                 </MegaMenuSectionTitle>
 
@@ -1423,7 +1441,11 @@ function MegaMenuIntellectt() {
                             key={serviceIndex}
                             onClick={() => {
                               if (serviceItem.url) {
-                                window.open(serviceItem.url, '_blank');
+                                if (serviceItem.url.startsWith('http')) {
+                                  window.open(serviceItem.url, '_blank');
+                                } else {
+                                  window.location.href = serviceItem.url;
+                                }
                               }
                             }}
                             style={serviceItem.url ? { cursor: 'pointer' } : {}}
@@ -1439,7 +1461,14 @@ function MegaMenuIntellectt() {
                       </MegaMenuGrid>
                     ) : (
                       <MegaMenuGrid>
-                        <MegaMenuServiceItem>
+                        <MegaMenuServiceItem
+                          onClick={() => {
+                            if (item.url) {
+                              window.location.href = item.url;
+                            }
+                          }}
+                          style={item.url ? { cursor: 'pointer' } : {}}
+                        >
                           <MegaMenuServiceTitle>
                             {item.title}
                           </MegaMenuServiceTitle>
@@ -1464,7 +1493,7 @@ function MegaMenuIntellectt() {
       {/* Mega Menu Header */}
       <HeaderContainer>
         <HeaderContent>
-          <Logo>
+          <Logo onClick={() => window.location.href = '/'} style={{ cursor: 'pointer' }}>
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
               alt="Intellectt"
@@ -1492,7 +1521,11 @@ function MegaMenuIntellectt() {
           </Navigation>
 
           <HeaderActions>
-            <ActionButton variant="secondary">
+            <ActionButton
+              variant="secondary"
+              onClick={() => window.location.href = '/contact'}
+              style={{ cursor: 'pointer' }}
+            >
               Contact Us
             </ActionButton>
             <ActionButton variant="primary">
@@ -1526,7 +1559,7 @@ function MegaMenuIntellectt() {
 
       <Sidebar isOpen={isMobileMenuOpen}>
         <SidebarHeader>
-          <Logo>
+          <Logo onClick={() => { window.location.href = '/'; setIsMobileMenuOpen(false); }} style={{ cursor: 'pointer' }}>
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
               alt="Intellectt"
@@ -1554,7 +1587,16 @@ function MegaMenuIntellectt() {
                 </SidebarSectionTitle>
                 <SidebarSectionContent isExpanded={isExpanded}>
                   {menuData[menuName].mainItems.map((item, index) => (
-                    <SidebarNavItem key={index}>
+                    <SidebarNavItem
+                      key={index}
+                      onClick={() => {
+                        if (item.url) {
+                          window.location.href = item.url;
+                          setIsMobileMenuOpen(false);
+                        }
+                      }}
+                      style={item.url ? { cursor: 'pointer' } : {}}
+                    >
                       {item.title}
                       <ArrowRight size={12} />
                     </SidebarNavItem>
@@ -1566,7 +1608,14 @@ function MegaMenuIntellectt() {
         </SidebarNav>
 
         <SidebarActions>
-          <ActionButton variant="secondary" style={{ width: '100%', justifyContent: 'center' }}>
+          <ActionButton
+            variant="secondary"
+            style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
+            onClick={() => {
+              window.location.href = '/contact';
+              setIsMobileMenuOpen(false);
+            }}
+          >
             Contact Us
           </ActionButton>
           <ActionButton variant="primary" style={{ width: '100%', justifyContent: 'center' }}>
