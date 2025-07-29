@@ -1455,7 +1455,14 @@ function MegaMenuIntellectt() {
                       </MegaMenuGrid>
                     ) : (
                       <MegaMenuGrid>
-                        <MegaMenuServiceItem>
+                        <MegaMenuServiceItem
+                          onClick={() => {
+                            if (item.url) {
+                              window.location.href = item.url;
+                            }
+                          }}
+                          style={item.url ? { cursor: 'pointer' } : {}}
+                        >
                           <MegaMenuServiceTitle>
                             {item.title}
                           </MegaMenuServiceTitle>
