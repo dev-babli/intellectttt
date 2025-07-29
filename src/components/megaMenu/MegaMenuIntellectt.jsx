@@ -1565,7 +1565,16 @@ function MegaMenuIntellectt() {
                 </SidebarSectionTitle>
                 <SidebarSectionContent isExpanded={isExpanded}>
                   {menuData[menuName].mainItems.map((item, index) => (
-                    <SidebarNavItem key={index}>
+                    <SidebarNavItem
+                      key={index}
+                      onClick={() => {
+                        if (item.url) {
+                          window.location.href = item.url;
+                          setIsMobileMenuOpen(false);
+                        }
+                      }}
+                      style={item.url ? { cursor: 'pointer' } : {}}
+                    >
                       {item.title}
                       <ArrowRight size={12} />
                     </SidebarNavItem>
