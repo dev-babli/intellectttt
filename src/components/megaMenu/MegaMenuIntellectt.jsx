@@ -466,10 +466,13 @@ const MegaMenuServiceItem = styled.div`
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 6px;
-  padding: 0.875rem;
+  padding: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     border-color: rgba(99, 102, 241, 0.2);
