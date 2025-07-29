@@ -1425,14 +1425,14 @@ function MegaMenuIntellectt() {
               <MegaMenuSection key={item.title}>
                 <MegaMenuSectionTitle
                   isExpanded={isExpanded}
-                  onClick={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? () => { if (item.url) { window.location.href = item.url; } } : () => toggleMegaMenuSection(menuName, item.title)}
-                  style={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? { cursor: 'pointer' } : {}}
+                  onClick={([menuName === "Industries", menuName === "Resources", "Our Journey", "Leadership Team", "Global Presence"].includes(true) || ["Our Journey", "Leadership Team", "Global Presence"].includes(item.title)) ? () => { if (item.url) { window.location.href = item.url; } } : () => toggleMegaMenuSection(menuName, item.title)}
+                  style={([menuName === "Industries", menuName === "Resources", "Our Journey", "Leadership Team", "Global Presence"].includes(true) || ["Our Journey", "Leadership Team", "Global Presence"].includes(item.title)) ? { cursor: 'pointer' } : {}}
                 >
                   {item.title}
-                  {!["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) && <ChevronDown />}
+                  {!(menuName === "Industries" || menuName === "Resources" || ["Our Journey", "Leadership Team", "Global Presence"].includes(item.title)) && <ChevronDown />}
                 </MegaMenuSectionTitle>
 
-                {!["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) && (
+                {!(menuName === "Industries" || menuName === "Resources" || ["Our Journey", "Leadership Team", "Global Presence"].includes(item.title)) && (
                   <MegaMenuSectionContent isExpanded={isExpanded}>
                     {item.hasDropdown && (item.companies || item.services) ? (
                       <MegaMenuGrid>
