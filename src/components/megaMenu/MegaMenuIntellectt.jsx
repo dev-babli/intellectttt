@@ -1228,18 +1228,21 @@ const menuData = {
         description: "Latest thoughts from our experts",
         image: "/placeholder.svg?height=80&width=280",
         items: ["AI Trends", "Industry Analysis", "Best Practices"],
+        url: "/insights/blog"
       },
       {
         title: "Whitepapers & Case Studies",
         description: "In-depth research and success stories",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Technical Papers", "Client Success", "ROI Analysis"],
+        url: "/insights/whitepapers-and-case-studies"
       },
       {
         title: "News & Events",
         description: "Company updates and industry events",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Press Releases", "Webinars", "Conferences"],
+        url: "/insights/news-and-announcements"
       },
     ],
     sideItems: [
