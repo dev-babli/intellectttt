@@ -987,7 +987,8 @@ const menuData = {
             name: "GenAI & LLM Integration",
             description: "Enterprise-grade GPT and Azure OpenAI implementations for intelligent automation",
             focus: "AI & GenAI Practice",
-            color: "rgba(147, 51, 234, 0.1)"
+            color: "rgba(147, 51, 234, 0.1)",
+            url: "/service/ai-and-gen-ai/llm"
           },
           {
             name: "Agentic AI & AI Agents",
