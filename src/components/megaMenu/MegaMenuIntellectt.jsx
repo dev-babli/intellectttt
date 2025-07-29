@@ -1022,7 +1022,8 @@ const menuData = {
             name: "AI Advisory & Responsible AI",
             description: "Strategic AI consulting and ethical AI implementation frameworks",
             focus: "AI & GenAI Practice",
-            color: "rgba(168, 85, 247, 0.1)"
+            color: "rgba(168, 85, 247, 0.1)",
+            url: "/service/ai-and-gen-ai/responsible"
           }
         ]
       },
