@@ -1015,7 +1015,8 @@ const menuData = {
             name: "AI Automation (AI + RPA)",
             description: "Intelligent robotic process automation powered by artificial intelligence",
             focus: "AI & GenAI Practice",
-            color: "rgba(239, 68, 68, 0.1)"
+            color: "rgba(239, 68, 68, 0.1)",
+            url: "/service/ai-and-gen-ai/automation"
           },
           {
             name: "AI Advisory & Responsible AI",
