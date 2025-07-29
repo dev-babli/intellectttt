@@ -1008,7 +1008,8 @@ const menuData = {
             name: "ML Engineering & MLOps",
             description: "Scalable machine learning operations and model deployment infrastructure",
             focus: "AI & GenAI Practice",
-            color: "rgba(245, 158, 11, 0.1)"
+            color: "rgba(245, 158, 11, 0.1)",
+            url: "/service/ai-and-gen-ai/mlops"
           },
           {
             name: "AI Automation (AI + RPA)",
