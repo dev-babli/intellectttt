@@ -1499,7 +1499,11 @@ function MegaMenuIntellectt() {
           </Navigation>
 
           <HeaderActions>
-            <ActionButton variant="secondary">
+            <ActionButton
+              variant="secondary"
+              onClick={() => window.location.href = '/contact'}
+              style={{ cursor: 'pointer' }}
+            >
               Contact Us
             </ActionButton>
             <ActionButton variant="primary">
