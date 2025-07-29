@@ -1190,24 +1190,28 @@ const menuData = {
         description: "Comprehensive healthcare IT solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Clinical Systems", "Medical Imaging", "Regulatory Compliance"],
+        url: "/industries/helthcare-and-life-sciences"
       },
       {
         title: "Manufacturing & Automotive",
         description: "Smart manufacturing and Industry 4.0",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Smart Factory", "Quality Management", "Supply Chain"],
+        url: "/industries/menufacturing-and-automotive"
       },
       {
         title: "Aerospace & Defense",
         description: "Mission-critical aerospace solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Avionics Systems", "Defense Solutions", "Compliance"],
+        url: "/industries/aerospace-and-defense"
       },
       {
         title: "Financial Services",
         description: "Banking and fintech solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Digital Banking", "Risk Management", "Compliance"],
+        url: "/industries/banking-and-financial-services"
       },
     ],
     sideItems: [
