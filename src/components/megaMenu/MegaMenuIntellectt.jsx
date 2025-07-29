@@ -1066,6 +1066,7 @@ const menuData = {
         description: "Enterprise SAP solutions and support",
         image: "/placeholder.svg?height=80&width=280",
         items: ["S/4HANA Migration", "BTP Development", "AMS & Support"],
+        url: "/service/sap-services",
         hasDropdown: true,
         services: [
           {
