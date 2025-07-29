@@ -1001,7 +1001,8 @@ const menuData = {
             name: "NLP & Computer Vision",
             description: "Natural language processing and computer vision solutions for intelligent data analysis",
             focus: "AI & GenAI Practice",
-            color: "rgba(16, 185, 129, 0.1)"
+            color: "rgba(16, 185, 129, 0.1)",
+            url: "/service/ai-and-gen-ai/nlp"
           },
           {
             name: "ML Engineering & MLOps",
