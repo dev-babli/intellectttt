@@ -934,6 +934,7 @@ const menuData = {
         image: "/placeholder.svg?height=80&width=280",
         items: ["Lumin Inc.", "Lumin Innovations"],
         hasDropdown: true,
+        url: "/Company/our-companies",
         companies: [
           {
             name: "Lumin Inc.",
