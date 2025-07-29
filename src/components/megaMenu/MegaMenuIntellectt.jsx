@@ -1606,10 +1606,47 @@ function MegaMenuIntellectt() {
                 </SidebarSectionTitle>
                 <SidebarSectionContent isExpanded={isExpanded}>
                   {menuData[menuName].mainItems.map((item, index) => (
-                    <SidebarNavItem key={index}>
+                    <SidebarNavItem
+                      key={index}
+                      onClick={() => {
+                        if (item.url) {
+                          if (item.url.startsWith('http')) {
+                            window.open(item.url, '_blank');
+                          } else {
+                            window.location.href = item.url;
+                          }
+                          closeMobileMenu();
+                        }
+                      }}
+                      style={item.url ? { cursor: 'pointer' } : {}}
+                    >
                       {item.title}
                       <ArrowRight size={12} />
                     </SidebarNavItem>
+                  ))}
+                  {menuData[menuName].sideItems && menuData[menuName].sideItems.map((sideSection, sideIndex) => (
+                    <div key={sideIndex}>
+                      {sideSection.items.map((sideItem, itemIndex) => (
+                        <SidebarNavItem
+                          key={`${sideIndex}-${itemIndex}`}
+                          onClick={() => {
+                            const url = typeof sideItem === 'object' ? sideItem.url : null;
+                            if (url) {
+                              if (url.startsWith('http')) {
+                                window.open(url, '_blank');
+                              } else {
+                                window.location.href = url;
+                              }
+                              closeMobileMenu();
+                            }
+                          }}
+                          style={typeof sideItem === 'object' && sideItem.url ? { cursor: 'pointer' } : {}}
+                        >
+                          {typeof sideItem === 'object' ? sideItem.name : sideItem}
+                          <ArrowRight size={12} />
+                        </SidebarNavItem>
+                      ))}
+                    </div>
                   ))}
                 </SidebarSectionContent>
               </SidebarSection>
