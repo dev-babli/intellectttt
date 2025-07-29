@@ -1553,7 +1553,7 @@ function MegaMenuIntellectt() {
 
       <Sidebar isOpen={isMobileMenuOpen}>
         <SidebarHeader>
-          <Logo>
+          <Logo onClick={() => { window.location.href = '/'; setIsMobileMenuOpen(false); }} style={{ cursor: 'pointer' }}>
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
               alt="Intellectt"
