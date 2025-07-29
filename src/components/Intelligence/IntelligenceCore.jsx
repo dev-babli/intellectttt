@@ -478,8 +478,8 @@ export default function IntelligenceCore() {
         ))}
       </Grid>
 
-      {/* Animations */}
-      <style jsx global>{`
+      {/* Global styles moved to separate component */}
+      <style>{`
         @keyframes spin {
           from {
             transform: rotate(0deg);
