@@ -1449,20 +1449,20 @@ function MegaMenuIntellectt() {
               <MegaMenuSection key={item.title}>
                 <MegaMenuSectionTitle
                   isExpanded={isExpanded}
-                  onClick={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? undefined : () => toggleMegaMenuSection(menuName, item.title)}
-                  style={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? { cursor: 'default' } : {}}
+                  onClick={item.hasDropdown ? () => toggleMegaMenuSection(menuName, item.title) : undefined}
+                  style={!item.hasDropdown && item.url ? { cursor: 'pointer' } : item.hasDropdown ? {} : { cursor: 'default' }}
                 >
-                  {["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? (
-                    <Link to={item.url} style={{ color: 'inherit', textDecoration: 'none' }}>
+                  {!item.hasDropdown && item.url ? (
+                    <Link to={item.url} style={{ color: 'inherit', textDecoration: 'none', width: '100%', display: 'block' }}>
                       {item.title}
                     </Link>
                   ) : (
                     item.title
                   )}
-                  {!["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) && <ChevronDown />}
+                  {item.hasDropdown && <ChevronDown />}
                 </MegaMenuSectionTitle>
 
-                {!["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) && (
+                {item.hasDropdown && (
                   <MegaMenuSectionContent isExpanded={isExpanded}>
                     {item.hasDropdown && (item.companies || item.services) ? (
                       <MegaMenuGrid>
@@ -1471,7 +1471,11 @@ function MegaMenuIntellectt() {
                             key={serviceIndex}
                             onClick={() => {
                               if (serviceItem.url) {
-                                window.open(serviceItem.url, '_blank');
+                                if (serviceItem.url.startsWith('http')) {
+                                  window.open(serviceItem.url, '_blank');
+                                } else {
+                                  window.location.href = serviceItem.url;
+                                }
                               }
                             }}
                             style={serviceItem.url ? { cursor: 'pointer' } : {}}
