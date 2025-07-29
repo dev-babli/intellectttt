@@ -912,7 +912,7 @@ const menuData = {
         description: "Learn about our journey in AI innovation",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Company Overview", "Vision & Mission", "Core Values"],
-        url:"/company/our-journey"
+        url:"/Company/our-journey"
       },
       {
         title: "Leadership Team",
