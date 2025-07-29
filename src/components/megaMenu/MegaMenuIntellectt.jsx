@@ -1425,7 +1425,11 @@ function MegaMenuIntellectt() {
                             key={serviceIndex}
                             onClick={() => {
                               if (serviceItem.url) {
-                                window.open(serviceItem.url, '_blank');
+                                if (serviceItem.url.startsWith('http')) {
+                                  window.open(serviceItem.url, '_blank');
+                                } else {
+                                  window.location.href = serviceItem.url;
+                                }
                               }
                             }}
                             style={serviceItem.url ? { cursor: 'pointer' } : {}}
