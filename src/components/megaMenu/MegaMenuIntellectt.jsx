@@ -1577,7 +1577,14 @@ function MegaMenuIntellectt() {
         </SidebarNav>
 
         <SidebarActions>
-          <ActionButton variant="secondary" style={{ width: '100%', justifyContent: 'center' }}>
+          <ActionButton
+            variant="secondary"
+            style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
+            onClick={() => {
+              window.location.href = '/contact';
+              setIsMobileMenuOpen(false);
+            }}
+          >
             Contact Us
           </ActionButton>
           <ActionButton variant="primary" style={{ width: '100%', justifyContent: 'center' }}>
