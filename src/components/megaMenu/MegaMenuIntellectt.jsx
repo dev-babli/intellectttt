@@ -926,7 +926,7 @@ const menuData = {
         description: "Our worldwide locations and partnerships",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Office Locations", "Global Partners", "Regional Expertise"],
-        url: "/company/global-presence"
+        url: "/Company/global-presence"
       },
       {
         title: "Our Companies",
