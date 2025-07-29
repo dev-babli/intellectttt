@@ -445,7 +445,7 @@ const MegaMenuSectionTitle = styled.div`
 `;
 
 const MegaMenuSectionContent = styled.div`
-  max-height: ${props => props.isExpanded ? '200px' : '0'};
+  max-height: ${props => props.isExpanded ? '400px' : '0'};
   overflow: hidden;
   transition: max-height 0.3s ease;
   padding-bottom: ${props => props.isExpanded ? '0.75rem' : '0'};
