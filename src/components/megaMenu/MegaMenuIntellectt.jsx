@@ -471,6 +471,8 @@ const MegaMenuServiceItem = styled.div`
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
+  min-height: fit-content;
+  height: auto;
 
   &:hover {
     border-color: rgba(99, 102, 241, 0.2);
