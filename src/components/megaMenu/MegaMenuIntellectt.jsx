@@ -1544,9 +1544,11 @@ function MegaMenuIntellectt() {
           </Navigation>
 
           <HeaderActions>
-            <ActionButton variant="secondary">
-              Contact Us
-            </ActionButton>
+            <Link to="/contact" style={{ textDecoration: 'none' }}>
+              <ActionButton variant="secondary">
+                Contact Us
+              </ActionButton>
+            </Link>
             <ActionButton variant="primary">
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sms-white-icon01.bc2d1a2ea97440981308d874744b5030-maSIJ4zjy5dFUPhUFhyXV4qSGn0tKk.svg"
@@ -1655,9 +1657,11 @@ function MegaMenuIntellectt() {
         </SidebarNav>
 
         <SidebarActions>
-          <ActionButton variant="secondary" style={{ width: '100%', justifyContent: 'center' }}>
-            Contact Us
-          </ActionButton>
+          <Link to="/contact" style={{ textDecoration: 'none', width: '100%' }} onClick={closeMobileMenu}>
+            <ActionButton variant="secondary" style={{ width: '100%', justifyContent: 'center' }}>
+              Contact Us
+            </ActionButton>
+          </Link>
           <ActionButton variant="primary" style={{ width: '100%', justifyContent: 'center' }}>
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sms-white-icon01.bc2d1a2ea97440981308d874744b5030-maSIJ4zjy5dFUPhUFhyXV4qSGn0tKk.svg"
