@@ -1032,6 +1032,7 @@ const menuData = {
         description: "Multi-cloud expertise and modern applications",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Azure, AWS, GCP Engineering", "DevOps & DevSecOps", "App Modernization", "API Services"],
+        url: "/service/cloud-and-application-services",
         hasDropdown: true,
         services: [
           {
