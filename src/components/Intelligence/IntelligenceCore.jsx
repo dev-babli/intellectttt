@@ -6,6 +6,7 @@ import { Award, Target, Users, Brain, TrendingUp, Globe } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -421,23 +422,26 @@ export default function IntelligenceCore() {
       >
         {[
           {
-            number: "200+",
+            number: 15,
+            label: "Global Centers",
+            gradient: "linear-gradient(to right, #0199D3, #0199D3)",
+          },
+          {
+            number: 200,
+            suffix: "+",
             label: "Solutions",
             gradient: "linear-gradient(to right, #3b82f6, #2563eb)",
           },
           {
-            number: "1800+",
-            label: "Engineers",
-            gradient: "linear-gradient(to right, #0199D3, #0199D3)",
-          },
-          {
-            number: "250+",
+            number: 250,
+            suffix: "+",
             label: "Architects",
             gradient: "linear-gradient(to right, #3b82f6, #2563eb)",
           },
           {
-            number: "15",
-            label: "Global Centers",
+            number: 1800,
+            suffix: "+",
+            label: "Engineers",
             gradient: "linear-gradient(to right, #0199D3, #0199D3)",
           },
         ].map((stat, idx) => (
@@ -462,13 +466,26 @@ export default function IntelligenceCore() {
                 variant="h5"
                 fontWeight={300}
                 sx={{
-                 
                   WebkitBackgroundClip: "text",
                   color: "white!important",
                   mb: 1,
                 }}
               >
-                {stat.number}
+                {isVisible ? (
+                  <>
+                    <CountUp
+                      start={0}
+                      end={stat.number}
+                      duration={2.5}
+                      delay={idx * 0.3}
+                      useEasing={true}
+                      separator=","
+                    />
+                    {stat.suffix || ""}
+                  </>
+                ) : (
+                  `${stat.number}${stat.suffix || ""}`
+                )}
               </Typography>
               <Typography variant="caption" sx={{ color: "#fff!important" }}>
                 {stat.label}
