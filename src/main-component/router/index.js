@@ -35,6 +35,7 @@ import BankingAndFinancial from "../BankingAndFinancial/BankingAndFinancial";
 import App from "../../App";
 import OurJourny from "../OurJourney/OurJourny";
 import LeaderShipTeam from "../LeaderShipTeam/LeaderShipTeam";
+import GlobalPresence from "../../components/GlobalPresence/GlobalPresence";
 
 import NewsAndAnnouncement from "../NewsAndAnnouncement/NewsAndAnnouncement";
 import Whitepapers from "../Whitepapers/Whitepapers";
