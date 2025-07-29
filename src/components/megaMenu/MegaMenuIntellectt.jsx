@@ -455,6 +455,7 @@ const MegaMenuGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.75rem;
+  min-height: fit-content;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
