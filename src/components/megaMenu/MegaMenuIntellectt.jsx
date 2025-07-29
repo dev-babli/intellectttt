@@ -1517,10 +1517,12 @@ function MegaMenuIntellectt() {
       <HeaderContainer>
         <HeaderContent>
           <Logo>
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
-              alt="Intellectt"
-            />
+            <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
+                alt="Intellectt"
+              />
+            </Link>
           </Logo>
 
           <Navigation>
@@ -1581,10 +1583,12 @@ function MegaMenuIntellectt() {
       <Sidebar isOpen={isMobileMenuOpen}>
         <SidebarHeader>
           <Logo>
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
-              alt="Intellectt"
-            />
+            <Link to="/" style={{ display: 'flex', alignItems: 'center' }} onClick={closeMobileMenu}>
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
+                alt="Intellectt"
+              />
+            </Link>
           </Logo>
           <SidebarClose
             onClick={closeMobileMenu}
