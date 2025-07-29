@@ -1412,13 +1412,7 @@ function MegaMenuIntellectt() {
                   onClick={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? () => { if (item.url) { window.location.href = item.url; } } : () => toggleMegaMenuSection(menuName, item.title)}
                   style={["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? { cursor: 'pointer' } : {}}
                 >
-                  {["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) ? (
-                    <Link to={item.url} style={{ color: 'inherit', textDecoration: 'none' }}>
-                      {item.title}
-                    </Link>
-                  ) : (
-                    item.title
-                  )}
+                  {item.title}
                   {!["Our Journey", "Leadership Team", "Global Presence"].includes(item.title) && <ChevronDown />}
                 </MegaMenuSectionTitle>
 
