@@ -929,7 +929,7 @@ const menuData = {
         description: "Our worldwide locations and partnerships",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Office Locations", "Global Partners", "Regional Expertise"],
-        url: "/company/global-presence"
+        url: "/about"
       },
       {
         title: "Our Companies",
@@ -974,6 +974,7 @@ const menuData = {
         title: "Artificial Intelligence",
         description: "Comprehensive AI & GenAI Practice with cutting-edge solutions",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/service/ai-and-gen-ai",
         items: [
           "GenAI & LLM Integration (GPT, Azure OpenAI)",
           "Agentic AI & AI Agents",
@@ -988,37 +989,43 @@ const menuData = {
             name: "GenAI & LLM Integration",
             description: "Enterprise-grade GPT and Azure OpenAI implementations for intelligent automation",
             focus: "AI & GenAI Practice",
-            color: "rgba(147, 51, 234, 0.1)"
+            color: "rgba(147, 51, 234, 0.1)",
+            url: "/service/ai-and-gen-ai/llm"
           },
           {
             name: "Agentic AI & AI Agents",
             description: "Advanced autonomous AI agents for complex business process automation",
             focus: "AI & GenAI Practice",
-            color: "rgba(59, 130, 246, 0.1)"
+            color: "rgba(59, 130, 246, 0.1)",
+            url: "/service/ai-and-gen-ai/agents"
           },
           {
             name: "NLP & Computer Vision",
             description: "Natural language processing and computer vision solutions for intelligent data analysis",
             focus: "AI & GenAI Practice",
-            color: "rgba(16, 185, 129, 0.1)"
+            color: "rgba(16, 185, 129, 0.1)",
+            url: "/service/ai-and-gen-ai/nlp"
           },
           {
             name: "ML Engineering & MLOps",
             description: "Scalable machine learning operations and model deployment infrastructure",
             focus: "AI & GenAI Practice",
-            color: "rgba(245, 158, 11, 0.1)"
+            color: "rgba(245, 158, 11, 0.1)",
+            url: "/service/ai-and-gen-ai/mlops"
           },
           {
             name: "AI Automation (AI + RPA)",
             description: "Intelligent robotic process automation powered by artificial intelligence",
             focus: "AI & GenAI Practice",
-            color: "rgba(239, 68, 68, 0.1)"
+            color: "rgba(239, 68, 68, 0.1)",
+            url: "/service/ai-and-gen-ai/automation"
           },
           {
             name: "AI Advisory & Responsible AI",
             description: "Strategic AI consulting and ethical AI implementation frameworks",
             focus: "AI & GenAI Practice",
-            color: "rgba(168, 85, 247, 0.1)"
+            color: "rgba(168, 85, 247, 0.1)",
+            url: "/service/ai-and-gen-ai/responsible"
           }
         ]
       },
@@ -1026,6 +1033,7 @@ const menuData = {
         title: "Cloud & Application Services",
         description: "Multi-cloud expertise and modern applications",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/service/cloud-and-application-services",
         items: ["Azure, AWS, GCP Engineering", "DevOps & DevSecOps", "App Modernization", "API Services"],
         hasDropdown: true,
         services: [
@@ -1033,25 +1041,29 @@ const menuData = {
             name: "Azure, AWS, GCP Engineering",
             description: "Multi-cloud infrastructure design and implementation across major cloud platforms",
             focus: "Cloud Services",
-            color: "rgba(59, 130, 246, 0.1)"
+            color: "rgba(59, 130, 246, 0.1)",
+            url: "/service/cloud-and-application-services/engineering"
           },
           {
             name: "DevOps & DevSecOps",
             description: "Automated CI/CD pipelines with integrated security and compliance frameworks",
             focus: "Cloud Services",
-            color: "rgba(16, 185, 129, 0.1)"
+            color: "rgba(16, 185, 129, 0.1)",
+            url: "/service/cloud-and-application-services/devops"
           },
           {
             name: "App Modernization",
             description: "Legacy application transformation to cloud-native microservices architecture",
             focus: "Cloud Services",
-            color: "rgba(245, 158, 11, 0.1)"
+            color: "rgba(245, 158, 11, 0.1)",
+            url: "/service/cloud-and-application-services/modernization"
           },
           {
             name: "API Services",
             description: "RESTful and GraphQL API development with comprehensive integration solutions",
             focus: "Cloud Services",
-            color: "rgba(239, 68, 68, 0.1)"
+            color: "rgba(239, 68, 68, 0.1)",
+            url: "/service/cloud-and-application-services/api"
           }
         ]
       },
@@ -1059,6 +1071,7 @@ const menuData = {
         title: "SAP Services",
         description: "Enterprise SAP solutions and support",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/service/sap-services",
         items: ["S/4HANA Migration", "BTP Development", "AMS & Support"],
         hasDropdown: true,
         services: [
@@ -1066,19 +1079,22 @@ const menuData = {
             name: "S/4HANA Migration",
             description: "End-to-end SAP S/4HANA transformation with minimal business disruption",
             focus: "SAP Services",
-            color: "rgba(59, 130, 246, 0.1)"
+            color: "rgba(59, 130, 246, 0.1)",
+            url: "/service/sap-services/s4hana"
           },
           {
             name: "BTP Development",
             description: "SAP Business Technology Platform integration and custom application development",
             focus: "SAP Services",
-            color: "rgba(16, 185, 129, 0.1)"
+            color: "rgba(16, 185, 129, 0.1)",
+            url: "/service/sap-services/btp"
           },
           {
             name: "AMS & Support",
             description: "Application management services and 24/7 SAP system support",
             focus: "SAP Services",
-            color: "rgba(245, 158, 11, 0.1)"
+            color: "rgba(245, 158, 11, 0.1)",
+            url: "/service/sap-services/ams"
           }
         ]
       },
@@ -1086,6 +1102,7 @@ const menuData = {
         title: "Data & Analytics",
         description: "Advanced data engineering and BI solutions",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/service/data-and-analytics",
         items: ["Data Engineering", "BI & ETL", "Governance & Security"],
         hasDropdown: true,
         services: [
@@ -1093,19 +1110,22 @@ const menuData = {
             name: "Data Engineering",
             description: "Scalable data pipelines and modern data warehouse architecture",
             focus: "Data & Analytics",
-            color: "rgba(147, 51, 234, 0.1)"
+            color: "rgba(147, 51, 234, 0.1)",
+            url: "/service/data-and-analytics/etl"
           },
           {
             name: "BI & ETL",
             description: "Business intelligence solutions with advanced ETL and real-time analytics",
             focus: "Data & Analytics",
-            color: "rgba(59, 130, 246, 0.1)"
+            color: "rgba(59, 130, 246, 0.1)",
+            url: "/service/data-and-analytics/bi"
           },
           {
             name: "Governance & Security",
             description: "Data governance frameworks with enterprise-grade security and compliance",
             focus: "Data & Analytics",
-            color: "rgba(239, 68, 68, 0.1)"
+            color: "rgba(239, 68, 68, 0.1)",
+            url: "/service/data-and-analytics/governance"
           }
         ]
       },
@@ -1113,6 +1133,7 @@ const menuData = {
         title: "Healthcare & Life Sciences IT",
         description: "Specialized healthcare technology solutions",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/service/healthcare-and-life-sciences-it",
         items: ["HL7/FHIR Integration", "AI in Medical Imaging", "Compliance Solutions"],
         hasDropdown: true,
         services: [
@@ -1120,19 +1141,22 @@ const menuData = {
             name: "HL7/FHIR Integration",
             description: "Healthcare interoperability solutions with HL7 and FHIR standards",
             focus: "Healthcare IT",
-            color: "rgba(16, 185, 129, 0.1)"
+            color: "rgba(16, 185, 129, 0.1)",
+            url: "/service/healthcare-and-life-sciences-it/hl7"
           },
           {
             name: "AI in Medical Imaging",
             description: "Advanced AI algorithms for medical image analysis and diagnostic support",
             focus: "Healthcare IT",
-            color: "rgba(147, 51, 234, 0.1)"
+            color: "rgba(147, 51, 234, 0.1)",
+            url: "/service/healthcare-and-life-sciences-it/ai"
           },
           {
             name: "Compliance Solutions",
             description: "HIPAA, FDA, and regulatory compliance frameworks for healthcare systems",
             focus: "Healthcare IT",
-            color: "rgba(245, 158, 11, 0.1)"
+            color: "rgba(245, 158, 11, 0.1)",
+            url: "/service/healthcare-and-life-sciences-it/compliance"
           }
         ]
       },
@@ -1140,6 +1164,7 @@ const menuData = {
         title: "Manufacturing & Engineering IT",
         description: "Industry 4.0 and smart manufacturing",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/service/engineering-and-manufacturing-it",
         items: ["PLM & CAD/CAE", "MES & IoT", "Smart Factory Solutions"],
         hasDropdown: true,
         services: [
@@ -1147,19 +1172,22 @@ const menuData = {
             name: "PLM & CAD/CAE",
             description: "Product lifecycle management with advanced CAD/CAE integration solutions",
             focus: "Manufacturing IT",
-            color: "rgba(239, 68, 68, 0.1)"
+            color: "rgba(239, 68, 68, 0.1)",
+            url: "/service/engineering-and-manufacturing-it/plm"
           },
           {
             name: "MES & IoT",
             description: "Manufacturing execution systems with comprehensive IoT device integration",
             focus: "Manufacturing IT",
-            color: "rgba(16, 185, 129, 0.1)"
+            color: "rgba(16, 185, 129, 0.1)",
+            url: "/service/engineering-and-manufacturing-it/mes"
           },
           {
             name: "Smart Factory Solutions",
             description: "Industry 4.0 automation and intelligent manufacturing optimization systems",
             focus: "Manufacturing IT",
-            color: "rgba(59, 130, 246, 0.1)"
+            color: "rgba(59, 130, 246, 0.1)",
+            url: "/service/engineering-and-manufacturing-it/industry4"
           }
         ]
       },
@@ -1167,11 +1195,21 @@ const menuData = {
     sideItems: [
       {
         title: "More Services",
-        items: ["Managed IT Services", "Talent Solutions", "AI Automation", "Responsible AI Advisory"],
+        items: [
+          { name: "Managed IT Services", url: "/service/managed-it-services" },
+          { name: "Talent Solutions", url: "/service/talent-solutions" },
+          { name: "AI Automation", url: "/service/ai-and-gen-ai/automation" },
+          { name: "Responsible AI Advisory", url: "/service/ai-and-gen-ai/responsible" }
+        ],
       },
       {
         title: "Industries",
-        items: ["Healthcare", "Manufacturing", "Aerospace", "Financial Services"],
+        items: [
+          { name: "Healthcare", url: "/industries/helthcare-and-life-sciences" },
+          { name: "Manufacturing", url: "/industries/menufacturing-and-automotive" },
+          { name: "Aerospace", url: "/industries/aerospace-and-defense" },
+          { name: "Financial Services", url: "/industries/banking-and-financial-services" }
+        ],
       },
     ],
   },
@@ -1181,24 +1219,28 @@ const menuData = {
         title: "Healthcare & Life Sciences",
         description: "Comprehensive healthcare IT solutions",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/industries/helthcare-and-life-sciences",
         items: ["Clinical Systems", "Medical Imaging", "Regulatory Compliance"],
       },
       {
         title: "Manufacturing & Automotive",
         description: "Smart manufacturing and Industry 4.0",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/industries/menufacturing-and-automotive",
         items: ["Smart Factory", "Quality Management", "Supply Chain"],
       },
       {
         title: "Aerospace & Defense",
         description: "Mission-critical aerospace solutions",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/industries/aerospace-and-defense",
         items: ["Avionics Systems", "Defense Solutions", "Compliance"],
       },
       {
         title: "Financial Services",
         description: "Banking and fintech solutions",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/industries/banking-and-financial-services",
         items: ["Digital Banking", "Risk Management", "Compliance"],
       },
     ],
@@ -1215,18 +1257,21 @@ const menuData = {
         title: "Blog & Insights",
         description: "Latest thoughts from our experts",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/insights/blog",
         items: ["AI Trends", "Industry Analysis", "Best Practices"],
       },
       {
         title: "Whitepapers & Case Studies",
         description: "In-depth research and success stories",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/insights/whitepapers-and-case-studies",
         items: ["Technical Papers", "Client Success", "ROI Analysis"],
       },
       {
         title: "News & Events",
         description: "Company updates and industry events",
         image: "/placeholder.svg?height=80&width=280",
+        url: "/insights/news-and-announcements",
         items: ["Press Releases", "Webinars", "Conferences"],
       },
     ],
