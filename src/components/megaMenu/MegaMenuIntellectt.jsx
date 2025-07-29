@@ -980,6 +980,7 @@ const menuData = {
           "AI Automation (AI + RPA)",
           "AI Advisory & Responsible AI"
         ],
+        url: "/service/ai-and-gen-ai",
         hasDropdown: true,
         services: [
           {
