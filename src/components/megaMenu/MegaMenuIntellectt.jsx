@@ -384,7 +384,7 @@ const MegaMenuContainer = styled(motion.div)`
   backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  max-height: 80vh;
+  max-height: 85vh;
   overflow-y: auto;
   overscroll-behavior: contain;
 `;
