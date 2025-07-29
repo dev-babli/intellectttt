@@ -919,7 +919,7 @@ const menuData = {
         description: "Meet our executive leadership",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Executive Team", "Board of Directors", "Advisory Board"],
-        url:"/company/leadership-team"
+        url:"/Company/leadership-team"
       },
       {
         title: "Global Presence",
