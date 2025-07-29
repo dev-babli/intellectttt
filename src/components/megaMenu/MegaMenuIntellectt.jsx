@@ -994,7 +994,8 @@ const menuData = {
             name: "Agentic AI & AI Agents",
             description: "Advanced autonomous AI agents for complex business process automation",
             focus: "AI & GenAI Practice",
-            color: "rgba(59, 130, 246, 0.1)"
+            color: "rgba(59, 130, 246, 0.1)",
+            url: "/service/ai-and-gen-ai/agents"
           },
           {
             name: "NLP & Computer Vision",
