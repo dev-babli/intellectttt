@@ -1094,6 +1094,7 @@ const menuData = {
         description: "Advanced data engineering and BI solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Data Engineering", "BI & ETL", "Governance & Security"],
+        url: "/service/data-and-analytics",
         hasDropdown: true,
         services: [
           {
