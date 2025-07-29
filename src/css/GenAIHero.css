@@ -1,0 +1,5 @@
+.genai-hero {
+  min-height: 90vh;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.85) 40%, rgba(0, 0, 255, 0.1) 100%),
+    url('/public/AI-and-gen-ai-practice.webp') no-repeat center center / cover;
+}

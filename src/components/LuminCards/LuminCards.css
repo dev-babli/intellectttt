@@ -1,0 +1,236 @@
+/* Global resets for consistency */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+} */
+
+/* Container */
+.lumin-container {
+  padding: 4rem 2rem;
+  background: #ffffff;
+  text-align: center;
+}
+
+/* Title */
+.cards-section-title {
+  /* font-size: 2.5rem; */
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #1e3a8a!important;
+}
+
+/* Cards Layout */
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 3rem; */
+  align-items: center;
+  justify-content: center;
+}
+
+.lumin-card {
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px; /* ✅ Firefox support */
+  perspective-origin: center;
+  cursor: pointer;
+  position: relative;
+  flex: 1 1 100%;
+}
+
+@media (min-width: 768px) {
+  .lumin-card {
+    flex: 0 0 45%;
+    height: 450px;
+  }
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d; /* ✅ Firefox */
+  transition: transform 0.8s ease;
+}
+
+.lumin-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg); /* ✅ Firefox */
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden; /* ✅ Firefox */
+  border-radius: 20px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+}
+
+.flip-card-front {
+  z-index: 2;
+  background: #1e3a8a;
+  color: white;
+}
+
+.flip-card-back {
+  background: #365da7;
+  color: white;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* Content */
+.card-content {
+  z-index: 10;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.logo-section img {
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .logo-section img {
+    height: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-section img {
+    height: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-section {
+    justify-content: center;
+  }
+
+  .logo-section img {
+    height: 36px;
+  }
+}
+
+/* Badges */
+.badges {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* Title & Button */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+}
+
+.card-title .highlight {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.explore-btn {
+  background: white;
+  color: #1e3a8a;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #0199D3;
+  color: white;
+  border: 1px solid white;
+}
+.title-wrapper {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  max-width: 1000px;
+}
+
+.cards-section-title {
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+  line-height: 1.4;
+  font-weight: 600;
+  color: #1e1e1e; /* Adjust as needed */
+  margin: 0;
+}
+
+/* Optional: tweak padding for smaller screens */
+@media (max-width: 768px) {
+  .title-wrapper {
+    padding: 1.5rem 1rem;
+  }
+
+  .cards-section-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-section-title {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,96 @@
+/* Responsive styles for demo content */
+.demo-content {
+  padding: 100px 2rem 2rem 2rem !important;
+}
+
+@media (max-width: 1024px) {
+  .demo-content {
+    padding: 80px 1.5rem 2rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .demo-content {
+    padding: 70px 1rem 2rem 1rem !important;
+  }
+  
+  .demo-text {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    max-width: 500px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-content {
+    padding: 60px 0.75rem 2rem 0.75rem !important;
+  }
+  
+  .demo-text {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    max-width: 400px !important;
+    margin: 0 auto 1.5rem !important;
+  }
+}
+
+/* Ensure the app container is responsive */
+body {
+  min-width: 320px; /* Minimum mobile width */
+}
+
+/* Prevent horizontal overflow on very small screens */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Additional responsive improvements for very small screens */
+@media (max-width: 360px) {
+  .demo-content {
+    padding: 50px 0.5rem 2rem 0.5rem !important;
+  }
+
+  .demo-text {
+    font-size: 0.95rem !important;
+    max-width: 300px !important;
+  }
+}
+
+/* Mobile menu responsive adjustments */
+@media (max-width: 480px) {
+  /* Mobile menu panel adjustments for small screens */
+  .mobile-menu-panel {
+    width: 90vw !important;
+    max-width: 300px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-menu-panel {
+    width: 95vw !important;
+    max-width: 280px !important;
+  }
+}
+
+/* Prevent text overflow in navigation */
+@media (max-width: 480px) {
+  .nav-text {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
