@@ -286,7 +286,7 @@ const AllRoute = () => {
             <Route path="Company">
               <Route path="our-journey" element={<OurJourny />} />
               <Route path="leadership-team" element={<LeaderShipTeam />} />
-              <Route path="global-presence" element={<div>Global Presence Page</div>} />
+              <Route path="global-presence" element={<GlobalPresence />} />
               <Route path="our-companies" element={<GroupCompani />} />
             </Route>
             <Route path="insights">
