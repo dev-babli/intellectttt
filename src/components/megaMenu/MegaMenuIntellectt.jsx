@@ -485,10 +485,12 @@ const MegaMenuServiceTitle = styled.h4`
   font-weight: 600;
   font-family: 'Manrope', sans-serif;
   margin-bottom: 0.375rem;
-  line-height: 1.3;
+  line-height: 1.4;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.375rem;
+  word-wrap: break-word;
+  hyphens: auto;
 
   &::before {
     content: '';
@@ -497,6 +499,7 @@ const MegaMenuServiceTitle = styled.h4`
     background: #6366f1;
     border-radius: 50%;
     flex-shrink: 0;
+    margin-top: 0.25rem;
   }
 `;
 
