@@ -86,8 +86,7 @@ const Header5 = (props) => {
           }}
         >
           <Typography variant="body1" color="white">
-           Shaping the Future of Intelligence - Together
-           
+            Shaping the Future of Intelligence - Together
           </Typography>
 
           <Stack
@@ -107,7 +106,7 @@ const Header5 = (props) => {
               rel="noopener noreferrer"
               sx={iconStyle}
             >
-              <LinkedInIcon color="primary" fontSize="small"/>
+              <LinkedInIcon color="primary" fontSize="small" />
             </IconButton>
             <IconButton
               component="a"
@@ -116,7 +115,7 @@ const Header5 = (props) => {
               rel="noopener noreferrer"
               sx={iconStyle}
             >
-              <TwitterIcon color="primary" fontSize="small"/>
+              <TwitterIcon color="primary" fontSize="small" />
             </IconButton>
             <IconButton
               component="a"
@@ -125,7 +124,7 @@ const Header5 = (props) => {
               rel="noopener noreferrer"
               sx={iconStyle}
             >
-              <FacebookIcon color="primary" fontSize="small"/>
+              <FacebookIcon color="primary" fontSize="small" />
             </IconButton>
             <IconButton
               component="a"
@@ -134,7 +133,7 @@ const Header5 = (props) => {
               rel="noopener noreferrer"
               sx={iconStyle}
             >
-              <YouTubeIcon color="primary" fontSize="small"/>
+              <YouTubeIcon color="primary" fontSize="small" />
             </IconButton>
           </Stack>
         </Box>

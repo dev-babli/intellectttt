@@ -4,7 +4,6 @@ import TabsComponent from "../../components/Tabs/TabsComponent";
 import PartnerSection from "../../components/Help-Desk-Components/PartnerSection";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import TestimonialSliderHome from "../../components/TestimonialSliderHome/TestimonialSliderHome";
-import WorkFlow from "../../components/Cyber-Security-Components/WorkFlow/WorkFlow";
 
 import LuminCards from "../../components/LuminCards/LuminCards";
 import HelpDeskBlogSection from "../../components/Help-Desk-Components/HelpDeskBlogSection/HelpDeskBlogSection";
@@ -17,7 +16,7 @@ import IntelligenceCore from "../../components/Intelligence/IntelligenceCore";
 const HomePage = () => {
   return (
     <Fragment>
-      <div className="help_desk">
+      <div className="help_desk" style={{ margin: 0, padding: 0 }}>
         <HeroSection />
         <PartnerSection />
         <LuminCards />
@@ -25,13 +24,9 @@ const HomePage = () => {
         <TabsComponent />
         <IntellecttAISolutions />
         {/* <ImageCardGrid /> */}
-        <WorkFlow />
 
-        <IntegrationSection />
-        <IndustriesSimple />
-        <StackingCardsScroll />
         <IntelligenceCore />
-
+        <IntegrationSection />
         <TestimonialSliderHome />
         <HelpDeskBlogSection />
       </div>

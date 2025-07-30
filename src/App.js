@@ -8,16 +8,18 @@ import MegaMenuIntellectt from "./components/megaMenu/MegaMenuIntellectt";
 
 function App() {
   return (
-    <>
-      {/* <Header5 /> */}
-      <MegaMenuIntellectt />
-      <main>
-        <Outlet />
-      </main>
-     
-      <Footer />
-      {/* <Scrollbar /> */}
-    </>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        {/* <Header5 /> */}
+        <MegaMenuIntellectt />
+        <main>
+          <Outlet />
+        </main>
+       
+        <Footer />
+        {/* <Scrollbar /> */}
+      </div>
+    </div>
   );
 }
 
