@@ -3,7 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import styled from "@emotion/styled";
 import { ChevronDown, Menu, Search, ArrowRight, X } from "lucide-react";
 import "../../App.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+// Add smooth scrolling to the entire page
+if (typeof document !== "undefined") {
+  document.documentElement.style.scrollBehavior = "smooth";
+}
 
 // Styled Components
 const HeaderContainer = styled.header`
@@ -12,10 +17,16 @@ const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #ffffff;
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(30px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
 `;
 
 const HeaderContent = styled.div`
@@ -84,7 +95,7 @@ const NavItem = styled.div`
   cursor: pointer;
   padding: 0.625rem 0.875rem;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: ${(props) => (props.isActive ? "#6366f1" : "#1f2937")};
   font-weight: 600;
   font-size: 0.8rem;
@@ -93,11 +104,18 @@ const NavItem = styled.div`
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  transform-origin: center;
 
   &:hover {
     background: rgba(99, 102, 241, 0.08);
     color: #6366f1;
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0px) scale(0.98);
+    transition: all 0.1s ease;
   }
 
   svg {
@@ -257,11 +275,12 @@ const ActionButton = styled.button`
   font-weight: 500;
   font-family: "Inter", sans-serif;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transform-origin: center;
 
   ${(props) =>
     props.variant === "primary"
@@ -271,6 +290,13 @@ const ActionButton = styled.button`
 
     &:hover {
       background: #5855eb;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0px) scale(0.98);
+      transition: all 0.1s ease;
     }
   `
       : `
@@ -282,14 +308,60 @@ const ActionButton = styled.button`
       background: #f9fafb;
       color: #111827;
       border-color: #9ca3af;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+      transform: translateY(0px);
+      transition: all 0.1s ease;
     }
   `}
 
   img {
     width: 16px;
     height: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover img {
+    transform: translateX(2px);
   }
 `;
+
+// React Router Button Component
+const RouterButton = ({ to, external, children, ...props }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (external) {
+      window.open(to, "_blank");
+    } else {
+      navigate(to);
+    }
+  };
+
+  if (external) {
+    return (
+      <ActionButton
+        as="a"
+        href={to}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...props}
+      >
+        {children}
+      </ActionButton>
+    );
+  }
+
+  return (
+    <ActionButton onClick={handleClick} {...props}>
+      {children}
+    </ActionButton>
+  );
+};
 
 const MobileMenuButton = styled.button`
   display: none;
@@ -299,13 +371,21 @@ const MobileMenuButton = styled.button`
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 8px;
-  transition: background 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 1001;
+  transform-origin: center;
 
   &:hover {
-    background: rgba(99, 102, 241, 0.05);
+    background: rgba(99, 102, 241, 0.08);
     color: #6366f1;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease;
   }
 
   @media (max-width: 1024px) {
@@ -331,24 +411,28 @@ const SidebarOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
   z-index: 9998;
   opacity: ${(props) => (props.isOpen ? 1 : 0)};
   visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 const Sidebar = styled.div`
   position: fixed;
   top: 0;
-  left: 0;
+  left: ${(props) => (props.isOpen ? "0" : "-100%")};
   bottom: 0;
   width: 320px;
   max-width: 85vw;
   background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(24px);
+  backdrop-filter: blur(30px) saturate(180%);
   border-right: 1px solid rgba(0, 0, 0, 0.08);
   z-index: 9999;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: ${(props) =>
+    props.isOpen ? "translateX(0)" : "translateX(-100%)"};
   overflow-y: auto;
   transform: translateX(${(props) => (props.isOpen ? "0" : "-100%")});
   transition: transform 0.3s ease;
@@ -507,6 +591,11 @@ const MegaMenuContent = styled.div`
   margin: 0 auto;
   padding: 1.5rem 1rem;
   min-height: fit-content;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   @media (max-width: 1024px) {
     padding: 1.25rem 0.75rem;
@@ -591,13 +680,25 @@ const MegaMenuGrid = styled.div`
 const MegaMenuServiceItem = styled.div`
   background: #ffffff;
   border: none;
-  border-radius: 0;
+  border-radius: 12px;
   padding: ${(props) =>
     props.menuName === "SERVICES" ? "1.5rem" : "0.875rem"};
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   height: ${(props) => (props.menuName === "SERVICES" ? "auto" : "auto")};
+  transform-origin: center;
+
+  &:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  }
+
+  &:active {
+    transform: translateY(-2px) scale(0.98);
+    transition: all 0.1s ease;
+  }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1013,24 +1114,28 @@ const SideMenuItem = styled.div`
   }
 `;
 
-// Animation variants
+// Enhanced Animation variants
 const megaMenuVariants = {
   hidden: {
     opacity: 0,
-    y: -10,
-    scale: 0.98,
+    y: -20,
+    scale: 0.95,
+    filter: "blur(10px)",
     transition: {
-      duration: 0.2,
+      duration: 0.3,
+      ease: [0.4, 0, 0.2, 1],
     },
   },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.4,
+      duration: 0.5,
       ease: [0.4, 0, 0.2, 1],
-      staggerChildren: 0.08,
+      staggerChildren: 0.06,
+      delayChildren: 0.1,
     },
   },
 };
@@ -1038,19 +1143,55 @@ const megaMenuVariants = {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 30,
-    scale: 0.9,
+    y: 40,
+    scale: 0.85,
+    rotateX: -15,
   },
   visible: (i) => ({
     opacity: 1,
     y: 0,
     scale: 1,
+    rotateX: 0,
     transition: {
-      delay: i * 0.1,
-      duration: 0.5,
+      delay: i * 0.08,
+      duration: 0.6,
       ease: [0.4, 0, 0.2, 1],
     },
   }),
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    x: -20,
+    scale: 0.9,
+  },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      delay: i * 0.05,
+      duration: 0.4,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  }),
+};
+
+const buttonVariants = {
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.2,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+  tap: {
+    scale: 0.95,
+    transition: {
+      duration: 0.1,
+    },
+  },
 };
 
 // Menu data with images
@@ -1581,7 +1722,7 @@ const menuData = {
         title: "The Strategy Behind Our $100M Commitment to Data & AI",
         description: "BLOG POST",
         image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop&crop=center",
         items: ["AI AND ML"],
         hasDropdown: true,
         url: "/blog/data-ai-commitment",
@@ -1602,8 +1743,7 @@ const menuData = {
         title: "74% Faster Software Delivery: Agentic AI in the Wild",
         description: "BLOG POST",
         image:
-          "https://unsplash.com/photos/photo-of-outer-space-Q1p7bh3SHj8?w=400&h=200&fit=crop&crop=center",
-
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
         items: ["AI AND ML"],
         hasDropdown: true,
         url: "/blog/agentic-ai-software-delivery",
@@ -1624,7 +1764,7 @@ const menuData = {
         title: "BizTech Forward - Season 2 Recap: Art Data to Travel Tech",
         description: "LANDING PAGE",
         image:
-          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop&crop=center",
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
         items: ["AI AND ML"],
         hasDropdown: true,
         url: "/podcast/biztech-forward-season2",
@@ -1718,45 +1858,21 @@ const menuData = {
   CAREERS: {
     mainItems: [
       {
-        title: "Overview",
-        description: "Learn about our company culture and values",
-        url: "/carrers/join-our-tilent-network",
-        isActive: false,
-      },
-      {
-        title: "Jobs",
+        title: "Join our team",
         description: "Browse current job openings and opportunities",
-        url: "/carrers/current-openings",
-        isActive: true,
-      },
-      {
-        title: "Early Careers",
-        description: "Graduate and entry-level opportunities",
-        url: "/carrers/join-our-tilent-network",
-        isActive: false,
-      },
-      {
-        title: "Experienced Professionals",
-        description: "Senior and leadership positions",
-        url: "/carrers/current-openings",
+        url: "/careers/current-openings",
         isActive: false,
       },
       {
         title: "Life at Intellectt",
         description: "Discover our culture and work environment",
-        url: "/carrers/life-at-company",
+        url: "/careers/life-at-company",
         isActive: true,
       },
       {
-        title: "People and Culture Blog",
-        description: "Read about our company culture and values",
-        url: "/carrers/life-at-company",
-        isActive: false,
-      },
-      {
-        title: "Talent Communities",
-        description: "Join our talent communities",
-        url: "/carrers/join-our-tilent-network",
+        title: "How we hire",
+        description: "Learn about our hiring process",
+        url: "/careers/hiring-process",
         isActive: false,
       },
     ],
@@ -1767,7 +1883,7 @@ const menuData = {
       image:
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
       buttonText: "Visit our page",
-      buttonUrl: "/carrers/life-at-company",
+      buttonUrl: "/careers/life-at-company",
     },
   },
 };
@@ -1783,6 +1899,7 @@ function MegaMenuIntellectt() {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const timeoutRef = useRef(null);
   const searchInputRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleMouseEnter = (menuName) => {
     if (timeoutRef.current) {
@@ -2053,11 +2170,7 @@ function MegaMenuIntellectt() {
     const menuConfig = menuData[menuName];
     if (!menuConfig) return null;
 
-    if (
-      menuName === "WHAT WE DO" ||
-      menuName === "WHO WE WORK WITH" ||
-      menuName === "CAREERS"
-    ) {
+    if (menuName === "WHAT WE DO" || menuName === "WHO WE WORK WITH") {
       return (
         <MegaMenuContainer
           variants={megaMenuVariants}
@@ -2141,6 +2254,8 @@ function MegaMenuIntellectt() {
                         fontFamily: "Inter, sans-serif",
                         margin: 0,
                         lineHeight: "1.2",
+                        textAlign: "center",
+                        width: "100%",
                       }}
                     >
                       {item.title}
@@ -2153,6 +2268,7 @@ function MegaMenuIntellectt() {
                       display: "flex",
                       flexDirection: "column",
                       gap: "0.25rem",
+                      alignItems: "center",
                     }}
                   >
                     {item.services &&
@@ -2163,9 +2279,10 @@ function MegaMenuIntellectt() {
                             cursor: "pointer",
                             transition: "all 0.2s ease",
                             padding: "0.125rem 0",
+                            textAlign: "center",
                           }}
                           onMouseEnter={(e) => {
-                            e.target.style.color = "#111827";
+                            e.target.style.color = "#000000";
                           }}
                           onMouseLeave={(e) => {
                             e.target.style.color = "#6b7280";
@@ -2183,6 +2300,7 @@ function MegaMenuIntellectt() {
                               fontFamily: "Inter, sans-serif",
                               fontWeight: "400",
                               lineHeight: "1.3",
+                              transition: "color 0.2s ease",
                             }}
                           >
                             {serviceItem.name}
@@ -2210,110 +2328,223 @@ function MegaMenuIntellectt() {
           <MegaMenuContent>
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "2rem",
+                display: "flex",
+                gap: "3rem",
                 padding: "2rem 0",
               }}
             >
-              {menuConfig.mainItems.map((item, index) => (
-                <div
-                  key={item.title}
-                  style={{
-                    background: "#ffffff",
-                    borderRadius: "12px",
-                    overflow: "hidden",
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.transform = "translateY(-4px)";
-                    e.target.style.boxShadow = "0 8px 24px rgba(0, 0, 0, 0.12)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.08)";
-                  }}
-                  onClick={() => {
-                    if (item.url) {
-                      window.open(item.url, "_blank");
-                    }
-                  }}
-                >
-                  {/* Card Image */}
+              {/* Main Content - Cards */}
+              <div
+                style={{
+                  flex: 1,
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                  gap: "2rem",
+                }}
+              >
+                {menuConfig.mainItems.map((item, index) => (
                   <div
+                    key={item.title}
                     style={{
-                      height: "200px",
-                      background:
-                        "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      position: "relative",
+                      background: "#ffffff",
+                      borderRadius: "12px",
                       overflow: "hidden",
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+                      cursor: "pointer",
+                      transition: "all 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = "translateY(-4px)";
+                      e.target.style.boxShadow =
+                        "0 8px 24px rgba(0, 0, 0, 0.12)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = "translateY(0)";
+                      e.target.style.boxShadow =
+                        "0 4px 12px rgba(0, 0, 0, 0.08)";
+                    }}
+                    onClick={() => {
+                      if (item.url) {
+                        if (item.url.startsWith("/")) {
+                          navigate(item.url);
+                        } else {
+                          window.open(item.url, "_blank");
+                        }
+                      }
                     }}
                   >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "center",
-                      }}
-                    />
-                  </div>
-
-                  {/* Card Content */}
-                  <div style={{ padding: "1.5rem" }}>
-                    {/* Content Type Label */}
+                    {/* Card Image */}
                     <div
                       style={{
-                        fontSize: "0.75rem",
+                        height: "200px",
+                        background:
+                          "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        position: "relative",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          objectPosition: "center",
+                        }}
+                      />
+                    </div>
+
+                    {/* Card Content */}
+                    <div style={{ padding: "1.5rem" }}>
+                      {/* Content Type Label */}
+                      <div
+                        style={{
+                          fontSize: "0.75rem",
+                          fontWeight: "600",
+                          color: "#6366f1",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.5px",
+                          marginBottom: "0.75rem",
+                        }}
+                      >
+                        {item.description}
+                      </div>
+
+                      {/* Title */}
+                      <h3
+                        style={{
+                          fontSize: "1.125rem",
+                          fontWeight: "700",
+                          color: "#111827",
+                          fontFamily: "Inter, sans-serif",
+                          margin: "0 0 1rem 0",
+                          lineHeight: "1.3",
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+
+                      {/* Tag */}
+                      <div
+                        style={{
+                          display: "inline-block",
+                          padding: "0.25rem 0.75rem",
+                          background: "rgba(99, 102, 241, 0.1)",
+                          color: "#6366f1",
+                          borderRadius: "16px",
+                          fontSize: "0.75rem",
+                          fontWeight: "500",
+                          fontFamily: "Inter, sans-serif",
+                        }}
+                      >
+                        {item.items[0]}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Side Content - Lists */}
+              <div
+                style={{
+                  width: "280px",
+                  padding: "1rem 0",
+                }}
+              >
+                {menuConfig.sideItems?.map((sideItem, index) => (
+                  <div key={sideItem.title} style={{ marginBottom: "2rem" }}>
+                    {/* Section Title */}
+                    <h4
+                      style={{
+                        fontSize: "1rem",
                         fontWeight: "600",
-                        color: "#6366f1",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.5px",
-                        marginBottom: "0.75rem",
-                      }}
-                    >
-                      {item.description}
-                    </div>
-
-                    {/* Title */}
-                    <h3
-                      style={{
-                        fontSize: "1.125rem",
-                        fontWeight: "700",
-                        color: "#111827",
-                        fontFamily: "Inter, sans-serif",
+                        color: "#374151",
                         margin: "0 0 1rem 0",
-                        lineHeight: "1.3",
+                        fontFamily: "Inter, sans-serif",
+                        borderBottom: "2px solid #e5e7eb",
+                        paddingBottom: "0.5rem",
                       }}
                     >
-                      {item.title}
-                    </h3>
+                      {sideItem.title}
+                    </h4>
 
-                    {/* Tag */}
+                    {/* List Items */}
                     <div
                       style={{
-                        display: "inline-block",
-                        padding: "0.25rem 0.75rem",
-                        background: "rgba(99, 102, 241, 0.1)",
-                        color: "#6366f1",
-                        borderRadius: "16px",
-                        fontSize: "0.75rem",
-                        fontWeight: "500",
-                        fontFamily: "Inter, sans-serif",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.5rem",
                       }}
                     >
-                      {item.items[0]}
+                      {sideItem.items.map((listItem, itemIndex) => (
+                        <div
+                          key={listItem}
+                          style={{
+                            padding: "0.75rem 1rem",
+                            borderRadius: "8px",
+                            cursor: "pointer",
+                            transition: "all 0.2s ease",
+                            background: "transparent",
+                            border: "1px solid transparent",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.target.style.background = "#f3f4f6";
+                            e.target.style.borderColor = "#d1d5db";
+                            e.target.style.transform = "translateX(4px)";
+                            // Change text color to deep black
+                            const span = e.target.querySelector("span");
+                            if (span) {
+                              span.style.color = "#000000";
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            e.target.style.background = "transparent";
+                            e.target.style.borderColor = "transparent";
+                            e.target.style.transform = "translateX(0)";
+                            // Reset text color
+                            const span = e.target.querySelector("span");
+                            if (span) {
+                              span.style.color = "#374151";
+                            }
+                          }}
+                          onClick={() => {
+                            // If you want to route, you need to know the url for each listItem. If you have a url, use navigate(url). Otherwise, do nothing or handle as needed.
+                            // Example: if (sideItem.urls && sideItem.urls[itemIndex]) { ... }
+                          }}
+                        >
+                          <span
+                            style={{
+                              color: "#374151",
+                              fontSize: "0.9rem",
+                              fontWeight: "500",
+                              fontFamily: "Inter, sans-serif",
+                            }}
+                          >
+                            {listItem}
+                          </span>
+                          <span
+                            style={{
+                              color: "#9ca3af",
+                              fontSize: "0.8rem",
+                              fontWeight: "600",
+                              opacity: "0.7",
+                            }}
+                          >
+                            ›
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </MegaMenuContent>
         </MegaMenuContainer>
@@ -2333,30 +2564,31 @@ function MegaMenuIntellectt() {
             <div
               style={{
                 display: "flex",
-                background: "#1a1a2e",
+                background: "#ffffff",
                 borderRadius: "12px",
                 overflow: "hidden",
-                minHeight: "450px",
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+                minHeight: "350px",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+                border: "1px solid #e5e7eb",
               }}
             >
               {/* Left Navigation Sidebar */}
               <div
                 style={{
-                  width: "320px",
-                  background: "#16213e",
-                  padding: "2.5rem",
-                  borderRight: "1px solid #2d3748",
+                  width: "280px",
+                  background: "#f9fafb",
+                  padding: "2rem",
+                  borderRight: "1px solid #e5e7eb",
                 }}
               >
                 {/* Header */}
-                <div style={{ marginBottom: "2.5rem" }}>
+                <div style={{ marginBottom: "2rem" }}>
                   <h3
                     style={{
-                      color: "#ffffff",
-                      fontSize: "1.75rem",
+                      color: "#111827",
+                      fontSize: "1.5rem",
                       fontWeight: "700",
-                      margin: "0 0 0.75rem 0",
+                      margin: "0 0 0.5rem 0",
                       fontFamily: "Inter, sans-serif",
                       letterSpacing: "-0.02em",
                     }}
@@ -2365,7 +2597,7 @@ function MegaMenuIntellectt() {
                   </h3>
                   <div
                     style={{
-                      width: "50px",
+                      width: "40px",
                       height: "3px",
                       background: "#e53e3e",
                       marginBottom: "1.5rem",
@@ -2385,40 +2617,50 @@ function MegaMenuIntellectt() {
                     <div
                       key={item.title}
                       style={{
-                        padding: "1rem 1.25rem",
-                        borderRadius: "10px",
+                        padding: "0.875rem 1rem",
+                        borderRadius: "8px",
                         cursor: "pointer",
                         transition: "all 0.3s ease",
-                        background: item.isActive ? "#2d3748" : "transparent",
+                        background: item.isActive ? "#ffffff" : "transparent",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
                         border: item.isActive
-                          ? "1px solid #4a5568"
+                          ? "1px solid #d1d5db"
                           : "1px solid transparent",
+                        boxShadow: item.isActive
+                          ? "0 2px 8px rgba(0, 0, 0, 0.1)"
+                          : "none",
                       }}
                       onMouseEnter={(e) => {
                         if (!item.isActive) {
-                          e.target.style.background = "#2d3748";
-                          e.target.style.borderColor = "#4a5568";
+                          e.target.style.background = "#ffffff";
+                          e.target.style.borderColor = "#d1d5db";
+                          e.target.style.boxShadow =
+                            "0 2px 8px rgba(0, 0, 0, 0.1)";
                         }
                       }}
                       onMouseLeave={(e) => {
                         if (!item.isActive) {
                           e.target.style.background = "transparent";
                           e.target.style.borderColor = "transparent";
+                          e.target.style.boxShadow = "none";
                         }
                       }}
                       onClick={() => {
                         if (item.url) {
-                          window.open(item.url, "_blank");
+                          if (item.url.startsWith("/")) {
+                            navigate(item.url);
+                          } else {
+                            window.open(item.url, "_blank");
+                          }
                         }
                       }}
                     >
                       <span
                         style={{
-                          color: item.isActive ? "#ffffff" : "#a0aec0",
-                          fontSize: "0.9rem",
+                          color: item.isActive ? "#111827" : "#6b7280",
+                          fontSize: "0.875rem",
                           fontWeight: "500",
                           fontFamily: "Inter, sans-serif",
                         }}
@@ -2444,12 +2686,11 @@ function MegaMenuIntellectt() {
               <div
                 style={{
                   flex: 1,
-                  padding: "2.5rem",
+                  padding: "2rem",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
-                  background:
-                    "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+                  background: "#ffffff",
                 }}
               >
                 {/* Featured Image */}
@@ -2470,7 +2711,6 @@ function MegaMenuIntellectt() {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
-                      filter: "brightness(0.9) contrast(1.1)",
                     }}
                   />
                 </div>
@@ -2478,10 +2718,10 @@ function MegaMenuIntellectt() {
                 {/* Content */}
                 <h3
                   style={{
-                    color: "#ffffff",
-                    fontSize: "1.5rem",
+                    color: "#111827",
+                    fontSize: "1.25rem",
                     fontWeight: "700",
-                    margin: "0 0 1rem 0",
+                    margin: "0 0 0.75rem 0",
                     fontFamily: "Inter, sans-serif",
                     letterSpacing: "-0.02em",
                   }}
@@ -2491,63 +2731,58 @@ function MegaMenuIntellectt() {
 
                 <p
                   style={{
-                    color: "#a0aec0",
-                    fontSize: "0.95rem",
+                    color: "#6b7280",
+                    fontSize: "0.875rem",
                     lineHeight: "1.6",
-                    margin: "0 0 2rem 0",
+                    margin: "0 0 1.5rem 0",
                     fontFamily: "Inter, sans-serif",
-                    maxWidth: "400px",
+                    maxWidth: "350px",
                   }}
                 >
                   {menuConfig.featuredContent.description}
                 </p>
 
                 {/* Button */}
-                <button
+                <RouterButton
+                  to={menuConfig.featuredContent.buttonUrl}
+                  external={
+                    !menuConfig.featuredContent.buttonUrl.startsWith("/")
+                  }
                   style={{
                     background: "transparent",
-                    border: "2px solid #ffffff",
-                    color: "#ffffff",
-                    padding: "0.875rem 1.75rem",
+                    border: "2px solid #e53e3e",
+                    color: "#e53e3e",
+                    padding: "0.75rem 1.5rem",
                     borderRadius: "8px",
-                    fontSize: "0.9rem",
+                    fontSize: "0.875rem",
                     fontWeight: "600",
-                    cursor: "pointer",
                     transition: "all 0.3s ease",
                     display: "flex",
                     alignItems: "center",
-                    gap: "0.75rem",
+                    gap: "0.5rem",
                     alignSelf: "flex-start",
                     fontFamily: "Inter, sans-serif",
                     letterSpacing: "0.02em",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.background = "#ffffff";
-                    e.target.style.color = "#1a1a2e";
+                    e.target.style.background = "#e53e3e";
+                    e.target.style.color = "#ffffff";
                     e.target.style.transform = "translateY(-2px)";
                     e.target.style.boxShadow =
-                      "0 8px 25px rgba(255, 255, 255, 0.2)";
+                      "0 8px 25px rgba(229, 62, 62, 0.3)";
                   }}
                   onMouseLeave={(e) => {
                     e.target.style.background = "transparent";
-                    e.target.style.color = "#ffffff";
+                    e.target.style.color = "#e53e3e";
                     e.target.style.transform = "translateY(0)";
                     e.target.style.boxShadow = "none";
-                  }}
-                  onClick={() => {
-                    if (menuConfig.featuredContent.buttonUrl) {
-                      window.open(
-                        menuConfig.featuredContent.buttonUrl,
-                        "_blank"
-                      );
-                    }
                   }}
                 >
                   {menuConfig.featuredContent.buttonText}
                   <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
-                    ›
+                    →
                   </span>
-                </button>
+                </RouterButton>
               </div>
             </div>
           </MegaMenuContent>
@@ -2763,103 +2998,35 @@ function MegaMenuIntellectt() {
           </SearchBarContainer>
 
           <HeaderActions>
-            <Link to="/contact" style={{ textDecoration: "none" }}>
-              <ActionButton
-                variant="primary"
-                style={{
-                  background:
-                    "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)",
-                  color: "#374151",
-                  border: "none",
-                  fontWeight: "600",
-                  fontSize: "0.75rem",
-                  padding: "0.5rem 1rem",
-                  borderRadius: "8px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.375rem",
-                  boxShadow: "0 2px 8px rgba(255, 138, 76, 0.3)",
-                  transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = "translateY(-2px)";
-                  e.target.style.boxShadow =
-                    "0 4px 16px rgba(255, 138, 76, 0.4)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = "translateY(0)";
-                  e.target.style.boxShadow =
-                    "0 2px 8px rgba(255, 138, 76, 0.3)";
-                }}
-              >
-                Contact Us
-                <span style={{ fontSize: "0.7rem", fontWeight: "700" }}>›</span>
-              </ActionButton>
-            </Link>
-
-            {/* Language Selector */}
-            <div
+            <RouterButton
+              to="/contact"
+              variant="primary"
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.25rem",
-                cursor: "pointer",
-                padding: "0.5rem",
-                borderRadius: "8px",
-                transition: "all 0.3s ease",
+                background: "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)",
+                color: "#374151",
+                border: "none",
                 fontWeight: "600",
                 fontSize: "0.75rem",
-                color: "#374151",
-                fontFamily: "Inter, sans-serif",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.background = "rgba(0, 0, 0, 0.06)";
-                e.target.style.transform = "translateY(-1px)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.background = "transparent";
-                e.target.style.transform = "translateY(0)";
-              }}
-            >
-              <span>EN</span>
-              <span
-                style={{
-                  fontSize: "0.6rem",
-                  transform: "rotate(0deg)",
-                  transition: "transform 0.3s ease",
-                }}
-              >
-                ▼
-              </span>
-            </div>
-
-            {/* Search Icon */}
-            <div
-              style={{
+                padding: "0.5rem 1rem",
+                borderRadius: "8px",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
-                width: "36px",
-                height: "36px",
-                cursor: "pointer",
-                borderRadius: "8px",
+                gap: "0.375rem",
+                boxShadow: "0 2px 8px rgba(255, 138, 76, 0.3)",
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.background = "rgba(0, 0, 0, 0.06)";
-                e.target.style.transform = "translateY(-1px)";
+                e.target.style.transform = "translateY(-2px)";
+                e.target.style.boxShadow = "0 4px 16px rgba(255, 138, 76, 0.4)";
               }}
               onMouseLeave={(e) => {
-                e.target.style.background = "transparent";
                 e.target.style.transform = "translateY(0)";
-              }}
-              onClick={() => {
-                // Focus on search input when search icon is clicked
-                searchInputRef.current?.focus();
+                e.target.style.boxShadow = "0 2px 8px rgba(255, 138, 76, 0.3)";
               }}
             >
-              <Search size={18} style={{ color: "#374151" }} />
-            </div>
+              Contact Us
+              <span style={{ fontSize: "0.7rem", fontWeight: "700" }}>›</span>
+            </RouterButton>
           </HeaderActions>
 
           <MobileMenuButton
@@ -2933,14 +3100,13 @@ function MegaMenuIntellectt() {
         </SidebarNav>
 
         <SidebarActions>
-          <Link to="/contact" style={{ textDecoration: "none", width: "100%" }}>
-            <ActionButton
-              variant="secondary"
-              style={{ width: "100%", justifyContent: "center" }}
-            >
-              Contact Us
-            </ActionButton>
-          </Link>
+          <RouterButton
+            to="/contact"
+            variant="secondary"
+            style={{ width: "100%", justifyContent: "center" }}
+          >
+            Contact Us
+          </RouterButton>
         </SidebarActions>
       </Sidebar>
     </div>

@@ -339,43 +339,7 @@ const HeroSection = () => {
           ))}
         </Box>
       </Box>
-      {/* Navigation Dots */}
-      <Box
-        sx={{
-          position: "fixed",
-          bottom: 40,
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          gap: 1,
-          zIndex: 20,
-          margin: 0,
-          padding: 0,
-        }}
-      >
-        {slides.map((_, index) => (
-          <Box
-            key={index}
-            onClick={() => handleNavigationClick(index)}
-            sx={{
-              width: 12,
-              height: 12,
-              borderRadius: "50%",
-              background:
-                index === currentSlide ? "#FFD700" : "rgba(255, 215, 0, 0.3)",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-              "&:hover": {
-                background:
-                  index === currentSlide ? "#FFA500" : "rgba(255, 215, 0, 0.5)",
-                transform: "scale(1.3)",
-              },
-              margin: 0,
-              padding: 0,
-            }}
-          />
-        ))}
-      </Box>
+
       {/* Scroll Indicator */}
       <Box
         sx={{
