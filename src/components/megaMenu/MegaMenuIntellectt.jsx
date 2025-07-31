@@ -342,20 +342,7 @@ const RouterButton = ({ to, external, children, ...props }) => {
     }
   };
 
-  if (external) {
-    return (
-      <ActionButton
-        as="a"
-        href={to}
-        target="_blank"
-        rel="noopener noreferrer"
-        {...props}
-      >
-        {children}
-      </ActionButton>
-    );
-  }
-
+  // Always use onClick handler for consistent behavior
   return (
     <ActionButton onClick={handleClick} {...props}>
       {children}
@@ -2289,7 +2276,11 @@ function MegaMenuIntellectt() {
                           }}
                           onClick={() => {
                             if (serviceItem.url) {
-                              window.open(serviceItem.url, "_blank");
+                              if (serviceItem.url.startsWith("/")) {
+                                navigate(serviceItem.url);
+                              } else {
+                                window.open(serviceItem.url, "_blank");
+                              }
                             }
                           }}
                         >
@@ -2862,7 +2853,11 @@ function MegaMenuIntellectt() {
                               menuName={menuName}
                               onClick={() => {
                                 if (serviceItem.url) {
-                                  window.open(serviceItem.url, "_blank");
+                                  if (serviceItem.url.startsWith("/")) {
+                                    navigate(serviceItem.url);
+                                  } else {
+                                    window.open(serviceItem.url, "_blank");
+                                  }
                                 }
                               }}
                               style={
@@ -2973,7 +2968,11 @@ function MegaMenuIntellectt() {
                       key={index}
                       onClick={() => {
                         if (result.url) {
-                          window.open(result.url, "_blank");
+                          if (result.url.startsWith("/")) {
+                            navigate(result.url);
+                          } else {
+                            window.open(result.url, "_blank");
+                          }
                         }
                         setSearchQuery("");
                         setShowSearchResults(false);
