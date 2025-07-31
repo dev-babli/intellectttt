@@ -1,68 +1,166 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box, Typography, Button, Container } from "@mui/material";
+import { Box, Typography, Container, Button } from "@mui/material";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 const slides = [
   {
     id: 1,
     title: "Generative AI That Redefines Possibility",
+    subtitle:
+      "Transform your business with cutting-edge AI solutions that adapt and evolve",
     accent: "#667eea",
     backgroundImage:
       "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
+    ctaText: "Explore AI Solutions",
+    ctaLink: "/ai-solutions",
   },
   {
     id: 2,
     title: "Unleash the Power of Agentic AI",
+    subtitle:
+      "Intelligent automation that learns, adapts, and grows with your business",
     accent: "#4facfe",
     backgroundImage: "/herosectionimages/woman-scrolling-laptop.jpg",
+    ctaText: "Discover Agentic AI",
+    ctaLink: "/agentic-ai",
   },
   {
     id: 3,
     title: "Scalable Cloud & Application Services",
+    subtitle:
+      "Modern solutions built for the digital age with enterprise-grade reliability",
     accent: "#a8edea",
     backgroundImage: "/herosectionimages/saas-concept-collage.jpg",
+    ctaText: "View Cloud Services",
+    ctaLink: "/cloud-services",
   },
   {
     id: 4,
     title: "Accelerate Your Digital Journey",
+    subtitle:
+      "From vision to reality, faster than ever with our comprehensive solutions",
     accent: "#ff9a9e",
-    backgroundImage: "/modernisation.webp",
+    backgroundImage: "/images/ai-interface-laptop.jpg",
+    ctaText: "Start Your Journey",
+    ctaLink: "/contact",
   },
 ];
 
 const HeroSection = () => {
-  const smootherRef = useRef(null);
-  const pinWrapRef = useRef(null);
-  const slidesRowRef = useRef(null);
+  const containerRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    if (!pinWrapRef.current || !slidesRowRef.current) return;
+    if (!containerRef.current) return;
 
-    // Register GSAP plugins
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    // Kill any existing ScrollTriggers
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
-    // Create smooth scrolling for the entire page
-    const smoother = ScrollSmoother.create({
-      smooth: 2,
-      effects: true,
+    // Create a simple horizontal scroll animation
+    const container = containerRef.current;
+    const slidesContainer = container.querySelector(".slides-container");
+    const slideElements = container.querySelectorAll(".slide");
+
+    // Set initial positions
+    gsap.set(slidesContainer, {
+      x: 0,
+      display: "flex",
+      width: `${slides.length * 100}vw`,
     });
 
-    // Store smoother reference
-    smootherRef.current = smoother;
+    gsap.set(slideElements, {
+      width: "100vw",
+      height: "100vh",
+    });
 
-    // Create the main timeline for horizontal slide movement
+    // Enhanced initial animation for first slide
+    const firstSlide = slideElements[0];
+    const firstTitle = firstSlide?.querySelector(".slide-title");
+    const firstSubtitle = firstSlide?.querySelector(".slide-subtitle");
+    const firstCta = firstSlide?.querySelector(".slide-cta");
+
+    if (firstTitle && firstSubtitle && firstCta) {
+      // Set initial state for first slide
+      gsap.set([firstTitle, firstSubtitle, firstCta], {
+        opacity: 0,
+        y: 120,
+        scale: 0.9,
+        rotationX: 15,
+      });
+
+      // Create enhanced entrance animation
+      const firstSlideTl = gsap.timeline({
+        delay: 0.3,
+      });
+
+      // Animate background image with enhanced effects
+      const firstBgImage = firstSlide?.querySelector(".bg-image");
+      if (firstBgImage) {
+        gsap.set(firstBgImage, {
+          scale: 1.2,
+          filter: "brightness(0.4) saturate(0.7)",
+        });
+
+        firstSlideTl.to(firstBgImage, {
+          scale: 1,
+          filter: "brightness(0.8) saturate(1.2)",
+          duration: 2,
+          ease: "power2.out",
+        });
+      }
+
+      // Enhanced staggered text animation with 3D effects
+      firstSlideTl.to(
+        firstTitle,
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotationX: 0,
+          duration: 1.5,
+          ease: "power3.out",
+        },
+        "-=1.5"
+      );
+
+      firstSlideTl.to(
+        firstSubtitle,
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotationX: 0,
+          duration: 1.3,
+          ease: "power3.out",
+        },
+        "-=1"
+      );
+
+      firstSlideTl.to(
+        firstCta,
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotationX: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.8"
+      );
+    }
+
+    // Create the main scroll animation
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: pinWrapRef.current,
+        trigger: container,
         start: "top top",
-        end: "+=400vh",
+        end: `+=${(slides.length - 1) * 100}vh`,
         pin: true,
-        scrub: 2,
+        scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
           const slideIndex = Math.floor(progress * (slides.length - 1));
@@ -71,194 +169,186 @@ const HeroSection = () => {
       },
     });
 
-    // Animate the slides row horizontally with more cinematic timing
-    tl.to(slidesRowRef.current, {
-      x: `-${100 * (slides.length - 1)}vw`,
-      ease: "power3.out",
-      duration: 6,
+    // Animate the slides container horizontally
+    tl.to(slidesContainer, {
+      x: `-${(slides.length - 1) * 100}vw`,
+      ease: "none",
     });
 
-    // Add parallax effect to background images
-    slides.forEach((_, index) => {
-      const slideElement = slidesRowRef.current?.children[index];
-      if (slideElement) {
-        const bgImage = slideElement.querySelector(".parallax-bg");
+    // Enhanced parallax effect to background images
+    slideElements.forEach((slide, index) => {
+      const bgImage = slide.querySelector(".bg-image");
         if (bgImage) {
           gsap.to(bgImage, {
-            y: -80,
-            ease: "power2.out",
+          y: -60,
+          scale: 1.05,
+          ease: "none",
             scrollTrigger: {
-              trigger: slideElement,
+            trigger: slide,
               start: "top bottom",
               end: "bottom top",
-              scrub: 3,
+            scrub: 1,
             },
           });
-        }
       }
     });
 
-    // Add entrance animations for each slide with more cinematic timing
-    slides.forEach((_, index) => {
-      const slideElement = slidesRowRef.current?.children[index];
-      if (slideElement) {
-        const title = slideElement.querySelector(".slide-title");
-        const content = slideElement.querySelector(".slide-content");
+    // Enhanced animations for all slides (including first slide for re-entry)
+    slideElements.forEach((slide, index) => {
+      const title = slide.querySelector(".slide-title");
+      const subtitle = slide.querySelector(".slide-subtitle");
+      const cta = slide.querySelector(".slide-cta");
 
-        if (title && content) {
-          // Initial state
-          gsap.set([title, content], {
+      if (title && subtitle && cta) {
+        // Set initial state for all slides
+        gsap.set([title, subtitle, cta], {
             opacity: 0,
-            y: 120,
-            scale: 0.8,
+          y: 100,
+          scale: 0.95,
+          rotationX: 10,
           });
 
-          // Animate in when slide becomes active with more dramatic timing
+        // Create enhanced ScrollTrigger for each slide
           ScrollTrigger.create({
-            trigger: slideElement,
-            start: "top center",
+          trigger: slide,
+          start: "center center",
             onEnter: () => {
-              gsap.to(content, {
+            // Enhanced staggered animation with 3D effects
+            gsap.to(title, {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              rotationX: 0,
+              duration: 1.2,
+              ease: "power3.out",
+            });
+
+            gsap.to(subtitle, {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 3,
+              rotationX: 0,
+              duration: 1.2,
                 ease: "power3.out",
-                delay: 0.8,
+              delay: 0.3,
               });
-              gsap.to(title, {
+
+            gsap.to(cta, {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 3.5,
+              rotationX: 0,
+              duration: 1,
                 ease: "power3.out",
-                delay: 1.5,
+              delay: 0.6,
               });
             },
             onLeave: () => {
-              gsap.to([title, content], {
+            // Enhanced fade out with 3D effects
+            gsap.to([title, subtitle, cta], {
                 opacity: 0,
-                y: -60,
+              y: -50,
                 scale: 0.9,
-                duration: 2,
-                ease: "power3.in",
+              rotationX: -10,
+              duration: 0.8,
+              ease: "power2.in",
               });
             },
             onEnterBack: () => {
-              gsap.to(content, {
+            // Enhanced re-entry animation
+            gsap.to(title, {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              rotationX: 0,
+              duration: 1.2,
+              ease: "power3.out",
+            });
+
+            gsap.to(subtitle, {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 3,
+              rotationX: 0,
+              duration: 1.2,
                 ease: "power3.out",
-                delay: 0.8,
+              delay: 0.3,
               });
-              gsap.to(title, {
+
+            gsap.to(cta, {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 3.5,
+              rotationX: 0,
+              duration: 1,
                 ease: "power3.out",
-                delay: 1.5,
+              delay: 0.6,
               });
             },
             onLeaveBack: () => {
-              gsap.to([title, content], {
+            // Enhanced fade out
+            gsap.to([title, subtitle, cta], {
                 opacity: 0,
-                y: 60,
+              y: 50,
                 scale: 0.9,
-                duration: 2,
-                ease: "power3.in",
+              rotationX: 10,
+              duration: 0.8,
+              ease: "power2.in",
               });
             },
           });
-        }
       }
     });
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      if (smoother) smoother.kill();
     };
   }, [slides.length]);
 
-  const handleNavigationClick = (index) => {
-    if (smootherRef.current) {
-      // Scroll to the correct vertical position for the slide
-      const y = index * window.innerHeight;
-      smootherRef.current.scrollTo(y, true, "top top");
-    }
-  };
-
   return (
-    <>
-      {/* Pinning wrapper with NO extra space below. Height is exactly 100vh for zero white space. */}
+    <Box
+      ref={containerRef}
+      sx={{
+        position: "relative",
+        height: "100vh",
+        width: "100vw",
+        overflow: "hidden",
+        backgroundColor: "#000",
+      }}
+    >
+      {/* Slides Container */}
       <Box
-        ref={pinWrapRef}
+        className="slides-container"
         sx={{
+          display: "flex",
+          height: "100vh",
           position: "relative",
-          height: "100vh", // Exactly 1 * 100vh for zero white space
-          width: "100vw",
-          overflow: "hidden",
-          margin: 0,
-          padding: 0,
-          border: 0,
-          boxSizing: "border-box",
         }}
       >
-        {/* Horizontally sliding row */}
-        <Box
-          ref={slidesRowRef}
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            width: `${slides.length * 100}vw`,
-            height: "100vh",
-            position: "sticky",
-            top: 0,
-            left: 0,
-            zIndex: 2,
-            margin: 0,
-            padding: 0,
-            border: 0,
-          }}
-        >
-          {slides.map((slide, idx) => (
+        {slides.map((slide, index) => (
             <Box
               key={slide.id}
+            className="slide"
               sx={{
+              position: "relative",
                 width: "100vw",
                 height: "100vh",
                 display: "flex",
                 alignItems: "center",
-                position: "relative",
+              justifyContent: "center",
                 overflow: "hidden",
-                margin: 0,
-                padding: 0,
-                border: 0,
               }}
             >
-              {/* Background Image with Enhanced Parallax Effect */}
-              {slide.backgroundImage && (
+            {/* Background Image */}
                 <Box
+              className="bg-image"
                   sx={{
                     position: "absolute",
                     top: 0,
                     left: 0,
-                    right: 0,
-                    bottom: 0,
+                width: "100%",
+                height: "100%",
                     zIndex: 1,
-                    transform: "scale(1.2)",
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: `linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%)`,
-                      zIndex: 2,
-                    },
                   }}
                 >
                   <img
@@ -268,238 +358,142 @@ const HeroSection = () => {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
-                      filter: "brightness(0.8) contrast(1.2) blur(3px)",
-                      transform: "translateY(0px)",
-                      transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-                    }}
-                    className="parallax-bg"
+                  filter: "brightness(0.8) contrast(1.2) saturate(1.2)",
+                }}
+              />
+              {/* Enhanced gradient overlay */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  background: `linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%)`,
+                  zIndex: 2,
+                }}
                   />
                 </Box>
-              )}
 
               {/* Content */}
               <Container
                 maxWidth="xl"
-                sx={{ position: "relative", zIndex: 3, margin: 0, padding: 0 }}
-              >
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: "100vh",
-                    padding: { xs: "0 1.5rem", md: "0 3rem" },
-                    margin: 0,
-                    padding: 0,
-                  }}
-                >
-                  {/* Centered Content with Enhanced Animation */}
-                  <Box
                     sx={{
-                      maxWidth: "900px",
-                      zIndex: 4,
                       position: "relative",
-                      margin: 0,
-                      padding: 0,
+                zIndex: 3,
                       textAlign: "center",
+                color: "#ffffff !important",
                     }}
-                    className="slide-content"
                   >
-                    {/* Main Title with Enhanced Animation */}
+              <Box className="slide-content">
                     <Typography
                       className="slide-title"
                       variant="h1"
                       sx={{
-                        color: "#FFFFFF !important",
-                        fontSize: {
-                          xs: "2.5rem",
-                          sm: "3.5rem",
-                          md: "4.5rem",
-                          lg: "5.5rem",
-                        },
-                        fontWeight: 700,
-                        lineHeight: { xs: 1.1, md: 1.05 },
-                        margin: 0,
-                        padding: 0,
-                        letterSpacing: "-0.02em",
-                        fontFamily: "'Inter', sans-serif",
-                        transform: "translateY(0px)",
-                        transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
-                        textShadow:
-                          "0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3)",
-                        filter: "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))",
+                    fontSize: { xs: "2.5rem", md: "4rem", lg: "5.5rem" },
+                    fontWeight: 700,
+                    lineHeight: 1.1,
+                    marginBottom: "1.5rem",
+                    fontFamily: "'SF Pro Display', 'Inter', sans-serif",
+                    letterSpacing: "-0.03em",
+                    color: "#ffffff !important",
+                    textShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                    // Enhanced typography
+                    "@media (min-width: 768px)": {
+                      fontSize: "4.5rem",
+                      fontWeight: 600,
+                      letterSpacing: "-0.04em",
+                      color: "#ffffff !important",
+                    },
+                    "@media (min-width: 1024px)": {
+                      fontSize: "6rem",
+                      fontWeight: 600,
+                      letterSpacing: "-0.05em",
+                      color: "#ffffff !important",
+                    },
                       }}
                     >
                       {slide.title}
                     </Typography>
-                  </Box>
+
+                <Typography
+                  className="slide-subtitle"
+                  variant="h5"
+                  sx={{
+                    fontSize: { xs: "1.1rem", md: "1.3rem", lg: "1.5rem" },
+                    fontWeight: 400,
+                    lineHeight: 1.4,
+                    marginBottom: "3rem",
+                    fontFamily: "'SF Pro Display', 'Inter', sans-serif",
+                    letterSpacing: "-0.01em",
+                    color: "#ffffff !important",
+                    opacity: 0.9,
+                    textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                    maxWidth: "800px",
+                    margin: "0 auto 3rem auto",
+                  }}
+                >
+                  {slide.subtitle}
+                </Typography>
+
+                <Button
+                  className="slide-cta"
+                  variant="contained"
+                  size="large"
+                  sx={{
+                    backgroundColor: "rgba(255, 255, 255, 0.15)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
+                    color: "#ffffff",
+                    fontSize: "1.1rem",
+                    fontWeight: 600,
+                    padding: "1rem 2.5rem",
+                    borderRadius: "50px",
+                    textTransform: "none",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.25)",
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 8px 25px rgba(0,0,0,0.3)",
+                    },
+                  }}
+                >
+                  {slide.ctaText}
+                </Button>
                 </Box>
               </Container>
             </Box>
           ))}
-        </Box>
       </Box>
 
-      {/* Scroll Indicator */}
+      {/* Enhanced Progress Indicator */}
       <Box
         sx={{
           position: "fixed",
-          top: "50%",
-          right: 30,
-          transform: "translateY(-50%)",
+          bottom: "2rem",
+          left: "50%",
+          transform: "translateX(-50%)",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          color: "#FFD700",
-          opacity: 0.8,
-          zIndex: 20,
-          margin: 0,
-          padding: 0,
+          gap: "0.5rem",
+          zIndex: 10,
         }}
       >
-        <Typography
-          variant="caption"
+        {slides.map((_, index) => (
+          <Box
+            key={index}
           sx={{
-            fontSize: "0.75rem",
-            fontWeight: 500,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            writingMode: "vertical-rl",
-            textOrientation: "mixed",
-            mb: 2,
-            margin: 0,
-            padding: 0,
-            color: "#FFD700",
-          }}
-        >
-          Scroll
-        </Typography>
-        <Box
-          sx={{
-            width: 2,
-            height: 80,
-            background: "rgba(255, 215, 0, 0.2)",
-            borderRadius: 1,
-            position: "relative",
-            "&::after": {
-              content: '""',
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              height: `${(currentSlide / (slides.length - 1)) * 100}%`,
-              background: "#FFD700",
-              borderRadius: 1,
-              transition: "height 0.3s ease",
-            },
-            margin: 0,
-            padding: 0,
-          }}
-        />
+              width: currentSlide === index ? "3rem" : "1rem",
+              height: "4px",
+              backgroundColor:
+                currentSlide === index ? "#ffffff" : "rgba(255, 255, 255, 0.3)",
+              borderRadius: "2px",
+              transition: "all 0.3s ease",
+              cursor: "pointer",
+            }}
+          />
+        ))}
       </Box>
-      <style jsx>{`
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(40px) scale(0.95);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-
-        @keyframes slideInFromRight {
-          0% {
-            opacity: 0;
-            transform: translateX(60px) scale(0.9);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-          }
-        }
-
-        @keyframes slideInFromLeft {
-          0% {
-            opacity: 0;
-            transform: translateX(-60px) scale(0.9);
-          }
-          100% {
-            opacity: 1;
-            transform: translateX(0) scale(1);
-          }
-        }
-
-        @keyframes zoomIn {
-          0% {
-            opacity: 0;
-            transform: scale(0.8);
-          }
-          100% {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        @keyframes parallaxMove {
-          0% {
-            transform: translateY(0px) scale(1.2);
-          }
-          100% {
-            transform: translateY(-20px) scale(1.2);
-          }
-        }
-
-        .slide-content {
-          animation: fadeInUp 4s cubic-bezier(0.4, 0, 0.2, 1) 1s both;
-        }
-
-        .slide-title {
-          animation: slideInFromRight 4.5s cubic-bezier(0.4, 0, 0.2, 1) 2s both;
-        }
-
-        .parallax-bg {
-          animation: parallaxMove 60s ease-in-out infinite alternate;
-        }
-
-        /* Slide transition effects */
-        .slide-enter {
-          opacity: 0;
-          transform: translateX(100%);
-        }
-
-        .slide-enter-active {
-          opacity: 1;
-          transform: translateX(0%);
-          transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .slide-exit {
-          opacity: 1;
-          transform: translateX(0%);
-        }
-
-        .slide-exit-active {
-          opacity: 0;
-          transform: translateX(-100%);
-          transition: all 2.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Hover effects */
-        .slide-title:hover {
-          transform: scale(1.02);
-          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Responsive parallax */
-        @media (max-width: 768px) {
-          .parallax-bg {
-            animation: parallaxMove 35s ease-in-out infinite alternate;
-          }
-        }
-      `}</style>
-    </>
+    </Box>
   );
 };
 

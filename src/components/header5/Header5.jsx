@@ -1,32 +1,54 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import icon1 from "../../images/shape/trangle-shape05.png";
-
 import icon13 from "../../images/icon/sms-white-icon01.svg";
 import logo from "../../images/logo/Intellectt-Logo.webp";
 
 import MobileMenu from "../MobileMenu/MobileMenu";
 import AnimatedDrawerMenu from "../Drower/AnimatedDrawerMenu";
 
-import { Box, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Stack,
+  Typography,
+  Container,
+  Button,
+  AppBar,
+  Toolbar,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Header5 = (props) => {
   const [mobailActive, setMobailState] = useState(false);
+  const [isSticky, setSticky] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const ClickHandler = () => {
     window.scrollTo(10, 0);
   };
 
-  const [isSticky, setSticky] = useState(false);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 80) {
+      const scrollTop = window.scrollY;
+
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      if (scrollTop > 80) {
         setSticky(true);
       } else {
         setSticky(false);
@@ -34,435 +56,492 @@ const Header5 = (props) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const SubmitHandler = (e) => {
-  //   e.preventDefault();
-  // };
-
   const iconStyle = {
-    backgroundColor: "#fff",
-    color: "rgb(30, 64, 175)",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    color: "#ffffff",
     borderRadius: "50%",
-    border: "1px solid rgb(30, 64, 175)",
-    width: 30,
-    height: 30,
+    border: "1px solid rgba(255, 255, 255, 0.2)",
+    width: 32,
+    height: 32,
+    backdropFilter: "blur(10px)",
+    transition: "all 0.3s ease",
     "&:hover": {
-      backgroundColor: "rgba(216, 222, 241, 1)",
-      color: "#fffff!important",
+      backgroundColor: "rgba(255, 255, 255, 0.2)",
+      transform: "translateY(-2px)",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
     },
   };
+
   return (
-    <div
-      id="xb-header-area"
-      className="header-area header-style-two header-style-five header-transparent"
+    <Box
+      sx={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        transition: "all 0.3s ease",
+        background: scrolled ? "rgba(0, 0, 0, 0.95)" : "transparent",
+        backdropFilter: scrolled ? "blur(20px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255, 255, 255, 0.1)" : "none",
+      }}
     >
-      <div className="header-top">
+      {/* Top Bar - Only visible when not scrolled */}
+      {!scrolled && (
         <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-          flexWrap="wrap"
           sx={{
-            px: {
-              xs: 2,
-              sm: 2,
-              md: 10,
-              lg: 10,
-              xl: 10,
-            },
-            py: {
-              xs: 1,
-              sm: 1,
-              md: 1,
-              lg: 1,
-              xl: 1,
-            },
+            background: "rgba(0, 0, 0, 0.3)",
+            backdropFilter: "blur(10px)",
+            borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
           }}
         >
-          <Typography variant="body1" color="white">
-            Shaping the Future of Intelligence - Together
-          </Typography>
+          <Container maxWidth="xl">
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="space-between"
+              sx={{
+                py: 1,
+                px: { xs: 2, md: 0 },
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "rgba(255, 255, 255, 0.8)",
+                  fontSize: "0.875rem",
+                  fontWeight: 400,
+                }}
+              >
+                Shaping the Future of Intelligence - Together
+              </Typography>
 
-          <Stack
-            direction="row"
-            spacing={1}
+              <Stack
+                direction="row"
+                spacing={1}
+                sx={{
+                  display: { xs: "none", md: "flex" },
+                }}
+              >
+                <IconButton
+                  component="a"
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={iconStyle}
+                >
+                  <LinkedInIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  component="a"
+                  href="https://www.twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={iconStyle}
+                >
+                  <TwitterIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  component="a"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={iconStyle}
+                >
+                  <FacebookIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  component="a"
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={iconStyle}
+                >
+                  <YouTubeIcon fontSize="small" />
+                </IconButton>
+              </Stack>
+            </Box>
+          </Container>
+        </Box>
+      )}
+
+      {/* Main Header */}
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            py: scrolled ? 1 : 2,
+            px: { xs: 2, md: 0 },
+          }}
+        >
+          {/* Logo */}
+          <Link
+            onClick={ClickHandler}
+            to="/"
+            style={{ textDecoration: "none" }}
+          >
+            <Box
+              component="img"
+              src={logo}
+              alt="Intellectt"
+              sx={{
+                height: scrolled ? "40px" : "50px",
+                transition: "all 0.3s ease",
+                filter: "brightness(1) contrast(1)",
+              }}
+            />
+          </Link>
+
+          {/* Desktop Navigation */}
+          <Box
             sx={{
-              margin: {
-                xs: "auto",
-                md: 0,
-              },
+              display: { xs: "none", lg: "flex" },
+              alignItems: "center",
+              gap: 4,
+            }}
+          >
+            <Link
+              to="/"
+              style={{ textDecoration: "none" }}
+              onClick={ClickHandler}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    color: "rgba(255, 255, 255, 0.8)",
+                  },
+                }}
+              >
+                Who We Are
+              </Typography>
+            </Link>
+
+            <Link
+              to="/service"
+              style={{ textDecoration: "none" }}
+              onClick={ClickHandler}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    color: "rgba(255, 255, 255, 0.8)",
+                  },
+                }}
+              >
+                What We Do
+              </Typography>
+            </Link>
+
+            <Link
+              to="/service"
+              style={{ textDecoration: "none" }}
+              onClick={ClickHandler}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    color: "rgba(255, 255, 255, 0.8)",
+                  },
+                }}
+              >
+                Who We Work With
+              </Typography>
+            </Link>
+
+            <Link
+              to="/insights"
+              style={{ textDecoration: "none" }}
+              onClick={ClickHandler}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    color: "rgba(255, 255, 255, 0.8)",
+                  },
+                }}
+              >
+                Insights
+              </Typography>
+            </Link>
+
+            <Link
+              to="/careers"
+              style={{ textDecoration: "none" }}
+              onClick={ClickHandler}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    color: "rgba(255, 255, 255, 0.8)",
+                  },
+                }}
+              >
+                Careers
+              </Typography>
+            </Link>
+          </Box>
+
+          {/* CTA Button */}
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            <Button
+              component={Link}
+              to="/contact"
+              onClick={ClickHandler}
+              variant="contained"
+              sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.15)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(255, 255, 255, 0.2)",
+                color: "#ffffff",
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                padding: "0.75rem 1.5rem",
+                borderRadius: "50px",
+                textTransform: "none",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 0.25)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 8px 25px rgba(0,0,0,0.2)",
+                },
+              }}
+            >
+              Lets Connect
+            </Button>
+          </Box>
+
+          {/* Mobile Menu Button */}
+          <Box
+            sx={{
+              display: { xs: "flex", lg: "none" },
+              alignItems: "center",
             }}
           >
             <IconButton
-              component="a"
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={iconStyle}
+              onClick={() => setMobailState(!mobailActive)}
+              sx={{
+                color: "#ffffff",
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(255, 255, 255, 0.2)",
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 0.2)",
+                },
+              }}
             >
-              <LinkedInIcon color="primary" fontSize="small" />
+              <MenuIcon />
             </IconButton>
-            <IconButton
-              component="a"
-              href="https://www.twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={iconStyle}
-            >
-              <TwitterIcon color="primary" fontSize="small" />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={iconStyle}
-            >
-              <FacebookIcon color="primary" fontSize="small" />
-            </IconButton>
-            <IconButton
-              component="a"
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={iconStyle}
-            >
-              <YouTubeIcon color="primary" fontSize="small" />
-            </IconButton>
-          </Stack>
+          </Box>
         </Box>
-        {/* <span>
-          <Link onClick={ClickHandler} to="/">
-          
-          </Link>
-        </span> */}
-        {/* <div className="header-shape">
-          <div className="shape shape--one">
-            <img src={icon1} alt="" />
-          </div>
-          <div className="shape shape--two">
-            <img src={icon1} alt="" />
-          </div>
-        </div> */}
-      </div>
-      <div
-        className={`xb-header stricky  ${
-          isSticky ? "stricked-menu stricky-fixed" : ""
-        }`}
+      </Container>
+
+      {/* Mobile Menu */}
+      <Box
+        sx={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0, 0, 0, 0.95)",
+          backdropFilter: "blur(20px)",
+          zIndex: 1200,
+          transform: mobailActive ? "translateX(0)" : "translateX(-100%)",
+          transition: "transform 0.3s ease",
+          display: { xs: "block", lg: "none" },
+        }}
       >
-        <div className="container">
-          <div className="header__wrap ul_li_between">
-            <div className="header-logo">
-              <Link onClick={ClickHandler} to="/">
-                <img src={logo} alt="" />
-              </Link>
-            </div>
-            <div className="main-menu__wrap ul_li navbar navbar-expand-xl">
-              <nav className="main-menu collapse navbar-collapse">
-                <ul>
-                  {/* <li>
-                    <Link to="/">
-                      <span>Home</span>
-                    </Link>
-                  </li> */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            p: 3,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              mb: 4,
+            }}
+          >
+            <Link
+              onClick={ClickHandler}
+              to="/"
+              style={{ textDecoration: "none" }}
+            >
+              <Box
+                component="img"
+                src={logo}
+                alt="Intellectt"
+                sx={{ height: "40px" }}
+              />
+            </Link>
+            <IconButton
+              onClick={() => setMobailState(!mobailActive)}
+              sx={{ color: "#ffffff" }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
 
-                  <li className="menu-item-has-children">
-                    <Link onClick={ClickHandler} to="/">
-                      <span>Who We Are</span>
-                    </Link>
-                    <ul className="submenu">
-                      <li>
-                        <Link onClick={ClickHandler} to="/about">
-                          <span>About Us</span>
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link onClick={ClickHandler} to="/company/our-journey">
-                          <span>Our Global Presence</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          onClick={ClickHandler}
-                          to="/company/leadership-team"
-                        >
-                          <span>Leadership Team</span>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="menu-item-has-children megamenu">
-                    <Link onClick={ClickHandler}>
-                      <span onClick={() => setIsDrawerOpen(true)}>
-                        Services
-                      </span>
-                    </Link>
-                  </li>
-                  <li className="menu-item-has-children megamenu">
-                    <Link onClick={ClickHandler} to="/service">
-                      <span>Industries</span>
-                    </Link>
-                    <ul className="submenu">
-                      <li>
-                        <div className="mega_menu_wrapper">
-                          <div className="container">
-                            <div className="mega_menu_wrapper_inner megamenu_widget_wrapper">
-                              <div className="row justify-content-lg-between">
-                                <div className="col-xl-10">
-                                  <div className="megamenu_widget_inner">
-                                    <div className="row">
-                                      <div className="col-xl-6">
-                                        <div className="megamenu_widget">
-                                          <ul className="icon_list unordered_list_block">
-                                            <li>
-                                              <Link
-                                                onClick={ClickHandler}
-                                                to="/industries/helthcare-and-life-sciences"
-                                              >
-                                                <span className="icon_list_text">
-                                                  Healthcare & Life Sciences
-                                                </span>
-                                              </Link>
-                                            </li>
-                                            <li>
-                                              <Link
-                                                onClick={ClickHandler}
-                                                to="/industries/menufacturing-and-automotive"
-                                              >
-                                                <span className="icon_list_text">
-                                                  Manufacturing & Automotive
-                                                </span>
-                                              </Link>
-                                            </li>
-                                          </ul>
-                                        </div>
-                                      </div>
-                                      <div className="col-xl-6">
-                                        <div className="megamenu_widget">
-                                          <ul className="icon_list unordered_list_block">
-                                            <li>
-                                              <Link
-                                                onClick={ClickHandler}
-                                                to="/industries/aerospace-and-defense"
-                                              >
-                                                <span className="icon_list_text">
-                                                  Aerospace & Defense{" "}
-                                                </span>
-                                              </Link>
-                                            </li>
-                                            <li>
-                                              <Link
-                                                onClick={ClickHandler}
-                                                to="/industries/banking-and-financial-services"
-                                              >
-                                                <span className="icon_list_text">
-                                                  Banking & Financial Services
-                                                </span>
-                                              </Link>
-                                            </li>
-                                          </ul>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div className="social_area">
-                                    <div className="social_inner ul_li">
-                                      <h5>Follow Us:</h5>
-                                      <ul className="social_icons_block unordered_list">
-                                        <li>
-                                          <Link onClick={ClickHandler} to="/">
-                                            <i className="fab fa-facebook-f"></i>
-                                          </Link>
-                                        </li>
-                                        <li>
-                                          <Link onClick={ClickHandler} to="/">
-                                            <i className="fab fa-linkedin-in"></i>
-                                          </Link>
-                                        </li>
-                                        <li>
-                                          <Link onClick={ClickHandler} to="/">
-                                            <svg
-                                              width="18"
-                                              height="18"
-                                              viewBox="0 0 18 18"
-                                              fill="none"
-                                              xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                              <path
-                                                d="M10.6774 7.62177L17.2342 0H15.6805L9.98719 6.61788L5.43998 0H0.195312L7.07159 10.0074L0.195312 18H1.74916L7.76141 11.0113L12.5636 18H17.8083L10.677 7.62177H10.6774ZM8.54921 10.0956L7.8525 9.09906L2.30903 1.16971H4.69564L9.16929 7.56895L9.866 8.56546L15.6812 16.8835H13.2946L8.54921 10.096V10.0956Z"
-                                                fill="#0C111D"
-                                              />
-                                            </svg>
-                                          </Link>
-                                        </li>
-                                        <li>
-                                          <Link onClick={ClickHandler} to="/">
-                                            <i className="fab fa-dribbble"></i>
-                                          </Link>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                    <p className="career_link m-0">
-                                      Looking for new career?{" "}
-                                      <Link onClick={ClickHandler} to="/career">
-                                        We’re Hiring
-                                      </Link>
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="menu-item-has-children">
-                    <Link onClick={ClickHandler} to="#">
-                      <span>Insights</span>
-                    </Link>
-                    <ul className="submenu">
-                      <li>
-                        <Link onClick={ClickHandler} to="/insights/blog">
-                          <span>Blog</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          onClick={ClickHandler}
-                          to="/insights/whitepapers-and-case-studies"
-                        >
-                          <span>Whitepapers & Case Studies</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          onClick={ClickHandler}
-                          to="/insights/news-and-announcements"
-                        >
-                          <span>News & Announcements</span>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="menu-item-has-children">
-                    <Link onClick={ClickHandler} to="#">
-                      <span>Careers</span>
-                    </Link>
-                    <ul className="submenu">
-                      <li>
-                        <Link
-                          onClick={ClickHandler}
-                          to="/carrers/current-openings"
-                        >
-                          <span>Current Openings</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          onClick={ClickHandler}
-                          to="/carrers/life-at-company"
-                        >
-                          <span>Life at Company</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          onClick={ClickHandler}
-                          to="/carrers/join-our-tilent-network"
-                        >
-                          <span>Join Our Talent Network</span>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="menu-item-has-children">
-                    <Link onClick={ClickHandler} to="#">
-                      <span>Contact</span>
-                    </Link>
-                    <ul className="submenu">
-                      <li>
-                        <Link onClick={ClickHandler} to="/contact">
-                          <span>Contact Us</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link onClick={ClickHandler} to="#">
-                          <span>Request a Callback</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link onClick={ClickHandler} to="#">
-                          <span>General Inquiries</span>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link onClick={ClickHandler} to="#">
-                          <span>Office Locations</span>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav>
-              <div className="xb-header-wrap">
-                <div
-                  className={`xb-header-menu ${mobailActive ? "active" : ""}`}
-                >
-                  <div className="xb-header-menu-scroll lenis lenis-smooth">
-                    <div
-                      className="xb-menu-close xb-hide-xl xb-close"
-                      onClick={() => setMobailState(!mobailActive)}
-                    ></div>
-                    <div className="xb-logo-mobile xb-hide-xl">
-                      <Link onClick={ClickHandler} to="/" rel="home">
-                        <img src={logo} alt="" />
-                      </Link>
-                    </div>
-
-                    <nav className="xb-header-nav">
-                      <MobileMenu />
-                    </nav>
-                  </div>
-                </div>
-                <div className="xb-header-menu-backdrop"></div>
-              </div>
-            </div>
-            <div className="header-bar-mobile side-menu d-xl-none">
-              <button
-                className="xb-nav-mobile"
-                onClick={() => setMobailState(!mobailActive)}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+              flex: 1,
+            }}
+          >
+            <Link
+              to="/"
+              style={{ textDecoration: "none" }}
+              onClick={() => setMobailState(false)}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1.5rem",
+                  fontWeight: 500,
+                  py: 1,
+                }}
               >
-                <i className="far fa-bars"></i>
-              </button>
-            </div>
-            <div className="header-contact d-none d-md-block">
-              <Link
-                onClick={ClickHandler}
-                to="/contact"
-                className="thm-btn thm-btn--header"
+                Who We Are
+              </Typography>
+            </Link>
+
+            <Link
+              to="/service"
+              style={{ textDecoration: "none" }}
+              onClick={() => setMobailState(false)}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1.5rem",
+                  fontWeight: 500,
+                  py: 1,
+                }}
               >
-                Let’s talk
-                <span>
-                  <img src={icon13} alt="" />
-                </span>
-              </Link>
-            </div>
-            <AnimatedDrawerMenu
-              open={isDrawerOpen}
-              onClose={() => setIsDrawerOpen(false)}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+                What We Do
+              </Typography>
+            </Link>
+
+            <Link
+              to="/service"
+              style={{ textDecoration: "none" }}
+              onClick={() => setMobailState(false)}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1.5rem",
+                  fontWeight: 500,
+                  py: 1,
+                }}
+              >
+                Who We Work With
+              </Typography>
+            </Link>
+
+            <Link
+              to="/insights"
+              style={{ textDecoration: "none" }}
+              onClick={() => setMobailState(false)}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1.5.rem",
+                  fontWeight: 500,
+                  py: 1,
+                }}
+              >
+                Insights
+              </Typography>
+            </Link>
+
+            <Link
+              to="/careers"
+              style={{ textDecoration: "none" }}
+              onClick={() => setMobailState(false)}
+            >
+              <Typography
+                sx={{
+                  color: "#ffffff",
+                  fontSize: "1.5rem",
+                  fontWeight: 500,
+                  py: 1,
+                }}
+              >
+                Careers
+              </Typography>
+            </Link>
+          </Box>
+
+          <Button
+            component={Link}
+            to="/contact"
+            onClick={() => setMobailState(false)}
+            variant="contained"
+            fullWidth
+            sx={{
+              backgroundColor: "rgba(255, 255, 255, 0.15)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              color: "#ffffff",
+              fontSize: "1rem",
+              fontWeight: 600,
+              padding: "1rem",
+              borderRadius: "50px",
+              textTransform: "none",
+              mt: 4,
+            }}
+          >
+            Lets Connect
+          </Button>
+        </Box>
+      </Box>
+
+      {/* Animated Drawer Menu */}
+      <AnimatedDrawerMenu
+        open={isDrawerOpen}
+        onClose={() => setIsDrawerOpen(false)}
+      />
+    </Box>
   );
 };
 

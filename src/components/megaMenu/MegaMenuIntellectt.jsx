@@ -51,6 +51,11 @@ const HeaderContent = styled.div`
     padding: 0 0.75rem;
     height: 56px;
   }
+
+  @media (max-width: 360px) {
+    padding: 0 0.5rem;
+    height: 52px;
+  }
 `;
 
 const Logo = styled.div`
@@ -76,6 +81,12 @@ const Logo = styled.div`
   @media (max-width: 480px) {
     img {
       height: 28px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    img {
+      height: 24px;
     }
   }
 `;
@@ -1351,174 +1362,103 @@ const menuData = {
         color: "rgba(59, 130, 246, 0.15)",
       },
       {
-        title: "Cloud",
-        description: "Scalable cloud solutions for enterprise needs",
+        title: "Talent Solutions",
+        description: "Empower business growth with agile talent solutions",
         image: "/placeholder.svg?height=80&width=280",
-        items: ["Cloud Migration", "DevOps", "Legacy Modernization"],
+        items: [
+          "Direct Hire",
+          "Contract-to-Hire",
+          "Staff Augmentation",
+          "Healthcare Staffing",
+        ],
         hasDropdown: true,
-        url: "/service/cloud-and-application-services",
+        url: "/service/talent-solutions",
         services: [
           {
-            name: "Cloud Migration",
-            description:
-              "End-to-end cloud migration and transformation services",
-            focus: "Cloud",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "☁️",
-            url: "/service/cloud-and-application-services",
-          },
-          {
-            name: "DevOps",
-            description: "Automated DevOps and CI/CD pipeline implementation",
-            focus: "Cloud",
+            name: "Direct Hire",
+            description: "Permanent placement solutions for critical roles",
+            focus: "Talent Solutions",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "🔄",
-            url: "/service/cloud-and-application-services/devops",
+            icon: "👥",
+            url: "/service/talent-solutions/direct-hire",
           },
           {
-            name: "Legacy Modernization",
-            description:
-              "Modernize legacy systems for cloud-native architecture",
-            focus: "Cloud",
+            name: "Contract-to-Hire",
+            description: "Flexible hiring solutions with conversion options",
+            focus: "Talent Solutions",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "🏗️",
-            url: "/service/cloud-and-application-services/modernization",
+            icon: "📋",
+            url: "/service/talent-solutions/contract-to-hire",
+          },
+          {
+            name: "Staff Augmentation",
+            description: "On-demand talent for project-based needs",
+            focus: "Talent Solutions",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "⚡",
+            url: "/service/talent-solutions/staff-augmentation",
+          },
+          {
+            name: "Healthcare Staffing",
+            description: "Specialized healthcare and life sciences staffing",
+            focus: "Talent Solutions",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🏥",
+            url: "/service/talent-solutions/healthcare",
           },
         ],
-        icon: "☁️",
-        color: "rgba(20, 184, 166, 0.15)",
-      },
-      {
-        title: "Software Engineering",
-        description: "Quality engineering and solution architecture",
-        image: "/placeholder.svg?height=80&width=280",
-        items: ["Quality Engineering", "Solution Architecture"],
-        hasDropdown: true,
-        url: "/service/cloud-and-application-services/engineering",
-        services: [
-          {
-            name: "Quality Engineering",
-            description:
-              "Comprehensive quality assurance and testing frameworks",
-            focus: "Software Engineering",
-            color: "rgba(20, 184, 166, 0.15)",
-            icon: "✅",
-            url: "/service/cloud-and-application-services/engineering",
-          },
-          {
-            name: "Solution Architecture",
-            description: "Scalable solution architecture and system design",
-            focus: "Software Engineering",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "🏛️",
-            url: "/service/cloud-and-application-services/api",
-          },
-        ],
-        icon: "🏛️",
+        icon: "👥",
         color: "rgba(59, 130, 246, 0.15)",
       },
       {
-        title: "Healthcare & Life Sciences IT",
-        description:
-          "Specialized IT solutions for healthcare and life sciences",
+        title: "SAP",
+        description: "Comprehensive SAP solutions and consulting services",
         image: "/placeholder.svg?height=80&width=280",
         items: [
-          "Healthcare Systems",
-          "Life Sciences Platform",
-          "Clinical Data Management",
+          "SAP S/4HANA",
+          "SAP Business Technology Platform",
+          "SAP Analytics",
         ],
         hasDropdown: true,
-        url: "/service/healthcare-and-life-sciences-it",
+        url: "/service/sap-services",
         services: [
           {
-            name: "Healthcare Systems",
-            description: "Comprehensive healthcare IT solutions and systems",
-            focus: "Healthcare & Life Sciences IT",
-            color: "rgba(20, 184, 166, 0.15)",
-            icon: "🏥",
-            url: "/service/healthcare-and-life-sciences-it",
-          },
-          {
-            name: "Life Sciences Platform",
-            description: "Advanced platforms for life sciences research",
-            focus: "Healthcare & Life Sciences IT",
+            name: "SAP S/4HANA",
+            description: "End-to-end SAP S/4HANA implementation and migration",
+            focus: "SAP",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "🧬",
-            url: "/service/healthcare-and-life-sciences-it/data",
+            icon: "🏢",
+            url: "/service/sap-services",
           },
           {
-            name: "Clinical Data Management",
-            description: "Secure clinical data management and analytics",
-            focus: "Healthcare & Life Sciences IT",
+            name: "SAP Business Technology Platform",
+            description: "SAP BTP integration and development services",
+            focus: "SAP",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "📋",
-            url: "/service/healthcare-and-life-sciences-it/hl7",
+            icon: "🔧",
+            url: "/service/sap-services/btp",
+          },
+          {
+            name: "SAP Analytics",
+            description: "SAP analytics and reporting solutions",
+            focus: "SAP",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "📊",
+            url: "/service/sap-services/analytics",
           },
         ],
-        icon: "🏥",
-        color: "rgba(20, 184, 166, 0.15)",
-      },
-      {
-        title: "Manufacturing & Engineering IT",
-        description:
-          "IT solutions for manufacturing and engineering industries",
-        image: "/placeholder.svg?height=80&width=280",
-        items: [
-          "Manufacturing Systems",
-          "Engineering Solutions",
-          "Industrial IoT",
-        ],
-        hasDropdown: true,
-        url: "/service/engineering-and-manufacturing-it",
-        services: [
-          {
-            name: "Manufacturing Systems",
-            description: "Advanced manufacturing IT systems and automation",
-            focus: "Manufacturing & Engineering IT",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "🏭",
-            url: "/service/engineering-and-manufacturing-it",
-          },
-          {
-            name: "Engineering Solutions",
-            description: "Comprehensive engineering IT solutions",
-            focus: "Manufacturing & Engineering IT",
-            color: "rgba(20, 184, 166, 0.15)",
-            icon: "⚙️",
-            url: "/service/engineering-and-manufacturing-it/plm",
-          },
-          {
-            name: "Industrial IoT",
-            description:
-              "Industrial Internet of Things and smart manufacturing",
-            focus: "Manufacturing & Engineering IT",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "🔗",
-            url: "/service/engineering-and-manufacturing-it/mes",
-          },
-        ],
-        icon: "🏭",
+        icon: "🏢",
         color: "rgba(59, 130, 246, 0.15)",
       },
     ],
     sideItems: [
       {
         title: "More Services",
-        items: [
-          "SAP Services",
-          "Healthcare IT",
-          "Manufacturing IT",
-          "Managed Services",
-        ],
+        items: ["SAP Services", "Managed Services"],
       },
       {
         title: "Industries",
-        items: [
-          "Healthcare",
-          "Manufacturing",
-          "Aerospace",
-          "Financial Services",
-        ],
+        items: ["Manufacturing", "Aerospace", "Banking & Financial Services"],
       },
     ],
   },
@@ -1610,7 +1550,7 @@ const menuData = {
         color: "rgba(59, 130, 246, 0.15)",
       },
       {
-        title: "Financial Services",
+        title: "Banking & Financial Services",
         description: "Digital banking and fintech solutions",
         image: "/placeholder.svg?height=80&width=280",
         items: [
@@ -1772,14 +1712,19 @@ const menuData = {
     sideItems: [
       {
         title: "All Insights",
-        items: ["Data & AI", "Editor's Picks", "Case Studies"],
+        items: [
+          "Blogs",
+          "Articles",
+          "Whitepapers & Case Studies",
+          "News & Events",
+        ],
       },
     ],
   },
   "WHO WE ARE": {
     mainItems: [
       {
-        title: "Our Journey",
+        title: "Overview",
         description: "Learn about our journey in AI innovation",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Company Overview", "Vision & Mission", "Core Values"],
@@ -1791,13 +1736,6 @@ const menuData = {
         image: "/placeholder.svg?height=80&width=280",
         items: ["Executive Team", "Board of Directors", "Advisory Board"],
         url: "/company/leadership-team",
-      },
-      {
-        title: "Global Presence",
-        description: "Our worldwide locations and partnerships",
-        image: "/placeholder.svg?height=80&width=280",
-        items: ["Office Locations", "Global Partners", "Regional Expertise"],
-        url: "/company/global-presence",
       },
       {
         title: "Our Companies",
@@ -1825,6 +1763,13 @@ const menuData = {
             url: "https://lumin-innovations.com/",
           },
         ],
+      },
+      {
+        title: "Our Global Presence",
+        description: "Our worldwide locations and partnerships",
+        image: "/placeholder.svg?height=80&width=280",
+        items: ["Office Locations", "Global Partners", "Regional Expertise"],
+        url: "/company/global-presence",
       },
     ],
     sideItems: [
@@ -1884,6 +1829,7 @@ function MegaMenuIntellectt() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [showSearchResults, setShowSearchResults] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
   const timeoutRef = useRef(null);
   const searchInputRef = useRef(null);
   const navigate = useNavigate();
@@ -2604,72 +2550,168 @@ function MegaMenuIntellectt() {
                     gap: "0.25rem",
                   }}
                 >
-                  {menuConfig.mainItems.map((item, index) => (
-                    <div
-                      key={item.title}
-                      style={{
-                        padding: "0.875rem 1rem",
-                        borderRadius: "8px",
-                        cursor: "pointer",
-                        transition: "all 0.3s ease",
-                        background: item.isActive ? "#ffffff" : "transparent",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        border: item.isActive
-                          ? "1px solid #d1d5db"
-                          : "1px solid transparent",
-                        boxShadow: item.isActive
-                          ? "0 2px 8px rgba(0, 0, 0, 0.1)"
-                          : "none",
-                      }}
-                      onMouseEnter={(e) => {
-                        if (!item.isActive) {
-                          e.target.style.background = "#ffffff";
-                          e.target.style.borderColor = "#d1d5db";
-                          e.target.style.boxShadow =
-                            "0 2px 8px rgba(0, 0, 0, 0.1)";
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        if (!item.isActive) {
-                          e.target.style.background = "transparent";
-                          e.target.style.borderColor = "transparent";
-                          e.target.style.boxShadow = "none";
-                        }
-                      }}
-                      onClick={() => {
-                        if (item.url) {
-                          if (item.url.startsWith("/")) {
-                            navigate(item.url);
-                          } else {
-                            window.open(item.url, "_blank");
+                  {menuConfig.mainItems.map((item, index) => {
+                    const getItemContent = (title) => {
+                      switch (title) {
+                        case "Join our team":
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=200&fit=crop&crop=center",
+                            title: "Join Our Team",
+                            description:
+                              "Browse current job openings and find the perfect opportunity to grow your career with us.",
+                            buttonText: "View Openings",
+                            buttonUrl: "/careers/current-openings",
+                            emoji: "💼",
+                          };
+                        case "Life at Intellectt":
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+                            title: "Life at Intellectt",
+                            description:
+                              "Discover the culture and values that make Intellectt a great place to work.",
+                            buttonText: "Visit our page",
+                            buttonUrl: "/careers/life-at-company",
+                            emoji: "🌟",
+                          };
+                        case "How we hire":
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+                            title: "How We Hire",
+                            description:
+                              "Learn about our hiring process and what we look for in potential team members.",
+                            buttonText: "Learn More",
+                            buttonUrl: "/careers/hiring-process",
+                            emoji: "🎯",
+                          };
+                        default:
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+                            title: "Life at Intellectt",
+                            description:
+                              "Discover the culture and values that make Intellectt a great place to work.",
+                            buttonText: "Visit our page",
+                            buttonUrl: "/careers/life-at-company",
+                            emoji: "🌟",
+                          };
+                      }
+                    };
+
+                    return (
+                      <div
+                        key={item.title}
+                        style={{
+                          padding: "0.875rem 1rem",
+                          borderRadius: "8px",
+                          cursor: "pointer",
+                          transition: "all 0.3s ease",
+                          background:
+                            item.isActive || hoveredItem === item.title
+                              ? "#ffffff"
+                              : "transparent",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          border:
+                            item.isActive || hoveredItem === item.title
+                              ? "1px solid #d1d5db"
+                              : "1px solid transparent",
+                          boxShadow:
+                            item.isActive || hoveredItem === item.title
+                              ? "0 2px 8px rgba(0, 0, 0, 0.1)"
+                              : "none",
+                        }}
+                        onMouseEnter={(e) => {
+                          // Clear ALL other navigation items first
+                          const navigationContainer = e.target.parentElement;
+                          const allNavItems =
+                            navigationContainer.querySelectorAll("div");
+                          allNavItems.forEach((navItem) => {
+                            if (navItem !== e.target) {
+                              navItem.style.background = "transparent";
+                              navItem.style.borderColor = "transparent";
+                              navItem.style.boxShadow = "none";
+                            }
+                          });
+
+                          setHoveredItem(item.title);
+
+                          // Update content based on hover
+                          const content = getItemContent(item.title);
+                          const imageElement =
+                            document.getElementById("careers-image");
+                          const titleElement =
+                            document.getElementById("careers-title");
+                          const descriptionElement = document.getElementById(
+                            "careers-description"
+                          );
+                          const buttonElement =
+                            document.getElementById("careers-button");
+
+                          if (
+                            imageElement &&
+                            titleElement &&
+                            descriptionElement &&
+                            buttonElement
+                          ) {
+                            // Update image
+                            imageElement.src = content.image;
+
+                            // Update text content
+                            titleElement.textContent = content.title;
+                            descriptionElement.textContent =
+                              content.description;
+
+                            // Update button
+                            buttonElement.textContent = content.buttonText;
+                            buttonElement.onclick = () => {
+                              if (content.buttonUrl.startsWith("/")) {
+                                navigate(content.buttonUrl);
+                              } else {
+                                window.open(content.buttonUrl, "_blank");
+                              }
+                            };
                           }
-                        }
-                      }}
-                    >
-                      <span
-                        style={{
-                          color: item.isActive ? "#111827" : "#6b7280",
-                          fontSize: "0.875rem",
-                          fontWeight: "500",
-                          fontFamily: "Inter, sans-serif",
+                        }}
+                        onMouseLeave={(e) => {
+                          setHoveredItem(null);
+                        }}
+                        onClick={() => {
+                          if (item.url) {
+                            if (item.url.startsWith("/")) {
+                              navigate(item.url);
+                            } else {
+                              window.open(item.url, "_blank");
+                            }
+                          }
                         }}
                       >
-                        {item.title}
-                      </span>
-                      <span
-                        style={{
-                          color: "#e53e3e",
-                          fontSize: "0.8rem",
-                          fontWeight: "600",
-                          opacity: item.isActive ? "1" : "0.7",
-                        }}
-                      >
-                        ›
-                      </span>
-                    </div>
-                  ))}
+                        <span
+                          style={{
+                            color: item.isActive ? "#111827" : "#6b7280",
+                            fontSize: "0.875rem",
+                            fontWeight: "500",
+                            fontFamily: "Inter, sans-serif",
+                          }}
+                        >
+                          {item.title}
+                        </span>
+                        <span
+                          style={{
+                            color: "#e53e3e",
+                            fontSize: "0.8rem",
+                            fontWeight: "600",
+                            opacity: item.isActive ? "1" : "0.7",
+                          }}
+                        >
+                          ›
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -2696,18 +2738,21 @@ function MegaMenuIntellectt() {
                   }}
                 >
                   <img
+                    id="careers-image"
                     src={menuConfig.featuredContent.image}
                     alt={menuConfig.featuredContent.title}
                     style={{
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
+                      transition: "all 0.3s ease",
                     }}
                   />
                 </div>
 
                 {/* Content */}
                 <h3
+                  id="careers-title"
                   style={{
                     color: "#111827",
                     fontSize: "1.25rem",
@@ -2715,12 +2760,14 @@ function MegaMenuIntellectt() {
                     margin: "0 0 0.75rem 0",
                     fontFamily: "Inter, sans-serif",
                     letterSpacing: "-0.02em",
+                    transition: "all 0.3s ease",
                   }}
                 >
                   {menuConfig.featuredContent.title}
                 </h3>
 
                 <p
+                  id="careers-description"
                   style={{
                     color: "#6b7280",
                     fontSize: "0.875rem",
@@ -2728,6 +2775,7 @@ function MegaMenuIntellectt() {
                     margin: "0 0 1.5rem 0",
                     fontFamily: "Inter, sans-serif",
                     maxWidth: "350px",
+                    transition: "all 0.3s ease",
                   }}
                 >
                   {menuConfig.featuredContent.description}
@@ -2735,6 +2783,7 @@ function MegaMenuIntellectt() {
 
                 {/* Button */}
                 <RouterButton
+                  id="careers-button"
                   to={menuConfig.featuredContent.buttonUrl}
                   external={
                     !menuConfig.featuredContent.buttonUrl.startsWith("/")
@@ -2770,6 +2819,397 @@ function MegaMenuIntellectt() {
                   }}
                 >
                   {menuConfig.featuredContent.buttonText}
+                  <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
+                    →
+                  </span>
+                </RouterButton>
+              </div>
+            </div>
+          </MegaMenuContent>
+        </MegaMenuContainer>
+      );
+    }
+
+    if (menuName === "WHO WE ARE") {
+      return (
+        <MegaMenuContainer
+          variants={megaMenuVariants}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          data-mega-menu="true"
+        >
+          <MegaMenuContent>
+            <div
+              style={{
+                display: "flex",
+                background: "#ffffff",
+                borderRadius: "12px",
+                overflow: "hidden",
+                minHeight: "350px",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+                border: "1px solid #e5e7eb",
+              }}
+            >
+              {/* Left Navigation Sidebar */}
+              <div
+                style={{
+                  width: "280px",
+                  background: "#f9fafb",
+                  padding: "2rem",
+                  borderRight: "1px solid #e5e7eb",
+                }}
+              >
+                {/* Header */}
+                <div style={{ marginBottom: "2rem" }}>
+                  <h3
+                    style={{
+                      color: "#111827",
+                      fontSize: "1.5rem",
+                      fontWeight: "700",
+                      margin: "0 0 0.5rem 0",
+                      fontFamily: "Inter, sans-serif",
+                      letterSpacing: "-0.02em",
+                    }}
+                  >
+                    Who We Are
+                  </h3>
+                  <div
+                    style={{
+                      width: "40px",
+                      height: "3px",
+                      background: "#6366f1",
+                      marginBottom: "1.5rem",
+                    }}
+                  />
+                </div>
+
+                {/* Navigation Items */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.25rem",
+                  }}
+                >
+                  {menuConfig.mainItems.map((item, index) => {
+                    const getItemContent = (title) => {
+                      switch (title) {
+                        case "Our Journey":
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+                            title: "Our Journey",
+                            description:
+                              "Discover the story of how we became a leading AI and technology company, from our humble beginnings to our current global presence.",
+                            buttonText: "Learn More",
+                            buttonUrl: "/company/our-journey",
+                            emoji: "🚀",
+                          };
+                        case "Leadership Team":
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+                            title: "Meet Our Leaders",
+                            description:
+                              "Get to know the visionary leaders who drive our innovation and guide our company towards a future of technological excellence.",
+                            buttonText: "Meet the Team",
+                            buttonUrl: "/company/leadership-team",
+                            emoji: "👥",
+                          };
+                        case "Global Presence":
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=200&fit=crop&crop=center",
+                            title: "Global Reach",
+                            description:
+                              "Explore our worldwide network of offices and partnerships that enable us to serve clients across the globe.",
+                            buttonText: "View Locations",
+                            buttonUrl: "/company/global-presence",
+                            emoji: "🌍",
+                          };
+                        case "Our Companies":
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=200&fit=crop&crop=center",
+                            title: "Our Companies",
+                            description:
+                              "Discover our subsidiary companies and specialized divisions that drive innovation across different industries.",
+                            buttonText: "Explore Companies",
+                            buttonUrl: "#",
+                            emoji: "🏢",
+                          };
+                        default:
+                          return {
+                            image:
+                              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+                            title: "Discover Our Story",
+                            description:
+                              "Learn about our journey, meet our leadership team, explore our global presence, and discover our subsidiary companies that drive innovation across industries.",
+                            buttonText: "Learn More",
+                            buttonUrl: "/company/our-journey",
+                            emoji: "🚀",
+                          };
+                      }
+                    };
+
+                    return (
+                      <div
+                        key={item.title}
+                        style={{
+                          padding: "0.875rem 1rem",
+                          borderRadius: "8px",
+                          cursor: "pointer",
+                          transition: "all 0.3s ease",
+                          background:
+                            item.isActive || hoveredItem === item.title
+                              ? "#ffffff"
+                              : "transparent",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          border:
+                            item.isActive || hoveredItem === item.title
+                              ? "1px solid #d1d5db"
+                              : "1px solid transparent",
+                          boxShadow:
+                            item.isActive || hoveredItem === item.title
+                              ? "0 2px 8px rgba(0, 0, 0, 0.1)"
+                              : "none",
+                        }}
+                        onMouseEnter={(e) => {
+                          // Clear ALL other navigation items first
+                          const navigationContainer = e.target.parentElement;
+                          const allNavItems =
+                            navigationContainer.querySelectorAll("div");
+                          allNavItems.forEach((navItem) => {
+                            if (navItem !== e.target) {
+                              navItem.style.background = "transparent";
+                              navItem.style.borderColor = "transparent";
+                              navItem.style.boxShadow = "none";
+                            }
+                          });
+
+                          setHoveredItem(item.title);
+
+                          if (!item.isActive) {
+                            e.target.style.background = "#ffffff";
+                            e.target.style.borderColor = "#d1d5db";
+                            e.target.style.boxShadow =
+                              "0 2px 8px rgba(0, 0, 0, 0.1)";
+                          }
+
+                          // Update content based on hover
+                          const content = getItemContent(item.title);
+                          const imageElement =
+                            document.getElementById("who-we-are-image");
+                          const overlayElement =
+                            document.getElementById("who-we-are-overlay");
+                          const titleElement =
+                            document.getElementById("who-we-are-title");
+                          const descriptionElement = document.getElementById(
+                            "who-we-are-description"
+                          );
+                          const buttonElement =
+                            document.getElementById("who-we-are-button");
+
+                          if (
+                            imageElement &&
+                            overlayElement &&
+                            titleElement &&
+                            descriptionElement &&
+                            buttonElement
+                          ) {
+                            // Update image background
+                            imageElement.style.background = `linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%), url(${content.image})`;
+                            imageElement.style.backgroundSize = "cover";
+                            imageElement.style.backgroundPosition = "center";
+
+                            // Update overlay content
+                            overlayElement.textContent = content.emoji;
+
+                            // Update text content
+                            titleElement.textContent = content.title;
+                            descriptionElement.textContent =
+                              content.description;
+
+                            // Update button
+                            buttonElement.textContent = content.buttonText;
+                            buttonElement.onclick = () => {
+                              if (content.buttonUrl.startsWith("/")) {
+                                navigate(content.buttonUrl);
+                              } else {
+                                window.open(content.buttonUrl, "_blank");
+                              }
+                            };
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          setHoveredItem(null);
+                          if (!item.isActive) {
+                            e.target.style.background = "transparent";
+                            e.target.style.borderColor = "transparent";
+                            e.target.style.boxShadow = "none";
+                          }
+                        }}
+                        onClick={() => {
+                          if (item.url) {
+                            if (item.url.startsWith("/")) {
+                              navigate(item.url);
+                            } else {
+                              window.open(item.url, "_blank");
+                            }
+                          }
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: item.isActive ? "#111827" : "#6b7280",
+                            fontSize: "0.875rem",
+                            fontWeight: "500",
+                            fontFamily: "Inter, sans-serif",
+                          }}
+                        >
+                          {item.title}
+                        </span>
+                        <span
+                          style={{
+                            color: "#6366f1",
+                            fontSize: "0.8rem",
+                            fontWeight: "600",
+                            opacity: item.isActive ? "1" : "0.7",
+                          }}
+                        >
+                          ›
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Right Content Area */}
+              <div
+                style={{
+                  flex: 1,
+                  padding: "2rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  background: "#ffffff",
+                }}
+              >
+                {/* Featured Image */}
+                <div
+                  id="who-we-are-image"
+                  style={{
+                    width: "100%",
+                    height: "220px",
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    marginBottom: "2rem",
+                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+                    background:
+                      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <div
+                    id="who-we-are-overlay"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background:
+                        "linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#ffffff",
+                      fontSize: "3rem",
+                      fontWeight: "700",
+                      fontFamily: "Inter, sans-serif",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    🚀
+                  </div>
+                </div>
+
+                {/* Content */}
+                <h3
+                  id="who-we-are-title"
+                  style={{
+                    color: "#111827",
+                    fontSize: "1.25rem",
+                    fontWeight: "700",
+                    margin: "0 0 0.75rem 0",
+                    fontFamily: "Inter, sans-serif",
+                    letterSpacing: "-0.02em",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  Discover Our Story
+                </h3>
+
+                <p
+                  id="who-we-are-description"
+                  style={{
+                    color: "#6b7280",
+                    fontSize: "0.875rem",
+                    lineHeight: "1.6",
+                    margin: "0 0 1.5rem 0",
+                    fontFamily: "Inter, sans-serif",
+                    maxWidth: "350px",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  Learn about our journey, meet our leadership team, explore our
+                  global presence, and discover our subsidiary companies that
+                  drive innovation across industries.
+                </p>
+
+                {/* Button */}
+                <RouterButton
+                  id="who-we-are-button"
+                  to="/company/our-journey"
+                  style={{
+                    background: "transparent",
+                    border: "2px solid #6366f1",
+                    color: "#6366f1",
+                    padding: "0.75rem 1.5rem",
+                    borderRadius: "8px",
+                    fontSize: "0.875rem",
+                    fontWeight: "600",
+                    transition: "all 0.3s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    alignSelf: "flex-start",
+                    fontFamily: "Inter, sans-serif",
+                    letterSpacing: "0.02em",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = "#6366f1";
+                    e.target.style.color = "#ffffff";
+                    e.target.style.transform = "translateY(-2px)";
+                    e.target.style.boxShadow =
+                      "0 8px 25px rgba(99, 102, 241, 0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = "transparent";
+                    e.target.style.color = "#6366f1";
+                    e.target.style.transform = "translateY(0)";
+                    e.target.style.boxShadow = "none";
+                  }}
+                >
+                  Learn More
                   <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
                     →
                   </span>
