@@ -98,7 +98,7 @@ From mapping legacy HL7 messages to modern FHIR APIs, to building scalable data 
 
 Whether you're building patient apps, connecting clinical systems, or scaling health data exchange across partners—our experts streamline your path to a fully interoperable digital health ecosystem.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />

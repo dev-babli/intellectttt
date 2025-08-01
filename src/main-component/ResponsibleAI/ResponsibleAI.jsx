@@ -79,18 +79,18 @@ const Datafeatures = [
 const ResponsibleAI = () => {
   return (
     <Fragment>
-             <div className="sco_agency">
-               <div className="page_content service-single-page">
-                 <HeroSectionTitle
-                   title="AI Advisory & Responsible AI Consulting"
-                   subtitle="Unlock the Power of Responsible AI. We help companies harness the power of AI and RPA to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
-                   buttonText="TALK TO OUR EXPERTS"
-                   buttonLink="#contact"
-                   backgroundImage="/AiGenAi/AIAdvisoryandResponsibleAI.webp"
-                 />
-                 <CssBaseline />
-                 <FeaturesSection features={features} />
-                 <DataSection
+      <div className="sco_agency">
+        <div className="page_content service-single-page">
+          <HeroSectionTitle
+            title="AI Advisory & Responsible AI Consulting"
+            subtitle="Unlock the Power of Responsible AI. We help companies harness the power of AI and RPA to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
+            buttonText="TALK TO OUR EXPERTS"
+            buttonLink="#contact"
+            backgroundImage="/AiGenAi/AIAdvisoryandResponsibleAI.webp"
+          />
+          <CssBaseline />
+          <FeaturesSection features={features} />
+          <DataSection
             title="  Build AI with Strategy and Responsibility"
             description={`AI is a transformative force—but without the right strategy, governance, and oversight, it can introduce risk, bias, and inefficiency.
 
@@ -100,15 +100,15 @@ From AI roadmaps and policy frameworks to model audits and compliance tools—we
 
 Build stakeholder trust, reduce risk exposure, and ensure your AI systems remain effective, accountable, and ethical.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
-                 <TechnologyLogos />
-                 <ContactSection />
-               </div>
-             </div>
-           </Fragment>
-  )
-}
+          <TechnologyLogos />
+          <ContactSection />
+        </div>
+      </div>
+    </Fragment>
+  );
+};
 
-export default ResponsibleAI
+export default ResponsibleAI;

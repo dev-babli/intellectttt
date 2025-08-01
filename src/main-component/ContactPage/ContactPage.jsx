@@ -8,12 +8,10 @@ import bImg1 from "../../images/hero/contact-logo.jpg";
 import bImg2 from "../../images/shape/brd_shape.png";
 // import CtaSection from '../../components/CtaSection/CtaSection';
 
-
 const TeamPage = (props) => {
   return (
     <Fragment>
       <div className="body_wrap sco_agency">
-       
         <section
           className="page-title  pt-200 pos-rel bg_img"
           style={{ backgroundImage: `url(${Bg})` }}
@@ -24,7 +22,7 @@ const TeamPage = (props) => {
                 <div className="col-lg-9 mt-30">
                   <div className="page-title-box">
                     <span className="sub-title">
-                      <img src={icon} alt="" /> Contact us
+                      <img src={icon} alt="" /> Let's Connect
                     </span>
                     <h2 className="title">
                       Connect with our team for <br /> innovative solutions and{" "}
@@ -45,7 +43,6 @@ const TeamPage = (props) => {
           </div>
         </section>
         <ContactSection />
-       
       </div>
       {/* <CtaSection /> */}
     </Fragment>

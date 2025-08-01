@@ -2116,14 +2116,9 @@ function MegaMenuIntellectt() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns:
-                  menuName === "WHAT WE DO"
-                    ? "repeat(6, 1fr)"
-                    : menuName === "WHO WE WORK WITH"
-                    ? "repeat(4, 1fr)"
-                    : "repeat(3, 1fr)",
-                gap: menuName === "WHO WE WORK WITH" ? "1.5rem" : "1rem",
-                padding: "1rem 0",
+                gridTemplateColumns: "repeat(4, 1fr)",
+                gap: "1.5rem",
+                padding: "1.5rem 0",
               }}
             >
               {menuConfig.mainItems.map((item, index) => (
@@ -2133,16 +2128,39 @@ function MegaMenuIntellectt() {
                     display: "flex",
                     flexDirection: "column",
                     gap: menuName === "WHO WE WORK WITH" ? "0.75rem" : "1rem",
-                    padding: menuName === "WHO WE WORK WITH" ? "1rem" : "0",
-                    borderRadius: menuName === "WHO WE WORK WITH" ? "8px" : "0",
-                    background:
-                      menuName === "WHO WE WORK WITH"
-                        ? "rgba(249, 250, 251, 0.5)"
-                        : "transparent",
-                    border:
-                      menuName === "WHO WE WORK WITH"
-                        ? "1px solid rgba(229, 231, 235, 0.5)"
-                        : "none",
+                    padding:
+                      menuName === "WHO WE WORK WITH" ? "1rem" : "1.5rem",
+                    borderRadius: "12px",
+                    background: "rgba(249, 250, 251, 0.3)",
+                    border: "1px solid rgba(229, 231, 235, 0.3)",
+                    transition: "all 0.3s ease",
+                    cursor: "pointer",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background =
+                      "rgba(249, 250, 251, 0.8)";
+                    e.currentTarget.style.borderColor =
+                      "rgba(99, 102, 241, 0.2)";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 8px 24px rgba(0, 0, 0, 0.12)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background =
+                      "rgba(249, 250, 251, 0.3)";
+                    e.currentTarget.style.borderColor =
+                      "rgba(229, 231, 235, 0.3)";
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                  onClick={() => {
+                    if (item.url) {
+                      if (item.url.startsWith("/")) {
+                        navigate(item.url);
+                      } else {
+                        window.open(item.url, "_blank");
+                      }
+                    }
                   }}
                 >
                   {/* Category Header with Icon in Middle */}
@@ -2158,21 +2176,17 @@ function MegaMenuIntellectt() {
                     {item.icon && (
                       <div
                         style={{
-                          width:
-                            menuName === "WHO WE WORK WITH" ? "60px" : "50px",
-                          height:
-                            menuName === "WHO WE WORK WITH" ? "60px" : "50px",
+                          width: "60px",
+                          height: "60px",
                           background: item.color || "rgba(99, 102, 241, 0.1)",
-                          borderRadius: "12px",
+                          borderRadius: "16px",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          fontSize:
-                            menuName === "WHO WE WORK WITH"
-                              ? "1.75rem"
-                              : "1.5rem",
-                          marginBottom: "0.5rem",
-                          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                          fontSize: "1.75rem",
+                          marginBottom: "0.75rem",
+                          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                          transition: "all 0.3s ease",
                         }}
                       >
                         {item.icon}
@@ -2180,8 +2194,7 @@ function MegaMenuIntellectt() {
                     )}
                     <h3
                       style={{
-                        fontSize:
-                          menuName === "WHO WE WORK WITH" ? "1rem" : "0.875rem",
+                        fontSize: "1rem",
                         fontWeight: "600",
                         color: "#111827",
                         fontFamily: "Inter, sans-serif",
@@ -2189,6 +2202,7 @@ function MegaMenuIntellectt() {
                         lineHeight: "1.2",
                         textAlign: "center",
                         width: "100%",
+                        transition: "all 0.3s ease",
                       }}
                     >
                       {item.title}
@@ -2200,8 +2214,9 @@ function MegaMenuIntellectt() {
                     style={{
                       display: "flex",
                       flexDirection: "column",
-                      gap: "0.25rem",
+                      gap: "0.5rem",
                       alignItems: "center",
+                      width: "100%",
                     }}
                   >
                     {item.services &&
@@ -2210,15 +2225,29 @@ function MegaMenuIntellectt() {
                           key={serviceIndex}
                           style={{
                             cursor: "pointer",
-                            transition: "all 0.2s ease",
-                            padding: "0.125rem 0",
+                            transition: "all 0.3s ease",
+                            padding: "0.5rem 0.75rem",
                             textAlign: "center",
+                            width: "100%",
+                            borderRadius: "8px",
+                            background: "transparent",
+                            border: "1px solid transparent",
                           }}
                           onMouseEnter={(e) => {
-                            e.target.style.color = "#000000";
+                            e.currentTarget.style.background =
+                              "rgba(99, 102, 241, 0.08)";
+                            e.currentTarget.style.borderColor =
+                              "rgba(99, 102, 241, 0.2)";
+                            e.currentTarget.style.transform =
+                              "translateY(-1px)";
+                            e.currentTarget.style.boxShadow =
+                              "0 2px 8px rgba(99, 102, 241, 0.15)";
                           }}
                           onMouseLeave={(e) => {
-                            e.target.style.color = "#6b7280";
+                            e.currentTarget.style.background = "transparent";
+                            e.currentTarget.style.borderColor = "transparent";
+                            e.currentTarget.style.transform = "translateY(0)";
+                            e.currentTarget.style.boxShadow = "none";
                           }}
                           onClick={() => {
                             if (serviceItem.url) {
@@ -2235,9 +2264,9 @@ function MegaMenuIntellectt() {
                               fontSize: "0.75rem",
                               color: "#6b7280",
                               fontFamily: "Inter, sans-serif",
-                              fontWeight: "400",
+                              fontWeight: "500",
                               lineHeight: "1.3",
-                              transition: "color 0.2s ease",
+                              transition: "all 0.3s ease",
                             }}
                           >
                             {serviceItem.name}
@@ -3003,45 +3032,53 @@ function MegaMenuIntellectt() {
                           const content = getItemContent(item.title);
                           const imageElement =
                             document.getElementById("who-we-are-image");
-                          const overlayElement =
-                            document.getElementById("who-we-are-overlay");
                           const titleElement =
                             document.getElementById("who-we-are-title");
                           const descriptionElement = document.getElementById(
                             "who-we-are-description"
                           );
-                          const buttonElement =
-                            document.getElementById("who-we-are-button");
 
                           if (
                             imageElement &&
-                            overlayElement &&
                             titleElement &&
-                            descriptionElement &&
-                            buttonElement
+                            descriptionElement
                           ) {
-                            // Update image background
-                            imageElement.style.background = `linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%), url(${content.image})`;
-                            imageElement.style.backgroundSize = "cover";
-                            imageElement.style.backgroundPosition = "center";
+                            if (item.title === "Our Companies") {
+                              // For Our Companies, we don't need to update content since it's static
+                              // The company boxes are already displayed
+                            } else {
+                              // For other items, update the content as before
+                              const overlayElement =
+                                document.getElementById("who-we-are-overlay");
+                              const buttonElement =
+                                document.getElementById("who-we-are-button");
 
-                            // Update overlay content
-                            overlayElement.textContent = content.emoji;
+                              if (overlayElement && buttonElement) {
+                                // Update image background
+                                imageElement.style.background = `linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%), url(${content.image})`;
+                                imageElement.style.backgroundSize = "cover";
+                                imageElement.style.backgroundPosition =
+                                  "center";
 
-                            // Update text content
-                            titleElement.textContent = content.title;
-                            descriptionElement.textContent =
-                              content.description;
+                                // Update overlay content
+                                overlayElement.textContent = content.emoji;
 
-                            // Update button
-                            buttonElement.textContent = content.buttonText;
-                            buttonElement.onclick = () => {
-                              if (content.buttonUrl.startsWith("/")) {
-                                navigate(content.buttonUrl);
-                              } else {
-                                window.open(content.buttonUrl, "_blank");
+                                // Update text content
+                                titleElement.textContent = content.title;
+                                descriptionElement.textContent =
+                                  content.description;
+
+                                // Update button
+                                buttonElement.textContent = content.buttonText;
+                                buttonElement.onclick = () => {
+                                  if (content.buttonUrl.startsWith("/")) {
+                                    navigate(content.buttonUrl);
+                                  } else {
+                                    window.open(content.buttonUrl, "_blank");
+                                  }
+                                };
                               }
-                            };
+                            }
                           }
                         }}
                         onMouseLeave={(e) => {
@@ -3099,121 +3136,343 @@ function MegaMenuIntellectt() {
                   background: "#ffffff",
                 }}
               >
-                {/* Featured Image */}
-                <div
-                  id="who-we-are-image"
-                  style={{
-                    width: "100%",
-                    height: "220px",
-                    borderRadius: "12px",
-                    overflow: "hidden",
-                    marginBottom: "2rem",
-                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
-                    background:
-                      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative",
-                    transition: "all 0.3s ease",
-                  }}
-                >
+                {hoveredItem === "Our Companies" ? (
+                  /* Company Boxes for Our Companies */
                   <div
-                    id="who-we-are-overlay"
+                    id="who-we-are-image"
                     style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background:
-                        "linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%)",
                       display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#ffffff",
-                      fontSize: "3rem",
-                      fontWeight: "700",
-                      fontFamily: "Inter, sans-serif",
-                      transition: "all 0.3s ease",
+                      flexDirection: "column",
+                      gap: "1rem",
+                      width: "100%",
                     }}
                   >
-                    🚀
+                    {/* Lumin Inc. Box */}
+                    <div
+                      onClick={() =>
+                        window.open("https://lumininc.com/", "_blank")
+                      }
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                        padding: "1.5rem",
+                        borderRadius: "12px",
+                        border: "2px solid #e5e7eb",
+                        backgroundColor: "rgba(59, 130, 246, 0.05)",
+                        cursor: "pointer",
+                        transition: "all 0.3s ease",
+                        textDecoration: "none",
+                        color: "inherit",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.borderColor = "#3b82f6";
+                        e.target.style.backgroundColor =
+                          "rgba(59, 130, 246, 0.1)";
+                        e.target.style.transform = "translateY(-2px)";
+                        e.target.style.boxShadow =
+                          "0 8px 25px rgba(59, 130, 246, 0.15)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.borderColor = "#e5e7eb";
+                        e.target.style.backgroundColor =
+                          "rgba(59, 130, 246, 0.05)";
+                        e.target.style.transform = "translateY(0)";
+                        e.target.style.boxShadow = "none";
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "12px",
+                          backgroundColor: "rgba(59, 130, 246, 0.1)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                        }}
+                      >
+                        <img
+                          src="/Lumininc-logo.png"
+                          alt="Lumin Inc."
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            objectFit: "contain",
+                          }}
+                        />
+                      </div>
+                      <div
+                        style={{
+                          flex: 1,
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "0.25rem",
+                        }}
+                      >
+                        <h4
+                          id="who-we-are-title"
+                          style={{
+                            margin: 0,
+                            fontSize: "1.125rem",
+                            fontWeight: "600",
+                            color: "#111827",
+                            fontFamily: "Inter, sans-serif",
+                          }}
+                        >
+                          Lumin Inc.
+                        </h4>
+                        <p
+                          id="who-we-are-description"
+                          style={{
+                            margin: 0,
+                            fontSize: "0.875rem",
+                            color: "#6b7280",
+                            lineHeight: "1.4",
+                            fontFamily: "Inter, sans-serif",
+                          }}
+                        >
+                          Healthcare display and consulting solutions
+                          specializing in medical technology
+                        </p>
+                        <span
+                          style={{
+                            fontSize: "0.75rem",
+                            fontWeight: "500",
+                            color: "#3b82f6",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.5px",
+                          }}
+                        >
+                          Healthcare Technology
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Lumin Innovations Box */}
+                    <div
+                      onClick={() =>
+                        window.open("https://lumin-innovations.com/", "_blank")
+                      }
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                        padding: "1.5rem",
+                        borderRadius: "12px",
+                        border: "2px solid #e5e7eb",
+                        backgroundColor: "rgba(16, 185, 129, 0.05)",
+                        cursor: "pointer",
+                        transition: "all 0.3s ease",
+                        textDecoration: "none",
+                        color: "inherit",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.borderColor = "#10b981";
+                        e.target.style.backgroundColor =
+                          "rgba(16, 185, 129, 0.1)";
+                        e.target.style.transform = "translateY(-2px)";
+                        e.target.style.boxShadow =
+                          "0 8px 25px rgba(16, 185, 129, 0.15)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.borderColor = "#e5e7eb";
+                        e.target.style.backgroundColor =
+                          "rgba(16, 185, 129, 0.05)";
+                        e.target.style.transform = "translateY(0)";
+                        e.target.style.boxShadow = "none";
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "12px",
+                          backgroundColor: "rgba(16, 185, 129, 0.1)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                        }}
+                      >
+                        <img
+                          src="/Lumin-Innovations-Horizontal-scaled-2.png"
+                          alt="Lumin Innovations"
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            objectFit: "contain",
+                          }}
+                        />
+                      </div>
+                      <div
+                        style={{
+                          flex: 1,
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "0.25rem",
+                        }}
+                      >
+                        <h4
+                          style={{
+                            margin: 0,
+                            fontSize: "1.125rem",
+                            fontWeight: "600",
+                            color: "#111827",
+                            fontFamily: "Inter, sans-serif",
+                          }}
+                        >
+                          Lumin Innovations
+                        </h4>
+                        <p
+                          style={{
+                            margin: 0,
+                            fontSize: "0.875rem",
+                            color: "#6b7280",
+                            lineHeight: "1.4",
+                            fontFamily: "Inter, sans-serif",
+                          }}
+                        >
+                          Advanced manufacturing and automation driving Industry
+                          4.0 solutions
+                        </p>
+                        <span
+                          style={{
+                            fontSize: "0.75rem",
+                            fontWeight: "500",
+                            color: "#10b981",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.5px",
+                          }}
+                        >
+                          Manufacturing & Automation
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  /* Default content for other items */
+                  <>
+                    {/* Featured Image */}
+                    <div
+                      id="who-we-are-image"
+                      style={{
+                        width: "100%",
+                        height: "220px",
+                        borderRadius: "12px",
+                        overflow: "hidden",
+                        marginBottom: "2rem",
+                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+                        background:
+                          "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        position: "relative",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      <div
+                        id="who-we-are-overlay"
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          background:
+                            "linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "#ffffff",
+                          fontSize: "3rem",
+                          fontWeight: "700",
+                          fontFamily: "Inter, sans-serif",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        🚀
+                      </div>
+                    </div>
 
-                {/* Content */}
-                <h3
-                  id="who-we-are-title"
-                  style={{
-                    color: "#111827",
-                    fontSize: "1.25rem",
-                    fontWeight: "700",
-                    margin: "0 0 0.75rem 0",
-                    fontFamily: "Inter, sans-serif",
-                    letterSpacing: "-0.02em",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  Discover Our Story
-                </h3>
+                    {/* Content */}
+                    <h3
+                      id="who-we-are-title"
+                      style={{
+                        color: "#111827",
+                        fontSize: "1.25rem",
+                        fontWeight: "700",
+                        margin: "0 0 0.75rem 0",
+                        fontFamily: "Inter, sans-serif",
+                        letterSpacing: "-0.02em",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      Discover Our Story
+                    </h3>
 
-                <p
-                  id="who-we-are-description"
-                  style={{
-                    color: "#6b7280",
-                    fontSize: "0.875rem",
-                    lineHeight: "1.6",
-                    margin: "0 0 1.5rem 0",
-                    fontFamily: "Inter, sans-serif",
-                    maxWidth: "350px",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  Learn about our journey, meet our leadership team, explore our
-                  global presence, and discover our subsidiary companies that
-                  drive innovation across industries.
-                </p>
+                    <p
+                      id="who-we-are-description"
+                      style={{
+                        color: "#6b7280",
+                        fontSize: "0.875rem",
+                        lineHeight: "1.6",
+                        margin: "0 0 1.5rem 0",
+                        fontFamily: "Inter, sans-serif",
+                        maxWidth: "350px",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      Learn about our journey, meet our leadership team, explore
+                      our global presence, and discover our subsidiary companies
+                      that drive innovation across industries.
+                    </p>
 
-                {/* Button */}
-                <RouterButton
-                  id="who-we-are-button"
-                  to="/company/our-journey"
-                  style={{
-                    background: "transparent",
-                    border: "2px solid #6366f1",
-                    color: "#6366f1",
-                    padding: "0.75rem 1.5rem",
-                    borderRadius: "8px",
-                    fontSize: "0.875rem",
-                    fontWeight: "600",
-                    transition: "all 0.3s ease",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                    alignSelf: "flex-start",
-                    fontFamily: "Inter, sans-serif",
-                    letterSpacing: "0.02em",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.background = "#6366f1";
-                    e.target.style.color = "#ffffff";
-                    e.target.style.transform = "translateY(-2px)";
-                    e.target.style.boxShadow =
-                      "0 8px 25px rgba(99, 102, 241, 0.3)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.background = "transparent";
-                    e.target.style.color = "#6366f1";
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow = "none";
-                  }}
-                >
-                  Learn More
-                  <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
-                    →
-                  </span>
-                </RouterButton>
+                    {/* Button */}
+                    <RouterButton
+                      id="who-we-are-button"
+                      to="/company/our-journey"
+                      style={{
+                        background: "transparent",
+                        border: "2px solid #6366f1",
+                        color: "#6366f1",
+                        padding: "0.75rem 1.5rem",
+                        borderRadius: "8px",
+                        fontSize: "0.875rem",
+                        fontWeight: "600",
+                        transition: "all 0.3s ease",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        alignSelf: "flex-start",
+                        fontFamily: "Inter, sans-serif",
+                        letterSpacing: "0.02em",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.background = "#6366f1";
+                        e.target.style.color = "#ffffff";
+                        e.target.style.transform = "translateY(-2px)";
+                        e.target.style.boxShadow =
+                          "0 8px 25px rgba(99, 102, 241, 0.3)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = "transparent";
+                        e.target.style.color = "#6366f1";
+                        e.target.style.transform = "translateY(0)";
+                        e.target.style.boxShadow = "none";
+                      }}
+                    >
+                      Learn More
+                      <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
+                        →
+                      </span>
+                    </RouterButton>
+                  </>
+                )}
               </div>
             </div>
           </MegaMenuContent>
@@ -3285,43 +3544,182 @@ function MegaMenuIntellectt() {
                 ].includes(item.title) && (
                   <MegaMenuSectionContent isExpanded={isExpanded}>
                     {item.hasDropdown && (item.companies || item.services) ? (
-                      <MegaMenuGrid menuName={menuName}>
-                        {(item.companies || item.services).map(
-                          (serviceItem, serviceIndex) => (
-                            <MegaMenuServiceItem
-                              key={serviceIndex}
-                              menuName={menuName}
-                              onClick={() => {
-                                if (serviceItem.url) {
-                                  if (serviceItem.url.startsWith("/")) {
-                                    navigate(serviceItem.url);
-                                  } else {
-                                    window.open(serviceItem.url, "_blank");
+                      item.title === "Our Companies" ? (
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "1rem",
+                            padding: "1rem 0",
+                          }}
+                        >
+                          {(item.companies || item.services).map(
+                            (companyItem, companyIndex) => (
+                              <div
+                                key={companyIndex}
+                                onClick={() => {
+                                  if (companyItem.url) {
+                                    if (companyItem.url.startsWith("/")) {
+                                      navigate(companyItem.url);
+                                    } else {
+                                      window.open(companyItem.url, "_blank");
+                                    }
                                   }
-                                }
-                              }}
-                              style={
-                                serviceItem.url ? { cursor: "pointer" } : {}
-                              }
-                            >
-                              {serviceItem.icon && (
-                                <ServiceIcon
-                                  color={serviceItem.color}
-                                  menuName={menuName}
+                                }}
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  gap: "1rem",
+                                  padding: "1rem",
+                                  borderRadius: "12px",
+                                  border: "2px solid #e5e7eb",
+                                  backgroundColor:
+                                    companyItem.color ||
+                                    "rgba(249, 250, 251, 0.5)",
+                                  cursor: "pointer",
+                                  transition: "all 0.3s ease",
+                                  textDecoration: "none",
+                                  color: "inherit",
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.target.style.borderColor = companyItem.color
+                                    ? companyItem.color.replace("0.1", "0.3")
+                                    : "#3b82f6";
+                                  e.target.style.backgroundColor =
+                                    companyItem.color
+                                      ? companyItem.color.replace("0.1", "0.2")
+                                      : "rgba(59, 130, 246, 0.1)";
+                                  e.target.style.transform = "translateY(-2px)";
+                                  e.target.style.boxShadow =
+                                    "0 8px 25px rgba(0, 0, 0, 0.1)";
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.target.style.borderColor = "#e5e7eb";
+                                  e.target.style.backgroundColor =
+                                    companyItem.color ||
+                                    "rgba(249, 250, 251, 0.5)";
+                                  e.target.style.transform = "translateY(0)";
+                                  e.target.style.boxShadow = "none";
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    width: "60px",
+                                    height: "60px",
+                                    borderRadius: "12px",
+                                    backgroundColor:
+                                      companyItem.color ||
+                                      "rgba(59, 130, 246, 0.1)",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    flexShrink: 0,
+                                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                                  }}
                                 >
-                                  {serviceItem.icon}
-                                </ServiceIcon>
-                              )}
-                              <MegaMenuServiceTitle menuName={menuName}>
-                                {serviceItem.name}
-                              </MegaMenuServiceTitle>
-                              <MegaMenuServiceDescription menuName={menuName}>
-                                {serviceItem.description}
-                              </MegaMenuServiceDescription>
-                            </MegaMenuServiceItem>
-                          )
-                        )}
-                      </MegaMenuGrid>
+                                  <img
+                                    src={
+                                      companyItem.image ||
+                                      "/placeholder.svg?height=40&width=40"
+                                    }
+                                    alt={companyItem.name}
+                                    style={{
+                                      width: "40px",
+                                      height: "40px",
+                                      objectFit: "contain",
+                                    }}
+                                  />
+                                </div>
+                                <div
+                                  style={{
+                                    flex: 1,
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: "0.25rem",
+                                  }}
+                                >
+                                  <h4
+                                    style={{
+                                      margin: 0,
+                                      fontSize: "1rem",
+                                      fontWeight: "600",
+                                      color: "#111827",
+                                      fontFamily: "Inter, sans-serif",
+                                    }}
+                                  >
+                                    {companyItem.name}
+                                  </h4>
+                                  <p
+                                    style={{
+                                      margin: 0,
+                                      fontSize: "0.875rem",
+                                      color: "#6b7280",
+                                      lineHeight: "1.4",
+                                      fontFamily: "Inter, sans-serif",
+                                    }}
+                                  >
+                                    {companyItem.description}
+                                  </p>
+                                  <span
+                                    style={{
+                                      fontSize: "0.75rem",
+                                      fontWeight: "500",
+                                      color: companyItem.color
+                                        ? companyItem.color.replace(
+                                            "0.1",
+                                            "0.8"
+                                          )
+                                        : "#3b82f6",
+                                      textTransform: "uppercase",
+                                      letterSpacing: "0.5px",
+                                    }}
+                                  >
+                                    {companyItem.focus}
+                                  </span>
+                                </div>
+                              </div>
+                            )
+                          )}
+                        </div>
+                      ) : (
+                        <MegaMenuGrid menuName={menuName}>
+                          {(item.companies || item.services).map(
+                            (serviceItem, serviceIndex) => (
+                              <MegaMenuServiceItem
+                                key={serviceIndex}
+                                menuName={menuName}
+                                onClick={() => {
+                                  if (serviceItem.url) {
+                                    if (serviceItem.url.startsWith("/")) {
+                                      navigate(serviceItem.url);
+                                    } else {
+                                      window.open(serviceItem.url, "_blank");
+                                    }
+                                  }
+                                }}
+                                style={
+                                  serviceItem.url ? { cursor: "pointer" } : {}
+                                }
+                              >
+                                {serviceItem.icon && (
+                                  <ServiceIcon
+                                    color={serviceItem.color}
+                                    menuName={menuName}
+                                  >
+                                    {serviceItem.icon}
+                                  </ServiceIcon>
+                                )}
+                                <MegaMenuServiceTitle menuName={menuName}>
+                                  {serviceItem.name}
+                                </MegaMenuServiceTitle>
+                                <MegaMenuServiceDescription menuName={menuName}>
+                                  {serviceItem.description}
+                                </MegaMenuServiceDescription>
+                              </MegaMenuServiceItem>
+                            )
+                          )}
+                        </MegaMenuGrid>
+                      )
                     ) : (
                       <div
                         style={{
@@ -3463,7 +3861,7 @@ function MegaMenuIntellectt() {
                 e.target.style.boxShadow = "0 2px 8px rgba(255, 138, 76, 0.3)";
               }}
             >
-              Contact Us
+              Let's Connect
               <span style={{ fontSize: "0.7rem", fontWeight: "700" }}>›</span>
             </RouterButton>
           </HeaderActions>
@@ -3544,7 +3942,7 @@ function MegaMenuIntellectt() {
             variant="secondary"
             style={{ width: "100%", justifyContent: "center" }}
           >
-            Contact Us
+            Let's Connect
           </RouterButton>
         </SidebarActions>
       </Sidebar>

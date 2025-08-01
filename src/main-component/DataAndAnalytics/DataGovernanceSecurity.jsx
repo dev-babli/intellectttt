@@ -12,7 +12,6 @@ import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import EnhancedEncryptionIcon from "@mui/icons-material/EnhancedEncryption";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 
-
 import LockPersonIcon from "@mui/icons-material/LockPerson";
 import GavelIcon from "@mui/icons-material/Gavel";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -78,36 +77,36 @@ const Datafeatures = [
 const DataGovernanceSecurity = () => {
   return (
     <Fragment>
-         <div className="sco_agency">
-           <div className="page_content service-single-page">
-             <HeroSectionTitle
-               title="Data Governance & Security"
-               subtitle="We provide data governance and security solutions to help organizations protect their data from unauthorized access, data breaches, and privacy violations."
-               buttonText="TALK TO OUR EXPERTS"
-               buttonLink="#contact"
-               backgroundImage="/Data-Governance-and-Securuty.webp"
-             />
-             <CssBaseline />
-             <FeaturesSection features={features} />
-             <DataSection
-               title="Protect. Govern. Trust."
-description={`In an era of increasing data breaches and strict regulations, robust Data Governance & Security are non-negotiable.
+      <div className="sco_agency">
+        <div className="page_content service-single-page">
+          <HeroSectionTitle
+            title="Data Governance & Security"
+            subtitle="We provide data governance and security solutions to help organizations protect their data from unauthorized access, data breaches, and privacy violations."
+            buttonText="TALK TO OUR EXPERTS"
+            buttonLink="#contact"
+            backgroundImage="/Data-Governance-and-Securuty.webp"
+          />
+          <CssBaseline />
+          <FeaturesSection features={features} />
+          <DataSection
+            title="Protect. Govern. Trust."
+            description={`In an era of increasing data breaches and strict regulations, robust Data Governance & Security are non-negotiable.
 
 Our solutions help organizations establish data ownership, enforce compliance, and safeguard critical assets through policies, access controls, and audit trails.
 
 We implement industry best practices in governance frameworks, data lineage, role-based access, and encryption—ensuring your data is accurate, secure, and trusted across its lifecycle.
 
 With our expertise in regulatory alignment (GDPR, HIPAA, etc.), risk mitigation, and metadata management, we empower businesses to make confident, compliant, and secure data decisions.`}
-               features={Datafeatures}
-               ctaText="Contact Us"
-               ctaLink="/contact"
-             />
-             <TechnologyLogos />
-             <ContactSection />
-           </div>
-         </div>
-       </Fragment>
-  )
-}
+            features={Datafeatures}
+            ctaText="Let's Connect"
+            ctaLink="/contact"
+          />
+          <TechnologyLogos />
+          <ContactSection />
+        </div>
+      </div>
+    </Fragment>
+  );
+};
 
-export default DataGovernanceSecurity
+export default DataGovernanceSecurity;

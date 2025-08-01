@@ -18,7 +18,9 @@ import PsychologyAltIcon from "@mui/icons-material/PsychologyAlt";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 const features = [
   {
-    icon: <SettingsInputComponentIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
+    icon: (
+      <SettingsInputComponentIcon sx={{ color: "#e85d04", fontSize: 30 }} />
+    ),
     title: "Production-Ready ML",
     description:
       "We design and deploy robust machine learning models that are optimized for real-world performance.",
@@ -87,7 +89,6 @@ const MLEngineeringMLOps = () => {
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
             backgroundImage="/AiGenAi/Ml-engineeringML-ops.webp"
-           
           />
           <CssBaseline />
           <FeaturesSection features={features} />
@@ -99,7 +100,7 @@ Our ML Engineering & MLOps services are designed to help teams go from research 
 
 From experimentation to CI/CD pipelines for ML—we make your AI initiatives robust, scalable, and maintainable.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />

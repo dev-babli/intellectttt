@@ -18,7 +18,9 @@ import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstruct
 
 const features = [
   {
-    icon: <PrecisionManufacturingIcon sx={{ color: "#1976D2", fontSize: 34 }} />,
+    icon: (
+      <PrecisionManufacturingIcon sx={{ color: "#1976D2", fontSize: 34 }} />
+    ),
     title: "AI-Powered Image Analysis",
     description:
       "Leverage deep learning models to detect patterns, anomalies, and pathologies in radiology, pathology, and other diagnostic images.",
@@ -68,7 +70,9 @@ const Datafeatures = [
       "Support diagnostics with predictive models that assist in disease detection, staging, and patient risk stratification.",
   },
   {
-    icon: <IntegrationInstructionsIcon sx={{ color: "#FBC02D", fontSize: 36 }} />,
+    icon: (
+      <IntegrationInstructionsIcon sx={{ color: "#FBC02D", fontSize: 36 }} />
+    ),
     title: "Seamless System Integration",
     description:
       "Deploy AI within your existing diagnostic infrastructure—integrated with PACS, LIS, or EHR for uninterrupted workflows.",
@@ -76,7 +80,7 @@ const Datafeatures = [
 ];
 const AIImagingDiagnostics = () => {
   return (
-<Fragment>
+    <Fragment>
       <div className="sco_agency">
         <div className="page_content service-single-page">
           <HeroSectionTitle
@@ -90,11 +94,11 @@ const AIImagingDiagnostics = () => {
           <FeaturesSection features={features} />
           <DataSection
             title="AI in Imaging & Diagnostics"
-  description={`Empower your diagnostics teams with AI-driven image analysis and decision support tools. Our solutions help healthcare organizations improve accuracy, reduce turnaround time, and prioritize critical cases using advanced machine learning.
+            description={`Empower your diagnostics teams with AI-driven image analysis and decision support tools. Our solutions help healthcare organizations improve accuracy, reduce turnaround time, and prioritize critical cases using advanced machine learning.
 
 From radiology to pathology, we build and integrate AI platforms that transform imaging workflows—enhancing early detection, triaging, and predictive diagnosis at scale.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />
@@ -102,7 +106,7 @@ From radiology to pathology, we build and integrate AI platforms that transform 
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default AIImagingDiagnostics
+export default AIImagingDiagnostics;

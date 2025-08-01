@@ -18,7 +18,9 @@ import WebAssetIcon from "@mui/icons-material/WebAsset";
 
 const features = [
   {
-    icon: <IntegrationInstructionsIcon sx={{ color: "#e85d04", fontSize: 34 }} />,
+    icon: (
+      <IntegrationInstructionsIcon sx={{ color: "#e85d04", fontSize: 34 }} />
+    ),
     title: "End-to-End ETL",
     description:
       "Design robust ETL workflows to extract, transform, and load data across diverse sources—supporting both batch and real-time scenarios.",
@@ -77,37 +79,37 @@ const Datafeatures = [
 ];
 const DataEngineeringETL = () => {
   return (
-   <Fragment>
-         <div className="sco_agency">
-           <div className="page_content service-single-page">
-             <HeroSectionTitle
-               title="Data Engineering & ETL Services"
-               subtitle="Unlock the Power of Data with Our SAP BTP, ABAP & Fiori Development & Support Services"
-               buttonText="TALK TO OUR EXPERTS"
-               buttonLink="#contact"
-               backgroundImage="/Data-Engineering.webp"
-             />
-             <CssBaseline />
-             <FeaturesSection features={features} />
-             <DataSection
-               title="Accelerate Insights with Scalable Data Engineering & ETL Services"
-description={`In today’s data-driven world, business agility depends on the ability to harness, transform, and operationalize large volumes of data—fast and reliably.
+    <Fragment>
+      <div className="sco_agency">
+        <div className="page_content service-single-page">
+          <HeroSectionTitle
+            title="Data Engineering & ETL Services"
+            subtitle="Unlock the Power of Data with Our SAP BTP, ABAP & Fiori Development & Support Services"
+            buttonText="TALK TO OUR EXPERTS"
+            buttonLink="#contact"
+            backgroundImage="/Data-Engineering.webp"
+          />
+          <CssBaseline />
+          <FeaturesSection features={features} />
+          <DataSection
+            title="Accelerate Insights with Scalable Data Engineering & ETL Services"
+            description={`In today’s data-driven world, business agility depends on the ability to harness, transform, and operationalize large volumes of data—fast and reliably.
 
 Our Data Engineering & ETL Services empower you to build robust, scalable data pipelines that integrate data from diverse sources into centralized, analytics-ready environments.
 
 From designing real-time and batch ETL workflows to implementing cloud-native data lakes and warehouses, we help you optimize performance, ensure data quality, and enable actionable insights.
 
 With certified data engineers, modern ETL frameworks, and end-to-end support—we transform your raw data into a strategic asset, driving smarter decisions and competitive advantage.`}
-               features={Datafeatures}
-               ctaText="Contact Us"
-               ctaLink="/contact"
-             />
-             <TechnologyLogos />
-             <ContactSection />
-           </div>
-         </div>
-       </Fragment>
-  )
-}
+            features={Datafeatures}
+            ctaText="Let's Connect"
+            ctaLink="/contact"
+          />
+          <TechnologyLogos />
+          <ContactSection />
+        </div>
+      </div>
+    </Fragment>
+  );
+};
 
-export default DataEngineeringETL
+export default DataEngineeringETL;

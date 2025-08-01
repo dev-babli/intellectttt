@@ -12,12 +12,14 @@ import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
 import IntellecttAISolutions from "../../components/Help-Desk-Components/PartnerSection/IntellecttAiSolutions";
 import StackingCardsScroll from "../../components/StaticCard/StackingCardsScroll";
 import IntelligenceCore from "../../components/Intelligence/IntelligenceCore";
+import FeatureCards from "../../components/feature/FeatureCards";
 
 const HomePage = () => {
   return (
     <Fragment>
       <div className="help_desk" style={{ margin: 0, padding: 0 }}>
         <HeroSection />
+        <FeatureCards />
         <PartnerSection />
         <LuminCards />
         {/* <ImageLinkSection /> */}

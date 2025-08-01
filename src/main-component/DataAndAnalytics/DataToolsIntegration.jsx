@@ -12,9 +12,9 @@ import HubIcon from "@mui/icons-material/Hub";
 import InsightsIcon from "@mui/icons-material/Insights";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 
-import StorageIcon from "@mui/icons-material/Storage";           
-import DataObjectIcon from "@mui/icons-material/DataObject";     
-// import InsightsIcon from "@mui/icons-material/Insights";     
+import StorageIcon from "@mui/icons-material/Storage";
+import DataObjectIcon from "@mui/icons-material/DataObject";
+// import InsightsIcon from "@mui/icons-material/Insights";
 
 const features = [
   {
@@ -78,36 +78,36 @@ const Datafeatures = [
 const DataToolsIntegration = () => {
   return (
     <Fragment>
-             <div className="sco_agency">
-               <div className="page_content service-single-page">
-                 <HeroSectionTitle
-                   title="Azure Data Lake, Snowflake, Power BI"
-                   subtitle="Maximize the value of your data with a modern analytics ecosystem powered by Azure Data Lake, Snowflake, and Power BI."
-                   buttonText="TALK TO OUR EXPERTS"
-                   buttonLink="#contact"
-                   backgroundImage="/Data-Analytics-Header.webp"
-                 />
-                 <CssBaseline />
-                 <FeaturesSection features={features} />
-                 <DataSection
-                   title="Unify. Analyze. Scale."
-    description={`Maximize the value of your data with a modern analytics ecosystem powered by Azure Data Lake, Snowflake, and Power BI.
+      <div className="sco_agency">
+        <div className="page_content service-single-page">
+          <HeroSectionTitle
+            title="Azure Data Lake, Snowflake, Power BI"
+            subtitle="Maximize the value of your data with a modern analytics ecosystem powered by Azure Data Lake, Snowflake, and Power BI."
+            buttonText="TALK TO OUR EXPERTS"
+            buttonLink="#contact"
+            backgroundImage="/Data-Analytics-Header.webp"
+          />
+          <CssBaseline />
+          <FeaturesSection features={features} />
+          <DataSection
+            title="Unify. Analyze. Scale."
+            description={`Maximize the value of your data with a modern analytics ecosystem powered by Azure Data Lake, Snowflake, and Power BI.
 
 We help organizations unify disparate data sources, store them efficiently in scalable cloud lakes or warehouses, and visualize actionable insights through interactive dashboards.
 
 From ingesting and organizing raw data in Azure Data Lake to building robust Snowflake schemas and delivering business insights via Power BI—we design end-to-end data pipelines that fuel decision-making.
 
 Whether it's real-time analytics, governed self-service BI, or cross-platform integration—our expertise ensures your data works smarter, faster, and harder for your business.`}
-                   features={Datafeatures}
-                   ctaText="Contact Us"
-                   ctaLink="/contact"
-                 />
-                 <TechnologyLogos />
-                 <ContactSection />
-               </div>
-             </div>
-           </Fragment>
-  )
-}
+            features={Datafeatures}
+            ctaText="Let's Connect"
+            ctaLink="/contact"
+          />
+          <TechnologyLogos />
+          <ContactSection />
+        </div>
+      </div>
+    </Fragment>
+  );
+};
 
-export default DataToolsIntegration
+export default DataToolsIntegration;

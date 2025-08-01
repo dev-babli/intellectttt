@@ -100,7 +100,7 @@ We help businesses harness the full potential of Large Language Models (LLMs) an
 
 Whether it’s a chatbot that adapts to tone and context, or a document assistant that drafts, summarizes, and translates—our Gen AI integrations make your teams faster and smarter.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />

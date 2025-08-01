@@ -30,7 +30,9 @@ const features = [
       "Implement role-based access controls, SSO, MFA, and audit logs to safeguard sensitive data and meet security mandates.",
   },
   {
-    icon: <IntegrationInstructionsIcon sx={{ color: "#1976D2", fontSize: 34 }} />,
+    icon: (
+      <IntegrationInstructionsIcon sx={{ color: "#1976D2", fontSize: 34 }} />
+    ),
     title: "System Validation & Integration",
     description:
       "Ensure your platforms are validated and compliant by design, from EHR integrations to laboratory and research systems.",
@@ -76,35 +78,35 @@ const Datafeatures = [
 ];
 const ComplianceRegulatoryIT = () => {
   return (
-   <Fragment>
-         <div className="sco_agency">
-           <div className="page_content service-single-page">
-             <HeroSectionTitle
-               title="Compliance & Regulatory IT"
-               subtitle=" Empowering organizations to meet regulatory demands with secure, audit-ready IT solutions. "
-               buttonText="TALK TO OUR EXPERTS"
-               buttonLink="#contact"
-               backgroundImage="/Compleance-and-Regulatory-IT.webp"
-             />
-             <CssBaseline />
-             <FeaturesSection features={features} />
-             <DataSection
-               title="Simplify Compliance. Strengthen Trust."
-  description={`We help healthcare, pharma, and regulated industries navigate complex compliance requirements through robust, scalable IT systems.
+    <Fragment>
+      <div className="sco_agency">
+        <div className="page_content service-single-page">
+          <HeroSectionTitle
+            title="Compliance & Regulatory IT"
+            subtitle=" Empowering organizations to meet regulatory demands with secure, audit-ready IT solutions. "
+            buttonText="TALK TO OUR EXPERTS"
+            buttonLink="#contact"
+            backgroundImage="/Compleance-and-Regulatory-IT.webp"
+          />
+          <CssBaseline />
+          <FeaturesSection features={features} />
+          <DataSection
+            title="Simplify Compliance. Strengthen Trust."
+            description={`We help healthcare, pharma, and regulated industries navigate complex compliance requirements through robust, scalable IT systems.
 
 Our solutions ensure alignment with HIPAA, FDA 21 CFR Part 11, GDPR, and other global regulations—while enhancing operational efficiency and data integrity.
 
 From policy-driven automation to audit-ready infrastructure, we implement secure digital ecosystems that reduce risk, support regulatory audits, and ensure uninterrupted operations.`}
-               features={Datafeatures}
-               ctaText="Contact Us"
-               ctaLink="/contact"
-             />
-             <TechnologyLogos />
-             <ContactSection />
-           </div>
-         </div>
-       </Fragment>
-  )
-}
+            features={Datafeatures}
+            ctaText="Let's Connect"
+            ctaLink="/contact"
+          />
+          <TechnologyLogos />
+          <ContactSection />
+        </div>
+      </div>
+    </Fragment>
+  );
+};
 
-export default ComplianceRegulatoryIT
+export default ComplianceRegulatoryIT;

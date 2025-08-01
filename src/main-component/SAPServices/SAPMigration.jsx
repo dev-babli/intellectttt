@@ -99,7 +99,7 @@ With a dedicated team of SAP experts, real-time monitoring, automated incident h
 
 From routine operations to complex enhancements—we empower your business to run smarter, not harder.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />

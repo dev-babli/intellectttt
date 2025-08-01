@@ -53,7 +53,7 @@ const features = [
     description:
       "Maintain HIPAA, HITRUST, and GDPR compliance with strong encryption, access controls, and audit-ready infrastructure.",
   },
-];;
+];
 
 const Datafeatures = [
   {
@@ -91,13 +91,13 @@ const ClinicalDataPlatforms = () => {
           <FeaturesSection features={features} />
           <DataSection
             title="Transform Clinical Data into Actionable Intelligence"
-  description={`Modernize your healthcare data infrastructure with scalable Clinical Data Platforms that unify, manage, and analyze patient information across systems.
+            description={`Modernize your healthcare data infrastructure with scalable Clinical Data Platforms that unify, manage, and analyze patient information across systems.
 
 We help organizations consolidate data from EHRs, labs, wearables, and third-party sources into interoperable platforms that support care delivery, research, and operations.
 
 From secure ingestion to real-time analytics, we design end-to-end solutions that empower clinicians, administrators, and researchers to make informed decisions. Whether you're building clinical registries, enabling precision medicine, or integrating with FHIR-based APIs—our platforms are built to scale with your goals.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />
@@ -105,7 +105,7 @@ From secure ingestion to real-time analytics, we design end-to-end solutions tha
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default ClinicalDataPlatforms
+export default ClinicalDataPlatforms;

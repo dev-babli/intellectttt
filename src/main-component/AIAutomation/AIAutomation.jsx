@@ -6,9 +6,9 @@ import { CssBaseline } from "@mui/material";
 import DataSection from "../../components/DataSection/DataSection";
 import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
 
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import Diversity3Icon from '@mui/icons-material/Diversity3';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import Diversity3Icon from "@mui/icons-material/Diversity3";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
@@ -81,18 +81,18 @@ const Datafeatures = [
 const AIAutomation = () => {
   return (
     <Fragment>
-          <div className="sco_agency">
-            <div className="page_content service-single-page">
-              <HeroSectionTitle
-                title="AI Automation (AI + RPA) Consulting"
-                subtitle="We help companies harness the power of AI and RPA to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
-                buttonText="TALK TO OUR EXPERTS"
-                buttonLink="#contact"
-                backgroundImage="/AiGenAi/AIAutomation.webp"
-              />
-              <CssBaseline />
-              <FeaturesSection features={features} />
-             <DataSection
+      <div className="sco_agency">
+        <div className="page_content service-single-page">
+          <HeroSectionTitle
+            title="AI Automation (AI + RPA) Consulting"
+            subtitle="We help companies harness the power of AI and RPA to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
+            buttonText="TALK TO OUR EXPERTS"
+            buttonLink="#contact"
+            backgroundImage="/AiGenAi/AIAutomation.webp"
+          />
+          <CssBaseline />
+          <FeaturesSection features={features} />
+          <DataSection
             title="  Unlock the Power of Smart Automation"
             description={`AI + RPA brings the best of both worlds—rule-based precision and intelligent decision-making.
 
@@ -102,15 +102,15 @@ Our solutions blend computer vision, NLP, and machine learning with automation p
 
 From invoice processing to support ticket resolution and compliance monitoring—AI-powered bots work smarter, faster, and with greater impact.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
-              <TechnologyLogos />
-              <ContactSection />
-            </div>
-          </div>
-        </Fragment>
-  )
-}
+          <TechnologyLogos />
+          <ContactSection />
+        </div>
+      </div>
+    </Fragment>
+  );
+};
 
-export default AIAutomation
+export default AIAutomation;

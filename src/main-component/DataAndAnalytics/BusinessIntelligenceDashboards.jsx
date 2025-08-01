@@ -78,36 +78,36 @@ const Datafeatures = [
 const BusinessIntelligenceDashboards = () => {
   return (
     <Fragment>
-         <div className="sco_agency">
-           <div className="page_content service-single-page">
-             <HeroSectionTitle
-               title="Business Intelligence & Dashboards"
-               subtitle="Empower Decision-Making with Intelligent Dashboards & BI Solutions"
-               buttonText="TALK TO OUR EXPERTS"
-               buttonLink="#contact"
-               backgroundImage="/Business-Intelligence.webp"
-             />
-             <CssBaseline />
-             <FeaturesSection features={features} />
-             <DataSection
-               title="Empower Decisions with Intelligent Dashboards & BI Solutions"
-description={`In today’s insight-driven economy, businesses need clear, real-time visibility into their operations and KPIs.
+      <div className="sco_agency">
+        <div className="page_content service-single-page">
+          <HeroSectionTitle
+            title="Business Intelligence & Dashboards"
+            subtitle="Empower Decision-Making with Intelligent Dashboards & BI Solutions"
+            buttonText="TALK TO OUR EXPERTS"
+            buttonLink="#contact"
+            backgroundImage="/Business-Intelligence.webp"
+          />
+          <CssBaseline />
+          <FeaturesSection features={features} />
+          <DataSection
+            title="Empower Decisions with Intelligent Dashboards & BI Solutions"
+            description={`In today’s insight-driven economy, businesses need clear, real-time visibility into their operations and KPIs.
 
 Our Business Intelligence & Dashboard solutions help you turn complex data into actionable insights through dynamic dashboards, interactive reports, and automated visualizations.
 
 From integrating multiple data sources to designing intuitive dashboards in Power BI, Tableau, or Looker—we ensure that every stakeholder gets the right insights at the right time.
 
 With our expertise in data modeling, drill-down analytics, and real-time visualization—we help you make confident decisions, optimize operations, and drive strategic growth.`}
-               features={Datafeatures}
-               ctaText="Contact Us"
-               ctaLink="/contact"
-             />
-             <TechnologyLogos />
-             <ContactSection />
-           </div>
-         </div>
-       </Fragment>
-  )
-}
+            features={Datafeatures}
+            ctaText="Let's Connect"
+            ctaLink="/contact"
+          />
+          <TechnologyLogos />
+          <ContactSection />
+        </div>
+      </div>
+    </Fragment>
+  );
+};
 
-export default BusinessIntelligenceDashboards
+export default BusinessIntelligenceDashboards;

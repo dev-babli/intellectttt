@@ -5,17 +5,16 @@ import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection
 import { CssBaseline } from "@mui/material";
 import DataSection from "../../components/DataSection/DataSection";
 import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
-import VerifiedIcon from '@mui/icons-material/Verified';
-import FlashOnIcon from '@mui/icons-material/FlashOn';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import ArchitectureIcon from '@mui/icons-material/Architecture';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import VerifiedIcon from "@mui/icons-material/Verified";
+import FlashOnIcon from "@mui/icons-material/FlashOn";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
+import ArchitectureIcon from "@mui/icons-material/Architecture";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import PublishedWithChangesIcon from "@mui/icons-material/PublishedWithChanges";
 import SupportIcon from "@mui/icons-material/Support";
-
 
 const features = [
   {
@@ -78,7 +77,7 @@ const Datafeatures = [
 ];
 const SAPManagedSupport = () => {
   return (
-   <Fragment>
+    <Fragment>
       <div className="sco_agency">
         <div className="page_content service-single-page">
           <HeroSectionTitle
@@ -91,8 +90,8 @@ const SAPManagedSupport = () => {
           <CssBaseline />
           <FeaturesSection features={features} />
           <DataSection
-           title="Accelerate Your SAP S/4HANA Migration with Confidence"
-description={`In today’s evolving digital landscape, migrating to SAP S/4HANA is not just an upgrade—it’s a strategic transformation toward a more intelligent enterprise.
+            title="Accelerate Your SAP S/4HANA Migration with Confidence"
+            description={`In today’s evolving digital landscape, migrating to SAP S/4HANA is not just an upgrade—it’s a strategic transformation toward a more intelligent enterprise.
 
 Our SAP S/4HANA Migration services help organizations move from legacy SAP ECC systems to S/4HANA seamlessly, minimizing risk while maximizing business value.
 
@@ -100,7 +99,7 @@ From system assessment and custom code remediation to data migration, process op
 
 With certified SAP consultants, proven tools, and a roadmap tailored to your business goals, we ensure a smooth, secure, and future-ready S/4HANA transition.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />
@@ -108,7 +107,7 @@ With certified SAP consultants, proven tools, and a roadmap tailored to your bus
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default SAPManagedSupport
+export default SAPManagedSupport;

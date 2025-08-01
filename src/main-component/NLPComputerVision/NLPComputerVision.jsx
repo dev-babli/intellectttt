@@ -89,8 +89,8 @@ const NLPComputerVision = () => {
             backgroundImage="/AiGenAi/NLPComputer-vision.webp"
           />
           <CssBaseline />
-         <FeaturesSection features={features} />
-           <DataSection
+          <FeaturesSection features={features} />
+          <DataSection
             title="Extract Intelligence from Text and Images"
             description={`Natural Language Processing (NLP) and Computer Vision (CV) are transforming how modern enterprises interact with data. From understanding customer intent in real-time to extracting structured information from scanned documents, or detecting product defects on an assembly line—our solutions convert unstructured data into strategic assets.
 
@@ -98,7 +98,7 @@ We combine cutting-edge deep learning models with proven engineering practices t
 
 Our NLP & CV stack is designed for business outcomes—accurate, scalable, and production-ready.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />

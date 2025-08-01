@@ -5,7 +5,7 @@ const DataSection = ({
   title,
   description,
   features = [],
-  ctaText = "Contact Us",
+  ctaText = "Let's Connect",
   onCtaClick,
   ctaLink,
   bgColor = "#f2fbfd",
@@ -15,8 +15,10 @@ const DataSection = ({
       sx={{
         background: bgColor,
         py: { xs: 6, md: 10 },
-       px:{ xs: 2, sm: 4, md: 6 },
-        maxWidth: '89% !important', width: '89%' , margin: '0 auto'
+        px: { xs: 2, sm: 4, md: 6 },
+        maxWidth: "89% !important",
+        width: "89%",
+        margin: "0 auto",
       }}
     >
       <Grid container spacing={4} justifyContent="center">
@@ -53,7 +55,7 @@ const DataSection = ({
       </Grid>
 
       {/* CTA Button */}
-      {(ctaText && (onCtaClick || ctaLink)) && (
+      {ctaText && (onCtaClick || ctaLink) && (
         <Box mt={6} textAlign="center">
           <Button
             variant="contained"

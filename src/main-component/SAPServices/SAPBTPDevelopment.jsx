@@ -18,7 +18,9 @@ import CloudSyncIcon from "@mui/icons-material/CloudSync";
 
 const features = [
   {
-    icon: <IntegrationInstructionsIcon sx={{ color: "#e85d04", fontSize: 34 }} />,
+    icon: (
+      <IntegrationInstructionsIcon sx={{ color: "#e85d04", fontSize: 34 }} />
+    ),
     title: "Custom ABAP Development",
     description:
       "Enhance standard SAP functionality with custom ABAP programs, reports, interfaces, and workflows tailored to your business needs.",
@@ -91,7 +93,7 @@ const SAPBTPDevelopment = () => {
           <FeaturesSection features={features} />
           <DataSection
             title="Empower Innovation with SAP BTP, ABAP & Fiori Development & Support"
-description={`In today’s digital-first enterprise landscape, success hinges on more than standard SAP support—it requires agile, intelligent platforms that accelerate innovation.
+            description={`In today’s digital-first enterprise landscape, success hinges on more than standard SAP support—it requires agile, intelligent platforms that accelerate innovation.
 
 Our SAP BTP, ABAP & Fiori Development & Support services deliver next-gen application development, seamless user experiences, and real-time integration across your SAP ecosystem.
 
@@ -99,7 +101,7 @@ From custom ABAP enhancements and modern Fiori UI design to extensibility using 
 
 With certified SAP developers, DevOps best practices, and ongoing support—we ensure your SAP apps are responsive, intuitive, and aligned with your evolving business goals.`}
             features={Datafeatures}
-            ctaText="Contact Us"
+            ctaText="Let's Connect"
             ctaLink="/contact"
           />
           <TechnologyLogos />
@@ -107,7 +109,7 @@ With certified SAP developers, DevOps best practices, and ongoing support—we e
         </div>
       </div>
     </Fragment>
-  )
-}
+  );
+};
 
-export default SAPBTPDevelopment
+export default SAPBTPDevelopment;
