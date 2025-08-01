@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import icon1 from "../../images/shape/trangle-shape05.png";
 import icon13 from "../../images/icon/sms-white-icon01.svg";
-import logo from "../../images/logo/Intellectt-Logo.webp";
+import logo from "../../images/logo/Intellectt-home-Logo.webp";
 
 import MobileMenu from "../MobileMenu/MobileMenu";
 import AnimatedDrawerMenu from "../Drower/AnimatedDrawerMenu";
@@ -84,9 +84,10 @@ const Header5 = (props) => {
         right: 0,
         zIndex: 1000,
         transition: "all 0.3s ease",
-        background: scrolled ? "rgba(0, 0, 0, 0.95)" : "transparent",
+        background: scrolled ? "rgba(255, 255, 255, 0.95)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255, 255, 255, 0.1)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(0, 0, 0, 0.1)" : "none",
+        boxShadow: scrolled ? "0 2px 20px rgba(0, 0, 0, 0.1)" : "none",
       }}
     >
       {/* Top Bar - Only visible when not scrolled */}
@@ -192,7 +193,9 @@ const Header5 = (props) => {
               sx={{
                 height: scrolled ? "40px" : "50px",
                 transition: "all 0.3s ease",
-                filter: "brightness(1) contrast(1)",
+                filter: scrolled
+                  ? "brightness(1) contrast(1)"
+                  : "brightness(0) contrast(1)",
               }}
             />
           </Link>
@@ -212,12 +215,16 @@ const Header5 = (props) => {
             >
               <Typography
                 sx={{
-                  color: "#ffffff",
+                  color: scrolled ? "#000000" : "#ffffff",
                   fontSize: "1rem",
                   fontWeight: 500,
                   transition: "all 0.3s ease",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
                   "&:hover": {
-                    color: "rgba(255, 255, 255, 0.8)",
+                    color: scrolled
+                      ? "rgba(0, 0, 0, 0.7)"
+                      : "rgba(255, 255, 255, 0.8)",
                   },
                 }}
               >
@@ -232,12 +239,16 @@ const Header5 = (props) => {
             >
               <Typography
                 sx={{
-                  color: "#ffffff",
+                  color: scrolled ? "#000000" : "#ffffff",
                   fontSize: "1rem",
                   fontWeight: 500,
                   transition: "all 0.3s ease",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
                   "&:hover": {
-                    color: "rgba(255, 255, 255, 0.8)",
+                    color: scrolled
+                      ? "rgba(0, 0, 0, 0.7)"
+                      : "rgba(255, 255, 255, 0.8)",
                   },
                 }}
               >
@@ -252,12 +263,16 @@ const Header5 = (props) => {
             >
               <Typography
                 sx={{
-                  color: "#ffffff",
+                  color: scrolled ? "#000000" : "#ffffff",
                   fontSize: "1rem",
                   fontWeight: 500,
                   transition: "all 0.3s ease",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
                   "&:hover": {
-                    color: "rgba(255, 255, 255, 0.8)",
+                    color: scrolled
+                      ? "rgba(0, 0, 0, 0.7)"
+                      : "rgba(255, 255, 255, 0.8)",
                   },
                 }}
               >
@@ -272,12 +287,16 @@ const Header5 = (props) => {
             >
               <Typography
                 sx={{
-                  color: "#ffffff",
+                  color: scrolled ? "#000000" : "#ffffff",
                   fontSize: "1rem",
                   fontWeight: 500,
                   transition: "all 0.3s ease",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
                   "&:hover": {
-                    color: "rgba(255, 255, 255, 0.8)",
+                    color: scrolled
+                      ? "rgba(0, 0, 0, 0.7)"
+                      : "rgba(255, 255, 255, 0.8)",
                   },
                 }}
               >
@@ -292,12 +311,16 @@ const Header5 = (props) => {
             >
               <Typography
                 sx={{
-                  color: "#ffffff",
+                  color: scrolled ? "#000000" : "#ffffff",
                   fontSize: "1rem",
                   fontWeight: 500,
                   transition: "all 0.3s ease",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
                   "&:hover": {
-                    color: "rgba(255, 255, 255, 0.8)",
+                    color: scrolled
+                      ? "rgba(0, 0, 0, 0.7)"
+                      : "rgba(255, 255, 255, 0.8)",
                   },
                 }}
               >
@@ -320,10 +343,14 @@ const Header5 = (props) => {
               onClick={ClickHandler}
               variant="contained"
               sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.15)",
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
-                color: "#ffffff",
+                backgroundColor: scrolled
+                  ? "#000000"
+                  : "rgba(255, 255, 255, 0.15)",
+                backdropFilter: scrolled ? "none" : "blur(10px)",
+                border: scrolled
+                  ? "1px solid rgba(0, 0, 0, 0.2)"
+                  : "1px solid rgba(255, 255, 255, 0.2)",
+                color: scrolled ? "#ffffff" : "#ffffff",
                 fontSize: "0.9rem",
                 fontWeight: 600,
                 padding: "0.75rem 1.5rem",
@@ -331,9 +358,13 @@ const Header5 = (props) => {
                 textTransform: "none",
                 transition: "all 0.3s ease",
                 "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.25)",
+                  backgroundColor: scrolled
+                    ? "#333333"
+                    : "rgba(255, 255, 255, 0.25)",
                   transform: "translateY(-2px)",
-                  boxShadow: "0 8px 25px rgba(0,0,0,0.2)",
+                  boxShadow: scrolled
+                    ? "0 8px 25px rgba(0,0,0,0.3)"
+                    : "0 8px 25px rgba(0,0,0,0.2)",
                 },
               }}
             >
@@ -351,12 +382,18 @@ const Header5 = (props) => {
             <IconButton
               onClick={() => setMobailState(!mobailActive)}
               sx={{
-                color: "#ffffff",
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                color: scrolled ? "#000000" : "#ffffff",
+                backgroundColor: scrolled
+                  ? "rgba(0, 0, 0, 0.1)"
+                  : "rgba(255, 255, 255, 0.1)",
                 backdropFilter: "blur(10px)",
-                border: "1px solid rgba(255, 255, 255, 0.2)",
+                border: scrolled
+                  ? "1px solid rgba(0, 0, 0, 0.2)"
+                  : "1px solid rgba(255, 255, 255, 0.2)",
                 "&:hover": {
-                  backgroundColor: "rgba(255, 255, 255, 0.2)",
+                  backgroundColor: scrolled
+                    ? "rgba(0, 0, 0, 0.2)"
+                    : "rgba(255, 255, 255, 0.2)",
                 },
               }}
             >

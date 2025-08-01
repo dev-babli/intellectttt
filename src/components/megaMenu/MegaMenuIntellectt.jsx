@@ -17,15 +17,48 @@ const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(30px) saturate(180%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  background: ${(props) => (props.scrolled ? "#ffffff" : "transparent")};
+  backdrop-filter: ${(props) =>
+    props.scrolled ? "blur(30px) saturate(180%)" : "none"};
+  border-bottom: ${(props) =>
+    props.scrolled ? "1px solid rgba(0, 0, 0, 0.08)" : "none"};
+  box-shadow: ${(props) =>
+    props.scrolled ? "0 1px 10px rgba(0, 0, 0, 0.05)" : "none"};
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    backdrop-filter: blur(30px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+
+    /* Force logo to show original colors on hover */
+    img {
+      filter: none !important;
+    }
+
+    /* Force navigation text to be black on hover */
+    nav a {
+      color: #000000 !important;
+    }
+
+    /* Force dropdown buttons to be black on hover */
+    nav a:hover {
+      color: #000000 !important;
+    }
+
+    /* Force navigation buttons to be black when header is hovered */
+    nav div {
+      color: #000000 !important;
+    }
+
+    /* Force "Let's Connect" button to turn yellow when header is hovered */
+    button {
+      background: linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%) !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 4px 16px rgba(255, 138, 76, 0.4) !important;
+    }
   }
 `;
 
@@ -65,11 +98,14 @@ const Logo = styled.div`
   img {
     height: 40px;
     width: auto;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
+    filter: ${(props) =>
+      props.scrolled ? "none" : "brightness(0) saturate(0) invert(1)"};
   }
 
   img:hover {
     transform: scale(1.02);
+    filter: brightness(1) contrast(1);
   }
 
   @media (max-width: 768px) {
@@ -107,7 +143,11 @@ const NavItem = styled.div`
   padding: 0.625rem 0.875rem;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: ${(props) => (props.isActive ? "#6366f1" : "#1f2937")};
+  color: ${(props) => {
+    if (props.isActive) return "#6366f1";
+    return props.scrolled ? "#000000" : "#ffffff";
+  }};
+
   font-weight: 600;
   font-size: 0.8rem;
   font-family: "Inter", sans-serif;
@@ -118,10 +158,17 @@ const NavItem = styled.div`
   transform-origin: center;
 
   &:hover {
-    background: rgba(99, 102, 241, 0.08);
-    color: #6366f1;
+    background: ${(props) =>
+      props.scrolled ? "rgba(0, 0, 0, 0.05)" : "rgba(99, 102, 241, 0.08)"};
+    color: ${(props) => {
+      if (props.isActive) return "#6366f1";
+      return props.scrolled ? "#000000" : "#ffffff";
+    }};
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+    box-shadow: ${(props) =>
+      props.scrolled
+        ? "0 4px 12px rgba(0, 0, 0, 0.1)"
+        : "0 4px 12px rgba(99, 102, 241, 0.15)"};
   }
 
   &:active {
@@ -292,6 +339,7 @@ const ActionButton = styled.button`
   align-items: center;
   gap: 0.5rem;
   transform-origin: center;
+  color: ${(props) => (props.scrolled ? "#000000" : "#ffffff")};
 
   ${(props) =>
     props.variant === "primary"
@@ -355,7 +403,7 @@ const RouterButton = ({ to, external, children, ...props }) => {
 
   // Always use onClick handler for consistent behavior
   return (
-    <ActionButton onClick={handleClick} {...props}>
+    <ActionButton onClick={handleClick} scrolled={props.scrolled} {...props}>
       {children}
     </ActionButton>
   );
@@ -1830,9 +1878,25 @@ function MegaMenuIntellectt() {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
   const timeoutRef = useRef(null);
   const searchInputRef = useRef(null);
   const navigate = useNavigate();
+
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMouseEnter = (menuName) => {
     if (timeoutRef.current) {
@@ -3745,9 +3809,9 @@ function MegaMenuIntellectt() {
   return (
     <div style={{ background: "white" }}>
       {/* Mega Menu Header */}
-      <HeaderContainer>
+      <HeaderContainer scrolled={scrolled}>
         <HeaderContent>
-          <Logo>
+          <Logo scrolled={scrolled}>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
@@ -3768,6 +3832,7 @@ function MegaMenuIntellectt() {
               <NavItem
                 key={menuName}
                 isActive={activeMenu === menuName}
+                scrolled={scrolled}
                 onMouseEnter={() => handleMouseEnter(menuName)}
                 onMouseLeave={handleMouseLeave}
                 onKeyDown={(e) => handleKeyDown(e, menuName)}
@@ -3838,10 +3903,13 @@ function MegaMenuIntellectt() {
             <RouterButton
               to="/contact"
               variant="primary"
+              scrolled={scrolled}
               style={{
-                background: "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)",
-                color: "#374151",
-                border: "none",
+                background: scrolled
+                  ? "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)"
+                  : "#ffffff",
+                color: scrolled ? "#ffffff" : "#000000",
+                border: scrolled ? "none" : "1px solid #e5e7eb",
                 fontWeight: "600",
                 fontSize: "0.75rem",
                 padding: "0.5rem 1rem",
@@ -3849,16 +3917,29 @@ function MegaMenuIntellectt() {
                 display: "flex",
                 alignItems: "center",
                 gap: "0.375rem",
-                boxShadow: "0 2px 8px rgba(255, 138, 76, 0.3)",
+                boxShadow: scrolled
+                  ? "0 2px 8px rgba(255, 138, 76, 0.3)"
+                  : "0 2px 8px rgba(0, 0, 0, 0.1)",
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
                 e.target.style.transform = "translateY(-2px)";
+                e.target.style.background =
+                  "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)";
+                e.target.style.color = "#ffffff";
+                e.target.style.border = "none";
                 e.target.style.boxShadow = "0 4px 16px rgba(255, 138, 76, 0.4)";
               }}
               onMouseLeave={(e) => {
                 e.target.style.transform = "translateY(0)";
-                e.target.style.boxShadow = "0 2px 8px rgba(255, 138, 76, 0.3)";
+                e.target.style.background = scrolled
+                  ? "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)"
+                  : "#ffffff";
+                e.target.style.color = scrolled ? "#ffffff" : "#000000";
+                e.target.style.border = scrolled ? "none" : "1px solid #e5e7eb";
+                e.target.style.boxShadow = scrolled
+                  ? "0 2px 8px rgba(255, 138, 76, 0.3)"
+                  : "0 2px 8px rgba(0, 0, 0, 0.1)";
               }}
             >
               Let's Connect
@@ -3891,7 +3972,7 @@ function MegaMenuIntellectt() {
 
       <Sidebar isOpen={isMobileMenuOpen}>
         <SidebarHeader>
-          <Logo>
+          <Logo scrolled={scrolled}>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
