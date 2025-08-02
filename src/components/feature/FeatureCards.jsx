@@ -2,63 +2,109 @@ import React, { useEffect, useRef } from "react";
 import { Box, Typography, Container, Grid, Paper } from "@mui/material";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
+import sIcon1 from "../../images/industrie/img01.png";
+import sIcon2 from "../../images/industrie/img02.png";
+import sIcon3 from "../../images/industrie/img03.png";
+import sIcon4 from "../../images/industrie/img04.png";
+import sIcon5 from "../../images/industrie/img05.png";
+import sIcon6 from "../../images/industrie/img06.png";
+import sIcon7 from "../../images/industrie/img07.png";
+import sIcon8 from "../../images/industrie/img08.png";
+import sIcon9 from "../../images/industrie/img09.png";
+import sIcon10 from "../../images/industrie/img10.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const featureData = [
+const industryData = [
   {
     id: 1,
-    title: "AI-Powered Analytics",
+    title: "SaaS",
     description:
-      "Transform raw data into actionable insights with advanced machine learning algorithms and real-time processing capabilities.",
-    icon: "📊",
+      "Innovative software-as-a-service solutions for modern businesses",
+    icon: sIcon1,
     color: "#3b82f6",
+    route: "/service/cloud-and-application-services",
   },
   {
     id: 2,
-    title: "Cloud Infrastructure",
+    title: "Lawyers",
     description:
-      "Scalable, secure, and high-performance cloud solutions that adapt to your business needs and growth requirements.",
-    icon: "☁️",
+      "Legal technology solutions for law firms and legal professionals",
+    icon: sIcon2,
     color: "#10b981",
+    route: "/service/digital-transformation",
   },
   {
     id: 3,
-    title: "Cybersecurity",
-    description:
-      "Comprehensive security solutions with threat detection, encryption, and compliance management for enterprise protection.",
-    icon: "🔒",
+    title: "Real Estate",
+    description: "Digital transformation solutions for real estate industry",
+    icon: sIcon3,
     color: "#f59e0b",
+    route: "/service/digital-transformation",
   },
   {
     id: 4,
-    title: "Digital Transformation",
-    description:
-      "End-to-end digital solutions that modernize legacy systems and accelerate your organization's digital journey.",
-    icon: "🚀",
+    title: "Insurance",
+    description: "Advanced technology solutions for insurance companies",
+    icon: sIcon4,
     color: "#8b5cf6",
+    route: "/service/digital-transformation",
   },
   {
     id: 5,
-    title: "Data Engineering",
-    description:
-      "Robust data pipelines, ETL processes, and data warehousing solutions for enterprise-scale data management.",
-    icon: "⚙️",
+    title: "Crypto",
+    description: "Blockchain and cryptocurrency technology solutions",
+    icon: sIcon5,
     color: "#ef4444",
+    route: "/service/ai-and-gen-ai",
   },
   {
     id: 6,
-    title: "DevOps Automation",
-    description:
-      "Streamlined development workflows with CI/CD pipelines, containerization, and automated deployment strategies.",
-    icon: "🔄",
+    title: "Private Equity",
+    description: "Technology solutions for private equity firms",
+    icon: sIcon6,
     color: "#06b6d4",
+    route: "/service/data-and-analytics",
+  },
+  {
+    id: 7,
+    title: "Education",
+    description: "EdTech solutions for educational institutions",
+    icon: sIcon7,
+    color: "#84cc16",
+    route: "/service/ai-and-gen-ai",
+  },
+  {
+    id: 8,
+    title: "Finance",
+    description: "Financial technology and digital banking solutions",
+    icon: sIcon8,
+    color: "#f97316",
+    route: "/industries/banking-and-financial-services",
+  },
+  {
+    id: 9,
+    title: "Healthcare",
+    description: "Healthcare technology and digital health solutions",
+    icon: sIcon9,
+    color: "#ec4899",
+    route: "/industries/helthcare-and-life-sciences",
+  },
+  {
+    id: 10,
+    title: "Automotive",
+    description: "Automotive technology and connected vehicle solutions",
+    icon: sIcon10,
+    color: "#6366f1",
+    route: "/industries/menufacturing-and-automotive",
   },
 ];
 
 const FeatureCards = () => {
   const componentRef = useRef(null);
   const cardsRef = useRef([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!componentRef.current) return;
@@ -125,7 +171,6 @@ const FeatureCards = () => {
 
     if (isEntering) {
       gsap.to(card, {
-        y: -12,
         scale: 1.02,
         rotationY: 2,
         duration: 0.4,
@@ -133,13 +178,16 @@ const FeatureCards = () => {
       });
     } else {
       gsap.to(card, {
-        y: 0,
         scale: 1,
         rotationY: 0,
         duration: 0.4,
         ease: "power2.out",
       });
     }
+  };
+
+  const handleCardClick = (route) => {
+    navigate(route);
   };
 
   return (
@@ -177,7 +225,7 @@ const FeatureCards = () => {
               letterSpacing: "-0.025em",
             }}
           >
-            Our Capabilities
+            Industries We Work
           </Typography>
           <Typography
             variant="h5"
@@ -191,18 +239,18 @@ const FeatureCards = () => {
               fontFamily: "'Inter', sans-serif",
             }}
           >
-            Comprehensive technology solutions designed to accelerate your
-            digital transformation and drive business growth
+            Serving diverse industries with comprehensive technology solutions
           </Typography>
         </Box>
 
-        {/* Feature Cards Grid */}
+        {/* Industry Cards Grid */}
         <Grid container spacing={4}>
-          {featureData.map((feature, index) => (
-            <Grid item xs={12} sm={6} lg={4} key={feature.id}>
+          {industryData.map((industry, index) => (
+            <Grid item xs={12} sm={6} lg={4} key={industry.id}>
               <Paper
                 ref={(el) => (cardsRef.current[index] = el)}
                 elevation={0}
+                onClick={() => handleCardClick(industry.route)}
                 sx={{
                   height: "100%",
                   background: "rgba(255, 255, 255, 0.8)",
@@ -221,7 +269,7 @@ const FeatureCards = () => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background: `linear-gradient(135deg, ${feature.color}15 0%, transparent 100%)`,
+                    background: `linear-gradient(135deg, ${industry.color}15 0%, transparent 100%)`,
                     opacity: 0,
                     transition: "opacity 0.3s ease",
                   },
@@ -232,7 +280,7 @@ const FeatureCards = () => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background: `linear-gradient(135deg, ${feature.color}08 0%, transparent 50%)`,
+                    background: `linear-gradient(135deg, ${industry.color}08 0%, transparent 50%)`,
                     borderRadius: "20px",
                     opacity: 0,
                     transition: "opacity 0.3s ease",
@@ -244,7 +292,7 @@ const FeatureCards = () => {
                     "&::after": {
                       opacity: 1,
                     },
-                    boxShadow: `0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05), 0 0 0 1px ${feature.color}20`,
+                    boxShadow: `0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05), 0 0 0 1px ${industry.color}20`,
                   },
                 }}
                 onMouseEnter={() => handleCardHover(index, true)}
@@ -259,18 +307,26 @@ const FeatureCards = () => {
                     width: "60px",
                     height: "60px",
                     borderRadius: "16px",
-                    background: `linear-gradient(135deg, ${feature.color} 0%, ${feature.color}dd 100%)`,
+                    background: `linear-gradient(135deg, ${industry.color} 0%, ${industry.color}dd 100%)`,
                     marginBottom: "1.5rem",
                     fontSize: "1.5rem",
-                    boxShadow: `0 8px 20px ${feature.color}30`,
+                    boxShadow: `0 8px 20px ${industry.color}30`,
                     transition: "all 0.3s ease",
                     "&:hover": {
                       transform: "scale(1.1) rotate(5deg)",
-                      boxShadow: `0 12px 30px ${feature.color}40`,
+                      boxShadow: `0 12px 30px ${industry.color}40`,
                     },
                   }}
                 >
-                  {feature.icon}
+                  <img
+                    src={industry.icon}
+                    alt={industry.title}
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      objectFit: "contain",
+                    }}
+                  />
                 </Box>
 
                 {/* Title */}
@@ -285,7 +341,7 @@ const FeatureCards = () => {
                     fontSize: "1.25rem",
                   }}
                 >
-                  {feature.title}
+                  {industry.title}
                 </Typography>
 
                 {/* Description */}
@@ -298,7 +354,7 @@ const FeatureCards = () => {
                     fontFamily: "'Inter', sans-serif",
                   }}
                 >
-                  {feature.description}
+                  {industry.description}
                 </Typography>
 
                 {/* Bottom accent line */}
@@ -309,7 +365,7 @@ const FeatureCards = () => {
                     left: 0,
                     right: 0,
                     height: "3px",
-                    background: `linear-gradient(90deg, ${feature.color} 0%, ${feature.color}dd 100%)`,
+                    background: `linear-gradient(90deg, ${industry.color} 0%, ${industry.color}dd 100%)`,
                     borderRadius: "0 0 20px 20px",
                     transform: "scaleX(0)",
                     transformOrigin: "left",
@@ -330,20 +386,6 @@ const FeatureCards = () => {
 
         .MuiPaper-root:hover .card-accent {
           transform: scaleX(1);
-        }
-
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        .MuiPaper-root:hover {
-          animation: float 3s ease-in-out infinite;
         }
       `}</style>
     </Box>

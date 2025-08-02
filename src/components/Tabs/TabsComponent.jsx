@@ -192,7 +192,7 @@ export default function TabsComponent() {
               lineHeight: 1.2,
             }}
           >
-            Our Solutions
+            AI/ML PRACTICES
           </Typography>
           <Typography
             variant="h5"

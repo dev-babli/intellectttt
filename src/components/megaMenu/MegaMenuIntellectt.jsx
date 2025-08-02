@@ -52,12 +52,12 @@ const HeaderContainer = styled.header`
       color: #000000 !important;
     }
 
-    /* Force "Let's Connect" button to turn yellow when header is hovered */
+    /* Force "Let's Connect" button to turn red when header is hovered */
     button {
-      background: linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%) !important;
+      background: #e53e3e !important;
       color: #ffffff !important;
       border: none !important;
-      box-shadow: 0 4px 16px rgba(255, 138, 76, 0.4) !important;
+      box-shadow: 0 2px 4px rgba(229, 62, 62, 0.2) !important;
     }
   }
 `;
@@ -2204,7 +2204,7 @@ function MegaMenuIntellectt() {
                     e.currentTarget.style.background =
                       "rgba(249, 250, 251, 0.8)";
                     e.currentTarget.style.borderColor =
-                      "rgba(99, 102, 241, 0.2)";
+                      "rgba(229, 62, 62, 0.2)";
                     e.currentTarget.style.transform = "translateY(-2px)";
                     e.currentTarget.style.boxShadow =
                       "0 8px 24px rgba(0, 0, 0, 0.12)";
@@ -2242,7 +2242,7 @@ function MegaMenuIntellectt() {
                         style={{
                           width: "60px",
                           height: "60px",
-                          background: item.color || "rgba(99, 102, 241, 0.1)",
+                          background: item.color || "rgba(229, 62, 62, 0.1)",
                           borderRadius: "16px",
                           display: "flex",
                           alignItems: "center",
@@ -2435,7 +2435,7 @@ function MegaMenuIntellectt() {
                         style={{
                           fontSize: "0.75rem",
                           fontWeight: "600",
-                          color: "#6366f1",
+                          color: "#e53e3e",
                           textTransform: "uppercase",
                           letterSpacing: "0.5px",
                           marginBottom: "0.75rem",
@@ -2971,7 +2971,7 @@ function MegaMenuIntellectt() {
                     style={{
                       width: "40px",
                       height: "3px",
-                      background: "#6366f1",
+                      background: "#e53e3e",
                       marginBottom: "1.5rem",
                     }}
                   />
@@ -3816,7 +3816,14 @@ function MegaMenuIntellectt() {
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
                 alt="Intellectt"
-                style={{ cursor: "pointer" }}
+                style={{
+                  cursor: "pointer",
+                  objectFit: "cover",
+                  objectPosition: "left center",
+                  width: "auto",
+                  height: "40px",
+                  clipPath: "inset(0 20% 0 0)",
+                }}
               />
             </Link>
           </Logo>
@@ -3905,41 +3912,36 @@ function MegaMenuIntellectt() {
               variant="primary"
               scrolled={scrolled}
               style={{
-                background: scrolled
-                  ? "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)"
-                  : "#ffffff",
-                color: scrolled ? "#ffffff" : "#000000",
+                background: scrolled ? "#e53e3e" : "#ffffff",
+                color: scrolled ? "#ffffff" : "#374151",
                 border: scrolled ? "none" : "1px solid #e5e7eb",
                 fontWeight: "600",
-                fontSize: "0.75rem",
-                padding: "0.5rem 1rem",
-                borderRadius: "8px",
+                fontSize: "0.875rem",
+                padding: "0.75rem 1.5rem",
+                borderRadius: "6px",
                 display: "flex",
                 alignItems: "center",
-                gap: "0.375rem",
+                gap: "0.5rem",
                 boxShadow: scrolled
-                  ? "0 2px 8px rgba(255, 138, 76, 0.3)"
-                  : "0 2px 8px rgba(0, 0, 0, 0.1)",
-                transition: "all 0.3s ease",
+                  ? "0 2px 4px rgba(229, 62, 62, 0.2)"
+                  : "none",
+                transition: "all 0.15s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.transform = "translateY(-2px)";
-                e.target.style.background =
-                  "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)";
+                e.target.style.transform = "translateY(-1px)";
+                e.target.style.background = "#dc2626";
                 e.target.style.color = "#ffffff";
                 e.target.style.border = "none";
-                e.target.style.boxShadow = "0 4px 16px rgba(255, 138, 76, 0.4)";
+                e.target.style.boxShadow = "0 4px 8px rgba(220, 38, 38, 0.3)";
               }}
               onMouseLeave={(e) => {
                 e.target.style.transform = "translateY(0)";
-                e.target.style.background = scrolled
-                  ? "linear-gradient(90deg, #ff8a4c 0%, #ffa726 100%)"
-                  : "#ffffff";
-                e.target.style.color = scrolled ? "#ffffff" : "#000000";
+                e.target.style.background = scrolled ? "#e53e3e" : "#ffffff";
+                e.target.style.color = scrolled ? "#ffffff" : "#374151";
                 e.target.style.border = scrolled ? "none" : "1px solid #e5e7eb";
                 e.target.style.boxShadow = scrolled
-                  ? "0 2px 8px rgba(255, 138, 76, 0.3)"
-                  : "0 2px 8px rgba(0, 0, 0, 0.1)";
+                  ? "0 2px 4px rgba(229, 62, 62, 0.2)"
+                  : "none";
               }}
             >
               Let's Connect
@@ -3977,7 +3979,14 @@ function MegaMenuIntellectt() {
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
                 alt="Intellectt"
-                style={{ cursor: "pointer" }}
+                style={{
+                  cursor: "pointer",
+                  objectFit: "cover",
+                  objectPosition: "left center",
+                  width: "auto",
+                  height: "40px",
+                  clipPath: "inset(0 20% 0 0)",
+                }}
               />
             </Link>
           </Logo>

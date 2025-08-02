@@ -1,471 +1,582 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Grid,
   Typography,
   Card,
-  CardMedia,
   CardContent,
   Button,
 } from "@mui/material";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const solutions = [
   {
-    id: 1,
-    category: "AI & Gen AI",
     title:
       "Harness the power of AI and GenAI to unlock new growth opportunities.",
-    imageName: "AI-and-Genn-AI.webp",
-    categoryColor: "#0199D3",
-    description: "Leverage Gen AI models for deep customer insights.",
+    description:
+      "Transform your business with cutting-edge AI solutions that drive innovation and accelerate growth across all industries.",
+    category: "AI & GEN AI",
+    image: "/images/AI-and-Genn-AI.webp",
     features: [
-      "Automated Workflows",
-      "Conversational AI",
-      "Image Generation",
-      "Secure Deployment",
+      "Machine Learning & Deep Learning",
+      "Natural Language Processing",
+      "Computer Vision & Image Recognition",
+      "Predictive Analytics & Forecasting",
+      "AI-Powered Automation",
+      "Generative AI Solutions",
     ],
-    buttonLabel: "Explore",
-    url: "/service/ai-and-gen-ai",
+    buttonLabel: "Explore AI Solutions",
+    url: "/ai-gen-ai",
   },
   {
-    id: 2,
-    category: "Cloud & Application Services",
     title: "Accelerate growth with scalable, secure cloud platforms.",
-    imageName: "Cloud.webp",
-    categoryColor: "#0199D3",
-    description: "Migrate and modernize your infrastructure effortlessly.",
+    description:
+      "Build robust, scalable applications with enterprise-grade cloud infrastructure and modern development practices.",
+    category: "CLOUD & APPLICATION SERVICES",
+    image: "/images/Cloud.webp",
     features: [
-      "Cloud Migration",
-      "App Modernization",
-      "DevOps Integration",
-      "24x7 Support",
+      "Cloud Migration & Strategy",
+      "Microservices Architecture",
+      "DevOps & CI/CD Pipelines",
+      "Container Orchestration",
+      "Serverless Computing",
+      "Multi-Cloud Solutions",
     ],
-    buttonLabel: "Explore",
-    url: "/service/cloud-and-application-services",
+    buttonLabel: "Discover Cloud Services",
+    url: "/cloud-application",
   },
   {
-    id: 3,
-    category: "SAP Services",
     title: "Protect your digital assets with intelligent security frameworks.",
-    imageName: "Data-andAnalytics.webp",
-    categoryColor: "#0199D3",
-    description: "Transform operations with intelligent SAP solutions.",
+    description:
+      "Safeguard your organization with advanced cybersecurity solutions and proactive threat detection systems.",
+    category: "DIGITAL SECURITY",
+    image: "/images/Data-&-Analytics.webp",
     features: [
-      "SAP S/4HANA",
-      "SAP Implementation",
-      "System Integration",
-      "Managed SAP Support",
+      "Zero Trust Architecture",
+      "Threat Detection & Response",
+      "Identity & Access Management",
+      "Data Protection & Encryption",
+      "Security Compliance",
+      "Incident Response",
     ],
-    buttonLabel: "Explore",
-    url: "/service/sap-services",
+    buttonLabel: "Secure Your Business",
+    url: "/digital-security",
   },
   {
-    id: 4,
-    category: "Managed IT Services",
     title: "Connect devices and drive automation with next-gen IoT tech.",
-    imageName: "Engineering.webp",
-    categoryColor: "#0199D3",
-    description: "Ensure uninterrupted performance with expert IT support.",
+    description:
+      "Build intelligent connected systems that collect, analyze, and act on data in real-time.",
+    category: "IoT TECH",
+    image: "/images/Smart-Factory.webp",
     features: [
-      "Remote Monitoring",
-      "IT Infrastructure",
-      "Incident Management",
-      "Helpdesk Services",
+      "IoT Platform Development",
+      "Sensor Integration",
+      "Real-time Data Analytics",
+      "Edge Computing",
+      "Smart City Solutions",
+      "Industrial IoT",
     ],
-    buttonLabel: "Explore",
-    url: "/service/managed-it-services",
+    buttonLabel: "Connect Everything",
+    url: "/iot-tech",
   },
   {
-    id: 5,
-    category: "Data & Analytics",
     title: "Turn data into actionable insights for smarter decisions.",
-    imageName: "Healthcare-and-Lifesciences.webp",
-    categoryColor: "#0199D3",
-    description: "Unlock business value with powerful data intelligence.",
+    description:
+      "Transform raw data into strategic insights that drive business growth and operational excellence.",
+    category: "DATA & ANALYTICS",
+    image: "/images/Data-andAnalytics.webp",
     features: [
-      "Data Warehousing",
+      "Big Data Processing",
+      "Business Intelligence",
+      "Data Visualization",
       "Predictive Analytics",
-      "BI Dashboards",
-      "Big Data Solutions",
+      "Real-time Dashboards",
+      "Data Governance",
     ],
-    buttonLabel: "Explore",
-    url: "/service/data-and-analytics",
+    buttonLabel: "Analyze Data",
+    url: "/data-analytics",
   },
   {
-    id: 6,
-    category: "Engineering & Manufacturing ",
     title: "Integrate smart devices to streamline production and processes.",
-    imageName: "Managed.webp",
-    categoryColor: "#0199D3",
-    description: "Empower innovation through smart industrial IT.",
+    description:
+      "Optimize manufacturing and engineering processes with intelligent automation and digital transformation.",
+    category: "ENGINEERING & MANUFACTURING",
+    image: "/images/Engineering.webp",
     features: [
-      "CAD/CAM Services",
-      "Digital Twins",
-      "Smart Factory Tech",
-      "IoT Integrations",
+      "Smart Manufacturing",
+      "Digital Twin Technology",
+      "Quality Control Systems",
+      "Supply Chain Optimization",
+      "Predictive Maintenance",
+      "Industry 4.0 Solutions",
     ],
-    buttonLabel: "Explore",
-    url: "/service/engineering-and-manufacturing-it",
+    buttonLabel: "Optimize Production",
+    url: "/engineering-manufacturing",
   },
   {
-    id: 7,
-    category: "Healthcare & Life Sciences ",
     title: "Empower care through digital innovation and secure systems.",
-    imageName: "Healthcare-and-Lifesciences.webp",
-    categoryColor: "#0199D3",
-    description: "Enhance care delivery through digital health platforms.",
+    description:
+      "Transform healthcare delivery with cutting-edge technology solutions and secure patient data management.",
+    category: "HEALTHCARE & LIFE SCIENCES",
+    image: "/images/Healthcare-and-Lifesciences.webp",
     features: [
-      "EHR Integration",
-      "Compliance Solutions",
-      "AI in Diagnostics",
-      "Patient Data Security",
+      "Electronic Health Records",
+      "Telemedicine Platforms",
+      "Medical Device Integration",
+      "Clinical Decision Support",
+      "Patient Engagement",
+      "Healthcare Analytics",
     ],
-    buttonLabel: "Explore",
-    url: "/service/healthcare-and-life-sciences-it",
+    buttonLabel: "Transform Healthcare",
+    url: "/healthcare-life-sciences",
   },
   {
-    id: 8,
-    category: "Talent Solutions",
     title:
-      "Bridge your talent gap with flexible, industry-aligned workforce solutions.",
-    imageName: "Engineering.webp",
-    categoryColor: "#0199D3",
-    description: "Build agile teams with flexible, expert staffing models.",
+      "Bridge your talent gap with flexible, industry-aligned workforce solutions.",
+    description:
+      "Access specialized talent and build high-performing teams with our comprehensive workforce solutions.",
+    category: "TALENT SOLUTIONS",
+    image: "/images/Talent.webp",
     features: [
-      "IT Staffing",
-      "Project-based Hiring",
-      "Executive Search",
-      "Global Workforce",
+      "Staff Augmentation",
+      "Project-Based Teams",
+      "Specialized Expertise",
+      "Remote Workforce",
+      "Skill Development",
+      "Talent Management",
     ],
-    buttonLabel: "Explore",
-    url: "/service/talent-solutions",
+    buttonLabel: "Find Talent",
+    url: "/talent-solutions",
   },
 ];
 
 export default function IntellecttAiSolutions() {
-  const containerRef = useRef(null);
   const titleRef = useRef(null);
   const descRef = useRef(null);
+  const cardsRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(titleRef.current, {
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 90%",
-        },
-      });
+    // Trigger entrance animations
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
 
-      gsap.from(descRef.current, {
-        y: 20,
-        opacity: 0,
-        duration: 0.5,
-        delay: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: descRef.current,
-          start: "top 90%",
-        },
-      });
-
-      ScrollTrigger.batch(".gsap-card", {
-        onEnter: (batch) => {
-          gsap.fromTo(
-            batch,
-            { y: 60, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.6,
-              stagger: 0.1,
-              ease: "power3.out",
-            }
-          );
-        },
-        start: "top 90%",
-        once: true,
-      });
-    }, containerRef);
-
-    return () => ctx.revert();
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <Box
-      ref={containerRef}
       sx={{
+        background:
+          "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)",
+        minHeight: "100vh",
+        py: 8,
+        px: 2,
         position: "relative",
-        px: { xs: 2, md: 6 },
-        py: 10,
         overflow: "hidden",
+        opacity: isVisible ? 1 : 0,
+        transition: "opacity 1s ease-out",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background:
+            "radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.03) 0%, transparent 50%)",
+          opacity: isVisible ? 1 : 0,
+          transition: "opacity 1.5s ease-out 0.5s",
+        },
       }}
     >
-      {/* Animated Circles */}
-      {[...Array(6)].map((_, index) => (
-        <Box
-          key={index}
-          sx={{
-            position: "absolute",
-            width: 40,
-            height: 40,
-            borderRadius: "50%",
-            backgroundColor: "rgba(147,197,253,0.15)",
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animation: `floatCircle ${
-              4 + Math.random() * 4
-            }s ease-in-out infinite`,
-            zIndex: 0,
-          }}
-        />
-      ))}
-
-      {/* Keyframes animation */}
-      <style>
-        {`
-    @keyframes floatCircle {
-      0% { transform: translateY(0); opacity: 0.4; }
-      50% { transform: translateY(-20px); opacity: 0.7; }
-      100% { transform: translateY(0); opacity: 0.4; }
-    }
-  `}
-      </style>
-
-      {/* Header */}
-      <Box sx={{ textAlign: "center", zIndex: 1, position: "relative", mb: 6 }}>
+      {/* Header Section */}
+      <Box
+        sx={{
+          textAlign: "center",
+          mb: 8,
+          maxWidth: "1200px",
+          mx: "auto",
+          px: 2,
+        }}
+      >
         <Typography
           ref={titleRef}
-          variant="h4"
-          fontWeight={700}
+          variant="h1"
           sx={{
-            backdropFilter: "blur(8px)",
-            display: "inline-block",
-            px: 4,
-
-            color: "#0199D3 !important",
-            fontSize: { xs: "1.5rem", md: "3rem" },
+            color: "#000000",
+            fontWeight: 700,
+            fontSize: { xs: "2.5rem", md: "4rem" },
+            lineHeight: 1.1,
+            mb: 3,
+            letterSpacing: "-0.02em",
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            textShadow: "0 2px 4px rgba(0,0,0,0.1)",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+            transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
           }}
         >
-          Actionable AI Solutions
+          Capabilities
         </Typography>
         <Typography
           ref={descRef}
-          variant="body1"
-          color="text.secondary"
-          sx={{ maxWidth: 600, mx: "auto", mt: 3 }}
+          variant="h6"
+          sx={{
+            color: "#000000",
+            fontWeight: 400,
+            fontSize: { xs: "1.1rem", md: "1.4rem" },
+            lineHeight: 1.5,
+            maxWidth: "800px",
+            mx: "auto",
+            letterSpacing: "0.01em",
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(20px)",
+            transition:
+              "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s",
+          }}
         >
-          Improve your business's operational efficiency while keeping your
-          sensitive data secure.
+          Transform your business with intelligent solutions that drive
+          innovation and growth.
         </Typography>
       </Box>
 
-      {/* Cards */}
-      <Grid
-        container
-        spacing={4}
-        justifyContent="center"
-        sx={{
-          "& > .MuiGrid-item": {
-            pl: { xs: 0, sm: "32px" },
-            pr: { xs: "30px", sm: 2, lg: 0 }, // override padding-left only on xs
-          },
-          maxWidth: 1500,
-          mx: "auto",
-          px: { xs: 2, sm: 3, md: 4 },
-        }}
-      >
-        {solutions.map((solution) => (
-          <Grid
-            item
-            key={solution.id}
-            xs={12}
-            sm={6}
-            md={4}
-            lg={3}
-            className="gsap-card"
-            sx={{ display: "flex", justifyContent: "center" }}
-          >
-            <Box
-              sx={{
-                perspective: 1000,
-                width: "100%",
-                maxWidth: 340,
-                height: 360,
-              }}
-            >
-              <Box
-                className="flip-card-inner"
+      {/* Cards Grid */}
+      <Box ref={cardsRef}>
+        <Grid
+          container
+          spacing={3}
+          sx={{
+            maxWidth: "1400px",
+            mx: "auto",
+            px: 2,
+          }}
+        >
+          {solutions.map((solution, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Card
+                className="dimensional-card"
                 sx={{
-                  width: "100%",
-                  height: "100%",
+                  height: 360,
+                  background: "#0f0f0f",
+                  borderRadius: "8px",
                   position: "relative",
-                  transformStyle: "preserve-3d",
-                  transition: "transform 0.8s",
+                  overflow: "hidden",
+                  cursor: "pointer",
+                  border: "1px solid rgba(59, 130, 246, 0.2)",
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+                  transition:
+                    "border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease-out, transform 0.6s ease-out",
+                  transform: isVisible
+                    ? "translate(0, 0) !important"
+                    : "translate(0, 50px) !important",
+                  opacity: isVisible ? 1 : 0,
+                  animationDelay: `${0.4 + index * 0.1}s`,
                   "&:hover": {
-                    transform: "rotateY(180deg)",
+                    borderColor: "rgba(0, 255, 255, 0.6)",
+                    boxShadow: "0 35px 70px -12px rgba(0, 255, 255, 0.3)",
+                    transform: "translate(0, 0) scale(1.02) !important",
+                    "& .dimensional-overlay": {
+                      opacity: 1,
+                    },
+                    "& .card-content": {
+                      opacity: 1,
+                      transform: "translateY(0)",
+                    },
+                    "& .card-title": {
+                      opacity: 0,
+                      transform: "translateY(-20px)",
+                    },
+                    "& .card-category": {
+                      opacity: 0,
+                      transform: "translateY(-20px)",
+                    },
                   },
                 }}
               >
-                {/* FRONT SIDE */}
-                <Card
+                {/* Dimensional Overlay */}
+                <Box
+                  className="dimensional-overlay"
                   sx={{
                     position: "absolute",
-                    width: "100%",
-                    height: "100%",
-                    backfaceVisibility: "hidden",
-                    display: "flex",
-                    flexDirection: "column",
-                    borderRadius: 4,
-                    overflow: "hidden",
-                    boxShadow: 3,
-                    p: { xs: 2, md: 3 },
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    image={`/images/${solution.imageName}`}
-                    alt={solution.title}
-                    sx={{
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    opacity: 0,
+                    transition: "opacity 0.5s ease-in-out",
+                    background: `
+                      radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 70% 70%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%)
+                    `,
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: `
+                        conic-gradient(from 0deg at 50% 50%, 
+                          transparent 0deg, 
+                          rgba(0, 255, 255, 0.1) 90deg, 
+                          transparent 180deg, 
+                          rgba(147, 51, 234, 0.1) 270deg, 
+                          transparent 360deg)
+                      `,
+                      animation: "rotate 4s linear infinite",
+                    },
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      top: "50%",
+                      left: "0%",
                       width: "100%",
-                      height: 160,
+                      height: "2px",
+                      background:
+                        "linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.6), transparent)",
+                      transform: "translateY(-50%)",
+                      animation: "sweep 2s ease-in-out infinite",
+                    },
+                  }}
+                />
+
+                {/* Card Image */}
+                <Box sx={{ height: "100%", position: "relative" }}>
+                  <img
+                    src={solution.image}
+                    alt={solution.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
                       objectFit: "cover",
-                      borderRadius: 2,
                     }}
                   />
-                  <CardContent>
-                    <Typography
-                      variant="caption"
-                      fontWeight={700}
-                      sx={{
-                        color: solution.categoryColor,
-                        textTransform: "uppercase",
-                        letterSpacing: "1px",
-                        mb: 1,
-                      }}
-                    >
-                      {solution.category}
-                    </Typography>
-                    <Typography variant="body2">{solution.title}</Typography>
-                  </CardContent>
-                </Card>
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background:
+                        "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)",
+                    }}
+                  />
+                </Box>
 
-                {/* BACK SIDE */}
-                <Card
+                {/* Category Badge */}
+                <Typography
+                  className="card-category"
                   sx={{
                     position: "absolute",
-                    width: "100%",
+                    top: 20,
+                    left: 20,
+                    color: "#ffffff",
+                    fontWeight: 700,
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
+                    transition:
+                      "opacity 0.3s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                    zIndex: 2,
+                    fontFamily:
+                      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                    textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  {solution.category}
+                </Typography>
+
+                {/* Title */}
+                <Typography
+                  className="card-title"
+                  sx={{
+                    position: "absolute",
+                    bottom: 20,
+                    left: 20,
+                    right: 20,
+                    color: "#ffffff",
+                    fontWeight: 600,
+                    lineHeight: 1.2,
+                    fontSize: "1.2rem",
+                    transition:
+                      "opacity 0.3s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                    zIndex: 2,
+                    fontFamily:
+                      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                    letterSpacing: "-0.01em",
+                    textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  {solution.title}
+                </Typography>
+
+                {/* Hover Content */}
+                <CardContent
+                  className="card-content"
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
                     height: "100%",
-                    backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    alignItems: "center",
-                    p: 3,
-                    boxShadow: 3,
-                    borderRadius: 4,
-                    backgroundColor: "#0199D3",
-                    color: "white",
-                    textAlign: "left",
-                    overflow: "hidden",
+                    alignItems: "flex-start",
+                    padding: 3,
+                    background:
+                      "linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)",
+                    backdropFilter: "blur(15px)",
+                    opacity: 0,
+                    transform: "translateY(20px)",
+                    transition:
+                      "opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                    color: "#ffffff",
+                    zIndex: 3,
                   }}
                 >
-                  {/* Floating circles inside card back */}
-                  {[...Array(5)].map((_, i) => (
-                    <Box
-                      key={i}
-                      sx={{
-                        position: "absolute",
-                        width: 60,
-                        height: 60,
-                        borderRadius: "50%",
-                        backgroundColor: "rgba(255,255,255,0.1)",
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                        animation: `floatCircle ${
-                          4 + Math.random() * 4
-                        }s ease-in-out infinite`,
-                        zIndex: 1,
-                      }}
-                    />
-                  ))}
+                  <Typography
+                    variant="body1"
+                    className="content-description"
+                    sx={{
+                      color: "#ffffff",
+                      mb: 2,
+                      lineHeight: 1.5,
+                      fontSize: "1rem",
+                      fontWeight: 500,
+                      letterSpacing: "0.01em",
+                      fontFamily:
+                        "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                      opacity: 0,
+                      transform: "translateY(15px)",
+                      transition:
+                        "opacity 0.4s ease-out 0.1s, transform 0.4s ease-out 0.1s",
+                      ".card-content:hover &": {
+                        opacity: 1,
+                        transform: "translateY(0)",
+                      },
+                    }}
+                  >
+                    {solution.description}
+                  </Typography>
 
-                  {/* Card content with higher z-index */}
-                  <Box sx={{ zIndex: 2 }}>
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        mb: 1,
-                        fontWeight: 700,
-                        textAlign: "left",
-                        color: "white !important",
-                      }}
-                    >
-                      {solution.category}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{ mb: 2, textAlign: "left" }}
-                    >
-                      {solution.description}
-                    </Typography>
-                    <ul
-                      style={{
-                        padding: 0,
-                        margin: 0,
-                        listStyle: "none",
-                        textAlign: "left",
-                      }}
-                    >
-                      {solution.features.map((item, index) => (
-                        <li key={index}>✔ {item}</li>
-                      ))}
-                    </ul>
-                    <Link to={solution.url}>
-                      <Button
-                        variant="contained"
-                        size="small"
+                  <Box sx={{ mb: 2, flex: 1 }}>
+                    {solution.features.slice(0, 2).map((feature, idx) => (
+                      <Typography
+                        key={idx}
+                        variant="body2"
+                        className={`content-feature-${idx}`}
                         sx={{
-                          mt: 2,
-                          alignSelf: "flex-start",
-                          px: 3,
-                          py: 1,
-                          borderRadius: "25px",
-                          backgroundColor: "rgba(255, 255, 255, 0.2)",
-                          backdropFilter: "blur(6px)",
-                          color: "white",
-                          fontWeight: 600,
-                          textTransform: "none",
-                          boxShadow: "none",
-                          transition: "all 0.3s ease",
-                          "&:hover": {
-                            backgroundColor: "rgba(255, 255, 255, 0.3)",
-                            transform: "scale(1.05)",
-                            boxShadow: "0 2px 10px rgba(255,255,255,0.2)",
+                          color: "#e2e8f0",
+                          fontSize: "0.9rem",
+                          mb: 0.8,
+                          display: "flex",
+                          alignItems: "center",
+                          fontWeight: 400,
+                          letterSpacing: "0.01em",
+                          fontFamily:
+                            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                          opacity: 0,
+                          transform: "translateY(10px)",
+                          transition: `opacity 0.4s ease-out ${
+                            0.2 + idx * 0.1
+                          }s, transform 0.4s ease-out ${0.2 + idx * 0.1}s`,
+                          ".card-content:hover &": {
+                            opacity: 1,
+                            transform: "translateY(0)",
+                          },
+                          "&::before": {
+                            content: '"•"',
+                            color: "#00ffff",
+                            mr: 1.5,
+                            fontSize: "1.2rem",
+                            fontWeight: "bold",
+                            lineHeight: 1,
                           },
                         }}
                       >
-                        {solution.buttonLabel || "Learn More"}
-                      </Button>
-                    </Link>
+                        {feature}
+                      </Typography>
+                    ))}
                   </Box>
-                </Card>
-              </Box>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+
+                  <Link to={solution.url} style={{ textDecoration: "none" }}>
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      className="content-button"
+                      sx={{
+                        alignSelf: "flex-start",
+                        px: 2.5,
+                        py: 1,
+                        borderRadius: "6px",
+                        borderColor: "#00ffff",
+                        color: "#00ffff",
+                        fontWeight: 600,
+                        textTransform: "none",
+                        fontSize: "0.85rem",
+                        transition: "all 0.3s ease-in-out",
+                        letterSpacing: "0.02em",
+                        fontFamily:
+                          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                        opacity: 0,
+                        transform: "translateY(10px)",
+                        transition:
+                          "opacity 0.4s ease-out 0.4s, transform 0.4s ease-out 0.4s, all 0.3s ease-in-out",
+                        ".card-content:hover &": {
+                          opacity: 1,
+                          transform: "translateY(0)",
+                        },
+                        "&:hover": {
+                          backgroundColor: "rgba(0, 255, 255, 0.1)",
+                          borderColor: "#00ffff",
+                          transform: "scale(1.05)",
+                          boxShadow: "0 4px 16px rgba(0, 255, 255, 0.3)",
+                        },
+                      }}
+                    >
+                      {solution.buttonLabel}
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      <style jsx>{`
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes sweep {
+          0% {
+            transform: translateX(-100%) translateY(-50%);
+          }
+          50% {
+            transform: translateX(0%) translateY(-50%);
+          }
+          100% {
+            transform: translateX(100%) translateY(-50%);
+          }
+        }
+      `}</style>
     </Box>
   );
 }

@@ -16,63 +16,97 @@ const SubmitHandler = (e) => {
 const Footer = (props) => {
   return (
     <footer
-      className="footer-section"
-      style={{ backgroundColor: "#f8f9fa", color: "#333333" }}
+      style={{
+        backgroundColor: "#f8f9fa",
+        color: "#333333",
+        borderTop: "1px solid #e5e7eb",
+      }}
     >
+      <style>
+        {`
+           @media (min-width: 768px) {
+             .footer-row {
+               display: flex !important;
+               flex-wrap: nowrap !important;
+             }
+             .footer-col {
+               flex: 0 0 20% !important;
+               min-width: 0 !important;
+             }
+           }
+         `}
+      </style>
       <div className="container">
-        {/* Compact Main Content */}
-        <div className="row" style={{ padding: "40px 0 30px 0" }}>
+        {/* Main Content */}
+        <div
+          className="row footer-row"
+          style={{
+            padding: "30px 0 20px 0",
+            display: "flex",
+            flexWrap: "nowrap",
+          }}
+        >
           {/* Company Info */}
           <div
-            className="col-lg-4 col-md-6 col-sm-12 mb-4"
-            style={{ paddingRight: "40px" }}
+            className="col-lg-3 col-md-2 col-sm-12 mb-4 mb-lg-0 footer-col"
+            style={{ flex: "0 0 20%", minWidth: "0" }}
           >
             <h4
               style={{
-                color: "#2c3e50",
+                color: "#1f2937",
                 fontSize: "20px",
                 fontWeight: "700",
-                marginBottom: "15px",
+                marginBottom: "12px",
               }}
             >
               Intellectt
             </h4>
             <p
               style={{
-                color: "#5a6c7d",
+                color: "#6b7280",
                 fontSize: "14px",
                 lineHeight: "1.5",
-                marginBottom: "20px",
+                marginBottom: "12px",
+                maxWidth: "300px",
               }}
             >
-              Empowering businesses with cutting-edge technology solutions.
+              Empowering businesses with cutting-edge AI and technology
+              solutions that drive innovation and accelerate growth.
             </p>
 
             {/* Contact Info */}
-            <div style={{ marginBottom: "20px" }}>
+            <div style={{ marginBottom: "12px" }}>
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  marginBottom: "10px",
+                  marginBottom: "8px",
                 }}
               >
-                <img
-                  src={icon1}
-                  alt=""
-                  style={{ width: "16px", height: "16px", marginRight: "10px" }}
-                />
-                <span style={{ color: "#5a6c7d", fontSize: "13px" }}>
+                <i
+                  className="fas fa-envelope"
+                  style={{
+                    color: "#e53e3e",
+                    fontSize: "16px",
+                    marginRight: "12px",
+                    width: "16px",
+                  }}
+                ></i>
+                <span style={{ color: "#6b7280", fontSize: "14px" }}>
                   Intellectt@gmail.com
                 </span>
               </div>
               <div style={{ display: "flex", alignItems: "center" }}>
-                <img
-                  src={icon2}
-                  alt=""
-                  style={{ width: "16px", height: "16px", marginRight: "10px" }}
-                />
-                <span style={{ color: "#5a6c7d", fontSize: "13px" }}>
+                <i
+                  className="fas fa-phone"
+                  style={{
+                    color: "#e53e3e",
+                    fontSize: "16px",
+                    marginRight: "12px",
+                    width: "16px",
+                  }}
+                ></i>
+                <span style={{ color: "#6b7280", fontSize: "14px" }}>
                   +(1) 1230 452 8597
                 </span>
               </div>
@@ -82,44 +116,54 @@ const Footer = (props) => {
             <div>
               <h5
                 style={{
-                  color: "#2c3e50",
-                  fontSize: "16px",
+                  color: "#1f2937",
+                  fontSize: "15px",
                   fontWeight: "600",
-                  marginBottom: "12px",
+                  marginBottom: "10px",
                 }}
               >
                 Newsletter
               </h5>
-              <form onSubmit={SubmitHandler} style={{ marginBottom: "10px" }}>
+              <form onSubmit={SubmitHandler}>
                 <div style={{ position: "relative" }}>
                   <input
                     type="email"
-                    placeholder="Email"
+                    placeholder="Enter your email"
                     style={{
                       width: "100%",
-                      padding: "10px 14px",
+                      padding: "12px 16px",
                       border: "1px solid #d1d5db",
                       borderRadius: "6px",
                       backgroundColor: "#ffffff",
                       color: "#374151",
-                      fontSize: "13px",
+                      fontSize: "14px",
+                      outline: "none",
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = "#e53e3e";
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = "#d1d5db";
                     }}
                   />
                   <button
                     type="submit"
                     style={{
                       position: "absolute",
-                      right: "8px",
+                      right: "6px",
                       top: "50%",
                       transform: "translateY(-50%)",
-                      background: "none",
+                      background: "#e53e3e",
                       border: "none",
-                      color: "#6b7280",
+                      color: "#ffffff",
                       cursor: "pointer",
-                      fontSize: "14px",
+                      padding: "6px 12px",
+                      borderRadius: "4px",
+                      fontSize: "13px",
+                      fontWeight: "500",
                     }}
                   >
-                    <i className="fas fa-paper-plane"></i>
+                    Subscribe
                   </button>
                 </div>
               </form>
@@ -128,287 +172,227 @@ const Footer = (props) => {
 
           {/* Quick Links */}
           <div
-            className="col-lg-2 col-md-6 col-sm-6 mb-4"
-            style={{ paddingLeft: "20px" }}
+            className="col-lg-3 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
               style={{
-                color: "#2c3e50",
-                fontSize: "16px",
+                color: "#1f2937",
+                fontSize: "15px",
                 fontWeight: "600",
-                marginBottom: "15px",
+                marginBottom: "12px",
               }}
             >
               Company
             </h5>
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/about"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  About Us
-                </Link>
-              </li>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/career"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Careers
-                </Link>
-              </li>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/contact"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Let's Connect
-                </Link>
-              </li>
-              <li>
-                <Link
-                  onClick={ClickHandler}
-                  to="/blog"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Blog
-                </Link>
-              </li>
+              {[
+                { text: "About Us", link: "/about" },
+                { text: "Careers", link: "/career" },
+                { text: "Let's Connect", link: "/contact" },
+                { text: "Blog", link: "/blog" },
+              ].map((item, index) => (
+                <li key={index} style={{ marginBottom: "10px" }}>
+                  <Link
+                    onClick={ClickHandler}
+                    to={item.link}
+                    style={{
+                      color: "#6b7280",
+                      fontSize: "14px",
+                      textDecoration: "none",
+                      transition: "color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
+                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="col-lg-3 col-md-6 col-sm-6 mb-4">
+          {/* Capabilities */}
+          <div
+            className="col-lg-3 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
+          >
             <h5
               style={{
-                color: "#2c3e50",
-                fontSize: "16px",
+                color: "#1f2937",
+                fontSize: "15px",
                 fontWeight: "600",
-                marginBottom: "15px",
+                marginBottom: "12px",
               }}
             >
-              Services
+              Capabilities
             </h5>
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/service/ai-and-gen-ai"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  AI & GenAI
-                </Link>
-              </li>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/service/cloud-and-application"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Cloud & App
-                </Link>
-              </li>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/service/sap-services"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  SAP Services
-                </Link>
-              </li>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/service/managed-it-services"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Managed IT
-                </Link>
-              </li>
-              <li>
-                <Link
-                  onClick={ClickHandler}
-                  to="/service/data-and-analytics"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Data & Analytics
-                </Link>
-              </li>
+              {[
+                { text: "AI & GenAI", link: "/service/ai-and-gen-ai" },
+                { text: "Cloud & App", link: "/service/cloud-and-application" },
+                { text: "SAP Services", link: "/service/sap-services" },
+                { text: "Managed IT", link: "/service/managed-it-services" },
+                {
+                  text: "Data & Analytics",
+                  link: "/service/data-and-analytics",
+                },
+              ].map((item, index) => (
+                <li key={index} style={{ marginBottom: "10px" }}>
+                  <Link
+                    onClick={ClickHandler}
+                    to={item.link}
+                    style={{
+                      color: "#6b7280",
+                      fontSize: "14px",
+                      textDecoration: "none",
+                      transition: "color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
+                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Industries */}
-          <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div
+            className="col-lg-2 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
+          >
             <h5
               style={{
-                color: "#2c3e50",
-                fontSize: "16px",
+                color: "#1f2937",
+                fontSize: "15px",
                 fontWeight: "600",
-                marginBottom: "15px",
+                marginBottom: "12px",
               }}
             >
               Industries
             </h5>
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/industries/helthcare-and-life-sciences"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Healthcare
-                </Link>
-              </li>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/industries/menufacturing-and-automotive"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Manufacturing
-                </Link>
-              </li>
-              <li style={{ marginBottom: "8px" }}>
-                <Link
-                  onClick={ClickHandler}
-                  to="/industries/aerospace-and-defense"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Aerospace
-                </Link>
-              </li>
-              <li>
-                <Link
-                  onClick={ClickHandler}
-                  to="/industries/banking-and-financial-services"
-                  style={{
-                    color: "#5a6c7d",
-                    fontSize: "13px",
-                    textDecoration: "none",
-                    transition: "color 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#5a6c7d")}
-                >
-                  Banking
-                </Link>
-              </li>
+              {[
+                {
+                  text: "Healthcare",
+                  link: "/industries/helthcare-and-life-sciences",
+                },
+                {
+                  text: "Manufacturing",
+                  link: "/industries/menufacturing-and-automotive",
+                },
+                {
+                  text: "Aerospace",
+                  link: "/industries/aerospace-and-defense",
+                },
+                {
+                  text: "Banking",
+                  link: "/industries/banking-and-financial-services",
+                },
+              ].map((item, index) => (
+                <li key={index} style={{ marginBottom: "10px" }}>
+                  <Link
+                    onClick={ClickHandler}
+                    to={item.link}
+                    style={{
+                      color: "#6b7280",
+                      fontSize: "14px",
+                      textDecoration: "none",
+                      transition: "color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
+                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div
+            className="col-lg-2 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
+          >
+            <h5
+              style={{
+                color: "#1f2937",
+                fontSize: "15px",
+                fontWeight: "600",
+                marginBottom: "12px",
+              }}
+            >
+              Resources
+            </h5>
+            <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
+              {[
+                {
+                  text: "Case Studies",
+                  link: "/case-studies",
+                },
+                {
+                  text: "Whitepapers",
+                  link: "/whitepapers",
+                },
+                {
+                  text: "Webinars",
+                  link: "/webinars",
+                },
+                {
+                  text: "Insights",
+                  link: "/insights",
+                },
+              ].map((item, index) => (
+                <li key={index} style={{ marginBottom: "10px" }}>
+                  <Link
+                    onClick={ClickHandler}
+                    to={item.link}
+                    style={{
+                      color: "#6b7280",
+                      fontSize: "14px",
+                      textDecoration: "none",
+                      transition: "color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
+                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Compact Bottom Section */}
+        {/* Bottom Section */}
         <div
-          style={{ borderTop: "1px solid #e5e7eb", padding: "20px 0 15px 0" }}
+          style={{
+            borderTop: "1px solid #e5e7eb",
+            padding: "12px 0",
+          }}
         >
           <div className="row align-items-center">
             <div className="col-md-6 col-sm-12 mb-3 mb-md-0">
               <p
                 style={{
-                  color: "#6b7280",
-                  fontSize: "13px",
+                  color: "#9ca3af",
+                  fontSize: "14px",
                   margin: "0",
-                  textAlign: { xs: "center", md: "left" },
                 }}
               >
-                © 2024 Intellectt. All rights reserved.
+                Intellectt Inc
               </p>
             </div>
             <div className="col-md-6 col-sm-12">
               <div
                 style={{
                   display: "flex",
-                  justifyContent: { xs: "center", md: "flex-end" },
-                  gap: "20px",
+                  justifyContent: "flex-end",
+                  gap: "24px",
+                  alignItems: "center",
                   flexWrap: "wrap",
                 }}
               >
@@ -416,13 +400,13 @@ const Footer = (props) => {
                   to="/privacy-policy"
                   onClick={ClickHandler}
                   style={{
-                    color: "#6b7280",
-                    fontSize: "13px",
+                    color: "#9ca3af",
+                    fontSize: "14px",
                     textDecoration: "none",
-                    transition: "color 0.3s ease",
+                    transition: "color 0.2s ease",
                   }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
+                  onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
+                  onMouseLeave={(e) => (e.target.style.color = "#9ca3af")}
                 >
                   Privacy
                 </Link>
@@ -430,53 +414,45 @@ const Footer = (props) => {
                   to="/terms-conditions"
                   onClick={ClickHandler}
                   style={{
-                    color: "#6b7280",
-                    fontSize: "13px",
+                    color: "#9ca3af",
+                    fontSize: "14px",
                     textDecoration: "none",
-                    transition: "color 0.3s ease",
+                    transition: "color 0.2s ease",
                   }}
-                  onMouseEnter={(e) => (e.target.style.color = "#2c3e50")}
-                  onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
+                  onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
+                  onMouseLeave={(e) => (e.target.style.color = "#9ca3af")}
                 >
                   Terms
                 </Link>
                 <div style={{ display: "flex", gap: "12px" }}>
-                  <Link
-                    to="https://linkedin.com/company/intellectt"
-                    style={{
-                      color: "#6b7280",
-                      fontSize: "16px",
-                      transition: "color 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => (e.target.style.color = "#0077B5")}
-                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
-                  >
-                    <i className="fab fa-linkedin-in"></i>
-                  </Link>
-                  <Link
-                    to="https://twitter.com/intellectt"
-                    style={{
-                      color: "#6b7280",
-                      fontSize: "16px",
-                      transition: "color 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => (e.target.style.color = "#1DA1F2")}
-                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
-                  >
-                    <i className="fab fa-twitter"></i>
-                  </Link>
-                  <Link
-                    to="https://facebook.com/intellectt"
-                    style={{
-                      color: "#6b7280",
-                      fontSize: "16px",
-                      transition: "color 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => (e.target.style.color = "#1877F2")}
-                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
-                  >
-                    <i className="fab fa-facebook-f"></i>
-                  </Link>
+                  {[
+                    {
+                      icon: "fab fa-linkedin-in",
+                      link: "https://linkedin.com/company/intellectt",
+                    },
+                    {
+                      icon: "fab fa-twitter",
+                      link: "https://twitter.com/intellectt",
+                    },
+                    {
+                      icon: "fab fa-facebook-f",
+                      link: "https://facebook.com/intellectt",
+                    },
+                  ].map((social, index) => (
+                    <Link
+                      key={index}
+                      to={social.link}
+                      style={{
+                        color: "#9ca3af",
+                        fontSize: "16px",
+                        transition: "color 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
+                      onMouseLeave={(e) => (e.target.style.color = "#9ca3af")}
+                    >
+                      <i className={social.icon}></i>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>

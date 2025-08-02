@@ -9,6 +9,18 @@ import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Brand color palette from Intellectt logo
+const BRAND_COLORS = {
+  primary: "#0199d3",
+  secondary: "#dc2626",
+  accent: "#fdb913",
+  darkBlue: "#1438bc",
+  navy: "#238fb9",
+  white: "#ffffff",
+  lightGray: "#f8fafc",
+  darkGray: "#1a1a1a",
+};
+
 const features = [
   {
     id: "technical-competence",
@@ -37,8 +49,7 @@ const features = [
   {
     id: "domain-expertise",
     title: "Deep Domain Expertise",
-    description:
-      "Extensive knowledge in Medical Devices, Healthcare & Banking",
+    description: "Extensive knowledge in Medical Devices, Healthcare & Banking",
     icon: Brain,
     position: { top: "30%", right: "5%", transform: "translateY(-50%)" },
     delay: 300,
@@ -100,9 +111,9 @@ export default function IntelligenceCore() {
         position: "relative",
         overflow: "hidden",
         minHeight: "100vh",
-        maxWidth:"1300px",
+        maxWidth: "1300px",
         margin: "0 auto",
-        bgcolor: "#fff",
+        background: `linear-gradient(135deg, ${BRAND_COLORS.lightGray} 0%, #f1f5f9 50%, #e2e8f0 100%)`,
         py: 10,
         px: 2,
       }}
@@ -117,8 +128,7 @@ export default function IntelligenceCore() {
           height: 800,
           transform: "translate(-50%, -50%)",
           borderRadius: "50%",
-          background:
-            "radial-gradient(circle, #dbeafe44, #f3e8ff11, transparent)",
+          background: `radial-gradient(circle, ${BRAND_COLORS.primary}22, ${BRAND_COLORS.secondary}11, transparent)`,
           zIndex: 0,
           filter: "blur(60px)",
         }}
@@ -131,24 +141,31 @@ export default function IntelligenceCore() {
       >
         <Typography
           variant="h3"
-          fontWeight={300}
-          color="text.primary"
+          fontWeight={700}
+          color={BRAND_COLORS.darkGray}
           gutterBottom
         >
           Why{" "}
           <Box
             component="span"
             sx={{
-              background:
-                " #EF4444",
+              background: `linear-gradient(135deg, ${BRAND_COLORS.primary} 0%, ${BRAND_COLORS.secondary} 100%)`,
               WebkitBackgroundClip: "text",
-              color: "transparent",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
           >
             Intellect
           </Box>
         </Typography>
-        <Typography variant="h6" color="text.secondary">
+        <Typography
+          variant="h6"
+          sx={{
+            color: BRAND_COLORS.darkGray,
+            opacity: 0.8,
+            fontWeight: 400,
+          }}
+        >
           Powering innovation through interconnected excellence
         </Typography>
       </Box>
@@ -192,7 +209,7 @@ export default function IntelligenceCore() {
                   height: size,
                   marginTop: -size / 2,
                   marginLeft: -size / 2,
-                  border: `2px solid rgba(100,100,255,0.2)`,
+                  border: `2px solid ${BRAND_COLORS.primary}33`,
                   borderRadius: "50%",
                 }}
               >
@@ -203,9 +220,14 @@ export default function IntelligenceCore() {
                     left: "50%",
                     width: 12,
                     height: 12,
-                    background: ["#110652", "#5a96f8", "#ef4444", "#06b6d4"][i],
+                    background: [
+                      BRAND_COLORS.darkBlue,
+                      BRAND_COLORS.primary,
+                      BRAND_COLORS.secondary,
+                      BRAND_COLORS.accent,
+                    ][i],
                     borderRadius: "50%",
-                    boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+                    boxShadow: `0 0 10px ${BRAND_COLORS.primary}40`,
                     transform: "translateX(-50%)",
                   }}
                 />
@@ -222,41 +244,21 @@ export default function IntelligenceCore() {
                 height: 120,
                 transform: "translate(-50%, -50%)",
                 borderRadius: "50%",
-                backgroundColor: "#fff",
-                border: "6px solid #f0f0f0",
+                backgroundColor: BRAND_COLORS.white,
+                border: `6px solid ${BRAND_COLORS.primary}`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+                boxShadow: `0 10px 30px ${BRAND_COLORS.primary}20`,
               }}
             >
               <img
-                src="/logo.jpg"
+                src="/logos/Intellectt-Logo.webp"
                 alt="Intellect Logo"
                 style={{ width: "70%", height: "70%", objectFit: "contain" }}
               />
             </Box>
           </Box>
-          {/* Rotating Rings */}
-          {/* {[0, 1, 2].map((_, i) => (
-            <Box
-              key={i}
-              sx={{
-                position: "absolute",
-                top: i * 16,
-                left: i * 16,
-                right: i * 16,
-                bottom: i * 16,
-                borderRadius: "50%",
-                border: `2px solid ${
-                  ["#93c5fd55", "#c4b5fd55", "#fca5a555"][i]
-                }`,
-                animation: `${i % 2 === 0 ? "spin" : "spin-reverse"} ${
-                  20 + i * 5
-                }s linear infinite`,
-              }}
-            />
-          ))} */}
 
           {/* Energy Lines */}
           {[...Array(6)].map((_, i) => (
@@ -266,8 +268,7 @@ export default function IntelligenceCore() {
                 position: "absolute",
                 width: 2,
                 height: 80,
-                background:
-                  "linear-gradient(to bottom, #3b82f655, transparent)",
+                background: `linear-gradient(to bottom, ${BRAND_COLORS.primary}55, transparent)`,
                 top: "50%",
                 left: "50%",
                 transform: `translate(-50%, -50%) rotate(${
@@ -297,13 +298,14 @@ export default function IntelligenceCore() {
                   sx={{
                     p: 2,
                     borderRadius: 4,
-                    backgroundColor: "#0199D3",
-                    border: "1px solid #ffffff33",
-                    boxShadow: 4,
+                    backgroundColor: BRAND_COLORS.primary,
+                    border: `1px solid ${BRAND_COLORS.white}33`,
+                    boxShadow: `0 4px 20px ${BRAND_COLORS.primary}20`,
                     transition: "all 0.4s",
                     "&:hover": {
                       transform: "scale(1.05)",
-                      backgroundColor: "#0199D3",
+                      backgroundColor: BRAND_COLORS.secondary,
+                      boxShadow: `0 8px 30px ${BRAND_COLORS.secondary}30`,
                     },
                   }}
                 >
@@ -315,30 +317,34 @@ export default function IntelligenceCore() {
                         width: 48,
                         height: 48,
                         borderRadius: 2,
-                        background:
-                          "#0199D3",
+                        background: BRAND_COLORS.white,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         boxShadow: 3,
                       }}
                     >
-                      <Icon color="#fff" size={24} />
+                      <Icon color={BRAND_COLORS.primary} size={24} />
                     </Box>
                   </Box>
                   <Typography
                     variant="subtitle1"
-                    color="#fff!important"
-                    textAlign="center"
-                    fontWeight={600}
+                    sx={{
+                      color: BRAND_COLORS.white,
+                      textAlign: "center",
+                      fontWeight: 600,
+                    }}
                   >
                     {feature.title}
                   </Typography>
                   <Typography
                     variant="caption"
-                    color="#e5e7eb"
-                    textAlign="center"
-                    display="block"
+                    sx={{
+                      color: BRAND_COLORS.white,
+                      textAlign: "center",
+                      display: "block",
+                      opacity: 0.9,
+                    }}
                   >
                     {feature.description}
                   </Typography>
@@ -365,8 +371,13 @@ export default function IntelligenceCore() {
                     sx={{
                       p: 2,
                       borderRadius: 3,
-                      backgroundColor: "#4369E3",
-                      boxShadow: 2,
+                      backgroundColor: BRAND_COLORS.primary,
+                      boxShadow: `0 4px 20px ${BRAND_COLORS.primary}20`,
+                      transition: "all 0.3s",
+                      "&:hover": {
+                        backgroundColor: BRAND_COLORS.secondary,
+                        transform: "scale(1.02)",
+                      },
                     }}
                   >
                     <Box
@@ -377,29 +388,33 @@ export default function IntelligenceCore() {
                           width: 48,
                           height: 48,
                           borderRadius: 2,
-                          background:
-                            "linear-gradient(to bottom right, #3b82f6, #9333ea)",
+                          background: BRAND_COLORS.white,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
                         }}
                       >
-                        <Icon color="#fff" size={24} />
+                        <Icon color={BRAND_COLORS.primary} size={24} />
                       </Box>
                     </Box>
                     <Typography
                       variant="subtitle1"
-                      color="#fff"
-                      textAlign="center"
-                      fontWeight={600}
+                      sx={{
+                        color: BRAND_COLORS.white,
+                        textAlign: "center",
+                        fontWeight: 600,
+                      }}
                     >
                       {feature.title}
                     </Typography>
                     <Typography
                       variant="caption"
-                      color="#e5e7eb"
-                      textAlign="center"
-                      display="block"
+                      sx={{
+                        color: BRAND_COLORS.white,
+                        textAlign: "center",
+                        display: "block",
+                        opacity: 0.9,
+                      }}
                     >
                       {feature.description}
                     </Typography>
@@ -412,33 +427,27 @@ export default function IntelligenceCore() {
       )}
 
       {/* Stats */}
-      <Grid
-        container
-        spacing={4}
-        justifyContent="center"
-        // sx={{ mt: 8 }}
-        className="fade-in"
-      >
+      <Grid container spacing={4} justifyContent="center" className="fade-in">
         {[
           {
             number: "200+",
             label: "Solutions",
-            gradient: "linear-gradient(to right, #3b82f6, #2563eb)",
+            gradient: `linear-gradient(135deg, ${BRAND_COLORS.primary} 0%, ${BRAND_COLORS.navy} 100%)`,
           },
           {
             number: "1800+",
             label: "Engineers",
-            gradient: "linear-gradient(to right, #0199D3, #0199D3)",
+            gradient: `linear-gradient(135deg, ${BRAND_COLORS.secondary} 0%, ${BRAND_COLORS.primary} 100%)`,
           },
           {
             number: "250+",
             label: "Architects",
-            gradient: "linear-gradient(to right, #3b82f6, #2563eb)",
+            gradient: `linear-gradient(135deg, ${BRAND_COLORS.accent} 0%, ${BRAND_COLORS.primary} 100%)`,
           },
           {
             number: "15",
             label: "Global Centers",
-            gradient: "linear-gradient(to right, #0199D3, #0199D3)",
+            gradient: `linear-gradient(135deg, ${BRAND_COLORS.darkBlue} 0%, ${BRAND_COLORS.primary} 100%)`,
           },
         ].map((stat, idx) => (
           <Grid item xs={6} md={3} key={idx}>
@@ -446,31 +455,36 @@ export default function IntelligenceCore() {
               sx={{
                 p: 2,
                 borderRadius: 2,
-                 background: stat.gradient,
+                background: stat.gradient,
                 textAlign: "center",
                 marginBottom: 8,
-                // bgcolor: "#ffffffcc",
                 backdropFilter: "blur(10px)",
-                border: "1px solid #e0e0e066",
+                border: `1px solid ${BRAND_COLORS.white}40`,
+                transition: "all 0.3s",
                 "&:hover": {
                   transform: "scale(1.05)",
-                  transition: "all 0.3s",
+                  boxShadow: `0 8px 30px ${BRAND_COLORS.primary}30`,
                 },
               }}
             >
               <Typography
                 variant="h5"
-                fontWeight={300}
+                fontWeight={700}
                 sx={{
-                 
-                  WebkitBackgroundClip: "text",
-                  color: "white!important",
+                  color: BRAND_COLORS.white,
                   mb: 1,
                 }}
               >
                 {stat.number}
               </Typography>
-              <Typography variant="caption" sx={{ color: "#fff!important" }}>
+              <Typography
+                variant="caption"
+                sx={{
+                  color: BRAND_COLORS.white,
+                  fontWeight: 500,
+                  opacity: 0.9,
+                }}
+              >
                 {stat.label}
               </Typography>
             </Box>

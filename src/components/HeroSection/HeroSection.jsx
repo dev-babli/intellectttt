@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Typography, Container, Button } from "@mui/material";
 import { gsap } from "gsap";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -9,7 +10,7 @@ const slides = [
     subtitle:
       "How one 'simple' change request shrank from seven weeks to ten days — and what that means for every enterprise SDLC.",
     ctaText: "Read More",
-    ctaLink: "/ai-solutions",
+    ctaLink: "/service/ai-and-gen-ai",
     accent: "#667eea",
     backgroundImage:
       "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
@@ -20,7 +21,7 @@ const slides = [
     subtitle:
       "Intelligent automation that learns, adapts, and grows with your business needs.",
     ctaText: "Discover Agentic AI",
-    ctaLink: "/agentic-ai",
+    ctaLink: "/service/ai-and-gen-ai/agents",
     accent: "#4facfe",
     backgroundImage: "/herosectionimages/woman-scrolling-laptop.jpg",
   },
@@ -30,7 +31,7 @@ const slides = [
     subtitle:
       "Modern solutions built for the digital age with enterprise-grade reliability and performance.",
     ctaText: "View Cloud Services",
-    ctaLink: "/cloud-services",
+    ctaLink: "/service/cloud-and-application-services",
     accent: "#a8edea",
     backgroundImage: "/herosectionimages/saas-concept-collage.jpg",
   },
@@ -45,12 +46,55 @@ const slides = [
     backgroundImage:
       "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
   },
+  {
+    id: 5,
+    title: "Data-Driven Intelligence Solutions",
+    subtitle:
+      "Transform your business with advanced analytics and AI-powered insights that drive strategic decisions.",
+    ctaText: "Explore Data Solutions",
+    ctaLink: "/service/data-and-analytics",
+    accent: "#667eea",
+    backgroundImage:
+      "/herosectionimages/WhatsApp Image 2025-07-30 at 6.57.11 PM.jpeg",
+  },
+  {
+    id: 6,
+    title: "Cybersecurity Excellence",
+    subtitle:
+      "Protect your digital assets with cutting-edge security solutions and proactive threat detection.",
+    ctaText: "Secure Your Business",
+    ctaLink: "/cybersecurity",
+    accent: "#4facfe",
+    backgroundImage:
+      "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
+  },
+  {
+    id: 7,
+    title: "Digital Transformation Partner",
+    subtitle:
+      "Navigate the future with confidence through our comprehensive digital transformation services.",
+    ctaText: "Transform Now",
+    ctaLink: "/digital-transformation",
+    accent: "#a8edea",
+    backgroundImage: "/herosectionimages/saas-concept-collage.jpg",
+  },
+  {
+    id: 8,
+    title: "Innovation at Scale",
+    subtitle:
+      "Leverage emerging technologies to create sustainable competitive advantages for your organization.",
+    ctaText: "Innovate Today",
+    ctaLink: "/innovation",
+    accent: "#ff9a9e",
+    backgroundImage: "/herosectionimages/woman-scrolling-laptop.jpg",
+  },
 ];
 
 const HeroSection = () => {
   const containerRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const navigate = useNavigate();
 
   // Auto-advance slides
   useEffect(() => {
@@ -270,6 +314,7 @@ const HeroSection = () => {
                   className="slide-cta"
                   variant="contained"
                   size="large"
+                  onClick={() => navigate(slide.ctaLink)}
                   sx={{
                     backgroundColor: "#dc2626",
                     color: "#ffffff",

@@ -13,24 +13,23 @@ import IntellecttAISolutions from "../../components/Help-Desk-Components/Partner
 import StackingCardsScroll from "../../components/StaticCard/StackingCardsScroll";
 import IntelligenceCore from "../../components/Intelligence/IntelligenceCore";
 import FeatureCards from "../../components/feature/FeatureCards";
+import Footer from "../../components/footer/Footer";
 
 const HomePage = () => {
   return (
     <Fragment>
       <div className="help_desk" style={{ margin: 0, padding: 0 }}>
         <HeroSection />
-        <FeatureCards />
+        <IntellecttAISolutions />
+        <TabsComponent />
         <PartnerSection />
         <LuminCards />
-        {/* <ImageLinkSection /> */}
-        <TabsComponent />
-        <IntellecttAISolutions />
-        {/* <ImageCardGrid /> */}
-
+        <FeatureCards />
         <IntelligenceCore />
         <IntegrationSection />
         <TestimonialSliderHome />
         <HelpDeskBlogSection />
+        <Footer />
       </div>
     </Fragment>
   );

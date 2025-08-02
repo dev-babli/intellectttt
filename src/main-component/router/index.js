@@ -73,6 +73,9 @@ import HealthcareLifeSciencesStaffing from "../TalentSolutions/HealthcareLifeSci
 import ITStaffAugmentation from "../TalentSolutions/ITStaffAugmentation";
 import { Group } from "lucide-react";
 import GroupCompani from "../GroupCompanys/GroupCompani";
+import CyberSecurity from "../CyberSecurity/CyberSecurity";
+import DigitalTransformation from "../DigitalTransformation/DigitalTransformation";
+import Innovation from "../Innovation/Innovation";
 
 const AllRoute = () => {
   return (
@@ -299,6 +302,11 @@ const AllRoute = () => {
               />
             </Route>
             <Route path="contact" element={<ContactPage />} />
+            
+            {/* New Hero Section Routes */}
+            <Route path="cybersecurity" element={<CyberSecurity />} />
+            <Route path="digital-transformation" element={<DigitalTransformation />} />
+            <Route path="innovation" element={<Innovation />} />
           </Route>
         </Routes>
       </BrowserRouter>
