@@ -9,16 +9,26 @@ import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Brand color palette from Intellectt logo
+// Enhanced modern color palette
 const BRAND_COLORS = {
-  primary: "#0199d3",
-  secondary: "#dc2626",
-  accent: "#fdb913",
-  darkBlue: "#1438bc",
-  navy: "#238fb9",
+  primary: "#2563eb", // Modern blue
+  secondary: "#dc2626", // Red
+  accent: "#f59e0b", // Amber
+  success: "#10b981", // Emerald
+  purple: "#8b5cf6", // Violet
+  indigo: "#6366f1", // Indigo
   white: "#ffffff",
   lightGray: "#f8fafc",
-  darkGray: "#1a1a1a",
+  darkGray: "#1e293b",
+  slate: "#475569",
+  gradient: {
+    primary: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
+    secondary: "linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)",
+    accent: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+    success: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+    purple: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
+    indigo: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
+  },
 };
 
 const features = [
@@ -29,6 +39,9 @@ const features = [
     icon: Award,
     position: { top: "10%", left: "20%" },
     delay: 0,
+    color: BRAND_COLORS.gradient.primary,
+    bgColor: "#dbeafe",
+    iconColor: "#2563eb",
   },
   {
     id: "customer-centricity",
@@ -37,6 +50,9 @@ const features = [
     icon: Target,
     position: { top: "10%", right: "20%" },
     delay: 100,
+    color: BRAND_COLORS.gradient.secondary,
+    bgColor: "#fee2e2",
+    iconColor: "#dc2626",
   },
   {
     id: "technical-workforce",
@@ -45,6 +61,9 @@ const features = [
     icon: Users,
     position: { top: "30%", left: "5%", transform: "translateY(-50%)" },
     delay: 200,
+    color: BRAND_COLORS.gradient.success,
+    bgColor: "#d1fae5",
+    iconColor: "#10b981",
   },
   {
     id: "domain-expertise",
@@ -53,6 +72,9 @@ const features = [
     icon: Brain,
     position: { top: "30%", right: "5%", transform: "translateY(-50%)" },
     delay: 300,
+    color: BRAND_COLORS.gradient.purple,
+    bgColor: "#ede9fe",
+    iconColor: "#8b5cf6",
   },
   {
     id: "operating-models",
@@ -61,6 +83,9 @@ const features = [
     icon: TrendingUp,
     position: { bottom: "10%", left: "20%" },
     delay: 400,
+    color: BRAND_COLORS.gradient.accent,
+    bgColor: "#fef3c7",
+    iconColor: "#f59e0b",
   },
   {
     id: "global-presence",
@@ -70,6 +95,9 @@ const features = [
     icon: Globe,
     position: { bottom: "10%", right: "20%" },
     delay: 500,
+    color: BRAND_COLORS.gradient.indigo,
+    bgColor: "#e0e7ff",
+    iconColor: "#6366f1",
   },
 ];
 
@@ -111,97 +139,203 @@ export default function IntelligenceCore() {
         position: "relative",
         overflow: "hidden",
         minHeight: "100vh",
-        maxWidth: "1300px",
+        maxWidth: "1400px",
         margin: "0 auto",
-        background: `linear-gradient(135deg, ${BRAND_COLORS.lightGray} 0%, #f1f5f9 50%, #e2e8f0 100%)`,
-        py: 10,
-        px: 2,
+        background: `linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)`,
+        py: 12,
+        px: 3,
+        borderRadius: 4,
+        boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
       }}
     >
-      {/* Background Glow */}
+      {/* Enhanced Background Effects */}
       <Box
         sx={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          width: 800,
-          height: 800,
+          width: 1000,
+          height: 1000,
           transform: "translate(-50%, -50%)",
           borderRadius: "50%",
-          background: `radial-gradient(circle, ${BRAND_COLORS.primary}22, ${BRAND_COLORS.secondary}11, transparent)`,
+          background: `radial-gradient(circle, ${BRAND_COLORS.primary}15, ${BRAND_COLORS.secondary}10, transparent)`,
           zIndex: 0,
-          filter: "blur(60px)",
+          filter: "blur(80px)",
         }}
       />
 
-      {/* Heading */}
+      {/* Floating Particles */}
+      {[...Array(20)].map((_, i) => (
+        <Box
+          key={i}
+          sx={{
+            position: "absolute",
+            width: Math.random() * 4 + 2,
+            height: Math.random() * 4 + 2,
+            background: [
+              BRAND_COLORS.primary,
+              BRAND_COLORS.secondary,
+              BRAND_COLORS.accent,
+            ][i % 3],
+            borderRadius: "50%",
+            opacity: 0.3,
+            animation: `float ${Math.random() * 10 + 10}s infinite linear`,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            zIndex: 1,
+          }}
+        />
+      ))}
+
+      {/* Enhanced Heading */}
       <Box
         className="fade-in"
-        sx={{ textAlign: "center", mb: 6, position: "relative", zIndex: 1 }}
+        sx={{ textAlign: "left", mb: 8, position: "relative", zIndex: 2 }}
       >
         <Typography
-          variant="h3"
-          fontWeight={700}
-          color={BRAND_COLORS.darkGray}
-          gutterBottom
+          variant="h2"
+          fontWeight={800}
+          sx={{
+            color: BRAND_COLORS.darkGray,
+            mb: 2,
+            fontSize: { xs: "2.5rem", md: "3.5rem" },
+            lineHeight: 1.2,
+          }}
         >
-          Why{" "}
+          The{" "}
           <Box
             component="span"
             sx={{
-              background: `linear-gradient(135deg, ${BRAND_COLORS.primary} 0%, ${BRAND_COLORS.secondary} 100%)`,
+              background: BRAND_COLORS.gradient.primary,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
             }}
           >
-            Intellect
-          </Box>
+            Intelligence
+          </Box>{" "}
+          Core
         </Typography>
         <Typography
-          variant="h6"
+          variant="h5"
           sx={{
-            color: BRAND_COLORS.darkGray,
-            opacity: 0.8,
+            color: BRAND_COLORS.slate,
             fontWeight: 400,
+            maxWidth: "600px",
+            lineHeight: 1.6,
           }}
         >
-          Powering innovation through interconnected excellence
+          Powering innovation through interconnected excellence and cutting-edge
+          technology
         </Typography>
       </Box>
 
-      {/* Central Atom + Orbits (only desktop) */}
+      {/* Central Core (only desktop) */}
       {!isMobile && (
         <Box
           sx={{
             position: "relative",
-            height: 600,
+            height: 700,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            mb: 8,
           }}
         >
-          {/* Core Atom */}
+          {/* Enhanced Core Atom */}
           <Box
             sx={{
               position: "relative",
-              width: 400,
-              height: 400,
+              width: 500,
+              height: 500,
               zIndex: 2,
             }}
           >
-            {/* Orbit Rings */}
-            {[180, 240, 300].map((size, i) => (
+            {/* Center Logo - The True Center */}
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: 180,
+                height: 180,
+                transform: "translate(-50%, -50%)",
+                borderRadius: "50%",
+                background: BRAND_COLORS.white,
+                border: `10px solid ${BRAND_COLORS.primary}`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: `0 20px 60px ${BRAND_COLORS.primary}30, inset 0 4px 20px rgba(255,255,255,0.3)`,
+                zIndex: 5,
+              }}
+            >
+              <img
+                src="/logos/Intellectt-Logo.webp"
+                alt="Intellect Logo"
+                style={{
+                  width: "75%",
+                  height: "75%",
+                  objectFit: "contain",
+                }}
+              />
+            </Box>
+
+            {/* Orbiting Dots Around the Logo */}
+            {[120, 180, 240, 300].map((radius, i) => (
               <motion.div
                 key={i}
                 animate={{ rotate: 360 }}
                 transition={{
-                  duration: 30 + i * 5,
+                  duration: 30 + i * 10,
                   repeat: Infinity,
                   ease: "linear",
-                  delay: i * 0.2,
+                  delay: i * 0.5,
                 }}
                 style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  width: radius * 2,
+                  height: radius * 2,
+                  marginTop: -radius,
+                  marginLeft: -radius,
+                  zIndex: 4,
+                }}
+              >
+                {/* Multiple dots per orbit */}
+                {[...Array(4)].map((_, j) => (
+                  <Box
+                    key={j}
+                    sx={{
+                      position: "absolute",
+                      top: -8,
+                      left: "50%",
+                      width: 14,
+                      height: 14,
+                      background: [
+                        BRAND_COLORS.gradient.primary,
+                        BRAND_COLORS.gradient.secondary,
+                        BRAND_COLORS.gradient.accent,
+                        BRAND_COLORS.gradient.success,
+                      ][i],
+                      borderRadius: "50%",
+                      boxShadow: `0 0 15px ${BRAND_COLORS.primary}50`,
+                      transform: `translateX(-50%) rotate(${
+                        j * 90
+                      }deg) translateY(-${radius}px)`,
+                      zIndex: 4,
+                    }}
+                  />
+                ))}
+              </motion.div>
+            ))}
+
+            {/* Subtle Orbit Rings */}
+            {[140, 200, 260, 320].map((size, i) => (
+              <Box
+                key={i}
+                sx={{
                   position: "absolute",
                   top: "50%",
                   left: "50%",
@@ -209,141 +343,121 @@ export default function IntelligenceCore() {
                   height: size,
                   marginTop: -size / 2,
                   marginLeft: -size / 2,
-                  border: `2px solid ${BRAND_COLORS.primary}33`,
+                  border: `2px solid ${BRAND_COLORS.primary}15`,
                   borderRadius: "50%",
+                  zIndex: 3,
                 }}
-              >
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: -6,
-                    left: "50%",
-                    width: 12,
-                    height: 12,
-                    background: [
-                      BRAND_COLORS.darkBlue,
-                      BRAND_COLORS.primary,
-                      BRAND_COLORS.secondary,
-                      BRAND_COLORS.accent,
-                    ][i],
-                    borderRadius: "50%",
-                    boxShadow: `0 0 10px ${BRAND_COLORS.primary}40`,
-                    transform: "translateX(-50%)",
-                  }}
-                />
-              </motion.div>
+              />
             ))}
 
-            {/* Static center logo */}
-            <Box
-              sx={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                width: 120,
-                height: 120,
-                transform: "translate(-50%, -50%)",
-                borderRadius: "50%",
-                backgroundColor: BRAND_COLORS.white,
-                border: `6px solid ${BRAND_COLORS.primary}`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: `0 10px 30px ${BRAND_COLORS.primary}20`,
-              }}
-            >
-              <img
-                src="/logos/Intellectt-Logo.webp"
-                alt="Intellect Logo"
-                style={{ width: "70%", height: "70%", objectFit: "contain" }}
+            {/* Enhanced Energy Lines */}
+            {[...Array(12)].map((_, i) => (
+              <Box
+                key={i}
+                sx={{
+                  position: "absolute",
+                  width: 3,
+                  height: 120,
+                  background: `linear-gradient(to bottom, ${BRAND_COLORS.primary}60, transparent)`,
+                  top: "50%",
+                  left: "50%",
+                  transform: `translate(-50%, -50%) rotate(${
+                    i * 30
+                  }deg) translateY(-120px)`,
+                  transformOrigin: "bottom center",
+                  borderRadius: "2px",
+                }}
               />
-            </Box>
+            ))}
           </Box>
 
-          {/* Energy Lines */}
-          {[...Array(6)].map((_, i) => (
-            <Box
-              key={i}
-              sx={{
-                position: "absolute",
-                width: 2,
-                height: 80,
-                background: `linear-gradient(to bottom, ${BRAND_COLORS.primary}55, transparent)`,
-                top: "50%",
-                left: "50%",
-                transform: `translate(-50%, -50%) rotate(${
-                  i * 60
-                }deg) translateY(-100px)`,
-                transformOrigin: "bottom center",
-              }}
-            />
-          ))}
-
-          {/* Feature Bubbles */}
+          {/* Enhanced Feature Cards */}
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <motion.div
                 key={feature.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: feature.delay / 1000 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+                transition={{
+                  delay: feature.delay / 1000,
+                  type: "spring",
+                  stiffness: 100,
+                }}
                 style={{
                   position: "absolute",
-                  width: 180,
+                  width: 220,
                   ...feature.position,
                 }}
               >
                 <Box
                   sx={{
-                    p: 2,
+                    p: 3,
                     borderRadius: 4,
-                    backgroundColor: BRAND_COLORS.primary,
-                    border: `1px solid ${BRAND_COLORS.white}33`,
-                    boxShadow: `0 4px 20px ${BRAND_COLORS.primary}20`,
-                    transition: "all 0.4s",
+                    background: feature.color,
+                    border: `2px solid ${BRAND_COLORS.white}40`,
+                    boxShadow: `0 8px 32px ${feature.iconColor}30`,
+                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                    backdropFilter: "blur(10px)",
                     "&:hover": {
-                      transform: "scale(1.05)",
-                      backgroundColor: BRAND_COLORS.secondary,
-                      boxShadow: `0 8px 30px ${BRAND_COLORS.secondary}30`,
+                      transform: "scale(1.08) translateY(-8px)",
+                      boxShadow: `0 16px 48px ${feature.iconColor}40`,
                     },
                   }}
                 >
                   <Box
-                    sx={{ display: "flex", justifyContent: "center", mb: 1 }}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      mb: 2,
+                      position: "relative",
+                    }}
                   >
                     <Box
                       sx={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: 2,
+                        width: 56,
+                        height: 56,
+                        borderRadius: 3,
                         background: BRAND_COLORS.white,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        boxShadow: 3,
+                        boxShadow: `0 4px 16px ${feature.iconColor}20`,
+                        position: "relative",
+                        "&::before": {
+                          content: '""',
+                          position: "absolute",
+                          inset: -2,
+                          borderRadius: 3,
+                          background: feature.color,
+                          zIndex: -1,
+                          opacity: 0.3,
+                        },
                       }}
                     >
-                      <Icon color={BRAND_COLORS.primary} size={24} />
+                      <Icon color={feature.iconColor} size={28} />
                     </Box>
                   </Box>
                   <Typography
-                    variant="subtitle1"
+                    variant="h6"
                     sx={{
                       color: BRAND_COLORS.white,
                       textAlign: "center",
-                      fontWeight: 600,
+                      fontWeight: 700,
+                      mb: 1,
+                      fontSize: "1.1rem",
                     }}
                   >
                     {feature.title}
                   </Typography>
                   <Typography
-                    variant="caption"
+                    variant="body2"
                     sx={{
                       color: BRAND_COLORS.white,
                       textAlign: "center",
-                      display: "block",
-                      opacity: 0.9,
+                      opacity: 0.95,
+                      lineHeight: 1.5,
+                      fontSize: "0.875rem",
                     }}
                   >
                     {feature.description}
@@ -355,65 +469,67 @@ export default function IntelligenceCore() {
         </Box>
       )}
 
-      {/* Mobile Grid Stack */}
+      {/* Enhanced Mobile Grid */}
       {isMobile && (
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={3} justifyContent="center" sx={{ mb: 6 }}>
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Grid item xs={10} key={feature.id}>
+              <Grid item xs={11} key={feature.id}>
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.15 }}
                 >
                   <Box
                     sx={{
-                      p: 2,
-                      borderRadius: 3,
-                      backgroundColor: BRAND_COLORS.primary,
-                      boxShadow: `0 4px 20px ${BRAND_COLORS.primary}20`,
+                      p: 3,
+                      borderRadius: 4,
+                      background: feature.color,
+                      boxShadow: `0 8px 32px ${feature.iconColor}30`,
                       transition: "all 0.3s",
                       "&:hover": {
-                        backgroundColor: BRAND_COLORS.secondary,
                         transform: "scale(1.02)",
+                        boxShadow: `0 12px 40px ${feature.iconColor}40`,
                       },
                     }}
                   >
                     <Box
-                      sx={{ display: "flex", justifyContent: "center", mb: 1 }}
+                      sx={{ display: "flex", justifyContent: "center", mb: 2 }}
                     >
                       <Box
                         sx={{
-                          width: 48,
-                          height: 48,
-                          borderRadius: 2,
+                          width: 56,
+                          height: 56,
+                          borderRadius: 3,
                           background: BRAND_COLORS.white,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
+                          boxShadow: `0 4px 16px ${feature.iconColor}20`,
                         }}
                       >
-                        <Icon color={BRAND_COLORS.primary} size={24} />
+                        <Icon color={feature.iconColor} size={28} />
                       </Box>
                     </Box>
                     <Typography
-                      variant="subtitle1"
+                      variant="h6"
                       sx={{
                         color: BRAND_COLORS.white,
                         textAlign: "center",
-                        fontWeight: 600,
+                        fontWeight: 700,
+                        mb: 1,
                       }}
                     >
                       {feature.title}
                     </Typography>
                     <Typography
-                      variant="caption"
+                      variant="body2"
                       sx={{
                         color: BRAND_COLORS.white,
                         textAlign: "center",
-                        display: "block",
-                        opacity: 0.9,
+                        opacity: 0.95,
+                        lineHeight: 1.5,
                       }}
                     >
                       {feature.description}
@@ -426,74 +542,120 @@ export default function IntelligenceCore() {
         </Grid>
       )}
 
-      {/* Stats */}
+      {/* Enhanced Stats Section */}
       <Grid container spacing={4} justifyContent="center" className="fade-in">
         {[
           {
             number: "200+",
             label: "Solutions",
-            gradient: `linear-gradient(135deg, ${BRAND_COLORS.primary} 0%, ${BRAND_COLORS.navy} 100%)`,
+            gradient: BRAND_COLORS.gradient.primary,
+            icon: "🚀",
           },
           {
             number: "1800+",
             label: "Engineers",
-            gradient: `linear-gradient(135deg, ${BRAND_COLORS.secondary} 0%, ${BRAND_COLORS.primary} 100%)`,
+            gradient: BRAND_COLORS.gradient.secondary,
+            icon: "👨‍💻",
           },
           {
             number: "250+",
             label: "Architects",
-            gradient: `linear-gradient(135deg, ${BRAND_COLORS.accent} 0%, ${BRAND_COLORS.primary} 100%)`,
+            gradient: BRAND_COLORS.gradient.accent,
+            icon: "🏗️",
           },
           {
             number: "15",
             label: "Global Centers",
-            gradient: `linear-gradient(135deg, ${BRAND_COLORS.darkBlue} 0%, ${BRAND_COLORS.primary} 100%)`,
+            gradient: BRAND_COLORS.gradient.success,
+            icon: "🌍",
           },
         ].map((stat, idx) => (
           <Grid item xs={6} md={3} key={idx}>
-            <Box
-              sx={{
-                p: 2,
-                borderRadius: 2,
-                background: stat.gradient,
-                textAlign: "center",
-                marginBottom: 8,
-                backdropFilter: "blur(10px)",
-                border: `1px solid ${BRAND_COLORS.white}40`,
-                transition: "all 0.3s",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                  boxShadow: `0 8px 30px ${BRAND_COLORS.primary}30`,
-                },
-              }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: idx * 0.1 }}
             >
-              <Typography
-                variant="h5"
-                fontWeight={700}
+              <Box
                 sx={{
-                  color: BRAND_COLORS.white,
-                  mb: 1,
+                  p: 3,
+                  borderRadius: 3,
+                  background: stat.gradient,
+                  textAlign: "center",
+                  border: `2px solid ${BRAND_COLORS.white}30`,
+                  transition: "all 0.3s",
+                  position: "relative",
+                  overflow: "hidden",
+                  "&::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background:
+                      "linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent)",
+                    transform: "translateX(-100%)",
+                    transition: "transform 0.6s",
+                  },
+                  "&:hover": {
+                    transform: "scale(1.05) translateY(-4px)",
+                    boxShadow: `0 12px 40px ${BRAND_COLORS.primary}40`,
+                    "&::before": {
+                      transform: "translateX(100%)",
+                    },
+                  },
                 }}
               >
-                {stat.number}
-              </Typography>
-              <Typography
-                variant="caption"
-                sx={{
-                  color: BRAND_COLORS.white,
-                  fontWeight: 500,
-                  opacity: 0.9,
-                }}
-              >
-                {stat.label}
-              </Typography>
-            </Box>
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontSize: "2.5rem",
+                    fontWeight: 800,
+                    color: BRAND_COLORS.white,
+                    mb: 1,
+                    textShadow: "0 2px 4px rgba(0,0,0,0.2)",
+                  }}
+                >
+                  {stat.number}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: BRAND_COLORS.white,
+                    fontWeight: 600,
+                    mb: 1,
+                    fontSize: "1.1rem",
+                  }}
+                >
+                  {stat.label}
+                </Typography>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    color: BRAND_COLORS.white,
+                    opacity: 0.8,
+                  }}
+                >
+                  {stat.icon}
+                </Typography>
+              </Box>
+            </motion.div>
           </Grid>
         ))}
       </Grid>
 
-      {/* Animations */}
+      {/* Enhanced Animations */}
       <style jsx global>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
+        }
         @keyframes spin {
           from {
             transform: rotate(0deg);
@@ -502,21 +664,30 @@ export default function IntelligenceCore() {
             transform: rotate(360deg);
           }
         }
-        @keyframes spin-reverse {
-          from {
-            transform: rotate(360deg);
-          }
-          to {
-            transform: rotate(0deg);
-          }
-        }
         @keyframes pulse {
           0%,
           100% {
             transform: scale(1);
           }
           50% {
-            transform: scale(1.03);
+            transform: scale(1.05);
+          }
+        }
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes glow {
+          0%,
+          100% {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
           }
         }
       `}</style>

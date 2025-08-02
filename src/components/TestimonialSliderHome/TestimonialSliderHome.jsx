@@ -196,7 +196,7 @@ const TestimonialSliderHome = () => {
       }}
     >
       <Container maxWidth="xl">
-        <Box sx={{ textAlign: "center", marginBottom: "4rem" }}>
+        <Box sx={{ textAlign: "left", marginBottom: "4rem" }}>
           <Typography
             variant="h2"
             sx={{
@@ -217,7 +217,7 @@ const TestimonialSliderHome = () => {
               fontWeight: 400,
               color: "#6b7280",
               maxWidth: "800px",
-              mx: "auto",
+              mx: "0",
               lineHeight: 1.6,
               fontFamily: "'Inter', sans-serif",
             }}

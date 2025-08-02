@@ -1,35 +1,17 @@
 import React, { Fragment } from "react";
-import IntegrationSection from "../../components/Help-Desk-Components/IntegrationSection/IntegrationSection";
-import TabsComponent from "../../components/Tabs/TabsComponent";
-import PartnerSection from "../../components/Help-Desk-Components/PartnerSection";
-import HeroSection from "../../components/HeroSection/HeroSection";
-import TestimonialSliderHome from "../../components/TestimonialSliderHome/TestimonialSliderHome";
-
+import TopSection from "../../components/TopSection/TopSection";
 import LuminCards from "../../components/LuminCards/LuminCards";
-import HelpDeskBlogSection from "../../components/Help-Desk-Components/HelpDeskBlogSection/HelpDeskBlogSection";
+import BottomSection from "../../components/BottomSection/BottomSection";
 import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
-
-import IntellecttAISolutions from "../../components/Help-Desk-Components/PartnerSection/IntellecttAiSolutions";
 import StackingCardsScroll from "../../components/StaticCard/StackingCardsScroll";
-import IntelligenceCore from "../../components/Intelligence/IntelligenceCore";
-import FeatureCards from "../../components/feature/FeatureCards";
-import Footer from "../../components/footer/Footer";
 
 const HomePage = () => {
   return (
     <Fragment>
       <div className="help_desk" style={{ margin: 0, padding: 0 }}>
-        <HeroSection />
-        <IntellecttAISolutions />
-        <TabsComponent />
-        <PartnerSection />
+        <TopSection />
         <LuminCards />
-        <FeatureCards />
-        <IntelligenceCore />
-        <IntegrationSection />
-        <TestimonialSliderHome />
-        <HelpDeskBlogSection />
-        <Footer />
+        <BottomSection />
       </div>
     </Fragment>
   );

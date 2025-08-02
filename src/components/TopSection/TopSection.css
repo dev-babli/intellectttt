@@ -1,0 +1,28 @@
+/* Top Section Component Styles */
+.top-section {
+  background: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure proper spacing between sections */
+.top-section > * {
+  margin-bottom: 0;
+}
+
+.top-section > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .top-section {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-section {
+    padding: 0;
+  }
+}

@@ -68,10 +68,10 @@
   --color-primary-five-rgb: 20, 56, 188;
   --color-heading: #111112;
   --color-heading-two: #0c111d;
-  --color-heading-three: #0199d3;
+  --color-heading-three: #000000;
   --color-heading-four: #0199d3;
-  --color-default: #49515b;
-  --color-default-two: #494d57;
+  --color-default: #000000;
+  --color-default-two: #000000;
   --color-yellow: #ffd600;
   --color-white: #fff;
   --color-black: #000;
@@ -199,7 +199,7 @@ input[type="email"]::-webkit-input-placeholder,
 input[type="tel"]::-webkit-input-placeholder,
 form select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #888686;
+  color: #000000;
   opacity: 1;
 }
 
@@ -209,7 +209,7 @@ input[type="email"]::-moz-placeholder,
 input[type="tel"]::-moz-placeholder,
 form select::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #888686;
+  color: #000000;
   opacity: 1;
 }
 
@@ -219,7 +219,7 @@ input[type="email"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder,
 form select:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #888686;
+  color: #000000;
   opacity: 1;
 }
 
@@ -229,7 +229,7 @@ input[type="email"]:-moz-placeholder,
 input[type="tel"]:-moz-placeholder,
 form select:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #888686;
+  color: #000000;
   opacity: 1;
 }
 
@@ -10373,12 +10373,6 @@ body[data-aos-easing="ease"] [data-aos] {
 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
   .testimonial-pagination .swiper-button-prev {
     left: 42px;
-  }
-}
-
-@media (max-width: 991px) {
-  .testimonial-pagination .swiper-button-prev {
-    left: 70px;
   }
 }
 
@@ -22163,4 +22157,66 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::after {
 /* Custom CSS to change Tidio icon to robot */
 .tidio-chat-button {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') !important;
+}
+
+/* Fix for section headings below hero - left align and reduce padding */
+.sec-title--two.text-left {
+  text-align: left !important;
+}
+
+.sec-title--two.text-left .sub-title {
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.sec-title--two.text-left .title {
+  text-align: left !important;
+}
+
+/* Reduce padding for sections below hero */
+section.service.pt-65.pb-65 {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+section.feature.pt-130.pb-130 {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+section.feature.pt-50 {
+  padding-top: 30px !important;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 991px) {
+  section.service.pt-65.pb-65 {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  section.feature.pt-130.pb-130 {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  section.feature.pt-50 {
+    padding-top: 25px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  section.service.pt-65.pb-65 {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+
+  section.feature.pt-130.pb-130 {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  section.feature.pt-50 {
+    padding-top: 20px !important;
+  }
 }

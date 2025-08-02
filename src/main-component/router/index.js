@@ -76,6 +76,7 @@ import GroupCompani from "../GroupCompanys/GroupCompani";
 import CyberSecurity from "../CyberSecurity/CyberSecurity";
 import DigitalTransformation from "../DigitalTransformation/DigitalTransformation";
 import Innovation from "../Innovation/Innovation";
+import Partners from "../../pages/Partners";
 
 const AllRoute = () => {
   return (
@@ -302,6 +303,7 @@ const AllRoute = () => {
               />
             </Route>
             <Route path="contact" element={<ContactPage />} />
+            <Route path="partners" element={<Partners />} />
             
             {/* New Hero Section Routes */}
             <Route path="cybersecurity" element={<CyberSecurity />} />

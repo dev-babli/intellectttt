@@ -1,0 +1,28 @@
+/* Bottom Section Component Styles */
+.bottom-section {
+  background: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure proper spacing between sections */
+.bottom-section > * {
+  margin-bottom: 0;
+}
+
+.bottom-section > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bottom-section {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-section {
+    padding: 0;
+  }
+}

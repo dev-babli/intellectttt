@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import styled from "@emotion/styled";
 import { ChevronDown, Menu, Search, ArrowRight, X } from "lucide-react";
 import "../../App.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 // Add smooth scrolling to the entire page
 if (typeof document !== "undefined") {
@@ -17,49 +17,70 @@ const HeaderContainer = styled.header`
   left: 0;
   right: 0;
   z-index: 1000;
-  background: ${(props) => (props.scrolled ? "#ffffff" : "transparent")};
-  backdrop-filter: ${(props) =>
-    props.scrolled ? "blur(30px) saturate(180%)" : "none"};
-  border-bottom: ${(props) =>
-    props.scrolled ? "1px solid rgba(0, 0, 0, 0.08)" : "none"};
-  box-shadow: ${(props) =>
-    props.scrolled ? "0 1px 10px rgba(0, 0, 0, 0.05)" : "none"};
+  background: ${(props) => {
+    if (!props.isHomePage) {
+      return "#ffffff";
+    }
+    return props.scrolled ? "#ffffff" : "transparent";
+  }};
+  backdrop-filter: ${(props) => {
+    if (!props.isHomePage) {
+      return "blur(30px) saturate(180%)";
+    }
+    return props.scrolled ? "blur(30px) saturate(180%)" : "none";
+  }};
+  border-bottom: ${(props) => {
+    if (!props.isHomePage) {
+      return "1px solid rgba(0, 0, 0, 0.08)";
+    }
+    return props.scrolled ? "1px solid rgba(0, 0, 0, 0.08)" : "none";
+  }};
+  box-shadow: ${(props) => {
+    if (!props.isHomePage) {
+      return "0 1px 10px rgba(0, 0, 0, 0.05)";
+    }
+    return props.scrolled ? "0 1px 10px rgba(0, 0, 0, 0.05)" : "none";
+  }};
   transition: all 0.3s ease-in-out;
 
-  &:hover {
-    background: #ffffff;
-    backdrop-filter: blur(30px) saturate(180%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  ${(props) =>
+    props.isHomePage &&
+    `
+    &:hover {
+      background: #ffffff;
+      backdrop-filter: blur(30px) saturate(180%);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
 
-    /* Force logo to show original colors on hover */
-    img {
-      filter: none !important;
-    }
+      /* Force logo to show original colors on hover */
+      img {
+        filter: none !important;
+      }
 
-    /* Force navigation text to be black on hover */
-    nav a {
-      color: #000000 !important;
-    }
+      /* Force navigation text to be black on hover */
+      nav a {
+        color: #000000 !important;
+      }
 
-    /* Force dropdown buttons to be black on hover */
-    nav a:hover {
-      color: #000000 !important;
-    }
+      /* Force dropdown buttons to be black on hover */
+      nav a:hover {
+        color: #000000 !important;
+      }
 
-    /* Force navigation buttons to be black when header is hovered */
-    nav div {
-      color: #000000 !important;
-    }
+      /* Force navigation buttons to be black when header is hovered */
+      nav div {
+        color: #000000 !important;
+      }
 
-    /* Force "Let's Connect" button to turn red when header is hovered */
-    button {
-      background: #e53e3e !important;
-      color: #ffffff !important;
-      border: none !important;
-      box-shadow: 0 2px 4px rgba(229, 62, 62, 0.2) !important;
+      /* Force "Let's Connect" button to turn red when header is hovered */
+      button {
+        background: #e53e3e !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: 0 2px 4px rgba(229, 62, 62, 0.2) !important;
+      }
     }
-  }
+  `}
 `;
 
 const HeaderContent = styled.div`
@@ -99,8 +120,12 @@ const Logo = styled.div`
     height: 40px;
     width: auto;
     transition: all 0.3s ease;
-    filter: ${(props) =>
-      props.scrolled ? "none" : "brightness(0) saturate(0) invert(1)"};
+    filter: ${(props) => {
+      if (!props.isHomePage) {
+        return "none";
+      }
+      return props.scrolled ? "none" : "brightness(0) saturate(0) invert(1)";
+    }};
   }
 
   img:hover {
@@ -145,6 +170,7 @@ const NavItem = styled.div`
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: ${(props) => {
     if (props.isActive) return "#6366f1";
+    if (!props.isHomePage) return "#000000";
     return props.scrolled ? "#000000" : "#ffffff";
   }};
 
@@ -158,17 +184,24 @@ const NavItem = styled.div`
   transform-origin: center;
 
   &:hover {
-    background: ${(props) =>
-      props.scrolled ? "rgba(0, 0, 0, 0.05)" : "rgba(99, 102, 241, 0.08)"};
+    background: ${(props) => {
+      if (!props.isHomePage) return "rgba(0, 0, 0, 0.05)";
+      return props.scrolled
+        ? "rgba(0, 0, 0, 0.05)"
+        : "rgba(99, 102, 241, 0.08)";
+    }};
     color: ${(props) => {
       if (props.isActive) return "#6366f1";
+      if (!props.isHomePage) return "#000000";
       return props.scrolled ? "#000000" : "#ffffff";
     }};
     transform: translateY(-2px) scale(1.02);
-    box-shadow: ${(props) =>
-      props.scrolled
+    box-shadow: ${(props) => {
+      if (!props.isHomePage) return "0 4px 12px rgba(0, 0, 0, 0.1)";
+      return props.scrolled
         ? "0 4px 12px rgba(0, 0, 0, 0.1)"
-        : "0 4px 12px rgba(99, 102, 241, 0.15)"};
+        : "0 4px 12px rgba(99, 102, 241, 0.15)";
+    }};
   }
 
   &:active {
@@ -199,9 +232,18 @@ const SearchButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.7);
+  background: ${(props) => {
+    if (!props.isHomePage) return "rgba(0, 0, 0, 0.05)";
+    return "rgba(255, 255, 255, 0.08)";
+  }};
+  border: ${(props) => {
+    if (!props.isHomePage) return "1px solid rgba(0, 0, 0, 0.1)";
+    return "1px solid rgba(255, 255, 255, 0.12)";
+  }};
+  color: ${(props) => {
+    if (!props.isHomePage) return "rgba(0, 0, 0, 0.7)";
+    return "rgba(255, 255, 255, 0.7)";
+  }};
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
   font-size: 0.875rem;
@@ -211,8 +253,14 @@ const SearchButton = styled.button`
   justify-content: flex-start;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: ${(props) => {
+      if (!props.isHomePage) return "rgba(0, 0, 0, 0.08)";
+      return "rgba(255, 255, 255, 0.12)";
+    }};
+    border-color: ${(props) => {
+      if (!props.isHomePage) return "rgba(0, 0, 0, 0.15)";
+      return "rgba(255, 255, 255, 0.2)";
+    }};
   }
 
   svg {
@@ -339,7 +387,10 @@ const ActionButton = styled.button`
   align-items: center;
   gap: 0.5rem;
   transform-origin: center;
-  color: ${(props) => (props.scrolled ? "#000000" : "#ffffff")};
+  color: ${(props) => {
+    if (!props.isHomePage) return "#000000";
+    return props.scrolled ? "#000000" : "#ffffff";
+  }};
 
   ${(props) =>
     props.variant === "primary"
@@ -359,16 +410,37 @@ const ActionButton = styled.button`
     }
   `
       : `
-    background: transparent;
-    color: #374151;
-    border: 1px solid #d1d5db;
+    background: ${(props) => {
+      if (!props.isHomePage) return "#e53e3e";
+      return "transparent";
+    }};
+    color: ${(props) => {
+      if (!props.isHomePage) return "#ffffff";
+      return "#374151";
+    }};
+    border: ${(props) => {
+      if (!props.isHomePage) return "none";
+      return "1px solid #d1d5db";
+    }};
 
     &:hover {
-      background: #f9fafb;
-      color: #111827;
-      border-color: #9ca3af;
+      background: ${(props) => {
+        if (!props.isHomePage) return "#dc2626";
+        return "#f9fafb";
+      }};
+      color: ${(props) => {
+        if (!props.isHomePage) return "#ffffff";
+        return "#111827";
+      }};
+      border-color: ${(props) => {
+        if (!props.isHomePage) return "none";
+        return "#9ca3af";
+      }};
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: ${(props) => {
+        if (!props.isHomePage) return "0 2px 4px rgba(229, 62, 62, 0.2)";
+        return "0 4px 12px rgba(0, 0, 0, 0.1)";
+      }};
     }
 
     &:active {
@@ -403,7 +475,12 @@ const RouterButton = ({ to, external, children, ...props }) => {
 
   // Always use onClick handler for consistent behavior
   return (
-    <ActionButton onClick={handleClick} scrolled={props.scrolled} {...props}>
+    <ActionButton
+      onClick={handleClick}
+      scrolled={props.scrolled}
+      isHomePage={props.isHomePage}
+      {...props}
+    >
       {children}
     </ActionButton>
   );
@@ -1882,6 +1959,10 @@ function MegaMenuIntellectt() {
   const timeoutRef = useRef(null);
   const searchInputRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Check if we're on the homepage
+  const isHomePage = location.pathname === "/";
 
   // Scroll detection
   useEffect(() => {
@@ -3809,9 +3890,9 @@ function MegaMenuIntellectt() {
   return (
     <div style={{ background: "white" }}>
       {/* Mega Menu Header */}
-      <HeaderContainer scrolled={scrolled}>
+      <HeaderContainer scrolled={scrolled} isHomePage={isHomePage}>
         <HeaderContent>
-          <Logo scrolled={scrolled}>
+          <Logo scrolled={scrolled} isHomePage={isHomePage}>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
@@ -3840,6 +3921,7 @@ function MegaMenuIntellectt() {
                 key={menuName}
                 isActive={activeMenu === menuName}
                 scrolled={scrolled}
+                isHomePage={isHomePage}
                 onMouseEnter={() => handleMouseEnter(menuName)}
                 onMouseLeave={handleMouseLeave}
                 onKeyDown={(e) => handleKeyDown(e, menuName)}
@@ -3911,6 +3993,7 @@ function MegaMenuIntellectt() {
               to="/contact"
               variant="primary"
               scrolled={scrolled}
+              isHomePage={isHomePage}
               style={{
                 background: scrolled ? "#e53e3e" : "#ffffff",
                 color: scrolled ? "#ffffff" : "#374151",
@@ -3974,7 +4057,7 @@ function MegaMenuIntellectt() {
 
       <Sidebar isOpen={isMobileMenuOpen}>
         <SidebarHeader>
-          <Logo scrolled={scrolled}>
+          <Logo scrolled={scrolled} isHomePage={isHomePage}>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-DYNCWKUHLFK4nr4sVmlGe1Bm1n3ut5.svg"
@@ -4030,6 +4113,7 @@ function MegaMenuIntellectt() {
           <RouterButton
             to="/contact"
             variant="secondary"
+            isHomePage={isHomePage}
             style={{ width: "100%", justifyContent: "center" }}
           >
             Let's Connect

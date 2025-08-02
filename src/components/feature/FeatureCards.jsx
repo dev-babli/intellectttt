@@ -213,7 +213,7 @@ const FeatureCards = () => {
     >
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
         {/* Header */}
-        <Box sx={{ textAlign: "center", marginBottom: "5rem" }}>
+        <Box sx={{ textAlign: "left", marginBottom: "5rem" }}>
           <Typography
             variant="h2"
             sx={{
@@ -234,7 +234,7 @@ const FeatureCards = () => {
               fontWeight: 400,
               color: "#64748b",
               maxWidth: "800px",
-              mx: "auto",
+              mx: "0",
               lineHeight: 1.7,
               fontFamily: "'Inter', sans-serif",
             }}

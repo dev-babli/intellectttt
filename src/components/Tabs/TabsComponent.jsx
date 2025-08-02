@@ -161,7 +161,7 @@ export default function TabsComponent() {
     <Box
       ref={componentRef}
       sx={{
-        background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+        background: "#ffffff",
         padding: { xs: "5rem 0", md: "7rem 0" },
         position: "relative",
         overflow: "hidden",
@@ -179,7 +179,7 @@ export default function TabsComponent() {
       }}
     >
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
-        <Box sx={{ textAlign: "center", marginBottom: "5rem" }}>
+        <Box sx={{ textAlign: "left", marginBottom: "5rem" }}>
           <Typography
             variant="h2"
             sx={{
@@ -201,7 +201,7 @@ export default function TabsComponent() {
               fontWeight: 400,
               color: "#6b7280",
               maxWidth: "900px",
-              mx: "auto",
+              mx: "0",
               lineHeight: 1.6,
               fontFamily: "'Inter', sans-serif",
             }}
@@ -353,9 +353,9 @@ export default function TabsComponent() {
                 letterSpacing: "-0.01em",
                 boxShadow: "0 4px 12px rgba(1, 153, 211, 0.2)",
                 "&:hover": {
-                  backgroundColor: "#0178a8",
+                  backgroundColor: "#dc2626",
                   transform: "translateY(-1px)",
-                  boxShadow: "0 8px 20px rgba(1, 153, 211, 0.3)",
+                  boxShadow: "0 8px 20px rgba(220, 38, 38, 0.3)",
                 },
                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
               }}

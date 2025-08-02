@@ -1,14 +1,14 @@
-import React from 'react';
-import { Typography, Box } from '@mui/material';
+import React from "react";
+import { Typography, Box } from "@mui/material";
 
 export default function SectionHeading() {
   return (
-    <Box textAlign="center" py={2}>
+    <Box textAlign="left" py={2}>
       <Typography
         variant="subtitle1"
         sx={{
-          fontSize: { xs: '1rem', md: '1.5rem' },
-          color: '#0199D3 !important',
+          fontSize: { xs: "1rem", md: "1.5rem" },
+          color: "#0199D3 !important",
           fontWeight: 400,
         }}
       >
@@ -19,8 +19,8 @@ export default function SectionHeading() {
         variant="h4"
         sx={{
           fontWeight: "bold !important",
-          fontSize: { xs: '1.8rem', md: '3rem' },
-          color: '#0199D3!important',
+          fontSize: { xs: "1.8rem", md: "3rem" },
+          color: "#0199D3!important",
           mt: 1,
         }}
       >
