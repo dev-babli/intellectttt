@@ -289,7 +289,6 @@ const AllRoute = () => {
             <Route path="Company">
               <Route path="our-journey" element={<OurJourny />} />
               <Route path="leadership-team" element={<LeaderShipTeam />} />
-              <Route path="leadership-team" element={<LeaderShipTeam />} />
             </Route>
             <Route path="insights">
               <Route path="blog" element={<BlogPage />} />

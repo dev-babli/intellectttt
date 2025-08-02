@@ -5,7 +5,6 @@ import Collapse from "@mui/material/Collapse";
 import { Link } from "react-router-dom";
 
 const menus = [
- 
   {
     id: 1,
     title: "Company",
@@ -16,7 +15,7 @@ const menus = [
         title: "About Us",
         link: "/about",
       },
-      
+
       {
         id: 12,
         title: "Our Global Presence",
@@ -25,7 +24,7 @@ const menus = [
       {
         id: 13,
         title: "Leadership Team",
-        link: "/company/leadership-team",
+        link: "/Company/leadership-team",
       },
     ],
   },
@@ -74,7 +73,6 @@ const menus = [
         title: "Talent Solutions",
         link: "/service/talent-solutions",
       },
-     
     ],
   },
   {

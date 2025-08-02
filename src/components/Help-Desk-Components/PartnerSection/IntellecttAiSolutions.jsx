@@ -196,7 +196,7 @@ export default function IntellecttAiSolutions() {
       {/* Header Section */}
       <Box
         sx={{
-          textAlign: "left",
+          textAlign: "center",
           mb: 8,
           maxWidth: "1200px",
           mx: "auto",
@@ -232,7 +232,7 @@ export default function IntellecttAiSolutions() {
             fontSize: { xs: "1.1rem", md: "1.4rem" },
             lineHeight: 1.5,
             maxWidth: "800px",
-            mx: "0",
+            mx: "auto",
             letterSpacing: "0.01em",
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",

@@ -1333,7 +1333,7 @@ const menuData = {
         description: "Meet our executive leadership",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Executive Team", "Board of Directors", "Advisory Board"],
-        url: "/company/leadership-team",
+        url: "/Company/leadership-team",
       },
       {
         title: "Global Presence",
@@ -1860,7 +1860,7 @@ const menuData = {
         description: "Meet our executive leadership",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Executive Team", "Board of Directors", "Advisory Board"],
-        url: "/company/leadership-team",
+        url: "/Company/leadership-team",
       },
       {
         title: "Our Companies",
@@ -3088,7 +3088,7 @@ function MegaMenuIntellectt() {
                             description:
                               "Get to know the visionary leaders who drive our innovation and guide our company towards a future of technological excellence.",
                             buttonText: "Meet the Team",
-                            buttonUrl: "/company/leadership-team",
+                            buttonUrl: "/Company/leadership-team",
                             emoji: "👥",
                           };
                         case "Global Presence":
