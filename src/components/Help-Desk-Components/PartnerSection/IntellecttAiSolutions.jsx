@@ -52,7 +52,7 @@ const solutions = [
     description:
       "Safeguard your organization with advanced cybersecurity solutions and proactive threat detection systems.",
     category: "DIGITAL SECURITY",
-    image: "/images/Data-&-Analytics.webp",
+    image: "/images/CompleianceandRegulatory-IT.webp",
     features: [
       "Zero Trust Architecture",
       "Threat Detection & Response",

@@ -144,13 +144,13 @@ const LuminCards = () => {
     },
   ];
 
-  // Auto-advance carousel every 6 seconds
+  // Auto-advance carousel every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlideIndex(
         (prevIndex) => (prevIndex + 1) % luminInnovationsSlides.length
       );
-    }, 6000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [luminInnovationsSlides.length]);
@@ -160,34 +160,10 @@ const LuminCards = () => {
       setCurrentSlideIndex2(
         (prevIndex) => (prevIndex + 1) % luminIncSlides.length
       );
-    }, 6000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [luminIncSlides.length]);
-
-  const nextSlide = () => {
-    setCurrentSlideIndex(
-      (prevIndex) => (prevIndex + 1) % luminInnovationsSlides.length
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentSlideIndex((prevIndex) =>
-      prevIndex === 0 ? luminInnovationsSlides.length - 1 : prevIndex - 1
-    );
-  };
-
-  const nextSlide2 = () => {
-    setCurrentSlideIndex2(
-      (prevIndex) => (prevIndex + 1) % luminIncSlides.length
-    );
-  };
-
-  const prevSlide2 = () => {
-    setCurrentSlideIndex2((prevIndex) =>
-      prevIndex === 0 ? luminIncSlides.length - 1 : prevIndex - 1
-    );
-  };
 
   return (
     <section className="lumin-showcase">
@@ -233,69 +209,27 @@ const LuminCards = () => {
                 </div>
               </div>
 
-              {/* Bottom Section - Carousel */}
-              <div className="card-carousel-section">
-                <div className="carousel-container">
-                  <div className="carousel-slide">
-                    <div
-                      className="carousel-background clickable-carousel"
-                      style={{
-                        backgroundImage: `url(${luminInnovationsSlides[currentSlideIndex].image})`,
-                      }}
-                      onClick={() => handleCarouselImageClick("innovations")}
-                      title="Visit Lumin Innovations Website"
-                    >
-                      <div className="carousel-overlay">
-                        <div className="carousel-content">
-                          <h4 className="carousel-title">
-                            {luminInnovationsSlides[currentSlideIndex].title}
-                          </h4>
-                          <p className="carousel-description">
-                            {
-                              luminInnovationsSlides[currentSlideIndex]
-                                .description
-                            }
-                          </p>
-                        </div>
+              {/* Bottom Section - Auto-advancing Image with Text */}
+              <div className="card-image-section">
+                <div className="image-container">
+                  <div
+                    className="card-background clickable-carousel"
+                    style={{
+                      backgroundImage: `url(${luminInnovationsSlides[currentSlideIndex].image})`,
+                    }}
+                    onClick={() => handleCarouselImageClick("innovations")}
+                    title="Visit Lumin Innovations Website"
+                  >
+                    <div className="card-overlay">
+                      <div className="card-content-text">
+                        <h4 className="card-title">
+                          {luminInnovationsSlides[currentSlideIndex].title}
+                        </h4>
+                        <p className="card-description">
+                          {luminInnovationsSlides[currentSlideIndex].description}
+                        </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                {/* Hero-style Navigation */}
-                <div className="carousel-navigation">
-                  <button
-                    className="carousel-button prev-button"
-                    onClick={prevSlide}
-                    aria-label="Previous slide"
-                  >
-                    ‹
-                  </button>
-                  <button
-                    className="carousel-button next-button"
-                    onClick={nextSlide}
-                    aria-label="Next slide"
-                  >
-                    ›
-                  </button>
-
-                  {/* Progress Line */}
-                  <div className="carousel-progress">
-                    <div
-                      className="carousel-progress-fill"
-                      style={{
-                        width: `${
-                          ((currentSlideIndex + 1) /
-                            luminInnovationsSlides.length) *
-                          100
-                        }%`,
-                      }}
-                    />
-                  </div>
-
-                  {/* Slide Counter */}
-                  <div className="carousel-counter">
-                    {currentSlideIndex + 1}/{luminInnovationsSlides.length}
                   </div>
                 </div>
               </div>
@@ -331,65 +265,27 @@ const LuminCards = () => {
                 </div>
               </div>
 
-              {/* Bottom Section - Carousel */}
-              <div className="card-carousel-section">
-                <div className="carousel-container">
-                  <div className="carousel-slide">
-                    <div
-                      className="carousel-background clickable-carousel"
-                      style={{
-                        backgroundImage: `url(${luminIncSlides[currentSlideIndex2].image})`,
-                      }}
-                      onClick={() => handleCarouselImageClick("inc")}
-                      title="Visit Lumin Inc Website"
-                    >
-                      <div className="carousel-overlay">
-                        <div className="carousel-content">
-                          <h4 className="carousel-title">
-                            {luminIncSlides[currentSlideIndex2].title}
-                          </h4>
-                          <p className="carousel-description">
-                            {luminIncSlides[currentSlideIndex2].description}
-                          </p>
-                        </div>
+              {/* Bottom Section - Auto-advancing Image with Text */}
+              <div className="card-image-section">
+                <div className="image-container">
+                  <div
+                    className="card-background clickable-carousel"
+                    style={{
+                      backgroundImage: `url(${luminIncSlides[currentSlideIndex2].image})`,
+                    }}
+                    onClick={() => handleCarouselImageClick("inc")}
+                    title="Visit Lumin Inc Website"
+                  >
+                    <div className="card-overlay">
+                      <div className="card-content-text">
+                        <h4 className="card-title">
+                          {luminIncSlides[currentSlideIndex2].title}
+                        </h4>
+                        <p className="card-description">
+                          {luminIncSlides[currentSlideIndex2].description}
+                        </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                {/* Hero-style Navigation */}
-                <div className="carousel-navigation">
-                  <button
-                    className="carousel-button prev-button"
-                    onClick={prevSlide2}
-                    aria-label="Previous slide"
-                  >
-                    ‹
-                  </button>
-                  <button
-                    className="carousel-button next-button"
-                    onClick={nextSlide2}
-                    aria-label="Next slide"
-                  >
-                    ›
-                  </button>
-
-                  {/* Progress Line */}
-                  <div className="carousel-progress">
-                    <div
-                      className="carousel-progress-fill"
-                      style={{
-                        width: `${
-                          ((currentSlideIndex2 + 1) / luminIncSlides.length) *
-                          100
-                        }%`,
-                      }}
-                    />
-                  </div>
-
-                  {/* Slide Counter */}
-                  <div className="carousel-counter">
-                    {currentSlideIndex2 + 1}/{luminIncSlides.length}
                   </div>
                 </div>
               </div>

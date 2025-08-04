@@ -188,7 +188,7 @@ export default function IntelligenceCore() {
       {/* Enhanced Heading */}
       <Box
         className="fade-in"
-        sx={{ textAlign: "left", mb: 8, position: "relative", zIndex: 2 }}
+        sx={{ textAlign: "center", mb: 8, position: "relative", zIndex: 2 }}
       >
         <Typography
           variant="h2"
@@ -200,7 +200,7 @@ export default function IntelligenceCore() {
             lineHeight: 1.1,
           }}
         >
-          The{" "}
+          Why{" "}
           <Box
             component="span"
             sx={{
@@ -210,21 +210,8 @@ export default function IntelligenceCore() {
               backgroundClip: "text",
             }}
           >
-            Intelligence
-          </Box>{" "}
-          Core
-        </Typography>
-        <Typography
-          variant="h5"
-          sx={{
-            color: BRAND_COLORS.slate,
-            fontWeight: 400,
-            maxWidth: "600px",
-            lineHeight: 1.6,
-          }}
-        >
-          Powering innovation through interconnected excellence and cutting-edge
-          technology
+            Intellectt
+          </Box>
         </Typography>
       </Box>
 
