@@ -787,7 +787,7 @@ const MegaMenuSectionContent = styled.div`
 const MegaMenuGrid = styled.div`
   display: grid;
   grid-template-columns: ${(props) =>
-    props.menuName === "SERVICES"
+    props.menuName === "SERVICES" || props.menuName === "WHO WE WORK WITH"
       ? "repeat(4, 1fr)"
       : "repeat(auto-fit, minmax(220px, 1fr))"};
   gap: 2rem;
@@ -795,7 +795,7 @@ const MegaMenuGrid = styled.div`
 
   @media (max-width: 1200px) {
     grid-template-columns: ${(props) =>
-      props.menuName === "SERVICES"
+      props.menuName === "SERVICES" || props.menuName === "WHO WE WORK WITH"
         ? "repeat(2, 1fr)"
         : "repeat(auto-fit, minmax(220px, 1fr))"};
     gap: 1.5rem;
@@ -2453,17 +2453,7 @@ function MegaMenuIntellectt() {
           data-mega-menu="true"
         >
           <MegaMenuContent>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: "2rem",
-                padding: "2rem",
-                width: "100%",
-                maxWidth: "100vw",
-                background: "#ffffff",
-              }}
-            >
+            <MegaMenuGrid menuName={menuName}>
               {menuConfig.mainItems.map((item, index) => (
                 <div
                   key={item.title}
@@ -2616,7 +2606,7 @@ function MegaMenuIntellectt() {
                   </div>
                 </div>
               ))}
-            </div>
+            </MegaMenuGrid>
           </MegaMenuContent>
         </MegaMenuContainer>
       );
@@ -3460,7 +3450,7 @@ function MegaMenuIntellectt() {
                   background: "#ffffff",
                 }}
               >
-                {hoveredItem === "Our Companies" || hoveredItem === null ? (
+                {hoveredItem === "Our Companies" ? (
                   /* Company Boxes for Our Companies */
                   <div
                     id="who-we-are-image"
