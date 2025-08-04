@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import about1 from '../../../images/about/About-Us.webp';
-import about2 from '../../../images/about/Our-Mission.webp';
-import about3 from '../../../images/about/Our-vision.webp';
-import aIcon1 from '../../../images/icon/about-icon01.png';
-import aIcon2 from '../../../images/icon/about-icon02.png';
-import aIcon3 from '../../../images/icon/about-icon03.png';
+import React, { useState } from "react";
+import about1 from "../../../images/about/About-Us.webp";
+import about2 from "../../../images/about/Our-Mission.webp";
+import about3 from "../../../images/about/Our-vision.webp";
+import aIcon1 from "../../../images/icon/about-icon01.png";
+import aIcon2 from "../../../images/icon/about-icon02.png";
+import aIcon3 from "../../../images/icon/about-icon03.png";
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState(2);
@@ -17,23 +17,23 @@ const About = () => {
     {
       img: about1,
       icon: aIcon1,
-      heading: 'About us',
+      heading: "About us",
       content:
-        'Intellectt Inc delivers tailored workforce solutions that connect top talent with leading businesses. We specialize in staffing, recruitment, and consulting services that drive agility, efficiency, and long-term success.',
+        "Intellectt Inc delivers tailored workforce solutions that connect top talent with leading businesses. We specialize in staffing, recruitment, and consulting services that drive agility, efficiency, and long-term success.",
     },
     {
       img: about2,
       icon: aIcon2,
-      heading: 'Our mission',
+      heading: "Our mission",
       content:
-        'To empower companies through strategic talent solutions, providing expert guidance, personalized service, and exceptional candidates that align with business goals and foster sustainable growth across all industries.',
+        "To empower companies through strategic talent solutions, providing expert guidance, personalized service, and exceptional candidates that align with business goals and foster sustainable growth across all industries.",
     },
     {
       img: about3,
       icon: aIcon3,
-      heading: 'Our vision',
+      heading: "Our vision",
       content:
-        'To become a global leader in workforce transformation by building lasting partnerships, embracing innovation, and shaping the future of work through trust, adaptability, and a people-first approach.',
+        "To become a global leader in workforce transformation by building lasting partnerships, embracing innovation, and shaping the future of work through trust, adaptability, and a people-first approach.",
     },
   ];
 
@@ -44,7 +44,9 @@ const About = () => {
           {aboutItems.map((item, index) => (
             <div
               key={index}
-              className={`about-item mt-30 xb-mouseenter wow fadeInUp ${activeIndex === index ? 'active' : ''}`}
+              className={`about-item mt-30 xb-mouseenter wow fadeInUp ${
+                activeIndex === index ? "active" : ""
+              }`}
               data-wow-delay={`${index * 150}ms`}
               data-wow-duration="600ms"
               onMouseEnter={() => handleMouseEnter(index)}

@@ -488,6 +488,24 @@ const MobileVersion = () => {
               >
                 Global Presence
               </MobileNavItem>
+              <MobileNavItem
+                to="/cybersecurity"
+                onClick={() => handleNavClick("/cybersecurity")}
+              >
+                Cybersecurity
+              </MobileNavItem>
+              <MobileNavItem
+                to="/digital-transformation"
+                onClick={() => handleNavClick("/digital-transformation")}
+              >
+                Digital Transformation
+              </MobileNavItem>
+              <MobileNavItem
+                to="/innovation"
+                onClick={() => handleNavClick("/innovation")}
+              >
+                Innovation
+              </MobileNavItem>
             </MobileNavSectionContent>
           </MobileNavSection>
 
@@ -517,6 +535,12 @@ const MobileVersion = () => {
           </MobileNavSection>
 
           <MobileNavSection>
+            <MobileNavItem
+              to="/partners"
+              onClick={() => handleNavClick("/partners")}
+            >
+              Partners
+            </MobileNavItem>
             <MobileNavItem
               to="/contact"
               onClick={() => handleNavClick("/contact")}

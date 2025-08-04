@@ -16,7 +16,7 @@ const products = [
     gif: "/SAP-services.gif",
   },
   {
-    title: "Data & Analytics",
+    title: "Data & Analytics",
     gif: "/Data-Analytics.gif",
   },
 ];
@@ -27,7 +27,6 @@ const AIProductSection = () => {
       sx={{
         pb: 6,
         px: 2,
-        
         maxWidth: "90%",
         margin: "0 auto",
         textAlign: "center",
@@ -76,6 +75,10 @@ const AIProductSection = () => {
                   objectFit: "contain",
                   mb: 2,
                   mx: "auto",
+                }}
+                onError={(e) => {
+                  console.error(`Failed to load image: ${item.gif}`);
+                  e.target.style.display = "none";
                 }}
               />
               <CardContent>
