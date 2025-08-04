@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import Teams from "../../api/team";
 import WorkSectionTeam from "../TeamPage/workteam";
+import Footer from "../../components/footer/Footer";
 
 import bg from "../../images/team/team-bg.jpg";
 import { Link } from "react-router-dom";
@@ -59,34 +60,35 @@ const LeaderShipTeam = () => {
         </section>
 
         <TeamIntroSection
-          imageSrc="/t2.jpg"
-          imageAlt="Team Member"
+          imageSrc="/1716535506_94d96e32c277ff223790.png"
+          imageAlt="Kiran M - President"
           testimonialText="Kiran M's leadership combines vision with execution, reshaping Intellectt's innovation culture and driving excellence, agility, collaboration, and sustained organizational growth."
           testimonialName="Kiran M"
           testimonialTitle="PRESIDENT"
           sectionOverline="ABOUT KIRAN"
           sectionTitle="The Story of Our Passionate Leader"
-          sectionDescription="Kranthi Kiran brings a unique blend of strategic vision and operational excellence to Intellectt Inc. His leadership inspires innovation, drives performance, and strengthens team synergy. With a deep understanding of technology and business dynamics, he plays a pivotal role in shaping the company's future and delivering impactful, scalable solutions."
+          sectionDescription="Kiran M brings a unique blend of strategic vision and operational excellence to Intellectt Inc. His leadership inspires innovation, drives performance, and strengthens team synergy. With a deep understanding of technology and business dynamics, he plays a pivotal role in shaping the company's future and delivering impactful, scalable solutions."
           buttonText="LEARN MORE ABOUT KIRAN"
           onButtonClick={() => console.log("Clicked Learn More")}
           // reversed={true}
         />
         <TeamIntroSection
-          imageSrc="/t3.jpg"
-          imageAlt="Team Member"
+          imageSrc="/1716540118_12b16ee785c09331faa8.png"
+          imageAlt="Kranthi Kiran - Founder & CEO"
           testimonialText="Kranthi Kiran's visionary leadership fuels Intellectt's growth, cultivates innovation, strengthens teams, and nurtures a high-performing culture of agility, collaboration, and excellence within the organization."
           testimonialName="Kranthi Kiran"
           testimonialTitle="Founder & CEO"
-          sectionOverline="ABOUT KIRAN"
-          sectionTitle="The Story of Our Passionate Leader"
+          sectionOverline="ABOUT KRANTHI"
+          sectionTitle="The Story of Our Visionary Leader"
           sectionDescription="Kranthi Kiran brings a unique blend of strategic vision and operational excellence to Intellectt Inc. His leadership inspires innovation, drives performance, and strengthens team synergy. With a deep understanding of technology and business dynamics, he plays a pivotal role in shaping the company's future and delivering impactful, scalable solutions."
-          buttonText="LEARN MORE ABOUT KIRAN"
+          buttonText="LEARN MORE ABOUT KRANTHI"
           onButtonClick={() => console.log("Clicked Learn More")}
-          // reversed={true}
+          reversed={true}
         />
 
         {/* <ProfileCard /> */}
         <WorkSectionTeam />
+        <Footer />
       </div>
     </Fragment>
   );
