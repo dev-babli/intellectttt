@@ -426,3 +426,47 @@
     width: 60px;
   }
 }
+
+/* Clickable Elements */
+.clickable-logo {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clickable-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
+}
+
+.clickable-carousel {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clickable-carousel:hover {
+  filter: brightness(0.8) contrast(1.2) saturate(1.2);
+  transform: scale(1.02);
+}
+
+.clickable-carousel:hover .carousel-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* Prevent navigation buttons from triggering carousel click */
+.carousel-navigation {
+  pointer-events: none;
+}
+
+.carousel-button {
+  pointer-events: auto;
+}
+
+.carousel-progress,
+.carousel-counter {
+  pointer-events: auto;
+}
