@@ -22,7 +22,7 @@ const TeamPage = (props) => {
                 <div className="col-lg-9 mt-30">
                   <div className="page-title-box">
                     <span className="sub-title">
-                      <img src={icon} alt="" /> Let's Connect
+                      <img src={icon} alt="" /> Contact us
                     </span>
                     <h2 className="title">
                       Connect with our team for <br /> innovative solutions and{" "}

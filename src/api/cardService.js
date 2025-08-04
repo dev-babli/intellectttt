@@ -1706,6 +1706,69 @@ const corpToCorpCards = [
 ];
 
 
+const HealthcareServicesIT = [
+  {
+    id: "1",
+    sImg: icon1,
+    title: "Integrated Health Record Systems",
+    slug: "integrated-health-records",
+    thumb1: "Data Interoperability",
+    thumb2: "Secure Exchange",
+    description:
+      "We create unified platforms that connect EHR/EMR systems for secure, real-time access across healthcare networks.",
+  },
+  {
+    id: "2",
+    sImg: icon2,
+    title: "Virtual Care & Telehealth Solutions",
+    slug: "virtual-care-telehealth",
+    thumb1: "Digital Clinics",
+    thumb2: "Patient Access",
+    description:
+      "Launch reliable telehealth platforms that support virtual visits, e-prescriptions, and seamless provider-patient interactions.",
+  },
+  {
+    id: "3",
+    sImg: icon3,
+    title: "Patient Engagement & CRM Platforms",
+    slug: "patient-crm-solutions",
+    thumb1: "Smart Workflows",
+    thumb2: "Personalized Outreach",
+    description:
+      "Deploy healthcare-specific CRM tools that enhance engagement, streamline appointments, and automate communication touchpoints.",
+  },
+  {
+    id: "4",
+    sImg: icon4,
+    title: "IoMT & Connected Health Devices",
+    slug: "connected-health-iomt",
+    thumb1: "Smart Devices",
+    thumb2: "Live Monitoring",
+    description:
+      "Build IoMT ecosystems for wearables, sensors, and remote monitoring to support preventive and chronic care programs.",
+  },
+  {
+    id: "5",
+    sImg: icon5,
+    title: "AI-Driven Health Analytics",
+    slug: "ai-health-analytics",
+    thumb1: "Predictive Models",
+    thumb2: "Clinical Insights",
+    description:
+      "Leverage AI and big data to forecast trends, identify risks, and improve clinical and operational decision-making.",
+  },
+  {
+    id: "6",
+    sImg: icon6,
+    title: "Regulatory Compliance & Cybersecurity",
+    slug: "healthcare-compliance-cybersecurity",
+    thumb1: "Data Protection",
+    thumb2: "Risk Management",
+    description:
+      "Safeguard patient data and ensure end-to-end compliance with HIPAA, GDPR, ISO 13485, and NIST standards.",
+  },
+];
+
 export { Services,
   HealthcareServices,
   AerospaceServices,
@@ -1714,4 +1777,4 @@ export { Services,
   engineering,
   devOpsAndDevsec,
   appModernization,
-apiIntegrationServices,managedITServices, nocSupport, serviceDesk, managedResourceServicesCard, AutomationServices, mesIotServiceCards, digitalTwinSmartFactoryCards, industry40SolutionCards, itStaffAugmentationCards,healthcareStaffingCards,directHireCards, corpToCorpCards };
+apiIntegrationServices,managedITServices, nocSupport, serviceDesk, managedResourceServicesCard, AutomationServices, mesIotServiceCards, digitalTwinSmartFactoryCards, industry40SolutionCards, itStaffAugmentationCards,healthcareStaffingCards,directHireCards, corpToCorpCards, HealthcareServicesIT };

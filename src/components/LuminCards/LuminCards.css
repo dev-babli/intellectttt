@@ -1,828 +1,428 @@
-/* Modern Lumin Showcase - Redesigned with White Background */
+/* Modern Lumin Showcase - Premium Design */
 .lumin-showcase {
   background: #ffffff;
   min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   padding: 4rem 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 }
 
 .showcase-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
-  position: relative;
-  z-index: 2;
 }
 
-/* Minimal Header */
-.modern-header {
-  text-align: left;
-  margin-bottom: 2rem;
-  padding: 2.5rem;
-  position: relative;
-  max-width: 350px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #f8f9fa;
-  border-radius: 20px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
-}
-
-.modern-header:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-container {
-  position: relative;
-  display: inline-block;
-}
-
-.main-logo {
-  height: 60px;
-  width: auto;
-  max-width: 250px;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
-  transition: all 0.3s ease;
-}
-
-.logo-glow {
-  display: none;
-}
-
-/* Creative Connection Line */
-.connection-line {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem 0;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.connection-dot {
-  width: 14px;
-  height: 14px;
-  background: #dc2626;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.connection-path {
-  flex: 1;
-  height: 3px;
-  background: linear-gradient(90deg, #dc2626 0%, #1d4ed8 50%, #dc2626 100%);
-  margin: 0 1.5rem;
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-}
-
-.connection-path::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.8) 50%,
-    transparent 100%
-  );
-  animation: shimmer 2.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.3);
-    opacity: 0.7;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-/* Subsidiaries Section */
-.subsidiaries-section {
-  margin-bottom: 5rem;
-}
-
+/* Clean Section Header */
 .section-header {
-  text-align: left;
-  margin-bottom: 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: 2.5rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #1e293b;
   margin: 0 0 1rem 0;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 }
 
-.section-description {
-  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
-  color: #666;
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
   margin: 0;
-  max-width: 600px;
-  margin-left: 0;
-  margin-right: 0;
   line-height: 1.6;
-  font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 }
 
+/* Side by Side Cards Grid */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  perspective: 1000px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Modern Company Cards */
+/* Modern Company Cards - Rectangular */
 .company-card {
-  position: relative;
   background: #ffffff;
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  transform-style: preserve-3d;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  aspect-ratio: 1.4 / 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .company-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
-  border-color: rgba(220, 38, 38, 0.15);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
-.company-card.hovered {
-  transform: translateY(-16px) scale(1.03);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+/* Card Type Indicators */
+.manufacturing {
+  border-left: 5px solid #dc2626;
 }
 
-.card-background {
-  display: none;
+.healthcare {
+  border-left: 5px solid #2563eb;
 }
 
 .card-content {
-  position: relative;
-  z-index: 2;
-  padding: 3rem;
-  color: #1a1a1a;
-  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.company-card:hover .card-content {
-  opacity: 0.1;
-  transform: translateY(20px);
+/* Top Section - Smaller */
+.card-top-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  flex: 0 0 auto;
 }
 
 .card-header {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
 }
 
-.company-logo {
-  flex-shrink: 0;
+.company-logo-section {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-image {
-  height: 90px;
-  width: auto;
-  max-width: 250px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 12px;
 }
 
-.company-card:hover .logo-image {
-  transform: scale(1.1);
-  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.18));
-  background: rgba(255, 255, 255, 0.1);
+.logo-image:hover {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+  transform: scale(1.02);
 }
 
-.company-info {
-  flex: 1;
-}
-
-.company-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 0.5rem 0;
-  letter-spacing: -0.01em;
-}
-
-.company-type {
-  font-size: 0.85rem;
-  color: #666;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  background: #f8f9fa;
-  padding: 0.4rem 1rem;
-  border-radius: 10px;
-  display: inline-block;
-}
-
-.card-body {
-  margin-bottom: 0;
-}
-
-.card-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.4;
-}
-
-.card-description {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.7;
-  margin: 0 0 2rem 0;
-  font-weight: 400;
-}
-
-.capabilities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.capability {
+/* Certifications */
+.certifications-section {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
-}
-
-.capability:hover {
-  background: #f1f3f4;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border-color: rgba(220, 38, 38, 0.2);
-}
-
-.capability-icon {
-  font-size: 1.2rem;
-  width: 24px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.capability-text {
-  font-size: 0.9rem;
-  color: #555;
-  font-weight: 600;
+  justify-content: center;
 }
 
 .certifications {
   display: flex;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 0;
+  justify-content: center;
 }
 
 .cert-badge {
-  background: #f1f3f4;
-  color: #555;
-  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #475569;
+  padding: 0.4rem 0.8rem;
   border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 }
 
 .cert-badge:hover {
-  background: #e9ecef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
 }
 
-/* Manufacturing Card Specific */
-.manufacturing {
-  border-left: 4px solid #dc2626;
-}
-
-/* Healthcare Card Specific */
-.healthcare {
-  border-left: 4px solid #1d4ed8;
-}
-
-/* Pixelation Transition */
-.pixelation-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 5;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s ease;
-  background: rgba(0, 0, 0, 0.9);
-  border-radius: 20px;
-}
-
-.company-card:hover .pixelation-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-.pixel-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 8px 8px;
-  animation: pixelate 0.6s ease-in-out;
-}
-
-@keyframes pixelate {
-  0% {
-    background-size: 2px 2px;
-    opacity: 0;
-  }
-  50% {
-    background-size: 4px 4px;
-    opacity: 0.5;
-  }
-  100% {
-    background-size: 8px 8px;
-    opacity: 1;
-  }
-}
-
-/* Hover Image Gallery */
-.hover-gallery {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.6s ease;
-  border-radius: 20px;
-  overflow: hidden;
+/* Carousel Section - Hero Style */
+.card-carousel-section {
+  flex: 1;
   background: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.company-card:hover .hover-gallery {
-  opacity: 1;
-  visibility: visible;
-}
-
-.gallery-grid {
+.carousel-container {
   position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 6px;
-  padding: 12px;
-  padding-bottom: 80px;
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.gallery-item {
-  position: relative;
-  border-radius: 8px;
   overflow: hidden;
-  opacity: 1;
-  transition: all 0.4s ease;
-  transform: scale(1);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 16px 16px;
+  flex: 1;
 }
 
-.gallery-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  border-color: rgba(220, 38, 38, 0.6);
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-background {
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+  filter: brightness(0.7) contrast(1.1) saturate(1.1);
+  transition: all 0.6s ease;
+}
+
+/* Hero-style overlay */
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
   z-index: 2;
 }
 
-.gallery-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.4s ease;
-  filter: brightness(1.1) contrast(1.1) saturate(1.05);
+.carousel-content {
+  max-width: 100%;
+  color: #ffffff !important;
+  text-align: center;
+  padding: 0 2rem;
+  z-index: 3;
+  position: relative;
 }
 
-.gallery-item:hover .gallery-image {
-  filter: brightness(1.2) contrast(1.2) saturate(1.1);
-}
-
-.gallery-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.7) 40%,
-    rgba(0, 0, 0, 0.3) 80%,
-    transparent 100%
-  );
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(8px);
-}
-
-.gallery-action-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  border: none;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-}
-
-.gallery-action-btn:hover {
-  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
-}
-
-.gallery-action-btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-}
-
-/* Gallery Section */
-.gallery-section {
-  margin-top: 5rem;
-  padding-top: 4rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  background: #f8f9fa;
-  border-radius: 24px;
-  padding: 3rem 2rem;
-  margin-left: -2rem;
-  margin-right: -2rem;
-}
-
-.gallery-header {
-  text-align: left;
-  margin-bottom: 3rem;
-}
-
-.gallery-title {
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  font-weight: 800;
-  color: #1a1a1a;
-  margin: 0 0 1rem 0;
+.carousel-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: #ffffff !important;
+  line-height: 1.2;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  font-family: "'SF Pro Display', 'Inter', sans-serif";
   letter-spacing: -0.02em;
 }
 
-.gallery-description {
-  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
-  color: #666;
+.carousel-description {
+  font-size: 0.85rem;
+  line-height: 1.4;
   margin: 0;
-  max-width: 600px;
-  margin-left: 0;
-  margin-right: 0;
-  line-height: 1.6;
-  font-weight: 500;
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+  font-family: "'SF Pro Display', 'Inter', sans-serif";
+  letter-spacing: -0.01em;
+  opacity: 0.9;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
-/* Gallery Carousel */
-.gallery-carousel {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
+/* Hero-style Navigation */
+.carousel-navigation {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 0.75rem;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .carousel-button {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  width: 56px;
-  height: 56px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 10;
-  flex-shrink: 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .carousel-button:hover {
-  border-color: #dc2626;
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
   transform: scale(1.1);
 }
 
 .carousel-button svg {
-  width: 20px;
-  height: 20px;
-  color: #666;
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
-.carousel-button:hover svg {
-  color: #dc2626;
-}
-
-.carousel-container {
-  flex: 1;
+/* Progress Line */
+.carousel-progress {
+  width: 100px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
   position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.carousel-slide {
-  position: relative;
-  width: 100%;
-  height: 450px;
   overflow: hidden;
 }
 
-.carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.slide-overlay {
+.carousel-progress-fill {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  right: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.6) 50%,
-    transparent 100%
-  );
-  padding: 3rem;
-  color: white;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 1px;
+  transition: width 0.3s ease;
 }
 
-.slide-content {
-  max-width: 600px;
-}
-
-.slide-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin: 0 0 1rem 0;
-  color: white;
-  letter-spacing: -0.01em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.slide-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Carousel Indicators */
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 2.5rem;
-}
-
-.indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.indicator.active {
-  background: #dc2626;
-  border-color: #dc2626;
-  box-shadow: 0 0 8px rgba(220, 38, 38, 0.4);
-  transform: scale(1.2);
-}
-
-.indicator:hover {
-  border-color: #dc2626;
-  background: rgba(220, 38, 38, 0.2);
-  transform: scale(1.1);
+/* Slide Counter */
+.carousel-counter {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: "Inter, sans-serif";
+  min-width: 25px;
+  text-align: center;
 }
 
 /* Responsive Design */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .cards-grid {
-    grid-template-columns: 1fr;
-    max-width: 550px;
-    margin: 0 auto;
-  }
-
-  .gallery-carousel {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .carousel-button {
-    position: static;
-    transform: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
+  .lumin-showcase {
+    padding: 2rem 0;
+  }
+
   .showcase-container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 
-  .modern-header {
-    padding: 2rem 1.5rem;
-    margin-bottom: 3rem;
+  .section-title {
+    font-size: 2rem;
   }
 
-  .card-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .logo-image {
-    height: 60px;
-  }
-
-  .carousel-slide {
-    height: 350px;
-  }
-
-  .slide-overlay {
-    padding: 2.5rem;
-  }
-
-  .slide-title {
-    font-size: 1.5rem;
-  }
-
-  .slide-description {
+  .section-subtitle {
     font-size: 1rem;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 8px;
-    padding: 12px;
-    padding-bottom: 70px;
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 100%;
   }
 
-  .gallery-item {
-    border-radius: 8px;
+  .company-card {
+    aspect-ratio: 1.2 / 1;
   }
 
-  .gallery-action-btn {
-    font-size: 0.85rem;
-    padding: 0.7rem 1.3rem;
+  .card-top-section {
+    padding: 1.25rem;
+  }
+
+  .logo-container {
+    height: 70px;
+  }
+
+  .carousel-title {
+    font-size: 1.2rem;
+  }
+
+  .carousel-description {
+    font-size: 0.8rem;
+  }
+
+  .carousel-navigation {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .carousel-button {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .carousel-progress {
+    width: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
 
-  .gallery-title {
-    font-size: 1.7rem;
+  .company-card {
+    aspect-ratio: 1.1 / 1;
   }
 
-  .card-content {
-    padding: 2.5rem;
+  .card-top-section {
+    padding: 1rem;
   }
 
-  .company-name {
-    font-size: 1.4rem;
+  .logo-container {
+    height: 60px;
   }
 
-  .carousel-slide {
-    height: 300px;
+  .carousel-title {
+    font-size: 1.1rem;
   }
 
-  .slide-overlay {
-    padding: 2rem;
+  .carousel-description {
+    font-size: 0.75rem;
   }
 
-  .slide-title {
-    font-size: 1.4rem;
+  .carousel-navigation {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    gap: 0.4rem;
   }
 
-  .slide-description {
+  .carousel-button {
+    width: 28px;
+    height: 28px;
     font-size: 0.9rem;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
-    gap: 6px;
-    padding: 10px;
-    padding-bottom: 65px;
+  .carousel-progress {
+    width: 60px;
   }
-
-  .gallery-item {
-    border-radius: 6px;
-  }
-
-  .gallery-action-btn {
-    font-size: 0.8rem;
-    padding: 0.6rem 1.2rem;
-  }
-}
-
-/* Focus States for Accessibility */
-.carousel-button:focus,
-.indicator:focus,
-.gallery-action-btn:focus {
-  outline: 2px solid #dc2626;
-  outline-offset: 2px;
-}
-
-.company-card:focus-within {
-  outline: 2px solid #dc2626;
-  outline-offset: 4px;
 }

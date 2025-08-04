@@ -13,7 +13,7 @@ import brand8 from '../../../images/brand/logo08.png';
 const BrandSection = () => {
 
   return (
-    <section className="brand pt-135 pb-140" style={{ backgroundColor: "#111112" }}>
+    <section className="brand pt-135 pb-140" style={{ backgroundColor: "#355ca8" }}>
       <div className="container">
         <div className="xb-brand-title mb-65">
           <img src={flower} alt="" />

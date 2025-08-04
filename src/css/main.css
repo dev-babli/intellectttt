@@ -22220,3 +22220,19 @@ section.feature.pt-50 {
     padding-top: 20px !important;
   }
 }
+
+/* Ensure components below hero section have white backgrounds */
+.IntellecttAISolutions,
+.TabsComponent,
+.IntellecttAISolutions *,
+.TabsComponent * {
+  background-color: #ffffff !important;
+}
+
+/* Additional specificity for any potential overrides */
+section.IntellecttAISolutions,
+section.TabsComponent,
+div.IntellecttAISolutions,
+div.TabsComponent {
+  background-color: #ffffff !important;
+}

@@ -3,395 +3,371 @@ import React, { useState, useEffect } from "react";
 import "./LuminCards.css";
 
 const LuminCards = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [currentSlideIndex2, setCurrentSlideIndex2] = useState(0);
 
-  // Carousel images for each company - using new folders
-  const manufacturingImages = [
-    "/Lumin wire/harness-testing-1.jpg",
-    "/Lumin wire/CAD-New.jpg",
-    "/Lumin wire/Solution-Accelerators.jpg",
-    "/Lumin wire/Harness-Cables-1.jpg",
-    "/Lumin wire/Products-EV-Cables.jpg",
-    "/Lumin wire/Technician.jpg",
-    "/Lumin wire/Products-Infotainment-Systems.jpg",
-    "/Lumin wire/Harness-Facility-02.jpg",
-    "/Lumin wire/Homepage-CAD.jpg",
+  // All images from Lumin wire folder
+  const luminInnovationsSlides = [
+    {
+      image: "/Lumin%20wire/harness-testing-1.jpg",
+      title: "Wire Harness Testing",
+      description:
+        "Advanced testing facilities for aerospace and automotive wire harness systems",
+    },
+    {
+      image: "/Lumin%20wire/CAD-New.jpg",
+      title: "CAD Design Services",
+      description:
+        "Professional CAD engineering for complex wire harness design and development",
+    },
+    {
+      image: "/Lumin%20wire/Solution-Accelerators.jpg",
+      title: "Solution Accelerators",
+      description:
+        "Innovation-driven development frameworks for rapid deployment",
+    },
+    {
+      image: "/Lumin%20wire/Harness-Cables-1.jpg",
+      title: "Harness Cables & Systems",
+      description:
+        "Comprehensive wire harness solutions for industrial applications",
+    },
+    {
+      image: "/Lumin%20wire/Products-EV-Cables.jpg",
+      title: "EV Cable Solutions",
+      description:
+        "Specialized electric vehicle cable solutions for modern automotive",
+    },
+    {
+      image: "/Lumin%20wire/Technician.jpg",
+      title: "Expert Technician Services",
+      description:
+        "Certified technicians providing quality assurance and technical excellence",
+    },
+    {
+      image: "/Lumin%20wire/Products-Infotainment-Systems.jpg",
+      title: "Infotainment Systems",
+      description:
+        "Advanced automotive entertainment and connectivity solutions",
+    },
+    {
+      image: "/Lumin%20wire/Harness-Facility-02.jpg",
+      title: "Manufacturing Facility",
+      description:
+        "State-of-the-art production capabilities with quality control systems",
+    },
+    {
+      image: "/Lumin%20wire/Homepage-CAD.jpg",
+      title: "CAD Engineering Excellence",
+      description:
+        "Comprehensive CAD engineering services for complex wire harness design",
+    },
   ];
 
-  const healthcareImages = [
-    "/Lumin medical/1724761777_3d8754c6c64fe94e60c3.jpg",
-    "/Lumin medical/1724761777_9d64ed1ee47edde005c2.png",
-    "/Lumin medical/1731096269_badfd5ce5d5b83bb7494.png",
-    "/Lumin medical/1724850316_587c0c62d485d5de531f.jpg",
-    "/Lumin medical/1724649292_a36eb25d498166d32fba.png",
-    "/Lumin medical/1723800960_fda15e9f46a90c025a17.png",
-    "/Lumin medical/services1.png",
-    "/Lumin medical/services2.png",
-    "/Lumin medical/services3.png",
+  // All images from Lumin medical folder
+  const luminIncSlides = [
+    {
+      image: "/Lumin%20medical/1724761777_3d8754c6c64fe94e60c3.jpg",
+      title: "Medical Equipment Solutions",
+      description:
+        "Advanced medical equipment and diagnostic solutions for healthcare",
+    },
+    {
+      image: "/Lumin%20medical/1724761777_9d64ed1ee47edde005c2.png",
+      title: "Advanced Medical Technology",
+      description:
+        "Precision medical technology ensuring accuracy and reliability",
+    },
+    {
+      image: "/Lumin%20medical/1731096269_badfd5ce5d5b83bb7494.png",
+      title: "Precision Medical Systems",
+      description:
+        "Advanced medical systems for optimal diagnostic performance",
+    },
+    {
+      image: "/Lumin%20medical/1724850316_587c0c62d485d5de531f.jpg",
+      title: "Diagnostic Imaging Solutions",
+      description:
+        "High-precision diagnostic imaging technology for medical assessments",
+    },
+    {
+      image: "/Lumin%20medical/1724649292_a36eb25d498166d32fba.png",
+      title: "Healthcare Technology",
+      description:
+        "Innovative healthcare technology solutions for modern facilities",
+    },
+    {
+      image: "/Lumin%20medical/1723800960_fda15e9f46a90c025a17.png",
+      title: "Medical Display Technology",
+      description:
+        "Advanced display technology for medical imaging applications",
+    },
+    {
+      image: "/Lumin%20medical/services1.png",
+      title: "Medical Services Excellence",
+      description:
+        "Professional medical services and support for healthcare institutions",
+    },
+    {
+      image: "/Lumin%20medical/services2.png",
+      title: "Advanced Medical Services",
+      description:
+        "Specialized medical services for advanced healthcare applications",
+    },
+    {
+      image: "/Lumin%20medical/services3.png",
+      title: "Medical Technology Services",
+      description:
+        "Cutting-edge medical technology services for healthcare delivery",
+    },
   ];
 
-  const galleryImages = [
-    "/Lumin wire/harness-testing-1.jpg",
-    "/Lumin medical/1724761777_3d8754c6c64fe94e60c3.jpg",
-    "/Lumin wire/CAD-New.jpg",
-    "/Lumin medical/1724761777_9d64ed1ee47edde005c2.png",
-    "/Lumin wire/Solution-Accelerators.jpg",
-    "/Lumin medical/1731096269_badfd5ce5d5b83bb7494.png",
-  ];
+  // Auto-advance carousel every 6 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlideIndex(
+        (prevIndex) => (prevIndex + 1) % luminInnovationsSlides.length
+      );
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [luminInnovationsSlides.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % galleryImages.length
+      setCurrentSlideIndex2(
+        (prevIndex) => (prevIndex + 1) % luminIncSlides.length
       );
-    }, 4000);
+    }, 6000);
 
     return () => clearInterval(interval);
-  }, [galleryImages.length]);
+  }, [luminIncSlides.length]);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? galleryImages.length - 1 : prevIndex - 1
+  const nextSlide = () => {
+    setCurrentSlideIndex(
+      (prevIndex) => (prevIndex + 1) % luminInnovationsSlides.length
     );
   };
 
-  const getCurrentImages = (cardType) => {
-    return cardType === "manufacturing"
-      ? manufacturingImages
-      : healthcareImages;
+  const prevSlide = () => {
+    setCurrentSlideIndex((prevIndex) =>
+      prevIndex === 0 ? luminInnovationsSlides.length - 1 : prevIndex - 1
+    );
+  };
+
+  const nextSlide2 = () => {
+    setCurrentSlideIndex2(
+      (prevIndex) => (prevIndex + 1) % luminIncSlides.length
+    );
+  };
+
+  const prevSlide2 = () => {
+    setCurrentSlideIndex2((prevIndex) =>
+      prevIndex === 0 ? luminIncSlides.length - 1 : prevIndex - 1
+    );
   };
 
   return (
-    <>
-      <div className="section-header">
-        <h2 className="section-title">Our Companies</h2>
-      </div>
+    <section className="lumin-showcase">
+      <div className="showcase-container">
+        {/* Professional Header */}
+        <div className="section-header">
+          <div className="header-content">
+            <h2 className="section-title">Our Companies</h2>
+            <p className="section-subtitle">
+              Delivering innovative solutions across specialized industries with
+              expertise and precision
+            </p>
+          </div>
+        </div>
 
-      <section className="lumin-showcase">
-        <div className="showcase-container">
-          {/* Subsidiaries Grid */}
-          <div className="subsidiaries-section">
-            {/* Minimal Header - Moved above cards */}
-            <div className="modern-header">
-              <div className="header-content">
-                <div className="logo-section">
-                  <div className="logo-container">
-                    <img
-                      src="/logos/Intellectt-Logo.webp"
-                      alt="Intellectt"
-                      className="main-logo"
-                    />
-                    <div className="logo-glow"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Connection Line */}
-            <div className="connection-line">
-              <div className="connection-dot"></div>
-              <div className="connection-path"></div>
-              <div className="connection-dot"></div>
-            </div>
-
-            <div className="cards-grid">
-              {/* Lumin Innovations Card */}
-              <div
-                className={`company-card manufacturing ${
-                  hoveredCard === "manufacturing" ? "hovered" : ""
-                }`}
-                onMouseEnter={() => setHoveredCard("manufacturing")}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <div className="card-background">
-                  <div className="card-pattern"></div>
-                  <div className="card-overlay"></div>
-                </div>
-
-                {/* Pixelation Transition */}
-                <div className="pixelation-overlay">
-                  <div className="pixel-grid"></div>
-                </div>
-
-                {/* Hover Image Gallery */}
-                <div className="hover-gallery">
-                  <div className="gallery-grid">
-                    {getCurrentImages("manufacturing").map((image, index) => (
-                      <div key={index} className="gallery-item">
-                        <img
-                          src={image}
-                          alt={`Wire Harness ${index + 1}`}
-                          className="gallery-image"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <div className="gallery-overlay">
-                    <a
-                      href="https://lumin-innovations.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="gallery-action-btn"
-                    >
-                      Visit Lumin Innovations
-                    </a>
-                  </div>
-                </div>
-
-                <div className="card-content">
-                  <div className="card-header">
-                    <div className="company-logo">
+        <div className="cards-grid">
+          {/* Lumin Innovations Card */}
+          <div className="company-card manufacturing">
+            <div className="card-content">
+              {/* Top Section - Logo & Certifications */}
+              <div className="card-top-section">
+                {/* Company Header */}
+                <div className="card-header">
+                  <div className="company-logo-section">
+                    <div className="logo-container">
                       <img
                         src="/images/lumin-innovations-horizontal.png"
                         alt="Lumin Innovations"
                         className="logo-image"
                       />
                     </div>
-                    /<div className="company-info">
-                               </div>
                   </div>
+                </div>
 
-                  <div className="card-body">
-                    <h4 className="card-title">
-                      Advanced Wire Harness Design & Manufacturing
-                    </h4>
-                    <p className="card-description">
-                      Specialized in precision wire harness solutions for
-                      aerospace, automotive, and industrial applications.
-                    </p>
-
-                    <div className="capabilities-grid">
-                      <div className="capability">
-                        <div className="capability-icon">⚡</div>
-                        <span className="capability-text">
-                          Systems & Architecture
-                        </span>
-                      </div>
-                      <div className="capability">
-                        <div className="capability-icon">🔧</div>
-                        <span className="capability-text">
-                          Prototype & Validation
-                        </span>
-                      </div>
-                      <div className="capability">
-                        <div className="capability-icon">🚀</div>
-                        <span className="capability-text">
-                          Aerospace Solutions
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="certifications">
-                      <span className="cert-badge">ISO 9001:2015</span>
-                      <span className="cert-badge">AS9100D</span>
-                    </div>
+                {/* Certifications Section */}
+                <div className="certifications-section">
+                  <div className="certifications">
+                    <span className="cert-badge">ISO 9001:2015</span>
+                    <span className="cert-badge">AS9100D</span>
                   </div>
                 </div>
               </div>
 
-              {/* Lumin Inc Card */}
-              <div
-                className={`company-card healthcare ${
-                  hoveredCard === "healthcare" ? "hovered" : ""
-                }`}
-                onMouseEnter={() => setHoveredCard("healthcare")}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <div className="card-background">
-                  <div className="card-pattern"></div>
-                  <div className="card-overlay"></div>
-                </div>
-
-                {/* Pixelation Transition */}
-                <div className="pixelation-overlay">
-                  <div className="pixel-grid"></div>
-                </div>
-
-                {/* Hover Image Gallery */}
-                <div className="hover-gallery">
-                  <div className="gallery-grid">
-                    {getCurrentImages("healthcare").map((image, index) => (
-                      <div key={index} className="gallery-item">
-                        <img
-                          src={image}
-                          alt={`Medical Equipment ${index + 1}`}
-                          className="gallery-image"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <div className="gallery-overlay">
-                    <a
-                      href="https://lumininc.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="gallery-action-btn"
+              {/* Bottom Section - Carousel */}
+              <div className="card-carousel-section">
+                <div className="carousel-container">
+                  <div className="carousel-slide">
+                    <div
+                      className="carousel-background"
+                      style={{
+                        backgroundImage: `url(${luminInnovationsSlides[currentSlideIndex].image})`,
+                      }}
                     >
-                      Visit Lumin Inc
-                    </a>
+                      <div className="carousel-overlay">
+                        <div className="carousel-content">
+                          <h4 className="carousel-title">
+                            {luminInnovationsSlides[currentSlideIndex].title}
+                          </h4>
+                          <p className="carousel-description">
+                            {
+                              luminInnovationsSlides[currentSlideIndex]
+                                .description
+                            }
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="card-content">
-                  <div className="card-header">
-                    <div className="company-logo">
+                {/* Hero-style Navigation */}
+                <div className="carousel-navigation">
+                  <button
+                    className="carousel-button prev-button"
+                    onClick={prevSlide}
+                    aria-label="Previous slide"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    className="carousel-button next-button"
+                    onClick={nextSlide}
+                    aria-label="Next slide"
+                  >
+                    ›
+                  </button>
+
+                  {/* Progress Line */}
+                  <div className="carousel-progress">
+                    <div
+                      className="carousel-progress-fill"
+                      style={{
+                        width: `${
+                          ((currentSlideIndex + 1) /
+                            luminInnovationsSlides.length) *
+                          100
+                        }%`,
+                      }}
+                    />
+                  </div>
+
+                  {/* Slide Counter */}
+                  <div className="carousel-counter">
+                    {currentSlideIndex + 1}/{luminInnovationsSlides.length}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Lumin Inc Card */}
+          <div className="company-card healthcare">
+            <div className="card-content">
+              {/* Top Section - Logo & Certifications */}
+              <div className="card-top-section">
+                {/* Company Header */}
+                <div className="card-header">
+                  <div className="company-logo-section">
+                    <div className="logo-container">
                       <img
                         src="/images/lumin-logo.png"
                         alt="Lumin Inc"
                         className="logo-image"
                       />
                     </div>
-                    {/* <div className="company-info">
-                      <h3 className="company-name">Lumin Inc</h3>
-                      <span className="company-type">
-                        Medical Equipment Division
-                      </span>
-                    </div> */}
-                  </div>
-
-                  <div className="card-body">
-                    <h4 className="card-title">
-                      Precision Medical Equipment & Display Technology
-                    </h4>
-                    <p className="card-description">
-                      Leading provider of medical equipment and display
-                      solutions for diagnostic imaging, ensuring accuracy and
-                      reliability in healthcare environments.
-                    </p>
-
-                    <div className="capabilities-grid">
-                      <div className="capability">
-                        <div className="capability-icon">🏥</div>
-                        <span className="capability-text">
-                          Medical Equipment
-                        </span>
-                      </div>
-                      <div className="capability">
-                        <div className="capability-icon">📊</div>
-                        <span className="capability-text">
-                          Diagnostic Imaging
-                        </span>
-                      </div>
-                      <div className="capability">
-                        <div className="capability-icon">🔬</div>
-                        <span className="capability-text">
-                          Precision Technology
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="certifications">
-                      <span className="cert-badge">ISO 13485</span>
-                      <span className="cert-badge">Medical Certified</span>
-                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Technology Gallery */}
-          <div className="gallery-section">
-            <div className="gallery-header">
-              <h2 className="gallery-title">Technology Gallery</h2>
-              <p className="gallery-description">
-                Discover our innovative solutions and cutting-edge technology
-              </p>
-            </div>
-
-            <div className="gallery-carousel">
-              <button
-                className="carousel-button prev-button"
-                onClick={prevImage}
-                aria-label="Previous image"
-              >
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M15 18L9 12L15 6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-
-              <div className="carousel-container">
-                <div className="carousel-slide">
-                  <img
-                    src={galleryImages[currentImageIndex]}
-                    alt={`Lumin Technology ${currentImageIndex + 1}`}
-                    className="carousel-image"
-                  />
-                  <div className="slide-overlay">
-                    <div className="slide-content">
-                      <h3 className="slide-title">
-                        {currentImageIndex === 0 && "Wire Harness Testing"}
-                        {currentImageIndex === 1 &&
-                          "Medical Equipment Solutions"}
-                        {currentImageIndex === 2 && "CAD Design & Engineering"}
-                        {currentImageIndex === 3 &&
-                          "Advanced Medical Technology"}
-                        {currentImageIndex === 4 && "Solution Accelerators"}
-                        {currentImageIndex === 5 && "Precision Medical Systems"}
-                      </h3>
-                      <p className="slide-description">
-                        {currentImageIndex === 0 &&
-                          "Advanced wire harness testing and validation for aerospace and automotive industries"}
-                        {currentImageIndex === 1 &&
-                          "Cutting-edge medical equipment and diagnostic solutions for healthcare professionals"}
-                        {currentImageIndex === 2 &&
-                          "Professional CAD design and engineering services for complex wire harness systems"}
-                        {currentImageIndex === 3 &&
-                          "State-of-the-art medical technology ensuring accuracy and reliability in healthcare"}
-                        {currentImageIndex === 4 &&
-                          "Innovative solution accelerators for rapid development and deployment"}
-                        {currentImageIndex === 5 &&
-                          "Precision medical systems designed for optimal diagnostic performance"}
-                      </p>
-                    </div>
+                {/* Certifications Section */}
+                <div className="certifications-section">
+                  <div className="certifications">
+                    <span className="cert-badge">ISO 13485</span>
+                    <span className="cert-badge">Medical Certified</span>
                   </div>
                 </div>
               </div>
 
-              <button
-                className="carousel-button next-button"
-                onClick={nextImage}
-                aria-label="Next image"
-              >
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M9 18L15 12L9 6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
+              {/* Bottom Section - Carousel */}
+              <div className="card-carousel-section">
+                <div className="carousel-container">
+                  <div className="carousel-slide">
+                    <div
+                      className="carousel-background"
+                      style={{
+                        backgroundImage: `url(${luminIncSlides[currentSlideIndex2].image})`,
+                      }}
+                    >
+                      <div className="carousel-overlay">
+                        <div className="carousel-content">
+                          <h4 className="carousel-title">
+                            {luminIncSlides[currentSlideIndex2].title}
+                          </h4>
+                          <p className="carousel-description">
+                            {luminIncSlides[currentSlideIndex2].description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-            <div className="carousel-indicators">
-              {galleryImages.map((_, index) => (
-                <button
-                  key={index}
-                  className={`indicator ${
-                    index === currentImageIndex ? "active" : ""
-                  }`}
-                  onClick={() => setCurrentImageIndex(index)}
-                  aria-label={`Go to image ${index + 1}`}
-                />
-              ))}
+                {/* Hero-style Navigation */}
+                <div className="carousel-navigation">
+                  <button
+                    className="carousel-button prev-button"
+                    onClick={prevSlide2}
+                    aria-label="Previous slide"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    className="carousel-button next-button"
+                    onClick={nextSlide2}
+                    aria-label="Next slide"
+                  >
+                    ›
+                  </button>
+
+                  {/* Progress Line */}
+                  <div className="carousel-progress">
+                    <div
+                      className="carousel-progress-fill"
+                      style={{
+                        width: `${
+                          ((currentSlideIndex2 + 1) / luminIncSlides.length) *
+                          100
+                        }%`,
+                      }}
+                    />
+                  </div>
+
+                  {/* Slide Counter */}
+                  <div className="carousel-counter">
+                    {currentSlideIndex2 + 1}/{luminIncSlides.length}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

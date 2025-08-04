@@ -466,11 +466,19 @@ const RouterButton = ({ to, external, children, ...props }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (external) {
-      window.open(to, "_blank");
-    } else {
-      navigate(to);
-    }
+
+    // Close mega menu first
+    const event = new CustomEvent("closeMegaMenu");
+    document.dispatchEvent(event);
+
+    // Small delay to ensure menu closes before navigation
+    setTimeout(() => {
+      if (external) {
+        window.open(to, "_blank");
+      } else {
+        navigate(to);
+      }
+    }, 100);
   };
 
   // Always use onClick handler for consistent behavior
@@ -702,34 +710,46 @@ const MegaMenuContainer = styled(motion.div)`
   top: 100%;
   left: 0;
   right: 0;
-  background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(229, 231, 235, 0.3);
   z-index: 999;
   overflow: hidden;
+  margin-top: -1px; /* Connect seamlessly with header */
+  border-radius: 0 0 20px 20px;
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 const MegaMenuContent = styled.div`
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 2rem;
   min-height: fit-content;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border-radius: 0;
 
   @media (max-width: 1024px) {
-    padding: 1.25rem 0.75rem;
+    padding: 1.5rem;
   }
 
   @media (max-width: 768px) {
-    padding: 1rem 0.5rem;
+    padding: 1rem;
   }
 
   @media (max-width: 480px) {
-    padding: 0.75rem 0.25rem;
+    padding: 0.75rem;
   }
 `;
 
@@ -745,24 +765,24 @@ const MegaMenuSection = styled.div`
 
 const MegaMenuSectionTitle = styled.div`
   font-family: "Manrope", sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #111827;
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
   margin: 0;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 0.625rem;
 
   &:hover {
     color: #6366f1;
   }
 
   svg {
-    width: 14px;
-    height: 14px;
+    width: 8px;
+    height: 8px;
     transition: transform 0.2s ease;
     transform: ${(props) =>
       props.isExpanded ? "rotate(180deg)" : "rotate(0deg)"};
@@ -774,7 +794,7 @@ const MegaMenuSectionContent = styled.div`
   max-height: ${(props) => (props.isExpanded ? "none" : "0")};
   overflow: hidden;
   transition: max-height 0.3s ease;
-  padding-bottom: ${(props) => (props.isExpanded ? "0.75rem" : "0")};
+  padding-bottom: ${(props) => (props.isExpanded ? "0.5rem" : "0")};
 `;
 
 const MegaMenuGrid = styled.div`
@@ -782,30 +802,29 @@ const MegaMenuGrid = styled.div`
   grid-template-columns: ${(props) =>
     props.menuName === "SERVICES"
       ? "repeat(4, 1fr)"
-      : "repeat(auto-fit, minmax(220px, 1fr))"};
-  gap: 2rem;
+      : "repeat(auto-fit, minmax(200px, 1fr))"};
+  gap: 0.75rem;
   align-items: start;
 
   @media (max-width: 1200px) {
     grid-template-columns: ${(props) =>
       props.menuName === "SERVICES"
         ? "repeat(2, 1fr)"
-        : "repeat(auto-fit, minmax(220px, 1fr))"};
-    gap: 1.5rem;
+        : "repeat(auto-fit, minmax(200px, 1fr))"};
+    gap: 0.625rem;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 `;
 
 const MegaMenuServiceItem = styled.div`
   background: #ffffff;
   border: none;
-  border-radius: 12px;
-  padding: ${(props) =>
-    props.menuName === "SERVICES" ? "1.5rem" : "0.875rem"};
+  border-radius: 8px;
+  padding: ${(props) => (props.menuName === "SERVICES" ? "0.75rem" : "0.5rem")};
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -813,19 +832,19 @@ const MegaMenuServiceItem = styled.div`
   transform-origin: center;
 
   &:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   }
 
   &:active {
-    transform: translateY(-2px) scale(0.98);
+    transform: translateY(-1px) scale(0.98);
     transition: all 0.1s ease;
   }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: ${(props) => (props.menuName === "SERVICES" ? "200px" : "auto")};
+  min-height: ${(props) => (props.menuName === "SERVICES" ? "80px" : "auto")};
 
   &:hover {
     background: rgba(0, 0, 0, 0.02);
@@ -834,33 +853,34 @@ const MegaMenuServiceItem = styled.div`
 `;
 
 const ServiceIcon = styled.div`
-  font-size: ${(props) => (props.menuName === "SERVICES" ? "2rem" : "1.5rem")};
+  font-size: ${(props) => (props.menuName === "SERVICES" ? "1.25rem" : "1rem")};
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${(props) => (props.menuName === "SERVICES" ? "64px" : "50px")};
-  height: ${(props) => (props.menuName === "SERVICES" ? "64px" : "50px")};
+  width: ${(props) => (props.menuName === "SERVICES" ? "40px" : "32px")};
+  height: ${(props) => (props.menuName === "SERVICES" ? "40px" : "32px")};
   background: ${(props) => props.color || "rgba(99, 102, 241, 0.1)"};
-  border-radius: 12px;
+  border-radius: 6px;
   margin-bottom: ${(props) =>
-    props.menuName === "SERVICES" ? "1rem" : "0.5rem"};
+    props.menuName === "SERVICES" ? "0.375rem" : "0.125rem"};
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const MegaMenuServiceTitle = styled.h4`
   color: #111827;
   font-size: ${(props) =>
-    props.menuName === "SERVICES" ? "1.125rem" : "0.875rem"};
+    props.menuName === "SERVICES" ? "0.875rem" : "0.7rem"};
   font-weight: 700;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
   margin-bottom: ${(props) =>
-    props.menuName === "SERVICES" ? "0.75rem" : "0.375rem"};
+    props.menuName === "SERVICES" ? "0.25rem" : "0.125rem"};
   line-height: 1.2;
   display: flex;
   align-items: center;
   gap: 0.375rem;
   flex-grow: 1;
+  letter-spacing: -0.01em;
 
   &::before {
     display: none;
@@ -870,20 +890,22 @@ const MegaMenuServiceTitle = styled.h4`
 const MegaMenuServiceDescription = styled.p`
   color: #6b7280;
   font-size: ${(props) =>
-    props.menuName === "SERVICES" ? "0.875rem" : "0.775rem"};
-  line-height: 1.5;
-  font-family: "Inter", sans-serif;
+    props.menuName === "SERVICES" ? "0.675rem" : "0.625rem"};
+  line-height: 1.4;
+  font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
   margin-left: 0;
   flex-grow: 1;
+  font-weight: 400;
 `;
 
 const CardTitle = styled.h4`
   color: #111827;
   font-size: 1rem;
   font-weight: 600;
-  font-family: "Manrope", sans-serif;
+  font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
   margin-bottom: 0.5rem;
-  line-height: 1.4;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 
   @media (max-width: 768px) {
     font-size: 0.95rem;
@@ -899,7 +921,8 @@ const CardDescription = styled.p`
   color: #6b7280;
   font-size: 0.875rem;
   line-height: 1.5;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: 400;
 
   @media (max-width: 768px) {
     font-size: 0.825rem;
@@ -1851,21 +1874,28 @@ const menuData = {
       {
         title: "Overview",
         description: "Learn about our journey in AI innovation",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/images/ai-and-gen-ai.png",
+        fallbackImage: "/images/AI-and-Genn-AI.webp",
         items: ["Company Overview", "Vision & Mission", "Core Values"],
         url: "/company/our-journey",
+        logo: "/logos/Intellectt-Logo.webp",
+        icon: "/src/images/icons/icon_building.svg",
       },
       {
         title: "Leadership Team",
         description: "Meet our executive leadership",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/images/Healthcare-Life-Sciences.png",
+        fallbackImage: "/images/Healthcare.webp",
         items: ["Executive Team", "Board of Directors", "Advisory Board"],
         url: "/Company/leadership-team",
+        logo: "/logos/Intellectt-Logo.webp",
+        icon: "/src/images/icons/icon_users.svg",
       },
       {
         title: "Our Companies",
         description: "Explore our subsidiary companies and divisions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/images/Engineering-anufacturing-IT.png",
+        fallbackImage: "/images/Engineering.webp",
         items: ["Lumin Inc.", "Lumin Innovations"],
         hasDropdown: true,
         companies: [
@@ -1874,27 +1904,37 @@ const menuData = {
             description:
               "Healthcare display and consulting solutions specializing in medical technology",
             focus: "Healthcare Technology",
-            image: "/placeholder.svg?height=60&width=100",
+            image: "/images/Healthcare-and-Lifesciences.webp",
+            fallbackImage: "/images/Healthcare.webp",
+            logo: "/logos/Lumin-inc-dets.webp",
             color: "rgba(59, 130, 246, 0.1)",
             url: "https://lumininc.com/",
+            icon: "/src/images/icons/icon_microscope.svg",
           },
           {
             name: "Lumin Innovations",
             description:
               "Advanced manufacturing and automation driving Industry 4.0 solutions",
             focus: "Manufacturing & Automation",
-            image: "/placeholder.svg?height=60&width=100",
+            image: "/images/Smart-Factory.webp",
+            fallbackImage: "/images/Industry.webp",
+            logo: "/logos/Lumin-innovation-dets.webp",
             color: "rgba(16, 185, 129, 0.1)",
             url: "https://lumin-innovations.com/",
+            icon: "/src/images/icons/icon_process.svg",
           },
         ],
+        icon: "/src/images/icons/icon_hand_shake.svg",
       },
       {
         title: "Our Global Presence",
         description: "Our worldwide locations and partnerships",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/images/cloud-and-application.png",
+        fallbackImage: "/images/Cloud.webp",
         items: ["Office Locations", "Global Partners", "Regional Expertise"],
         url: "/company/global-presence",
+        logo: "/logos/Intellectt-Logo.webp",
+        icon: "/src/images/icons/icon_global.svg",
       },
     ],
     sideItems: [
@@ -1919,28 +1959,42 @@ const menuData = {
         description: "Browse current job openings and opportunities",
         url: "/careers/current-openings",
         isActive: false,
+        image: "/images/Talent.webp",
+        fallbackImage: "/images/talent-solution.png",
+        logo: "/logos/Intellectt-Logo.webp",
+        icon: "/src/images/icons/icon_user_check.svg",
       },
       {
         title: "Life at Intellectt",
         description: "Discover our culture and work environment",
         url: "/careers/life-at-company",
         isActive: true,
+        image: "/images/Managed-IT-Services.png",
+        fallbackImage: "/images/Managed.webp",
+        logo: "/logos/Intellectt-Logo.webp",
+        icon: "/src/images/icons/icon_meeting.svg",
       },
       {
         title: "How we hire",
         description: "Learn about our hiring process",
         url: "/careers/hiring-process",
         isActive: false,
+        image: "/images/ITstaffaugmentatin.webp",
+        fallbackImage: "/images/DirectHirecontracthire.webp",
+        logo: "/logos/Intellectt-Logo.webp",
+        icon: "/src/images/icons/icon_target.svg",
       },
     ],
     featuredContent: {
       title: "Life at Intellectt",
       description:
         "Discover the culture and values that make Intellectt a great place to work.",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+      image: "/images/Engineering.webp",
+      fallbackImage: "/images/Engineering-anufacturing-IT.png",
       buttonText: "Visit our page",
       buttonUrl: "/careers/life-at-company",
+      logo: "/logos/Intellectt-Logo.webp",
+      icon: "/src/images/icons/icon_hand_shake.svg",
     },
   },
 };
@@ -1979,6 +2033,18 @@ function MegaMenuIntellectt() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Listen for closeMegaMenu events
+  useEffect(() => {
+    const handleCloseMegaMenu = () => {
+      setActiveMenu(null);
+      setHoveredItem(null);
+    };
+
+    document.addEventListener("closeMegaMenu", handleCloseMegaMenu);
+    return () =>
+      document.removeEventListener("closeMegaMenu", handleCloseMegaMenu);
+  }, []);
+
   const handleMouseEnter = (menuName) => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -1989,8 +2055,31 @@ function MegaMenuIntellectt() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveMenu(null);
-    }, 150);
+    }, 50);
   };
+
+  const handleDropdownMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  const handleDropdownMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 100); // Reduced delay for less sensitivity
+  };
+
+  const closeMenu = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setActiveMenu(null);
+  };
+
+  // Add a more robust mouse tracking system
+  const [isMouseInMenu, setIsMouseInMenu] = useState(false);
+  const menuRef = useRef(null);
 
   const handleKeyDown = (event, menuName) => {
     if (event.key === "Enter" || event.key === " ") {
@@ -2216,7 +2305,8 @@ function MegaMenuIntellectt() {
       if (
         activeMenu &&
         !event.target.closest("[data-mega-menu]") &&
-        !event.target.closest("[data-nav-item]")
+        !event.target.closest("[data-nav-item]") &&
+        !event.target.closest("[data-search-container]")
       ) {
         setActiveMenu(null);
       }
@@ -2299,13 +2389,20 @@ function MegaMenuIntellectt() {
                     e.currentTarget.style.boxShadow = "none";
                   }}
                   onClick={() => {
-                    if (item.url) {
-                      if (item.url.startsWith("/")) {
-                        navigate(item.url);
-                      } else {
-                        window.open(item.url, "_blank");
+                    // Close mega menu first
+                    setActiveMenu(null);
+                    setHoveredItem(null);
+
+                    // Small delay to ensure menu closes before navigation
+                    setTimeout(() => {
+                      if (item.url) {
+                        if (item.url.startsWith("/")) {
+                          navigate(item.url);
+                        } else {
+                          window.open(item.url, "_blank");
+                        }
                       }
-                    }
+                    }, 100);
                   }}
                 >
                   {/* Category Header with Icon in Middle */}
@@ -2395,13 +2492,20 @@ function MegaMenuIntellectt() {
                             e.currentTarget.style.boxShadow = "none";
                           }}
                           onClick={() => {
-                            if (serviceItem.url) {
-                              if (serviceItem.url.startsWith("/")) {
-                                navigate(serviceItem.url);
-                              } else {
-                                window.open(serviceItem.url, "_blank");
+                            // Close mega menu first
+                            setActiveMenu(null);
+                            setHoveredItem(null);
+
+                            // Small delay to ensure menu closes before navigation
+                            setTimeout(() => {
+                              if (serviceItem.url) {
+                                if (serviceItem.url.startsWith("/")) {
+                                  navigate(serviceItem.url);
+                                } else {
+                                  window.open(serviceItem.url, "_blank");
+                                }
                               }
-                            }
+                            }, 100);
                           }}
                         >
                           <span
@@ -2475,13 +2579,20 @@ function MegaMenuIntellectt() {
                         "0 4px 12px rgba(0, 0, 0, 0.08)";
                     }}
                     onClick={() => {
-                      if (item.url) {
-                        if (item.url.startsWith("/")) {
-                          navigate(item.url);
-                        } else {
-                          window.open(item.url, "_blank");
+                      // Close mega menu first
+                      setActiveMenu(null);
+                      setHoveredItem(null);
+
+                      // Small delay to ensure menu closes before navigation
+                      setTimeout(() => {
+                        if (item.url) {
+                          if (item.url.startsWith("/")) {
+                            navigate(item.url);
+                          } else {
+                            window.open(item.url, "_blank");
+                          }
                         }
-                      }
+                      }, 100);
                     }}
                   >
                     {/* Card Image */}
@@ -2678,7 +2789,7 @@ function MegaMenuIntellectt() {
                 background: "#ffffff",
                 borderRadius: "12px",
                 overflow: "hidden",
-                minHeight: "350px",
+                minHeight: "180px",
                 boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
                 border: "1px solid #e5e7eb",
               }}
@@ -2688,18 +2799,18 @@ function MegaMenuIntellectt() {
                 style={{
                   width: "280px",
                   background: "#f9fafb",
-                  padding: "2rem",
+                  padding: "1rem",
                   borderRight: "1px solid #e5e7eb",
                 }}
               >
                 {/* Header */}
-                <div style={{ marginBottom: "2rem" }}>
+                <div style={{ marginBottom: "1rem" }}>
                   <h3
                     style={{
                       color: "#111827",
-                      fontSize: "1.5rem",
+                      fontSize: "1.125rem",
                       fontWeight: "700",
-                      margin: "0 0 0.5rem 0",
+                      margin: "0 0 0.375rem 0",
                       fontFamily: "Inter, sans-serif",
                       letterSpacing: "-0.02em",
                     }}
@@ -2709,9 +2820,9 @@ function MegaMenuIntellectt() {
                   <div
                     style={{
                       width: "40px",
-                      height: "3px",
+                      height: "2px",
                       background: "#e53e3e",
-                      marginBottom: "1.5rem",
+                      marginBottom: "0.75rem",
                     }}
                   />
                 </div>
@@ -2721,7 +2832,7 @@ function MegaMenuIntellectt() {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "0.25rem",
+                    gap: "0.0625rem",
                   }}
                 >
                   {menuConfig.mainItems.map((item, index) => {
@@ -2729,8 +2840,11 @@ function MegaMenuIntellectt() {
                       switch (title) {
                         case "Join our team":
                           return {
-                            image:
-                              "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=200&fit=crop&crop=center",
+                            image: item.image || "/images/Talent.webp",
+                            logo: item.logo || "/logos/Intellectt-Logo.webp",
+                            icon:
+                              item.icon ||
+                              "/src/images/icons/icon_user_check.svg",
                             title: "Join Our Team",
                             description:
                               "Browse current job openings and find the perfect opportunity to grow your career with us.",
@@ -2741,7 +2855,10 @@ function MegaMenuIntellectt() {
                         case "Life at Intellectt":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+                              item.image || "/images/Managed-IT-Services.png",
+                            logo: item.logo || "/logos/Intellectt-Logo.webp",
+                            icon:
+                              item.icon || "/src/images/icons/icon_meeting.svg",
                             title: "Life at Intellectt",
                             description:
                               "Discover the culture and values that make Intellectt a great place to work.",
@@ -2752,7 +2869,10 @@ function MegaMenuIntellectt() {
                         case "How we hire":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+                              item.image || "/images/ITstaffaugmentatin.webp",
+                            logo: item.logo || "/logos/Intellectt-Logo.webp",
+                            icon:
+                              item.icon || "/src/images/icons/icon_target.svg",
                             title: "How We Hire",
                             description:
                               "Learn about our hiring process and what we look for in potential team members.",
@@ -2854,25 +2974,58 @@ function MegaMenuIntellectt() {
                           setHoveredItem(null);
                         }}
                         onClick={() => {
-                          if (item.url) {
-                            if (item.url.startsWith("/")) {
-                              navigate(item.url);
-                            } else {
-                              window.open(item.url, "_blank");
+                          // Close mega menu first
+                          setActiveMenu(null);
+                          setHoveredItem(null);
+
+                          // Small delay to ensure menu closes before navigation
+                          setTimeout(() => {
+                            if (item.url) {
+                              if (item.url.startsWith("/")) {
+                                navigate(item.url);
+                              } else {
+                                window.open(item.url, "_blank");
+                              }
                             }
-                          }
+                          }, 100);
                         }}
                       >
-                        <span
+                        <div
                           style={{
-                            color: item.isActive ? "#111827" : "#6b7280",
-                            fontSize: "0.875rem",
-                            fontWeight: "500",
-                            fontFamily: "Inter, sans-serif",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.75rem",
+                            flex: 1,
                           }}
                         >
-                          {item.title}
-                        </span>
+                          {item.icon && (
+                            <img
+                              src={item.icon}
+                              alt=""
+                              style={{
+                                width: "16px",
+                                height: "16px",
+                                opacity: item.isActive ? "1" : "0.7",
+                                filter: item.isActive
+                                  ? "none"
+                                  : "grayscale(50%)",
+                                transition: "all 0.3s ease",
+                              }}
+                            />
+                          )}
+                          <span
+                            style={{
+                              color: item.isActive ? "#111827" : "#6b7280",
+                              fontSize: "0.875rem",
+                              fontWeight: "500",
+                              fontFamily:
+                                '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
+                              letterSpacing: "-0.01em",
+                            }}
+                          >
+                            {item.title}
+                          </span>
+                        </div>
                         <span
                           style={{
                             color: "#e53e3e",
@@ -2893,35 +3046,79 @@ function MegaMenuIntellectt() {
               <div
                 style={{
                   flex: 1,
-                  padding: "2rem",
+                  padding: "2.5rem",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
-                  background: "#ffffff",
+                  background:
+                    "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                  borderRadius: "0 12px 12px 0",
                 }}
               >
-                {/* Featured Image */}
+                {/* Featured Image with Icon Overlay */}
                 <div
                   style={{
                     width: "100%",
-                    height: "220px",
-                    borderRadius: "12px",
+                    height: "140px",
+                    borderRadius: "16px",
                     overflow: "hidden",
-                    marginBottom: "2rem",
-                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+                    marginBottom: "1rem",
+                    boxShadow: "0 15px 40px rgba(0, 0, 0, 0.15)",
+                    position: "relative",
+                    background:
+                      "linear-gradient(135deg, rgba(229, 62, 62, 0.9) 0%, rgba(220, 38, 38, 0.9) 100%)",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
                 >
                   <img
                     id="careers-image"
-                    src={menuConfig.featuredContent.image}
-                    alt={menuConfig.featuredContent.title}
+                    src={
+                      menuConfig?.featuredContent?.image ||
+                      "/images/Engineering.webp"
+                    }
+                    alt={menuConfig?.featuredContent?.title || "Careers"}
                     style={{
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
                       transition: "all 0.3s ease",
+                      opacity: "0.8",
+                    }}
+                    onError={(e) => {
+                      if (menuConfig.featuredContent.fallbackImage) {
+                        e.target.src = menuConfig.featuredContent.fallbackImage;
+                      }
                     }}
                   />
+                  {menuConfig?.featuredContent?.icon && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        width: "40px",
+                        height: "40px",
+                        backgroundColor: "rgba(255, 255, 255, 0.9)",
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+                      }}
+                    >
+                      <img
+                        src={menuConfig?.featuredContent?.icon}
+                        alt=""
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          filter:
+                            "brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)",
+                        }}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
@@ -2929,70 +3126,83 @@ function MegaMenuIntellectt() {
                   id="careers-title"
                   style={{
                     color: "#111827",
-                    fontSize: "1.25rem",
+                    fontSize: "1.1rem",
                     fontWeight: "700",
-                    margin: "0 0 0.75rem 0",
-                    fontFamily: "Inter, sans-serif",
+                    margin: "0 0 0.5rem 0",
+                    fontFamily:
+                      '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
                     letterSpacing: "-0.02em",
                     transition: "all 0.3s ease",
+                    lineHeight: "1.3",
                   }}
                 >
-                  {menuConfig.featuredContent.title}
+                  {menuConfig?.featuredContent?.title || "Careers"}
                 </h3>
 
                 <p
                   id="careers-description"
                   style={{
                     color: "#6b7280",
-                    fontSize: "0.875rem",
-                    lineHeight: "1.6",
-                    margin: "0 0 1.5rem 0",
-                    fontFamily: "Inter, sans-serif",
-                    maxWidth: "350px",
+                    fontSize: "0.8rem",
+                    lineHeight: "1.5",
+                    margin: "0 0 1rem 0",
+                    fontFamily:
+                      '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
+                    maxWidth: "400px",
                     transition: "all 0.3s ease",
+                    fontWeight: "400",
                   }}
                 >
-                  {menuConfig.featuredContent.description}
+                  {menuConfig?.featuredContent?.description ||
+                    "Discover opportunities at Intellectt"}
                 </p>
 
                 {/* Button */}
                 <RouterButton
                   id="careers-button"
-                  to={menuConfig.featuredContent.buttonUrl}
+                  to={menuConfig?.featuredContent?.buttonUrl || "/careers"}
                   external={
-                    !menuConfig.featuredContent.buttonUrl.startsWith("/")
+                    !(
+                      menuConfig?.featuredContent?.buttonUrl || "/careers"
+                    ).startsWith("/")
                   }
                   style={{
-                    background: "transparent",
-                    border: "2px solid #e53e3e",
-                    color: "#e53e3e",
+                    background:
+                      "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)",
+                    border: "none",
+                    color: "#ffffff",
                     padding: "0.75rem 1.5rem",
-                    borderRadius: "8px",
-                    fontSize: "0.875rem",
+                    borderRadius: "12px",
+                    fontSize: "0.85rem",
                     fontWeight: "600",
-                    transition: "all 0.3s ease",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                     display: "flex",
                     alignItems: "center",
                     gap: "0.5rem",
                     alignSelf: "flex-start",
-                    fontFamily: "Inter, sans-serif",
+                    fontFamily:
+                      '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
                     letterSpacing: "0.02em",
+                    boxShadow: "0 4px 12px rgba(229, 62, 62, 0.3)",
+                    cursor: "pointer",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.background = "#e53e3e";
-                    e.target.style.color = "#ffffff";
-                    e.target.style.transform = "translateY(-2px)";
+                    e.target.style.background =
+                      "linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)";
+                    e.target.style.transform = "translateY(-3px)";
                     e.target.style.boxShadow =
-                      "0 8px 25px rgba(229, 62, 62, 0.3)";
+                      "0 8px 25px rgba(229, 62, 62, 0.4)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.background = "transparent";
-                    e.target.style.color = "#e53e3e";
+                    e.target.style.background =
+                      "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)";
                     e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow = "none";
+                    e.target.style.boxShadow =
+                      "0 4px 12px rgba(229, 62, 62, 0.3)";
                   }}
                 >
-                  {menuConfig.featuredContent.buttonText}
+                  {menuConfig?.featuredContent?.buttonText ||
+                    "View Opportunities"}
                   <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
                     →
                   </span>
@@ -3020,7 +3230,7 @@ function MegaMenuIntellectt() {
                 background: "#ffffff",
                 borderRadius: "12px",
                 overflow: "hidden",
-                minHeight: "350px",
+                minHeight: "180px",
                 boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
                 border: "1px solid #e5e7eb",
               }}
@@ -3030,18 +3240,18 @@ function MegaMenuIntellectt() {
                 style={{
                   width: "280px",
                   background: "#f9fafb",
-                  padding: "2rem",
+                  padding: "1rem",
                   borderRight: "1px solid #e5e7eb",
                 }}
               >
                 {/* Header */}
-                <div style={{ marginBottom: "2rem" }}>
+                <div style={{ marginBottom: "1rem" }}>
                   <h3
                     style={{
                       color: "#111827",
-                      fontSize: "1.5rem",
+                      fontSize: "1.125rem",
                       fontWeight: "700",
-                      margin: "0 0 0.5rem 0",
+                      margin: "0 0 0.375rem 0",
                       fontFamily: "Inter, sans-serif",
                       letterSpacing: "-0.02em",
                     }}
@@ -3051,9 +3261,9 @@ function MegaMenuIntellectt() {
                   <div
                     style={{
                       width: "40px",
-                      height: "3px",
+                      height: "2px",
                       background: "#e53e3e",
-                      marginBottom: "1.5rem",
+                      marginBottom: "0.75rem",
                     }}
                   />
                 </div>
@@ -3063,16 +3273,19 @@ function MegaMenuIntellectt() {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "0.25rem",
+                    gap: "0.0625rem",
                   }}
                 >
                   {menuConfig.mainItems.map((item, index) => {
                     const getItemContent = (title) => {
                       switch (title) {
-                        case "Our Journey":
+                        case "Overview":
                           return {
-                            image:
-                              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+                            image: item.image || "/images/ai-and-gen-ai.png",
+                            logo: item.logo || "/logos/Intellectt-Logo.webp",
+                            icon:
+                              item.icon ||
+                              "/src/images/icons/icon_building.svg",
                             title: "Our Journey",
                             description:
                               "Discover the story of how we became a leading AI and technology company, from our humble beginnings to our current global presence.",
@@ -3083,7 +3296,11 @@ function MegaMenuIntellectt() {
                         case "Leadership Team":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+                              item.image ||
+                              "/images/Healthcare-Life-Sciences.png",
+                            logo: item.logo || "/logos/Intellectt-Logo.webp",
+                            icon:
+                              item.icon || "/src/images/icons/icon_users.svg",
                             title: "Meet Our Leaders",
                             description:
                               "Get to know the visionary leaders who drive our innovation and guide our company towards a future of technological excellence.",
@@ -3091,10 +3308,13 @@ function MegaMenuIntellectt() {
                             buttonUrl: "/Company/leadership-team",
                             emoji: "👥",
                           };
-                        case "Global Presence":
+                        case "Our Global Presence":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=200&fit=crop&crop=center",
+                              item.image || "/images/cloud-and-application.png",
+                            logo: item.logo || "/logos/Intellectt-Logo.webp",
+                            icon:
+                              item.icon || "/src/images/icons/icon_global.svg",
                             title: "Global Reach",
                             description:
                               "Explore our worldwide network of offices and partnerships that enable us to serve clients across the globe.",
@@ -3105,7 +3325,12 @@ function MegaMenuIntellectt() {
                         case "Our Companies":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=200&fit=crop&crop=center",
+                              item.image ||
+                              "/images/Engineering-anufacturing-IT.png",
+                            logo: item.logo || "/logos/Intellectt-Logo.webp",
+                            icon:
+                              item.icon ||
+                              "/src/images/icons/icon_hand_shake.svg",
                             title: "Our Companies",
                             description:
                               "Discover our subsidiary companies and specialized divisions that drive innovation across different industries.",
@@ -3119,7 +3344,7 @@ function MegaMenuIntellectt() {
                               "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
                             title: "Discover Our Story",
                             description:
-                              "Learn about our journey, meet our leadership team, explore our global presence, and discover our subsidiary companies that drive innovation across industries.",
+                              "Discover our story, leadership, global presence, and subsidiary companies.",
                             buttonText: "Learn More",
                             buttonUrl: "/company/our-journey",
                             emoji: "🚀",
@@ -3131,25 +3356,29 @@ function MegaMenuIntellectt() {
                       <div
                         key={item.title}
                         style={{
-                          padding: "0.875rem 1rem",
-                          borderRadius: "8px",
+                          padding: "1rem 1.25rem",
+                          borderRadius: "12px",
                           cursor: "pointer",
-                          transition: "all 0.3s ease",
+                          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                           background:
                             item.isActive || hoveredItem === item.title
-                              ? "#ffffff"
+                              ? "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)"
                               : "transparent",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "space-between",
                           border:
                             item.isActive || hoveredItem === item.title
-                              ? "1px solid #d1d5db"
+                              ? "1px solid rgba(99, 102, 241, 0.2)"
                               : "1px solid transparent",
                           boxShadow:
                             item.isActive || hoveredItem === item.title
-                              ? "0 2px 8px rgba(0, 0, 0, 0.1)"
+                              ? "0 4px 16px rgba(99, 102, 241, 0.15)"
                               : "none",
+                          transform:
+                            item.isActive || hoveredItem === item.title
+                              ? "translateY(-1px)"
+                              : "translateY(0)",
                         }}
                         onMouseEnter={(e) => {
                           // Clear ALL other navigation items first
@@ -3161,16 +3390,20 @@ function MegaMenuIntellectt() {
                               navItem.style.background = "transparent";
                               navItem.style.borderColor = "transparent";
                               navItem.style.boxShadow = "none";
+                              navItem.style.transform = "translateY(0)";
                             }
                           });
 
                           setHoveredItem(item.title);
 
                           if (!item.isActive) {
-                            e.target.style.background = "#ffffff";
-                            e.target.style.borderColor = "#d1d5db";
+                            e.target.style.background =
+                              "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)";
+                            e.target.style.borderColor =
+                              "rgba(99, 102, 241, 0.2)";
                             e.target.style.boxShadow =
-                              "0 2px 8px rgba(0, 0, 0, 0.1)";
+                              "0 4px 16px rgba(99, 102, 241, 0.15)";
+                            e.target.style.transform = "translateY(-1px)";
                           }
 
                           // Update content based on hover
@@ -3216,11 +3449,18 @@ function MegaMenuIntellectt() {
                                 // Update button
                                 buttonElement.textContent = content.buttonText;
                                 buttonElement.onclick = () => {
-                                  if (content.buttonUrl.startsWith("/")) {
-                                    navigate(content.buttonUrl);
-                                  } else {
-                                    window.open(content.buttonUrl, "_blank");
-                                  }
+                                  // Close mega menu first
+                                  setActiveMenu(null);
+                                  setHoveredItem(null);
+
+                                  // Small delay to ensure menu closes before navigation
+                                  setTimeout(() => {
+                                    if (content.buttonUrl.startsWith("/")) {
+                                      navigate(content.buttonUrl);
+                                    } else {
+                                      window.open(content.buttonUrl, "_blank");
+                                    }
+                                  }, 100);
                                 };
                               }
                             }
@@ -3232,28 +3472,62 @@ function MegaMenuIntellectt() {
                             e.target.style.background = "transparent";
                             e.target.style.borderColor = "transparent";
                             e.target.style.boxShadow = "none";
+                            e.target.style.transform = "translateY(0)";
                           }
                         }}
                         onClick={() => {
-                          if (item.url) {
-                            if (item.url.startsWith("/")) {
-                              navigate(item.url);
-                            } else {
-                              window.open(item.url, "_blank");
+                          // Close mega menu first
+                          setActiveMenu(null);
+                          setHoveredItem(null);
+
+                          // Small delay to ensure menu closes before navigation
+                          setTimeout(() => {
+                            if (item.url) {
+                              if (item.url.startsWith("/")) {
+                                navigate(item.url);
+                              } else {
+                                window.open(item.url, "_blank");
+                              }
                             }
-                          }
+                          }, 100);
                         }}
                       >
-                        <span
+                        <div
                           style={{
-                            color: item.isActive ? "#111827" : "#6b7280",
-                            fontSize: "0.875rem",
-                            fontWeight: "500",
-                            fontFamily: "Inter, sans-serif",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.75rem",
+                            flex: 1,
                           }}
                         >
-                          {item.title}
-                        </span>
+                          {item.icon && (
+                            <img
+                              src={item.icon}
+                              alt=""
+                              style={{
+                                width: "16px",
+                                height: "16px",
+                                opacity: item.isActive ? "1" : "0.7",
+                                filter: item.isActive
+                                  ? "none"
+                                  : "grayscale(50%)",
+                                transition: "all 0.3s ease",
+                              }}
+                            />
+                          )}
+                          <span
+                            style={{
+                              color: item.isActive ? "#111827" : "#6b7280",
+                              fontSize: "0.875rem",
+                              fontWeight: "500",
+                              fontFamily:
+                                '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
+                              letterSpacing: "-0.01em",
+                            }}
+                          >
+                            {item.title}
+                          </span>
+                        </div>
                         <span
                           style={{
                             color: "#6366f1",
@@ -3288,64 +3562,75 @@ function MegaMenuIntellectt() {
                     style={{
                       display: "flex",
                       flexDirection: "column",
-                      gap: "1rem",
+                      gap: "0.5rem",
                       width: "100%",
                     }}
                   >
                     {/* Lumin Inc. Box */}
                     <div
-                      onClick={() =>
-                        window.open("https://lumininc.com/", "_blank")
-                      }
+                      onClick={() => {
+                        // Close mega menu first
+                        setActiveMenu(null);
+                        setHoveredItem(null);
+
+                        // Small delay to ensure menu closes before navigation
+                        setTimeout(() => {
+                          window.open("https://lumininc.com/", "_blank");
+                        }, 100);
+                      }}
                       style={{
                         display: "flex",
                         alignItems: "center",
                         gap: "1rem",
                         padding: "1.5rem",
-                        borderRadius: "12px",
-                        border: "2px solid #e5e7eb",
+                        borderRadius: "16px",
+                        border: "2px solid rgba(59, 130, 246, 0.2)",
                         backgroundColor: "rgba(59, 130, 246, 0.05)",
                         cursor: "pointer",
-                        transition: "all 0.3s ease",
+                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                         textDecoration: "none",
                         color: "inherit",
+                        boxShadow: "0 2px 8px rgba(59, 130, 246, 0.1)",
                       }}
                       onMouseEnter={(e) => {
                         e.target.style.borderColor = "#3b82f6";
                         e.target.style.backgroundColor =
                           "rgba(59, 130, 246, 0.1)";
-                        e.target.style.transform = "translateY(-2px)";
+                        e.target.style.transform = "translateY(-4px)";
                         e.target.style.boxShadow =
-                          "0 8px 25px rgba(59, 130, 246, 0.15)";
+                          "0 12px 32px rgba(59, 130, 246, 0.2)";
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.borderColor = "#e5e7eb";
+                        e.target.style.borderColor = "rgba(59, 130, 246, 0.2)";
                         e.target.style.backgroundColor =
                           "rgba(59, 130, 246, 0.05)";
                         e.target.style.transform = "translateY(0)";
-                        e.target.style.boxShadow = "none";
+                        e.target.style.boxShadow =
+                          "0 2px 8px rgba(59, 130, 246, 0.1)";
                       }}
                     >
                       <div
                         style={{
-                          width: "60px",
-                          height: "60px",
-                          borderRadius: "12px",
+                          width: "40px",
+                          height: "40px",
+                          borderRadius: "8px",
                           backgroundColor: "rgba(59, 130, 246, 0.1)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
                           flexShrink: 0,
-                          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                          boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
                         }}
                       >
                         <img
-                          src="/Lumininc-logo.png"
+                          src="/src/images/icons/icon_microscope.svg"
                           alt="Lumin Inc."
                           style={{
-                            width: "40px",
-                            height: "40px",
+                            width: "20px",
+                            height: "20px",
                             objectFit: "contain",
+                            filter:
+                              "brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)",
                           }}
                         />
                       </div>
@@ -3354,17 +3639,19 @@ function MegaMenuIntellectt() {
                           flex: 1,
                           display: "flex",
                           flexDirection: "column",
-                          gap: "0.25rem",
+                          gap: "0.125rem",
                         }}
                       >
                         <h4
                           id="who-we-are-title"
                           style={{
                             margin: 0,
-                            fontSize: "1.125rem",
+                            fontSize: "0.9rem",
                             fontWeight: "600",
                             color: "#111827",
-                            fontFamily: "Inter, sans-serif",
+                            fontFamily:
+                              '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
+                            letterSpacing: "-0.01em",
                           }}
                         >
                           Lumin Inc.
@@ -3373,10 +3660,11 @@ function MegaMenuIntellectt() {
                           id="who-we-are-description"
                           style={{
                             margin: 0,
-                            fontSize: "0.875rem",
+                            fontSize: "0.75rem",
                             color: "#6b7280",
-                            lineHeight: "1.4",
-                            fontFamily: "Inter, sans-serif",
+                            lineHeight: "1.2",
+                            fontFamily:
+                              '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
                           }}
                         >
                           Healthcare display and consulting solutions
@@ -3384,7 +3672,7 @@ function MegaMenuIntellectt() {
                         </p>
                         <span
                           style={{
-                            fontSize: "0.75rem",
+                            fontSize: "0.65rem",
                             fontWeight: "500",
                             color: "#3b82f6",
                             textTransform: "uppercase",
@@ -3398,36 +3686,48 @@ function MegaMenuIntellectt() {
 
                     {/* Lumin Innovations Box */}
                     <div
-                      onClick={() =>
-                        window.open("https://lumin-innovations.com/", "_blank")
-                      }
+                      onClick={() => {
+                        // Close mega menu first
+                        setActiveMenu(null);
+                        setHoveredItem(null);
+
+                        // Small delay to ensure menu closes before navigation
+                        setTimeout(() => {
+                          window.open(
+                            "https://lumin-innovations.com/",
+                            "_blank"
+                          );
+                        }, 100);
+                      }}
                       style={{
                         display: "flex",
                         alignItems: "center",
                         gap: "1rem",
                         padding: "1.5rem",
-                        borderRadius: "12px",
-                        border: "2px solid #e5e7eb",
+                        borderRadius: "16px",
+                        border: "2px solid rgba(16, 185, 129, 0.2)",
                         backgroundColor: "rgba(16, 185, 129, 0.05)",
                         cursor: "pointer",
-                        transition: "all 0.3s ease",
+                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                         textDecoration: "none",
                         color: "inherit",
+                        boxShadow: "0 2px 8px rgba(16, 185, 129, 0.1)",
                       }}
                       onMouseEnter={(e) => {
                         e.target.style.borderColor = "#10b981";
                         e.target.style.backgroundColor =
                           "rgba(16, 185, 129, 0.1)";
-                        e.target.style.transform = "translateY(-2px)";
+                        e.target.style.transform = "translateY(-4px)";
                         e.target.style.boxShadow =
-                          "0 8px 25px rgba(16, 185, 129, 0.15)";
+                          "0 12px 32px rgba(16, 185, 129, 0.2)";
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.borderColor = "#e5e7eb";
+                        e.target.style.borderColor = "rgba(16, 185, 129, 0.2)";
                         e.target.style.backgroundColor =
                           "rgba(16, 185, 129, 0.05)";
                         e.target.style.transform = "translateY(0)";
-                        e.target.style.boxShadow = "none";
+                        e.target.style.boxShadow =
+                          "0 2px 8px rgba(16, 185, 129, 0.1)";
                       }}
                     >
                       <div
@@ -3444,12 +3744,14 @@ function MegaMenuIntellectt() {
                         }}
                       >
                         <img
-                          src="/Lumin-Innovations-Horizontal-scaled-2.png"
+                          src="/src/images/icons/icon_process.svg"
                           alt="Lumin Innovations"
                           style={{
-                            width: "40px",
-                            height: "40px",
+                            width: "30px",
+                            height: "30px",
                             objectFit: "contain",
+                            filter:
+                              "brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%)",
                           }}
                         />
                       </div>
@@ -3467,7 +3769,9 @@ function MegaMenuIntellectt() {
                             fontSize: "1.125rem",
                             fontWeight: "600",
                             color: "#111827",
-                            fontFamily: "Inter, sans-serif",
+                            fontFamily:
+                              '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
+                            letterSpacing: "-0.01em",
                           }}
                         >
                           Lumin Innovations
@@ -3478,7 +3782,8 @@ function MegaMenuIntellectt() {
                             fontSize: "0.875rem",
                             color: "#6b7280",
                             lineHeight: "1.4",
-                            fontFamily: "Inter, sans-serif",
+                            fontFamily:
+                              '"Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif',
                           }}
                         >
                           Advanced manufacturing and automation driving Industry
@@ -3510,38 +3815,62 @@ function MegaMenuIntellectt() {
                         borderRadius: "12px",
                         overflow: "hidden",
                         marginBottom: "2rem",
-                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
-                        background:
-                          "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        boxShadow: "0 15px 40px rgba(0, 0, 0, 0.15)",
                         position: "relative",
-                        transition: "all 0.3s ease",
+                        background:
+                          "linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%)",
+                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                       }}
                     >
-                      <div
-                        id="who-we-are-overlay"
+                      <img
+                        src={
+                          menuConfig?.featuredContent?.image ||
+                          "/images/ai-and-gen-ai.png"
+                        }
+                        alt={menuConfig?.featuredContent?.title || "Who We Are"}
                         style={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          background:
-                            "linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          color: "#ffffff",
-                          fontSize: "3rem",
-                          fontWeight: "700",
-                          fontFamily: "Inter, sans-serif",
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
                           transition: "all 0.3s ease",
+                          opacity: "0.8",
                         }}
-                      >
-                        🚀
-                      </div>
+                        onError={(e) => {
+                          if (menuConfig?.featuredContent?.fallbackImage) {
+                            e.target.src =
+                              menuConfig.featuredContent.fallbackImage;
+                          }
+                        }}
+                      />
+                      {menuConfig?.featuredContent?.icon && (
+                        <div
+                          style={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                            width: "60px",
+                            height: "60px",
+                            backgroundColor: "rgba(255, 255, 255, 0.9)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            boxShadow: "0 8px 24px rgba(0, 0, 0, 0.3)",
+                          }}
+                        >
+                          <img
+                            src={menuConfig?.featuredContent?.icon}
+                            alt=""
+                            style={{
+                              width: "30px",
+                              height: "30px",
+                              filter:
+                                "brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)",
+                            }}
+                          />
+                        </div>
+                      )}
                     </div>
 
                     {/* Content */}
@@ -3557,7 +3886,7 @@ function MegaMenuIntellectt() {
                         transition: "all 0.3s ease",
                       }}
                     >
-                      Discover Our Story
+                      {menuConfig?.featuredContent?.title || "Who We Are"}
                     </h3>
 
                     <p
@@ -3572,15 +3901,23 @@ function MegaMenuIntellectt() {
                         transition: "all 0.3s ease",
                       }}
                     >
-                      Learn about our journey, meet our leadership team, explore
-                      our global presence, and discover our subsidiary companies
-                      that drive innovation across industries.
+                      {menuConfig?.featuredContent?.description ||
+                        "Discover our story and leadership"}
                     </p>
 
                     {/* Button */}
                     <RouterButton
                       id="who-we-are-button"
-                      to="/company/our-journey"
+                      to={
+                        menuConfig?.featuredContent?.buttonUrl ||
+                        "/company/our-journey"
+                      }
+                      external={
+                        !(
+                          menuConfig?.featuredContent?.buttonUrl ||
+                          "/company/our-journey"
+                        ).startsWith("/")
+                      }
                       style={{
                         background: "transparent",
                         border: "2px solid #6366f1",
@@ -3611,7 +3948,7 @@ function MegaMenuIntellectt() {
                         e.target.style.boxShadow = "none";
                       }}
                     >
-                      Learn More
+                      {menuConfig?.featuredContent?.buttonText || "Learn More"}
                       <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
                         →
                       </span>
@@ -3703,13 +4040,20 @@ function MegaMenuIntellectt() {
                               <div
                                 key={companyIndex}
                                 onClick={() => {
-                                  if (companyItem.url) {
-                                    if (companyItem.url.startsWith("/")) {
-                                      navigate(companyItem.url);
-                                    } else {
-                                      window.open(companyItem.url, "_blank");
+                                  // Close mega menu first
+                                  setActiveMenu(null);
+                                  setHoveredItem(null);
+
+                                  // Small delay to ensure menu closes before navigation
+                                  setTimeout(() => {
+                                    if (companyItem.url) {
+                                      if (companyItem.url.startsWith("/")) {
+                                        navigate(companyItem.url);
+                                      } else {
+                                        window.open(companyItem.url, "_blank");
+                                      }
                                     }
-                                  }
+                                  }, 100);
                                 }}
                                 style={{
                                   display: "flex",
@@ -3834,13 +4178,20 @@ function MegaMenuIntellectt() {
                                 key={serviceIndex}
                                 menuName={menuName}
                                 onClick={() => {
-                                  if (serviceItem.url) {
-                                    if (serviceItem.url.startsWith("/")) {
-                                      navigate(serviceItem.url);
-                                    } else {
-                                      window.open(serviceItem.url, "_blank");
+                                  // Close mega menu first
+                                  setActiveMenu(null);
+                                  setHoveredItem(null);
+
+                                  // Small delay to ensure menu closes before navigation
+                                  setTimeout(() => {
+                                    if (serviceItem.url) {
+                                      if (serviceItem.url.startsWith("/")) {
+                                        navigate(serviceItem.url);
+                                      } else {
+                                        window.open(serviceItem.url, "_blank");
+                                      }
                                     }
-                                  }
+                                  }, 100);
                                 }}
                                 style={
                                   serviceItem.url ? { cursor: "pointer" } : {}
@@ -3888,9 +4239,20 @@ function MegaMenuIntellectt() {
   };
 
   return (
-    <div style={{ background: "white" }}>
+    <div
+      style={{ background: "white" }}
+      onMouseLeave={() => {
+        if (!isMouseInMenu) {
+          setActiveMenu(null);
+        }
+      }}
+    >
       {/* Mega Menu Header */}
-      <HeaderContainer scrolled={scrolled} isHomePage={isHomePage}>
+      <HeaderContainer
+        ref={menuRef}
+        scrolled={scrolled}
+        isHomePage={isHomePage}
+      >
         <HeaderContent>
           <Logo scrolled={scrolled} isHomePage={isHomePage}>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
@@ -3922,22 +4284,42 @@ function MegaMenuIntellectt() {
                 isActive={activeMenu === menuName}
                 scrolled={scrolled}
                 isHomePage={isHomePage}
-                onMouseEnter={() => handleMouseEnter(menuName)}
-                onMouseLeave={handleMouseLeave}
+                onClick={closeMenu}
                 onKeyDown={(e) => handleKeyDown(e, menuName)}
                 tabIndex={0}
                 role="button"
                 aria-expanded={activeMenu === menuName}
                 aria-haspopup="true"
                 data-nav-item="true"
+                style={{ cursor: "default" }}
               >
-                {menuName}
+                <span
+                  onMouseEnter={() => handleMouseEnter(menuName)}
+                  onMouseLeave={handleMouseLeave}
+                  style={{
+                    cursor: "pointer",
+                    padding: "0.125rem 0.25rem",
+                    display: "inline-block",
+                    position: "relative",
+                    zIndex: 1,
+                    borderRadius: "4px",
+                    transition: "background-color 0.2s ease",
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = "rgba(99, 102, 241, 0.1)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = "transparent";
+                  }}
+                >
+                  {menuName}
+                </span>
                 <ChevronDown />
               </NavItem>
             ))}
           </Navigation>
 
-          <SearchBarContainer>
+          <SearchBarContainer data-search-container="true">
             <SearchForm onSubmit={handleSearchSubmit}>
               <SearchIcon>
                 <Search size={16} />
@@ -3959,15 +4341,22 @@ function MegaMenuIntellectt() {
                     <SearchResultItem
                       key={index}
                       onClick={() => {
-                        if (result.url) {
-                          if (result.url.startsWith("/")) {
-                            navigate(result.url);
-                          } else {
-                            window.open(result.url, "_blank");
+                        // Close mega menu first
+                        setActiveMenu(null);
+                        setHoveredItem(null);
+
+                        // Small delay to ensure menu closes before navigation
+                        setTimeout(() => {
+                          if (result.url) {
+                            if (result.url.startsWith("/")) {
+                              navigate(result.url);
+                            } else {
+                              window.open(result.url, "_blank");
+                            }
                           }
-                        }
-                        setSearchQuery("");
-                        setShowSearchResults(false);
+                          setSearchQuery("");
+                          setShowSearchResults(false);
+                        }, 100);
                       }}
                     >
                       <SearchResultTitle>{result.title}</SearchResultTitle>
@@ -4043,9 +4432,29 @@ function MegaMenuIntellectt() {
         <AnimatePresence>
           {activeMenu && (
             <div
-              onMouseEnter={() => handleMouseEnter(activeMenu)}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={handleDropdownMouseEnter}
+              onMouseLeave={handleDropdownMouseLeave}
+              style={{
+                position: "relative",
+                zIndex: 999,
+              }}
             >
+              {/* Invisible connector to prevent menu from closing */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-10px",
+                  left: 0,
+                  right: 0,
+                  height: "10px",
+                  background: "transparent",
+                }}
+                onMouseEnter={() => {
+                  if (timeoutRef.current) {
+                    clearTimeout(timeoutRef.current);
+                  }
+                }}
+              />
               {renderMegaMenu(activeMenu)}
             </div>
           )}

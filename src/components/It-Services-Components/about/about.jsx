@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import about1 from '../../../images/about/img-01.png';
-import about2 from '../../../images/about/img-02.png';
-import about3 from '../../../images/about/img-03.png';
+import about1 from '../../../images/about/About-Us.webp';
+import about2 from '../../../images/about/Our-Mission.webp';
+import about3 from '../../../images/about/Our-vision.webp';
 import aIcon1 from '../../../images/icon/about-icon01.png';
 import aIcon2 from '../../../images/icon/about-icon02.png';
 import aIcon3 from '../../../images/icon/about-icon03.png';
@@ -19,21 +19,21 @@ const About = () => {
       icon: aIcon1,
       heading: 'About us',
       content:
-        'Intellectt IT Services provides innovative, scalable solutions to drive business growth and efficiency. Our expert team ensures your business remains competitive with tailored IT services and reliable support for long-term success.',
+        'Intellectt Inc delivers tailored workforce solutions that connect top talent with leading businesses. We specialize in staffing, recruitment, and consulting services that drive agility, efficiency, and long-term success.',
     },
     {
       img: about2,
       icon: aIcon2,
       heading: 'Our mission',
       content:
-        'To deliver cutting-edge IT solutions that drive business growth, boost productivity, and ensure long-term helping competitiveness. We are dedicated to scalable, reliable technology and exceptional support.',
+        'To empower companies through strategic talent solutions, providing expert guidance, personalized service, and exceptional candidates that align with business goals and foster sustainable growth across all industries.',
     },
     {
       img: about3,
       icon: aIcon3,
       heading: 'Our vision',
       content:
-        'Our Vision is to empower businesses with innovative IT solutions that drive growth, efficiency, and long-term success. We deliver scalable technology to keep you competitive and ready for the future.',
+        'To become a global leader in workforce transformation by building lasting partnerships, embracing innovation, and shaping the future of work through trust, adaptability, and a people-first approach.',
     },
   ];
 

@@ -10,44 +10,177 @@ import {
   Paper,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import SectionHeading from "../SectionHeading/SectionHeading";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link, useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const tabData = [
   {
-    label: "AI & Gen AI",
-    title: "AI & Gen AI Consulting",
+    label: "Data Collection",
+    title: "Data Collection & Processing",
     description:
-      "Empower your business with next-generation AI and Generative AI solutions. Accelerate innovation, unlock new revenue streams, and drive intelligent automation across your organization.",
+      "Gather and process structured and unstructured data from multiple sources including databases, APIs, documents, and real-time streams for AI analysis.",
     image: "/video/Ai.mp4",
-    href: "/service/ai-and-gen-ai",
+    href: "/service/data-and-analytics",
+    gradient: "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)",
+    icon: (
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 2L2 7L12 12L22 7L12 2Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M2 17L12 22L22 17"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M2 12L12 17L22 12"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
   },
   {
-    label: "Cloud & Application",
-    title: "Cloud & Application Services",
+    label: "Model Development",
+    title: "AI Model Development",
     description:
-      "Modernize your IT landscape with scalable cloud platforms, custom applications, seamless integrations, and agile delivery for faster business outcomes.",
+      "Train machine learning models and fine-tune LLMs using advanced algorithms and neural network architectures for intelligent automation.",
     image: "/video/cld.mp4",
-    href: "/service/cloud-and-application-services",
+    href: "/service/ai-and-gen-ai",
+    gradient: "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)",
+    icon: (
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 12L11 14L15 10"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <path
+          d="M12 7V12L15 15"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
   },
   {
-    label: "SAP",
-    title: "Data Management Services",
+    label: "System Integration",
+    title: "System Integration & Deployment",
     description:
-      "Transform your enterprise with end-to-end SAP solutions, process optimization, intelligent automation, and accelerated digital transformation across your value chain.",
+      "Integrate AI solutions with existing enterprise systems and deploy scalable cloud infrastructure for seamless operations.",
     image: "/video/shap.mp4",
-    href: "/service/sap-services",
+    href: "/service/cloud-and-application-services",
+    gradient: "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)",
+    icon: (
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 13A5 5 0 0 0 7.355 14.645L5.5 16.5A1.5 1.5 0 0 0 5.5 19.5L7.355 21.355A5 5 0 0 0 10 23"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M14 13A5 5 0 0 1 16.645 14.645L18.5 16.5A1.5 1.5 0 0 1 18.5 19.5L16.645 21.355A5 5 0 0 1 14 23"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12 7V13"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12 3V7"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
   },
   {
-    label: "Data & Analytics",
-    title: "Data & Analytics",
+    label: "Analytics & Insights",
+    title: "Analytics & Business Insights",
     description:
-      "Unlock actionable insights with advanced data engineering, real-time analytics, intelligent dashboards, and AI-powered decision-making capabilities.",
+      "Generate actionable insights through advanced data analytics, real-time dashboards, and AI-powered decision-making capabilities.",
     image: "/video/data.mp4",
     href: "/service/data-and-analytics",
+    gradient: "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)",
+    icon: (
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3 3V21H21"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M9 9L12 6L16 10L21 5"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M21 5V9H17"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
   },
 ];
 
@@ -59,6 +192,7 @@ export default function TabsComponent() {
   const componentRef = useRef(null);
   const tabsRef = useRef(null);
   const contentRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!componentRef.current) return;
@@ -157,11 +291,18 @@ export default function TabsComponent() {
     }
   };
 
+  const handleLearnMoreClick = () => {
+    // Scroll to top before navigation
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Navigate to the page
+    navigate(activeTab.href);
+  };
+
   return (
     <Box
       ref={componentRef}
       sx={{
-        background: "#ffffff",
+        background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
         padding: { xs: "5rem 0", md: "7rem 0" },
         position: "relative",
         overflow: "hidden",
@@ -179,35 +320,50 @@ export default function TabsComponent() {
       }}
     >
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
-        <Box sx={{ textAlign: "left", marginBottom: "5rem" }}>
+        <Box sx={{ textAlign: "center", marginBottom: "6rem" }}>
           <Typography
-            variant="h2"
+            variant="h1"
             sx={{
-              fontSize: { xs: "2.5rem", md: "3.5rem" },
+              fontSize: { xs: "2.5rem", md: "3.5rem", lg: "4rem" },
               fontWeight: 700,
-              color: "#111827",
+              color: "#1e40af",
               marginBottom: "1.5rem",
               fontFamily: "'Inter', sans-serif",
               letterSpacing: "-0.02em",
-              lineHeight: 1.2,
+              lineHeight: 1.1,
+              position: "relative",
+              transition: "all 0.3s ease",
+              "&::after": {
+                content: '""',
+                position: "absolute",
+                bottom: "-0.5rem",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "60px",
+                height: "3px",
+                background: "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)",
+                borderRadius: "2px",
+                transition: "all 0.3s ease",
+              },
             }}
           >
-            AI/ML PRACTICES
+            Technology Processes
           </Typography>
           <Typography
-            variant="h5"
+            variant="h3"
             sx={{
               fontSize: { xs: "1.2rem", md: "1.4rem" },
               fontWeight: 400,
-              color: "#6b7280",
-              maxWidth: "900px",
-              mx: "0",
-              lineHeight: 1.6,
+              color: "#475569",
+              maxWidth: "700px",
+              mx: "auto",
+              lineHeight: 1.5,
               fontFamily: "'Inter', sans-serif",
+              transition: "all 0.3s ease",
             }}
           >
-            Comprehensive technology solutions designed to accelerate your
-            digital transformation
+            Streamlined processes for AI development, cloud infrastructure,
+            enterprise solutions, and data analytics
           </Typography>
         </Box>
 
@@ -245,36 +401,56 @@ export default function TabsComponent() {
               {tabData.map((tab, index) => (
                 <Tab
                   key={index}
-                  label={tab.label}
+                  label={
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "inherit",
+                        }}
+                      >
+                        {tab.icon}
+                      </Box>
+                      <span>{tab.label}</span>
+                    </Box>
+                  }
                   sx={{
-                    backgroundColor:
-                      value === index ? "#0199D3" : "transparent",
-                    color: value === index ? "#ffffff" : "#374151",
-                    borderRadius: "12px",
+                    background: value === index ? tab.gradient : "transparent",
+                    color: value === index ? "#ffffff" : "#1e40af",
+                    borderRadius: "16px",
                     fontWeight: 600,
                     textTransform: "none",
-                    minWidth: { xs: 140, sm: 160 },
+                    minWidth: { xs: 160, sm: 180 },
                     mx: 0.5,
                     fontSize: { xs: "0.875rem", sm: "1rem" },
                     flexShrink: 0,
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    padding: "12px 24px",
+                    transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                    padding: "14px 28px",
                     fontFamily: "'Inter', sans-serif",
                     letterSpacing: "-0.01em",
+                    border:
+                      value === index
+                        ? "none"
+                        : "1px solid rgba(30, 64, 175, 0.2)",
                     "&:hover": {
-                      backgroundColor:
-                        value === index ? "#0199D3" : "rgba(1, 153, 211, 0.08)",
-                      color: value === index ? "#ffffff" : "#0199D3",
-                      transform: "translateY(-1px)",
+                      background:
+                        value === index
+                          ? tab.gradient
+                          : "rgba(30, 64, 175, 0.08)",
+                      color: value === index ? "#ffffff" : "#1e40af",
+                      transform: "translateY(-3px) scale(1.02)",
                       boxShadow:
                         value === index
-                          ? "0 8px 25px rgba(1, 153, 211, 0.3)"
-                          : "0 4px 12px rgba(1, 153, 211, 0.1)",
+                          ? "0 16px 40px rgba(30, 64, 175, 0.4)"
+                          : "0 12px 32px rgba(30, 64, 175, 0.2)",
                     },
                     "&.Mui-selected": {
-                      backgroundColor: "#0199D3",
+                      background: tab.gradient,
                       color: "#ffffff",
-                      boxShadow: "0 8px 25px rgba(1, 153, 211, 0.3)",
+                      boxShadow: "0 16px 40px rgba(30, 64, 175, 0.4)",
+                      transform: "translateY(-2px)",
                     },
                   }}
                 />
@@ -339,23 +515,27 @@ export default function TabsComponent() {
               {activeTab.description}
             </Typography>
             <Button
-              href={activeTab.href}
+              onClick={handleLearnMoreClick}
               variant="contained"
               size="large"
               sx={{
-                backgroundColor: "#0199D3",
-                borderRadius: "8px",
-                padding: "14px 32px",
+                background: "linear-gradient(135deg, #dc2626 0%, #ef4444 100%)",
+                borderRadius: "12px",
+                padding: "16px 36px",
                 fontWeight: 600,
                 textTransform: "none",
-                fontSize: "1rem",
+                fontSize: "1.1rem",
                 fontFamily: "'Inter', sans-serif",
                 letterSpacing: "-0.01em",
-                boxShadow: "0 4px 12px rgba(1, 153, 211, 0.2)",
+                boxShadow: "0 8px 24px rgba(220, 38, 38, 0.25)",
+                color: "#ffffff",
+                textDecoration: "none",
                 "&:hover": {
-                  backgroundColor: "#dc2626",
-                  transform: "translateY(-1px)",
-                  boxShadow: "0 8px 20px rgba(220, 38, 38, 0.3)",
+                  background:
+                    "linear-gradient(135deg, #b91c1c 0%, #dc2626 100%)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 12px 32px rgba(220, 38, 38, 0.35)",
+                  textDecoration: "none",
                 },
                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
               }}

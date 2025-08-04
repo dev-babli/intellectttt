@@ -77,6 +77,8 @@ import CyberSecurity from "../CyberSecurity/CyberSecurity";
 import DigitalTransformation from "../DigitalTransformation/DigitalTransformation";
 import Innovation from "../Innovation/Innovation";
 import Partners from "../../pages/Partners";
+import GlobalPresence from "../../components/GlobalPresence/GlobalPresence";
+import HealthCareAndLifeSc from "../HealthCareAndLifeSc/HealthCareAndLifeSc";
 
 const AllRoute = () => {
   return (
@@ -270,7 +272,7 @@ const AllRoute = () => {
             <Route path="industries">
               <Route
                 path="helthcare-and-life-sciences"
-                element={<HealthcareLifeSciencesIT />}
+                element={<HealthCareAndLifeSc />}
               />
               <Route
                 path="aerospace-and-defense"
@@ -288,6 +290,7 @@ const AllRoute = () => {
             </Route>
             <Route path="Company">
               <Route path="our-journey" element={<OurJourny />} />
+              <Route path="global-presence" element={<GlobalPresence />} />
               <Route path="leadership-team" element={<LeaderShipTeam />} />
             </Route>
             <Route path="insights">
@@ -308,6 +311,20 @@ const AllRoute = () => {
             <Route path="cybersecurity" element={<CyberSecurity />} />
             <Route path="digital-transformation" element={<DigitalTransformation />} />
             <Route path="innovation" element={<Innovation />} />
+            
+            {/* Additional Service Routes */}
+            <Route path="service/cloud-and-application-services" element={<CloudAndAppServices />} />
+            <Route path="service/managed-it-services" element={<ManagedITServices />} />
+            
+            {/* Blog Routes */}
+            <Route path="blog/data-ai-commitment" element={<BlogPage />} />
+            <Route path="blog/agentic-ai-software-delivery" element={<BlogPage />} />
+            <Route path="podcast/biztech-forward-season2" element={<BlogPage />} />
+            
+            {/* Company Routes */}
+            <Route path="company/our-journey" element={<OurJourny />} />
+            <Route path="company/global-presence" element={<GlobalPresence />} />
+            <Route path="company/leadership-team" element={<LeaderShipTeam />} />
           </Route>
         </Routes>
       </BrowserRouter>

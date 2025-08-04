@@ -1,25 +1,25 @@
 import React from 'react';
 import { Slide } from "react-awesome-reveal";
-import icon1 from '../../../images/icon/user-icon.png'
-import icon2 from '../../../images/icon/music-play.png'
-import icon3 from '../../../images/icon/dollar-circle.png'
+import icon1 from '../../../images/icon/Expert-team-members.png'
+import icon2 from '../../../images/icon/Fastest-customer-service.png'
+import icon3 from '../../../images/icon/Client-first-approach.png'
 
 const Features = [
     {
         title: 'Expert team members',
-        des: 'We bring together a highly skilled, diverse team committed to delivering top-tier solutions tailored to your business needs.',
+        des: 'We bring together skilled professionals to power your growth.',
         icon: icon1,
         duration: 1000,
     },
     {
         title: 'Fastest customer service',
-        des: 'Count on us for prompt, reliable support—we’re dedicated to resolving your queries with speed and efficiency.',
+        des: 'Your needs are our priority—always prompt, always dependable.',
         icon: icon2,
         duration: 1200,
     },
     {
-        title: 'Reasonable pricing',
-        des: 'We leverage the latest tools and emerging technologies to deliver innovative, future-ready solutions that drive real impact.',
+        title: 'Client-first approach',
+        des: 'We build lasting partnerships through trust, care, and results.',
         icon: icon3,
         duration: 1400,
     },

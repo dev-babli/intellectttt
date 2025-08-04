@@ -13,10 +13,10 @@ import sIcon3 from '../../../images/icon/fun_icon03.png'
 
 const FunFact = [
     {
-        number: '56',
-        title: 'Managing',
-        subTitle: 'We re already helping to manage 56K+ of companies in the world.',
-        text: 'Companies trust us',
+        number: '2',
+        title: 'Empowering',
+        subTitle: 'We’re proud to support a growing global network of trusted clients and partners.',
+        text: 'Clients trust Intellectt Inc',
         symbol: 'K+',
         icon: sIcon1,
         funImg1: fImg1,
@@ -25,9 +25,9 @@ const FunFact = [
     },
     {
         number: '1200',
-        title: 'Supported by over',
-        subTitle: 'Available worldwide, we re currently active in 30 countries.',
-        text: 'Employees in 30 countries',
+        title: 'Global Presence',
+        subTitle: 'With operations spanning continents, we’re active in 30+ countries worldwide.',
+        text: 'Team members across 30+ countries',
         symbol: '+',
         icon: sIcon2,
         style: 'fanfact-icon--two',
@@ -37,9 +37,9 @@ const FunFact = [
     },
     {
         number: '100',
-        title: 'Working in',
-        subTitle: 'We  re assures clients of live successful outcomes, our confidence and reliability.',
-        text: 'Results Guaranteed',
+        title: 'Proven Impact',
+        subTitle: 'Our solutions deliver consistent, measurable outcomes—backed by trust and performance.',
+        text: 'Client satisfaction guaranteed',
         symbol: '%',
         icon: sIcon3,
         style: 'fanfact-icon--three',
@@ -65,7 +65,7 @@ const FunFactSection = (props) => {
     return (
 
 
-        <section className="fanfact o-hidden pt-140 pb-145">
+        <section className="fanfact o-hidden pt-140 pb-145" style={{ backgroundColor: "#f3f3f3" }}>
             <div className="container">
                 <div className="row mt-none-40 justify-content-center">
                     {FunFact.map((funfact, fitem) => (
@@ -80,8 +80,8 @@ const FunFactSection = (props) => {
                                             <span className="xb-item--text">{funfact.text}</span>
                                         </div>
                                         <div className={`fanfact-icon ${funfact.style}`}>
-                                            <div className="icon icon--one"><img src={funfact.funImg1} alt="" /></div>
-                                            <div className="icon icon--two"><img src={funfact.funImg2} alt="" /></div>
+                                            {/* <div className="icon icon--one"><img src={funfact.funImg1} alt="" /></div> */}
+                                            {/* <div className="icon icon--two"><img src={funfact.funImg2} alt="" /></div> */}
                                             <div className="icon icon--three"><img src={funfact.icon} alt="" /></div>
                                         </div>
                                     </div>

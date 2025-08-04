@@ -10,7 +10,7 @@ const LifeAtCompany = () => {
       <div className="body_wrap sco_agency">
        
         <HeroSectionTitle
-          title="Life at Intellett"
+          title="Life at Intellectt"
           subtitle="Join Intellectt where we are leveraging the latest technologies to create a meaningful impact."
           buttonText="TALK TO OUR EXPERTS"
           buttonLink="#contact"
