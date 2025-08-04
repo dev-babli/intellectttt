@@ -1,6 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Services from '../../../api/service';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import Services from "../../../api/service";
+import { Link } from "react-router-dom";
+
+// Import service images directly
+import serviceImg1 from "../../../images/service/service-img01.jpg";
+import serviceImg2 from "../../../images/service/service-img02.jpg";
+import serviceImg3 from "../../../images/service/service-img03.jpg";
+import serviceImg4 from "../../../images/service/service-img04.jpg";
 
 const ServiceSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -12,19 +18,19 @@ const ServiceSection = () => {
   };
 
   const updateActiveBg = (index) => {
-    const serviceListItems = serviceListRef.current.querySelectorAll('.service-list-item');
+    const serviceListItems =
+      serviceListRef.current.querySelectorAll(".service-list-item");
     const activeBg = activeBgRef.current;
-    const item = serviceListItems[index];
-  
-    const menuTop = serviceListRef.current.getBoundingClientRect().top;
-    const itemTop = item.getBoundingClientRect().top;
-    const topOff = itemTop - menuTop;
-    const height = item.offsetHeight;
 
-    activeBg.style.top = `${topOff}px`;
-    activeBg.style.height = `${height}px`;
+    if (serviceListItems[index] && activeBg) {
+      const activeItem = serviceListItems[index];
+      const itemRect = activeItem.getBoundingClientRect();
+      const listRect = serviceListRef.current.getBoundingClientRect();
+
+      activeBg.style.top = `${itemRect.top - listRect.top}px`;
+      activeBg.style.height = `${itemRect.height}px`;
+    }
   };
-  
 
   const handleMouseEnter = (index) => {
     setActiveIndex(index);
@@ -32,7 +38,8 @@ const ServiceSection = () => {
   };
 
   const handleMouseLeave = () => {
-    updateActiveBg(activeIndex);
+    setActiveIndex(0);
+    updateActiveBg(0);
   };
 
   const handleClick = (index) => {
@@ -41,17 +48,30 @@ const ServiceSection = () => {
   };
 
   useEffect(() => {
-    updateActiveBg(activeIndex);
-  }, [activeIndex]);
+    updateActiveBg(0);
+  }, []);
+
+  // Service images array
+  const serviceImages = [serviceImg1, serviceImg2, serviceImg3, serviceImg4];
+
+  console.log("Service Images:", serviceImages);
+  console.log("Services:", Services.slice(6, 10));
 
   return (
     <section className="services z-1 service-height pos-rel">
       <div className="service-images">
         {Services.slice(6, 10).map((service, srv) => (
           <div
-            className={`service-image-item ${activeIndex === srv ? 'active' : ''}`}
+            className={`service-image-item ${
+              activeIndex === srv ? "active" : ""
+            }`}
             key={srv}
-            style={{ backgroundImage: `url(${service.sImg})` }}
+            style={{
+              backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%), url(${serviceImages[srv]})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
           ></div>
         ))}
       </div>
@@ -67,14 +87,35 @@ const ServiceSection = () => {
               <div
                 onClick={() => handleClick(srv)}
                 onMouseEnter={() => handleMouseEnter(srv)}
-                className={`service-list-item ul_li_between ${activeIndex === srv ? 'current' : ''}`}
+                className={`service-list-item ul_li_between ${
+                  activeIndex === srv ? "current" : ""
+                }`}
                 key={srv}
               >
                 <div className="xb-item--icon">
-                  <img src={service.sIcon} alt="" />
+                  <img
+                    src={service.sIcon}
+                    alt={service.title}
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      objectFit: "contain",
+                    }}
+                    onError={(e) => {
+                      console.log("Image failed to load:", service.sIcon);
+                      e.target.style.display = "none";
+                    }}
+                    onLoad={() => {
+                      console.log("Image loaded successfully:", service.sIcon);
+                    }}
+                  />
                 </div>
                 <h3 className="xb-item--title">{service.title}</h3>
-                <Link onClick={ClickHandler} to={`/service-single/${service.slug}`} className="xb-item--arrow">
+                <Link
+                  onClick={ClickHandler}
+                  to={`/service-single/${service.slug}`}
+                  className="xb-item--arrow"
+                >
                   <svg
                     width="12"
                     height="12"
@@ -96,9 +137,24 @@ const ServiceSection = () => {
         <div className="service-content-image">
           {Services.slice(6, 10).map((service, srv) => (
             <div
-              className={`xb-item--img ${activeIndex === srv ? 'active' : ''}`}
+              className={`xb-item--img ${activeIndex === srv ? "active" : ""}`}
               key={srv}
-              style={{ backgroundImage: `url(${service.sImg})` }}
+              style={{
+                backgroundImage: `linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%), url(${serviceImages[srv]})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                opacity: activeIndex === srv ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out",
+                position: "absolute",
+                top: 0,
+                right: "30px",
+                width: "43%",
+                height: "calc(100% - 60px)",
+                bottom: 0,
+                margin: "auto",
+                borderRadius: "10px",
+              }}
             ></div>
           ))}
         </div>

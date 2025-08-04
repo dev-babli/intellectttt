@@ -7,10 +7,10 @@ import icon6 from "../images/icon/6.png";
 // import icon7 from "../images/icon/7.png";
 // import icon6 from "../images/icon/line-chart.gif";
 
-import sicon1 from "../images/icon/ser-icon01.svg";
-import sicon2 from "../images/icon/ser-icon02.svg";
-import sicon3 from "../images/icon/ser-icon03.svg";
-import sicon4 from "../images/icon/ser-icon04.svg";
+import sicon1 from "../images/icons/genai.png";
+import sicon2 from "../images/icons/Cloud.png";
+import sicon3 from "../images/icons/sap.png";
+import sicon4 from "../images/icons/analytics.png";
 
 import sdicon1 from "../images/icons/genai.png";
 import sdicon2 from "../images/icons/Cloud.png";
@@ -47,7 +47,7 @@ const Services = [
     id: "1",
     sImg: icon1,
     title: "Agentic AI and AI Agents",
-    slug: "/service/ai-and-gen-ai/llm",
+    slug: "/service/ai-and-gen-ai/agents",
     thumb1: "Strategy",
     thumb2: "Consultation",
     description: "Building intelligent, autonomous AI-driven agents",
@@ -56,7 +56,7 @@ const Services = [
     id: "2",
     sImg: icon2,
     title: "AI advisroy and responsible AI",
-    slug: "/service/ai-and-gen-ai/agents",
+    slug: "/service/ai-and-gen-ai/responsible",
     thumb1: "Management",
     thumb2: "Migration",
     description: "Strategic AI guidance with a focus on ethics",
@@ -65,7 +65,7 @@ const Services = [
     id: "3",
     sImg: icon3,
     title: "AI Automation",
-    slug: "/service/ai-and-gen-ai/nlp",
+    slug: "/service/ai-and-gen-ai/automation",
     thumb1: "Landing Page",
     thumb2: "Plugins",
     description: "Streamlining workflows using smart AI automation.",
@@ -74,7 +74,7 @@ const Services = [
     id: "4",
     sImg: icon4,
     title: "Gen AI & LLM Integration",
-    slug: "/service/ai-and-gen-ai/mlops",
+    slug: "/service/ai-and-gen-ai/llm",
     thumb1: "Consultation",
     thumb2: "Solutions",
     description: "Integrating GenAI and LLMs into business systems.",
@@ -83,7 +83,7 @@ const Services = [
     id: "5",
     sImg: icon5,
     title: "ML Enginerring & ML Ops",
-    slug: "/service/ai-and-gen-ai/automation",
+    slug: "/service/ai-and-gen-ai/mlops",
     thumb1: "Website",
     thumb2: "Mobile App",
     description: "End-to-end machine learning engineering and ops",
@@ -94,36 +94,36 @@ const Services = [
     id: "6",
     sImg: icon6,
     title: "NLP & Computer Vision",
-    slug: "/service/ai-and-gen-ai/responsible",
+    slug: "/service/ai-and-gen-ai/nlp",
     description: "AI solutions in language processing and vision.",
   },
   {
     id: "7",
     sImg: simg1,
     sIcon: sicon1,
-    title: "IT Management",
-    slug: "it-management",
+    title: "AI & Gen AI",
+    slug: "/service/ai-and-gen-ai",
   },
   {
     id: "8",
     sImg: simg2,
     sIcon: sicon2,
-    title: "Data Tracking & Security",
-    slug: "data-tracking-security",
+    title: "Cloud & Application ",
+    slug: "/service/cloud-and-application-services",
   },
   {
     id: "9",
     sImg: simg3,
     sIcon: sicon3,
-    title: "Custom CRM Services",
-    slug: "custom-crm-services",
+    title: "SAP",
+    slug: "/service/sap-services",
   },
   {
     id: "10",
     sImg: simg4,
     sIcon: sicon4,
-    title: "Website Development",
-    slug: "website-development",
+    title: "Data & Analytics",
+    slug: "/service/data-and-analytics",
   },
 
   // 📊 Data & AI Services

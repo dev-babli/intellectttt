@@ -12,7 +12,7 @@ import FeatureSection2 from "../../components/Help-Desk-Components/FeatureSectio
 import Hero from "../../components/hero/hero";
 import FeatureSection from "../../components/It-Services-Components/FeatureSection";
 import About from "../../components/It-Services-Components/about/about";
-import ServiceSection from "../../components/It-Services-Components/ServiceSection/ServiceSection";
+// import ServiceSection from "../../components/It-Services-Components/ServiceSection/ServiceSection";
 import BrandSection from "../../components/It-Services-Components/BrandSection/BrandSection";
 import FunFactSection from "../../components/It-Services-Components/FunFact/FunFact";
 
@@ -44,7 +44,7 @@ const AboutUsPage = (props) => {
           <FeatureSection />
           <About />
         </div>
-        <ServiceSection />
+        {/* <ServiceSection /> */}
 
         <FunFactSection />
 
