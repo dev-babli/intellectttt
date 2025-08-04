@@ -19,85 +19,35 @@ gsap.registerPlugin(ScrollTrigger);
 const industryData = [
   {
     id: 1,
-    title: "SaaS",
-    description:
-      "Innovative software-as-a-service solutions for modern businesses",
-    icon: sIcon1,
-    color: "#3b82f6",
-    route: "/service/cloud-and-application-services",
+    title: "Healthcare & Life Sciences",
+    description: "Advanced healthcare technology solutions and life sciences innovation",
+    icon: sIcon9,
+    color: "#dc2626",
+    route: "/industries/healthcare-and-life-sciences",
   },
   {
     id: 2,
-    title: "Lawyers",
-    description:
-      "Legal technology solutions for law firms and legal professionals",
-    icon: sIcon2,
-    color: "#10b981",
-    route: "/service/digital-transformation",
+    title: "Manufacturing & Automotive",
+    description: "Manufacturing technology and automotive industry solutions",
+    icon: sIcon10,
+    color: "#1d4ed8",
+    route: "/industries/manufacturing-and-automotive",
   },
   {
     id: 3,
-    title: "Real Estate",
-    description: "Digital transformation solutions for real estate industry",
-    icon: sIcon3,
-    color: "#f59e0b",
-    route: "/service/digital-transformation",
-  },
-  {
-    id: 4,
-    title: "Insurance",
-    description: "Advanced technology solutions for insurance companies",
-    icon: sIcon4,
-    color: "#8b5cf6",
-    route: "/service/digital-transformation",
-  },
-  {
-    id: 5,
-    title: "Crypto",
-    description: "Blockchain and cryptocurrency technology solutions",
-    icon: sIcon5,
-    color: "#ef4444",
-    route: "/service/ai-and-gen-ai",
-  },
-  {
-    id: 6,
-    title: "Private Equity",
-    description: "Technology solutions for private equity firms",
-    icon: sIcon6,
-    color: "#06b6d4",
-    route: "/service/data-and-analytics",
-  },
-  {
-    id: 7,
-    title: "Education",
-    description: "EdTech solutions for educational institutions",
-    icon: sIcon7,
-    color: "#84cc16",
-    route: "/service/ai-and-gen-ai",
-  },
-  {
-    id: 8,
-    title: "Finance",
+    title: "Banking & Financial Services",
     description: "Financial technology and digital banking solutions",
     icon: sIcon8,
-    color: "#f97316",
+    color: "#b91c1c",
     route: "/industries/banking-and-financial-services",
   },
   {
-    id: 9,
-    title: "Healthcare",
-    description: "Healthcare technology and digital health solutions",
-    icon: sIcon9,
-    color: "#ec4899",
-    route: "/industries/helthcare-and-life-sciences",
-  },
-  {
-    id: 10,
-    title: "Automotive",
-    description: "Automotive technology and connected vehicle solutions",
-    icon: sIcon10,
-    color: "#6366f1",
-    route: "/industries/menufacturing-and-automotive",
+    id: 4,
+    title: "Aerospace & Defense",
+    description: "Aerospace technology and defense industry solutions",
+    icon: sIcon1,
+    color: "#2563eb",
+    route: "/industries/aerospace-and-defense",
   },
 ];
 
@@ -225,7 +175,7 @@ const FeatureCards = () => {
               letterSpacing: "-0.025em",
             }}
           >
-            Industries We Work
+            Industries 
           </Typography>
           <Typography
             variant="h5"
@@ -246,7 +196,7 @@ const FeatureCards = () => {
         {/* Industry Cards Grid */}
         <Grid container spacing={4}>
           {industryData.map((industry, index) => (
-            <Grid item xs={12} sm={6} lg={4} key={industry.id}>
+            <Grid item xs={12} sm={6} md={3} key={industry.id}>
               <Paper
                 ref={(el) => (cardsRef.current[index] = el)}
                 elevation={0}

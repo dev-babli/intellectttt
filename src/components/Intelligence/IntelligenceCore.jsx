@@ -11,23 +11,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Enhanced modern color palette
 const BRAND_COLORS = {
-  primary: "#2563eb", // Modern blue
-  secondary: "#dc2626", // Red
-  accent: "#f59e0b", // Amber
-  success: "#10b981", // Emerald
-  purple: "#8b5cf6", // Violet
-  indigo: "#6366f1", // Indigo
+  primary: "#1e40af", // Deeper blue
+  secondary: "#be123c", // Deeper red
+  blueLight: "#3b82f6", // Lighter blue
+  blueDark: "#1e3a8a", // Darker blue
+  redLight: "#e11d48", // Lighter red
+  redDark: "#9f1239", // Darker red
   white: "#ffffff",
   lightGray: "#f8fafc",
-  darkGray: "#1e293b",
-  slate: "#475569",
+  darkGray: "#0f172a",
+  slate: "#334155",
   gradient: {
-    primary: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
-    secondary: "linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)",
-    accent: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-    success: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-    purple: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-    indigo: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
+    primary: "linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)",
+    secondary: "linear-gradient(135deg, #be123c 0%, #9f1239 100%)",
+    blueLight: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
+    redLight: "linear-gradient(135deg, #e11d48 0%, #be123c 100%)",
   },
 };
 
@@ -61,9 +59,9 @@ const features = [
     icon: Users,
     position: { top: "30%", left: "5%", transform: "translateY(-50%)" },
     delay: 200,
-    color: BRAND_COLORS.gradient.success,
-    bgColor: "#d1fae5",
-    iconColor: "#10b981",
+    color: BRAND_COLORS.gradient.blueLight,
+    bgColor: "#dbeafe",
+    iconColor: "#3b82f6",
   },
   {
     id: "domain-expertise",
@@ -72,9 +70,9 @@ const features = [
     icon: Brain,
     position: { top: "30%", right: "5%", transform: "translateY(-50%)" },
     delay: 300,
-    color: BRAND_COLORS.gradient.purple,
-    bgColor: "#ede9fe",
-    iconColor: "#8b5cf6",
+    color: BRAND_COLORS.gradient.redLight,
+    bgColor: "#fee2e2",
+    iconColor: "#ef4444",
   },
   {
     id: "operating-models",
@@ -83,9 +81,9 @@ const features = [
     icon: TrendingUp,
     position: { bottom: "10%", left: "20%" },
     delay: 400,
-    color: BRAND_COLORS.gradient.accent,
-    bgColor: "#fef3c7",
-    iconColor: "#f59e0b",
+    color: BRAND_COLORS.gradient.primary,
+    bgColor: "#dbeafe",
+    iconColor: "#2563eb",
   },
   {
     id: "global-presence",
@@ -95,9 +93,9 @@ const features = [
     icon: Globe,
     position: { bottom: "10%", right: "20%" },
     delay: 500,
-    color: BRAND_COLORS.gradient.indigo,
-    bgColor: "#e0e7ff",
-    iconColor: "#6366f1",
+    color: BRAND_COLORS.gradient.secondary,
+    bgColor: "#fee2e2",
+    iconColor: "#dc2626",
   },
 ];
 
@@ -145,7 +143,7 @@ export default function IntelligenceCore() {
         py: 12,
         px: 3,
         borderRadius: 4,
-        boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+        boxShadow: "0 25px 50px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1)",
       }}
     >
       {/* Enhanced Background Effects */}
@@ -154,13 +152,13 @@ export default function IntelligenceCore() {
           position: "absolute",
           top: "50%",
           left: "50%",
-          width: 1000,
-          height: 1000,
+          width: 1200,
+          height: 1200,
           transform: "translate(-50%, -50%)",
           borderRadius: "50%",
-          background: `radial-gradient(circle, ${BRAND_COLORS.primary}15, ${BRAND_COLORS.secondary}10, transparent)`,
+          background: `radial-gradient(circle, ${BRAND_COLORS.primary}20, ${BRAND_COLORS.secondary}15, transparent 70%)`,
           zIndex: 0,
-          filter: "blur(80px)",
+          filter: "blur(100px)",
         }}
       />
 
@@ -170,15 +168,15 @@ export default function IntelligenceCore() {
           key={i}
           sx={{
             position: "absolute",
-            width: Math.random() * 4 + 2,
-            height: Math.random() * 4 + 2,
+            width: Math.random() * 6 + 3,
+            height: Math.random() * 6 + 3,
             background: [
               BRAND_COLORS.primary,
               BRAND_COLORS.secondary,
-              BRAND_COLORS.accent,
+              BRAND_COLORS.blueLight,
             ][i % 3],
             borderRadius: "50%",
-            opacity: 0.3,
+            opacity: 0.4,
             animation: `float ${Math.random() * 10 + 10}s infinite linear`,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -198,8 +196,8 @@ export default function IntelligenceCore() {
           sx={{
             color: BRAND_COLORS.darkGray,
             mb: 2,
-            fontSize: { xs: "2.5rem", md: "3.5rem" },
-            lineHeight: 1.2,
+            fontSize: { xs: "2.5rem", md: "4rem" },
+            lineHeight: 1.1,
           }}
         >
           The{" "}
@@ -257,16 +255,16 @@ export default function IntelligenceCore() {
                 position: "absolute",
                 top: "50%",
                 left: "50%",
-                width: 180,
-                height: 180,
+                width: 200,
+                height: 200,
                 transform: "translate(-50%, -50%)",
                 borderRadius: "50%",
                 background: BRAND_COLORS.white,
-                border: `10px solid ${BRAND_COLORS.primary}`,
+                border: `12px solid ${BRAND_COLORS.primary}`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: `0 20px 60px ${BRAND_COLORS.primary}30, inset 0 4px 20px rgba(255,255,255,0.3)`,
+                boxShadow: `0 25px 80px ${BRAND_COLORS.primary}40, inset 0 6px 25px rgba(255,255,255,0.4)`,
                 zIndex: 5,
               }}
             >
@@ -311,16 +309,16 @@ export default function IntelligenceCore() {
                       position: "absolute",
                       top: -8,
                       left: "50%",
-                      width: 14,
-                      height: 14,
+                      width: 16,
+                      height: 16,
                       background: [
                         BRAND_COLORS.gradient.primary,
                         BRAND_COLORS.gradient.secondary,
-                        BRAND_COLORS.gradient.accent,
-                        BRAND_COLORS.gradient.success,
+                        BRAND_COLORS.gradient.blueLight,
+                        BRAND_COLORS.gradient.redLight,
                       ][i],
                       borderRadius: "50%",
-                      boxShadow: `0 0 15px ${BRAND_COLORS.primary}50`,
+                      boxShadow: `0 0 20px ${BRAND_COLORS.primary}60`,
                       transform: `translateX(-50%) rotate(${
                         j * 90
                       }deg) translateY(-${radius}px)`,
@@ -343,7 +341,7 @@ export default function IntelligenceCore() {
                   height: size,
                   marginTop: -size / 2,
                   marginLeft: -size / 2,
-                  border: `2px solid ${BRAND_COLORS.primary}15`,
+                  border: `3px solid ${BRAND_COLORS.primary}20`,
                   borderRadius: "50%",
                   zIndex: 3,
                 }}
@@ -358,14 +356,14 @@ export default function IntelligenceCore() {
                   position: "absolute",
                   width: 3,
                   height: 120,
-                  background: `linear-gradient(to bottom, ${BRAND_COLORS.primary}60, transparent)`,
+                  background: `linear-gradient(to bottom, ${BRAND_COLORS.primary}70, transparent)`,
                   top: "50%",
                   left: "50%",
                   transform: `translate(-50%, -50%) rotate(${
                     i * 30
-                  }deg) translateY(-120px)`,
+                  }deg) translateY(-140px)`,
                   transformOrigin: "bottom center",
-                  borderRadius: "2px",
+                  borderRadius: "3px",
                 }}
               />
             ))}
@@ -395,13 +393,13 @@ export default function IntelligenceCore() {
                     p: 3,
                     borderRadius: 4,
                     background: feature.color,
-                    border: `2px solid ${BRAND_COLORS.white}40`,
-                    boxShadow: `0 8px 32px ${feature.iconColor}30`,
+                    border: `3px solid ${BRAND_COLORS.white}50`,
+                    boxShadow: `0 12px 40px ${feature.iconColor}40, 0 4px 12px rgba(0,0,0,0.1)`,
                     transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                    backdropFilter: "blur(10px)",
+                    backdropFilter: "blur(15px)",
                     "&:hover": {
-                      transform: "scale(1.08) translateY(-8px)",
-                      boxShadow: `0 16px 48px ${feature.iconColor}40`,
+                      transform: "scale(1.1) translateY(-12px)",
+                      boxShadow: `0 20px 60px ${feature.iconColor}50, 0 8px 20px rgba(0,0,0,0.15)`,
                     },
                   }}
                 >
@@ -422,16 +420,16 @@ export default function IntelligenceCore() {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        boxShadow: `0 4px 16px ${feature.iconColor}20`,
+                        boxShadow: `0 6px 20px ${feature.iconColor}30`,
                         position: "relative",
                         "&::before": {
                           content: '""',
                           position: "absolute",
-                          inset: -2,
-                          borderRadius: 3,
+                          inset: -3,
+                          borderRadius: 4,
                           background: feature.color,
                           zIndex: -1,
-                          opacity: 0.3,
+                          opacity: 0.4,
                         },
                       }}
                     >
@@ -486,12 +484,12 @@ export default function IntelligenceCore() {
                       p: 3,
                       borderRadius: 4,
                       background: feature.color,
-                      boxShadow: `0 8px 32px ${feature.iconColor}30`,
-                      transition: "all 0.3s",
-                      "&:hover": {
-                        transform: "scale(1.02)",
-                        boxShadow: `0 12px 40px ${feature.iconColor}40`,
-                      },
+                                          boxShadow: `0 12px 40px ${feature.iconColor}40, 0 4px 12px rgba(0,0,0,0.1)`,
+                    transition: "all 0.3s",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      boxShadow: `0 16px 50px ${feature.iconColor}50, 0 6px 16px rgba(0,0,0,0.15)`,
+                    },
                     }}
                   >
                     <Box
@@ -506,7 +504,7 @@ export default function IntelligenceCore() {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          boxShadow: `0 4px 16px ${feature.iconColor}20`,
+                          boxShadow: `0 6px 20px ${feature.iconColor}30`,
                         }}
                       >
                         <Icon color={feature.iconColor} size={28} />
@@ -560,13 +558,13 @@ export default function IntelligenceCore() {
           {
             number: "250+",
             label: "Architects",
-            gradient: BRAND_COLORS.gradient.accent,
+            gradient: BRAND_COLORS.gradient.blueLight,
             icon: "🏗️",
           },
           {
             number: "15",
             label: "Global Centers",
-            gradient: BRAND_COLORS.gradient.success,
+            gradient: BRAND_COLORS.gradient.redLight,
             icon: "🌍",
           },
         ].map((stat, idx) => (
@@ -582,7 +580,7 @@ export default function IntelligenceCore() {
                   borderRadius: 3,
                   background: stat.gradient,
                   textAlign: "center",
-                  border: `2px solid ${BRAND_COLORS.white}30`,
+                  border: `3px solid ${BRAND_COLORS.white}40`,
                   transition: "all 0.3s",
                   position: "relative",
                   overflow: "hidden",
@@ -594,13 +592,13 @@ export default function IntelligenceCore() {
                     right: 0,
                     bottom: 0,
                     background:
-                      "linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent)",
+                      "linear-gradient(45deg, transparent, rgba(255,255,255,0.15), transparent)",
                     transform: "translateX(-100%)",
                     transition: "transform 0.6s",
                   },
                   "&:hover": {
-                    transform: "scale(1.05) translateY(-4px)",
-                    boxShadow: `0 12px 40px ${BRAND_COLORS.primary}40`,
+                    transform: "scale(1.08) translateY(-6px)",
+                    boxShadow: `0 16px 50px ${BRAND_COLORS.primary}50`,
                     "&::before": {
                       transform: "translateX(100%)",
                     },

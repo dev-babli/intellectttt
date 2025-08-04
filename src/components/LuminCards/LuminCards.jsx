@@ -6,6 +6,28 @@ const LuminCards = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentSlideIndex2, setCurrentSlideIndex2] = useState(0);
 
+  // Company website URLs
+  const luminInnovationsUrl = "https://lumin-innovations.com";
+  const luminIncUrl = "https://lumininc.com";
+
+  // Handle logo clicks
+  const handleLuminInnovationsClick = () => {
+    window.open(luminInnovationsUrl, "_blank");
+  };
+
+  const handleLuminIncClick = () => {
+    window.open(luminIncUrl, "_blank");
+  };
+
+  // Handle carousel image clicks
+  const handleCarouselImageClick = (company) => {
+    if (company === "innovations") {
+      window.open(luminInnovationsUrl, "_blank");
+    } else if (company === "inc") {
+      window.open(luminIncUrl, "_blank");
+    }
+  };
+
   // All images from Lumin wire folder
   const luminInnovationsSlides = [
     {
@@ -194,7 +216,9 @@ const LuminCards = () => {
                       <img
                         src="/images/lumin-innovations-horizontal.png"
                         alt="Lumin Innovations"
-                        className="logo-image"
+                        className="logo-image clickable-logo"
+                        onClick={handleLuminInnovationsClick}
+                        title="Visit Lumin Innovations Website"
                       />
                     </div>
                   </div>
@@ -214,10 +238,12 @@ const LuminCards = () => {
                 <div className="carousel-container">
                   <div className="carousel-slide">
                     <div
-                      className="carousel-background"
+                      className="carousel-background clickable-carousel"
                       style={{
                         backgroundImage: `url(${luminInnovationsSlides[currentSlideIndex].image})`,
                       }}
+                      onClick={() => handleCarouselImageClick("innovations")}
+                      title="Visit Lumin Innovations Website"
                     >
                       <div className="carousel-overlay">
                         <div className="carousel-content">
@@ -288,7 +314,9 @@ const LuminCards = () => {
                       <img
                         src="/images/lumin-logo.png"
                         alt="Lumin Inc"
-                        className="logo-image"
+                        className="logo-image clickable-logo"
+                        onClick={handleLuminIncClick}
+                        title="Visit Lumin Inc Website"
                       />
                     </div>
                   </div>
@@ -308,10 +336,12 @@ const LuminCards = () => {
                 <div className="carousel-container">
                   <div className="carousel-slide">
                     <div
-                      className="carousel-background"
+                      className="carousel-background clickable-carousel"
                       style={{
                         backgroundImage: `url(${luminIncSlides[currentSlideIndex2].image})`,
                       }}
+                      onClick={() => handleCarouselImageClick("inc")}
+                      title="Visit Lumin Inc Website"
                     >
                       <div className="carousel-overlay">
                         <div className="carousel-content">
