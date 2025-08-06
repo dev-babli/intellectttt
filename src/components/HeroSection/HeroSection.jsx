@@ -379,18 +379,6 @@ const HeroSection = () => {
             }}
           />
         </Box>
-
-        {/* Slide Counter */}
-        <Typography
-          sx={{
-            color: "#ffffff",
-            fontSize: "0.875rem",
-            fontWeight: 500,
-            fontFamily: "Inter, sans-serif",
-          }}
-        >
-          {currentSlide + 1}/{slides.length}
-        </Typography>
       </Box>
     </Box>
   );
