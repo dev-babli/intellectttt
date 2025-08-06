@@ -20,7 +20,6 @@ import {
   Phone,
   Email,
 } from "@mui/icons-material";
-import { LocationOn, People, Business, TrendingUp, Public, Phone, Email } from "@mui/icons-material";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
