@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import sIcon1 from "../../../images/icon/int-icon.svg";
 import sIcon2 from "../../../images/icon/arrow-black.png";
@@ -22,10 +22,19 @@ import Icon17 from "../../../images/icon/Zimmer-Biomet.webp";
 
 const IntegrationSection = (props) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const ClickHandler = () => {
     window.scrollTo(10, 0);
   };
+
+  // Auto-advance testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Partner companies data - only 9 for the main grid
   const mainPartners = [
@@ -69,6 +78,7 @@ const IntegrationSection = (props) => {
       text: "Intellectt has been a pleasure to work with. They quickly understood our business needs and embedded talented technologists into our engineering teams to help build our modern data platform. Their thoroughness, collaborative working style, and flexibility were greatly appreciated throughout the duration of this engagement and we look forward to opportunities for continued partnership.",
       author: "Sarah Johnson",
       title: "Chief Technology Officer, Johnson & Johnson",
+      rating: 5,
     },
     {
       company: "Moderna",
@@ -76,6 +86,7 @@ const IntegrationSection = (props) => {
       text: "The team at Intellectt demonstrated exceptional technical expertise and deep understanding of our industry challenges. Their innovative solutions and commitment to excellence have been instrumental in our digital transformation journey.",
       author: "Michael Chen",
       title: "VP of Engineering, Moderna",
+      rating: 5,
     },
     {
       company: "Deloitte",
@@ -83,6 +94,7 @@ const IntegrationSection = (props) => {
       text: "Intellectt's strategic approach and technical capabilities have consistently delivered outstanding results for our organization. Their collaborative partnership model and innovative solutions have been key to our success.",
       author: "Emily Rodriguez",
       title: "Senior Director, Deloitte",
+      rating: 5,
     },
     {
       company: "IBM",
@@ -90,8 +102,24 @@ const IntegrationSection = (props) => {
       text: "Working with Intellectt has been transformative for our technology initiatives. Their expertise in AI and cloud solutions has accelerated our digital transformation and positioned us for future growth.",
       author: "David Thompson",
       title: "CTO, IBM",
+      rating: 5,
     },
   ];
+
+  const handleTestimonialChange = (index) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentTestimonial(index);
+    setTimeout(() => setIsAnimating(false), 300);
+  };
+
+  const renderStars = (rating) => {
+    return Array.from({ length: rating }, (_, i) => (
+      <span key={i} style={{ color: "#fbbf24", fontSize: "1.2rem" }}>
+        ★
+      </span>
+    ));
+  };
 
   return (
     <section
@@ -99,231 +127,386 @@ const IntegrationSection = (props) => {
       className="integration-section"
       style={{
         backgroundColor: "#ffffff",
-        padding: "80px 0 60px 0",
-        fontFamily:
-          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        padding: "100px 0 80px 0",
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+
+
       <div
         className="container"
-        style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px" }}
+        style={{ 
+          maxWidth: "1400px", 
+          margin: "0 auto", 
+          padding: "0 40px",
+          position: "relative",
+          zIndex: 1,
+        }}
       >
         {/* Header Section */}
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "60px",
-            flexWrap: "wrap",
-            gap: "30px",
+            textAlign: "center",
+            marginBottom: "80px",
           }}
         >
-          <div style={{ flex: "1", maxWidth: "600px" }}>
-            <h2
-              style={{
-                fontSize: "2.5rem",
-                fontWeight: "700",
-                color: "#1a1a1a",
-                margin: "0",
-                lineHeight: "1.1",
-                whiteSpace: "nowrap",
-                textAlign: "left",
-              }}
-            >
-              400+ Leading Companies Partner with Intellectt
-            </h2>
-          </div>
+          <h2
+            style={{
+              fontSize: "3.5rem",
+              fontWeight: "800",
+              color: "#000000",
+              margin: "0 0 20px 0",
+              lineHeight: "1.1",
+            }}
+          >
+            400+ Leading Companies
+          </h2>
+          <p
+            style={{
+              fontSize: "1.3rem",
+              color: "#64748b",
+              fontWeight: "500",
+              margin: "0",
+              maxWidth: "600px",
+              margin: "0 auto",
+            }}
+          >
+            Trust Intellectt for their digital transformation journey
+          </p>
         </div>
 
-        {/* Main Content Grid */}
+        {/* Main Slide Show Section */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "60px",
-            alignItems: "start",
-            marginBottom: "60px",
+            gap: "80px",
+            alignItems: "center",
+            marginBottom: "80px",
+            minHeight: "600px",
           }}
         >
-          {/* Partner Logos Grid - 9 logos in 3x3 */}
-          <div>
-            <h3
-              style={{
-                fontSize: "1.5rem",
-                fontWeight: "600",
-                color: "#1a1a1a",
-                margin: "0 0 40px 0",
-                textAlign: "left",
-              }}
-            >
-              Featured Partners
-            </h3>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "25px",
-              }}
-            >
-              {mainPartners.map((partner, index) => (
-                <div
-                  key={index}
-                  style={{
-                    backgroundColor: "#f8fafc",
-                    borderRadius: "16px",
-                    padding: "30px 20px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    minHeight: "140px",
-                    boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
-                    transition: "all 0.4s ease",
-                    cursor: "pointer",
-                    border: "1px solid #e5e7eb",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.transform = "translateY(-8px)";
-                    e.target.style.boxShadow = "0 12px 35px rgba(0,0,0,0.15)";
-                    e.target.style.borderColor = "#0199d3";
-                    e.target.style.backgroundColor = "#ffffff";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow = "0 6px 20px rgba(0,0,0,0.08)";
-                    e.target.style.borderColor = "#e5e7eb";
-                    e.target.style.backgroundColor = "#f8fafc";
-                  }}
-                >
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    style={{
-                      maxWidth: "100%",
-                      maxHeight: "70px",
-                      objectFit: "contain",
-                      filter: "none",
-                      opacity: "1",
-                      transition: "all 0.4s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.transform = "scale(1.15)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.transform = "scale(1)";
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Testimonial Section - Bigger and Better */}
+          {/* Left Side - Current Company Logo */}
           <div
             style={{
-              backgroundColor: "#ffffff",
-              borderRadius: "24px",
-              padding: "50px",
-              boxShadow: "0 12px 40px rgba(0,0,0,0.1)",
               position: "relative",
-              border: "1px solid #e5e7eb",
-              minHeight: "520px",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-between",
+              alignItems: "center",
+              justifyContent: "center",
+              minHeight: "500px",
             }}
           >
-            {/* Company Logo */}
-            <div style={{ marginBottom: "30px", textAlign: "left" }}>
+            <h3
+              style={{
+                fontSize: "2rem",
+                fontWeight: "700",
+                color: "#1e293b",
+                margin: "0 0 40px 0",
+                textAlign: "center",
+              }}
+            >
+              Featured Partner
+            </h3>
+            
+            {/* Current Company Logo - Large and Centered */}
+            <div
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                backdropFilter: "blur(20px)",
+                borderRadius: "30px",
+                padding: "60px 40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                minHeight: "300px",
+                width: "100%",
+                maxWidth: "400px",
+                boxShadow: "0 20px 80px rgba(0,0,0,0.15)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                position: "relative",
+                overflow: "hidden",
+                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                opacity: isAnimating ? 0.7 : 1,
+              }}
+            >
               <img
                 src={testimonials[currentTestimonial].companyLogo}
                 alt={testimonials[currentTestimonial].company}
                 style={{
-                  height: "60px",
+                  maxWidth: "100%",
+                  maxHeight: "120px",
                   objectFit: "contain",
                   filter: "none",
                   opacity: "1",
+                  transition: "all 0.4s ease",
                 }}
               />
             </div>
 
-            {/* Testimonial Text - Bigger */}
-            <div style={{ marginBottom: "30px", flex: "1" }}>
-              <p
+            {/* Company Name */}
+            <div
+              style={{
+                marginTop: "30px",
+                textAlign: "center",
+                opacity: isAnimating ? 0.7 : 1,
+                transition: "opacity 0.3s ease",
+              }}
+            >
+              <h4
                 style={{
-                  fontSize: "1.3rem",
-                  lineHeight: "1.8",
-                  color: "#374151",
-                  margin: "0",
-                  fontStyle: "italic",
-                  fontWeight: "400",
-                  textAlign: "left",
-                }}
-              >
-                "{testimonials[currentTestimonial].text}"
-              </p>
-            </div>
-
-            {/* Author Information */}
-            <div style={{ marginBottom: "30px", textAlign: "center" }}>
-              <p
-                style={{
-                  fontSize: "1.2rem",
+                  fontSize: "1.5rem",
                   fontWeight: "600",
-                  color: "#1a1a1a",
-                  margin: "0 0 8px 0",
+                  color: "#1e293b",
+                  margin: "0 0 10px 0",
                 }}
               >
-                {testimonials[currentTestimonial].author}
-              </p>
+                {testimonials[currentTestimonial].company}
+              </h4>
               <p
                 style={{
                   fontSize: "1rem",
-                  color: "#6b7280",
+                  color: "#64748b",
                   margin: "0",
                   fontWeight: "500",
                 }}
               >
-                {testimonials[currentTestimonial].title}
+                Industry Leader
               </p>
             </div>
 
-            {/* Pagination Dots */}
+            {/* Progress Indicator */}
             <div
               style={{
                 display: "flex",
-                gap: "10px",
+                gap: "8px",
+                marginTop: "40px",
                 justifyContent: "center",
               }}
             >
               {testimonials.map((_, index) => (
-                <button
+                <div
                   key={index}
-                  onClick={() => setCurrentTestimonial(index)}
                   style={{
-                    width: "10px",
-                    height: "10px",
+                    width: "8px",
+                    height: "8px",
                     borderRadius: "50%",
-                    border: "none",
-                    backgroundColor:
-                      index === currentTestimonial ? "#0199d3" : "#d1d5db",
-                    cursor: "pointer",
+                    backgroundColor: index === currentTestimonial ? "#0199d3" : "#cbd5e1",
                     transition: "all 0.3s ease",
+                    cursor: "pointer",
                   }}
+                  onClick={() => handleTestimonialChange(index)}
                   onMouseEnter={(e) => {
                     if (index !== currentTestimonial) {
-                      e.target.style.backgroundColor = "#9ca3af";
+                      e.target.style.backgroundColor = "#94a3b8";
+                      e.target.style.transform = "scale(1.2)";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (index !== currentTestimonial) {
-                      e.target.style.backgroundColor = "#d1d5db";
+                      e.target.style.backgroundColor = "#cbd5e1";
+                      e.target.style.transform = "scale(1)";
                     }
                   }}
                 />
               ))}
+            </div>
+          </div>
+
+          {/* Right Side - Testimonial Slide Show */}
+          <div
+            style={{
+              position: "relative",
+              minHeight: "500px",
+            }}
+          >
+            <div
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                backdropFilter: "blur(20px)",
+                borderRadius: "30px",
+                padding: "50px",
+                boxShadow: "0 20px 80px rgba(0,0,0,0.15)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
+                position: "relative",
+                overflow: "hidden",
+                minHeight: "500px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              {/* Company Logo */}
+              <div 
+                style={{ 
+                  marginBottom: "30px", 
+                  textAlign: "left",
+                  opacity: isAnimating ? 0.7 : 1,
+                  transition: "opacity 0.3s ease",
+                }}
+              >
+                <img
+                  src={testimonials[currentTestimonial].companyLogo}
+                  alt={testimonials[currentTestimonial].company}
+                  style={{
+                    height: "70px",
+                    objectFit: "contain",
+                    filter: "none",
+                    opacity: "1",
+                  }}
+                />
+              </div>
+
+              {/* Quote Icon */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "30px",
+                  right: "30px",
+                  fontSize: "4rem",
+                  color: "#e2e8f0",
+                  opacity: "0.5",
+                }}
+              >
+                "
+              </div>
+
+              {/* Testimonial Text */}
+              <div 
+                style={{ 
+                  marginBottom: "30px", 
+                  flex: "1",
+                  opacity: isAnimating ? 0.7 : 1,
+                  transition: "opacity 0.3s ease",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "1.4rem",
+                    lineHeight: "1.8",
+                    color: "#334155",
+                    margin: "0",
+                    fontStyle: "italic",
+                    fontWeight: "400",
+                    textAlign: "left",
+                  }}
+                >
+                  "{testimonials[currentTestimonial].text}"
+                </p>
+              </div>
+
+              {/* Rating Stars */}
+              <div 
+                style={{ 
+                  marginBottom: "20px",
+                  opacity: isAnimating ? 0.7 : 1,
+                  transition: "opacity 0.3s ease",
+                }}
+              >
+                {renderStars(testimonials[currentTestimonial].rating)}
+              </div>
+
+              {/* Author Information */}
+              <div 
+                style={{ 
+                  marginBottom: "30px", 
+                  textAlign: "left",
+                  opacity: isAnimating ? 0.7 : 1,
+                  transition: "opacity 0.3s ease",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "700",
+                    color: "#1e293b",
+                    margin: "0 0 8px 0",
+                  }}
+                >
+                  {testimonials[currentTestimonial].author}
+                </p>
+                <p
+                  style={{
+                    fontSize: "1rem",
+                    color: "#64748b",
+                    margin: "0",
+                    fontWeight: "500",
+                  }}
+                >
+                  {testimonials[currentTestimonial].title}
+                </p>
+              </div>
+
+              {/* Navigation Arrows */}
+              <div
+                style={{
+                  display: "flex",
+                  gap: "20px",
+                  justifyContent: "center",
+                  marginTop: "20px",
+                }}
+              >
+                <button
+                  onClick={() => handleTestimonialChange((currentTestimonial - 1 + testimonials.length) % testimonials.length)}
+                  style={{
+                    background: "rgba(255, 255, 255, 0.9)",
+                    border: "none",
+                    borderRadius: "50%",
+                    width: "50px",
+                    height: "50px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                    transition: "all 0.3s ease",
+                    fontSize: "1.5rem",
+                    color: "#64748b",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = "scale(1.1)";
+                    e.target.style.boxShadow = "0 8px 30px rgba(0,0,0,0.2)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = "scale(1)";
+                    e.target.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+                  }}
+                >
+                  ‹
+                </button>
+                <button
+                  onClick={() => handleTestimonialChange((currentTestimonial + 1) % testimonials.length)}
+                  style={{
+                    background: "rgba(255, 255, 255, 0.9)",
+                    border: "none",
+                    borderRadius: "50%",
+                    width: "50px",
+                    height: "50px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                    transition: "all 0.3s ease",
+                    fontSize: "1.5rem",
+                    color: "#64748b",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = "scale(1.1)";
+                    e.target.style.boxShadow = "0 8px 30px rgba(0,0,0,0.2)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = "scale(1)";
+                    e.target.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+                  }}
+                >
+                  ›
+                </button>
+              </div>
+
+
             </div>
           </div>
         </div>
@@ -332,14 +515,14 @@ const IntegrationSection = (props) => {
         <div
           style={{
             marginBottom: "60px",
-            textAlign: "left",
+            textAlign: "center",
           }}
         >
           <h3
             style={{
-              fontSize: "1.8rem",
-              fontWeight: "600",
-              color: "#1a1a1a",
+              fontSize: "2.2rem",
+              fontWeight: "700",
+              color: "#1e293b",
               margin: "0 0 20px 0",
             }}
           >
@@ -347,14 +530,13 @@ const IntegrationSection = (props) => {
           </h3>
           <p
             style={{
-              fontSize: "1.1rem",
-              color: "#6b7280",
+              fontSize: "1.2rem",
+              color: "#64748b",
               marginBottom: "50px",
               fontWeight: "500",
             }}
           >
-            Join hundreds of companies that trust Intellectt for their digital
-            transformation
+            Join hundreds of companies that trust Intellectt for their digital transformation
           </p>
           <div
             style={{
@@ -373,7 +555,7 @@ const IntegrationSection = (props) => {
                 src={partner.logo}
                 alt={partner.name}
                 style={{
-                  height: "40px",
+                  height: "45px",
                   objectFit: "contain",
                   filter: "none",
                   opacity: "1",
@@ -403,28 +585,29 @@ const IntegrationSection = (props) => {
             to="/partners"
             style={{
               display: "inline-block",
-              backgroundColor: "#0199d3",
+              background: "linear-gradient(135deg, #0199d3 0%, #1e40af 100%)",
               color: "#ffffff",
-              padding: "16px 32px",
-              borderRadius: "8px",
+              padding: "18px 40px",
+              borderRadius: "50px",
               textDecoration: "none",
-              fontSize: "1.1rem",
+              fontSize: "1.2rem",
               fontWeight: "600",
               transition: "all 0.3s ease",
-              border: "2px solid #0199d3",
+              border: "none",
+              boxShadow: "0 8px 30px rgba(1, 153, 211, 0.3)",
+              position: "relative",
+              overflow: "hidden",
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "#dc2626";
-              e.target.style.borderColor = "#dc2626";
-              e.target.style.transform = "translateY(-2px)";
+              e.target.style.transform = "translateY(-3px)";
+              e.target.style.boxShadow = "0 15px 40px rgba(1, 153, 211, 0.4)";
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "#0199d3";
-              e.target.style.borderColor = "#0199d3";
               e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "0 8px 30px rgba(1, 153, 211, 0.3)";
             }}
           >
-            Explore Partners
+            Explore All Partners
           </Link>
         </div>
       </div>
@@ -433,7 +616,7 @@ const IntegrationSection = (props) => {
       <style jsx>{`
         @media (max-width: 1024px) {
           .integration-section {
-            padding: 100px 0 80px 0;
+            padding: 80px 0 60px 0;
           }
 
           .container {
@@ -446,7 +629,7 @@ const IntegrationSection = (props) => {
 
           .main-content-grid {
             grid-template-columns: 1fr !important;
-            gap: 80px !important;
+            gap: 60px !important;
           }
 
           .partner-grid {
@@ -461,7 +644,7 @@ const IntegrationSection = (props) => {
 
         @media (max-width: 768px) {
           .integration-section {
-            padding: 80px 0 60px 0;
+            padding: 60px 0 40px 0;
           }
 
           .container {
@@ -507,3 +690,4 @@ const IntegrationSection = (props) => {
 };
 
 export default IntegrationSection;
+

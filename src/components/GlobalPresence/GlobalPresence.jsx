@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Box, Container, Typography, Grid, Button, Card, CardContent, Chip, Stack } from "@mui/material";
 import { motion } from "framer-motion";
-import { LocationOn, People, Business, TrendingUp, Globe, Phone, Email } from "@mui/icons-material";
+import { LocationOn, People, Business, TrendingUp, Public, Phone, Email } from "@mui/icons-material";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -144,7 +144,7 @@ const GlobalPresence = () => {
                 {/* Key Statistics */}
                 <Grid container spacing={4} justifyContent="center" sx={{ mt: 6 }}>
                   {[
-                    { number: "5", label: "Countries", icon: Globe },
+                    { number: "5", label: "Countries", icon: Public },
                     { number: "15+", label: "Offices", icon: Business },
                     { number: "1,800+", label: "Professionals", icon: People },
                     { number: "500+", label: "Projects", icon: TrendingUp },
