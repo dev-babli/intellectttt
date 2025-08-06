@@ -9,23 +9,47 @@ import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Enhanced modern color palette
+// Apple-inspired modern color palette with sophisticated gradients
 const BRAND_COLORS = {
-  primary: "#1e40af", // Deeper blue
-  secondary: "#be123c", // Deeper red
-  blueLight: "#3b82f6", // Lighter blue
-  blueDark: "#1e3a8a", // Darker blue
-  redLight: "#e11d48", // Lighter red
-  redDark: "#9f1239", // Darker red
-  white: "#ffffff",
-  lightGray: "#f8fafc",
-  darkGray: "#0f172a",
-  slate: "#334155",
+  primary: "#007AFF", // Apple Blue
+  secondary: "#FF3B30", // Apple Red
+  tertiary: "#FF3B30", // Red
+  accent: "#007AFF", // Blue
+  neutral: {
+    50: "#F9FAFB",
+    100: "#F3F4F6",
+    200: "#E5E7EB",
+    300: "#D1D5DB",
+    400: "#9CA3AF",
+    500: "#6B7280",
+    600: "#4B5563",
+    700: "#374151",
+    800: "#1F2937",
+    900: "#111827",
+  },
+  white: "#FFFFFF",
+  black: "#000000",
   gradient: {
-    primary: "linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)",
-    secondary: "linear-gradient(135deg, #be123c 0%, #9f1239 100%)",
-    blueLight: "linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",
-    redLight: "linear-gradient(135deg, #e11d48 0%, #be123c 100%)",
+    primary: "linear-gradient(135deg, #007AFF 0%, #0056CC 100%)", // Subtle blue
+    secondary: "linear-gradient(135deg, #FF3B30 0%, #CC2E24 100%)", // Subtle red
+    tertiary: "linear-gradient(135deg, #FF3B30 0%, #CC2E24 100%)", // Subtle red
+    accent: "linear-gradient(135deg, #007AFF 0%, #0056CC 100%)", // Subtle blue
+    glass:
+      "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)",
+    dark: "linear-gradient(135deg, #1F2937 0%, #374151 50%, #4B5563 100%)",
+    light: "linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 50%, #E5E7EB 100%)",
+  },
+  shadow: {
+    soft: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
+    medium: "0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06)",
+    large: "0 10px 25px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.1)",
+    xl: "0 20px 40px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.05)",
+    glow: {
+      primary: "0 0 10px rgba(0, 122, 255, 0.2)", // Reduced glow
+      secondary: "0 0 10px rgba(255, 59, 48, 0.2)", // Reduced glow
+      tertiary: "0 0 10px rgba(255, 59, 48, 0.2)", // Reduced glow
+      accent: "0 0 10px rgba(0, 122, 255, 0.2)", // Reduced glow
+    },
   },
 };
 
@@ -37,9 +61,10 @@ const features = [
     icon: Award,
     position: { top: "10%", left: "20%" },
     delay: 0,
-    color: BRAND_COLORS.gradient.primary,
-    bgColor: "#dbeafe",
-    iconColor: "#2563eb",
+    gradient: BRAND_COLORS.gradient.primary,
+    bgColor: "rgba(0, 122, 255, 0.1)",
+    iconColor: "#007AFF",
+    borderColor: "rgba(0, 122, 255, 0.2)",
   },
   {
     id: "customer-centricity",
@@ -48,9 +73,10 @@ const features = [
     icon: Target,
     position: { top: "10%", right: "20%" },
     delay: 100,
-    color: BRAND_COLORS.gradient.secondary,
-    bgColor: "#fee2e2",
-    iconColor: "#dc2626",
+    gradient: BRAND_COLORS.gradient.secondary,
+    bgColor: "rgba(255, 59, 48, 0.1)",
+    iconColor: "#FF3B30",
+    borderColor: "rgba(255, 59, 48, 0.2)",
   },
   {
     id: "technical-workforce",
@@ -59,9 +85,10 @@ const features = [
     icon: Users,
     position: { top: "30%", left: "5%", transform: "translateY(-50%)" },
     delay: 200,
-    color: BRAND_COLORS.gradient.blueLight,
-    bgColor: "#dbeafe",
-    iconColor: "#3b82f6",
+    gradient: BRAND_COLORS.gradient.secondary,
+    bgColor: "rgba(255, 59, 48, 0.1)",
+    iconColor: "#FF3B30",
+    borderColor: "rgba(255, 59, 48, 0.2)",
   },
   {
     id: "domain-expertise",
@@ -70,9 +97,10 @@ const features = [
     icon: Brain,
     position: { top: "30%", right: "5%", transform: "translateY(-50%)" },
     delay: 300,
-    color: BRAND_COLORS.gradient.redLight,
-    bgColor: "#fee2e2",
-    iconColor: "#ef4444",
+    gradient: BRAND_COLORS.gradient.primary,
+    bgColor: "rgba(0, 122, 255, 0.1)",
+    iconColor: "#007AFF",
+    borderColor: "rgba(0, 122, 255, 0.2)",
   },
   {
     id: "operating-models",
@@ -81,9 +109,10 @@ const features = [
     icon: TrendingUp,
     position: { bottom: "10%", left: "20%" },
     delay: 400,
-    color: BRAND_COLORS.gradient.primary,
-    bgColor: "#dbeafe",
-    iconColor: "#2563eb",
+    gradient: BRAND_COLORS.gradient.primary,
+    bgColor: "rgba(0, 122, 255, 0.1)",
+    iconColor: "#007AFF",
+    borderColor: "rgba(0, 122, 255, 0.2)",
   },
   {
     id: "global-presence",
@@ -93,9 +122,10 @@ const features = [
     icon: Globe,
     position: { bottom: "10%", right: "20%" },
     delay: 500,
-    color: BRAND_COLORS.gradient.secondary,
-    bgColor: "#fee2e2",
-    iconColor: "#dc2626",
+    gradient: BRAND_COLORS.gradient.secondary,
+    bgColor: "rgba(255, 59, 48, 0.1)",
+    iconColor: "#FF3B30",
+    borderColor: "rgba(255, 59, 48, 0.2)",
   },
 ];
 
@@ -108,19 +138,119 @@ export default function IntelligenceCore() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (containerRef.current) {
+        // Apple-style entrance animation
         gsap.fromTo(
           containerRef.current.querySelectorAll(".fade-in"),
-          { opacity: 0, y: 40 },
+          {
+            opacity: 0,
+            y: 60,
+            scale: 0.95,
+          },
           {
             opacity: 1,
             y: 0,
-            duration: 1,
-            stagger: 0.2,
+            scale: 1,
+            duration: 1.2,
+            stagger: 0.15,
+            ease: "power3.out",
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "top 80%",
+              start: "top 85%",
               toggleActions: "play none none reverse",
               onEnter: () => setIsVisible(true),
+            },
+          }
+        );
+
+        // Apple-style core animation
+        gsap.fromTo(
+          containerRef.current.querySelector(".core-logo"),
+          {
+            opacity: 0,
+            scale: 0.8,
+            rotation: -10,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 1.5,
+            ease: "back.out(1.7)",
+            delay: 0.3,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 85%",
+            },
+          }
+        );
+
+        // Apple-style orbiting dots animation
+        gsap.fromTo(
+          containerRef.current.querySelectorAll(".orbit-dot"),
+          {
+            opacity: 0,
+            scale: 0,
+            rotation: -180,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            rotation: 0,
+            duration: 1.2,
+            stagger: 0.1,
+            ease: "back.out(1.4)",
+            delay: 0.8,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 85%",
+            },
+          }
+        );
+
+        // Apple-style feature cards animation
+        gsap.fromTo(
+          containerRef.current.querySelectorAll(".feature-card"),
+          {
+            opacity: 0,
+            y: 40,
+            scale: 0.9,
+            rotationY: -15,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotationY: 0,
+            duration: 1.1,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 1.2,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 85%",
+            },
+          }
+        );
+
+        // Apple-style stats animation
+        gsap.fromTo(
+          containerRef.current.querySelectorAll(".stat-card"),
+          {
+            opacity: 0,
+            y: 30,
+            scale: 0.95,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1,
+            stagger: 0.15,
+            ease: "power3.out",
+            delay: 1.8,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 85%",
             },
           }
         );
@@ -139,11 +269,13 @@ export default function IntelligenceCore() {
         minHeight: "100vh",
         maxWidth: "1400px",
         margin: "0 auto",
-        background: `linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)`,
+        background: BRAND_COLORS.white, // Simple white background
         py: 12,
         px: 3,
-        borderRadius: 4,
-        boxShadow: "0 25px 50px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1)",
+        borderRadius: 0, // Remove border radius to merge with website
+        boxShadow: "none", // Remove shadow to merge with website
+        backdropFilter: "none", // Remove backdrop filter
+        border: "none", // Remove border
       }}
     >
       {/* Enhanced Background Effects */}
@@ -156,34 +288,41 @@ export default function IntelligenceCore() {
           height: 1200,
           transform: "translate(-50%, -50%)",
           borderRadius: "50%",
-          background: `radial-gradient(circle, ${BRAND_COLORS.primary}20, ${BRAND_COLORS.secondary}15, transparent 70%)`,
+          background: `radial-gradient(circle, ${BRAND_COLORS.primary}8, ${BRAND_COLORS.secondary}5, transparent 70%)`, // Reduced opacity
           zIndex: 0,
-          filter: "blur(100px)",
+          filter: "blur(120px)",
         }}
       />
 
       {/* Floating Particles */}
-      {[...Array(20)].map((_, i) => (
-        <Box
-          key={i}
-          sx={{
-            position: "absolute",
-            width: Math.random() * 6 + 3,
-            height: Math.random() * 6 + 3,
-            background: [
-              BRAND_COLORS.primary,
-              BRAND_COLORS.secondary,
-              BRAND_COLORS.blueLight,
-            ][i % 3],
-            borderRadius: "50%",
-            opacity: 0.4,
-            animation: `float ${Math.random() * 10 + 10}s infinite linear`,
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            zIndex: 1,
-          }}
-        />
-      ))}
+      {[...Array(15)].map(
+        (
+          _,
+          i // Reduced number of particles
+        ) => (
+          <Box
+            key={i}
+            sx={{
+              position: "absolute",
+              width: Math.random() * 6 + 3, // Smaller particles
+              height: Math.random() * 6 + 3, // Smaller particles
+              background: [
+                BRAND_COLORS.primary, // Blue
+                BRAND_COLORS.secondary, // Red
+                BRAND_COLORS.primary, // Blue
+                BRAND_COLORS.secondary, // Red
+              ][i % 4],
+              borderRadius: "50%",
+              opacity: 0.15, // Reduced opacity
+              animation: `float ${Math.random() * 15 + 15}s infinite linear`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              zIndex: 1,
+              filter: "blur(1px)",
+            }}
+          />
+        )
+      )}
 
       {/* Enhanced Heading */}
       <Box
@@ -194,10 +333,11 @@ export default function IntelligenceCore() {
           variant="h2"
           fontWeight={800}
           sx={{
-            color: BRAND_COLORS.darkGray,
+            color: BRAND_COLORS.neutral[900],
             mb: 2,
             fontSize: { xs: "2.5rem", md: "4rem" },
             lineHeight: 1.1,
+            letterSpacing: "-0.02em",
           }}
         >
           Why{" "}
@@ -208,10 +348,25 @@ export default function IntelligenceCore() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
+              fontWeight: 900,
             }}
           >
             Intellectt
           </Box>
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={{
+            color: BRAND_COLORS.neutral[600],
+            fontSize: { xs: "1.1rem", md: "1.25rem" },
+            fontWeight: 400,
+            maxWidth: "600px",
+            margin: "0 auto",
+            lineHeight: 1.6,
+          }}
+        >
+          Discover the core strengths that make us your trusted technology
+          partner
         </Typography>
       </Box>
 
@@ -238,6 +393,7 @@ export default function IntelligenceCore() {
           >
             {/* Center Logo - The True Center */}
             <Box
+              className="core-logo"
               sx={{
                 position: "absolute",
                 top: "50%",
@@ -246,21 +402,25 @@ export default function IntelligenceCore() {
                 height: 200,
                 transform: "translate(-50%, -50%)",
                 borderRadius: "50%",
-                background: BRAND_COLORS.white,
-                border: `12px solid ${BRAND_COLORS.primary}`,
+                background: BRAND_COLORS.white, // Clean white background
+                border: "none", // Remove border
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: `0 25px 80px ${BRAND_COLORS.primary}40, inset 0 6px 25px rgba(255,255,255,0.4)`,
+                boxShadow: BRAND_COLORS.shadow.medium, // Simple shadow
                 zIndex: 5,
+                backdropFilter: "none", // Remove blur
+                "&::before": {
+                  display: "none", // Remove gradient overlay
+                },
               }}
             >
               <img
                 src="/logos/Intellectt-Logo.webp"
-                alt="Intellect Logo"
+                alt="Intellectt Logo"
                 style={{
-                  width: "75%",
-                  height: "75%",
+                  width: "80%",
+                  height: "80%",
                   objectFit: "contain",
                 }}
               />
@@ -292,6 +452,7 @@ export default function IntelligenceCore() {
                 {[...Array(4)].map((_, j) => (
                   <Box
                     key={j}
+                    className="orbit-dot"
                     sx={{
                       position: "absolute",
                       top: -8,
@@ -299,13 +460,13 @@ export default function IntelligenceCore() {
                       width: 16,
                       height: 16,
                       background: [
-                        BRAND_COLORS.gradient.primary,
-                        BRAND_COLORS.gradient.secondary,
-                        BRAND_COLORS.gradient.blueLight,
-                        BRAND_COLORS.gradient.redLight,
+                        BRAND_COLORS.gradient.primary, // Blue
+                        BRAND_COLORS.gradient.secondary, // Red
+                        BRAND_COLORS.gradient.primary, // Blue
+                        BRAND_COLORS.gradient.secondary, // Red
                       ][i],
                       borderRadius: "50%",
-                      boxShadow: `0 0 20px ${BRAND_COLORS.primary}60`,
+                      boxShadow: `${BRAND_COLORS.shadow.glow.primary}`,
                       transform: `translateX(-50%) rotate(${
                         j * 90
                       }deg) translateY(-${radius}px)`,
@@ -328,7 +489,7 @@ export default function IntelligenceCore() {
                   height: size,
                   marginTop: -size / 2,
                   marginLeft: -size / 2,
-                  border: `3px solid ${BRAND_COLORS.primary}20`,
+                  border: `2px solid ${BRAND_COLORS.primary}15`,
                   borderRadius: "50%",
                   zIndex: 3,
                 }}
@@ -341,16 +502,16 @@ export default function IntelligenceCore() {
                 key={i}
                 sx={{
                   position: "absolute",
-                  width: 3,
+                  width: 2,
                   height: 120,
-                  background: `linear-gradient(to bottom, ${BRAND_COLORS.primary}70, transparent)`,
+                  background: `linear-gradient(to bottom, ${BRAND_COLORS.primary}40, transparent)`,
                   top: "50%",
                   left: "50%",
                   transform: `translate(-50%, -50%) rotate(${
                     i * 30
                   }deg) translateY(-140px)`,
                   transformOrigin: "bottom center",
-                  borderRadius: "3px",
+                  borderRadius: "2px",
                 }}
               />
             ))}
@@ -362,6 +523,7 @@ export default function IntelligenceCore() {
             return (
               <motion.div
                 key={feature.id}
+                className="feature-card"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isVisible ? { opacity: 1, scale: 1 } : {}}
                 transition={{
@@ -371,22 +533,37 @@ export default function IntelligenceCore() {
                 }}
                 style={{
                   position: "absolute",
-                  width: 220,
+                  width: 220, // Reduced width to prevent overlap
                   ...feature.position,
+                  zIndex: 10, // Ensure boxes are above other elements
                 }}
               >
                 <Box
                   sx={{
-                    p: 3,
-                    borderRadius: 4,
-                    background: feature.color,
-                    border: `3px solid ${BRAND_COLORS.white}50`,
-                    boxShadow: `0 12px 40px ${feature.iconColor}40, 0 4px 12px rgba(0,0,0,0.1)`,
+                    p: 3, // Reduced padding
+                    borderRadius: "20px",
+                    background: "rgba(255, 255, 255, 0.98)", // More opaque white
+                    border: `1px solid ${feature.borderColor}`, // Thinner border
+                    boxShadow: BRAND_COLORS.shadow.medium, // Lighter shadow
                     transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                    backdropFilter: "blur(15px)",
+                    backdropFilter: "blur(20px)",
+                    position: "relative",
+                    overflow: "hidden",
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: feature.gradient,
+                      opacity: 0.08, // Much reduced opacity
+                      zIndex: -1,
+                    },
                     "&:hover": {
-                      transform: "scale(1.1) translateY(-12px)",
-                      boxShadow: `0 20px 60px ${feature.iconColor}50, 0 8px 20px rgba(0,0,0,0.15)`,
+                      transform: "scale(1.02) translateY(-4px)", // Reduced hover effect
+                      boxShadow: BRAND_COLORS.shadow.large,
+                      border: `1px solid ${feature.iconColor}30`, // Reduced border opacity
                     },
                   }}
                 >
@@ -394,43 +571,46 @@ export default function IntelligenceCore() {
                     sx={{
                       display: "flex",
                       justifyContent: "center",
-                      mb: 2,
+                      mb: 2, // Reduced margin
                       position: "relative",
                     }}
                   >
                     <Box
                       sx={{
-                        width: 56,
-                        height: 56,
-                        borderRadius: 3,
+                        width: 56, // Reduced size
+                        height: 56, // Reduced size
+                        borderRadius: "16px",
                         background: BRAND_COLORS.white,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        boxShadow: `0 6px 20px ${feature.iconColor}30`,
+                        boxShadow: BRAND_COLORS.shadow.medium,
                         position: "relative",
+                        border: `2px solid ${feature.iconColor}20`,
                         "&::before": {
                           content: '""',
                           position: "absolute",
-                          inset: -3,
-                          borderRadius: 4,
-                          background: feature.color,
+                          inset: -2,
+                          borderRadius: "18px",
+                          background: feature.gradient,
                           zIndex: -1,
-                          opacity: 0.4,
+                          opacity: 0.4, // Increased opacity
                         },
                       }}
                     >
-                      <Icon color={feature.iconColor} size={28} />
+                      <Icon color={feature.iconColor} size={28} />{" "}
+                      {/* Reduced icon size */}
                     </Box>
                   </Box>
                   <Typography
                     variant="h6"
                     sx={{
-                      color: BRAND_COLORS.white,
+                      color: BRAND_COLORS.neutral[900],
                       textAlign: "center",
                       fontWeight: 700,
-                      mb: 1,
-                      fontSize: "1.1rem",
+                      mb: 1, // Reduced margin
+                      fontSize: "1.1rem", // Reduced font size
+                      lineHeight: 1.3,
                     }}
                   >
                     {feature.title}
@@ -438,11 +618,11 @@ export default function IntelligenceCore() {
                   <Typography
                     variant="body2"
                     sx={{
-                      color: BRAND_COLORS.white,
+                      color: BRAND_COLORS.neutral[600],
                       textAlign: "center",
-                      opacity: 0.95,
-                      lineHeight: 1.5,
-                      fontSize: "0.875rem",
+                      lineHeight: 1.5, // Reduced line height
+                      fontSize: "0.875rem", // Reduced font size
+                      fontWeight: 400,
                     }}
                   >
                     {feature.description}
@@ -462,48 +642,77 @@ export default function IntelligenceCore() {
             return (
               <Grid item xs={11} key={feature.id}>
                 <motion.div
+                  className="feature-card"
                   initial={{ opacity: 0, y: 30 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: index * 0.15 }}
                 >
                   <Box
                     sx={{
-                      p: 3,
-                      borderRadius: 4,
-                      background: feature.color,
-                                          boxShadow: `0 12px 40px ${feature.iconColor}40, 0 4px 12px rgba(0,0,0,0.1)`,
-                    transition: "all 0.3s",
-                    "&:hover": {
-                      transform: "scale(1.05)",
-                      boxShadow: `0 16px 50px ${feature.iconColor}50, 0 6px 16px rgba(0,0,0,0.15)`,
-                    },
+                      p: 4,
+                      borderRadius: "20px",
+                      background: "rgba(255, 255, 255, 0.98)", // More opaque white
+                      border: `1px solid ${feature.borderColor}`, // Thinner border
+                      boxShadow: BRAND_COLORS.shadow.large,
+                      transition: "all 0.3s",
+                      backdropFilter: "blur(20px)",
+                      position: "relative",
+                      overflow: "hidden",
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: feature.gradient,
+                        opacity: 0.08, // Much reduced opacity
+                        zIndex: -1,
+                      },
+                      "&:hover": {
+                        transform: "scale(1.02)",
+                        boxShadow: BRAND_COLORS.shadow.xl,
+                        border: `1px solid ${feature.iconColor}30`, // Reduced border opacity
+                      },
                     }}
                   >
                     <Box
-                      sx={{ display: "flex", justifyContent: "center", mb: 2 }}
+                      sx={{ display: "flex", justifyContent: "center", mb: 3 }}
                     >
                       <Box
                         sx={{
-                          width: 56,
-                          height: 56,
-                          borderRadius: 3,
+                          width: 64,
+                          height: 64,
+                          borderRadius: "16px",
                           background: BRAND_COLORS.white,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          boxShadow: `0 6px 20px ${feature.iconColor}30`,
+                          boxShadow: BRAND_COLORS.shadow.medium,
+                          position: "relative",
+                          border: `2px solid ${feature.iconColor}20`,
+                          "&::before": {
+                            content: '""',
+                            position: "absolute",
+                            inset: -2,
+                            borderRadius: "18px",
+                            background: feature.gradient,
+                            zIndex: -1,
+                            opacity: 0.4, // Increased opacity
+                          },
                         }}
                       >
-                        <Icon color={feature.iconColor} size={28} />
+                        <Icon color={feature.iconColor} size={32} />
                       </Box>
                     </Box>
                     <Typography
                       variant="h6"
                       sx={{
-                        color: BRAND_COLORS.white,
+                        color: BRAND_COLORS.neutral[900],
                         textAlign: "center",
                         fontWeight: 700,
-                        mb: 1,
+                        mb: 2,
+                        fontSize: "1.25rem",
                       }}
                     >
                       {feature.title}
@@ -511,10 +720,11 @@ export default function IntelligenceCore() {
                     <Typography
                       variant="body2"
                       sx={{
-                        color: BRAND_COLORS.white,
+                        color: BRAND_COLORS.neutral[600],
                         textAlign: "center",
-                        opacity: 0.95,
-                        lineHeight: 1.5,
+                        lineHeight: 1.6,
+                        fontSize: "0.95rem",
+                        fontWeight: 400,
                       }}
                     >
                       {feature.description}
@@ -533,44 +743,51 @@ export default function IntelligenceCore() {
           {
             number: "200+",
             label: "Solutions",
-            gradient: BRAND_COLORS.gradient.primary,
+            gradient: BRAND_COLORS.gradient.primary, // Blue
             icon: "🚀",
+            color: BRAND_COLORS.primary, // Blue
           },
           {
             number: "1800+",
             label: "Engineers",
-            gradient: BRAND_COLORS.gradient.secondary,
+            gradient: BRAND_COLORS.gradient.secondary, // Red
             icon: "👨‍💻",
+            color: BRAND_COLORS.secondary, // Red
           },
           {
             number: "250+",
             label: "Architects",
-            gradient: BRAND_COLORS.gradient.blueLight,
+            gradient: BRAND_COLORS.gradient.primary, // Blue
             icon: "🏗️",
+            color: BRAND_COLORS.primary, // Blue
           },
           {
             number: "15",
             label: "Global Centers",
-            gradient: BRAND_COLORS.gradient.redLight,
+            gradient: BRAND_COLORS.gradient.secondary, // Red
             icon: "🌍",
+            color: BRAND_COLORS.secondary, // Red
           },
         ].map((stat, idx) => (
           <Grid item xs={6} md={3} key={idx}>
             <motion.div
+              className="stat-card"
               initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: idx * 0.1 }}
             >
               <Box
                 sx={{
-                  p: 3,
-                  borderRadius: 3,
-                  background: stat.gradient,
+                  p: 4,
+                  borderRadius: "20px",
+                  background: "rgba(255, 255, 255, 0.98)", // More opaque white
                   textAlign: "center",
-                  border: `3px solid ${BRAND_COLORS.white}40`,
+                  border: `1px solid ${stat.color}30`, // Increased border opacity
                   transition: "all 0.3s",
                   position: "relative",
                   overflow: "hidden",
+                  backdropFilter: "blur(20px)",
+                  boxShadow: BRAND_COLORS.shadow.large,
                   "&::before": {
                     content: '""',
                     position: "absolute",
@@ -578,17 +795,14 @@ export default function IntelligenceCore() {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background:
-                      "linear-gradient(45deg, transparent, rgba(255,255,255,0.15), transparent)",
-                    transform: "translateX(-100%)",
-                    transition: "transform 0.6s",
+                    background: stat.gradient,
+                    opacity: 0.08, // Much reduced opacity
+                    zIndex: -1,
                   },
                   "&:hover": {
-                    transform: "scale(1.08) translateY(-6px)",
-                    boxShadow: `0 16px 50px ${BRAND_COLORS.primary}50`,
-                    "&::before": {
-                      transform: "translateX(100%)",
-                    },
+                    transform: "scale(1.02) translateY(-2px)", // Reduced hover effect
+                    boxShadow: BRAND_COLORS.shadow.xl,
+                    border: `1px solid ${stat.color}40`, // Reduced border opacity
                   },
                 }}
               >
@@ -597,9 +811,9 @@ export default function IntelligenceCore() {
                   sx={{
                     fontSize: "2.5rem",
                     fontWeight: 800,
-                    color: BRAND_COLORS.white,
+                    color: BRAND_COLORS.neutral[900],
                     mb: 1,
-                    textShadow: "0 2px 4px rgba(0,0,0,0.2)",
+                    textShadow: "none",
                   }}
                 >
                   {stat.number}
@@ -607,9 +821,9 @@ export default function IntelligenceCore() {
                 <Typography
                   variant="h6"
                   sx={{
-                    color: BRAND_COLORS.white,
+                    color: BRAND_COLORS.neutral[700],
                     fontWeight: 600,
-                    mb: 1,
+                    mb: 2,
                     fontSize: "1.1rem",
                   }}
                 >
@@ -618,7 +832,7 @@ export default function IntelligenceCore() {
                 <Typography
                   variant="h4"
                   sx={{
-                    color: BRAND_COLORS.white,
+                    color: stat.color,
                     opacity: 0.8,
                   }}
                 >
@@ -669,10 +883,10 @@ export default function IntelligenceCore() {
         @keyframes glow {
           0%,
           100% {
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 0 10px rgba(0, 122, 255, 0.2);
           }
           50% {
-            box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+            box-shadow: 0 0 20px rgba(0, 122, 255, 0.4);
           }
         }
       `}</style>

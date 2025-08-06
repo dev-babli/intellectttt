@@ -1,7 +1,25 @@
 import React, { Fragment } from "react";
-import { Box, Container, Typography, Grid, Button, Card, CardContent, Chip, Stack } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Button,
+  Card,
+  CardContent,
+  Chip,
+  Stack,
+} from "@mui/material";
 import { motion } from "framer-motion";
-import { LocationOn, People, Business, TrendingUp, Globe, Phone, Email } from "@mui/icons-material";
+import {
+  LocationOn,
+  People,
+  Business,
+  TrendingUp,
+  Public,
+  Phone,
+  Email,
+} from "@mui/icons-material";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -33,10 +51,17 @@ const globalData = {
       flag: "/flags/usa.png",
       offices: 6,
       employees: 450,
-      cities: ["New York", "San Francisco", "Austin", "Boston", "Seattle", "Chicago"],
+      cities: [
+        "New York",
+        "San Francisco",
+        "Austin",
+        "Boston",
+        "Seattle",
+        "Chicago",
+      ],
       specialties: ["AI/ML", "Cloud Services", "Digital Transformation"],
       timezone: "EST/PST",
-      established: "2010"
+      established: "2010",
     },
     {
       name: "India",
@@ -46,7 +71,7 @@ const globalData = {
       cities: ["Bangalore", "Hyderabad", "Mumbai", "Chennai"],
       specialties: ["Software Development", "Data Analytics", "DevOps"],
       timezone: "IST",
-      established: "2008"
+      established: "2008",
     },
     {
       name: "Canada",
@@ -56,7 +81,7 @@ const globalData = {
       cities: ["Toronto", "Vancouver"],
       specialties: ["Healthcare IT", "FinTech", "E-commerce"],
       timezone: "EST/PST",
-      established: "2012"
+      established: "2012",
     },
     {
       name: "Mexico",
@@ -66,7 +91,7 @@ const globalData = {
       cities: ["Mexico City", "Guadalajara"],
       specialties: ["Nearshore Development", "QA Services", "Support"],
       timezone: "CST",
-      established: "2015"
+      established: "2015",
     },
     {
       name: "Ireland",
@@ -76,9 +101,9 @@ const globalData = {
       cities: ["Dublin"],
       specialties: ["European Operations", "Compliance", "Research"],
       timezone: "GMT",
-      established: "2018"
-    }
-  ]
+      established: "2018",
+    },
+  ],
 };
 
 const GlobalPresence = () => {
@@ -107,14 +132,16 @@ const GlobalPresence = () => {
               opacity: 0.1,
             }}
           />
-          
+
           <Container maxWidth="lg">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <Box sx={{ textAlign: "center", position: "relative", zIndex: 2 }}>
+              <Box
+                sx={{ textAlign: "center", position: "relative", zIndex: 2 }}
+              >
                 <Typography
                   variant="h1"
                   sx={{
@@ -137,14 +164,20 @@ const GlobalPresence = () => {
                     lineHeight: 1.6,
                   }}
                 >
-                  Spanning 5 countries with 15+ offices and 1,800+ professionals, 
-                  we deliver world-class solutions with local expertise and global reach.
+                  Spanning 5 countries with 15+ offices and 1,800+
+                  professionals, we deliver world-class solutions with local
+                  expertise and global reach.
                 </Typography>
-                
+
                 {/* Key Statistics */}
-                <Grid container spacing={4} justifyContent="center" sx={{ mt: 6 }}>
+                <Grid
+                  container
+                  spacing={4}
+                  justifyContent="center"
+                  sx={{ mt: 6 }}
+                >
                   {[
-                    { number: "5", label: "Countries", icon: Globe },
+                    { number: "5", label: "Countries", icon: Public },
                     { number: "15+", label: "Offices", icon: Business },
                     { number: "1,800+", label: "Professionals", icon: People },
                     { number: "500+", label: "Projects", icon: TrendingUp },
@@ -168,9 +201,14 @@ const GlobalPresence = () => {
                               margin: "0 auto 1rem",
                             }}
                           >
-                            <stat.icon sx={{ fontSize: 40, color: BRAND_COLORS.white }} />
+                            <stat.icon
+                              sx={{ fontSize: 40, color: BRAND_COLORS.white }}
+                            />
                           </Box>
-                          <Typography variant="h3" sx={{ fontWeight: 700, mb: 1 }}>
+                          <Typography
+                            variant="h3"
+                            sx={{ fontWeight: 700, mb: 1 }}
+                          >
                             {stat.number}
                           </Typography>
                           <Typography variant="body1" sx={{ opacity: 0.9 }}>
@@ -216,8 +254,9 @@ const GlobalPresence = () => {
                     lineHeight: 1.6,
                   }}
                 >
-                  Our strategic presence across multiple continents enables us to provide 
-                  24/7 support and leverage diverse talent pools for optimal solutions.
+                  Our strategic presence across multiple continents enables us
+                  to provide 24/7 support and leverage diverse talent pools for
+                  optimal solutions.
                 </Typography>
               </Box>
 
@@ -255,8 +294,8 @@ const GlobalPresence = () => {
                       }}
                       // Position markers based on country location
                       style={{
-                        left: `${20 + (index * 15)}%`,
-                        top: `${30 + (index * 10)}%`,
+                        left: `${20 + index * 15}%`,
+                        top: `${30 + index * 10}%`,
                       }}
                     >
                       <Box
@@ -344,7 +383,7 @@ const GlobalPresence = () => {
                             }}
                           />
                         </Box>
-                        
+
                         <CardContent sx={{ p: 3 }}>
                           <Typography
                             variant="h5"
@@ -361,20 +400,38 @@ const GlobalPresence = () => {
                           <Grid container spacing={2} sx={{ mb: 3 }}>
                             <Grid item xs={6}>
                               <Box sx={{ textAlign: "center" }}>
-                                <Typography variant="h4" sx={{ fontWeight: 700, color: BRAND_COLORS.primary }}>
+                                <Typography
+                                  variant="h4"
+                                  sx={{
+                                    fontWeight: 700,
+                                    color: BRAND_COLORS.primary,
+                                  }}
+                                >
                                   {country.offices}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
                                   Offices
                                 </Typography>
                               </Box>
                             </Grid>
                             <Grid item xs={6}>
                               <Box sx={{ textAlign: "center" }}>
-                                <Typography variant="h4" sx={{ fontWeight: 700, color: BRAND_COLORS.primary }}>
+                                <Typography
+                                  variant="h4"
+                                  sx={{
+                                    fontWeight: 700,
+                                    color: BRAND_COLORS.primary,
+                                  }}
+                                >
                                   {country.employees}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
                                   Employees
                                 </Typography>
                               </Box>
@@ -382,7 +439,10 @@ const GlobalPresence = () => {
                           </Grid>
 
                           {/* Cities */}
-                          <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
+                          <Typography
+                            variant="subtitle2"
+                            sx={{ fontWeight: 600, mb: 1 }}
+                          >
                             Locations:
                           </Typography>
                           <Box sx={{ mb: 2 }}>
@@ -402,7 +462,10 @@ const GlobalPresence = () => {
                           </Box>
 
                           {/* Specialties */}
-                          <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
+                          <Typography
+                            variant="subtitle2"
+                            sx={{ fontWeight: 600, mb: 1 }}
+                          >
                             Specialties:
                           </Typography>
                           <Box>
@@ -424,18 +487,30 @@ const GlobalPresence = () => {
                           {/* Additional Info */}
                           <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
                             <Box>
-                              <Typography variant="caption" color="text.secondary">
+                              <Typography
+                                variant="caption"
+                                color="text.secondary"
+                              >
                                 Timezone
                               </Typography>
-                              <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                              <Typography
+                                variant="body2"
+                                sx={{ fontWeight: 600 }}
+                              >
                                 {country.timezone}
                               </Typography>
                             </Box>
                             <Box>
-                              <Typography variant="caption" color="text.secondary">
+                              <Typography
+                                variant="caption"
+                                color="text.secondary"
+                              >
                                 Since
                               </Typography>
-                              <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                              <Typography
+                                variant="body2"
+                                sx={{ fontWeight: 600 }}
+                              >
                                 {country.established}
                               </Typography>
                             </Box>
@@ -486,8 +561,8 @@ const GlobalPresence = () => {
                     lineHeight: 1.6,
                   }}
                 >
-                  Connect with our global team to discuss how we can help 
-                  your business scale across borders with our expertise.
+                  Connect with our global team to discuss how we can help your
+                  business scale across borders with our expertise.
                 </Typography>
 
                 <Stack
@@ -545,7 +620,8 @@ const GlobalPresence = () => {
         {/* Animation Styles */}
         <style jsx global>{`
           @keyframes pulse {
-            0%, 100% {
+            0%,
+            100% {
               transform: scale(1);
               opacity: 1;
             }

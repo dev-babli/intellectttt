@@ -355,53 +355,6 @@ const HeroSection = () => {
           zIndex: 10,
         }}
       >
-        {/* Navigation Arrows */}
-        <Box
-          sx={{
-            display: "flex",
-            gap: "0.5rem",
-          }}
-        >
-          <Box
-            onClick={() => goToSlide(Math.max(currentSlide - 1, 0))}
-            sx={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              backgroundColor: "rgba(255, 255, 255, 0.2)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-              "&:hover": {
-                backgroundColor: "rgba(255, 255, 255, 0.3)",
-              },
-            }}
-          >
-            <span style={{ color: "#ffffff", fontSize: "1.2rem" }}>‹</span>
-          </Box>
-          <Box
-            onClick={() => goToSlide((currentSlide + 1) % slides.length)}
-            sx={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              backgroundColor: "rgba(255, 255, 255, 0.2)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-              "&:hover": {
-                backgroundColor: "rgba(255, 255, 255, 0.3)",
-              },
-            }}
-          >
-            <span style={{ color: "#ffffff", fontSize: "1.2rem" }}>›</span>
-          </Box>
-        </Box>
-
         {/* Progress Line */}
         <Box
           sx={{
