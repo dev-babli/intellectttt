@@ -1607,7 +1607,7 @@ const menuData = {
           "Compliance",
         ],
         hasDropdown: true,
-        url: "/industries/helthcare-and-life-sciences",
+        url: "/industries/healthcare-life-sciences",
         services: [
           {
             name: "Digital Health",
@@ -1616,7 +1616,7 @@ const menuData = {
             focus: "Healthcare",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "🏥",
-            url: "/industries/helthcare-and-life-sciences",
+            url: "/industries/healthcare-life-sciences",
           },
           {
             name: "Medical Devices",
@@ -1625,7 +1625,7 @@ const menuData = {
             focus: "Healthcare",
             color: "rgba(59, 130, 246, 0.15)",
             icon: "🩺",
-            url: "/industries/helthcare-and-life-sciences",
+            url: "/industries/healthcare-life-sciences",
           },
           {
             name: "Clinical Trials",
@@ -1634,7 +1634,7 @@ const menuData = {
             focus: "Healthcare",
             color: "rgba(16, 185, 129, 0.15)",
             icon: "🔬",
-            url: "/industries/helthcare-and-life-sciences",
+            url: "/industries/healthcare-life-sciences",
           },
         ],
         icon: "🏥",
@@ -1651,7 +1651,7 @@ const menuData = {
           "Automation",
         ],
         hasDropdown: true,
-        url: "/industries/menufacturing-and-automotive",
+        url: "/industries/manufacturing-automotive",
         services: [
           {
             name: "Smart Manufacturing",
@@ -1659,7 +1659,7 @@ const menuData = {
             focus: "Manufacturing",
             color: "rgba(59, 130, 246, 0.15)",
             icon: "🏭",
-            url: "/industries/menufacturing-and-automotive",
+            url: "/industries/manufacturing-automotive",
           },
           {
             name: "Digital Twins",
@@ -1667,7 +1667,7 @@ const menuData = {
             focus: "Manufacturing",
             color: "rgba(16, 185, 129, 0.15)",
             icon: "🔄",
-            url: "/industries/menufacturing-and-automotive",
+            url: "/industries/manufacturing-automotive",
           },
           {
             name: "IoT Solutions",
@@ -1675,7 +1675,7 @@ const menuData = {
             focus: "Manufacturing",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "📡",
-            url: "/industries/menufacturing-and-automotive",
+            url: "/industries/manufacturing-automotive",
           },
         ],
         icon: "🏭",
@@ -1692,7 +1692,7 @@ const menuData = {
           "Compliance",
         ],
         hasDropdown: true,
-        url: "/industries/banking-and-financial-services",
+        url: "/industries/financial-services",
         services: [
           {
             name: "Digital Banking",
@@ -1700,7 +1700,7 @@ const menuData = {
             focus: "Finance",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "🏦",
-            url: "/industries/banking-and-financial-services",
+            url: "/industries/financial-services",
           },
           {
             name: "Payment Systems",
@@ -1708,7 +1708,7 @@ const menuData = {
             focus: "Finance",
             color: "rgba(59, 130, 246, 0.15)",
             icon: "💳",
-            url: "/industries/banking-and-financial-services",
+            url: "/industries/financial-services",
           },
           {
             name: "Risk Management",
@@ -1716,7 +1716,7 @@ const menuData = {
             focus: "Finance",
             color: "rgba(16, 185, 129, 0.15)",
             icon: "🛡️",
-            url: "/industries/banking-and-financial-services",
+            url: "/industries/financial-services",
           },
         ],
         icon: "💰",
@@ -1733,7 +1733,7 @@ const menuData = {
           "Cybersecurity",
         ],
         hasDropdown: true,
-        url: "/industries/aerospace-and-defense",
+        url: "/industries/aerospace-defense",
         services: [
           {
             name: "Aviation Technology",
@@ -1741,7 +1741,7 @@ const menuData = {
             focus: "Aerospace",
             color: "rgba(59, 130, 246, 0.15)",
             icon: "✈️",
-            url: "/industries/aerospace-and-defense",
+            url: "/industries/aerospace-defense",
           },
           {
             name: "Defense Systems",
@@ -1749,7 +1749,7 @@ const menuData = {
             focus: "Aerospace",
             color: "rgba(16, 185, 129, 0.15)",
             icon: "🛡️",
-            url: "/industries/aerospace-and-defense",
+            url: "/industries/aerospace-defense",
           },
           {
             name: "Satellite Solutions",
@@ -1757,7 +1757,7 @@ const menuData = {
             focus: "Aerospace",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "🛰️",
-            url: "/industries/aerospace-and-defense",
+            url: "/industries/aerospace-defense",
           },
         ],
         icon: "✈️",

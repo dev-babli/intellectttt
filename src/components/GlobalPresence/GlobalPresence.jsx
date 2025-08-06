@@ -20,6 +20,7 @@ import {
   Phone,
   Email,
 } from "@mui/icons-material";
+import { LocationOn, People, Business, TrendingUp, Public, Phone, Email } from "@mui/icons-material";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -177,6 +178,7 @@ const GlobalPresence = () => {
                   sx={{ mt: 6 }}
                 >
                   {[
+                    { number: "5", label: "Countries", icon: Public },
                     { number: "5", label: "Countries", icon: Public },
                     { number: "15+", label: "Offices", icon: Business },
                     { number: "1,800+", label: "Professionals", icon: People },
