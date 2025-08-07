@@ -237,10 +237,10 @@ const HeroSection = () => {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  filter: "brightness(0.7) contrast(1.1) saturate(1.1)",
+                  filter: "brightness(0.9) contrast(1.1) saturate(1.1)",
                 }}
               />
-              {/* Enhanced gradient overlay */}
+              {/* Stronger gradient overlay for better text readability */}
               <Box
                 sx={{
                   position: "absolute",
@@ -248,7 +248,7 @@ const HeroSection = () => {
                   left: 0,
                   width: "100%",
                   height: "100%",
-                  background: `linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%)`,
+                  background: `linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)`,
                   zIndex: 2,
                 }}
               />
@@ -285,7 +285,7 @@ const HeroSection = () => {
                     fontFamily: "'SF Pro Display', 'Inter', sans-serif",
                     letterSpacing: "-0.02em",
                     color: "#ffffff !important",
-                    textShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                    textShadow: "0 4px 12px rgba(0,0,0,0.8)",
                   }}
                 >
                   {slide.title}
@@ -303,7 +303,7 @@ const HeroSection = () => {
                     letterSpacing: "-0.01em",
                     color: "#ffffff !important",
                     opacity: 0.9,
-                    textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.7)",
                     maxWidth: "600px",
                   }}
                 >
@@ -341,44 +341,6 @@ const HeroSection = () => {
             </Container>
           </Box>
         ))}
-      </Box>
-
-      {/* Progress Indicator */}
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "2rem",
-          left: "2rem",
-          display: "flex",
-          alignItems: "center",
-          gap: "1rem",
-          zIndex: 10,
-        }}
-      >
-        {/* Progress Line */}
-        <Box
-          sx={{
-            width: "200px",
-            height: "2px",
-            backgroundColor: "rgba(255, 255, 255, 0.3)",
-            borderRadius: "1px",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <Box
-            sx={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              height: "100%",
-              width: `${((currentSlide + 1) / slides.length) * 100}%`,
-              backgroundColor: "#ffffff",
-              borderRadius: "1px",
-              transition: "width 0.3s ease",
-            }}
-          />
-        </Box>
       </Box>
     </Box>
   );

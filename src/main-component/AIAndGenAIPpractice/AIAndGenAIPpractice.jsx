@@ -44,8 +44,8 @@ const AIAndGenAIPpractice = () => {
           <ServiceSection />
           {/* <AwardSection /> */}
           <AlliancesSection />
-           {/* <IndustrieSection /> */}
-           <IndustriesSimple />
+          {/* <IndustrieSection /> */}
+          <IndustriesSimple />
           <ContactSection />
         </div>
       </div>

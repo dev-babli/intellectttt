@@ -8,7 +8,6 @@ const LifeAtCompany = () => {
   return (
     <Fragment>
       <div className="body_wrap sco_agency">
-       
         <HeroSectionTitle
           title="Life at Intellectt"
           subtitle="Join Intellectt where we are leveraging the latest technologies to create a meaningful impact."
@@ -19,9 +18,7 @@ const LifeAtCompany = () => {
         <WhyChoose />
         <GallerySection pClass={"pt-130"} />
         <FaqSection />
-        
       </div>
-     
     </Fragment>
   );
 };

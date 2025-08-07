@@ -5,7 +5,6 @@ import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle
 const BlogPage = (props) => {
   return (
     <Fragment>
-      
       <div className="page_content blog-page">
         <HeroSectionTitle
           title="Our Blog"
@@ -16,7 +15,6 @@ const BlogPage = (props) => {
         />
         <BlogList />
       </div>
-     
     </Fragment>
   );
 };

@@ -17,6 +17,7 @@ const TeamIntroSection = ({
   buttonText = "SEE THE ISSUES →",
   onButtonClick,
   reversed = false, // reverse layout if true
+  textAlign = "left", // text alignment: "left", "center", "right"
 }) => {
   const sectionRef = useRef(null);
 
@@ -114,7 +115,7 @@ const TeamIntroSection = ({
           width: { xs: "100%", md: "50%" },
           pl: reversed ? 0 : { md: 10 },
           pr: reversed ? { md: 10 } : 0,
-          textAlign: { xs: "center", md: reversed ? "right" : "left" },
+          textAlign: { xs: "center", md: textAlign },
         }}
       >
         <Typography

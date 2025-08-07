@@ -1,345 +1,650 @@
-import React, { useEffect, useRef } from "react";
-import { Box, Typography, Container, Grid, Paper } from "@mui/material";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useNavigate } from "react-router-dom";
-import sIcon1 from "../../images/industrie/img01.png";
-import sIcon2 from "../../images/industrie/img02.png";
-import sIcon3 from "../../images/industrie/img03.png";
-import sIcon4 from "../../images/industrie/img04.png";
-import sIcon5 from "../../images/industrie/img05.png";
-import sIcon6 from "../../images/industrie/img06.png";
-import sIcon7 from "../../images/industrie/img07.png";
-import sIcon8 from "../../images/industrie/img08.png";
-import sIcon9 from "../../images/industrie/img09.png";
-import sIcon10 from "../../images/industrie/img10.png";
+"use client";
 
-gsap.registerPlugin(ScrollTrigger);
+import React, { useEffect, useRef, useState } from "react";
+import {
+  Box,
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+  Button,
+} from "@mui/material";
+import { Link } from "react-router-dom";
 
-const industryData = [
+const industries = [
   {
-    id: 1,
-    title: "Healthcare & Life Sciences",
-    description: "Advanced healthcare technology solutions and life sciences innovation",
-    icon: sIcon9,
-    color: "#dc2626",
-    route: "/industries/healthcare-and-life-sciences",
+    title: "Transform healthcare delivery with cutting-edge digital solutions.",
+    description:
+      "Empower healthcare organizations with secure, compliant technology solutions that enhance patient care and operational efficiency.",
+    category: "HEALTHCARE & LIFE SCIENCES",
+    image: "/images/Healthcare-and-Lifesciences.webp",
+    features: [
+      "Electronic Health Records",
+      "Telemedicine Platforms",
+      "Medical Device Integration",
+      "Clinical Decision Support",
+      "Patient Engagement",
+      "Healthcare Analytics",
+    ],
+    buttonLabel: "Explore Healthcare",
+    url: "/industries/helthcare-and-life-sciences",
   },
   {
-    id: 2,
-    title: "Manufacturing & Automotive",
-    description: "Manufacturing technology and automotive industry solutions",
-    icon: sIcon10,
-    color: "#1d4ed8",
-    route: "/industries/manufacturing-and-automotive",
+    title: "Optimize manufacturing processes with intelligent automation.",
+    description:
+      "Drive innovation in manufacturing with smart automation, digital twins, and Industry 4.0 solutions.",
+    category: "MANUFACTURING & AUTOMOTIVE",
+    image: "/images/Manufacutring-and-Automotive.webp",
+    features: [
+      "Smart Manufacturing",
+      "Digital Twin Technology",
+      "Quality Control Systems",
+      "Supply Chain Optimization",
+      "Predictive Maintenance",
+      "Industry 4.0 Solutions",
+    ],
+    buttonLabel: "Optimize Production",
+    url: "/industries/menufacturing-and-automotive",
   },
   {
-    id: 3,
-    title: "Banking & Financial Services",
-    description: "Financial technology and digital banking solutions",
-    icon: sIcon8,
-    color: "#b91c1c",
-    route: "/industries/banking-and-financial-services",
+    title:
+      "Secure financial operations with advanced digital banking solutions.",
+    description:
+      "Transform banking and financial services with secure, scalable technology platforms and digital innovation.",
+    category: "BANKING & FINANCIAL SERVICES",
+    image: "/images/Banking-and-Finance.webp",
+    features: [
+      "Digital Banking Platforms",
+      "Payment Processing Systems",
+      "Risk Management",
+      "Compliance & Security",
+      "Blockchain Solutions",
+      "Financial Analytics",
+    ],
+    buttonLabel: "Secure Finance",
+    url: "/industries/banking-and-financial-services",
   },
   {
-    id: 4,
-    title: "Aerospace & Defense",
-    description: "Aerospace technology and defense industry solutions",
-    icon: sIcon1,
-    color: "#2563eb",
-    route: "/industries/aerospace-and-defense",
+    title: "Advance aerospace technology with precision engineering solutions.",
+    description:
+      "Deliver cutting-edge aerospace and defense solutions with advanced engineering and secure systems.",
+    category: "AEROSPACE & DEFENSE",
+    image: "/images/Defence-and-aEROSPACE.webp",
+    features: [
+      "Aircraft Systems",
+      "Defense Technology",
+      "Satellite Communications",
+      "Avionics Integration",
+      "Cybersecurity",
+      "Precision Engineering",
+    ],
+    buttonLabel: "Advance Aerospace",
+    url: "/industries/aerospace-and-defense",
+  },
+  {
+    title: "Accelerate retail transformation with digital commerce solutions.",
+    description:
+      "Revolutionize retail operations with omnichannel platforms, AI-powered insights, and seamless customer experiences.",
+    category: "RETAIL & E-COMMERCE",
+    image: "/images/Retail-and-Ecommerce.webp",
+    features: [
+      "E-commerce Platforms",
+      "Omnichannel Solutions",
+      "Inventory Management",
+      "Customer Analytics",
+      "Payment Systems",
+      "Supply Chain",
+    ],
+    buttonLabel: "Transform Retail",
+    url: "/service/retail-and-ecommerce",
+  },
+  {
+    title: "Power energy systems with smart grid and renewable solutions.",
+    description:
+      "Drive energy innovation with smart grid technology, renewable energy systems, and sustainable solutions.",
+    category: "ENERGY & UTILITIES",
+    image: "/images/Industry.webp",
+    features: [
+      "Smart Grid Technology",
+      "Renewable Energy",
+      "Energy Management",
+      "Grid Security",
+      "Predictive Analytics",
+      "Sustainability Solutions",
+    ],
+    buttonLabel: "Power Energy",
+    url: "/service/energy-and-utilities",
+  },
+  {
+    title: "Enhance education delivery with digital learning platforms.",
+    description:
+      "Transform education with innovative digital learning solutions, virtual classrooms, and personalized learning experiences.",
+    category: "EDUCATION & TRAINING",
+    image: "/images/EducationElearning.webp",
+    features: [
+      "Learning Management Systems",
+      "Virtual Classrooms",
+      "Student Analytics",
+      "Content Management",
+      "Assessment Tools",
+      "Collaboration Platforms",
+    ],
+    buttonLabel: "Enhance Education",
+    url: "/service/education-and-training",
+  },
+  {
+    title: "Optimize logistics with intelligent supply chain solutions.",
+    description:
+      "Streamline logistics operations with real-time tracking, predictive analytics, and automated supply chain management.",
+    category: "LOGISTICS & TRANSPORTATION",
+    image: "/images/Transportation-andLogistics.webp",
+    features: [
+      "Supply Chain Management",
+      "Real-time Tracking",
+      "Route Optimization",
+      "Fleet Management",
+      "Warehouse Automation",
+      "Predictive Analytics",
+    ],
+    buttonLabel: "Optimize Logistics",
+    url: "/service/logistics-and-transportation",
   },
 ];
 
-const FeatureCards = () => {
-  const componentRef = useRef(null);
-  const cardsRef = useRef([]);
-  const navigate = useNavigate();
+export default function FeatureCards() {
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
+  const cardsRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!componentRef.current) return;
+    // Trigger entrance animations
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
 
-    // Main component animation
-    gsap.fromTo(
-      componentRef.current,
-      {
-        opacity: 0,
-        y: 60,
-        scale: 0.95,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 1.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: componentRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    // Staggered card animations
-    const cards = cardsRef.current;
-    if (cards.length > 0) {
-      gsap.fromTo(
-        cards,
-        {
-          opacity: 0,
-          y: 80,
-          scale: 0.8,
-          rotationX: 15,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          rotationX: 0,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power2.out",
-          delay: 0.3,
-          scrollTrigger: {
-            trigger: componentRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+    return () => clearTimeout(timer);
   }, []);
 
-  const handleCardHover = (index, isEntering) => {
-    const card = cardsRef.current[index];
-    if (!card) return;
-
-    if (isEntering) {
-      gsap.to(card, {
-        scale: 1.02,
-        rotationY: 2,
-        duration: 0.4,
-        ease: "power2.out",
-      });
-    } else {
-      gsap.to(card, {
-        scale: 1,
-        rotationY: 0,
-        duration: 0.4,
-        ease: "power2.out",
-      });
-    }
-  };
-
-  const handleCardClick = (route) => {
-    navigate(route);
+  const handleCardClick = (url) => {
+    // Scroll to top before navigation
+    window.scrollTo(0, 0);
   };
 
   return (
     <Box
-      ref={componentRef}
       sx={{
-        background: "linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)",
-        padding: { xs: "5rem 0", md: "8rem 0" },
+        background: "#ffffff",
+        minHeight: "100vh",
+        py: 12,
+        px: 2,
         position: "relative",
         overflow: "hidden",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background:
-            "radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%)",
-          zIndex: 1,
-        },
+        opacity: isVisible ? 1 : 0,
+        transition: "opacity 1s ease-out",
       }}
     >
-      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
-        {/* Header */}
-        <Box sx={{ textAlign: "left", marginBottom: "5rem" }}>
-          <Typography
-            variant="h2"
-            sx={{
-              fontSize: { xs: "2.5rem", md: "3.5rem" },
-              fontWeight: 700,
-              color: "#1e293b",
-              marginBottom: "1.5rem",
-              fontFamily: "'Inter', sans-serif",
-              letterSpacing: "-0.025em",
-            }}
-          >
-            Industries 
-          </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              fontSize: { xs: "1.1rem", md: "1.3rem" },
-              fontWeight: 400,
-              color: "#64748b",
-              maxWidth: "800px",
-              mx: "0",
-              lineHeight: 1.7,
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
-            Serving diverse industries with comprehensive technology solutions
-          </Typography>
-        </Box>
+      {/* Header Section */}
+      <Box
+        sx={{
+          textAlign: "center",
+          mb: 10,
+          maxWidth: "1200px",
+          mx: "auto",
+          px: 2,
+        }}
+      >
+        <Typography
+          ref={titleRef}
+          variant="h1"
+          sx={{
+            color: "#000000",
+            fontWeight: 800,
+            fontSize: { xs: "2.5rem", md: "4.5rem" },
+            lineHeight: 1.1,
+            mb: 4,
+            letterSpacing: "-0.03em",
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            background: "linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+            transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
+          }}
+        >
+          Industries
+        </Typography>
+        <Typography
+          ref={descRef}
+          variant="h6"
+          sx={{
+            color: "#666666",
+            fontWeight: 400,
+            fontSize: { xs: "1.1rem", md: "1.5rem" },
+            lineHeight: 1.6,
+            maxWidth: "900px",
+            mx: "auto",
+            letterSpacing: "0.01em",
+            fontFamily:
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(20px)",
+            transition:
+              "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s",
+          }}
+        >
+          Serving diverse industries with comprehensive technology solutions
+          that drive innovation and growth.
+        </Typography>
+      </Box>
 
-        {/* Industry Cards Grid */}
-        <Grid container spacing={4}>
-          {industryData.map((industry, index) => (
-            <Grid item xs={12} sm={6} md={3} key={industry.id}>
-              <Paper
-                ref={(el) => (cardsRef.current[index] = el)}
-                elevation={0}
-                onClick={() => handleCardClick(industry.route)}
-                sx={{
-                  height: "100%",
-                  background: "rgba(255, 255, 255, 0.8)",
-                  backdropFilter: "blur(20px)",
-                  borderRadius: "20px",
-                  padding: "2.5rem",
-                  border: "1px solid rgba(255, 255, 255, 0.3)",
-                  position: "relative",
-                  overflow: "hidden",
-                  cursor: "pointer",
-                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: `linear-gradient(135deg, ${industry.color}15 0%, transparent 100%)`,
-                    opacity: 0,
-                    transition: "opacity 0.3s ease",
-                  },
-                  "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: `linear-gradient(135deg, ${industry.color}08 0%, transparent 50%)`,
-                    borderRadius: "20px",
-                    opacity: 0,
-                    transition: "opacity 0.3s ease",
-                  },
-                  "&:hover": {
+      {/* Cards Grid */}
+      <Box ref={cardsRef}>
+        <Grid
+          container
+          spacing={4}
+          sx={{
+            maxWidth: "1400px",
+            mx: "auto",
+            px: 2,
+          }}
+        >
+          {industries.map((industry, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Link
+                to={industry.url}
+                style={{ textDecoration: "none" }}
+                onClick={() => handleCardClick(industry.url)}
+              >
+                <Card
+                  className="premium-card"
+                  sx={{
+                    height: 420,
+                    background:
+                      "linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%)",
+                    borderRadius: "24px",
+                    position: "relative",
+                    overflow: "hidden",
+                    cursor: "pointer",
+                    border: "2px solid rgba(255, 255, 255, 0.08)",
+                    boxShadow:
+                      "0 25px 80px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                    transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+                    transform: isVisible
+                      ? "translate(0, 0) !important"
+                      : "translate(0, 60px) !important",
+                    opacity: isVisible ? 1 : 0,
+                    animationDelay: `${0.3 + index * 0.1}s`,
                     "&::before": {
-                      opacity: 1,
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background:
+                        "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%)",
+                      opacity: 0,
+                      transition: "opacity 0.8s ease",
+                      zIndex: 1,
                     },
                     "&::after": {
-                      opacity: 1,
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background:
+                        "radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.3) 0%, transparent 70%)",
+                      opacity: 0,
+                      transition: "opacity 0.8s ease",
+                      zIndex: 1,
                     },
-                    boxShadow: `0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.05), 0 0 0 1px ${industry.color}20`,
-                  },
-                }}
-                onMouseEnter={() => handleCardHover(index, true)}
-                onMouseLeave={() => handleCardHover(index, false)}
-              >
-                {/* Icon */}
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: "60px",
-                    height: "60px",
-                    borderRadius: "16px",
-                    background: `linear-gradient(135deg, ${industry.color} 0%, ${industry.color}dd 100%)`,
-                    marginBottom: "1.5rem",
-                    fontSize: "1.5rem",
-                    boxShadow: `0 8px 20px ${industry.color}30`,
-                    transition: "all 0.3s ease",
                     "&:hover": {
-                      transform: "scale(1.1) rotate(5deg)",
-                      boxShadow: `0 12px 30px ${industry.color}40`,
+                      transform: "translateY(-16px) scale(1.03) !important",
+                      boxShadow:
+                        "0 40px 120px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+                      "&::before": {
+                        opacity: 1,
+                      },
+                      "&::after": {
+                        opacity: 1,
+                      },
+                      "& .card-image": {
+                        transform: "scale(1.15)",
+                      },
+                      "& .card-overlay": {
+                        opacity: 1,
+                      },
+                      "& .card-content": {
+                        opacity: 1,
+                        transform: "translateY(0)",
+                      },
+                      "& .card-title": {
+                        opacity: 0,
+                        transform: "translateY(-40px)",
+                      },
+                      "& .card-category": {
+                        opacity: 0,
+                        transform: "translateY(-40px)",
+                      },
+                      "& .card-glow": {
+                        opacity: 1,
+                      },
                     },
                   }}
                 >
-                  <img
-                    src={industry.icon}
-                    alt={industry.title}
-                    style={{
-                      width: "40px",
-                      height: "40px",
-                      objectFit: "contain",
+                  {/* Glow Effect */}
+                  <Box
+                    className="card-glow"
+                    sx={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      width: "100%",
+                      height: "100%",
+                      background:
+                        "radial-gradient(circle, rgba(120, 119, 198, 0.2) 0%, transparent 70%)",
+                      transform: "translate(-50%, -50%)",
+                      opacity: 0,
+                      transition: "opacity 0.8s ease",
+                      zIndex: 0,
                     }}
                   />
-                </Box>
 
-                {/* Title */}
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 600,
-                    color: "#1e293b",
-                    marginBottom: "1rem",
-                    fontFamily: "'Inter', sans-serif",
-                    letterSpacing: "-0.02em",
-                    fontSize: "1.25rem",
-                  }}
-                >
-                  {industry.title}
-                </Typography>
+                  {/* Card Image */}
+                  <Box
+                    className="card-image"
+                    sx={{
+                      height: "100%",
+                      position: "relative",
+                      transition: "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+                    }}
+                  >
+                    <img
+                      src={industry.image}
+                      alt={industry.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <Box
+                      className="card-overlay"
+                      sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background:
+                          "linear-gradient(135deg, rgba(15, 15, 35, 0.9) 0%, rgba(26, 26, 46, 0.8) 50%, rgba(22, 33, 62, 0.95) 100%)",
+                        opacity: 0,
+                        transition: "opacity 0.8s ease",
+                      }}
+                    />
+                  </Box>
 
-                {/* Description */}
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "#64748b",
-                    lineHeight: 1.6,
-                    fontSize: "0.95rem",
-                    fontFamily: "'Inter', sans-serif",
-                  }}
-                >
-                  {industry.description}
-                </Typography>
+                  {/* Category Badge */}
+                  <Typography
+                    className="card-category"
+                    sx={{
+                      position: "absolute",
+                      top: 28,
+                      left: 28,
+                      color: "#ffffff",
+                      fontWeight: 700,
+                      fontSize: "0.65rem",
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                      zIndex: 3,
+                      fontFamily:
+                        "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                      textShadow: "0 2px 8px rgba(0,0,0,0.8)",
+                      background:
+                        "linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%)",
+                      padding: "10px 20px",
+                      borderRadius: "25px",
+                      backdropFilter: "blur(15px)",
+                      border: "1px solid rgba(255, 255, 255, 0.1)",
+                    }}
+                  >
+                    {industry.category}
+                  </Typography>
 
-                {/* Bottom accent line */}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    height: "3px",
-                    background: `linear-gradient(90deg, ${industry.color} 0%, ${industry.color}dd 100%)`,
-                    borderRadius: "0 0 20px 20px",
-                    transform: "scaleX(0)",
-                    transformOrigin: "left",
-                    transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                  }}
-                  className="card-accent"
-                />
-              </Paper>
+                  {/* Title */}
+                  <Typography
+                    className="card-title"
+                    sx={{
+                      position: "absolute",
+                      bottom: 28,
+                      left: 28,
+                      right: 28,
+                      color: "#ffffff",
+                      fontWeight: 700,
+                      lineHeight: 1.3,
+                      fontSize: "1.1rem",
+                      transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                      zIndex: 3,
+                      fontFamily:
+                        "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                      letterSpacing: "-0.01em",
+                      textShadow: "0 2px 12px rgba(0,0,0,0.9)",
+                    }}
+                  >
+                    {industry.title}
+                  </Typography>
+
+                  {/* Hover Content */}
+                  <CardContent
+                    className="card-content"
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      padding: "36px",
+                      background:
+                        "linear-gradient(135deg, rgba(15, 15, 35, 0.98) 0%, rgba(26, 26, 46, 0.95) 50%, rgba(22, 33, 62, 0.98) 100%)",
+                      backdropFilter: "blur(25px)",
+                      opacity: 0,
+                      transform: "translateY(40px)",
+                      transition: "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
+                      color: "#ffffff",
+                      zIndex: 4,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        flex: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        width: "100%",
+                      }}
+                    >
+                      <Box>
+                        <Typography
+                          variant="body1"
+                          className="content-description"
+                          sx={{
+                            color: "#ffffff",
+                            mb: 4,
+                            lineHeight: 1.7,
+                            fontSize: "1.05rem",
+                            fontWeight: 400,
+                            letterSpacing: "0.01em",
+                            fontFamily:
+                              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                            opacity: 0,
+                            transform: "translateY(25px)",
+                            transition: "all 0.6s ease-out 0.1s",
+                            ".card-content:hover &": {
+                              opacity: 1,
+                              transform: "translateY(0)",
+                            },
+                          }}
+                        >
+                          {industry.description}
+                        </Typography>
+
+                        <Box sx={{ mb: 4 }}>
+                          {industry.features.slice(0, 3).map((feature, idx) => (
+                            <Typography
+                              key={idx}
+                              variant="body2"
+                              className={`content-feature-${idx}`}
+                              sx={{
+                                color: "#e8e8e8",
+                                fontSize: "0.9rem",
+                                mb: 1.5,
+                                display: "flex",
+                                alignItems: "center",
+                                fontWeight: 400,
+                                letterSpacing: "0.01em",
+                                fontFamily:
+                                  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                                opacity: 0,
+                                transform: "translateY(20px)",
+                                transition: `all 0.6s ease-out ${
+                                  0.2 + idx * 0.1
+                                }s`,
+                                ".card-content:hover &": {
+                                  opacity: 1,
+                                  transform: "translateY(0)",
+                                },
+                                "&::before": {
+                                  content: '"✦"',
+                                  color: "#7877c6",
+                                  mr: 2.5,
+                                  fontSize: "0.9rem",
+                                  fontWeight: "bold",
+                                  lineHeight: 1,
+                                },
+                              }}
+                            >
+                              {feature}
+                            </Typography>
+                          ))}
+                        </Box>
+
+                        {/* Key Benefits Section */}
+                        <Box sx={{ mb: 4 }}>
+                          <Typography
+                            variant="body2"
+                            className="content-benefits"
+                            sx={{
+                              color: "#7877c6",
+                              fontSize: "0.75rem",
+                              fontWeight: 700,
+                              mb: 1.5,
+                              textTransform: "uppercase",
+                              letterSpacing: "0.15em",
+                              opacity: 0,
+                              transform: "translateY(20px)",
+                              transition: "all 0.6s ease-out 0.7s",
+                              ".card-content:hover &": {
+                                opacity: 1,
+                                transform: "translateY(0)",
+                              },
+                            }}
+                          >
+                            Key Benefits
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            className="content-benefit-text"
+                            sx={{
+                              color: "#b8b8b8",
+                              fontSize: "0.85rem",
+                              lineHeight: 1.6,
+                              opacity: 0,
+                              transform: "translateY(20px)",
+                              transition: "all 0.6s ease-out 0.8s",
+                              ".card-content:hover &": {
+                                opacity: 1,
+                                transform: "translateY(0)",
+                              },
+                            }}
+                          >
+                            {industry.category ===
+                              "HEALTHCARE & LIFE SCIENCES" &&
+                              "Enhance care delivery with secure, compliant digital solutions."}
+                            {industry.category ===
+                              "MANUFACTURING & AUTOMOTIVE" &&
+                              "Optimize production with smart manufacturing and digital twins."}
+                            {industry.category ===
+                              "BANKING & FINANCIAL SERVICES" &&
+                              "Secure financial operations with advanced digital banking platforms."}
+                            {industry.category === "AEROSPACE & DEFENSE" &&
+                              "Advance aerospace technology with precision engineering solutions."}
+                            {industry.category === "RETAIL & E-COMMERCE" &&
+                              "Revolutionize retail with omnichannel platforms and AI insights."}
+                            {industry.category === "ENERGY & UTILITIES" &&
+                              "Power energy systems with smart grid and renewable solutions."}
+                            {industry.category === "EDUCATION & TRAINING" &&
+                              "Transform education with innovative digital learning platforms."}
+                            {industry.category ===
+                              "LOGISTICS & TRANSPORTATION" &&
+                              "Streamline operations with real-time tracking and predictive analytics."}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+
+                    <Button
+                      variant="outlined"
+                      size="medium"
+                      className="content-button"
+                      sx={{
+                        alignSelf: "flex-start",
+                        px: 4,
+                        py: 2,
+                        borderRadius: "16px",
+                        borderColor: "#7877c6",
+                        color: "#7877c6",
+                        fontWeight: 600,
+                        textTransform: "none",
+                        fontSize: "0.95rem",
+                        letterSpacing: "0.02em",
+                        fontFamily:
+                          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                        opacity: 0,
+                        transform: "translateY(25px)",
+                        transition: "all 0.6s ease-out 0.9s",
+                        ".card-content:hover &": {
+                          opacity: 1,
+                          transform: "translateY(0)",
+                        },
+                        "&:hover": {
+                          backgroundColor: "rgba(120, 119, 198, 0.1)",
+                          borderColor: "#7877c6",
+                          transform: "scale(1.05)",
+                          boxShadow: "0 10px 30px rgba(120, 119, 198, 0.3)",
+                        },
+                      }}
+                    >
+                      {industry.buttonLabel}
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
             </Grid>
           ))}
         </Grid>
-      </Container>
-
-      <style jsx>{`
-        .card-accent {
-          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .MuiPaper-root:hover .card-accent {
-          transform: scaleX(1);
-        }
-      `}</style>
+      </Box>
     </Box>
   );
-};
-
-export default FeatureCards;
+}

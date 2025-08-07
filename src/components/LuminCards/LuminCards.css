@@ -43,41 +43,44 @@
     sans-serif;
 }
 
-/* Side by Side Cards Grid */
+/* Three Column Layout with Center Logo */
 .cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  align-items: center;
 }
 
-/* Modern Company Cards - Rectangular */
+/* Modern Company Cards - Enhanced Design */
 .company-card {
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #e2e8f0;
+  border: 1px solid #f1f5f9;
   position: relative;
-  aspect-ratio: 1.4 / 1;
+  aspect-ratio: 1.05 / 1;
   display: flex;
   flex-direction: column;
 }
 
 .company-card:hover {
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
-  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
 }
 
-/* Card Type Indicators */
+/* Card Type Indicators - Enhanced */
 .manufacturing {
-  border-left: 5px solid #dc2626;
+  border-left: 6px solid #dc2626;
+  background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
 }
 
 .healthcare {
-  border-left: 5px solid #2563eb;
+  border-left: 6px solid #2563eb;
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
 }
 
 .card-content {
@@ -86,16 +89,16 @@
   height: 100%;
 }
 
-/* Top Section - Smaller */
+/* Top Section - Compact */
 .card-top-section {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  padding: 1rem;
+  padding: 1.2rem;
   border-bottom: 1px solid #e2e8f0;
   flex: 0 0 auto;
 }
 
 .card-header {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 .company-logo-section {
@@ -124,41 +127,126 @@
   transform: scale(1.02);
 }
 
-/* Certifications */
-.certifications-section {
+/* Intellectt Logo Center with Subsidiary Indicators */
+.intellectt-logo-center {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-.certifications {
+.logo-center-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  position: relative;
 }
 
-.cert-badge {
-  background: #ffffff;
-  color: #475569;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
+.logo-center-container:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  transform: scale(1.02);
+}
+
+.intellectt-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.intellectt-logo {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.intellectt-logo:hover {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+  transform: scale(1.05);
+}
+
+.subsidiary-label {
   font-size: 0.75rem;
   font-weight: 600;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.3rem;
 }
 
-.cert-badge:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-1px);
+/* Enhanced Subsidiary Indicators - Better Arrow Design */
+.subsidiary-indicator {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-/* Image Section - Hero Style */
+.left-arrow {
+  transform: rotate(0deg);
+}
+
+.right-arrow {
+  transform: rotate(0deg);
+}
+
+.arrow-line {
+  width: 35px;
+  height: 3px;
+  background: linear-gradient(90deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.arrow-head {
+  width: 0;
+  height: 0;
+  border-left: 8px solid #94a3b8;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  position: absolute;
+  right: -8px;
+  top: -4.5px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.left-arrow .arrow-head {
+  right: auto;
+  left: -8px;
+  border-left: none;
+  border-right: 8px solid #94a3b8;
+}
+
+/* Enhanced hover effects for arrows */
+.logo-center-container:hover .arrow-line {
+  background: linear-gradient(90deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+  width: 45px;
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+}
+
+.logo-center-container:hover .arrow-head {
+  border-left-color: #f87171;
+  border-right-color: #f87171;
+  filter: drop-shadow(0 4px 8px rgba(220, 38, 38, 0.3));
+}
+
+.logo-center-container:hover .left-arrow .arrow-head {
+  border-right-color: #f87171;
+}
+
+/* Image Section - Much Bigger and Enhanced */
 .card-image-section {
-  flex: 1.5;
+  flex: 4;
   background: #ffffff;
   position: relative;
   display: flex;
@@ -170,7 +258,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 20px 20px;
   flex: 1;
 }
 
@@ -181,11 +269,11 @@
   background-position: center !important;
   background-repeat: no-repeat !important;
   position: relative;
-  filter: brightness(0.85) contrast(1.05) saturate(1.05);
+  filter: brightness(0.9) contrast(1.05) saturate(1.05);
   transition: all 0.6s ease;
 }
 
-/* Hero-style overlay - lighter for better image visibility */
+/* Enhanced overlay for better text visibility */
 .card-overlay {
   position: absolute;
   top: 0;
@@ -194,16 +282,16 @@
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.15) 50%,
-    rgba(0, 0, 0, 0.25) 100%
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.35) 100%
   );
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   color: #ffffff !important;
   z-index: 2;
-  padding: 2rem;
+  padding: 3.5rem;
 }
 
 .card-content-text {
@@ -215,9 +303,9 @@
 }
 
 .card-title {
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 1.5rem 0;
   color: #ffffff !important;
   line-height: 1.2;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -226,23 +314,39 @@
 }
 
 .card-description {
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 1.2rem;
+  line-height: 1.6;
   margin: 0;
   color: #ffffff !important;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   font-weight: 400;
   font-family: "'SF Pro Display', 'Inter', sans-serif";
   letter-spacing: -0.01em;
-  opacity: 0.9;
-  max-width: 350px;
+  opacity: 0.95;
+  max-width: 500px;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
   .cards-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+  }
+
+  .intellectt-logo {
+    width: 70px;
+  }
+
+  .arrow-line {
+    width: 30px;
+  }
+
+  .logo-center-container {
+    gap: 1rem;
+  }
+
+  .card-image-section {
+    flex: 3.5;
   }
 }
 
@@ -270,7 +374,64 @@
   }
 
   .company-card {
-    aspect-ratio: 1.2 / 1;
+    aspect-ratio: 1.1 / 1;
+  }
+
+  .card-top-section {
+    padding: 1rem;
+  }
+
+  .logo-container {
+    height: 60px;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .card-description {
+    font-size: 1.1rem;
+  }
+
+  .card-overlay {
+    padding: 3rem;
+  }
+
+  .intellectt-logo-center {
+    order: -1;
+    padding: 1rem;
+  }
+
+  .intellectt-logo {
+    width: 70px;
+  }
+
+  .logo-center-container {
+    padding: 1.2rem;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .subsidiary-indicator {
+    display: none;
+  }
+
+  .subsidiary-label {
+    font-size: 0.7rem;
+  }
+
+  .card-image-section {
+    flex: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .company-card {
+    aspect-ratio: 1 / 1;
   }
 
   .card-top-section {
@@ -282,45 +443,27 @@
   }
 
   .card-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .card-description {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .card-overlay {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.75rem;
+    padding: 2.5rem;
   }
 
-  .company-card {
-    aspect-ratio: 1.1 / 1;
+  .intellectt-logo {
+    width: 60px;
   }
 
-  .card-top-section {
-    padding: 0.75rem;
-  }
-
-  .logo-container {
-    height: 45px;
-  }
-
-  .card-title {
-    font-size: 1.1rem;
-  }
-
-  .card-description {
-    font-size: 0.75rem;
-  }
-
-  .card-overlay {
+  .logo-center-container {
     padding: 1rem;
+  }
+
+  .card-image-section {
+    flex: 2.5;
   }
 }
 
@@ -341,15 +484,15 @@
 }
 
 .clickable-carousel:hover {
-  filter: brightness(0.9) contrast(1.1) saturate(1.1);
+  filter: brightness(0.85) contrast(1.1) saturate(1.1);
   transform: scale(1.02);
 }
 
 .clickable-carousel:hover .card-overlay {
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.3) 100%
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.4) 100%
   );
 }

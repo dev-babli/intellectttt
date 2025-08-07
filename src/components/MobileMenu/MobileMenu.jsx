@@ -132,17 +132,17 @@ const menus = [
       {
         id: 61,
         title: "Current Openings",
-        link: "/carrers/current-openings",
+        link: "/careers/current-openings",
       },
       {
         id: 62,
         title: "Life at Company",
-        link: "/carrers/life-at-company",
+        link: "/careers/life-at-company",
       },
       {
         id: 63,
-        title: "Join Our Talent Network",
-        link: "/carrers/join-our-tilent-network",
+        title: "How we hire",
+        link: "/careers/hiring-process",
       },
     ],
   },

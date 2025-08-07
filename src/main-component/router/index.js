@@ -259,14 +259,14 @@ const AllRoute = () => {
               />
             </Route>
 
-            <Route path="carrers">
-              <Route path="current-openings" element={<TalentNetworks />} />
+            <Route path="careers">
+              <Route path="current-openings" element={<CurrentOpenings />} />
 
               <Route path="life-at-company" element={<LifeAtCompany />} />
 
               <Route
-                path="join-our-tilent-network"
-                element={<CurrentOpenings />}
+                path="hiring-process"
+                element={<TalentNetworks />}
               />
             </Route>
             <Route path="industries">

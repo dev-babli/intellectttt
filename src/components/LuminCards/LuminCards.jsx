@@ -183,9 +183,8 @@ const LuminCards = () => {
           {/* Lumin Innovations Card */}
           <div className="company-card manufacturing">
             <div className="card-content">
-              {/* Top Section - Logo & Certifications */}
+              {/* Top Section - Logo Only */}
               <div className="card-top-section">
-                {/* Company Header */}
                 <div className="card-header">
                   <div className="company-logo-section">
                     <div className="logo-container">
@@ -197,14 +196,6 @@ const LuminCards = () => {
                         title="Visit Lumin Innovations Website"
                       />
                     </div>
-                  </div>
-                </div>
-
-                {/* Certifications Section */}
-                <div className="certifications-section">
-                  <div className="certifications">
-                    <span className="cert-badge">ISO 9001:2015</span>
-                    <span className="cert-badge">AS9100D</span>
                   </div>
                 </div>
               </div>
@@ -226,7 +217,10 @@ const LuminCards = () => {
                           {luminInnovationsSlides[currentSlideIndex].title}
                         </h4>
                         <p className="card-description">
-                          {luminInnovationsSlides[currentSlideIndex].description}
+                          {
+                            luminInnovationsSlides[currentSlideIndex]
+                              .description
+                          }
                         </p>
                       </div>
                     </div>
@@ -236,12 +230,34 @@ const LuminCards = () => {
             </div>
           </div>
 
+          {/* Intellectt Logo Center with Subsidiary Indicators */}
+          <div className="intellectt-logo-center">
+            <div className="logo-center-container">
+              <div className="subsidiary-indicator left-arrow">
+                <div className="arrow-line"></div>
+                <div className="arrow-head"></div>
+              </div>
+
+              <div className="intellectt-logo-section">
+                <img
+                  src="/logos/Intellectt-Logo.webp"
+                  alt="Intellectt"
+                  className="intellectt-logo"
+                />
+              </div>
+
+              <div className="subsidiary-indicator right-arrow">
+                <div className="arrow-line"></div>
+                <div className="arrow-head"></div>
+              </div>
+            </div>
+          </div>
+
           {/* Lumin Inc Card */}
           <div className="company-card healthcare">
             <div className="card-content">
-              {/* Top Section - Logo & Certifications */}
+              {/* Top Section - Logo Only */}
               <div className="card-top-section">
-                {/* Company Header */}
                 <div className="card-header">
                   <div className="company-logo-section">
                     <div className="logo-container">
@@ -253,14 +269,6 @@ const LuminCards = () => {
                         title="Visit Lumin Inc Website"
                       />
                     </div>
-                  </div>
-                </div>
-
-                {/* Certifications Section */}
-                <div className="certifications-section">
-                  <div className="certifications">
-                    <span className="cert-badge">ISO 13485</span>
-                    <span className="cert-badge">Medical Certified</span>
                   </div>
                 </div>
               </div>
