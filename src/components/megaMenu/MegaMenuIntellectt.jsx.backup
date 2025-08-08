@@ -1329,169 +1329,545 @@ const menuData = {
   "WHAT WE DO": {
     mainItems: [
       {
-        title: "Our Journey",
-        description: "Learn about our journey in AI innovation",
-        image: "/placeholder.svg?height=80&width=280",
-        items: ["Company Overview", "Vision & Mission", "Core Values"],
-        url: "/company/our-journey",
-      },
-      {
-        title: "Leadership Team",
-        description: "Meet our executive leadership",
-        image: "/placeholder.svg?height=80&width=280",
-        items: ["Executive Team", "Board of Directors", "Advisory Board"],
-        url: "/Company/leadership-team",
-      },
-      {
-        title: "Global Presence",
-        description: "Our worldwide locations and partnerships",
-        image: "/placeholder.svg?height=80&width=280",
-        items: ["Office Locations", "Global Partners", "Regional Expertise"],
-        url: "/company/global-presence",
-      },
-      {
-        title: "Our Companies",
-        description: "Explore our subsidiary companies and divisions",
-        image: "/placeholder.svg?height=80&width=280",
-        items: ["Lumin Inc.", "Lumin Innovations"],
-        hasDropdown: true,
-        companies: [
-          {
-            name: "Lumin Inc.",
-            description:
-              "Healthcare display and consulting solutions specializing in medical technology",
-            focus: "Healthcare Technology",
-            image: "/placeholder.svg?height=60&width=100",
-            color: "rgba(59, 130, 246, 0.1)",
-            url: "https://lumininc.com/",
-          },
-          {
-            name: "Lumin Innovations",
-            description:
-              "Advanced manufacturing and automation driving Industry 4.0 solutions",
-            focus: "Manufacturing & Automation",
-            image: "/placeholder.svg?height=60&width=100",
-            color: "rgba(16, 185, 129, 0.1)",
-            url: "https://lumin-innovations.com/",
-          },
-        ],
-      },
-    ],
-    sideItems: [
-      {
-        title: "Company Info",
-        items: ["Awards & Recognition", "Press Releases", "Investor Relations"],
-      },
-      {
-        title: "Partnerships",
-        items: [
-          "Strategic Alliances",
-          "Technology Partners",
-          "Channel Partners",
-        ],
-      },
-    ],
-  },
-  "WHAT WE DO": {
-    mainItems: [
-      {
-        title: "AI & GenAI",
-        description: "Advanced artificial intelligence and generative AI solutions",
+        title: "AI & Gen AI",
+        description: "Intelligent AI solutions and generative AI services",
         image: "/placeholder.svg?height=80&width=280",
         items: [
-          "AI Strategy",
-          "Generative AI",
-          "AI-Accelerated Engineering",
-          "Connect AI",
+          "Agentic AI and AI Agents",
+          "AI Advisory and Responsible AI",
+          "AI Automation",
+          "Gen AI & LLM Integration",
+          "ML Engineering & ML Ops",
+          "NLP & Computer Vision"
         ],
         hasDropdown: true,
         url: "/service/ai-and-gen-ai",
         services: [
           {
-            name: "AI Strategy",
-            description: "Strategic AI roadmap and implementation planning",
-            focus: "AI & GenAI",
-            color: "rgba(20, 184, 166, 0.15)",
-            icon: "🧠",
-            url: "/service/ai-and-gen-ai",
-          },
-          {
-            name: "Generative AI",
-            description: "Advanced generative AI solutions and LLM integration",
-            focus: "AI & GenAI",
+            name: "Agentic AI and AI Agents",
+            description: "Building intelligent, autonomous AI-driven agents",
+            focus: "AI & Gen AI",
             color: "rgba(59, 130, 246, 0.15)",
             icon: "🤖",
-            url: "/service/ai-and-gen-ai/llm",
+            url: "/service/ai-and-gen-ai/agents",
           },
           {
-            name: "AI-Accelerated Engineering",
-            description: "AI-powered engineering and development acceleration",
-            focus: "AI & GenAI",
+            name: "AI Advisory and Responsible AI",
+            description: "Strategic AI guidance with a focus on ethics",
+            focus: "AI & Gen AI",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "🎯",
+            url: "/service/ai-and-gen-ai/responsible",
+          },
+          {
+            name: "AI Automation",
+            description: "Streamlining workflows using smart AI automation",
+            focus: "AI & Gen AI",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "⚡",
             url: "/service/ai-and-gen-ai/automation",
           },
           {
-            name: "Connect AI",
-            description: "AI integration and connectivity solutions",
-            focus: "AI & GenAI",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "🔗",
-            url: "/service/ai-and-gen-ai/agents",
+            name: "Gen AI & LLM Integration",
+            description: "Integrating GenAI and LLMs into business systems",
+            focus: "AI & Gen AI",
+            color: "rgba(139, 92, 246, 0.15)",
+            icon: "🧠",
+            url: "/service/ai-and-gen-ai/llm",
+          },
+          {
+            name: "ML Engineering & ML Ops",
+            description: "End-to-end machine learning engineering and ops",
+            focus: "AI & Gen AI",
+            color: "rgba(236, 72, 153, 0.15)",
+            icon: "🔧",
+            url: "/service/ai-and-gen-ai/mlops",
+          },
+          {
+            name: "NLP & Computer Vision",
+            description: "AI solutions in language processing and vision",
+            focus: "AI & Gen AI",
+            color: "rgba(245, 158, 11, 0.15)",
+            icon: "👁️",
+            url: "/service/ai-and-gen-ai/nlp",
           },
         ],
-        icon: "🧠",
+        icon: "🤖",
         color: "rgba(59, 130, 246, 0.15)",
       },
       {
-        title: "Cloud & Application",
+        title: "Cloud & Application Services",
         description: "Scalable cloud infrastructure and application development",
         image: "/placeholder.svg?height=80&width=280",
         items: [
-          "Cloud Migration",
-          "DevOps",
-          "Microservices",
-          "Containerization",
+          "Infrastructure Design",
+          "Cost Optimization",
+          "Infrastructure as Code",
+          "Continuous Integration",
+          "Continuous Deployment",
+          "Blue-Green Deployment"
         ],
         hasDropdown: true,
         url: "/service/cloud-and-application-services",
         services: [
           {
-            name: "Cloud Migration",
-            description: "Seamless cloud migration and infrastructure optimization",
+            name: "Infrastructure Design",
+            description: "Design scalable and reliable cloud infrastructure",
             focus: "Cloud & Application",
-            color: "rgba(20, 184, 166, 0.15)",
-            icon: "☁️",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🏗️",
             url: "/service/cloud-and-application-services",
           },
           {
-            name: "DevOps",
-            description: "DevOps practices and CI/CD pipeline implementation",
+            name: "Cost Optimization",
+            description: "Optimize cloud costs and resource utilization",
             focus: "Cloud & Application",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "🔄",
-            url: "/service/cloud-and-application-services/devops",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "💰",
+            url: "/service/cloud-and-application-services",
           },
           {
-            name: "Microservices",
-            description: "Microservices architecture and implementation",
+            name: "Infrastructure as Code",
+            description: "Automate infrastructure deployment and management",
             focus: "Cloud & Application",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "🔧",
-            url: "/service/cloud-and-application-services/microservices",
+            icon: "📝",
+            url: "/service/cloud-and-application-services",
           },
           {
-            name: "Containerization",
-            description: "Docker and Kubernetes container solutions",
+            name: "Continuous Integration",
+            description: "Streamline development and deployment pipelines",
             focus: "Cloud & Application",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "📦",
-            url: "/service/cloud-and-application-services/containers",
+            color: "rgba(139, 92, 246, 0.15)",
+            icon: "🔄",
+            url: "/service/cloud-and-application-services",
+          },
+          {
+            name: "Continuous Deployment",
+            description: "Automated deployment and release management",
+            focus: "Cloud & Application",
+            color: "rgba(236, 72, 153, 0.15)",
+            icon: "🚀",
+            url: "/service/cloud-and-application-services",
+          },
+          {
+            name: "Blue-Green Deployment",
+            description: "Zero-downtime deployment strategies",
+            focus: "Cloud & Application",
+            color: "rgba(245, 158, 11, 0.15)",
+            icon: "🔄",
+            url: "/service/cloud-and-application-services",
           },
         ],
         icon: "☁️",
+        color: "rgba(59, 130, 246, 0.15)",
+      },
+      {
+        title: "SAP Services",
+        description: "Enterprise SAP solutions and digital transformation",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "SAP Implementation",
+          "SAP Migration",
+          "SAP Customization",
+          "SAP Integration",
+          "SAP Support",
+          "SAP Consulting"
+        ],
+        hasDropdown: true,
+        url: "/service/sap-services",
+        services: [
+          {
+            name: "SAP Implementation",
+            description: "End-to-end SAP system implementation",
+            focus: "SAP Services",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🏢",
+            url: "/service/sap-services",
+          },
+          {
+            name: "SAP Migration",
+            description: "Seamless SAP system migration and upgrades",
+            focus: "SAP Services",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "🔄",
+            url: "/service/sap-services",
+          },
+          {
+            name: "SAP Customization",
+            description: "Custom SAP solutions and development",
+            focus: "SAP Services",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "⚙️",
+            url: "/service/sap-services",
+          },
+          {
+            name: "SAP Integration",
+            description: "Integrate SAP with existing systems",
+            focus: "SAP Services",
+            color: "rgba(139, 92, 246, 0.15)",
+            icon: "🔗",
+            url: "/service/sap-services",
+          },
+          {
+            name: "SAP Support",
+            description: "Ongoing SAP support and maintenance",
+            focus: "SAP Services",
+            color: "rgba(236, 72, 153, 0.15)",
+            icon: "🛠️",
+            url: "/service/sap-services",
+          },
+          {
+            name: "SAP Consulting",
+            description: "Strategic SAP consulting and advisory",
+            focus: "SAP Services",
+            color: "rgba(245, 158, 11, 0.15)",
+            icon: "💼",
+            url: "/service/sap-services",
+          },
+        ],
+        icon: "🏢",
+        color: "rgba(16, 185, 129, 0.15)",
+      },
+      {
+        title: "Data & Analytics",
+        description: "Transform data into actionable business insights",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "Azure Data Lake, Snowflake & Power BI",
+          "Business Intelligence & Dashboards",
+          "Data Engineering & ETL",
+          "Data Governance & Security",
+          "Data Consistency",
+          "Data Integrity"
+        ],
+        hasDropdown: true,
+        url: "/service/data-and-analytics",
+        services: [
+          {
+            name: "Azure Data Lake, Snowflake & Power BI",
+            description: "Unify, store, and visualize data at scale",
+            focus: "Data & Analytics",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "📊",
+            url: "/service/data-and-analytics",
+          },
+          {
+            name: "Business Intelligence & Dashboards",
+            description: "Turn raw data into powerful insights",
+            focus: "Data & Analytics",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "📈",
+            url: "/service/data-and-analytics",
+          },
+          {
+            name: "Data Engineering & ETL",
+            description: "Build and streamline trusted data pipelines",
+            focus: "Data & Analytics",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🔧",
+            url: "/service/data-and-analytics",
+          },
+          {
+            name: "Data Governance & Security",
+            description: "Ensure compliant, secure, and reliable data",
+            focus: "Data & Analytics",
+            color: "rgba(139, 92, 246, 0.15)",
+            icon: "🔒",
+            url: "/service/data-and-analytics",
+          },
+          {
+            name: "Data Consistency",
+            description: "Maintain data consistency across systems",
+            focus: "Data & Analytics",
+            color: "rgba(236, 72, 153, 0.15)",
+            icon: "✅",
+            url: "/service/data-and-analytics",
+          },
+          {
+            name: "Data Integrity",
+            description: "Ensure data quality and reliability",
+            focus: "Data & Analytics",
+            color: "rgba(245, 158, 11, 0.15)",
+            icon: "🛡️",
+            url: "/service/data-and-analytics",
+          },
+        ],
+        icon: "📊",
         color: "rgba(20, 184, 166, 0.15)",
       },
+      {
+        title: "Managed IT Services",
+        description: "Comprehensive IT management and support solutions",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "IT Infrastructure Management",
+          "Network Security",
+          "Cloud Management",
+          "Help Desk Support",
+          "Disaster Recovery",
+          "IT Consulting"
+        ],
+        hasDropdown: true,
+        url: "/service/managed-it-services",
+        services: [
+          {
+            name: "IT Infrastructure Management",
+            description: "End-to-end IT infrastructure management",
+            focus: "Managed IT Services",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🖥️",
+            url: "/service/managed-it-services",
+          },
+          {
+            name: "Network Security",
+            description: "Comprehensive network security solutions",
+            focus: "Managed IT Services",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "🔒",
+            url: "/service/managed-it-services",
+          },
+          {
+            name: "Cloud Management",
+            description: "Multi-cloud management and optimization",
+            focus: "Managed IT Services",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "☁️",
+            url: "/service/managed-it-services",
+          },
+          {
+            name: "Help Desk Support",
+            description: "24/7 technical support and troubleshooting",
+            focus: "Managed IT Services",
+            color: "rgba(139, 92, 246, 0.15)",
+            icon: "🆘",
+            url: "/service/managed-it-services",
+          },
+          {
+            name: "Disaster Recovery",
+            description: "Business continuity and disaster recovery",
+            focus: "Managed IT Services",
+            color: "rgba(236, 72, 153, 0.15)",
+            icon: "🔄",
+            url: "/service/managed-it-services",
+          },
+          {
+            name: "IT Consulting",
+            description: "Strategic IT consulting and advisory",
+            focus: "Managed IT Services",
+            color: "rgba(245, 158, 11, 0.15)",
+            icon: "💼",
+            url: "/service/managed-it-services",
+          },
+        ],
+        icon: "🛠️",
+        color: "rgba(236, 72, 153, 0.15)",
+      },
+      {
+        title: "Engineering & Manufacturing IT",
+        description: "Digital transformation for manufacturing and engineering",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "Digital Twin Technology",
+          "IoT Solutions",
+          "Smart Manufacturing",
+          "Quality Control Systems",
+          "Supply Chain Optimization",
+          "Predictive Maintenance"
+        ],
+        hasDropdown: true,
+        url: "/service/engineering-and-manufacturing-it",
+        services: [
+          {
+            name: "Digital Twin Technology",
+            description: "Create digital replicas for optimization",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🔄",
+            url: "/service/engineering-and-manufacturing-it",
+          },
+          {
+            name: "IoT Solutions",
+            description: "Connected devices and sensor networks",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "📡",
+            url: "/service/engineering-and-manufacturing-it",
+          },
+          {
+            name: "Smart Manufacturing",
+            description: "Industry 4.0 and automation solutions",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🏭",
+            url: "/service/engineering-and-manufacturing-it",
+          },
+          {
+            name: "Quality Control Systems",
+            description: "Automated quality assurance and testing",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(139, 92, 246, 0.15)",
+            icon: "✅",
+            url: "/service/engineering-and-manufacturing-it",
+          },
+          {
+            name: "Supply Chain Optimization",
+            description: "Optimize supply chain operations",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(236, 72, 153, 0.15)",
+            icon: "📦",
+            url: "/service/engineering-and-manufacturing-it",
+          },
+          {
+            name: "Predictive Maintenance",
+            description: "AI-powered maintenance prediction",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(245, 158, 11, 0.15)",
+            icon: "🔮",
+            url: "/service/engineering-and-manufacturing-it",
+          },
+        ],
+        icon: "🏭",
+        color: "rgba(16, 185, 129, 0.15)",
+      },
+      {
+        title: "Healthcare & Life Sciences IT",
+        description: "Digital health and medical technology solutions",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "Digital Health Platforms",
+          "Medical Device Integration",
+          "Clinical Trial Management",
+          "Healthcare Analytics",
+          "Compliance Solutions",
+          "Telemedicine Systems"
+        ],
+        hasDropdown: true,
+        url: "/service/healthcare-and-life-sciences-it",
+        services: [
+          {
+            name: "Digital Health Platforms",
+            description: "AI-powered healthcare platforms",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🏥",
+            url: "/service/healthcare-and-life-sciences-it",
+          },
+          {
+            name: "Medical Device Integration",
+            description: "Connected medical device technology",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "🩺",
+            url: "/service/healthcare-and-life-sciences-it",
+          },
+          {
+            name: "Clinical Trial Management",
+            description: "Clinical trial data and analytics platforms",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🔬",
+            url: "/service/healthcare-and-life-sciences-it",
+          },
+          {
+            name: "Healthcare Analytics",
+            description: "Advanced healthcare data analytics",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(139, 92, 246, 0.15)",
+            icon: "📊",
+            url: "/service/healthcare-and-life-sciences-it",
+          },
+          {
+            name: "Compliance Solutions",
+            description: "Healthcare compliance and regulatory solutions",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(236, 72, 153, 0.15)",
+            icon: "📋",
+            url: "/service/healthcare-and-life-sciences-it",
+          },
+          {
+            name: "Telemedicine Systems",
+            description: "Remote healthcare delivery platforms",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(245, 158, 11, 0.15)",
+            icon: "📱",
+            url: "/service/healthcare-and-life-sciences-it",
+          },
+        ],
+        icon: "🏥",
+        color: "rgba(20, 184, 166, 0.15)",
+      },
+      {
+        title: "Talent Solutions",
+        description: "Comprehensive talent acquisition and management",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "Technical Recruitment",
+          "Contract Staffing",
+          "Project Teams",
+          "Skill Assessment",
+          "Training & Development",
+          "HR Technology"
+        ],
+        hasDropdown: true,
+        url: "/service/talent-solutions",
+        services: [
+          {
+            name: "Technical Recruitment",
+            description: "Specialized technical talent acquisition",
+            focus: "Talent Solutions",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "👥",
+            url: "/service/talent-solutions",
+          },
+          {
+            name: "Contract Staffing",
+            description: "Flexible contract staffing solutions",
+            focus: "Talent Solutions",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "📋",
+            url: "/service/talent-solutions",
+          },
+          {
+            name: "Project Teams",
+            description: "Complete project team deployment",
+            focus: "Talent Solutions",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "👨‍💼",
+            url: "/service/talent-solutions",
+          },
+          {
+            name: "Skill Assessment",
+            description: "Comprehensive skill evaluation and testing",
+            focus: "Talent Solutions",
+            color: "rgba(139, 92, 246, 0.15)",
+            icon: "📝",
+            url: "/service/talent-solutions",
+          },
+          {
+            name: "Training & Development",
+            description: "Professional development and training programs",
+            focus: "Talent Solutions",
+            color: "rgba(236, 72, 153, 0.15)",
+            icon: "🎓",
+            url: "/service/talent-solutions",
+          },
+          {
+            name: "HR Technology",
+            description: "Modern HR technology solutions",
+            focus: "Talent Solutions",
+            color: "rgba(245, 158, 11, 0.15)",
+            icon: "💻",
+            url: "/service/talent-solutions",
+          },
+        ],
+        icon: "👥",
+        color: "rgba(245, 158, 11, 0.15)",
+      },
+    ],
+  },
+  "WHAT WE DO": {
+    mainItems: [
       {
         title: "Data & Analytics",
         description: "Transform your data into actionable insights",
@@ -1507,7 +1883,8 @@ const menuData = {
         services: [
           {
             name: "Data Strategy",
-            description: "Comprehensive data strategy development and roadmap planning",
+            description:
+              "Comprehensive data strategy development and roadmap planning",
             focus: "Data & Analytics",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "📊",
@@ -1542,92 +1919,52 @@ const menuData = {
         color: "rgba(20, 184, 166, 0.15)",
       },
       {
-        title: "Managed IT Services",
-        description: "Comprehensive IT management and support solutions",
+        title: "Artificial Intelligence",
+        description: "Cutting-edge AI solutions for modern businesses",
         image: "/placeholder.svg?height=80&width=280",
         items: [
-          "Infrastructure Monitoring",
-          "Application Support",
-          "Service Desk",
-          "Resource Management",
+          "AI Strategy",
+          "Generative AI",
+          "AI-Accelerated Engineering",
+          "Connect AI",
         ],
         hasDropdown: true,
-        url: "/service/managed-it-services",
+        url: "/service/ai-and-gen-ai",
         services: [
           {
-            name: "Infrastructure Monitoring",
-            description: "24/7 NOC monitoring and infrastructure management",
-            focus: "Managed IT Services",
+            name: "AI Strategy",
+            description: "Strategic AI roadmap and implementation planning",
+            focus: "Artificial Intelligence",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "🖥️",
-            url: "/service/managed-it-services/infra",
+            icon: "🧠",
+            url: "/service/ai-and-gen-ai",
           },
           {
-            name: "Application Support",
-            description: "L1-L3 application support and maintenance",
-            focus: "Managed IT Services",
+            name: "Generative AI",
+            description: "Advanced generative AI solutions and LLM integration",
+            focus: "Artificial Intelligence",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "🔧",
-            url: "/service/managed-it-services/support",
+            icon: "🤖",
+            url: "/service/ai-and-gen-ai/llm",
           },
           {
-            name: "Service Desk",
-            description: "ITSM service desk and CoE management",
-            focus: "Managed IT Services",
+            name: "AI-Accelerated Engineering",
+            description: "AI-powered engineering and development acceleration",
+            focus: "Artificial Intelligence",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "📞",
-            url: "/service/managed-it-services/itsm",
+            icon: "⚡",
+            url: "/service/ai-and-gen-ai/automation",
           },
           {
-            name: "Resource Management",
-            description: "TMS managed resource services",
-            focus: "Managed IT Services",
+            name: "Connect AI",
+            description: "AI integration and connectivity solutions",
+            focus: "Artificial Intelligence",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "👥",
-            url: "/service/managed-it-services/tms",
+            icon: "🔗",
+            url: "/service/ai-and-gen-ai/agents",
           },
         ],
-        icon: "🖥️",
-        color: "rgba(59, 130, 246, 0.15)",
-      },
-      {
-        title: "SAP Services",
-        description: "Comprehensive SAP solutions and consulting services",
-        image: "/placeholder.svg?height=80&width=280",
-        items: [
-          "SAP S/4HANA",
-          "SAP Business Technology Platform",
-          "SAP Analytics",
-        ],
-        hasDropdown: true,
-        url: "/service/sap-services",
-        services: [
-          {
-            name: "SAP S/4HANA",
-            description: "End-to-end SAP S/4HANA implementation and migration",
-            focus: "SAP Services",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "🏢",
-            url: "/service/sap-services",
-          },
-          {
-            name: "SAP Business Technology Platform",
-            description: "SAP BTP integration and development services",
-            focus: "SAP Services",
-            color: "rgba(20, 184, 166, 0.15)",
-            icon: "🔧",
-            url: "/service/sap-services/btp",
-          },
-          {
-            name: "SAP Analytics",
-            description: "SAP analytics and reporting solutions",
-            focus: "SAP Services",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "📊",
-            url: "/service/sap-services/analytics",
-          },
-        ],
-        icon: "🏢",
+        icon: "🧠",
         color: "rgba(59, 130, 246, 0.15)",
       },
       {
@@ -1679,11 +2016,51 @@ const menuData = {
         icon: "👥",
         color: "rgba(59, 130, 246, 0.15)",
       },
+      {
+        title: "SAP",
+        description: "Comprehensive SAP solutions and consulting services",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "SAP S/4HANA",
+          "SAP Business Technology Platform",
+          "SAP Analytics",
+        ],
+        hasDropdown: true,
+        url: "/service/sap-services",
+        services: [
+          {
+            name: "SAP S/4HANA",
+            description: "End-to-end SAP S/4HANA implementation and migration",
+            focus: "SAP",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🏢",
+            url: "/service/sap-services",
+          },
+          {
+            name: "SAP Business Technology Platform",
+            description: "SAP BTP integration and development services",
+            focus: "SAP",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🔧",
+            url: "/service/sap-services/btp",
+          },
+          {
+            name: "SAP Analytics",
+            description: "SAP analytics and reporting solutions",
+            focus: "SAP",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "📊",
+            url: "/service/sap-services/analytics",
+          },
+        ],
+        icon: "🏢",
+        color: "rgba(59, 130, 246, 0.15)",
+      },
     ],
     sideItems: [
       {
         title: "More Services",
-        items: ["Engineering & Manufacturing IT", "Healthcare & Life Sciences IT"],
+        items: ["SAP Services", "Managed Services"],
       },
       {
         title: "Industries",
@@ -2059,7 +2436,6 @@ function MegaMenuIntellectt() {
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
-  const [hoveredService, setHoveredService] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const timeoutRef = useRef(null);
   const searchInputRef = useRef(null);
@@ -2371,7 +2747,6 @@ function MegaMenuIntellectt() {
     if (!menuConfig) return null;
 
     if (menuName === "WHAT WE DO") {
-
       return (
         <MegaMenuContainer
           variants={megaMenuVariants}
@@ -2381,312 +2756,164 @@ function MegaMenuIntellectt() {
           data-mega-menu="true"
         >
           <MegaMenuContent>
-            <div
-              style={{
-                display: "flex",
-                gap: "3rem",
-                padding: "2rem 0",
-                maxWidth: "1000px",
-                margin: "0 auto",
-              }}
-            >
-              {/* Left Column - Service Categories */}
-              <div
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                }}
-              >
-                {menuConfig.mainItems.map((item, index) => (
-                  <div
-                    key={item.title}
+            <MegaMenuGrid menuName={menuName}>
+              {menuConfig.mainItems.map((item, index) => (
+                <div
+                  key={item.title}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    textAlign: "center",
+                    gap: "1rem",
+                    padding: "2rem 1.5rem",
+                    borderRadius: "16px",
+                    background: "#ffffff",
+                    border: "1px solid #e5e7eb",
+                    transition: "all 0.3s ease",
+                    cursor: "pointer",
+                    minHeight: "280px",
+                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+                    justifyContent: "space-between",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#f8f9fa";
+                    e.currentTarget.style.borderColor = "#d1d5db";
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.boxShadow =
+                      "0 8px 24px rgba(0, 0, 0, 0.12)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#ffffff";
+                    e.currentTarget.style.borderColor = "#e5e7eb";
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow =
+                      "0 4px 12px rgba(0, 0, 0, 0.08)";
+                  }}
+                  onClick={() => {
+                    if (item.url) {
+                      handleNavigation(item.url);
+                    }
+                  }}
+                >
+                  {/* Service Icon */}
+                  {item.icon && (
+                    <div
+                      style={{
+                        width: "80px",
+                        height: "80px",
+                        background: item.color || "rgba(229, 62, 62, 0.1)",
+                        borderRadius: "20px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: "2rem",
+                        marginBottom: "1rem",
+                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                      }}
+                    >
+                      {item.icon}
+                    </div>
+                  )}
+
+                  {/* Service Title */}
+                  <h3
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "1rem",
-                      padding: "1rem",
-                      borderRadius: "12px",
-                      background: hoveredService === item.title ? "rgba(249, 250, 251, 0.8)" : "transparent",
-                      border: hoveredService === item.title ? "1px solid rgba(229, 62, 62, 0.2)" : "1px solid transparent",
-                      transition: "all 0.3s ease",
-                      cursor: "pointer",
+                      fontSize: "1.25rem",
+                      fontWeight: "700",
+                      color: "#111827",
+                      fontFamily: "Inter, sans-serif",
+                      margin: "0 0 0.75rem 0",
+                      lineHeight: "1.3",
                     }}
-                    onMouseEnter={() => setHoveredService(item.title)}
-                    onMouseLeave={() => setHoveredService(null)}
-                    onClick={() => {
+                  >
+                    {item.title}
+                  </h3>
+
+                  {/* Service Description */}
+                  <p
+                    style={{
+                      fontSize: "0.875rem",
+                      color: "#6b7280",
+                      lineHeight: "1.6",
+                      margin: "0 0 1.5rem 0",
+                      maxWidth: "200px",
+                    }}
+                  >
+                    {item.description}
+                  </p>
+
+                  {/* Explore More Button */}
+                  <div
+                    style={{
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                      padding: "0.75rem 1.5rem",
+                      textAlign: "center",
+                      width: "100%",
+                      borderRadius: "12px",
+                      background:
+                        "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)",
+                      border: "none",
+                      fontSize: "0.875rem",
+                      color: "#ffffff",
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: "600",
+                      lineHeight: "1.4",
+                      boxShadow: "0 4px 12px rgba(229, 62, 62, 0.25)",
+                      marginTop: "auto",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background =
+                        "linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow =
+                        "0 8px 20px rgba(229, 62, 62, 0.35)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background =
+                        "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)";
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow =
+                        "0 4px 12px rgba(229, 62, 62, 0.25)";
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
                       if (item.url) {
                         handleNavigation(item.url);
                       }
                     }}
                   >
-                    {/* Service Icon */}
-                    {item.icon && (
-                      <div
-                        style={{
-                          width: "48px",
-                          height: "48px",
-                          background: item.color || "rgba(229, 62, 62, 0.1)",
-                          borderRadius: "12px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "1.5rem",
-                          flexShrink: 0,
-                        }}
-                      >
-                        {item.icon}
-                      </div>
-                    )}
-
-                    {/* Service Content */}
-                    <div
+                    <span
                       style={{
-                        flex: 1,
                         display: "flex",
-                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
                         gap: "0.25rem",
+                        fontSize: "0.875rem",
+                        fontWeight: "600",
+                        letterSpacing: "0.025em",
                       }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.5rem",
-                        }}
-                      >
-                        <h3
-                          style={{
-                            fontSize: "1rem",
-                            fontWeight: "600",
-                            color: "#111827",
-                            fontFamily: "Inter, sans-serif",
-                            margin: 0,
-                            lineHeight: "1.2",
-                          }}
-                        >
-                          {item.title}
-                        </h3>
-                        <span
-                          style={{
-                            fontSize: "0.75rem",
-                            fontWeight: "500",
-                            color: "#6b7280",
-                            marginLeft: "auto",
-                          }}
-                        >
-                          →
-                        </span>
-                      </div>
-                      <p
+                      Explore More
+                      <span
                         style={{
                           fontSize: "0.875rem",
-                          color: "#6b7280",
-                          lineHeight: "1.4",
-                          margin: 0,
+                          transition: "transform 0.3s ease",
+                          marginLeft: "0.125rem",
                         }}
                       >
-                        {item.description}
-                      </p>
-                    </div>
+                        →
+                      </span>
+                    </span>
                   </div>
-                ))}
-              </div>
-
-              {/* Right Column - Dynamic Services List */}
-              <div
-                style={{
-                  flex: 1,
-                  borderLeft: "1px solid #e5e7eb",
-                  paddingLeft: "2rem",
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: "1.125rem",
-                    fontWeight: "700",
-                    color: "#111827",
-                    fontFamily: "Inter, sans-serif",
-                    margin: "0 0 1.5rem 0",
-                    lineHeight: "1.3",
-                  }}
-                >
-                  {hoveredService ? `${hoveredService} Services` : "Browse by Services"}
-                </h3>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.75rem",
-                  }}
-                >
-                  {hoveredService ? (
-                    // Show specific services for hovered category
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: "1rem",
-                      }}
-                    >
-                      {(() => {
-                        const hoveredItem = menuConfig.mainItems.find(item => item.title === hoveredService);
-                        console.log('Hovered service:', hoveredService);
-                        console.log('Found item:', hoveredItem);
-                        console.log('Services:', hoveredItem?.services);
-                        return hoveredItem?.services?.map((serviceItem, serviceIndex) => (
-                          <div
-                            key={serviceIndex}
-                            style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "center",
-                              textAlign: "center",
-                              padding: "1.5rem",
-                              borderRadius: "12px",
-                              background: "#ffffff",
-                              border: "1px solid #e5e7eb",
-                              transition: "all 0.3s ease",
-                              cursor: "pointer",
-                              minHeight: "120px",
-                              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)",
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.background = "#f8f9fa";
-                              e.currentTarget.style.borderColor = "#d1d5db";
-                              e.currentTarget.style.transform = "translateY(-2px)";
-                              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)";
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.background = "#ffffff";
-                              e.currentTarget.style.borderColor = "#e5e7eb";
-                              e.currentTarget.style.transform = "translateY(0)";
-                              e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.06)";
-                            }}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (serviceItem.url) {
-                                handleNavigation(serviceItem.url);
-                              }
-                            }}
-                          >
-                            {/* Service Icon */}
-                            {serviceItem.icon && (
-                              <div
-                                style={{
-                                  width: "48px",
-                                  height: "48px",
-                                  background: serviceItem.color || "rgba(229, 62, 62, 0.1)",
-                                  borderRadius: "12px",
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                  fontSize: "1.5rem",
-                                  marginBottom: "0.75rem",
-                                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                                }}
-                              >
-                                {serviceItem.icon}
-                              </div>
-                            )}
-
-                            {/* Service Name */}
-                            <h4
-                              style={{
-                                fontSize: "0.875rem",
-                                fontWeight: "600",
-                                color: "#111827",
-                                fontFamily: "Inter, sans-serif",
-                                margin: 0,
-                                lineHeight: "1.2",
-                              }}
-                            >
-                              {serviceItem.name}
-                            </h4>
-                          </div>
-                        ));
-                      })()}
-                    </div>
-                  ) : (
-                    // Show all main services when nothing is hovered
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: "1rem",
-                      }}
-                    >
-                      {menuConfig.mainItems.map((item, index) => (
-                        <div
-                          key={item.title}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.75rem",
-                            padding: "0.75rem",
-                            borderRadius: "8px",
-                            background: "transparent",
-                            border: "1px solid transparent",
-                            transition: "all 0.3s ease",
-                            cursor: "pointer",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.background = "rgba(249, 250, 251, 0.8)";
-                            e.currentTarget.style.borderColor = "rgba(229, 62, 62, 0.2)";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.background = "transparent";
-                            e.currentTarget.style.borderColor = "transparent";
-                          }}
-                          onClick={() => {
-                            if (item.url) {
-                              handleNavigation(item.url);
-                            }
-                          }}
-                        >
-                          {/* Service Icon */}
-                          {item.icon && (
-                            <div
-                              style={{
-                                width: "32px",
-                                height: "32px",
-                                background: item.color || "rgba(229, 62, 62, 0.1)",
-                                borderRadius: "6px",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                fontSize: "1rem",
-                                flexShrink: 0,
-                              }}
-                            >
-                              {item.icon}
-                            </div>
-                          )}
-
-                          {/* Service Name */}
-                          <span
-                            style={{
-                              fontSize: "0.875rem",
-                              fontWeight: "500",
-                              color: "#374151",
-                              fontFamily: "Inter, sans-serif",
-                              lineHeight: "1.2",
-                            }}
-                          >
-                            {item.title}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
-              </div>
-            </div>
+              ))}
+            </MegaMenuGrid>
           </MegaMenuContent>
         </MegaMenuContainer>
       );
-    }
+
 
     if (menuName === "WHO WE WORK WITH") {
       return (
@@ -4312,7 +4539,7 @@ function MegaMenuIntellectt() {
         </MegaMenuContent>
       </MegaMenuContainer>
     );
-  };
+  }
 
   return (
     <div style={{ background: "white" }}>
