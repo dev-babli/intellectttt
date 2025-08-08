@@ -58,7 +58,7 @@ const Industrie = [
 
 const IndustrieSection = (props) => {
   const ClickHandler = () => {
-    window.scrollTo(10, 0);
+            window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

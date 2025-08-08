@@ -81,7 +81,7 @@
 
 /* reset css start */
 :root {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -98,6 +98,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+  scroll-behavior: smooth;
   position: relative;
   color: var(--color-default);
   font-family: var(--font-body);

@@ -190,7 +190,7 @@ export const useResponsiveAnimation = () => {
     parallaxEnabled: !isMobile,
     
     // Scroll behavior
-    scrollBehavior: isMobile ? 'auto' : 'smooth',
+    scrollBehavior: 'smooth',
   };
 };
 
