@@ -12,8 +12,7 @@ const slides = [
     ctaText: "Read More",
     ctaLink: "/service/ai-and-gen-ai",
     accent: "#667eea",
-    backgroundImage:
-      "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
+    backgroundImage: "/herosectionimages/Agentic Ai.webp",
   },
   {
     id: 2,
@@ -23,7 +22,7 @@ const slides = [
     ctaText: "Discover Agentic AI",
     ctaLink: "/service/ai-and-gen-ai/agents",
     accent: "#4facfe",
-    backgroundImage: "/herosectionimages/woman-scrolling-laptop.jpg",
+    backgroundImage: "/herosectionimages/Agentic Ai.webp",
   },
   {
     id: 3,
@@ -33,7 +32,7 @@ const slides = [
     ctaText: "View Cloud Services",
     ctaLink: "/service/cloud-and-application-services",
     accent: "#a8edea",
-    backgroundImage: "/herosectionimages/saas-concept-collage.jpg",
+    backgroundImage: "/herosectionimages/Scalable Cloud and Application.webp",
   },
   {
     id: 4,
@@ -43,8 +42,7 @@ const slides = [
     ctaText: "Start Your Journey",
     ctaLink: "/contact",
     accent: "#ff9a9e",
-    backgroundImage:
-      "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
+    backgroundImage: "/herosectionimages/Digital Journey.webp",
   },
   {
     id: 5,
@@ -55,7 +53,7 @@ const slides = [
     ctaLink: "/service/data-and-analytics",
     accent: "#667eea",
     backgroundImage:
-      "/herosectionimages/WhatsApp Image 2025-07-30 at 6.57.11 PM.jpeg",
+      "/herosectionimages/Data Driven intelleigence solution.webp",
   },
   {
     id: 6,
@@ -65,8 +63,7 @@ const slides = [
     ctaText: "Secure Your Business",
     ctaLink: "/cybersecurity",
     accent: "#4facfe",
-    backgroundImage:
-      "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
+    backgroundImage: "/herosectionimages/Cyber Security.webp",
   },
   {
     id: 7,
@@ -76,7 +73,7 @@ const slides = [
     ctaText: "Transform Now",
     ctaLink: "/digital-transformation",
     accent: "#a8edea",
-    backgroundImage: "/herosectionimages/saas-concept-collage.jpg",
+    backgroundImage: "/herosectionimages/Digital Partner.webp",
   },
   {
     id: 8,
@@ -86,7 +83,7 @@ const slides = [
     ctaText: "Innovate Today",
     ctaLink: "/innovation",
     accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/woman-scrolling-laptop.jpg",
+    backgroundImage: "/herosectionimages/Data & Analytics.webp",
   },
 ];
 

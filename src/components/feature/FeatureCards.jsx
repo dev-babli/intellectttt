@@ -1,617 +1,720 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Box, Typography, Button } from "@mui/material";
-import { motion, AnimatePresence } from "framer-motion";
-import { useMediaQuery } from "@mui/material";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  Box,
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+  Button,
+} from "@mui/material";
+import { Link } from "react-router-dom";
 
-const slideData = [
+const industries = [
   {
-    id: 1,
-    title: "Data & AI",
-    subtitle: "Transform your business with intelligent data solutions",
-    background: "/images/hero/ai-brain-network.jpg",
-    tabLabel: "Data&AI",
-    tabColor: "#10b981",
-    services: ["Business Intelligence", "Machine Learning", "Data Strategy"],
+    title: "Transform operations with intelligent AI-powered solutions.",
+    description:
+      "Harness the power of AI and GenAI to unlock new growth opportunities and drive innovation across all industries.",
+    category: "AI & MACHINE LEARNING",
+    image: "/herosectionimages/Agentic Ai.webp",
+    features: [
+      "Machine Learning & Deep Learning",
+      "Natural Language Processing",
+      "Computer Vision & Recognition",
+      "Predictive Analytics",
+      "AI-Powered Automation",
+      "Generative AI Solutions",
+    ],
+    buttonLabel: "Explore AI Solutions",
+    url: "/service/ai-and-gen-ai",
   },
   {
-    id: 2,
-    title: "Healthcare",
-    subtitle: "Innovative technology for better patient care",
-    background: "/images/Healthcare-and-Lifesciences.webp",
-    tabLabel: "Healthcare",
-    tabColor: "#6366f1",
-    services: ["EHR Systems", "Telemedicine", "Medical Devices"],
+    title: "Accelerate growth with scalable, secure cloud platforms.",
+    description:
+      "Build robust, scalable applications with enterprise-grade cloud infrastructure and modern development practices.",
+    category: "CLOUD & APPLICATION SERVICES",
+    image: "/herosectionimages/Scalable Cloud and Application.webp",
+    features: [
+      "Cloud Migration & Strategy",
+      "Microservices Architecture",
+      "DevOps & CI/CD Pipelines",
+      "Container Orchestration",
+      "Serverless Computing",
+      "Multi-Cloud Solutions",
+    ],
+    buttonLabel: "Discover Cloud Services",
+    url: "/service/cloud-and-application-services",
   },
   {
-    id: 3,
-    title: "Manufacturing",
-    subtitle: "Smart automation and Industry 4.0 solutions",
-    background: "/images/Manufacutring-and-Automotive.webp",
-    tabLabel: "Manufacturing",
-    tabColor: "#f59e0b",
-    services: ["Smart Manufacturing", "Digital Twins", "Quality Control"],
+    title: "Protect your digital assets with intelligent security frameworks.",
+    description:
+      "Safeguard your organization with advanced cybersecurity solutions and proactive threat detection systems.",
+    category: "CYBERSECURITY",
+    image: "/herosectionimages/Cyber Security.webp",
+    features: [
+      "Zero Trust Architecture",
+      "Threat Detection & Response",
+      "Identity & Access Management",
+      "Data Protection & Encryption",
+      "Security Compliance",
+      "Incident Response",
+    ],
+    buttonLabel: "Secure Your Business",
+    url: "/cybersecurity",
   },
   {
-    id: 4,
-    title: "Fintech",
-    subtitle: "Secure, scalable financial technology platforms",
-    background: "/images/Banking-and-Finance.webp",
-    tabLabel: "Fintech",
-    tabColor: "#10b981",
-    services: ["Digital Banking", "Payment Systems", "Risk Management"],
+    title: "Turn data into actionable insights for smarter decisions.",
+    description:
+      "Transform raw data into strategic insights that drive business growth and operational excellence.",
+    category: "DATA & ANALYTICS",
+    image: "/herosectionimages/Data & Analytics.webp",
+    features: [
+      "Big Data Processing",
+      "Business Intelligence",
+      "Data Visualization",
+      "Predictive Analytics",
+      "Real-time Dashboards",
+      "Data Governance",
+    ],
+    buttonLabel: "Analyze Data",
+    url: "/service/data-and-analytics",
   },
   {
-    id: 5,
-    title: "Aerospace",
-    subtitle: "Cutting-edge aerospace and defense solutions",
-    background: "/images/Defence-and-aEROSPACE.webp",
-    tabLabel: "Aerospace",
-    tabColor: "#ef4444",
-    services: ["Aircraft Systems", "Defense Tech", "Satellite Comm"],
+    title: "Drive intelligent decision-making with data-driven solutions.",
+    description:
+      "Leverage advanced analytics and machine learning to extract meaningful insights from your business data.",
+    category: "INTELLIGENCE SOLUTIONS",
+    image: "/herosectionimages/Data Driven intelleigence solution.webp",
+    features: [
+      "Advanced Analytics",
+      "Machine Learning Models",
+      "Business Intelligence",
+      "Data Mining",
+      "Statistical Analysis",
+      "Automated Reporting",
+    ],
+    buttonLabel: "Unlock Intelligence",
+    url: "/service/business-intelligence",
   },
   {
-    id: 6,
-    title: "Energy",
-    subtitle: "Smart grid and renewable energy innovation",
-    background: "/images/Industry.webp",
-    tabLabel: "Energy",
-    tabColor: "#06b6d4",
-    services: ["Smart Grid", "Renewable Energy", "Grid Security"],
+    title: "Accelerate your digital transformation journey.",
+    description:
+      "Navigate the complex digital landscape with strategic guidance and innovative technology solutions.",
+    category: "DIGITAL TRANSFORMATION",
+    image: "/herosectionimages/Digital Journey.webp",
+    features: [
+      "Digital Strategy",
+      "Process Automation",
+      "Legacy Modernization",
+      "Customer Experience",
+      "Innovation Consulting",
+      "Change Management",
+    ],
+    buttonLabel: "Start Journey",
+    url: "/service/digital-transformation",
+  },
+  {
+    title: "Build lasting partnerships for sustainable growth.",
+    description:
+      "Collaborate with trusted technology partners to drive innovation and achieve your business objectives.",
+    category: "STRATEGIC PARTNERSHIPS",
+    image: "/herosectionimages/Digital Partner.webp",
+    features: [
+      "Technology Partnerships",
+      "Strategic Alliances",
+      "Joint Solutions",
+      "Partner Ecosystem",
+      "Collaborative Innovation",
+      "Shared Success Models",
+    ],
+    buttonLabel: "Partner With Us",
+    url: "/partnerships",
+  },
+  {
+    title: "Innovate with cutting-edge engineering solutions.",
+    description:
+      "Transform your engineering processes with AI-powered tools, collaborative platforms, and innovative methodologies.",
+    category: "ENGINEERING INNOVATION",
+    image: "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
+    features: [
+      "AI-Assisted Engineering",
+      "Collaborative Platforms",
+      "Design Automation",
+      "Simulation & Modeling",
+      "Innovation Labs",
+      "R&D Solutions",
+    ],
+    buttonLabel: "Innovate Engineering",
+    url: "/service/engineering-innovation",
   },
 ];
 
-export default function FeatureCards() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+function FeatureCards() {
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
+  const cardsRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [expandedBox, setExpandedBox] = useState(null);
-  const isMobile = useMediaQuery("(max-width:768px)");
 
   useEffect(() => {
+    // Trigger entrance animations
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
+
     return () => clearTimeout(timer);
   }, []);
 
-  const handleNextSlide = () => {
-    if (expandedBox !== null) {
-      setExpandedBox(null);
-      setTimeout(() => {
-        const nextSlide = (currentSlide + 1) % slideData.length;
-        setCurrentSlide(nextSlide);
-        setExpandedBox(nextSlide);
-      }, 300);
-    } else {
-      const nextSlide = (currentSlide + 1) % slideData.length;
-      setCurrentSlide(nextSlide);
-      setExpandedBox(nextSlide);
-    }
+  const handleCardClick = (url) => {
+    // Scroll to top before navigation
+    window.scrollTo(0, 0);
   };
-
-  const handlePrevSlide = () => {
-    if (expandedBox !== null) {
-      setExpandedBox(null);
-      setTimeout(() => {
-        const prevSlide =
-          currentSlide === 0 ? slideData.length - 1 : currentSlide - 1;
-        setCurrentSlide(prevSlide);
-        setExpandedBox(prevSlide);
-      }, 300);
-    } else {
-      const prevSlide =
-        currentSlide === 0 ? slideData.length - 1 : currentSlide - 1;
-      setCurrentSlide(prevSlide);
-      setExpandedBox(prevSlide);
-    }
-  };
-
-  const handleTabClick = (index) => {
-    if (expandedBox !== null) {
-      setExpandedBox(null);
-      setTimeout(() => {
-        setCurrentSlide(index);
-        setExpandedBox(index);
-      }, 300);
-    } else {
-      setCurrentSlide(index);
-      setExpandedBox(index);
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "ArrowLeft") {
-      handlePrevSlide();
-    } else if (e.key === "ArrowRight") {
-      handleNextSlide();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  const currentSlideData = slideData[currentSlide];
 
   return (
     <Box
       sx={{
-        minHeight: "70vh",
-        background: "#ffffff",
+        background:
+          "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)",
+        minHeight: "100vh",
+        py: 8,
+        px: 2,
         position: "relative",
         overflow: "hidden",
         opacity: isVisible ? 1 : 0,
         transition: "opacity 1s ease-out",
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background:
+            "radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.03) 0%, transparent 50%)",
+          opacity: isVisible ? 1 : 0,
+          transition: "opacity 1.5s ease-out 0.5s",
+        },
       }}
     >
-      {/* Component Heading */}
+      {/* Header Section */}
       <Box
         sx={{
           textAlign: "center",
-          py: 4,
+          mb: 10,
+          maxWidth: "1200px",
+          mx: "auto",
           px: 2,
+          position: "relative",
         }}
       >
-        <Typography
-          variant="h3"
+        {/* Decorative background element */}
+        <Box
           sx={{
-            color: "#1e293b",
-            fontWeight: 700,
-            fontSize: { xs: "2rem", md: "2.5rem" },
-            mb: 1,
+            position: "absolute",
+            top: "-20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "200px",
+            height: "4px",
+            background:
+              "linear-gradient(90deg, transparent, #667eea, #764ba2, transparent)",
+            borderRadius: "2px",
+            opacity: isVisible ? 1 : 0,
+            transition: "opacity 1s ease-out 0.5s",
+          }}
+        />
+
+        <Typography
+          ref={titleRef}
+          variant="h1"
+          sx={{
+            color: "#1a1a1a",
+            fontWeight: 800,
+            fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "3.5rem" },
+            lineHeight: { xs: 1.1, md: 1.05 },
+            mb: 4,
+            letterSpacing: "-0.025em",
             fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif",
+            background:
+              "linear-gradient(135deg, #1a1a1a 0%, #2d3748 50%, #4a5568 100%)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            textShadow: "none",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(40px)",
+            transition:
+              "opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1)",
+            position: "relative",
+            "&::after": {
+              content: '""',
+              position: "absolute",
+              bottom: "-8px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "80px",
+              height: "3px",
+              background: "linear-gradient(90deg, #667eea, #764ba2)",
+              borderRadius: "2px",
+              opacity: isVisible ? 1 : 0,
+              transition:
+                "opacity 1s ease-out 0.3s, transform 0.5s ease-out 0.3s",
+            },
           }}
         >
           Our Industries
         </Typography>
+
         <Typography
+          ref={descRef}
           variant="h6"
           sx={{
-            color: "#64748b",
+            color: "#4a5568",
             fontWeight: 400,
-            fontSize: { xs: "1rem", md: "1.125rem" },
-            maxWidth: "600px",
+            fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.375rem" },
+            lineHeight: 1.6,
+            maxWidth: "850px",
             mx: "auto",
+            letterSpacing: "0.005em",
             fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+            transition:
+              "opacity 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, transform 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
+            mt: 1,
+            position: "relative",
           }}
         >
-          Discover how we transform businesses across diverse sectors with
-          cutting-edge technology solutions
+          Comprehensive technology solutions across diverse industries.
         </Typography>
       </Box>
 
-      {/* Main Container */}
-      <Box
-        sx={{
-          maxWidth: "1200px",
-          mx: "auto",
-          height: "60vh",
-          display: "flex",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        {/* Central Content Area */}
-        <Box
+      {/* Cards Grid */}
+      <Box ref={cardsRef}>
+        <Grid
+          container
+          spacing={3}
           sx={{
-            flex: 1,
-            background: "rgba(255, 255, 255, 0.95)",
-            borderRadius: "16px",
-            border: "1px solid rgba(0, 0, 0, 0.1)",
-            p: { xs: 3, md: 4 },
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            position: "relative",
-            overflow: "hidden",
-            m: 2,
-            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+            maxWidth: "1400px",
+            mx: "auto",
+            px: 2,
           }}
         >
-          {/* Background Image with Gradient Overlay */}
-          <Box
-            sx={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundImage: `url(${currentSlideData.background})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              opacity: 0.4,
-              zIndex: -2,
-            }}
-          />
-          <Box
-            sx={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background:
-                "linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.5) 100%)",
-              zIndex: -1,
-            }}
-          />
-
-          {/* Main Content */}
-          <Box sx={{ position: "relative", zIndex: 1 }}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+          {industries.map((industry, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Link
+                to={industry.url}
+                style={{ textDecoration: "none" }}
+                onClick={() => handleCardClick(industry.url)}
               >
-                <Typography
-                  variant="h2"
+                <Card
+                  className="dimensional-card"
                   sx={{
-                    color: "#1e293b",
-                    fontWeight: 700,
-                    fontSize: { xs: "1.75rem", sm: "2rem", md: "2.5rem" },
-                    lineHeight: 1.1,
-                    mb: 2,
-                    letterSpacing: "-0.02em",
-                    fontFamily:
-                      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                    textShadow: "0 1px 2px rgba(255, 255, 255, 0.8)",
-                  }}
-                >
-                  {currentSlideData.title}
-                </Typography>
-              </motion.div>
-            </AnimatePresence>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: "#374151",
-                    fontWeight: 400,
-                    fontSize: { xs: "0.9rem", md: "1rem" },
-                    lineHeight: 1.5,
-                    maxWidth: "500px",
-                    mb: 3,
-                    letterSpacing: "0.01em",
-                    fontFamily:
-                      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                    textShadow: "0 1px 2px rgba(255, 255, 255, 0.6)",
-                  }}
-                >
-                  {currentSlideData.subtitle}
-                </Typography>
-              </motion.div>
-            </AnimatePresence>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <Button
-                  variant="contained"
-                  size="medium"
-                  sx={{
-                    background: "#6366f1",
-                    color: "#ffffff",
-                    borderRadius: "12px",
-                    px: 3,
-                    py: 1.5,
-                    fontWeight: 500,
-                    textTransform: "none",
-                    fontSize: "0.875rem",
-                    letterSpacing: "0.02em",
-                    fontFamily:
-                      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                    boxShadow: "0 4px 12px rgba(99, 102, 241, 0.3)",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      background: "#4f46e5",
-                      transform: "translateY(-1px)",
-                      boxShadow: "0 8px 24px rgba(99, 102, 241, 0.4)",
-                    },
-                  }}
-                >
-                  Learn More →
-                </Button>
-              </motion.div>
-            </AnimatePresence>
-          </Box>
-
-          {/* Services Section */}
-          <Box sx={{ position: "relative", zIndex: 1 }}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                <Typography
-                  sx={{
-                    color: "#374151",
-                    fontWeight: 500,
-                    fontSize: "0.75rem",
-                    mb: 2,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.1em",
-                    fontFamily:
-                      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                    textShadow: "0 1px 2px rgba(255, 255, 255, 0.6)",
-                  }}
-                >
-                  Services
-                </Typography>
-
-                <Box
-                  sx={{
-                    display: "flex",
-                    gap: 2,
-                    flexWrap: "wrap",
-                  }}
-                >
-                  {currentSlideData.services.map((service, index) => (
-                    <Typography
-                      key={index}
-                      sx={{
-                        color: "#374151",
-                        fontSize: "0.75rem",
-                        fontFamily:
-                          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                        background: "rgba(255, 255, 255, 0.9)",
-                        px: 1.5,
-                        py: 0.5,
-                        borderRadius: "6px",
-                        border: "1px solid rgba(255, 255, 255, 0.8)",
-                        backdropFilter: "blur(10px)",
-                        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                      }}
-                    >
-                      {service}
-                    </Typography>
-                  ))}
-                </Box>
-              </motion.div>
-            </AnimatePresence>
-          </Box>
-
-          {/* Navigation Controls */}
-          <Box
-            sx={{
-              display: "flex",
-              gap: 1,
-              justifyContent: "flex-end",
-              mt: 2,
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            <Box
-              onClick={handlePrevSlide}
-              sx={{
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                background: "rgba(255, 255, 255, 0.9)",
-                border: "1px solid rgba(255, 255, 255, 0.8)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                transition: "all 0.3s ease",
-                backdropFilter: "blur(10px)",
-                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                "&:hover": {
-                  background: "rgba(255, 255, 255, 1)",
-                  transform: "translateY(-1px)",
-                },
-              }}
-              role="button"
-              aria-label="Previous slide"
-            >
-              <Typography sx={{ color: "#374151", fontSize: "1rem" }}>
-                ←
-              </Typography>
-            </Box>
-            <Box
-              onClick={handleNextSlide}
-              sx={{
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                background: "rgba(255, 255, 255, 0.9)",
-                border: "1px solid rgba(255, 255, 255, 0.8)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                transition: "all 0.3s ease",
-                backdropFilter: "blur(10px)",
-                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                "&:hover": {
-                  background: "rgba(255, 255, 255, 1)",
-                  transform: "translateY(-1px)",
-                },
-              }}
-              role="button"
-              aria-label="Next slide"
-            >
-              <Typography sx={{ color: "#374151", fontSize: "1rem" }}>
-                →
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
-
-        {/* Right Sidebar - Compact Industry Boxes */}
-        <Box
-          sx={{
-            width: { xs: "100%", md: "200px" },
-            height: { xs: "auto", md: "100%" },
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            p: { xs: 2, md: 2 },
-            position: { xs: "absolute", md: "static" },
-            bottom: { xs: 0, md: "auto" },
-            left: { xs: 0, md: "auto" },
-            right: { xs: 0, md: "auto" },
-            zIndex: { xs: 10, md: 1 },
-            background: { xs: "rgba(255, 255, 255, 0.95)", md: "transparent" },
-            backdropFilter: { xs: "blur(10px)", md: "none" },
-          }}
-        >
-          {/* Industry Tabs */}
-          {slideData.map((slide, index) => (
-            <AnimatePresence mode="wait" key={slide.id}>
-              <motion.div
-                key={`${slide.id}-${expandedBox === index}`}
-                initial={{
-                  height: expandedBox === index ? "60px" : "60px",
-                }}
-                animate={{
-                  height: expandedBox === index ? "200px" : "60px",
-                }}
-                exit={{ height: "60px" }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
-                <Box
-                  sx={{
-                    height: "100%",
-                    background: `linear-gradient(135deg, ${slide.tabColor}20 0%, ${slide.tabColor}30 100%)`,
-                    borderRadius: "12px",
-                    border: `1px solid ${slide.tabColor}40`,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    height: 360,
+                    background: "#0f0f0f",
+                    borderRadius: "8px",
                     position: "relative",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
                     overflow: "hidden",
+                    cursor: "pointer",
+                    border: "1px solid rgba(59, 130, 246, 0.2)",
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+                    transition:
+                      "border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease-out, transform 0.6s ease-out",
+                    transform: isVisible
+                      ? "translate(0, 0) !important"
+                      : "translate(0, 50px) !important",
+                    opacity: isVisible ? 1 : 0,
+                    animationDelay: `${0.4 + index * 0.1}s`,
                     "&:hover": {
-                      background: `${slide.tabColor}30`,
-                      transform: "translateY(-2px)",
-                      boxShadow: `0 8px 24px ${slide.tabColor}30`,
+                      borderColor: "rgba(0, 255, 255, 0.6)",
+                      boxShadow: "0 35px 70px -12px rgba(0, 255, 255, 0.3)",
+                      transform: "translate(0, 0) scale(1.02) !important",
+                      "& .dimensional-overlay": {
+                        opacity: 1,
+                      },
+                      "& .card-content": {
+                        opacity: 1,
+                        transform: "translateY(0)",
+                      },
+                      "& .card-title": {
+                        opacity: 0,
+                        transform: "translateY(-20px)",
+                      },
+                      "& .card-category": {
+                        opacity: 0,
+                        transform: "translateY(-20px)",
+                      },
                     },
                   }}
-                  onClick={() => handleTabClick(index)}
-                  role="button"
-                  aria-label={`${slide.tabLabel} services`}
                 >
-                  {/* Background Image with Gradient Overlay */}
+                  {/* Dimensional Overlay */}
                   <Box
+                    className="dimensional-overlay"
                     sx={{
                       position: "absolute",
                       top: 0,
                       left: 0,
                       right: 0,
                       bottom: 0,
-                      backgroundImage: `url(${slide.background})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      backgroundRepeat: "no-repeat",
-                      opacity: 0.3,
-                      zIndex: -2,
-                    }}
-                  />
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: `linear-gradient(135deg, ${slide.tabColor}40 0%, ${slide.tabColor}60 50%, ${slide.tabColor}80 100%)`,
-                      zIndex: -1,
+                      opacity: 0,
+                      transition: "opacity 0.5s ease-in-out",
+                      background: `
+                      radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 70% 70%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%)
+                    `,
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: `
+                        conic-gradient(from 0deg at 50% 50%, 
+                          transparent 0deg, 
+                          rgba(0, 255, 255, 0.1) 90deg, 
+                          transparent 180deg, 
+                          rgba(147, 51, 234, 0.1) 270deg, 
+                          transparent 360deg)
+                      `,
+                        animation: "rotate 4s linear infinite",
+                      },
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        top: "50%",
+                        left: "0%",
+                        width: "100%",
+                        height: "2px",
+                        background:
+                          "linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.6), transparent)",
+                        transform: "translateY(-50%)",
+                        animation: "sweep 2s ease-in-out infinite",
+                      },
                     }}
                   />
 
+                  {/* Card Image */}
+                  <Box sx={{ height: "100%", position: "relative" }}>
+                    <img
+                      src={industry.image}
+                      alt={industry.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background:
+                          "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)",
+                      }}
+                    />
+                  </Box>
+
+                  {/* Category Badge */}
                   <Typography
+                    className="card-category"
                     sx={{
+                      position: "absolute",
+                      top: 20,
+                      left: 20,
                       color: "#ffffff",
-                      fontWeight: 600,
-                      fontSize: { xs: "0.7rem", md: "0.8rem" },
+                      fontWeight: 700,
+                      fontSize: "0.75rem",
                       letterSpacing: "0.05em",
                       textTransform: "uppercase",
+                      transition:
+                        "opacity 0.3s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                      zIndex: 2,
                       fontFamily:
                         "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                      mb: expandedBox === index ? 1.5 : 0,
-                      textShadow: "0 1px 2px rgba(0, 0, 0, 0.3)",
-                      zIndex: 1,
+                      textShadow: "0 2px 4px rgba(0,0,0,0.5)",
                     }}
                   >
-                    {slide.tabLabel}
+                    {industry.category}
                   </Typography>
 
-                  {expandedBox === index && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.4, delay: 0.2 }}
-                      style={{
-                        textAlign: "center",
-                        padding: "12px",
-                        zIndex: 1,
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          color: "#ffffff",
-                          fontSize: "0.7rem",
-                          lineHeight: 1.4,
-                          fontFamily:
-                            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                          textShadow: "0 1px 2px rgba(0, 0, 0, 0.3)",
-                        }}
-                      >
-                        {slide.subtitle}
-                      </Typography>
-                    </motion.div>
-                  )}
-
-                  <Box
+                  {/* Title */}
+                  <Typography
+                    className="card-title"
                     sx={{
                       position: "absolute",
-                      top: { xs: "8px", md: "10px" },
-                      right: { xs: "8px", md: "10px" },
-                      width: { xs: "4px", md: "5px" },
-                      height: { xs: "4px", md: "5px" },
-                      borderRadius: "50%",
-                      background:
-                        expandedBox === index
-                          ? "#ffffff"
-                          : "rgba(255, 255, 255, 0.7)",
-                      boxShadow: "0 1px 2px rgba(0, 0, 0, 0.2)",
-                      zIndex: 1,
+                      bottom: 20,
+                      left: 20,
+                      right: 20,
+                      color: "#ffffff",
+                      fontWeight: 600,
+                      lineHeight: 1.2,
+                      fontSize: "1.2rem",
+                      transition:
+                        "opacity 0.3s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                      zIndex: 2,
+                      fontFamily:
+                        "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                      letterSpacing: "-0.01em",
+                      textShadow: "0 2px 4px rgba(0,0,0,0.5)",
                     }}
-                  />
-                </Box>
-              </motion.div>
-            </AnimatePresence>
+                  >
+                    {industry.title}
+                  </Typography>
+
+                  {/* Hover Content */}
+                  <CardContent
+                    className="card-content"
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      padding: 3,
+                      background:
+                        "linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)",
+                      backdropFilter: "blur(15px)",
+                      opacity: 0,
+                      transform: "translateY(20px)",
+                      transition:
+                        "opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                      color: "#ffffff",
+                      zIndex: 3,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        flex: 1,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Box>
+                        <Typography
+                          variant="body1"
+                          className="content-description"
+                          sx={{
+                            color: "#ffffff",
+                            mb: 2,
+                            lineHeight: 1.4,
+                            fontSize: "0.95rem",
+                            fontWeight: 500,
+                            letterSpacing: "0.01em",
+                            fontFamily:
+                              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                            opacity: 0,
+                            transform: "translateY(15px)",
+                            transition:
+                              "opacity 0.4s ease-out 0.1s, transform 0.4s ease-out 0.1s",
+                            ".card-content:hover &": {
+                              opacity: 1,
+                              transform: "translateY(0)",
+                            },
+                          }}
+                        >
+                          {industry.description}
+                        </Typography>
+
+                        <Box sx={{ mb: 2 }}>
+                          {industry.features.slice(0, 2).map((feature, idx) => (
+                            <Typography
+                              key={idx}
+                              variant="body2"
+                              className={`content-feature-${idx}`}
+                              sx={{
+                                color: "#e2e8f0",
+                                fontSize: "0.8rem",
+                                mb: 0.4,
+                                display: "flex",
+                                alignItems: "center",
+                                fontWeight: 400,
+                                letterSpacing: "0.01em",
+                                fontFamily:
+                                  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                                opacity: 0,
+                                transform: "translateY(10px)",
+                                transition: `opacity 0.4s ease-out ${
+                                  0.2 + idx * 0.1
+                                }s, transform 0.4s ease-out ${
+                                  0.2 + idx * 0.1
+                                }s`,
+                                ".card-content:hover &": {
+                                  opacity: 1,
+                                  transform: "translateY(0)",
+                                },
+                                "&::before": {
+                                  content: '"•"',
+                                  color: "#00ffff",
+                                  mr: 1.5,
+                                  fontSize: "1.2rem",
+                                  fontWeight: "bold",
+                                  lineHeight: 1,
+                                },
+                              }}
+                            >
+                              {feature}
+                            </Typography>
+                          ))}
+                        </Box>
+
+                        {/* Additional Info Section */}
+                        <Box sx={{ mb: 2 }}>
+                          <Typography
+                            variant="body2"
+                            className="content-benefits"
+                            sx={{
+                              color: "#00ffff",
+                              fontSize: "0.75rem",
+                              fontWeight: 600,
+                              mb: 0.5,
+                              textTransform: "uppercase",
+                              letterSpacing: "0.05em",
+                              opacity: 0,
+                              transform: "translateY(10px)",
+                              transition:
+                                "opacity 0.4s ease-out 0.5s, transform 0.4s ease-out 0.5s",
+                              ".card-content:hover &": {
+                                opacity: 1,
+                                transform: "translateY(0)",
+                              },
+                            }}
+                          >
+                            Key Benefits
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            className="content-benefit-text"
+                            sx={{
+                              color: "#b8c5d6",
+                              fontSize: "0.75rem",
+                              lineHeight: 1.3,
+                              opacity: 0,
+                              transform: "translateY(10px)",
+                              transition:
+                                "opacity 0.4s ease-out 0.6s, transform 0.4s ease-out 0.6s",
+                              ".card-content:hover &": {
+                                opacity: 1,
+                                transform: "translateY(0)",
+                              },
+                            }}
+                          >
+                            {industry.category ===
+                              "HEALTHCARE & LIFE SCIENCES" &&
+                              "Enhance care delivery with secure, compliant digital solutions."}
+                            {industry.category ===
+                              "MANUFACTURING & AUTOMOTIVE" &&
+                              "Optimize production with smart manufacturing and digital twins."}
+                            {industry.category ===
+                              "BANKING & FINANCIAL SERVICES" &&
+                              "Secure financial operations with advanced digital banking platforms."}
+                            {industry.category === "AEROSPACE & DEFENSE" &&
+                              "Advance aerospace technology with precision engineering solutions."}
+                            {industry.category === "RETAIL & E-COMMERCE" &&
+                              "Revolutionize retail with omnichannel platforms and AI insights."}
+                            {industry.category === "ENERGY & UTILITIES" &&
+                              "Power energy systems with smart grid and renewable solutions."}
+                            {industry.category === "EDUCATION & TRAINING" &&
+                              "Transform education with innovative digital learning platforms."}
+                            {industry.category ===
+                              "LOGISTICS & TRANSPORTATION" &&
+                              "Streamline operations with real-time tracking and predictive analytics."}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      className="content-button"
+                      sx={{
+                        alignSelf: "flex-start",
+                        px: 2.5,
+                        py: 1,
+                        borderRadius: "6px",
+                        borderColor: "#00ffff",
+                        color: "#00ffff",
+                        fontWeight: 600,
+                        textTransform: "none",
+                        fontSize: "0.85rem",
+                        letterSpacing: "0.02em",
+                        fontFamily:
+                          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                        opacity: 0,
+                        transform: "translateY(10px)",
+                        transition:
+                          "opacity 0.4s ease-out 0.7s, transform 0.4s ease-out 0.7s, all 0.3s ease-in-out",
+                        ".card-content:hover &": {
+                          opacity: 1,
+                          transform: "translateY(0)",
+                        },
+                        "&:hover": {
+                          backgroundColor: "rgba(0, 255, 255, 0.1)",
+                          borderColor: "#00ffff",
+                          transform: "scale(1.05)",
+                          boxShadow: "0 4px 16px rgba(0, 255, 255, 0.3)",
+                        },
+                      }}
+                    >
+                      {industry.buttonLabel}
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
+            </Grid>
           ))}
-        </Box>
+        </Grid>
       </Box>
+
+      <style jsx>{`
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes sweep {
+          0% {
+            transform: translateX(-100%) translateY(-50%);
+          }
+          50% {
+            transform: translateX(0%) translateY(-50%);
+          }
+          100% {
+            transform: translateX(100%) translateY(-50%);
+          }
+        }
+
+        @keyframes pulse {
+          0%,
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.6;
+            transform: scale(1.2);
+          }
+        }
+      `}</style>
     </Box>
   );
 }
+
+export default FeatureCards;

@@ -2,133 +2,144 @@
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
-const FeatureCard = ({ icon, title, description, color = "#6366f1" }) => {
+const FeatureCard = ({ icon, title, description }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.01, y: -2 }}
-      initial={{ opacity: 0, y: 20 }}
+      whileHover={{
+        scale: 1.02,
+        y: -8,
+        transition: { duration: 0.3, ease: "easeOut" },
+      }}
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <Box
         sx={{
+          position: "relative",
           display: "flex",
           flexDirection: "column",
+          alignItems: "flex-start",
           gap: 3,
-          p: 3,
-          borderRadius: "12px",
-          background: "#ffffff",
-          border: "1px solid #e5e7eb",
-          boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
+          p: 4,
+          borderRadius: "20px",
+          background: "linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%)",
+          border: "1px solid rgba(0, 0, 0, 0.06)",
+          boxShadow:
+            "0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9)",
           minHeight: 200,
-          transition: "all 0.3s ease",
-          position: "relative",
+          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+          overflow: "hidden",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "4px",
+            background:
+              "linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%)",
+            opacity: 0,
+            transition: "opacity 0.3s ease",
+          },
           "&:hover": {
-            transform: "translateY(-4px)",
-            boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)",
-            borderColor: color,
+            boxShadow:
+              "0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 1)",
+            background: "linear-gradient(145deg, #ffffff 0%, #fafbfc 100%)",
+            "&::before": {
+              opacity: 1,
+            },
+            "& .feature-icon": {
+              transform: "scale(1.1) rotate(5deg)",
+              background: "linear-gradient(145deg, #667eea 0%, #764ba2 100%)",
+            },
+            "& .feature-title": {
+              color: "#2d3748",
+            },
           },
         }}
       >
-        {/* Icon Wrapper */}
         <Box
+          className="feature-icon"
           sx={{
-            width: "60px",
-            height: "60px",
-            borderRadius: "8px",
-            background: "#f8fafc",
-            border: "1px solid #e5e7eb",
+            width: 72,
+            height: 72,
+            borderRadius: "20px",
+            background: "linear-gradient(145deg, #f7fafc 0%, #edf2f7 100%)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            alignSelf: "flex-start",
+            flexShrink: 0,
+            transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+            border: "1px solid rgba(0, 0, 0, 0.05)",
+            boxShadow: "0 4px 16px rgba(0, 0, 0, 0.06)",
+            "& svg": {
+              color: "#4a5568",
+              fontSize: "2rem",
+              transition: "color 0.3s ease",
+            },
+            "&:hover svg": {
+              color: "#ffffff",
+            },
           }}
         >
-          <Box
-            sx={{
-              color: "#6b7280",
-              fontSize: "1.5rem",
-              transition: "color 0.2s ease",
-            }}
-          >
-            {icon}
-          </Box>
+          {icon}
         </Box>
 
-        {/* Content */}
-        <Box sx={{ flex: 1, display: "flex", flexDirection: "column", gap: 2 }}>
+        <Box sx={{ flex: 1 }}>
           <Typography
+            className="feature-title"
             variant="h6"
             sx={{
-              fontSize: "1.125rem",
+              color: "#2d3748",
               fontWeight: 700,
-              color: "#1a1a1a",
+              fontSize: { xs: "1.1rem", md: "1.3rem" },
               lineHeight: 1.3,
-              letterSpacing: "-0.01em",
+              mb: 2,
+              transition: "color 0.3s ease",
               fontFamily:
-                "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+              letterSpacing: "-0.01em",
             }}
           >
             {title}
           </Typography>
+
           <Typography
-            variant="body2"
+            variant="body1"
             sx={{
-              fontSize: "0.95rem",
-              color: "#666666",
-              lineHeight: 1.6,
+              color: "#718096",
               fontWeight: 400,
-              letterSpacing: "0.01em",
+              fontSize: { xs: "0.95rem", md: "1.05rem" },
+              lineHeight: 1.6,
               fontFamily:
-                "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+              letterSpacing: "0.01em",
             }}
           >
             {description}
           </Typography>
         </Box>
 
-        {/* CTA Link */}
+        {/* Subtle decorative element */}
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            mt: "auto",
+            position: "absolute",
+            top: -20,
+            right: -20,
+            width: 60,
+            height: 60,
+            borderRadius: "50%",
+            background:
+              "linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)",
+            opacity: 0.5,
+            transition: "all 0.4s ease",
+            ".feature-card:hover &": {
+              opacity: 0.8,
+              transform: "scale(1.2)",
+            },
           }}
-        >
-          <Typography
-            variant="body2"
-            sx={{
-              color: "#1a1a1a",
-              fontWeight: 600,
-              fontSize: "0.875rem",
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              fontFamily:
-                "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-              display: "flex",
-              alignItems: "center",
-              gap: 1,
-              "&:hover": {
-                color: color,
-              },
-            }}
-          >
-            LEARN MORE
-            <Box
-              component="span"
-              sx={{
-                fontSize: "0.75rem",
-                transition: "transform 0.2s ease",
-                "&:hover": {
-                  transform: "translateX(4px)",
-                },
-              }}
-            >
-              →
-            </Box>
-          </Typography>
-        </Box>
+        />
       </Box>
     </motion.div>
   );
