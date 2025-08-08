@@ -127,7 +127,7 @@ const IntegrationSection = (props) => {
       className="integration-section"
       style={{
         backgroundColor: "#ffffff",
-        padding: "100px 0 80px 0",
+        padding: "60px 0 40px 0",
         fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         position: "relative",
         overflow: "hidden",
@@ -149,13 +149,13 @@ const IntegrationSection = (props) => {
         <div
           style={{
             textAlign: "center",
-            marginBottom: "80px",
+            marginBottom: "40px",
           }}
         >
           <h2
             style={{
-              fontSize: "3.5rem",
-              fontWeight: "800",
+              fontSize: "2.25rem",
+              fontWeight: "700",
               color: "#000000",
               margin: "0 0 20px 0",
               lineHeight: "1.1",
@@ -165,12 +165,13 @@ const IntegrationSection = (props) => {
           </h2>
           <p
             style={{
-              fontSize: "1.3rem",
+              fontSize: "1rem",
               color: "#64748b",
-              fontWeight: "500",
+              fontWeight: "400",
               margin: "0",
               maxWidth: "600px",
               margin: "0 auto",
+              whiteSpace: "nowrap",
             }}
           >
             Trust Intellectt for their digital transformation journey
@@ -182,10 +183,10 @@ const IntegrationSection = (props) => {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "80px",
+            gap: "40px",
             alignItems: "center",
-            marginBottom: "80px",
-            minHeight: "600px",
+            marginBottom: "40px",
+            minHeight: "400px",
           }}
         >
           {/* Left Side - Current Company Logo */}
@@ -196,15 +197,15 @@ const IntegrationSection = (props) => {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              minHeight: "500px",
+              minHeight: "300px",
             }}
           >
             <h3
               style={{
-                fontSize: "2rem",
-                fontWeight: "700",
+                fontSize: "1.5rem",
+                fontWeight: "600",
                 color: "#1e293b",
-                margin: "0 0 40px 0",
+                margin: "0 0 20px 0",
                 textAlign: "center",
               }}
             >
@@ -216,15 +217,15 @@ const IntegrationSection = (props) => {
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.9)",
                 backdropFilter: "blur(20px)",
-                borderRadius: "30px",
-                padding: "60px 40px",
+                borderRadius: "20px",
+                padding: "30px 20px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                minHeight: "300px",
+                minHeight: "200px",
                 width: "100%",
-                maxWidth: "400px",
-                boxShadow: "0 20px 80px rgba(0,0,0,0.15)",
+                maxWidth: "300px",
+                boxShadow: "0 10px 40px rgba(0,0,0,0.15)",
                 border: "1px solid rgba(255, 255, 255, 0.3)",
                 position: "relative",
                 overflow: "hidden",

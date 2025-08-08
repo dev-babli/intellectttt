@@ -93,7 +93,7 @@ const Footer = (props) => {
                   }}
                 ></i>
                 <span style={{ color: "#6b7280", fontSize: "14px" }}>
-                  Intellectt@gmail.com
+                  contact@intellectt.com
                 </span>
               </div>
               <div style={{ display: "flex", alignItems: "center" }}>
@@ -107,7 +107,7 @@ const Footer = (props) => {
                   }}
                 ></i>
                 <span style={{ color: "#6b7280", fontSize: "14px" }}>
-                  +(1) 1230 452 8597
+                  +17324126999
                 </span>
               </div>
             </div>
@@ -170,7 +170,7 @@ const Footer = (props) => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* What We Do */}
           <div
             className="col-lg-3 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
             style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
@@ -183,60 +183,16 @@ const Footer = (props) => {
                 marginBottom: "12px",
               }}
             >
-              Company
-            </h5>
-            <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
-              {[
-                { text: "About Us", link: "/about" },
-                { text: "Careers", link: "/career" },
-                { text: "Let's Connect", link: "/contact" },
-                { text: "Blog", link: "/blog" },
-              ].map((item, index) => (
-                <li key={index} style={{ marginBottom: "10px" }}>
-                  <Link
-                    onClick={ClickHandler}
-                    to={item.link}
-                    style={{
-                      color: "#6b7280",
-                      fontSize: "14px",
-                      textDecoration: "none",
-                      transition: "color 0.2s ease",
-                    }}
-                    onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
-                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
-                  >
-                    {item.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Capabilities */}
-          <div
-            className="col-lg-3 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
-            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
-          >
-            <h5
-              style={{
-                color: "#1f2937",
-                fontSize: "15px",
-                fontWeight: "600",
-                marginBottom: "12px",
-              }}
-            >
-              Capabilities
+              What We Do
             </h5>
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
               {[
                 { text: "AI & GenAI", link: "/service/ai-and-gen-ai" },
-                { text: "Cloud & App", link: "/service/cloud-and-application" },
+                { text: "Cloud & Application", link: "/service/cloud-and-application-services" },
+                { text: "Data & Analytics", link: "/service/data-and-analytics" },
                 { text: "SAP Services", link: "/service/sap-services" },
-                { text: "Managed IT", link: "/service/managed-it-services" },
-                {
-                  text: "Data & Analytics",
-                  link: "/service/data-and-analytics",
-                },
+                { text: "Managed IT Services", link: "/service/managed-it-services" },
+                { text: "Talent Solutions", link: "/service/talent-solutions" },
               ].map((item, index) => (
                 <li key={index} style={{ marginBottom: "10px" }}>
                   <Link
@@ -258,9 +214,9 @@ const Footer = (props) => {
             </ul>
           </div>
 
-          {/* Industries */}
+          {/* Who We Work With */}
           <div
-            className="col-lg-2 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            className="col-lg-3 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
             style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
@@ -271,26 +227,14 @@ const Footer = (props) => {
                 marginBottom: "12px",
               }}
             >
-              Industries
+              Who We Work With
             </h5>
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
               {[
-                {
-                  text: "Healthcare",
-                  link: "/industries/helthcare-and-life-sciences",
-                },
-                {
-                  text: "Manufacturing",
-                  link: "/industries/menufacturing-and-automotive",
-                },
-                {
-                  text: "Aerospace",
-                  link: "/industries/aerospace-and-defense",
-                },
-                {
-                  text: "Banking",
-                  link: "/industries/banking-and-financial-services",
-                },
+                { text: "Healthcare & Life Sciences", link: "/industries/helthcare-and-life-sciences" },
+                { text: "Manufacturing & Automotive", link: "/industries/menufacturing-and-automotive" },
+                { text: "Aerospace & Defense", link: "/industries/aerospace-and-defense" },
+                { text: "Banking & Financial Services", link: "/industries/banking-and-financial-services" },
               ].map((item, index) => (
                 <li key={index} style={{ marginBottom: "10px" }}>
                   <Link
@@ -312,7 +256,7 @@ const Footer = (props) => {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Insights */}
           <div
             className="col-lg-2 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
             style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
@@ -325,26 +269,58 @@ const Footer = (props) => {
                 marginBottom: "12px",
               }}
             >
-              Resources
+              Insights
             </h5>
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
               {[
-                {
-                  text: "Case Studies",
-                  link: "/case-studies",
-                },
-                {
-                  text: "Whitepapers",
-                  link: "/whitepapers",
-                },
-                {
-                  text: "Webinars",
-                  link: "/webinars",
-                },
-                {
-                  text: "Insights",
-                  link: "/insights",
-                },
+                { text: "Blog", link: "/blog" },
+                { text: "Case Studies", link: "/case-studies" },
+                { text: "Whitepapers", link: "/whitepapers" },
+                { text: "Webinars", link: "/webinars" },
+              ].map((item, index) => (
+                <li key={index} style={{ marginBottom: "10px" }}>
+                  <Link
+                    onClick={ClickHandler}
+                    to={item.link}
+                    style={{
+                      color: "#6b7280",
+                      fontSize: "14px",
+                      textDecoration: "none",
+                      transition: "color 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}
+                    onMouseLeave={(e) => (e.target.style.color = "#6b7280")}
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Who We Are */}
+          <div
+            className="col-lg-2 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
+          >
+            <h5
+              style={{
+                color: "#1f2937",
+                fontSize: "15px",
+                fontWeight: "600",
+                marginBottom: "12px",
+              }}
+            >
+              Who We Are
+            </h5>
+            <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
+              {[
+                { text: "About Us", link: "/about" },
+                { text: "Our Journey", link: "/company/our-journey" },
+                { text: "Leadership Team", link: "/company/leadership-team" },
+                { text: "Global Presence", link: "/company/global-presence" },
+                { text: "Careers", link: "/careers" },
+                { text: "Contact", link: "/contact" },
               ].map((item, index) => (
                 <li key={index} style={{ marginBottom: "10px" }}>
                   <Link

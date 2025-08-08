@@ -2520,6 +2520,18 @@ function MegaMenuIntellectt() {
           animate="visible"
           exit="hidden"
           data-mega-menu="true"
+          onMouseLeave={() => {
+            setTimeout(() => {
+              setActiveMenu(null);
+              setSelectedService(null);
+            }, 300);
+          }}
+          onMouseEnter={() => {
+            // Clear any existing timeout
+            if (window.megaMenuTimeout) {
+              clearTimeout(window.megaMenuTimeout);
+            }
+          }}
         >
           <MegaMenuContent>
             <div

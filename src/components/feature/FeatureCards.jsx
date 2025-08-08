@@ -177,10 +177,10 @@ export default function FeatureCards() {
             mx: "auto",
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            whiteSpace: "nowrap",
           }}
         >
-          Discover how we transform businesses across diverse sectors with
-          cutting-edge technology solutions
+          Transforming businesses with cutting-edge technology
         </Typography>
       </Box>
 
@@ -291,6 +291,7 @@ export default function FeatureCards() {
                     fontFamily:
                       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
                     textShadow: "0 1px 2px rgba(255, 255, 255, 0.6)",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {currentSlideData.subtitle}
