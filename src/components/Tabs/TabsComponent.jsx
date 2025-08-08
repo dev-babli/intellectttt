@@ -302,32 +302,21 @@ export default function TabsComponent() {
     <Box
       ref={componentRef}
       sx={{
-        background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
-        padding: { xs: "5rem 0", md: "7rem 0" },
+        background: "#ffffff",
+        padding: { xs: "2rem 0", md: "3rem 0" },
         position: "relative",
         overflow: "hidden",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background:
-            "radial-gradient(circle at 30% 70%, rgba(1, 153, 211, 0.05) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(102, 126, 234, 0.05) 0%, transparent 50%)",
-          zIndex: 1,
-        },
       }}
     >
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
-        <Box sx={{ textAlign: "center", marginBottom: "6rem" }}>
+        <Box sx={{ textAlign: "center", marginBottom: "3rem" }}>
           <Typography
-            variant="h1"
+            variant="h2"
             sx={{
-              fontSize: { xs: "2.5rem", md: "3.5rem", lg: "4rem" },
-              fontWeight: 700,
+              fontSize: { xs: "1.75rem", md: "2.25rem", lg: "2.75rem" },
+              fontWeight: 600,
               color: "#1e40af",
-              marginBottom: "1.5rem",
+              marginBottom: "0",
               fontFamily: "'Inter', sans-serif",
               letterSpacing: "-0.02em",
               lineHeight: 1.1,
@@ -348,22 +337,6 @@ export default function TabsComponent() {
             }}
           >
             Technology Processes
-          </Typography>
-          <Typography
-            variant="h3"
-            sx={{
-              fontSize: { xs: "1.2rem", md: "1.4rem" },
-              fontWeight: 400,
-              color: "#475569",
-              maxWidth: "700px",
-              mx: "auto",
-              lineHeight: 1.5,
-              fontFamily: "'Inter', sans-serif",
-              transition: "all 0.3s ease",
-            }}
-          >
-            Streamlined processes for AI development, cloud infrastructure,
-            enterprise solutions, and data analytics
           </Typography>
         </Box>
 

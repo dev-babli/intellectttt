@@ -38,11 +38,11 @@ const HelpDeskBlogSection = (props) => {
           </Fade>
           <Fade direction="down" triggerOnce={false} duration={1500} delay={9}>
             <Typography
-              variant="h2"
+              variant="h3"
               sx={{
                 color: "#0f172a",
-                fontWeight: 800,
-                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                fontWeight: 700,
+                fontSize: { xs: "1.75rem", md: "2.25rem" },
                 mb: 3,
                 lineHeight: 1.2,
               }}
@@ -63,13 +63,14 @@ const HelpDeskBlogSection = (props) => {
           </Fade>
           <Fade direction="up" triggerOnce={false} duration={1500} delay={9}>
             <Typography
-              variant="h6"
+              variant="body1"
               sx={{
                 color: "#64748b",
                 fontWeight: 400,
                 maxWidth: "600px",
                 margin: "0 auto",
                 lineHeight: 1.6,
+                whiteSpace: "nowrap",
               }}
             >
               Stay updated with the latest trends, innovations, and insights from the world of technology and AI

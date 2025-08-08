@@ -330,12 +330,12 @@ export default function IntelligenceCore() {
         sx={{ textAlign: "center", mb: 8, position: "relative", zIndex: 2 }}
       >
         <Typography
-          variant="h2"
-          fontWeight={800}
+          variant="h3"
+          fontWeight={700}
           sx={{
             color: BRAND_COLORS.neutral[900],
             mb: 2,
-            fontSize: { xs: "2.5rem", md: "4rem" },
+            fontSize: { xs: "1.75rem", md: "2.25rem" },
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
           }}
@@ -348,25 +348,25 @@ export default function IntelligenceCore() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              fontWeight: 900,
+              fontWeight: 800,
             }}
           >
             Intellectt
           </Box>
         </Typography>
         <Typography
-          variant="h6"
+          variant="body1"
           sx={{
             color: BRAND_COLORS.neutral[600],
-            fontSize: { xs: "1.1rem", md: "1.25rem" },
+            fontSize: { xs: "0.875rem", md: "1rem" },
             fontWeight: 400,
             maxWidth: "600px",
             margin: "0 auto",
             lineHeight: 1.6,
+            whiteSpace: "nowrap",
           }}
         >
-          Discover the core strengths that make us your trusted technology
-          partner
+          Discover the core strengths that make us your trusted technology partner
         </Typography>
       </Box>
 

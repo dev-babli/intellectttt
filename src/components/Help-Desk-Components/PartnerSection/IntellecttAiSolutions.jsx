@@ -170,8 +170,7 @@ export default function IntellecttAiSolutions() {
   return (
     <Box
       sx={{
-        background:
-          "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)",
+        background: "#ffffff",
         minHeight: "100vh",
         py: 8,
         px: 2,
@@ -179,18 +178,6 @@ export default function IntellecttAiSolutions() {
         overflow: "hidden",
         opacity: isVisible ? 1 : 0,
         transition: "opacity 1s ease-out",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background:
-            "radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.03) 0%, transparent 50%)",
-          opacity: isVisible ? 1 : 0,
-          transition: "opacity 1.5s ease-out 0.5s",
-        },
       }}
     >
       {/* Header Section */}
@@ -205,11 +192,11 @@ export default function IntellecttAiSolutions() {
       >
         <Typography
           ref={titleRef}
-          variant="h1"
+          variant="h2"
           sx={{
             color: "#000000",
-            fontWeight: 700,
-            fontSize: { xs: "2.5rem", md: "4rem" },
+            fontWeight: 600,
+            fontSize: { xs: "1.75rem", md: "2.75rem" },
             lineHeight: 1.1,
             mb: 3,
             letterSpacing: "-0.02em",
@@ -223,28 +210,6 @@ export default function IntellecttAiSolutions() {
         >
           Capabilities
         </Typography>
-                 <Typography
-           ref={descRef}
-           variant="h6"
-           sx={{
-             color: "#000000",
-             fontWeight: 400,
-             fontSize: { xs: "1.1rem", md: "1.4rem" },
-             lineHeight: 1.5,
-             maxWidth: "800px",
-             mx: "auto",
-             letterSpacing: "0.01em",
-             fontFamily:
-               "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-             opacity: isVisible ? 1 : 0,
-             transform: isVisible ? "translateY(0)" : "translateY(20px)",
-             transition:
-               "opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s",
-             whiteSpace: "nowrap",
-           }}
-         >
-           Transform your business with intelligent solutions that drive innovation and growth.
-         </Typography>
       </Box>
 
       {/* Cards Grid */}
