@@ -71,12 +71,20 @@ const HeroSection = () => {
             >
               <Box
                 component="img"
-                src="/logos/Intellectt-Logo.webp"
-                alt="Intellectt Logo"
+                src="/images/cloud-computing-hero.webp"
+                alt="Cloud Computing Technology Illustration"
                 sx={{
                   width: '100%',
-                  maxWidth: 400,
+                  maxWidth: 450,
                   height: 'auto',
+                  borderRadius: '16px',
+                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.2)',
+                  filter: 'brightness(1.05) contrast(1.1)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'scale(1.02)',
+                    boxShadow: '0 16px 48px rgba(0, 0, 0, 0.25)',
+                  },
                 }}
               />
             </motion.div>

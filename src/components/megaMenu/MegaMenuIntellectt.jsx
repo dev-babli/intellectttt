@@ -721,6 +721,8 @@ const MegaMenuContent = styled.div`
   margin: 0 auto;
   padding: 1.5rem 1rem;
   min-height: fit-content;
+  max-height: 50vh;
+  overflow-y: auto;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: 16px;
@@ -1408,43 +1410,59 @@ const menuData = {
         url: "/service/ai-and-gen-ai",
         services: [
           {
-            name: "AI Strategy",
-            description: "Strategic AI roadmap and implementation planning",
+            name: "LLM Integration",
+            description: "GPT, Azure OpenAI, and advanced LLM solutions",
             focus: "AI & GenAI",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "🧠",
-            url: "/service/ai-and-gen-ai",
-          },
-          {
-            name: "Generative AI",
-            description: "Advanced generative AI solutions and LLM integration",
-            focus: "AI & GenAI",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "🤖",
+            icon: "🔮",
             url: "/service/ai-and-gen-ai/llm",
           },
           {
-            name: "AI-Accelerated Engineering",
-            description: "AI-powered engineering and development acceleration",
+            name: "Agentic AI",
+            description: "Building intelligent, autonomous AI-driven agents",
+            focus: "AI & GenAI",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🤖",
+            url: "/service/ai-and-gen-ai/agents",
+          },
+          {
+            name: "NLP & Computer Vision",
+            description: "Natural language processing and computer vision solutions",
+            focus: "AI & GenAI",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "👁️",
+            url: "/service/ai-and-gen-ai/nlp",
+          },
+          {
+            name: "ML Engineering & MLOps",
+            description: "End-to-end machine learning engineering and operations",
+            focus: "AI & GenAI",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "⚙️",
+            url: "/service/ai-and-gen-ai/mlops",
+          },
+          {
+            name: "AI Automation",
+            description: "AI + RPA automation for streamlined workflows",
             focus: "AI & GenAI",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "⚡",
             url: "/service/ai-and-gen-ai/automation",
           },
           {
-            name: "Connect AI",
-            description: "AI integration and connectivity solutions",
+            name: "Responsible AI",
+            description: "Strategic AI guidance with ethical considerations",
             focus: "AI & GenAI",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "🔗",
-            url: "/service/ai-and-gen-ai/agents",
+            icon: "🎯",
+            url: "/service/ai-and-gen-ai/responsible",
           },
         ],
-        icon: "🧠",
+        icon: "🔮",
         color: "rgba(59, 130, 246, 0.15)",
       },
       {
-        title: "Cloud & Application",
+        title: "Cloud & Application Services",
         description: "Scalable cloud infrastructure and application development",
         image: "/placeholder.svg?height=80&width=280",
         items: [
@@ -1457,36 +1475,36 @@ const menuData = {
         url: "/service/cloud-and-application-services",
         services: [
           {
-            name: "Cloud Migration",
-            description: "Seamless cloud migration and infrastructure optimization",
+            name: "Azure, AWS, GCP Engineering",
+            description: "Cloud infrastructure and platform engineering",
             focus: "Cloud & Application",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "☁️",
-            url: "/service/cloud-and-application-services",
+            url: "/service/cloud-and-application-services/engineering",
           },
           {
-            name: "DevOps",
-            description: "DevOps practices and CI/CD pipeline implementation",
+            name: "DevOps & DevSecOps",
+            description: "CI/CD pipelines and security integration",
             focus: "Cloud & Application",
             color: "rgba(59, 130, 246, 0.15)",
             icon: "🔄",
             url: "/service/cloud-and-application-services/devops",
           },
           {
-            name: "Microservices",
-            description: "Microservices architecture and implementation",
+            name: "App Modernization",
+            description: "Legacy modernization and microservices architecture",
             focus: "Cloud & Application",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "🔧",
-            url: "/service/cloud-and-application-services/microservices",
+            icon: "🏗️",
+            url: "/service/cloud-and-application-services/modernization",
           },
           {
-            name: "Containerization",
-            description: "Docker and Kubernetes container solutions",
+            name: "API Integration",
+            description: "API development and system integration",
             focus: "Cloud & Application",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "📦",
-            url: "/service/cloud-and-application-services/containers",
+            icon: "🔌",
+            url: "/service/cloud-and-application-services/api",
           },
         ],
         icon: "☁️",
@@ -1506,36 +1524,36 @@ const menuData = {
         url: "/service/data-and-analytics",
         services: [
           {
-            name: "Data Strategy",
-            description: "Comprehensive data strategy development and roadmap planning",
+            name: "Data Engineering & ETL",
+            description: "Build and streamline trusted data pipelines",
             focus: "Data & Analytics",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "📊",
-            url: "/service/data-and-analytics",
-          },
-          {
-            name: "Data Platforms",
-            description: "Modern data platform architecture and implementation",
-            focus: "Data & Analytics",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "🏗️",
+            icon: "🔧",
             url: "/service/data-and-analytics/etl",
           },
           {
-            name: "Data Value Realization",
-            description: "Extract maximum value from your data assets",
+            name: "Business Intelligence & Dashboards",
+            description: "Turn raw data into powerful insights",
             focus: "Data & Analytics",
-            color: "rgba(20, 184, 166, 0.15)",
-            icon: "💰",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "📊",
             url: "/service/data-and-analytics/bi",
           },
           {
-            name: "Data Migration",
-            description: "Seamless data migration and transformation services",
+            name: "Data Governance & Security",
+            description: "Ensure compliant, secure, and reliable data",
+            focus: "Data & Analytics",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🛡️",
+            url: "/service/data-and-analytics/governance",
+          },
+          {
+            name: "Data Tools Integration",
+            description: "Azure Data Lake, Snowflake & Power BI integration",
             focus: "Data & Analytics",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "🔄",
-            url: "/service/data-and-analytics/governance",
+            icon: "🔗",
+            url: "/service/data-and-analytics/tools",
           },
         ],
         icon: "📊",
@@ -1555,7 +1573,7 @@ const menuData = {
         url: "/service/managed-it-services",
         services: [
           {
-            name: "Infrastructure Monitoring",
+            name: "Infra & Network Monitoring",
             description: "24/7 NOC monitoring and infrastructure management",
             focus: "Managed IT Services",
             color: "rgba(20, 184, 166, 0.15)",
@@ -1571,7 +1589,7 @@ const menuData = {
             url: "/service/managed-it-services/support",
           },
           {
-            name: "Service Desk",
+            name: "ITSM Service Desk",
             description: "ITSM service desk and CoE management",
             focus: "Managed IT Services",
             color: "rgba(20, 184, 166, 0.15)",
@@ -1579,7 +1597,7 @@ const menuData = {
             url: "/service/managed-it-services/itsm",
           },
           {
-            name: "Resource Management",
+            name: "Managed Resource Services",
             description: "TMS managed resource services",
             focus: "Managed IT Services",
             color: "rgba(59, 130, 246, 0.15)",
@@ -1603,15 +1621,15 @@ const menuData = {
         url: "/service/sap-services",
         services: [
           {
-            name: "SAP S/4HANA",
+            name: "SAP Migration",
             description: "End-to-end SAP S/4HANA implementation and migration",
             focus: "SAP Services",
             color: "rgba(59, 130, 246, 0.15)",
             icon: "🏢",
-            url: "/service/sap-services",
+            url: "/service/sap-services/s4hana",
           },
           {
-            name: "SAP Business Technology Platform",
+            name: "SAP BTP Development",
             description: "SAP BTP integration and development services",
             focus: "SAP Services",
             color: "rgba(20, 184, 166, 0.15)",
@@ -1619,12 +1637,12 @@ const menuData = {
             url: "/service/sap-services/btp",
           },
           {
-            name: "SAP Analytics",
-            description: "SAP analytics and reporting solutions",
+            name: "SAP Managed Support",
+            description: "SAP analytics and managed support services",
             focus: "SAP Services",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "📊",
-            url: "/service/sap-services/analytics",
+            icon: "🛠️",
+            url: "/service/sap-services/ams",
           },
         ],
         icon: "🏢",
@@ -1644,28 +1662,12 @@ const menuData = {
         url: "/service/talent-solutions",
         services: [
           {
-            name: "Direct Hire",
-            description: "Permanent placement solutions for critical roles",
-            focus: "Talent Solutions",
-            color: "rgba(20, 184, 166, 0.15)",
-            icon: "👥",
-            url: "/service/talent-solutions/direct-hire",
-          },
-          {
-            name: "Contract-to-Hire",
-            description: "Flexible hiring solutions with conversion options",
-            focus: "Talent Solutions",
-            color: "rgba(59, 130, 246, 0.15)",
-            icon: "📋",
-            url: "/service/talent-solutions/contract-to-hire",
-          },
-          {
-            name: "Staff Augmentation",
+            name: "IT Staff Augmentation",
             description: "On-demand talent for project-based needs",
             focus: "Talent Solutions",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "⚡",
-            url: "/service/talent-solutions/staff-augmentation",
+            url: "/service/talent-solutions/staffing",
           },
           {
             name: "Healthcare Staffing",
@@ -1675,8 +1677,122 @@ const menuData = {
             icon: "🏥",
             url: "/service/talent-solutions/healthcare",
           },
+          {
+            name: "Direct Hire & Contract-to-Hire",
+            description: "Permanent and flexible hiring solutions",
+            focus: "Talent Solutions",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "👥",
+            url: "/service/talent-solutions/direct-hire",
+          },
+          {
+            name: "Corp-to-Corp & W2",
+            description: "Corporate staffing and consulting services",
+            focus: "Talent Solutions",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🏢",
+            url: "/service/talent-solutions/corp",
+          },
         ],
         icon: "👥",
+        color: "rgba(59, 130, 246, 0.15)",
+      },
+      {
+        title: "Engineering & Manufacturing IT",
+        description: "Drive innovation in manufacturing with Industry 4.0 solutions",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "PLM & CAD Automation",
+          "MES Integration",
+          "Digital Twins",
+          "Industry 4.0",
+        ],
+        hasDropdown: true,
+        url: "/service/engineering-and-manufacturing-it",
+        services: [
+          {
+            name: "PLM & CAD Automation",
+            description: "Product lifecycle management and CAD automation",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🏭",
+            url: "/service/engineering-and-manufacturing-it/plm",
+          },
+          {
+            name: "Digital Twins Factory",
+            description: "Digital twin technology for predictive maintenance",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🔄",
+            url: "/service/engineering-and-manufacturing-it/mes",
+          },
+          {
+            name: "MES Integration & IoT",
+            description: "Manufacturing execution system integration",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "⚙️",
+            url: "/service/engineering-and-manufacturing-it/twins",
+          },
+          {
+            name: "Industry 4.0 Solutions",
+            description: "Smart manufacturing and Industry 4.0 implementation",
+            focus: "Engineering & Manufacturing",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🏭",
+            url: "/service/engineering-and-manufacturing-it/industry4",
+          },
+        ],
+        icon: "🏭",
+        color: "rgba(59, 130, 246, 0.15)",
+      },
+      {
+        title: "Healthcare & Life Sciences IT",
+        description: "Revolutionize healthcare with AI-powered solutions",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "HL7/FHIR Integration",
+          "Clinical Data Platforms",
+          "AI Imaging",
+          "Compliance & Regulatory",
+        ],
+        hasDropdown: true,
+        url: "/service/healthcare-and-life-sciences-it",
+        services: [
+          {
+            name: "HL7/FHIR Integration",
+            description: "Healthcare data standards and integration",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🏥",
+            url: "/service/healthcare-and-life-sciences-it/hl7",
+          },
+          {
+            name: "Clinical Data Platforms",
+            description: "Clinical trial and data management platforms",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "📊",
+            url: "/service/healthcare-and-life-sciences-it/data",
+          },
+          {
+            name: "AI Imaging & Diagnostics",
+            description: "AI-powered medical imaging and diagnostics",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🔬",
+            url: "/service/healthcare-and-life-sciences-it/ai",
+          },
+          {
+            name: "Compliance & Regulatory IT",
+            description: "Healthcare compliance and regulatory solutions",
+            focus: "Healthcare & Life Sciences",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🛡️",
+            url: "/service/healthcare-and-life-sciences-it/compliance",
+          },
+        ],
+        icon: "🏥",
         color: "rgba(59, 130, 246, 0.15)",
       },
     ],
@@ -1998,7 +2114,7 @@ const menuData = {
         description: "Our worldwide locations and partnerships",
         image: "/placeholder.svg?height=80&width=280",
         items: ["Office Locations", "Global Partners", "Regional Expertise"],
-        url: "/company/global-presence",
+        url: "/global-presence",
       },
     ],
     sideItems: [
@@ -2060,6 +2176,7 @@ function MegaMenuIntellectt() {
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [hoveredService, setHoveredService] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const timeoutRef = useRef(null);
   const searchInputRef = useRef(null);
@@ -2102,24 +2219,46 @@ function MegaMenuIntellectt() {
   }, []);
 
   const handleMouseEnter = (menuName) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setActiveMenu(menuName);
+    // Disable hover for all menus - use click only
+    return;
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
+    // Disable hover leave for all menus - use click only
+    return;
+  };
+
+  const handleWhatWeDoClick = () => {
+    if (activeMenu === "WHAT WE DO") {
       setActiveMenu(null);
-    }, 300); // Increased from 150ms to 300ms for better user experience
+      setSelectedService(null);
+    } else {
+      setActiveMenu("WHAT WE DO");
+      setSelectedService(null);
+    }
+  };
+
+  const handleMenuClick = (menuName) => {
+    if (activeMenu === menuName) {
+      setActiveMenu(null);
+      setSelectedService(null);
+    } else {
+      setActiveMenu(menuName);
+      setSelectedService(null);
+    }
+  };
+
+  const handleServiceClick = (serviceTitle) => {
+    setSelectedService(selectedService === serviceTitle ? null : serviceTitle);
   };
 
   const handleKeyDown = (event, menuName) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      setActiveMenu(activeMenu === menuName ? null : menuName);
+      handleMenuClick(menuName);
     } else if (event.key === "Escape") {
       setActiveMenu(null);
+      setSelectedService(null);
     }
   };
 
@@ -2329,6 +2468,7 @@ function MegaMenuIntellectt() {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
         setActiveMenu(null);
+        setSelectedService(null);
         setIsMobileMenuOpen(false);
       }
     };
@@ -2341,6 +2481,7 @@ function MegaMenuIntellectt() {
         !event.target.closest("[data-nav-item]")
       ) {
         setActiveMenu(null);
+        setSelectedService(null);
       }
     };
 
@@ -2382,22 +2523,24 @@ function MegaMenuIntellectt() {
         >
           <MegaMenuContent>
             <div
-              style={{
-                display: "flex",
-                gap: "3rem",
-                padding: "2rem 0",
-                maxWidth: "1000px",
-                margin: "0 auto",
-              }}
+                             style={{
+                 display: "flex",
+                 gap: "1.5rem",
+                 padding: "1rem 0",
+                 maxWidth: "1200px",
+                 margin: "0 auto",
+                 maxHeight: "60vh",
+                 overflowY: "auto",
+               }}
             >
               {/* Left Column - Service Categories */}
               <div
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                }}
+                                 style={{
+                   flex: 1,
+                   display: "grid",
+                   gridTemplateColumns: "repeat(3, 1fr)",
+                   gap: "0.4rem",
+                 }}
               >
                 {menuConfig.mainItems.map((item, index) => (
                   <div
@@ -2405,91 +2548,74 @@ function MegaMenuIntellectt() {
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: "1rem",
-                      padding: "1rem",
-                      borderRadius: "12px",
-                      background: hoveredService === item.title ? "rgba(249, 250, 251, 0.8)" : "transparent",
-                      border: hoveredService === item.title ? "1px solid rgba(229, 62, 62, 0.2)" : "1px solid transparent",
-                      transition: "all 0.3s ease",
+                      gap: "0.75rem",
+                      padding: "0.75rem",
+                      borderRadius: "10px",
+                      background: selectedService === item.title 
+                        ? "linear-gradient(135deg, rgba(229, 62, 62, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%)" 
+                        : hoveredService === item.title 
+                        ? "linear-gradient(135deg, rgba(249, 250, 251, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%)"
+                        : "transparent",
+                      border: selectedService === item.title 
+                        ? "1px solid rgba(229, 62, 62, 0.3)" 
+                        : hoveredService === item.title 
+                        ? "1px solid rgba(229, 62, 62, 0.2)" 
+                        : "1px solid transparent",
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                       cursor: "pointer",
+                      boxShadow: selectedService === item.title 
+                        ? "0 2px 8px rgba(229, 62, 62, 0.15)" 
+                        : "none",
                     }}
-                    onMouseEnter={() => setHoveredService(item.title)}
-                    onMouseLeave={() => setHoveredService(null)}
-                    onClick={() => {
-                      if (item.url) {
-                        handleNavigation(item.url);
-                      }
-                    }}
+                                         onMouseEnter={() => setHoveredService(item.title)}
+                     onMouseLeave={() => setHoveredService(null)}
+                     onClick={() => {
+                       handleServiceClick(item.title);
+                     }}
                   >
                     {/* Service Icon */}
-                    {item.icon && (
-                      <div
-                        style={{
-                          width: "48px",
-                          height: "48px",
-                          background: item.color || "rgba(229, 62, 62, 0.1)",
-                          borderRadius: "12px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "1.5rem",
-                          flexShrink: 0,
-                        }}
-                      >
-                        {item.icon}
-                      </div>
-                    )}
-
-                    {/* Service Content */}
                     <div
                       style={{
-                        flex: 1,
+                        width: "32px",
+                        height: "32px",
+                        background: selectedService === item.title 
+                          ? "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)" 
+                          : hoveredService === item.title 
+                          ? "linear-gradient(135deg, rgba(229, 62, 62, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%)"
+                          : "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
+                        borderRadius: "8px",
                         display: "flex",
-                        flexDirection: "column",
-                        gap: "0.25rem",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: "1rem",
+                        flexShrink: 0,
+                        boxShadow: selectedService === item.title 
+                          ? "0 4px 12px rgba(229, 62, 62, 0.3)" 
+                          : "0 2px 4px rgba(0, 0, 0, 0.05)",
+                        border: selectedService === item.title 
+                          ? "1px solid rgba(229, 62, 62, 0.3)" 
+                          : "1px solid rgba(229, 62, 62, 0.1)",
+                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                        color: selectedService === item.title ? "#ffffff" : "#e53e3e",
                       }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.5rem",
-                        }}
-                      >
-                        <h3
-                          style={{
-                            fontSize: "1rem",
-                            fontWeight: "600",
-                            color: "#111827",
-                            fontFamily: "Inter, sans-serif",
-                            margin: 0,
-                            lineHeight: "1.2",
-                          }}
-                        >
-                          {item.title}
-                        </h3>
-                        <span
-                          style={{
-                            fontSize: "0.75rem",
-                            fontWeight: "500",
-                            color: "#6b7280",
-                            marginLeft: "auto",
-                          }}
-                        >
-                          →
-                        </span>
-                      </div>
-                      <p
-                        style={{
-                          fontSize: "0.875rem",
-                          color: "#6b7280",
-                          lineHeight: "1.4",
-                          margin: 0,
-                        }}
-                      >
-                        {item.description}
-                      </p>
+                      {item.icon}
                     </div>
+
+                    {/* Service Name Only */}
+                    <span
+                      style={{
+                        fontSize: "0.8rem",
+                        fontWeight: selectedService === item.title ? "700" : "600",
+                        color: selectedService === item.title ? "#e53e3e" : "#1e293b",
+                        fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+                        lineHeight: "1.3",
+                        letterSpacing: "-0.01em",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      {item.title}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -2498,188 +2624,218 @@ function MegaMenuIntellectt() {
               <div
                 style={{
                   flex: 1,
-                  borderLeft: "1px solid #e5e7eb",
-                  paddingLeft: "2rem",
+                  borderLeft: "1px solid #e2e8f0",
+                  paddingLeft: "1.5rem",
+                  background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
+                  borderRadius: "12px",
+                  padding: "1.5rem",
                 }}
               >
-                <h3
-                  style={{
-                    fontSize: "1.125rem",
-                    fontWeight: "700",
-                    color: "#111827",
-                    fontFamily: "Inter, sans-serif",
-                    margin: "0 0 1.5rem 0",
-                    lineHeight: "1.3",
-                  }}
-                >
-                  {hoveredService ? `${hoveredService} Services` : "Browse by Services"}
-                </h3>
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "0.75rem",
+                    gap: "0.5rem",
                   }}
                 >
-                  {hoveredService ? (
-                    // Show specific services for hovered category
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: "1rem",
-                      }}
-                    >
-                      {(() => {
-                        const hoveredItem = menuConfig.mainItems.find(item => item.title === hoveredService);
-                        console.log('Hovered service:', hoveredService);
-                        console.log('Found item:', hoveredItem);
-                        console.log('Services:', hoveredItem?.services);
-                        return hoveredItem?.services?.map((serviceItem, serviceIndex) => (
-                          <div
-                            key={serviceIndex}
-                            style={{
-                              display: "flex",
-                              flexDirection: "column",
-                              alignItems: "center",
-                              textAlign: "center",
-                              padding: "1.5rem",
-                              borderRadius: "12px",
-                              background: "#ffffff",
-                              border: "1px solid #e5e7eb",
-                              transition: "all 0.3s ease",
-                              cursor: "pointer",
-                              minHeight: "120px",
-                              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)",
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.background = "#f8f9fa";
-                              e.currentTarget.style.borderColor = "#d1d5db";
-                              e.currentTarget.style.transform = "translateY(-2px)";
-                              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)";
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.background = "#ffffff";
-                              e.currentTarget.style.borderColor = "#e5e7eb";
-                              e.currentTarget.style.transform = "translateY(0)";
-                              e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.06)";
-                            }}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              if (serviceItem.url) {
-                                handleNavigation(serviceItem.url);
-                              }
-                            }}
-                          >
-                            {/* Service Icon */}
-                            {serviceItem.icon && (
-                              <div
-                                style={{
-                                  width: "48px",
-                                  height: "48px",
-                                  background: serviceItem.color || "rgba(229, 62, 62, 0.1)",
-                                  borderRadius: "12px",
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                  fontSize: "1.5rem",
-                                  marginBottom: "0.75rem",
-                                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                                }}
-                              >
-                                {serviceItem.icon}
-                              </div>
-                            )}
+                                     {selectedService ? (
+                     // Show specific services for selected category
+                     <div
+                       style={{
+                         display: "flex",
+                         flexDirection: "column",
+                         gap: "0.75rem",
+                       }}
+                     >
+                       {(() => {
+                         const selectedItem = menuConfig.mainItems.find(item => item.title === selectedService);
+                         console.log('Selected service:', selectedService);
+                         console.log('Found item:', selectedItem);
+                         console.log('Services:', selectedItem?.services);
+                         return (
+                           <>
+                             <div
+                               style={{
+                                 display: "grid",
+                                 gridTemplateColumns: "repeat(3, 1fr)",
+                                 gap: "0.5rem",
+                               }}
+                             >
+                               {selectedItem?.services?.map((serviceItem, serviceIndex) => (
+                                <div
+                                  key={serviceIndex}
+                                  style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    textAlign: "center",
+                                    padding: "1rem",
+                                    borderRadius: "10px",
+                                    background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                                    border: "1px solid #e2e8f0",
+                                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                    cursor: "pointer",
+                                    minHeight: "90px",
+                                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)",
+                                    position: "relative",
+                                    overflow: "hidden",
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
+                                    e.currentTarget.style.borderColor = "#cbd5e1";
+                                    e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                                    e.currentTarget.style.boxShadow = "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)";
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)";
+                                    e.currentTarget.style.borderColor = "#e2e8f0";
+                                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.06)";
+                                  }}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    if (serviceItem.url) {
+                                      handleNavigation(serviceItem.url);
+                                    }
+                                  }}
+                                >
+                                  {/* Service Icon */}
+                                  <div
+                                    style={{
+                                      width: "40px",
+                                      height: "40px",
+                                      background: `linear-gradient(135deg, ${serviceItem.color || "rgba(229, 62, 62, 0.15)"} 0%, ${serviceItem.color?.replace('0.15', '0.25') || "rgba(220, 38, 38, 0.1)"} 100%)`,
+                                      borderRadius: "10px",
+                                      display: "flex",
+                                      alignItems: "center",
+                                      justifyContent: "center",
+                                      fontSize: "1.25rem",
+                                      marginBottom: "0.75rem",
+                                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                                      position: "relative",
+                                    }}
+                                  >
+                                    {serviceItem.icon}
+                                    <div
+                                      style={{
+                                        position: "absolute",
+                                        top: 0,
+                                        left: 0,
+                                        right: 0,
+                                        bottom: 0,
+                                        background: "linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%)",
+                                        borderRadius: "10px",
+                                        pointerEvents: "none",
+                                      }}
+                                    />
+                                  </div>
 
-                            {/* Service Name */}
-                            <h4
-                              style={{
-                                fontSize: "0.875rem",
-                                fontWeight: "600",
-                                color: "#111827",
-                                fontFamily: "Inter, sans-serif",
-                                margin: 0,
-                                lineHeight: "1.2",
-                              }}
-                            >
-                              {serviceItem.name}
-                            </h4>
-                          </div>
-                        ));
-                      })()}
-                    </div>
-                  ) : (
-                    // Show all main services when nothing is hovered
-                    <div
-                      style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: "1rem",
-                      }}
-                    >
-                      {menuConfig.mainItems.map((item, index) => (
-                        <div
-                          key={item.title}
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "0.75rem",
-                            padding: "0.75rem",
-                            borderRadius: "8px",
-                            background: "transparent",
-                            border: "1px solid transparent",
-                            transition: "all 0.3s ease",
-                            cursor: "pointer",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.background = "rgba(249, 250, 251, 0.8)";
-                            e.currentTarget.style.borderColor = "rgba(229, 62, 62, 0.2)";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.background = "transparent";
-                            e.currentTarget.style.borderColor = "transparent";
-                          }}
-                          onClick={() => {
-                            if (item.url) {
-                              handleNavigation(item.url);
-                            }
-                          }}
-                        >
-                          {/* Service Icon */}
-                          {item.icon && (
+                                  {/* Service Name */}
+                                  <h4
+                                    style={{
+                                      fontSize: "0.75rem",
+                                      fontWeight: "600",
+                                      color: "#1e293b",
+                                      fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+                                      margin: 0,
+                                      lineHeight: "1.3",
+                                      letterSpacing: "-0.01em",
+                                    }}
+                                  >
+                                    {serviceItem.name}
+                                  </h4>
+                                </div>
+                              ))}
+                            </div>
+                            
+                            {/* See All Button */}
                             <div
                               style={{
-                                width: "32px",
-                                height: "32px",
-                                background: item.color || "rgba(229, 62, 62, 0.1)",
-                                borderRadius: "6px",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                fontSize: "1rem",
-                                flexShrink: 0,
+                                marginTop: "1.5rem",
+                                padding: "1rem",
+                                background: "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)",
+                                borderRadius: "12px",
+                                cursor: "pointer",
+                                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                                textAlign: "center",
+                                color: "#ffffff",
+                                fontWeight: "600",
+                                fontSize: "0.875rem",
+                                boxShadow: "0 4px 12px rgba(229, 62, 62, 0.25)",
+                                border: "1px solid rgba(229, 62, 62, 0.2)",
                               }}
-                            >
-                              {item.icon}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                                e.currentTarget.style.boxShadow = "0 8px 20px rgba(229, 62, 62, 0.35)";
+                                e.currentTarget.style.background = "linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)";
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                                e.currentTarget.style.boxShadow = "0 4px 12px rgba(229, 62, 62, 0.25)";
+                                e.currentTarget.style.background = "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)";
+                              }}
+                                                             onClick={() => {
+                                 if (selectedItem?.url) {
+                                   handleNavigation(selectedItem.url);
+                                 }
+                               }}
+                             >
+                               See All {selectedService} Services →
                             </div>
-                          )}
-
-                          {/* Service Name */}
-                          <span
-                            style={{
-                              fontSize: "0.875rem",
-                              fontWeight: "500",
-                              color: "#374151",
-                              fontFamily: "Inter, sans-serif",
-                              lineHeight: "1.2",
-                            }}
-                          >
-                            {item.title}
-                          </span>
-                        </div>
-                      ))}
+                          </>
+                        );
+                      })()}
                     </div>
-                  )}
+                                     ) : (
+                     // Show message when no service is selected
+                     <div
+                       style={{
+                         display: "flex",
+                         flexDirection: "column",
+                         alignItems: "center",
+                         justifyContent: "center",
+                         padding: "3rem 2rem",
+                         textAlign: "center",
+                         color: "#64748b",
+                         background: "linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%)",
+                         borderRadius: "16px",
+                         border: "2px dashed #cbd5e1",
+                       }}
+                     >
+                       <div
+                         style={{
+                           fontSize: "3rem",
+                           marginBottom: "1.5rem",
+                           opacity: "0.7",
+                           filter: "grayscale(0.3)",
+                         }}
+                       >
+                         🎯
+                       </div>
+                       <h3
+                         style={{
+                           fontSize: "1.125rem",
+                           fontWeight: "700",
+                           color: "#1e293b",
+                           margin: "0 0 0.75rem 0",
+                           letterSpacing: "-0.01em",
+                         }}
+                       >
+                         Select a Service
+                       </h3>
+                       <p
+                         style={{
+                           fontSize: "0.875rem",
+                           color: "#64748b",
+                           margin: 0,
+                           lineHeight: "1.5",
+                           maxWidth: "300px",
+                         }}
+                       >
+                         Click on any service from the left to explore its detailed solutions and capabilities
+                       </p>
+                     </div>
+                   )}
                 </div>
               </div>
             </div>
@@ -2696,162 +2852,235 @@ function MegaMenuIntellectt() {
           animate="visible"
           exit="hidden"
           data-mega-menu="true"
+          onMouseLeave={() => {
+            if (timeoutRef.current) {
+              clearTimeout(timeoutRef.current);
+            }
+            timeoutRef.current = setTimeout(() => {
+              setActiveMenu(null);
+              setSelectedService(null);
+            }, 300);
+          }}
         >
           <MegaMenuContent>
-            <MegaMenuGrid menuName={menuName}>
-              {menuConfig.mainItems.map((item, index) => (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)",
+                gap: "1rem",
+                padding: "1.5rem",
+                maxWidth: "1200px",
+                margin: "0 auto",
+                maxHeight: "60vh",
+              }}
+            >
+              {[
+                {
+                  title: "Healthcare & Life Sciences",
+                  description: "Transform healthcare delivery with cutting-edge digital solutions.",
+                  icon: "🏥",
+                  color: "rgba(20, 184, 166, 0.15)",
+                  url: "/industries/helthcare-and-life-sciences",
+                  features: ["Electronic Health Records", "Telemedicine Platforms", "Medical Device Integration"]
+                },
+                {
+                  title: "Manufacturing & Automotive",
+                  description: "Optimize manufacturing processes with intelligent automation.",
+                  icon: "🏭",
+                  color: "rgba(59, 130, 246, 0.15)",
+                  url: "/industries/menufacturing-and-automotive",
+                  features: ["Smart Manufacturing", "Digital Twin Technology", "Quality Control Systems"]
+                },
+                {
+                  title: "Banking & Financial Services",
+                  description: "Secure financial operations with advanced digital banking solutions.",
+                  icon: "🏦",
+                  color: "rgba(16, 185, 129, 0.15)",
+                  url: "/industries/banking-and-financial-services",
+                  features: ["Digital Banking Platforms", "Payment Processing Systems", "Risk Management"]
+                },
+                {
+                  title: "Aerospace & Defense",
+                  description: "Advance aerospace technology with precision engineering solutions.",
+                  icon: "✈️",
+                  color: "rgba(245, 158, 11, 0.15)",
+                  url: "/industries/aerospace-and-defense",
+                  features: ["Aircraft Systems", "Defense Technology", "Satellite Communications"]
+                },
+                {
+                  title: "Retail & E-Commerce",
+                  description: "Accelerate retail transformation with digital commerce solutions.",
+                  icon: "🛍️",
+                  color: "rgba(139, 92, 246, 0.15)",
+                  url: "/service/retail-and-ecommerce",
+                  features: ["E-commerce Platforms", "Omnichannel Solutions", "Inventory Management"]
+                },
+                {
+                  title: "Energy & Utilities",
+                  description: "Power energy systems with smart grid and renewable solutions.",
+                  icon: "⚡",
+                  color: "rgba(239, 68, 68, 0.15)",
+                  url: "/service/energy-and-utilities",
+                  features: ["Smart Grid Technology", "Renewable Energy", "Energy Management"]
+                },
+                {
+                  title: "Education & Training",
+                  description: "Enhance education delivery with digital learning platforms.",
+                  icon: "🎓",
+                  color: "rgba(34, 197, 94, 0.15)",
+                  url: "/service/education-and-training",
+                  features: ["Learning Management Systems", "Virtual Classrooms", "Student Analytics"]
+                },
+                {
+                  title: "Logistics & Transportation",
+                  description: "Optimize logistics with intelligent supply chain solutions.",
+                  icon: "🚚",
+                  color: "rgba(168, 85, 247, 0.15)",
+                  url: "/service/logistics-and-transportation",
+                  features: ["Supply Chain Management", "Real-time Tracking", "Route Optimization"]
+                }
+              ].map((industry, index) => (
                 <div
-                  key={item.title}
+                  key={industry.title}
                   style={{
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: "row",
                     alignItems: "center",
-                    textAlign: "center",
-                    gap: "1rem",
-                    padding: "2rem 1.5rem",
-                    borderRadius: "16px",
-                    background: "#ffffff",
-                    border: "1px solid #e5e7eb",
-                    transition: "all 0.3s ease",
+                    textAlign: "left",
+                    gap: "0.875rem",
+                    padding: "1rem",
+                    borderRadius: "12px",
+                    background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                    border: "1px solid #e2e8f0",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                     cursor: "pointer",
-                    minHeight: "280px",
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
-                    justifyContent: "space-between",
+                    height: "70px",
+                    boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)",
+                    position: "relative",
+                    overflow: "hidden",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#f8f9fa";
-                    e.currentTarget.style.borderColor = "#d1d5db";
-                    e.currentTarget.style.transform = "translateY(-4px)";
-                    e.currentTarget.style.boxShadow =
-                      "0 8px 24px rgba(0, 0, 0, 0.12)";
+                    e.currentTarget.style.background = "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
+                    e.currentTarget.style.borderColor = "#cbd5e1";
+                    e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                    e.currentTarget.style.boxShadow = "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)";
+                    // Animate arrow
+                    const arrow = e.currentTarget.querySelector('div:last-child');
+                    if (arrow) {
+                      arrow.style.transform = "translateX(3px)";
+                      arrow.style.opacity = "1";
+                      arrow.style.color = "#3b82f6";
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "#ffffff";
-                    e.currentTarget.style.borderColor = "#e5e7eb";
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow =
-                      "0 4px 12px rgba(0, 0, 0, 0.08)";
+                    e.currentTarget.style.background = "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)";
+                    e.currentTarget.style.borderColor = "#e2e8f0";
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                    e.currentTarget.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)";
+                    // Reset arrow
+                    const arrow = e.currentTarget.querySelector('div:last-child');
+                    if (arrow) {
+                      arrow.style.transform = "translateX(0)";
+                      arrow.style.opacity = "0.6";
+                      arrow.style.color = "#94a3b8";
+                    }
                   }}
                   onClick={() => {
-                    if (item.url) {
-                      handleNavigation(item.url);
+                    if (industry.url) {
+                      handleNavigation(industry.url);
                     }
                   }}
                 >
                   {/* Industry Icon */}
-                  {item.icon && (
-                    <div
-                      style={{
-                        width: "80px",
-                        height: "80px",
-                        background: item.color || "rgba(229, 62, 62, 0.1)",
-                        borderRadius: "20px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "2rem",
-                        marginBottom: "1rem",
-                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                      }}
-                    >
-                      {item.icon}
-                    </div>
-                  )}
-
-                  {/* Industry Title */}
-                  <h3
-                    style={{
-                      fontSize: "1.25rem",
-                      fontWeight: "700",
-                      color: "#111827",
-                      fontFamily: "Inter, sans-serif",
-                      margin: "0 0 0.75rem 0",
-                      lineHeight: "1.3",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-
-                  {/* Industry Description */}
-                  <p
-                    style={{
-                      fontSize: "0.875rem",
-                      color: "#6b7280",
-                      lineHeight: "1.6",
-                      margin: "0 0 1.5rem 0",
-                      maxWidth: "200px",
-                    }}
-                  >
-                    {item.description}
-                  </p>
-
-                  {/* Explore More Button */}
                   <div
                     style={{
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                      padding: "0.75rem 1.5rem",
-                      textAlign: "center",
-                      width: "100%",
-                      borderRadius: "12px",
-                      background:
-                        "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)",
-                      border: "none",
-                      fontSize: "0.875rem",
-                      color: "#ffffff",
-                      fontFamily: "Inter, sans-serif",
-                      fontWeight: "600",
-                      lineHeight: "1.4",
-                      boxShadow: "0 4px 12px rgba(229, 62, 62, 0.25)",
-                      marginTop: "auto",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background =
-                        "linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)";
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                      e.currentTarget.style.boxShadow =
-                        "0 8px 20px rgba(229, 62, 62, 0.35)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background =
-                        "linear-gradient(135deg, #e53e3e 0%, #dc2626 100%)";
-                      e.currentTarget.style.transform = "translateY(0)";
-                      e.currentTarget.style.boxShadow =
-                        "0 4px 12px rgba(229, 62, 62, 0.25)";
-                    }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (item.url) {
-                        handleNavigation(item.url);
-                      }
+                      width: "40px",
+                      height: "40px",
+                      background: `linear-gradient(135deg, ${industry.color} 0%, ${industry.color.replace('0.15', '0.25')} 100%)`,
+                      borderRadius: "10px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "1.25rem",
+                      flexShrink: 0,
+                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                      position: "relative",
                     }}
                   >
-                    <span
+                    {industry.icon}
+                    <div
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "0.25rem",
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: "linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%)",
+                        borderRadius: "12px",
+                        pointerEvents: "none",
+                      }}
+                    />
+                  </div>
+
+                  {/* Industry Content */}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    {/* Industry Title */}
+                    <h3
+                      style={{
                         fontSize: "0.875rem",
                         fontWeight: "600",
-                        letterSpacing: "0.025em",
+                        color: "#1e293b",
+                        fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+                        margin: "0 0 0.25rem 0",
+                        lineHeight: "1.2",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        letterSpacing: "-0.01em",
                       }}
                     >
-                      Explore More
-                      <span
-                        style={{
-                          fontSize: "0.875rem",
-                          transition: "transform 0.3s ease",
-                          marginLeft: "0.125rem",
-                        }}
-                      >
-                        →
-                      </span>
-                    </span>
+                      {industry.title}
+                    </h3>
+
+                    {/* Industry Description */}
+                    <p
+                      style={{
+                        fontSize: "0.625rem",
+                        color: "#64748b",
+                        lineHeight: "1.3",
+                        margin: "0",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        fontWeight: "400",
+                      }}
+                    >
+                      {industry.description}
+                    </p>
                   </div>
+
+                  {/* Arrow Indicator */}
+                  <div
+                    style={{
+                      width: "16px",
+                      height: "16px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#94a3b8",
+                      fontSize: "0.75rem",
+                      opacity: "0.6",
+                      transition: "all 0.3s ease",
+                      flexShrink: 0,
+                    }}
+                  >
+                    →
+                  </div>
+
+
                 </div>
               ))}
-            </MegaMenuGrid>
+            </div>
           </MegaMenuContent>
         </MegaMenuContainer>
       );
@@ -2865,13 +3094,25 @@ function MegaMenuIntellectt() {
           animate="visible"
           exit="hidden"
           data-mega-menu="true"
+          onMouseLeave={() => {
+            if (timeoutRef.current) {
+              clearTimeout(timeoutRef.current);
+            }
+            timeoutRef.current = setTimeout(() => {
+              setActiveMenu(null);
+              setSelectedService(null);
+            }, 300);
+          }}
         >
           <MegaMenuContent>
             <div
               style={{
                 display: "flex",
-                gap: "3rem",
-                padding: "2rem 0",
+                gap: "2rem",
+                padding: "1.5rem",
+                maxWidth: "1000px",
+                margin: "0 auto",
+                maxHeight: "50vh",
               }}
             >
               {/* Main Content - Cards */}
@@ -2880,29 +3121,30 @@ function MegaMenuIntellectt() {
                   flex: 1,
                   display: "grid",
                   gridTemplateColumns: "repeat(3, 1fr)",
-                  gap: "2rem",
+                  gap: "1.5rem",
                 }}
               >
                 {menuConfig.mainItems.map((item, index) => (
                   <div
                     key={item.title}
                     style={{
-                      background: "#ffffff",
-                      borderRadius: "12px",
+                      background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                      borderRadius: "10px",
                       overflow: "hidden",
-                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)",
+                      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.06)",
                       cursor: "pointer",
-                      transition: "all 0.2s ease",
+                      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                      border: "1px solid #e2e8f0",
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.transform = "translateY(-4px)";
-                      e.target.style.boxShadow =
-                        "0 8px 24px rgba(0, 0, 0, 0.12)";
+                      e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
+                      e.currentTarget.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.12)";
+                      e.currentTarget.style.background = "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.transform = "translateY(0)";
-                      e.target.style.boxShadow =
-                        "0 4px 12px rgba(0, 0, 0, 0.08)";
+                      e.currentTarget.style.transform = "translateY(0) scale(1)";
+                      e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.06)";
+                      e.currentTarget.style.background = "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)";
                     }}
                     onClick={() => {
                       if (item.url) {
@@ -2913,7 +3155,7 @@ function MegaMenuIntellectt() {
                     {/* Card Image */}
                     <div
                       style={{
-                        height: "200px",
+                        height: "140px",
                         background:
                           "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
                         display: "flex",
@@ -2936,16 +3178,16 @@ function MegaMenuIntellectt() {
                     </div>
 
                     {/* Card Content */}
-                    <div style={{ padding: "1.5rem" }}>
+                    <div style={{ padding: "1rem" }}>
                       {/* Content Type Label */}
                       <div
                         style={{
-                          fontSize: "0.75rem",
+                          fontSize: "0.625rem",
                           fontWeight: "600",
                           color: "#e53e3e",
                           textTransform: "uppercase",
                           letterSpacing: "0.5px",
-                          marginBottom: "0.75rem",
+                          marginBottom: "0.5rem",
                         }}
                       >
                         {item.description}
@@ -2954,11 +3196,11 @@ function MegaMenuIntellectt() {
                       {/* Title */}
                       <h3
                         style={{
-                          fontSize: "1.125rem",
+                          fontSize: "0.875rem",
                           fontWeight: "700",
-                          color: "#111827",
-                          fontFamily: "Inter, sans-serif",
-                          margin: "0 0 1rem 0",
+                          color: "#1e293b",
+                          fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+                          margin: "0 0 0.75rem 0",
                           lineHeight: "1.3",
                         }}
                       >
@@ -2988,8 +3230,8 @@ function MegaMenuIntellectt() {
               {/* Side Content - Lists */}
               <div
                 style={{
-                  width: "280px",
-                  padding: "1rem 0",
+                  width: "240px",
+                  padding: "0.75rem 0",
                 }}
               >
                 {menuConfig.sideItems?.map((sideItem, index) => (
@@ -2997,13 +3239,13 @@ function MegaMenuIntellectt() {
                     {/* Section Title */}
                     <h4
                       style={{
-                        fontSize: "1rem",
+                        fontSize: "0.875rem",
                         fontWeight: "600",
-                        color: "#374151",
-                        margin: "0 0 1rem 0",
-                        fontFamily: "Inter, sans-serif",
-                        borderBottom: "2px solid #e5e7eb",
-                        paddingBottom: "0.5rem",
+                        color: "#1e293b",
+                        margin: "0 0 0.75rem 0",
+                        fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+                        borderBottom: "1px solid #e2e8f0",
+                        paddingBottom: "0.375rem",
                       }}
                     >
                       {sideItem.title}
@@ -3021,10 +3263,10 @@ function MegaMenuIntellectt() {
                         <div
                           key={listItem}
                           style={{
-                            padding: "0.75rem 1rem",
-                            borderRadius: "8px",
+                            padding: "0.5rem 0.75rem",
+                            borderRadius: "6px",
                             cursor: "pointer",
-                            transition: "all 0.2s ease",
+                            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                             background: "transparent",
                             border: "1px solid transparent",
                             display: "flex",
@@ -3096,6 +3338,15 @@ function MegaMenuIntellectt() {
           animate="visible"
           exit="hidden"
           data-mega-menu="true"
+          onMouseLeave={() => {
+            if (timeoutRef.current) {
+              clearTimeout(timeoutRef.current);
+            }
+            timeoutRef.current = setTimeout(() => {
+              setActiveMenu(null);
+              setSelectedService(null);
+            }, 300);
+          }}
         >
           <MegaMenuContent>
             <div
@@ -3156,10 +3407,10 @@ function MegaMenuIntellectt() {
                         case "Join our team":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=200&fit=crop&crop=center",
+                              "/images/talent-solution.png",
                             title: "Join Our Team",
                             description:
-                              "Browse current job openings and find the perfect opportunity to grow your career with us.",
+                              "Browse current job openings and grow your career with us.",
                             buttonText: "View Openings",
                             buttonUrl: "/careers/current-openings",
                             emoji: "💼",
@@ -3167,10 +3418,10 @@ function MegaMenuIntellectt() {
                         case "Life at Intellectt":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+                              "/images/cloud-and-application.png",
                             title: "Life at Intellectt",
                             description:
-                              "Discover the culture and values that make Intellectt a great place to work.",
+                              "Discover our culture and values that make us great.",
                             buttonText: "Visit our page",
                             buttonUrl: "/careers/life-at-company",
                             emoji: "🌟",
@@ -3178,10 +3429,10 @@ function MegaMenuIntellectt() {
                         case "How we hire":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+                              "/images/Data-Analytics.png",
                             title: "How We Hire",
                             description:
-                              "Learn about our hiring process and what we look for in potential team members.",
+                              "Learn about our hiring process and what we look for.",
                             buttonText: "Learn More",
                             buttonUrl: "/careers/hiring-process",
                             emoji: "🎯",
@@ -3189,10 +3440,10 @@ function MegaMenuIntellectt() {
                         default:
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+                              "/images/cloud-and-application.png",
                             title: "Life at Intellectt",
                             description:
-                              "Discover the culture and values that make Intellectt a great place to work.",
+                              "Discover our culture and values that make us great.",
                             buttonText: "Visit our page",
                             buttonUrl: "/careers/life-at-company",
                             emoji: "🌟",
@@ -3322,10 +3573,10 @@ function MegaMenuIntellectt() {
                 <div
                   style={{
                     width: "100%",
-                    height: "220px",
+                    height: "160px",
                     borderRadius: "12px",
                     overflow: "hidden",
-                    marginBottom: "2rem",
+                    marginBottom: "1.5rem",
                     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
                   }}
                 >
@@ -3347,9 +3598,9 @@ function MegaMenuIntellectt() {
                   id="careers-title"
                   style={{
                     color: "#111827",
-                    fontSize: "1.25rem",
+                    fontSize: "1.125rem",
                     fontWeight: "700",
-                    margin: "0 0 0.75rem 0",
+                    margin: "0 0 0.5rem 0",
                     fontFamily: "Inter, sans-serif",
                     letterSpacing: "-0.02em",
                     transition: "all 0.3s ease",
@@ -3362,11 +3613,11 @@ function MegaMenuIntellectt() {
                   id="careers-description"
                   style={{
                     color: "#6b7280",
-                    fontSize: "0.875rem",
-                    lineHeight: "1.6",
-                    margin: "0 0 1.5rem 0",
+                    fontSize: "0.8rem",
+                    lineHeight: "1.5",
+                    margin: "0 0 1rem 0",
                     fontFamily: "Inter, sans-serif",
-                    maxWidth: "350px",
+                    maxWidth: "300px",
                     transition: "all 0.3s ease",
                   }}
                 >
@@ -3385,9 +3636,9 @@ function MegaMenuIntellectt() {
                     background: "transparent",
                     border: "2px solid #e53e3e",
                     color: "#e53e3e",
-                    padding: "0.75rem 1.5rem",
+                    padding: "0.6rem 1.25rem",
                     borderRadius: "8px",
-                    fontSize: "0.875rem",
+                    fontSize: "0.8rem",
                     fontWeight: "600",
                     transition: "all 0.3s ease",
                     display: "flex",
@@ -3412,7 +3663,7 @@ function MegaMenuIntellectt() {
                   }}
                 >
                   {menuConfig.featuredContent.buttonText}
-                  <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
+                  <span style={{ fontSize: "0.75rem", fontWeight: "700" }}>
                     →
                   </span>
                 </RouterButton>
@@ -3431,6 +3682,15 @@ function MegaMenuIntellectt() {
           animate="visible"
           exit="hidden"
           data-mega-menu="true"
+          onMouseLeave={() => {
+            if (timeoutRef.current) {
+              clearTimeout(timeoutRef.current);
+            }
+            timeoutRef.current = setTimeout(() => {
+              setActiveMenu(null);
+              setSelectedService(null);
+            }, 300);
+          }}
         >
           <MegaMenuContent>
             <div
@@ -3439,7 +3699,7 @@ function MegaMenuIntellectt() {
                 background: "#ffffff",
                 borderRadius: "12px",
                 overflow: "hidden",
-                minHeight: "350px",
+                minHeight: "175px",
                 boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
                 border: "1px solid #e5e7eb",
               }}
@@ -3449,33 +3709,11 @@ function MegaMenuIntellectt() {
                 style={{
                   width: "280px",
                   background: "#f9fafb",
-                  padding: "2rem",
+                  padding: "1rem",
                   borderRight: "1px solid #e5e7eb",
                 }}
               >
-                {/* Header */}
-                <div style={{ marginBottom: "2rem" }}>
-                  <h3
-                    style={{
-                      color: "#111827",
-                      fontSize: "1.5rem",
-                      fontWeight: "700",
-                      margin: "0 0 0.5rem 0",
-                      fontFamily: "Inter, sans-serif",
-                      letterSpacing: "-0.02em",
-                    }}
-                  >
-                    Who We Are
-                  </h3>
-                  <div
-                    style={{
-                      width: "40px",
-                      height: "3px",
-                      background: "#e53e3e",
-                      marginBottom: "1.5rem",
-                    }}
-                  />
-                </div>
+
 
                 {/* Navigation Items */}
                 <div
@@ -3491,57 +3729,52 @@ function MegaMenuIntellectt() {
                         case "Our Journey":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+                              "/images/cloud-and-application.png",
                             title: "Our Journey",
                             description:
-                              "Discover the story of how we became a leading AI and technology company, from our humble beginnings to our current global presence.",
+                              "From startup to global leader in AI & technology solutions.",
                             buttonText: "Learn More",
                             buttonUrl: "/company/our-journey",
-                            emoji: "🚀",
                           };
                         case "Leadership Team":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+                              "/images/talent-solution.png",
                             title: "Meet Our Leaders",
                             description:
-                              "Get to know the visionary leaders who drive our innovation and guide our company towards a future of technological excellence.",
+                              "Visionary leaders driving innovation and excellence.",
                             buttonText: "Meet the Team",
                             buttonUrl: "/Company/leadership-team",
-                            emoji: "👥",
                           };
                         case "Global Presence":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=200&fit=crop&crop=center",
+                              "/images/cloud-computing-hero.webp",
                             title: "Global Reach",
                             description:
-                              "Explore our worldwide network of offices and partnerships that enable us to serve clients across the globe.",
+                              "Worldwide network serving clients across 50+ countries.",
                             buttonText: "View Locations",
                             buttonUrl: "/company/global-presence",
-                            emoji: "🌍",
                           };
                         case "Our Companies":
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=200&fit=crop&crop=center",
+                              "/images/lumin-logo.png",
                             title: "Our Companies",
                             description:
-                              "Discover our subsidiary companies and specialized divisions that drive innovation across different industries.",
+                              "Specialized divisions driving innovation across industries.",
                             buttonText: "Explore Companies",
                             buttonUrl: "#",
-                            emoji: "🏢",
                           };
                         default:
                           return {
                             image:
-                              "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
-                            title: "Discover Our Story",
+                              "/images/cloud-and-application.png",
+                            title: "About Intellectt",
                             description:
-                              "Learn about our journey, meet our leadership team, explore our global presence, and discover our subsidiary companies that drive innovation across industries.",
+                              "Leading AI & technology company with global presence.",
                             buttonText: "Learn More",
                             buttonUrl: "/company/our-journey",
-                            emoji: "🚀",
                           };
                       }
                     };
@@ -3601,51 +3834,55 @@ function MegaMenuIntellectt() {
                           const descriptionElement = document.getElementById(
                             "who-we-are-description"
                           );
+                          const buttonElement =
+                            document.getElementById("who-we-are-button");
 
                           if (
                             imageElement &&
                             titleElement &&
-                            descriptionElement
+                            descriptionElement &&
+                            buttonElement
                           ) {
                             if (item.title === "Our Companies") {
-                              // For Our Companies, keep the company boxes visible and don't change content
-                              // The company boxes are already displayed and should stay
+                              // For Our Companies, show two company boxes
+                              const rightContent = document.querySelector('[data-right-content="who-we-are"]');
+                              if (rightContent) {
+                                rightContent.innerHTML = `
+                                  <div style="display: flex; flexDirection: column; gap: 1rem; padding: 1rem;">
+                                    <!-- Lumin Inc. -->
+                                    <div style="background: white; border: 1px solid #e5e7eb; borderRadius: 8px; padding: 1rem; cursor: pointer;" 
+                                         onclick="window.open('https://lumininc.com/', '_blank')">
+                                      <img src="/images/lumin-logo.png" alt="Lumin Inc" style="width: 100%; height: auto; maxWidth: 200px;" />
+                                    </div>
+                                    
+                                    <!-- Lumin Innovations -->
+                                    <div style="background: white; border: 1px solid #e5e7eb; borderRadius: 8px; padding: 1rem; cursor: pointer;" 
+                                         onclick="window.open('https://lumin-innovations.com/', '_blank')">
+                                      <img src="/images/lumin-innovations-horizontal.png" alt="Lumin Innovations" style="width: 100%; height: auto; maxWidth: 200px;" />
+                                    </div>
+                                  </div>
+                                `;
+                              }
                             } else {
                               // For other items, update the content as before
-                              const overlayElement =
-                                document.getElementById("who-we-are-overlay");
-                              const buttonElement =
-                                document.getElementById("who-we-are-button");
+                              // Update image src
+                              imageElement.src = content.image;
+                              imageElement.alt = content.title;
 
-                              if (overlayElement && buttonElement) {
-                                // Update image background
-                                imageElement.style.background = `linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.9) 100%), url(${content.image})`;
-                                imageElement.style.backgroundSize = "cover";
-                                imageElement.style.backgroundPosition =
-                                  "center";
+                              // Update text content
+                              titleElement.textContent = content.title;
+                              descriptionElement.textContent = content.description;
 
-                                // Update overlay content
-                                overlayElement.textContent = content.emoji;
-
-                                // Update text content
-                                titleElement.textContent = content.title;
-                                descriptionElement.textContent =
-                                  content.description;
-
-                                // Update button
-                                buttonElement.textContent = content.buttonText;
-                                buttonElement.onclick = () => {
-                                  handleNavigation(content.buttonUrl);
-                                };
-                              }
+                              // Update button
+                              buttonElement.textContent = content.buttonText;
+                              buttonElement.onclick = () => {
+                                handleNavigation(content.buttonUrl);
+                              };
                             }
                           }
                         }}
                         onMouseLeave={(e) => {
-                          // Don't reset hoveredItem for "Our Companies" to keep it visible
-                          if (item.title !== "Our Companies") {
-                            setHoveredItem(null);
-                          }
+                          setHoveredItem(null);
                           if (!item.isActive) {
                             e.target.style.background = "transparent";
                             e.target.style.borderColor = "transparent";
@@ -3684,8 +3921,9 @@ function MegaMenuIntellectt() {
                 </div>
               </div>
 
-              {/* Right Content Area */}
+              {/* Right Content Area - Careers Style */}
               <div
+                data-right-content="who-we-are"
                 style={{
                   flex: 1,
                   padding: "2rem",
@@ -3695,364 +3933,101 @@ function MegaMenuIntellectt() {
                   background: "#ffffff",
                 }}
               >
-                {hoveredItem === "Our Companies" ? (
-                  /* Company Boxes for Our Companies */
-                  <div
+                {/* Featured Image */}
+                <div
+                  style={{
+                    width: "100%",
+                    height: "160px",
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    marginBottom: "1.5rem",
+                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+                  }}
+                >
+                  <img
                     id="who-we-are-image"
+                    src="/images/cloud-and-application.png"
+                    alt="About Intellectt"
                     style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "1rem",
                       width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      transition: "all 0.3s ease",
                     }}
-                    onMouseEnter={() => {
-                      // Clear any timeout when hovering over the company dropdown
-                      if (timeoutRef.current) {
-                        clearTimeout(timeoutRef.current);
-                      }
-                    }}
-                    onMouseLeave={() => {
-                      // Only start timeout when leaving the entire dropdown area
-                      timeoutRef.current = setTimeout(() => {
-                        setActiveMenu(null);
-                      }, 500); // Longer timeout for company dropdown
-                    }}
-                  >
-                    {/* Lumin Inc. Box */}
-                    <div
-                      onClick={() =>
-                        window.open("https://lumininc.com/", "_blank")
-                      }
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "1rem",
-                        padding: "1.5rem",
-                        borderRadius: "12px",
-                        border: "2px solid #e5e7eb",
-                        backgroundColor: "rgba(59, 130, 246, 0.05)",
-                        cursor: "pointer",
-                        transition: "all 0.3s ease",
-                        textDecoration: "none",
-                        color: "inherit",
-                      }}
-                      onMouseEnter={(e) => {
-                        // Clear any timeout when hovering over company boxes
-                        if (timeoutRef.current) {
-                          clearTimeout(timeoutRef.current);
-                        }
-                        e.target.style.borderColor = "#3b82f6";
-                        e.target.style.backgroundColor =
-                          "rgba(59, 130, 246, 0.1)";
-                        e.target.style.transform = "translateY(-2px)";
-                        e.target.style.boxShadow =
-                          "0 8px 25px rgba(59, 130, 246, 0.15)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.borderColor = "#e5e7eb";
-                        e.target.style.backgroundColor =
-                          "rgba(59, 130, 246, 0.05)";
-                        e.target.style.transform = "translateY(0)";
-                        e.target.style.boxShadow = "none";
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: "60px",
-                          height: "60px",
-                          borderRadius: "12px",
-                          backgroundColor: "rgba(59, 130, 246, 0.1)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                        }}
-                      >
-                        <img
-                          src="/Lumininc-logo.png"
-                          alt="Lumin Inc."
-                          style={{
-                            width: "40px",
-                            height: "40px",
-                            objectFit: "contain",
-                          }}
-                        />
-                      </div>
-                      <div
-                        style={{
-                          flex: 1,
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: "0.25rem",
-                        }}
-                      >
-                        <h4
-                          id="who-we-are-title"
-                          style={{
-                            margin: 0,
-                            fontSize: "1.125rem",
-                            fontWeight: "600",
-                            color: "#111827",
-                            fontFamily: "Inter, sans-serif",
-                          }}
-                        >
-                          Lumin Inc.
-                        </h4>
-                        <p
-                          id="who-we-are-description"
-                          style={{
-                            margin: 0,
-                            fontSize: "0.875rem",
-                            color: "#6b7280",
-                            lineHeight: "1.4",
-                            fontFamily: "Inter, sans-serif",
-                          }}
-                        >
-                          Healthcare display and consulting solutions
-                          specializing in medical technology
-                        </p>
-                        <span
-                          style={{
-                            fontSize: "0.75rem",
-                            fontWeight: "500",
-                            color: "#3b82f6",
-                            textTransform: "uppercase",
-                            letterSpacing: "0.5px",
-                          }}
-                        >
-                          Healthcare Technology
-                        </span>
-                      </div>
-                    </div>
+                  />
+                </div>
 
-                    {/* Lumin Innovations Box */}
-                    <div
-                      onClick={() =>
-                        window.open("https://lumin-innovations.com/", "_blank")
-                      }
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "1rem",
-                        padding: "1.5rem",
-                        borderRadius: "12px",
-                        border: "2px solid #e5e7eb",
-                        backgroundColor: "rgba(16, 185, 129, 0.05)",
-                        cursor: "pointer",
-                        transition: "all 0.3s ease",
-                        textDecoration: "none",
-                        color: "inherit",
-                      }}
-                      onMouseEnter={(e) => {
-                        // Clear any timeout when hovering over company boxes
-                        if (timeoutRef.current) {
-                          clearTimeout(timeoutRef.current);
-                        }
-                        e.target.style.borderColor = "#10b981";
-                        e.target.style.backgroundColor =
-                          "rgba(16, 185, 129, 0.1)";
-                        e.target.style.transform = "translateY(-2px)";
-                        e.target.style.boxShadow =
-                          "0 8px 25px rgba(16, 185, 129, 0.15)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.borderColor = "#e5e7eb";
-                        e.target.style.backgroundColor =
-                          "rgba(16, 185, 129, 0.05)";
-                        e.target.style.transform = "translateY(0)";
-                        e.target.style.boxShadow = "none";
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: "60px",
-                          height: "60px",
-                          borderRadius: "12px",
-                          backgroundColor: "rgba(16, 185, 129, 0.1)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                        }}
-                      >
-                        <img
-                          src="/Lumin-Innovations-Horizontal-scaled-2.png"
-                          alt="Lumin Innovations"
-                          style={{
-                            width: "40px",
-                            height: "40px",
-                            objectFit: "contain",
-                          }}
-                        />
-                      </div>
-                      <div
-                        style={{
-                          flex: 1,
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: "0.25rem",
-                        }}
-                      >
-                        <h4
-                          style={{
-                            margin: 0,
-                            fontSize: "1.125rem",
-                            fontWeight: "600",
-                            color: "#111827",
-                            fontFamily: "Inter, sans-serif",
-                          }}
-                        >
-                          Lumin Innovations
-                        </h4>
-                        <p
-                          style={{
-                            margin: 0,
-                            fontSize: "0.875rem",
-                            color: "#6b7280",
-                            lineHeight: "1.4",
-                            fontFamily: "Inter, sans-serif",
-                          }}
-                        >
-                          Advanced manufacturing and automation driving Industry
-                          4.0 solutions
-                        </p>
-                        <span
-                          style={{
-                            fontSize: "0.75rem",
-                            fontWeight: "500",
-                            color: "#10b981",
-                            textTransform: "uppercase",
-                            letterSpacing: "0.5px",
-                          }}
-                        >
-                          Manufacturing & Automation
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  /* Default content for other items */
-                  <>
-                    {/* Featured Image */}
-                    <div
-                      id="who-we-are-image"
-                      style={{
-                        width: "100%",
-                        height: "220px",
-                        borderRadius: "12px",
-                        overflow: "hidden",
-                        marginBottom: "2rem",
-                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
-                        background:
-                          "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        position: "relative",
-                        transition: "all 0.3s ease",
-                      }}
-                    >
-                      <div
-                        id="who-we-are-overlay"
-                        style={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          bottom: 0,
-                          background:
-                            "linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          color: "#ffffff",
-                          fontSize: "3rem",
-                          fontWeight: "700",
-                          fontFamily: "Inter, sans-serif",
-                          transition: "all 0.3s ease",
-                        }}
-                      >
-                        🚀
-                      </div>
-                    </div>
+                {/* Content */}
+                <h3
+                  id="who-we-are-title"
+                  style={{
+                    color: "#111827",
+                    fontSize: "1.125rem",
+                    fontWeight: "700",
+                    margin: "0 0 0.5rem 0",
+                    fontFamily: "Inter, sans-serif",
+                    letterSpacing: "-0.02em",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  About Intellectt
+                </h3>
 
-                    {/* Content */}
-                    <h3
-                      id="who-we-are-title"
-                      style={{
-                        color: "#111827",
-                        fontSize: "1.25rem",
-                        fontWeight: "700",
-                        margin: "0 0 0.75rem 0",
-                        fontFamily: "Inter, sans-serif",
-                        letterSpacing: "-0.02em",
-                        transition: "all 0.3s ease",
-                      }}
-                    >
-                      Discover Our Story
-                    </h3>
+                <p
+                  id="who-we-are-description"
+                  style={{
+                    color: "#6b7280",
+                    fontSize: "0.8rem",
+                    lineHeight: "1.5",
+                    margin: "0 0 1rem 0",
+                    fontFamily: "Inter, sans-serif",
+                    maxWidth: "300px",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  Leading AI & technology company with global presence.
+                </p>
 
-                    <p
-                      id="who-we-are-description"
-                      style={{
-                        color: "#6b7280",
-                        fontSize: "0.875rem",
-                        lineHeight: "1.6",
-                        margin: "0 0 1.5rem 0",
-                        fontFamily: "Inter, sans-serif",
-                        maxWidth: "350px",
-                        transition: "all 0.3s ease",
-                      }}
-                    >
-                      Learn about our journey, meet our leadership team, explore
-                      our global presence, and discover our subsidiary companies
-                      that drive innovation across industries.
-                    </p>
-
-                    {/* Button */}
-                    <RouterButton
-                      id="who-we-are-button"
-                      to="/company/our-journey"
-                      onNavigate={handleNavigation}
-                      style={{
-                        background: "transparent",
-                        border: "2px solid #6366f1",
-                        color: "#6366f1",
-                        padding: "0.75rem 1.5rem",
-                        borderRadius: "8px",
-                        fontSize: "0.875rem",
-                        fontWeight: "600",
-                        transition: "all 0.3s ease",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        alignSelf: "flex-start",
-                        fontFamily: "Inter, sans-serif",
-                        letterSpacing: "0.02em",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.background = "#6366f1";
-                        e.target.style.color = "#ffffff";
-                        e.target.style.transform = "translateY(-2px)";
-                        e.target.style.boxShadow =
-                          "0 8px 25px rgba(99, 102, 241, 0.3)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.background = "transparent";
-                        e.target.style.color = "#6366f1";
-                        e.target.style.transform = "translateY(0)";
-                        e.target.style.boxShadow = "none";
-                      }}
-                    >
-                      Learn More
-                      <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>
-                        →
-                      </span>
-                    </RouterButton>
-                  </>
-                )}
+                {/* Button */}
+                <RouterButton
+                  id="who-we-are-button"
+                  to="/company/our-journey"
+                  onNavigate={handleNavigation}
+                  style={{
+                    background: "transparent",
+                    border: "2px solid #e53e3e",
+                    color: "#e53e3e",
+                    padding: "0.6rem 1.25rem",
+                    borderRadius: "8px",
+                    fontSize: "0.8rem",
+                    fontWeight: "600",
+                    transition: "all 0.3s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    alignSelf: "flex-start",
+                    fontFamily: "Inter, sans-serif",
+                    letterSpacing: "0.02em",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = "#e53e3e";
+                    e.target.style.color = "#ffffff";
+                    e.target.style.transform = "translateY(-2px)";
+                    e.target.style.boxShadow =
+                      "0 8px 25px rgba(229, 62, 62, 0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = "transparent";
+                    e.target.style.color = "#e53e3e";
+                    e.target.style.transform = "translateY(0)";
+                    e.target.style.boxShadow = "none";
+                  }}
+                >
+                  Learn More
+                  <span style={{ fontSize: "0.75rem", fontWeight: "700" }}>
+                    →
+                  </span>
+                </RouterButton>
               </div>
             </div>
           </MegaMenuContent>
@@ -4358,12 +4333,14 @@ function MegaMenuIntellectt() {
                 isHomePage={isHomePage}
                 onMouseEnter={() => handleMouseEnter(menuName)}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => handleMenuClick(menuName)}
                 onKeyDown={(e) => handleKeyDown(e, menuName)}
                 tabIndex={0}
                 role="button"
                 aria-expanded={activeMenu === menuName}
                 aria-haspopup="true"
                 data-nav-item="true"
+                style={{ cursor: "pointer" }}
               >
                 {menuName}
                 <ChevronDown />

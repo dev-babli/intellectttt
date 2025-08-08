@@ -14,13 +14,13 @@ const ServicesSection = () => {
           viewport={{ once: true }}
         >
           <Typography
-            variant="h2"
+            variant="h3"
             sx={{
               textAlign: 'center',
-              fontWeight: 700,
+              fontWeight: 600,
               color: BRAND_COLORS.darkGray,
               mb: 6,
-              fontSize: { xs: '2rem', md: '3rem' },
+              fontSize: { xs: '1.25rem', md: '1.75rem' },
             }}
           >
             Our Services
@@ -56,11 +56,12 @@ const ServicesSection = () => {
                     />
                     <CardContent sx={{ p: 3 }}>
                       <Typography
-                        variant="h5"
+                        variant="body1"
                         sx={{
-                          fontWeight: 700,
+                          fontWeight: 600,
                           color: BRAND_COLORS.darkGray,
                           mb: 2,
+                          fontSize: '0.875rem',
                         }}
                       >
                         {service.title}
