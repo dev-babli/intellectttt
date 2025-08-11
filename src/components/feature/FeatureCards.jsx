@@ -17,7 +17,7 @@ const industries = [
     description:
       "Digital health solutions, medical device technology, and life sciences innovation for improved patient care and research outcomes.",
     category: "HEALTHCARE & LIFE SCIENCES",
-    image: "/herosectionimages/ai-human-collaboration.jpg",
+    image: "/herosectionimages/3.webp",
     features: [
       "Digital Health Platforms",
       "Medical Device Technology",
@@ -34,7 +34,7 @@ const industries = [
     description:
       "Smart manufacturing solutions, automotive innovation, and Industry 4.0 technologies to optimize production and drive efficiency.",
     category: "MANUFACTURING & AUTOMOTIVE",
-    image: "/herosectionimages/cloud-computing-illustration.jpg",
+    image: "/herosectionimages/4.webp",
     features: [
       "Smart Factory Solutions",
       "Predictive Maintenance",
@@ -51,7 +51,7 @@ const industries = [
     description:
       "Mission-critical aerospace software, defense technology solutions, and precision engineering for advanced aerospace systems.",
     category: "AEROSPACE & DEFENSE",
-    image: "/herosectionimages/ai-technology.jpg",
+    image: "/herosectionimages/Digital Technology.webp",
     features: [
       "Mission-Critical Software",
       "Embedded Systems",

@@ -45,7 +45,7 @@ const HelpDeskBlogSection = (props) => {
               lineHeight: 1.2,
             }}
           >
-            Blogs and{" "}
+            Our{" "}
             <Box
               component="span"
               sx={{
@@ -55,7 +55,7 @@ const HelpDeskBlogSection = (props) => {
                 backgroundClip: "text",
               }}
             >
-              Case Studies
+              Blog
             </Box>
           </Typography>
           <Typography
@@ -66,16 +66,15 @@ const HelpDeskBlogSection = (props) => {
               maxWidth: "600px",
               margin: "0 auto",
               lineHeight: 1.6,
-              whiteSpace: "nowrap",
             }}
           >
-            Stay updated with the latest trends, innovations, and insights from the world of technology and AI
+            Explore our latest insights, trends, and expert opinions on the ever-evolving world of technology and business. From in-depth articles to quick tips, our blog is your go-to resource for staying informed and inspired.
           </Typography>
         </Box>
 
         {/* Featured Blog Card */}
         <Box sx={{ mb: 8 }}>
-          {blogs.slice(12, 13).map((blog, index) => (
+          {blogs.slice(0, 1).map((blog, index) => (
             <Card
               key={index}
               className="blog-card"
@@ -109,7 +108,7 @@ const HelpDeskBlogSection = (props) => {
                   >
                     <Box sx={{ mb: 3 }}>
                       <Chip
-                        label="FEATURED"
+                        label={blog.thumb}
                         sx={{
                           backgroundColor: "#1e40af",
                           color: "white",
@@ -137,26 +136,26 @@ const HelpDeskBlogSection = (props) => {
                           lineHeight: 1.6,
                         }}
                       >
-                        Intellectt's AI-Support boosts efficiency and enhances customer service through cutting-edge automation and intelligent solutions.
+                        {blog.description}
                       </Typography>
                     </Box>
                     <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
                       <Box sx={{ display: "flex", alignItems: "center", mr: 3 }}>
-                        <AccessTime sx={{ fontSize: 16, color: "#94a3b8", mr: 1 }} />
+                        <CalendarToday sx={{ fontSize: 16, color: "#94a3b8", mr: 1 }} />
                         <Typography variant="body2" sx={{ color: "#94a3b8" }}>
-                          {blog.read}
+                          {blog.create_at}
                         </Typography>
                       </Box>
                       <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <CalendarToday sx={{ fontSize: 16, color: "#94a3b8", mr: 1 }} />
+                        <AccessTime sx={{ fontSize: 16, color: "#94a3b8", mr: 1 }} />
                         <Typography variant="body2" sx={{ color: "#94a3b8" }}>
-                          Dec 15, 2024
+                          {blog.comment} comments
                         </Typography>
                       </Box>
                     </Box>
                     <Link
                       onClick={ClickHandler}
-                      to={`/blog-single/${blog.slug}`}
+                      to="/insights/blog"
                       style={{ textDecoration: "none" }}
                     >
                       <Button
@@ -190,7 +189,7 @@ const HelpDeskBlogSection = (props) => {
 
         {/* Recent Blog Cards */}
         <Grid container spacing={4}>
-          {blogs.slice(13, 16).map((blog, index) => (
+          {blogs.slice(1, 4).map((blog, index) => (
             <Grid item xs={12} md={4} key={index}>
               <Card
                 className="blog-card"
@@ -212,10 +211,16 @@ const HelpDeskBlogSection = (props) => {
                 />
                 <CardContent sx={{ p: 4 }}>
                   <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                    <AccessTime sx={{ fontSize: 14, color: "#94a3b8", mr: 1 }} />
-                    <Typography variant="body2" sx={{ color: "#94a3b8" }}>
-                      {blog.read}
-                    </Typography>
+                    <Chip
+                      label={blog.thumb}
+                      sx={{
+                        backgroundColor: "#f1f5f9",
+                        color: "#475569",
+                        fontWeight: 500,
+                        fontSize: "0.7rem",
+                        mb: 2,
+                      }}
+                    />
                   </Box>
                   <Typography
                     variant="h6"
@@ -237,11 +242,19 @@ const HelpDeskBlogSection = (props) => {
                       lineHeight: 1.6,
                     }}
                   >
-                    Discover how our latest innovations are transforming the industry and driving success for our clients.
+                    {blog.description}
                   </Typography>
+                  <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
+                    <Box sx={{ display: "flex", alignItems: "center", mr: 3 }}>
+                      <CalendarToday sx={{ fontSize: 14, color: "#94a3b8", mr: 1 }} />
+                      <Typography variant="body2" sx={{ color: "#94a3b8" }}>
+                        {blog.create_at}
+                      </Typography>
+                    </Box>
+                  </Box>
                   <Link
                     onClick={ClickHandler}
-                    to={`/blog-single/${blog.slug}`}
+                    to="/insights/blog"
                     style={{ textDecoration: "none" }}
                   >
                     <Button
@@ -273,7 +286,7 @@ const HelpDeskBlogSection = (props) => {
         <Box sx={{ textAlign: "center", mt: 8 }}>
           <Link
             onClick={ClickHandler}
-            to="/blog"
+            to="/insights/blog"
             style={{ textDecoration: "none" }}
           >
             <Button
