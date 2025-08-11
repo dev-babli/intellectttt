@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import Header from "../../components/header/Header";
 import Scrollbar from "../../components/scrollbar/scrollbar";
 import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import Bg from "../../images/bg/page_bg01.jpg";
 import CtaSection from "../../components/CtaSection/CtaSection";
 import icon from "../../images/icon/magic.svg";
@@ -116,7 +118,15 @@ const CareerPage = (props) => {
         <GallerySection />
         <CtaSection />
       </div>
-      <Footer />
+      
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
       <Scrollbar />
     </Fragment>
   );

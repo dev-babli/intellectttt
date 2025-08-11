@@ -1,4 +1,7 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 import ServicesComponent from "../../components/ServicesComponent/ServicesComponent";
 
@@ -14,7 +17,8 @@ import sIcon2 from "../../images/process/image02.png";
 import sIcon3 from "../../images/process/image03.png";
 import sIcon4 from "../../images/process/image04.png";
 import sIcon5 from "../../images/process/image05.png";
-import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
+import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import AlliancesSection from "../../components/AlliancesSection/AlliancesSection";
 
 const processList = [
   {
@@ -84,11 +88,21 @@ const MenufacturingAndAutomotive = () => {
           buttonLink="/contact"
           sectionStyle={{ backgroundColor: "#f8f9fa" }}
         />
-       <IndustriesSimple />
         <HelpDeskBlogSection />
       </div>
       
-    </Fragment>
+          
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
+
+      
+        </Fragment>
   );
 };
 

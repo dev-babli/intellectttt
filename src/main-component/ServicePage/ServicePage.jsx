@@ -75,7 +75,15 @@ const ServicePage = (props) => {
                 <Testimonial tClass={'pt-130'}/>
                 <CtaSection />
             </div>
-            <Footer />
+            
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
             <Scrollbar />
         </Fragment>
     )

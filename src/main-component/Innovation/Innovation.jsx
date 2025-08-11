@@ -1,4 +1,9 @@
 import React from "react";
+import useScrollToTop from "../../hooks/useScrollToTop";
+import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import {
   Box,
   Container,
@@ -12,6 +17,8 @@ import { Lightbulb, Rocket, Brain, Cpu, Globe, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Innovation = () => {
+  // Scroll to top when component mounts
+  useScrollToTop();
   const navigate = useNavigate();
   const innovations = [
     {

@@ -1560,6 +1560,55 @@ const menuData = {
         color: "rgba(20, 184, 166, 0.15)",
       },
       {
+        title: "IoT Solutions",
+        description: "Connect devices and drive automation with next-gen IoT technology",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "IoT Platform Development",
+          "Sensor Integration",
+          "Edge Computing",
+          "Smart City Solutions",
+        ],
+        hasDropdown: true,
+        url: "/iot",
+        services: [
+          {
+            name: "Industrial IoT (IIoT)",
+            description: "Manufacturing IoT and smart factory solutions",
+            focus: "IoT Solutions",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🏭",
+            url: "/iot",
+          },
+          {
+            name: "Smart Grid & Energy IoT",
+            description: "Intelligent grid systems and IoT monitoring",
+            focus: "IoT Solutions",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "⚡",
+            url: "/iot",
+          },
+          {
+            name: "Healthcare IoT",
+            description: "Connected medical device technology and IoT solutions",
+            focus: "IoT Solutions",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🏥",
+            url: "/iot",
+          },
+          {
+            name: "Smart Logistics IoT",
+            description: "Supply chain monitoring and IoT tracking solutions",
+            focus: "IoT Solutions",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🚚",
+            url: "/iot",
+          },
+        ],
+        icon: "🌐",
+        color: "rgba(59, 130, 246, 0.15)",
+      },
+      {
         title: "Managed IT Services",
         description: "Comprehensive IT management and support solutions",
         image: "/placeholder.svg?height=80&width=280",
@@ -1800,10 +1849,19 @@ const menuData = {
       {
         title: "More Services",
         items: ["Engineering & Manufacturing IT", "Healthcare & Life Sciences IT"],
+        urls: [
+          "/service/engineering-and-manufacturing-it",
+          "/service/healthcare-and-life-sciences-it",
+        ],
       },
       {
         title: "Industries",
         items: ["Manufacturing", "Aerospace", "Banking & Financial Services"],
+        urls: [
+          "/industries/menufacturing-and-automotive",
+          "/industries/aerospace-and-defense",
+          "/industries/banking-and-financial-services",
+        ],
       },
     ],
   },
@@ -1976,6 +2034,170 @@ const menuData = {
         icon: "✈️",
         color: "rgba(59, 130, 246, 0.15)",
       },
+      {
+        title: "Retail & E-Commerce",
+        description: "Digital commerce and omnichannel retail solutions",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "E-commerce Platforms",
+          "Omnichannel Solutions",
+          "AI Personalization",
+          "Supply Chain",
+        ],
+        hasDropdown: true,
+        url: "/industries/retail-and-ecommerce",
+        services: [
+          {
+            name: "E-commerce Platforms",
+            description: "Scalable online shopping platforms and marketplaces",
+            focus: "Retail",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🛍️",
+            url: "/industries/retail-and-ecommerce",
+          },
+          {
+            name: "Omnichannel Solutions",
+            description: "Seamless shopping experiences across all channels",
+            focus: "Retail",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "📱",
+            url: "/industries/retail-and-ecommerce",
+          },
+          {
+            name: "AI Personalization",
+            description: "Intelligent recommendation engines and customer insights",
+            focus: "Retail",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "🎯",
+            url: "/industries/retail-and-ecommerce",
+          },
+        ],
+        icon: "🛍️",
+        color: "rgba(20, 184, 166, 0.15)",
+      },
+      {
+        title: "Energy & Utilities",
+        description: "Smart grid and renewable energy solutions",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "Smart Grid",
+          "Renewable Energy",
+          "Energy Analytics",
+          "Grid Security",
+        ],
+        hasDropdown: true,
+        url: "/industries/energy-and-utilities",
+        services: [
+          {
+            name: "Smart Grid",
+            description: "Intelligent grid systems and IoT monitoring",
+            focus: "Energy",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "⚡",
+            url: "/industries/energy-and-utilities",
+          },
+          {
+            name: "Renewable Energy",
+            description: "Solar, wind, and energy storage management",
+            focus: "Energy",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "🌱",
+            url: "/industries/energy-and-utilities",
+          },
+          {
+            name: "Energy Analytics",
+            description: "Predictive analytics and demand forecasting",
+            focus: "Energy",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "📊",
+            url: "/industries/energy-and-utilities",
+          },
+        ],
+        icon: "⚡",
+        color: "rgba(59, 130, 246, 0.15)",
+      },
+      {
+        title: "Education & Training",
+        description: "Digital learning and training platform solutions",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "Learning Management",
+          "Virtual Classrooms",
+          "Adaptive Learning",
+          "Corporate Training",
+        ],
+        hasDropdown: true,
+        url: "/industries/education-and-training",
+        services: [
+          {
+            name: "Learning Management",
+            description: "Comprehensive LMS platforms and course management",
+            focus: "Education",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🎓",
+            url: "/industries/education-and-training",
+          },
+          {
+            name: "Virtual Classrooms",
+            description: "Interactive online learning environments",
+            focus: "Education",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "💻",
+            url: "/industries/education-and-training",
+          },
+          {
+            name: "Adaptive Learning",
+            description: "AI-powered personalized learning experiences",
+            focus: "Education",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "🧠",
+            url: "/industries/education-and-training",
+          },
+        ],
+        icon: "🎓",
+        color: "rgba(16, 185, 129, 0.15)",
+      },
+      {
+        title: "Logistics & Transportation",
+        description: "Intelligent supply chain and fleet management solutions",
+        image: "/placeholder.svg?height=80&width=280",
+        items: [
+          "Fleet Management",
+          "Supply Chain Visibility",
+          "Warehouse Management",
+          "Route Optimization",
+        ],
+        hasDropdown: true,
+        url: "/industries/logistics-and-transportation",
+        services: [
+          {
+            name: "Fleet Management",
+            description: "GPS tracking and real-time fleet monitoring",
+            focus: "Logistics",
+            color: "rgba(20, 184, 166, 0.15)",
+            icon: "🚚",
+            url: "/industries/logistics-and-transportation",
+          },
+          {
+            name: "Supply Chain Visibility",
+            description: "End-to-end supply chain tracking and analytics",
+            focus: "Logistics",
+            color: "rgba(59, 130, 246, 0.15)",
+            icon: "📦",
+            url: "/industries/logistics-and-transportation",
+          },
+          {
+            name: "Route Optimization",
+            description: "AI-powered route planning and optimization",
+            focus: "Logistics",
+            color: "rgba(16, 185, 129, 0.15)",
+            icon: "🗺️",
+            url: "/industries/logistics-and-transportation",
+          },
+        ],
+        icon: "🚚",
+        color: "rgba(59, 130, 246, 0.15)",
+      },
     ],
     sideItems: [
       {
@@ -2063,6 +2285,12 @@ const menuData = {
           "Whitepapers & Case Studies",
           "News & Events",
         ],
+        urls: [
+          "/insights/blog",
+          "/insights/blog",
+          "/insights/whitepapers-and-case-studies",
+          "/insights/news-and-announcements",
+        ],
       },
     ],
   },
@@ -2121,6 +2349,11 @@ const menuData = {
       {
         title: "Company Info",
         items: ["Awards & Recognition", "Press Releases", "Investor Relations"],
+        urls: [
+          "/about",
+          "/about",
+          "/about",
+        ],
       },
       {
         title: "Partnerships",
@@ -2128,6 +2361,11 @@ const menuData = {
           "Strategic Alliances",
           "Technology Partners",
           "Channel Partners",
+        ],
+        urls: [
+          "/partners",
+          "/partners",
+          "/partners",
         ],
       },
     ],
@@ -2924,7 +3162,7 @@ function MegaMenuIntellectt() {
                   description: "Accelerate retail transformation with digital commerce solutions.",
                   icon: "🛍️",
                   color: "rgba(139, 92, 246, 0.15)",
-                  url: "/service/retail-and-ecommerce",
+                  url: "/industries/retail-and-ecommerce",
                   features: ["E-commerce Platforms", "Omnichannel Solutions", "Inventory Management"]
                 },
                 {
@@ -2932,7 +3170,7 @@ function MegaMenuIntellectt() {
                   description: "Power energy systems with smart grid and renewable solutions.",
                   icon: "⚡",
                   color: "rgba(239, 68, 68, 0.15)",
-                  url: "/service/energy-and-utilities",
+                  url: "/industries/energy-and-utilities",
                   features: ["Smart Grid Technology", "Renewable Energy", "Energy Management"]
                 },
                 {
@@ -2940,7 +3178,7 @@ function MegaMenuIntellectt() {
                   description: "Enhance education delivery with digital learning platforms.",
                   icon: "🎓",
                   color: "rgba(34, 197, 94, 0.15)",
-                  url: "/service/education-and-training",
+                  url: "/industries/education-and-training",
                   features: ["Learning Management Systems", "Virtual Classrooms", "Student Analytics"]
                 },
                 {
@@ -2948,7 +3186,7 @@ function MegaMenuIntellectt() {
                   description: "Optimize logistics with intelligent supply chain solutions.",
                   icon: "🚚",
                   color: "rgba(168, 85, 247, 0.15)",
-                  url: "/service/logistics-and-transportation",
+                  url: "/industries/logistics-and-transportation",
                   features: ["Supply Chain Management", "Real-time Tracking", "Route Optimization"]
                 }
               ].map((industry, index) => (
@@ -3306,8 +3544,9 @@ function MegaMenuIntellectt() {
                             }
                           }}
                           onClick={() => {
-                            // If you want to route, you need to know the url for each listItem. If you have a url, use navigate(url). Otherwise, do nothing or handle as needed.
-                            // Example: if (sideItem.urls && sideItem.urls[itemIndex]) { ... }
+                            if (sideItem.urls && sideItem.urls[itemIndex]) {
+                              handleNavigation(sideItem.urls[itemIndex]);
+                            }
                           }}
                         >
                           <span

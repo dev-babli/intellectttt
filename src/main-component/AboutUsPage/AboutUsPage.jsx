@@ -1,4 +1,7 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import WhyChoose from "./WhyChoose";
 // import FunFactSection from "../../components/Help-Desk-Components/FunFact/FunFact";
 import PartnerSection from "../../components/Help-Desk-Components/PartnerSection";
@@ -69,7 +72,17 @@ const AboutUsPage = (props) => {
 
         {/* <GallerySection pClass={"pt-130"} /> */}
       </div>
-    </Fragment>
+          
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
+
+        </Fragment>
   );
 };
 export default AboutUsPage;

@@ -1,4 +1,8 @@
 import React, { Fragment, useState } from "react";
+import useScrollToTop from "../../hooks/useScrollToTop";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
 import About from "../../components/It-Services-Components/about/about";
@@ -8,8 +12,6 @@ import AboutSection from "../../components/Cyber-Security-Components/about/About
 import icon from "../../images/icon/magic02.svg";
 import about1 from "../../images/bg/image-belowhero.webp";
 import about2 from "../../images/bg/abt-cnt_bg.png";
-import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
-import ContactSection from "../../components/It-Services-Components/ContactSection";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import AlliancesSection from "../../components/AlliancesSection/AlliancesSection";
 
@@ -45,6 +47,9 @@ const sampleCards = [
 ];
 
 const CloudAndAppServices = () => {
+  // Scroll to top when component mounts
+  useScrollToTop();
+
   return (
     <Fragment>
       <div className="sco_agency">
@@ -58,7 +63,7 @@ const CloudAndAppServices = () => {
                   Boost innovation and efficiency with AI-powered transformation
                 </h2>
                 <p className="sd-content text-center">
-                  In today’s fast-paced digital world, Artificial Intelligence
+                  In today's fast-paced digital world, Artificial Intelligence
                   (AI) and Generative AI (GenAI) are reshaping the way
                   businesses operate. Our AI & GenAI Practice helps
                   organizations unlock new growth opportunities, automate
@@ -102,10 +107,18 @@ const CloudAndAppServices = () => {
           {/* <IndustrieSection /> */}
           <ServiceCard cards={sampleCards} />
           <AlliancesSection />
-          <IndustriesSimple />
-          <ContactSection />
+          {}
         </div>
       </div>
+      
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
 
       {/* <ModalVideo
         channel="youtube"

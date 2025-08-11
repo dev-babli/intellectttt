@@ -1,0 +1,40 @@
+/* HelpDeskBlogSection - Simple and Lightweight */
+
+/* Simple card hover effect */
+.blog-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Simple button hover effect */
+.blog-button {
+  transition: transform 0.2s ease;
+}
+
+.blog-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .blog-card,
+  .blog-button {
+    transition: none;
+  }
+  
+  .blog-card:hover,
+  .blog-button:hover {
+    transform: none;
+  }
+}

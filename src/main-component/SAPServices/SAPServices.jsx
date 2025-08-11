@@ -1,14 +1,21 @@
 import React, { Fragment, useState } from "react";
-
+import useScrollToTop from "../../hooks/useScrollToTop";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
 import FeatureSection from '../../components/It-Services-Components/FeatureSection';
 
 import About3 from '../../components/about/about';
 import SAPServicesHero from "../../components/SAPServicesHero/SAPServicesHero";
-import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
-import ContactSection from "../../components/It-Services-Components/ContactSection";
+import AboutSection from "../../components/Cyber-Security-Components/about/AboutSection";
+import icon from "../../images/icon/magic02.svg";
+import about1 from "../../images/bg/image-belowhero.webp";
+import about2 from "../../images/bg/abt-cnt_bg.png";
+import AlliancesSection from "../../components/AlliancesSection/AlliancesSection";
+
 
 const sampleCards = [
   {
@@ -16,7 +23,7 @@ const sampleCards = [
     description: "Seamless upgrade to S/4HANA for modern ERP.",
     buttonText: "Explore",
     image: "/images/1.webp",
-    url:"/service/sap-services/ams"
+    url:"/service/sap-services/s4hana"
   },
   {
     title: "SAP BTP, ABAP & Fiori Development",
@@ -42,6 +49,9 @@ const sampleCards = [
 ];
 
 const SAPServices = () => {
+  // Scroll to top when component mounts
+  useScrollToTop();
+
   return (
    <Fragment>
       <div className="sco_agency">
@@ -75,11 +85,7 @@ const SAPServices = () => {
                 </p>
                 <br />
                 <p className="sd-content text-center">
-                  Our approach combines deep technical expertise with
-                  industry-specific insights to deliver scalable, ethical, and
-                  secure AI solutions. From building custom LLMs to deploying
-                  GenAI chatbots, we focus on measurable results that create
-                  lasting impact.
+                                  Our approach combines deep SAP expertise with industry-specific insights to deliver scalable, secure, and future-ready ERP solutions. From S/4HANA migration to BTP development, we focus on measurable results that create lasting business value.
                 </p>
               </div>
             </div>
@@ -90,13 +96,29 @@ const SAPServices = () => {
            <ServiceCard cards={sampleCards} />
           {/* <WorkProcess /> */}
            {/* <About3 /> */}
-           <IndustriesSimple />
-              <ContactSection />
+           <AlliancesSection />
+             {}
         </div>
 
        
       </div>
-    
+      
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
+
+      {/* <ModalVideo
+        channel="youtube"
+        autoplay
+        isOpen={isOpen}
+        videoId="7e90gBu4pas"
+        onClose={() => setOpen(false)}
+      /> */}
     </Fragment>
   )
 }

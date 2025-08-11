@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/footer/Footer";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import CaseStudySection from '../../main-component/CaseStudyPage/CaseSection';
 

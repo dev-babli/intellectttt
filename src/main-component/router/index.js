@@ -79,6 +79,11 @@ import Innovation from "../Innovation/Innovation";
 import Partners from "../../pages/Partners";
 import GlobalPresence from "../../components/GlobalPresence/GlobalPresence";
 import HealthCareAndLifeSc from "../HealthCareAndLifeSc/HealthCareAndLifeSc";
+import RetailEcommerce from "../RetailEcommerce/RetailEcommerce";
+import EnergyUtilities from "../EnergyUtilities/EnergyUtilities";
+import EducationTraining from "../EducationTraining/EducationTraining";
+import LogisticsTransportation from "../LogisticsTransportation/LogisticsTransportation";
+import IoTSolutions from "../IoTSolutions/IoTSolutions";
 
 const AllRoute = () => {
   return (
@@ -174,6 +179,11 @@ const AllRoute = () => {
               <Route
                 path="service/managed-it-services/tms"
                 element={<ManagedResourceServices />}
+              />
+              {/* IoT */}
+              <Route
+                path="iot"
+                element={<IoTSolutions />}
               />
               {/* Data */}
               <Route
@@ -286,6 +296,22 @@ const AllRoute = () => {
               <Route
                 path="banking-and-financial-services"
                 element={<BankingAndFinancial />}
+              />
+              <Route
+                path="retail-and-ecommerce"
+                element={<RetailEcommerce />}
+              />
+              <Route
+                path="energy-and-utilities"
+                element={<EnergyUtilities />}
+              />
+              <Route
+                path="education-and-training"
+                element={<EducationTraining />}
+              />
+              <Route
+                path="logistics-and-transportation"
+                element={<LogisticsTransportation />}
               />
             </Route>
             <Route path="Company">

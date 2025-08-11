@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/footer/Footer";
 import NewsGrid from "../../components/NewsCard/NewsGrid";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 

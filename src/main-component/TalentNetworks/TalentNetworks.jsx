@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
 
 import Bg from "../../images/bg/page_bg01.jpg";
 import icon from "../../images/icon/magic.svg";
@@ -87,7 +88,9 @@ const TalentNetworks = () => {
 
         <CareerTeam />
       </div>
-    </Fragment>
+          <Footer />
+
+        </Fragment>
   );
 };
 

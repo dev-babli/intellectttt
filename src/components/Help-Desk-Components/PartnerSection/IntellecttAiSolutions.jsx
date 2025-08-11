@@ -79,7 +79,7 @@ const solutions = [
       "Industrial IoT",
     ],
     buttonLabel: "Connect Everything",
-    url: "/iot",
+    url: "/service/engineering-and-manufacturing-it/twins",
   },
   {
     title: "Turn data into actionable insights for smarter decisions.",

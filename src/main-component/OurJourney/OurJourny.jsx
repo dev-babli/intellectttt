@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import ResponsiveImage from "../../components/ResponsiveImage/ResponsiveImage";
 
@@ -23,7 +24,9 @@ const OurJourny = () => {
           />
         </div>
       </div>
-    </Fragment>
+          <Footer />
+
+        </Fragment>
   );
 };
 

@@ -235,6 +235,10 @@ const Footer = (props) => {
                 { text: "Manufacturing & Automotive", link: "/industries/menufacturing-and-automotive" },
                 { text: "Aerospace & Defense", link: "/industries/aerospace-and-defense" },
                 { text: "Banking & Financial Services", link: "/industries/banking-and-financial-services" },
+                { text: "Retail & E-Commerce", link: "/industries/retail-and-ecommerce" },
+                { text: "Energy & Utilities", link: "/industries/energy-and-utilities" },
+                { text: "Education & Training", link: "/industries/education-and-training" },
+                { text: "Logistics & Transportation", link: "/industries/logistics-and-transportation" },
               ].map((item, index) => (
                 <li key={index} style={{ marginBottom: "10px" }}>
                   <Link

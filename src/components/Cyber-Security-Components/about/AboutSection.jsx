@@ -63,13 +63,13 @@ const AboutSection = ({
                   <div className="xb-img">
                     <img src={image} alt="about visual" />
                   </div>
-                  <div className="xb-content">
+                  <div className="xb-content" style={{ backgroundColor: '#2C3E50', borderRadius: '20px', padding: '25px', boxShadow: '0 8px 25px rgba(44, 62, 80, 0.15)', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
                     <div className="xb-item--img">
                       <img src={badgeImage} alt="badge bg" />
                     </div>
                     <div className="xb-item--inner">
-                      <h3 className="xb-item--number">{badgeNumber}</h3>
-                      <span className="xb-item--content">{badgeText}</span>
+                      <h3 className="xb-item--number" style={{ color: '#ECF0F1', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>{badgeNumber}</h3>
+                      <span className="xb-item--content" style={{ color: '#BDC3C7', fontWeight: '500' }}>{badgeText}</span>
                     </div>
                   </div>
                 </div>

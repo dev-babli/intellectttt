@@ -435,6 +435,38 @@ const MobileVersion = () => {
               >
                 Banking & Financial Services
               </MobileNavItem>
+              <MobileNavItem
+                to="/industries/retail-and-ecommerce"
+                onClick={() =>
+                  handleNavClick("/industries/retail-and-ecommerce")
+                }
+              >
+                Retail & E-Commerce
+              </MobileNavItem>
+              <MobileNavItem
+                to="/industries/energy-and-utilities"
+                onClick={() =>
+                  handleNavClick("/industries/energy-and-utilities")
+                }
+              >
+                Energy & Utilities
+              </MobileNavItem>
+              <MobileNavItem
+                to="/industries/education-and-training"
+                onClick={() =>
+                  handleNavClick("/industries/education-and-training")
+                }
+              >
+                Education & Training
+              </MobileNavItem>
+              <MobileNavItem
+                to="/industries/logistics-and-transportation"
+                onClick={() =>
+                  handleNavClick("/industries/logistics-and-transportation")
+                }
+              >
+                Logistics & Transportation
+              </MobileNavItem>
             </MobileNavSectionContent>
           </MobileNavSection>
 

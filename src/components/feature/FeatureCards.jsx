@@ -13,140 +13,140 @@ import { Link } from "react-router-dom";
 
 const industries = [
   {
-    title: "Transform operations with intelligent AI-powered solutions.",
+    title: "Healthcare & Life Sciences",
     description:
-      "Harness the power of AI and GenAI to unlock new growth opportunities and drive innovation across all industries.",
-    category: "AI & MACHINE LEARNING",
-    image: "/herosectionimages/Agentic Ai.webp",
+      "Digital health solutions, medical device technology, and life sciences innovation for improved patient care and research outcomes.",
+    category: "HEALTHCARE & LIFE SCIENCES",
+    image: "/herosectionimages/ai-human-collaboration.jpg",
     features: [
-      "Machine Learning & Deep Learning",
-      "Natural Language Processing",
-      "Computer Vision & Recognition",
-      "Predictive Analytics",
-      "AI-Powered Automation",
-      "Generative AI Solutions",
+      "Digital Health Platforms",
+      "Medical Device Technology",
+      "Clinical Trial Management",
+      "Healthcare Compliance",
+      "Telemedicine Solutions",
+      "Life Sciences R&D",
     ],
-    buttonLabel: "Explore AI Solutions",
-    url: "/service/ai-and-gen-ai",
+    buttonLabel: "Explore Healthcare",
+    url: "/industries/helthcare-and-life-sciences",
   },
   {
-    title: "Accelerate growth with scalable, secure cloud platforms.",
+    title: "Manufacturing & Automotive",
     description:
-      "Build robust, scalable applications with enterprise-grade cloud infrastructure and modern development practices.",
-    category: "CLOUD & APPLICATION SERVICES",
-    image: "/herosectionimages/Scalable Cloud and Application.webp",
+      "Smart manufacturing solutions, automotive innovation, and Industry 4.0 technologies to optimize production and drive efficiency.",
+    category: "MANUFACTURING & AUTOMOTIVE",
+    image: "/herosectionimages/cloud-computing-illustration.jpg",
     features: [
-      "Cloud Migration & Strategy",
-      "Microservices Architecture",
-      "DevOps & CI/CD Pipelines",
-      "Container Orchestration",
-      "Serverless Computing",
-      "Multi-Cloud Solutions",
+      "Smart Factory Solutions",
+      "Predictive Maintenance",
+      "Digital Twin Technology",
+      "Automotive Software",
+      "Supply Chain Optimization",
+      "Quality Control Automation",
     ],
-    buttonLabel: "Discover Cloud Services",
-    url: "/service/cloud-and-application-services",
+    buttonLabel: "Discover Manufacturing",
+    url: "/industries/menufacturing-and-automotive",
   },
   {
-    title: "Protect your digital assets with intelligent security frameworks.",
+    title: "Aerospace & Defense",
     description:
-      "Safeguard your organization with advanced cybersecurity solutions and proactive threat detection systems.",
-    category: "CYBERSECURITY",
-    image: "/herosectionimages/Cyber Security.webp",
+      "Mission-critical aerospace software, defense technology solutions, and precision engineering for advanced aerospace systems.",
+    category: "AEROSPACE & DEFENSE",
+    image: "/herosectionimages/ai-technology.jpg",
     features: [
-      "Zero Trust Architecture",
-      "Threat Detection & Response",
-      "Identity & Access Management",
-      "Data Protection & Encryption",
-      "Security Compliance",
-      "Incident Response",
+      "Mission-Critical Software",
+      "Embedded Systems",
+      "Aerospace Simulation",
+      "Defense Networks",
+      "Supply Chain Intelligence",
+      "Compliance Automation",
     ],
-    buttonLabel: "Secure Your Business",
-    url: "/cybersecurity",
+    buttonLabel: "Explore Aerospace",
+    url: "/industries/aerospace-and-defense",
   },
   {
-    title: "Turn data into actionable insights for smarter decisions.",
+    title: "Banking & Financial Services",
     description:
-      "Transform raw data into strategic insights that drive business growth and operational excellence.",
-    category: "DATA & ANALYTICS",
+      "Digital banking platforms, fintech solutions, and secure financial technology to transform banking operations and customer experiences.",
+    category: "BANKING & FINANCIAL SERVICES",
     image: "/herosectionimages/Data & Analytics.webp",
     features: [
-      "Big Data Processing",
-      "Business Intelligence",
-      "Data Visualization",
-      "Predictive Analytics",
-      "Real-time Dashboards",
-      "Data Governance",
+      "Core Banking Modernization",
+      "Digital Wallet Integration",
+      "AI-Powered Fraud Detection",
+      "Robo-Advisory Platforms",
+      "RegTech Solutions",
+      "Blockchain Applications",
     ],
-    buttonLabel: "Analyze Data",
-    url: "/service/data-and-analytics",
+    buttonLabel: "Discover Banking",
+    url: "/industries/banking-and-financial-services",
   },
   {
-    title: "Drive intelligent decision-making with data-driven solutions.",
+    title: "Retail & E-Commerce",
     description:
-      "Leverage advanced analytics and machine learning to extract meaningful insights from your business data.",
-    category: "INTELLIGENCE SOLUTIONS",
-    image: "/herosectionimages/Data Driven intelleigence solution.webp",
+      "Omnichannel retail platforms, e-commerce solutions, and AI-powered personalization to revolutionize customer shopping experiences.",
+    category: "RETAIL & E-COMMERCE",
+    image: "/herosectionimages/Agentic Ai.webp",
     features: [
-      "Advanced Analytics",
-      "Machine Learning Models",
-      "Business Intelligence",
-      "Data Mining",
-      "Statistical Analysis",
-      "Automated Reporting",
+      "E-commerce Platforms",
+      "Omnichannel Solutions",
+      "AI Personalization",
+      "Supply Chain Management",
+      "Mobile Commerce",
+      "Analytics & BI",
     ],
-    buttonLabel: "Unlock Intelligence",
-    url: "/service/business-intelligence",
+    buttonLabel: "Explore Retail",
+    url: "/industries/retail-and-ecommerce",
   },
   {
-    title: "Accelerate your digital transformation journey.",
+    title: "Energy & Utilities",
     description:
-      "Navigate the complex digital landscape with strategic guidance and innovative technology solutions.",
-    category: "DIGITAL TRANSFORMATION",
+      "Smart grid solutions, renewable energy management, and utility technology to power sustainable energy systems and infrastructure.",
+    category: "ENERGY & UTILITIES",
+    image: "/herosectionimages/Scalable Cloud and Application.webp",
+    features: [
+      "Smart Grid Solutions",
+      "Renewable Energy Management",
+      "Energy Analytics",
+      "Customer Energy Management",
+      "Grid Security",
+      "Asset Management",
+    ],
+    buttonLabel: "Discover Energy",
+    url: "/industries/energy-and-utilities",
+  },
+  {
+    title: "Education & Training",
+    description:
+      "Digital learning platforms, virtual classrooms, and adaptive learning solutions to transform education and corporate training.",
+    category: "EDUCATION & TRAINING",
     image: "/herosectionimages/Digital Journey.webp",
     features: [
-      "Digital Strategy",
-      "Process Automation",
-      "Legacy Modernization",
-      "Customer Experience",
-      "Innovation Consulting",
-      "Change Management",
+      "Learning Management Systems",
+      "Virtual Classrooms",
+      "Adaptive Learning",
+      "Assessment Platforms",
+      "Mobile Learning",
+      "Corporate Training",
     ],
-    buttonLabel: "Start Journey",
-    url: "/service/digital-transformation",
+    buttonLabel: "Explore Education",
+    url: "/industries/education-and-training",
   },
   {
-    title: "Build lasting partnerships for sustainable growth.",
+    title: "Logistics & Transportation",
     description:
-      "Collaborate with trusted technology partners to drive innovation and achieve your business objectives.",
-    category: "STRATEGIC PARTNERSHIPS",
+      "Intelligent supply chain solutions, fleet management systems, and transportation technology to optimize logistics operations.",
+    category: "LOGISTICS & TRANSPORTATION",
     image: "/herosectionimages/Digital Partner.webp",
     features: [
-      "Technology Partnerships",
-      "Strategic Alliances",
-      "Joint Solutions",
-      "Partner Ecosystem",
-      "Collaborative Innovation",
-      "Shared Success Models",
+      "Fleet Management",
+      "Supply Chain Visibility",
+      "Warehouse Management",
+      "Last-Mile Delivery",
+      "Transportation Management",
+      "IoT & Smart Logistics",
     ],
-    buttonLabel: "Partner With Us",
-    url: "/partnerships",
-  },
-  {
-    title: "Innovate with cutting-edge engineering solutions.",
-    description:
-      "Transform your engineering processes with AI-powered tools, collaborative platforms, and innovative methodologies.",
-    category: "ENGINEERING INNOVATION",
-    image: "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
-    features: [
-      "AI-Assisted Engineering",
-      "Collaborative Platforms",
-      "Design Automation",
-      "Simulation & Modeling",
-      "Innovation Labs",
-      "R&D Solutions",
-    ],
-    buttonLabel: "Innovate Engineering",
-    url: "/service/engineering-innovation",
+    buttonLabel: "Discover Logistics",
+    url: "/industries/logistics-and-transportation",
   },
 ];
 
@@ -263,7 +263,7 @@ function FeatureCards() {
             },
           }}
         >
-          Our Industries
+          Industries We Work With
         </Typography>
 
         <Typography
@@ -287,7 +287,7 @@ function FeatureCards() {
             position: "relative",
           }}
         >
-          Comprehensive technology solutions across diverse industries.
+          Delivering innovative technology solutions tailored to industry-specific challenges and opportunities.
         </Typography>
       </Box>
 
@@ -611,26 +611,22 @@ function FeatureCards() {
                               },
                             }}
                           >
-                            {industry.category ===
-                              "HEALTHCARE & LIFE SCIENCES" &&
-                              "Enhance care delivery with secure, compliant digital solutions."}
-                            {industry.category ===
-                              "MANUFACTURING & AUTOMOTIVE" &&
-                              "Optimize production with smart manufacturing and digital twins."}
-                            {industry.category ===
-                              "BANKING & FINANCIAL SERVICES" &&
-                              "Secure financial operations with advanced digital banking platforms."}
+                            {industry.category === "HEALTHCARE & LIFE SCIENCES" &&
+                              "Enhance patient care with secure, compliant digital health solutions."}
+                            {industry.category === "MANUFACTURING & AUTOMOTIVE" &&
+                              "Optimize production efficiency with smart manufacturing and Industry 4.0."}
                             {industry.category === "AEROSPACE & DEFENSE" &&
-                              "Advance aerospace technology with precision engineering solutions."}
+                              "Advance aerospace technology with mission-critical software solutions."}
+                            {industry.category === "BANKING & FINANCIAL SERVICES" &&
+                              "Transform banking with secure, innovative fintech solutions."}
                             {industry.category === "RETAIL & E-COMMERCE" &&
-                              "Revolutionize retail with omnichannel platforms and AI insights."}
+                              "Revolutionize customer experiences with omnichannel retail platforms."}
                             {industry.category === "ENERGY & UTILITIES" &&
-                              "Power energy systems with smart grid and renewable solutions."}
+                              "Power sustainable energy systems with smart grid technology."}
                             {industry.category === "EDUCATION & TRAINING" &&
-                              "Transform education with innovative digital learning platforms."}
-                            {industry.category ===
-                              "LOGISTICS & TRANSPORTATION" &&
-                              "Streamline operations with real-time tracking and predictive analytics."}
+                              "Transform learning with innovative digital education platforms."}
+                            {industry.category === "LOGISTICS & TRANSPORTATION" &&
+                              "Streamline operations with intelligent supply chain solutions."}
                           </Typography>
                         </Box>
                       </Box>

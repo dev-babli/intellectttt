@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 import Scrollbar from "../../components/scrollbar/scrollbar";
 import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import ServicesComponent from "../../components/ServicesComponent/ServicesComponent";
 
 import Header5 from "../../components/header5/Header5";
@@ -21,8 +24,6 @@ import sIcon3 from "../../images/shape/c3.jpg";
 import sIcon4 from "../../images/shape/c4.jpg";
 import sIcon5 from "../../images/shape/c5.jpg";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
-import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
-import ContactSection from "../../components/It-Services-Components/ContactSection";
 
 const sampleCards = [
   {
@@ -56,6 +57,8 @@ const sampleCards = [
 ];
 
 const HealthcareLifeSciencesIT = () => {
+  // Scroll to top when component mounts
+  useScrollToTop();
   return (
     <Fragment>
       <div className="body_wrap sco_agency">
@@ -71,30 +74,17 @@ const HealthcareLifeSciencesIT = () => {
           <div className="container">
             <div className="sd-ser-content">
               <h2 className="sd-title text-center mt-5">
-                Accelerate innovation and efficiency in Engineering &
-                Manufacturing
+                Transform Healthcare Delivery with Advanced Technology Solutions
               </h2>
               <p className="sd-content text-center">
-                In today’s competitive landscape, engineering and manufacturing
-                companies must continuously evolve to meet rising demands for
-                quality, speed, and sustainability. Our specialized solutions
-                help modernize operations, streamline supply chains, and enhance
-                product development.
+                In today's rapidly evolving healthcare landscape, organizations need innovative technology solutions to improve patient care, streamline operations, and ensure compliance. Our specialized healthcare IT services help modernize clinical workflows, enhance data interoperability, and accelerate medical research.
               </p>
               <p className="sd-content text-center">
-                We integrate advanced technologies—such as IoT, digital twins,
-                PLM systems, and smart automation—to enable intelligent design,
-                predictive maintenance, and real-time production monitoring.
-                From optimizing factory floors to digitizing engineering
-                workflows, we tailor solutions to drive agility and performance.
+                We integrate cutting-edge technologies—such as AI-powered diagnostics, HL7/FHIR integration, clinical data platforms, and regulatory compliance systems—to enable better patient outcomes, operational efficiency, and research capabilities. From digital health platforms to intelligent imaging systems, we tailor solutions to drive healthcare innovation.
               </p>
               <br />
               <p className="sd-content text-center">
-                Our approach combines deep domain knowledge with cutting-edge
-                tools to deliver scalable, industry-specific results. Whether
-                you're building a smart factory or modernizing legacy systems,
-                we focus on measurable outcomes that improve productivity,
-                quality, and time-to-market.
+                Our approach combines deep healthcare domain knowledge with advanced technology expertise to deliver secure, compliant, and scalable solutions. Whether you're modernizing clinical systems or implementing AI-driven diagnostics, we focus on measurable outcomes that improve patient care, operational efficiency, and regulatory compliance.
               </p>
             </div>
           </div>
@@ -103,10 +93,19 @@ const HealthcareLifeSciencesIT = () => {
           <ServiceCard cards={sampleCards} />
         </div>
 
-        <IndustriesSimple />
-        <ContactSection />
+        {}
       </div>
-    </Fragment>
+          
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
+
+        </Fragment>
   );
 };
 

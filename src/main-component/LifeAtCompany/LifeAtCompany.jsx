@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
 import FaqSection from "../../components/FaqSection/FaqSection";
 import GallerySection from "../CareerPage/Gallery";
 import WhyChoose from "../../main-component/AboutUsPage/WhyChoose";
@@ -19,7 +20,9 @@ const LifeAtCompany = () => {
         <GallerySection pClass={"pt-130"} />
         <FaqSection />
       </div>
-    </Fragment>
+          <Footer />
+
+        </Fragment>
   );
 };
 

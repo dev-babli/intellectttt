@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
 
 import WorkSection from "../TeamPage/work";
 
@@ -33,7 +34,9 @@ const CurrentOpenings = () => {
         <Process />
         <GallerySection pClass={"pt-130"} />
       </div>
-    </Fragment>
+          <Footer />
+
+        </Fragment>
   );
 };
 

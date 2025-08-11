@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styled from "@emotion/styled";
 
@@ -1101,7 +1102,9 @@ const HomePage = () => {
           </motion.div>
         </Container>
       </Section>
-    </Fragment>
+          <Footer />
+
+        </Fragment>
   );
 };
 

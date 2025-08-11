@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
 import BlogList from "../../components/BlogList";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 
@@ -15,7 +16,9 @@ const BlogPage = (props) => {
         />
         <BlogList />
       </div>
-    </Fragment>
+          <Footer />
+
+        </Fragment>
   );
 };
 export default BlogPage;

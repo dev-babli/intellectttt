@@ -34,9 +34,9 @@ const ServicesComponent = ({
                       <span className="xb-item--contact">{service.description}</span>
                     </div>
                     <div className="xb-item--icon ul_li_between">
-                      {/* <div className="xb-item--img">
+                      <div className="xb-item--img">
                         <img src={service.sImg} alt={service.title} />
-                      </div> */}
+                      </div>
                       <Link
                         onClick={ClickHandler}
                         to={`/service-single/${service.slug}`}

@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/footer/Footer";
 import sIcon1 from "../../images/icon/eye-icon.svg";
 import sIcon2 from "../../images/feature/a1.webp";
 import sIcon3 from "../../images/feature/a2.webp";

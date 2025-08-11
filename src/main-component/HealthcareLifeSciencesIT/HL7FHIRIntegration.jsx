@@ -1,6 +1,9 @@
 import React, { Fragment, useState } from "react";
+import useScrollToTop from "../../hooks/useScrollToTop";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import ContactSection from "../../components/It-Services-Components/ContactSection";
 import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
 import { CssBaseline } from "@mui/material";
 import DataSection from "../../components/DataSection/DataSection";
@@ -75,6 +78,8 @@ const Datafeatures = [
   },
 ];
 const HL7FHIRIntegration = () => {
+  // Scroll to top when component mounts
+  useScrollToTop();
   return (
     <Fragment>
       <div className="sco_agency">
@@ -102,10 +107,20 @@ Whether you're building patient apps, connecting clinical systems, or scaling he
             ctaLink="/contact"
           />
           <TechnologyLogos />
-          <ContactSection />
+          {}
         </div>
       </div>
-    </Fragment>
+          
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
+
+        </Fragment>
   );
 };
 

@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from "react";
+import useScrollToTop from "../../hooks/useScrollToTop";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
-import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
-
-import DataAndAnalyticsHero from "../../components/DataAndAnalyticsHero/DataAndAnalyticsHero";
+import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import AwardSection from "../AboutUsPage/AwardSection";
 import FunFactSection from '../../components/It-Services-Components/FunFact/FunFact';
-import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
-import ContactSection from "../../components/It-Services-Components/ContactSection";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 
 const sampleCards = [
@@ -41,12 +41,20 @@ const sampleCards = [
 ];
 
 const EngineeringManufacturingIT = () => {
+  // Scroll to top when component mounts
+  useScrollToTop();
   return (
    <Fragment>
       <div className="sco_agency">
        
         <div className="page_content service-single-page">
-          <DataAndAnalyticsHero />
+          <HeroSectionTitle
+            title="Engineering & Manufacturing IT"
+            subtitle="Accelerate innovation and efficiency with cutting-edge engineering and manufacturing solutions"
+            buttonText="TALK TO OUR EXPERTS"
+            buttonLink="/contact"
+            backgroundImage="/Engineering-and-Manufacturing.webp"
+          />
           
           <div className="sd-ser-content_wrap pb-110">
             <div className="container">
@@ -71,11 +79,20 @@ const EngineeringManufacturingIT = () => {
              <ServiceCard cards={sampleCards} />
           </div>
          
-          <IndustriesSimple />
-          <ContactSection />
+          {}
         </div>
       </div>
-    </Fragment>
+          
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
+
+        </Fragment>
   )
 }
 

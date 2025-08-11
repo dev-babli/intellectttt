@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 import ServicesComponent from "../../components/ServicesComponent/ServicesComponent";
 
-import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
 import WorkProcess from "../../components/It-Services-Components/WorkProcess/WorkProcess";
 import HelpDeskBlogSection from "../../components/Help-Desk-Components/HelpDeskBlogSection/HelpDeskBlogSection";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
@@ -15,7 +17,6 @@ import sIcon2 from "../../images/process/2.webp";
 import sIcon3 from "../../images/process/3.webp";
 import sIcon4 from "../../images/process/4.webp";
 import sIcon5 from "../../images/process/image05.png";
-import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
 
 const processList = [
   {
@@ -84,10 +85,19 @@ const HealthCareAndLifeSc = () => {
           buttonLink="/contact"
           sectionStyle={{ backgroundColor: "#f8f9fa" }}
         />
-        <IndustriesSimple />
         <HelpDeskBlogSection />
       </div>
-    </Fragment>
+          
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
+
+        </Fragment>
   );
 };
 

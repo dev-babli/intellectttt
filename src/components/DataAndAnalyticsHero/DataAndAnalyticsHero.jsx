@@ -11,9 +11,6 @@ const DataAndAnalyticsHero = () => {
              Data & Analytics <br /> Industrialization Consulting
             </h1>
             <p className="lead text-dark">Build. Evaluate. Generate.</p>
-            <a href="#contact" className="btn btn-warning btn-lg mt-3 fw-semibold">
-              TALK TO OUR EXPERTS
-            </a>
           </div>
         </div>
       </div>

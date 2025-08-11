@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Footer from "../../components/footer/Footer";
 import { Box, Container, Typography, Grid, Card, CardContent, Button, Chip } from "@mui/material";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -595,7 +596,9 @@ const InsightsPage = () => {
           </Container>
         </Box>
       </div>
-    </Fragment>
+          <Footer />
+
+        </Fragment>
   );
 };
 

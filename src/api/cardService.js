@@ -1,10 +1,10 @@
-import icon1 from "../images/icon/arrows.gif";
-import icon2 from "../images/icon/bullet-point.gif";
-import icon3 from "../images/icon/connection.gif";
-import icon4 from "../images/icon/diagram.gif";
-import icon5 from "../images/icon/intersection.gif";
-import icon6 from "../images/icon/line-chart.gif";
-import icon7 from "../images/icon/steps.gif";
+import icon1 from "../images/icon/magic02.svg";
+import icon2 from "../images/icon/magic02.svg";
+import icon3 from "../images/icon/magic02.svg";
+import icon4 from "../images/icon/magic02.svg";
+import icon5 from "../images/icon/magic02.svg";
+import icon6 from "../images/icon/magic02.svg";
+import icon7 from "../images/icon/magic02.svg";
 // import icon6 from "../images/icon/line-chart.gif";
 
 import sicon1 from "../images/icon/ser-icon01.svg";
@@ -1769,6 +1769,280 @@ const HealthcareServicesIT = [
   },
 ];
 
+const RetailEcommerceServices = [
+  {
+    id: "1",
+    sImg: icon1,
+    title: "E-commerce Platform Development",
+    slug: "ecommerce-platform-development",
+    thumb1: "Multi-Channel",
+    thumb2: "Scalable Architecture",
+    description: "Build robust, scalable e-commerce platforms that support multiple sales channels and payment gateways.",
+  },
+  {
+    id: "2",
+    sImg: icon2,
+    title: "Omnichannel Retail Solutions",
+    slug: "omnichannel-retail-solutions",
+    thumb1: "Seamless Experience",
+    thumb2: "Inventory Sync",
+    description: "Create unified shopping experiences across online, mobile, and physical stores with real-time inventory synchronization.",
+  },
+  {
+    id: "3",
+    sImg: icon3,
+    title: "AI-Powered Personalization",
+    slug: "ai-personalization-retail",
+    thumb1: "Recommendation Engines",
+    thumb2: "Customer Insights",
+    description: "Implement AI-driven recommendation systems and personalized marketing campaigns to boost customer engagement and sales.",
+  },
+  {
+    id: "4",
+    sImg: icon4,
+    title: "Supply Chain & Inventory Management",
+    slug: "supply-chain-inventory",
+    thumb1: "Real-Time Tracking",
+    thumb2: "Demand Forecasting",
+    description: "Optimize supply chain operations with intelligent inventory management, demand forecasting, and automated reordering systems.",
+  },
+  {
+    id: "5",
+    sImg: icon5,
+    title: "Mobile Commerce & Apps",
+    slug: "mobile-commerce-apps",
+    thumb1: "Native & PWA",
+    thumb2: "Payment Integration",
+    description: "Develop mobile-first shopping experiences with native apps and Progressive Web Apps (PWAs) for enhanced customer engagement.",
+  },
+  {
+    id: "6",
+    sImg: icon6,
+    title: "Analytics & Business Intelligence",
+    slug: "retail-analytics-bi",
+    thumb1: "Customer Behavior",
+    thumb2: "Performance Metrics",
+    description: "Leverage data analytics to understand customer behavior, optimize pricing strategies, and improve operational efficiency.",
+  },
+];
+
+const EnergyUtilitiesServices = [
+  {
+    id: "1",
+    sImg: icon1,
+    title: "Smart Grid Solutions",
+    slug: "smart-grid-solutions",
+    thumb1: "IoT Integration",
+    thumb2: "Real-Time Monitoring",
+    description: "Implement intelligent grid systems with IoT sensors, real-time monitoring, and automated demand response capabilities.",
+  },
+  {
+    id: "2",
+    sImg: icon2,
+    title: "Renewable Energy Management",
+    slug: "renewable-energy-management",
+    thumb1: "Solar & Wind",
+    thumb2: "Energy Storage",
+    description: "Develop platforms for renewable energy integration, storage optimization, and grid balancing for sustainable power systems.",
+  },
+  {
+    id: "3",
+    sImg: icon3,
+    title: "Energy Analytics & Forecasting",
+    slug: "energy-analytics-forecasting",
+    thumb1: "Predictive Models",
+    thumb2: "Load Balancing",
+    description: "Use AI and machine learning to predict energy demand, optimize generation, and improve grid reliability and efficiency.",
+  },
+  {
+    id: "4",
+    sImg: icon4,
+    title: "Customer Energy Management",
+    slug: "customer-energy-management",
+    thumb1: "Smart Meters",
+    thumb2: "Usage Insights",
+    description: "Empower customers with smart metering, usage analytics, and energy management tools for better consumption control.",
+  },
+  {
+    id: "5",
+    sImg: icon5,
+    title: "Grid Security & Cybersecurity",
+    slug: "grid-security-cybersecurity",
+    thumb1: "Threat Detection",
+    thumb2: "Compliance",
+    description: "Protect critical infrastructure with advanced cybersecurity solutions, threat detection, and regulatory compliance frameworks.",
+  },
+  {
+    id: "6",
+    sImg: icon6,
+    title: "Asset Management & Maintenance",
+    slug: "asset-management-maintenance",
+    thumb1: "Predictive Maintenance",
+    thumb2: "Equipment Health",
+    description: "Implement predictive maintenance systems to monitor equipment health, prevent failures, and optimize asset lifecycle management.",
+  },
+];
+
+const EducationTrainingServices = [
+  {
+    id: "1",
+    sImg: icon1,
+    title: "Learning Management Systems (LMS)",
+    slug: "learning-management-systems",
+    thumb1: "Course Management",
+    thumb2: "Student Engagement",
+    description: "Build comprehensive LMS platforms that support course creation, student tracking, and interactive learning experiences.",
+  },
+  {
+    id: "2",
+    sImg: icon2,
+    title: "Virtual Classroom & Collaboration Tools",
+    slug: "virtual-classroom-collaboration",
+    thumb1: "Real-Time Interaction",
+    thumb2: "Video Conferencing",
+    description: "Develop virtual learning environments with video conferencing, whiteboarding, and collaborative tools for remote education.",
+  },
+  {
+    id: "3",
+    sImg: icon3,
+    title: "Adaptive Learning & AI Tutoring",
+    slug: "adaptive-learning-ai-tutoring",
+    thumb1: "Personalized Learning",
+    thumb2: "AI-Powered",
+    description: "Create intelligent tutoring systems that adapt to individual learning styles and provide personalized educational experiences.",
+  },
+  {
+    id: "4",
+    sImg: icon4,
+    title: "Assessment & Analytics Platforms",
+    slug: "assessment-analytics-platforms",
+    thumb1: "Progress Tracking",
+    thumb2: "Performance Analytics",
+    description: "Build assessment tools and analytics dashboards to track student progress, identify learning gaps, and improve outcomes.",
+  },
+  {
+    id: "5",
+    sImg: icon5,
+    title: "Mobile Learning & Microlearning",
+    slug: "mobile-learning-microlearning",
+    thumb1: "Bite-Sized Content",
+    thumb2: "Mobile-First",
+    description: "Develop mobile learning apps and microlearning modules for on-the-go education and skill development.",
+  },
+  {
+    id: "6",
+    sImg: icon6,
+    title: "Corporate Training & Skill Development",
+    slug: "corporate-training-skill-development",
+    thumb1: "Employee Upskilling",
+    thumb2: "Certification Tracking",
+    description: "Create corporate training platforms with skill assessment, certification tracking, and compliance management for workforce development.",
+  },
+];
+
+const LogisticsTransportationServices = [
+  {
+    id: "1",
+    sImg: icon1,
+    title: "Fleet Management & Tracking",
+    slug: "fleet-management-tracking",
+    thumb1: "Real-Time GPS",
+    thumb2: "Route Optimization",
+    description: "Implement comprehensive fleet management systems with GPS tracking, route optimization, and driver performance monitoring.",
+  },
+  {
+    id: "2",
+    sImg: icon2,
+    title: "Supply Chain Visibility & Analytics",
+    slug: "supply-chain-visibility-analytics",
+    thumb1: "End-to-End Tracking",
+    thumb2: "Predictive Analytics",
+    description: "Create end-to-end supply chain visibility platforms with real-time tracking, predictive analytics, and performance optimization.",
+  },
+  {
+    id: "3",
+    sImg: icon3,
+    title: "Warehouse Management Systems (WMS)",
+    slug: "warehouse-management-systems",
+    thumb1: "Inventory Control",
+    thumb2: "Automation",
+    description: "Develop intelligent WMS solutions for inventory management, order fulfillment, and warehouse automation optimization.",
+  },
+  {
+    id: "4",
+    sImg: icon4,
+    title: "Last-Mile Delivery Optimization",
+    slug: "last-mile-delivery-optimization",
+    thumb1: "Route Planning",
+    thumb2: "Customer Experience",
+    description: "Optimize last-mile delivery with intelligent route planning, real-time updates, and enhanced customer communication.",
+  },
+  {
+    id: "5",
+    sImg: icon5,
+    title: "Transportation Management Systems (TMS)",
+    slug: "transportation-management-systems",
+    thumb1: "Multi-Modal",
+    thumb2: "Cost Optimization",
+    description: "Build TMS platforms for multi-modal transportation planning, cost optimization, and carrier management.",
+  },
+  {
+    id: "6",
+    sImg: icon6,
+    title: "IoT & Smart Logistics",
+    slug: "iot-smart-logistics",
+    thumb1: "Sensor Networks",
+    thumb2: "Condition Monitoring",
+    description: "Implement IoT solutions for cargo monitoring, temperature control, and real-time condition tracking across the supply chain.",
+  },
+];
+
+// Comprehensive IoT Services array combining all IoT-related services
+const IoTServices = [
+  ...mesIotServiceCards,
+  ...digitalTwinSmartFactoryCards,
+  {
+    id: "7",
+    sImg: icon1,
+    title: "Smart City IoT Solutions",
+    slug: "smart-city-iot",
+    thumb1: "Urban Intelligence",
+    thumb2: "Connected Infrastructure",
+    description: "Build intelligent city infrastructure with IoT sensors for traffic management, environmental monitoring, and public safety.",
+    content: "We develop smart city solutions that connect urban infrastructure through IoT networks. Our platforms enable real-time monitoring of traffic, air quality, waste management, and public utilities—creating more efficient, sustainable, and livable cities."
+  },
+  {
+    id: "8",
+    sImg: icon2,
+    title: "Healthcare IoT & Wearables",
+    slug: "healthcare-iot-wearables",
+    thumb1: "Remote Monitoring",
+    thumb2: "Patient Care",
+    description: "Connect medical devices and wearables for remote patient monitoring and personalized healthcare.",
+    content: "Our healthcare IoT solutions integrate medical devices, wearables, and monitoring systems to enable remote patient care, continuous health tracking, and early intervention. We ensure HIPAA compliance and secure data transmission for sensitive health information."
+  },
+  {
+    id: "9",
+    sImg: icon3,
+    title: "Energy IoT & Smart Grid",
+    slug: "energy-iot-smart-grid",
+    thumb1: "Grid Intelligence",
+    thumb2: "Energy Optimization",
+    description: "Implement smart grid solutions with IoT sensors for energy monitoring, demand response, and grid optimization.",
+    content: "We build intelligent energy management systems that monitor consumption, predict demand, and optimize distribution. Our IoT solutions enable real-time grid monitoring, automated demand response, and integration with renewable energy sources."
+  },
+  {
+    id: "10",
+    sImg: icon4,
+    title: "Logistics IoT & Supply Chain",
+    slug: "logistics-iot-supply-chain",
+    thumb1: "End-to-End Tracking",
+    thumb2: "Condition Monitoring",
+    description: "Enable real-time tracking and monitoring across the entire supply chain with IoT sensors.",
+    content: "Our logistics IoT solutions provide end-to-end visibility across supply chains with real-time tracking, temperature monitoring, and condition alerts. We help optimize routes, reduce losses, and improve delivery reliability through connected sensors and analytics."
+  }
+];
+
 export { Services,
   HealthcareServices,
   AerospaceServices,
@@ -1777,4 +2051,4 @@ export { Services,
   engineering,
   devOpsAndDevsec,
   appModernization,
-apiIntegrationServices,managedITServices, nocSupport, serviceDesk, managedResourceServicesCard, AutomationServices, mesIotServiceCards, digitalTwinSmartFactoryCards, industry40SolutionCards, itStaffAugmentationCards,healthcareStaffingCards,directHireCards, corpToCorpCards, HealthcareServicesIT };
+apiIntegrationServices,managedITServices, nocSupport, serviceDesk, managedResourceServicesCard, AutomationServices, mesIotServiceCards, digitalTwinSmartFactoryCards, industry40SolutionCards, itStaffAugmentationCards,healthcareStaffingCards,directHireCards, corpToCorpCards, HealthcareServicesIT, RetailEcommerceServices, EnergyUtilitiesServices, EducationTrainingServices, LogisticsTransportationServices, IoTServices };

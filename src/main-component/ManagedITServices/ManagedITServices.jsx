@@ -1,14 +1,19 @@
 import React, { Fragment, useState } from "react";
+import useScrollToTop from "../../hooks/useScrollToTop";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
-
+import About from "../../components/It-Services-Components/about/about";
+import About2 from "../../components/Cyber-Security-Components/about/AboutSection";
 import ManagedITServicesHero from "../../components/ManagedITServicesHero/ManagedITServicesHero";
-import ServiceSection from "../../components/data-solutions-components/ServiceSection/ServiceSection";
-import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
-import ContactSection from "../../components/It-Services-Components/ContactSection";
+import AboutSection from "../../components/Cyber-Security-Components/about/AboutSection";
+import icon from "../../images/icon/magic02.svg";
+import about1 from "../../images/bg/image-belowhero.webp";
+import about2 from "../../images/bg/abt-cnt_bg.png";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-// import Testimonial from "../../components/data-solutions-components/Testimonial/Testimonial";
+import AlliancesSection from "../../components/AlliancesSection/AlliancesSection";
 
 const sampleCards = [
   {
@@ -42,63 +47,50 @@ const sampleCards = [
 ];
 
 const ManagedITServices = () => {
+  // Scroll to top when component mounts
+  useScrollToTop();
+
   return (
     <Fragment>
       <div className="sco_agency">
         <div className="page_content service-single-page">
-          <HeroSectionTitle
-            title="Managed IT Services (TMS)"
-            subtitle="Streamlined ITSM, Service Desk & CoE Solutions for Operational Excellence"
-            buttonText="TALK TO OUR EXPERTS"
-            buttonLink="#contact"
-            backgroundImage="/Managed-IT-header.webp"
+          <ManagedITServicesHero />
+
+          <AboutSection
+            subtitleIcon={icon}
+            subtitle="About Us"
+            title="Managed IT Services"
+            content="Optimize your IT operations with our comprehensive managed services. From infrastructure monitoring and application support to service desk management and resource services—we provide reliable, scalable IT solutions that keep your business running smoothly."
+            buttonText="Book a free consultation"
+            buttonLink="/contact"
+            image={about1}
+            badgeImage={about2}
+            badgeNumber="150+"
+            badgeText="IT environments managed successfully"
           />
 
-          <div className="sd-ser-content_wrap pb-110">
-            <div className="container">
-              <div className="sd-ser-content">
-                <h2 className="sd-title text-center mt-5">
-                  Enhance reliability and performance with Managed IT Services
-                </h2>
-                <p className="sd-content text-center">
-                  In today’s always-on digital ecosystem, businesses need
-                  uninterrupted, secure, and scalable IT operations. Our Managed
-                  IT Services are designed to help organizations offload
-                  day-to-day IT management so they can focus on core business
-                  priorities.
-                </p>
-                <p className="sd-content text-center">
-                  We offer end-to-end solutions—from data integration and
-                  warehousing to advanced analytics, business intelligence, and
-                  AI-powered forecasting. Whether you're building dashboards,
-                  modernizing data infrastructure, or enabling real-time
-                  reporting, we tailor strategies to meet your specific
-                  goals.From infrastructure monitoring and network security to
-                  helpdesk support and ITSM integration, we deliver end-to-end
-                  IT services tailored to your operational needs. Whether you're
-                  looking to reduce downtime, increase agility, or improve
-                  service delivery, our solutions ensure optimal IT performance.
-                </p>
-                <br />
-                <p className="sd-content text-center">
-                  Our approach blends deep technical expertise with proactive
-                  service models to provide reliable, cost-effective, and
-                  future-ready IT support. Backed by industry best practices and
-                  24/7 monitoring, we help you maintain business continuity,
-                  reduce risks, and scale with confidence.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white">
-            <ServiceCard cards={sampleCards} />
-            {/* <Testimonial /> */}
-          </div>
-
-          <IndustriesSimple />
-          <ContactSection />
+          <ServiceCard cards={sampleCards} />
+          <AlliancesSection />
+          {}
         </div>
       </div>
+      
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
+
+      {/* <ModalVideo
+        channel="youtube"
+        autoplay
+        isOpen={isOpen}
+        videoId="7e90gBu4pas"
+        onClose={() => setOpen(false)}
+      /> */}
     </Fragment>
   );
 };

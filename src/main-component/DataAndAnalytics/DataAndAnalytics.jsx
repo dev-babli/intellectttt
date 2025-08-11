@@ -1,13 +1,19 @@
 import React, { Fragment, useState } from "react";
+import useScrollToTop from "../../hooks/useScrollToTop";
+import Footer from "../../components/footer/Footer";
+import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
+import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
-
+import About from "../../components/It-Services-Components/about/about";
+import About2 from "../../components/Cyber-Security-Components/about/AboutSection";
 import DataAndAnalyticsHero from "../../components/DataAndAnalyticsHero/DataAndAnalyticsHero";
-import AwardSection from "../AboutUsPage/AwardSection";
-import FunFactSection from '../../components/It-Services-Components/FunFact/FunFact';
-import IndustriesSimple from "../../components/LuminCards/IndustriesSimpleold";
-import ContactSection from "../../components/It-Services-Components/ContactSection";
+import AboutSection from "../../components/Cyber-Security-Components/about/AboutSection";
+import icon from "../../images/icon/magic02.svg";
+import about1 from "../../images/bg/image-belowhero.webp";
+import about2 from "../../images/bg/abt-cnt_bg.png";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import AlliancesSection from "../../components/AlliancesSection/AlliancesSection";
 
 const sampleCards = [
   {
@@ -42,42 +48,50 @@ const sampleCards = [
 
 
 const DataAndAnalytics = () => {
+  // Scroll to top when component mounts
+  useScrollToTop();
+
   return (
-   <Fragment>
+    <Fragment>
       <div className="sco_agency">
-       
         <div className="page_content service-single-page">
           <DataAndAnalyticsHero />
-          
-          <div className="sd-ser-content_wrap pb-110">
-            <div className="container">
-              <div className="sd-ser-content">
-                <h2 className="sd-title text-center mt-5">
-                  Drive smarter decisions with data-powered insights
-                </h2>
-                <p className="sd-content text-center">
-                 In today’s data-driven world, organizations need more than just raw information—they need actionable insights. Our Data & Analytics services help businesses harness the full value of their data to improve performance, reduce risks, and uncover new growth opportunities.
-                </p>
-                <p className="sd-content text-center">
-                 We offer end-to-end solutions—from data integration and warehousing to advanced analytics, business intelligence, and AI-powered forecasting. Whether you're building dashboards, modernizing data infrastructure, or enabling real-time reporting, we tailor strategies to meet your specific goals.
-                </p>
-                <br />
-                <p className="sd-content text-center">
-                 Our approach combines cutting-edge tools with deep domain expertise to deliver scalable, secure, and insight-rich analytics solutions. From cloud-native platforms to predictive models, we empower you to make confident, data-backed decisions that drive measurable impact.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white">
-             <ServiceCard cards={sampleCards} />
-          </div>
-         
-          <IndustriesSimple />
-          <ContactSection />
+
+          <AboutSection
+            subtitleIcon={icon}
+            subtitle="About Us"
+            title="Data & Analytics Solutions"
+            content="Transform your data into actionable insights with our comprehensive data and analytics services. From data engineering and ETL pipelines to business intelligence dashboards and advanced analytics—we help organizations unlock the full potential of their data assets."
+            image={about1}
+            badgeImage={about2}
+            badgeNumber="200+"
+            badgeText="Data projects delivered successfully"
+          />
+
+          <ServiceCard cards={sampleCards} />
+          <AlliancesSection />
+          {}
         </div>
       </div>
-    </Fragment>
-  )
-}
+      
+        <OptimizedBlogSection 
+          title="Latest Insights & Updates"
+          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
+        />
+        <OptimizedCaseStudySection 
+          title="Success Stories"
+          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
+        /><Footer />
 
-export default DataAndAnalytics
+      {/* <ModalVideo
+        channel="youtube"
+        autoplay
+        isOpen={isOpen}
+        videoId="7e90gBu4pas"
+        onClose={() => setOpen(false)}
+      /> */}
+    </Fragment>
+  );
+};
+
+export default DataAndAnalytics;
