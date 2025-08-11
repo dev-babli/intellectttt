@@ -32,7 +32,7 @@ const slides = [
     ctaText: "View Cloud Services",
     ctaLink: "/service/cloud-and-application-services",
     accent: "#a8edea",
-    backgroundImage: "/herosectionimages/Scalable Cloud and Application.webp",
+    backgroundImage: "/herosectionimages/Sliders/cloud.webp",
   },
   {
     id: 4,
