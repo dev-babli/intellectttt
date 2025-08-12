@@ -74,13 +74,14 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
   };
 
   return (
-    <section className="optimized-case-study-section py-120" style={{ 
+    <section className="optimized-case-study-section py-160" style={{ 
       background: '#ffffff',
-      position: 'relative'
+      position: 'relative',
+      padding: '120px 0'
     }}>
       <div className="container">
         <motion.div
-          className="text-center mb-100"
+          className="text-center mb-120"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -145,7 +146,7 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
                   boxShadow: '0 6px 24px rgba(0, 0, 0, 0.08)',
                   border: '1px solid #f0f0f0',
                   position: 'relative',
-                  height: '520px',
+                  height: '600px',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
@@ -158,7 +159,7 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
                 {/* Top Half - Image Section */}
                 <div className="case-study-image-section" style={{
                   position: 'relative',
-                  height: '65%',
+                  height: '70%',
                   overflow: 'hidden'
                 }}>
                   <motion.div
@@ -213,7 +214,7 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
 
                 {/* Bottom Half - Content Section */}
                 <div className="case-study-content-section" style={{
-                  height: '35%',
+                  height: '30%',
                   padding: '24px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -223,7 +224,7 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
                     <h3
                       className="case-study-title mb-4"
                       style={{
-                        fontSize: '18px',
+                        fontSize: '20px',
                         fontWeight: '600',
                         lineHeight: '1.4',
                         color: '#1a1a1a',
@@ -384,7 +385,7 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
                     <h3
                       className="case-study-title mb-4"
                       style={{
-                        fontSize: '20px',
+                        fontSize: '22px',
                         fontWeight: '600',
                         lineHeight: '1.3',
                         color: '#ffffff',

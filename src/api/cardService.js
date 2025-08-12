@@ -2043,6 +2043,31 @@ const IoTServices = [
   }
 ];
 
+// AI & GenAI Services - using existing Services array with AI focus
+const aiGenAIServices = Services.filter(service => 
+  service.title.includes("AI") || 
+  service.title.includes("Data") || 
+  service.title.includes("Machine Learning") ||
+  service.title.includes("Automation")
+);
+
+// Cloud & Application Services - using existing engineering array
+const cloudAppServices = engineering;
+
+// Data & Analytics Services - using existing Services array with data focus
+const dataAnalyticsServices = Services.filter(service => 
+  service.title.includes("Data") || 
+  service.title.includes("Analytics") ||
+  service.title.includes("AI")
+);
+
+// LLM Integration Services - using existing Services array with AI/ML focus
+const llmIntegrationServices = Services.filter(service => 
+  service.title.includes("AI") || 
+  service.title.includes("Machine Learning") ||
+  service.title.includes("Data")
+);
+
 export { Services,
   HealthcareServices,
   AerospaceServices,
@@ -2051,4 +2076,4 @@ export { Services,
   engineering,
   devOpsAndDevsec,
   appModernization,
-apiIntegrationServices,managedITServices, nocSupport, serviceDesk, managedResourceServicesCard, AutomationServices, mesIotServiceCards, digitalTwinSmartFactoryCards, industry40SolutionCards, itStaffAugmentationCards,healthcareStaffingCards,directHireCards, corpToCorpCards, HealthcareServicesIT, RetailEcommerceServices, EnergyUtilitiesServices, EducationTrainingServices, LogisticsTransportationServices, IoTServices };
+apiIntegrationServices,managedITServices, nocSupport, serviceDesk, managedResourceServicesCard, AutomationServices, mesIotServiceCards, digitalTwinSmartFactoryCards, industry40SolutionCards, itStaffAugmentationCards,healthcareStaffingCards,directHireCards, corpToCorpCards, HealthcareServicesIT, RetailEcommerceServices, EnergyUtilitiesServices, EducationTrainingServices, LogisticsTransportationServices, IoTServices, aiGenAIServices, cloudAppServices, dataAnalyticsServices, llmIntegrationServices };

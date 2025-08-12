@@ -22,7 +22,7 @@ const slides = [
     ctaText: "Discover Agentic AI",
     ctaLink: "/service/ai-and-gen-ai/agents",
     accent: "#4facfe",
-    backgroundImage: "/herosectionimages/Agentic Ai.webp",
+    backgroundImage: "/herosectionimages/New ONES/2.webp",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const slides = [
     ctaText: "View Cloud Services",
     ctaLink: "/service/cloud-and-application-services",
     accent: "#a8edea",
-    backgroundImage: "/herosectionimages/Sliders/cloud.webp",
+    backgroundImage: "/herosectionimages/Scalable Cloud and Application.webp",
   },
   {
     id: 4,
@@ -52,8 +52,7 @@ const slides = [
     ctaText: "Explore Data Solutions",
     ctaLink: "/service/data-and-analytics",
     accent: "#667eea",
-    backgroundImage:
-      "/herosectionimages/Data Driven intelleigence solution.webp",
+    backgroundImage: "/herosectionimages/Data Driven intelleigence solution.webp",
   },
   {
     id: 6,
@@ -83,7 +82,177 @@ const slides = [
     ctaText: "Innovate Today",
     ctaLink: "/innovation",
     accent: "#ff9a9e",
+    backgroundImage: "/herosectionimages/New ONES/1.webp",
+  },
+  {
+    id: 9,
+    title: "Digital Technology Solutions",
+    subtitle:
+      "Embrace the future with cutting-edge digital technology that transforms your business operations.",
+    ctaText: "Explore Digital Tech",
+    ctaLink: "/digital-technology",
+    accent: "#667eea",
+    backgroundImage: "/herosectionimages/Digital Technology.webp",
+  },
+  {
+    id: 10,
+    title: "Cloud Computing Excellence",
+    subtitle:
+      "Scalable cloud solutions that drive innovation and accelerate your digital transformation journey.",
+    ctaText: "Cloud Solutions",
+    ctaLink: "/cloud-solutions",
+    accent: "#4facfe",
+    backgroundImage: "/herosectionimages/cloud.webp",
+  },
+  {
+    id: 11,
+    title: "Digital Journey Transformation",
+    subtitle:
+      "Navigate your digital transformation with expert guidance and proven methodologies.",
+    ctaText: "Start Transformation",
+    ctaLink: "/digital-journey",
+    accent: "#a8edea",
+    backgroundImage: "/herosectionimages/New ONES/3.webp",
+  },
+  {
+    id: 12,
+    title: "Digital Partnership Excellence",
+    subtitle:
+      "Partner with us to build lasting digital solutions that drive growth and innovation.",
+    ctaText: "Partner With Us",
+    ctaLink: "/partnership",
+    accent: "#ff9a9e",
+    backgroundImage: "/herosectionimages/New ONES/4.webp",
+  },
+  {
+    id: 13,
+    title: "Scalable Cloud & Application Services",
+    subtitle:
+      "Enterprise-grade cloud and application services designed for scale and performance.",
+    ctaText: "Cloud Services",
+    ctaLink: "/cloud-services",
+    accent: "#667eea",
+    backgroundImage: "/herosectionimages/Sliders/cloud.webp",
+  },
+  {
+    id: 14,
+    title: "Agentic AI Solutions",
+    subtitle:
+      "Intelligent AI agents that automate complex tasks and drive business efficiency.",
+    ctaText: "AI Solutions",
+    ctaLink: "/ai-solutions",
+    accent: "#4facfe",
+    backgroundImage: "/herosectionimages/New ONES/5.webp",
+  },
+  {
+    id: 15,
+    title: "Cybersecurity Excellence",
+    subtitle:
+      "Advanced security solutions that protect your digital assets and ensure business continuity.",
+    ctaText: "Security Solutions",
+    ctaLink: "/security",
+    accent: "#a8edea",
+    backgroundImage: "/herosectionimages/New ONES/6.webp",
+  },
+  {
+    id: 16,
+    title: "Data & Analytics Intelligence",
+    subtitle:
+      "Transform raw data into actionable insights that drive strategic business decisions.",
+    ctaText: "Data Solutions",
+    ctaLink: "/data-analytics",
+    accent: "#ff9a9e",
     backgroundImage: "/herosectionimages/Data & Analytics.webp",
+  },
+  {
+    id: 17,
+    title: "Data-Driven Intelligence Solutions",
+    subtitle:
+      "Leverage the power of data to create intelligent solutions that drive business growth.",
+    ctaText: "Intelligence Solutions",
+    ctaLink: "/intelligence-solutions",
+    accent: "#667eea",
+    backgroundImage: "/herosectionimages/New ONES/7.webp",
+  },
+  {
+    id: 18,
+    title: "Advanced Technology Solutions",
+    subtitle:
+      "Cutting-edge technology solutions that keep you ahead of the competition.",
+    ctaText: "Tech Solutions",
+    ctaLink: "/technology-solutions",
+    accent: "#4facfe",
+    backgroundImage: "/herosectionimages/New ONES/8.webp",
+  },
+  {
+    id: 19,
+    title: "Innovation & Growth",
+    subtitle:
+      "Drive innovation and accelerate growth with our comprehensive technology solutions.",
+    ctaText: "Innovate Now",
+    ctaLink: "/innovation",
+    accent: "#a8edea",
+    backgroundImage: "/herosectionimages/3.webp",
+  },
+  {
+    id: 20,
+    title: "Digital Excellence",
+    subtitle:
+      "Achieve digital excellence with our comprehensive suite of technology solutions.",
+    ctaText: "Achieve Excellence",
+    ctaLink: "/excellence",
+    accent: "#ff9a9e",
+    backgroundImage: "/herosectionimages/4.webp",
+  },
+  {
+    id: 21,
+    title: "Cloud Innovation Hub",
+    subtitle:
+      "Your hub for cloud innovation and digital transformation excellence.",
+    ctaText: "Cloud Innovation",
+    ctaLink: "/cloud-innovation",
+    accent: "#667eea",
+    backgroundImage: "/herosectionimages/Sliders/3.webp",
+  },
+  {
+    id: 22,
+    title: "Advanced Digital Solutions",
+    subtitle:
+      "Next-generation digital solutions that transform your business landscape.",
+    ctaText: "Digital Solutions",
+    ctaLink: "/digital-solutions",
+    accent: "#4facfe",
+    backgroundImage: "/herosectionimages/Sliders/4.webp",
+  },
+  {
+    id: 23,
+    title: "Technology Leadership",
+    subtitle:
+      "Lead the way with innovative technology solutions that drive business success.",
+    ctaText: "Lead with Tech",
+    ctaLink: "/technology-leadership",
+    accent: "#a8edea",
+    backgroundImage: "/herosectionimages/Sliders/5.webp",
+  },
+  {
+    id: 24,
+    title: "Digital Technology Excellence",
+    subtitle:
+      "Excellence in digital technology solutions that power your business future.",
+    ctaText: "Digital Excellence",
+    ctaLink: "/digital-excellence",
+    accent: "#ff9a9e",
+    backgroundImage: "/herosectionimages/Sliders/Digital Technology.webp",
+  },
+  {
+    id: 25,
+    title: "Cloud Computing Solutions",
+    subtitle:
+      "Comprehensive cloud computing solutions that scale with your business needs.",
+    ctaText: "Cloud Computing",
+    ctaLink: "/cloud-computing",
+    accent: "#667eea",
+    backgroundImage: "/herosectionimages/5.webp",
   },
 ];
 
@@ -234,19 +403,6 @@ const HeroSection = () => {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  filter: "brightness(0.9) contrast(1.1) saturate(1.1)",
-                }}
-              />
-              {/* Stronger gradient overlay for better text readability */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  background: `linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)`,
-                  zIndex: 2,
                 }}
               />
             </Box>
@@ -269,6 +425,8 @@ const HeroSection = () => {
                   flex: 1,
                   maxWidth: "800px",
                   color: "#ffffff",
+                  position: "relative",
+                  padding: "2rem",
                 }}
               >
                 <Typography
@@ -282,7 +440,7 @@ const HeroSection = () => {
                     fontFamily: "'SF Pro Display', 'Inter', sans-serif",
                     letterSpacing: "-0.02em",
                     color: "#ffffff !important",
-                    textShadow: "0 4px 12px rgba(0,0,0,0.8)",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.3)",
                   }}
                 >
                   {slide.title}
@@ -300,7 +458,7 @@ const HeroSection = () => {
                     letterSpacing: "-0.01em",
                     color: "#ffffff !important",
                     opacity: 0.9,
-                    textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+                    textShadow: "0 1px 4px rgba(0,0,0,0.2)",
                     maxWidth: "600px",
                   }}
                 >

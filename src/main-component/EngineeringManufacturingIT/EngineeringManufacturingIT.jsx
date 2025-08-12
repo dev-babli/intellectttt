@@ -1,99 +1,61 @@
-import React, { Fragment, useState } from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import AwardSection from "../AboutUsPage/AwardSection";
-import FunFactSection from '../../components/It-Services-Components/FunFact/FunFact';
-import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import React from "react";
+import ServicePageTemplate from "../../components/common/ServicePageTemplate";
 
 const sampleCards = [
   {
     title: "Industry 4.0",
-    description: "Digitize operations with smart, connected systems.",
+    description: "Digitize operations with smart, connected systems and advanced automation for modern manufacturing.",
     buttonText: "Explore",
     image: "/images/Industry.webp",
-    url:"/service/engineering-and-manufacturing-it/industry4"
+    url:"/service/engineering-and-manufacturing-it/industry4",
+    features: ["Smart automation", "Connected systems", "Digital transformation"]
   },
   {
     title: "MES Integration & IoT",
-    description: "Unify shop floors with IoT and MES connectivity.",
+    description: "Unify shop floors with IoT and MES connectivity for real-time monitoring and process optimization.",
     buttonText: "Explore",
     image: "/images/mes.webp",
-    url:"/service/engineering-and-manufacturing-it/mes"
+    url:"/service/engineering-and-manufacturing-it/mes",
+    features: ["IoT connectivity", "Real-time monitoring", "Process optimization"]
   },
   {
     title: "PLM, CAD & CAE Automation",
-    description: "Streamline design and engineering with automation.",
+    description: "Streamline design and engineering with automation and integrated product lifecycle management.",
     buttonText: "Explore",
     image: "/images/PLM.webp",
-    url:"/service/engineering-and-manufacturing-it/plm"
+    url:"/service/engineering-and-manufacturing-it/plm",
+    features: ["PLM integration", "CAD automation", "Design optimization"]
   },
   {
     title: "Smart Factory",
-    description: "Enable agile, data-driven manufacturing at scale.",
+    description: "Enable agile, data-driven manufacturing at scale with intelligent factory solutions and digital twins.",
     buttonText: "Explore",
     image: "/images/Smart-Factory.webp",
-    url:"/service/engineering-and-manufacturing-it/twins"
+    url:"/service/engineering-and-manufacturing-it/twins",
+    features: ["Digital twins", "Data-driven insights", "Agile manufacturing"]
   },
 ];
 
 const EngineeringManufacturingIT = () => {
-  // Scroll to top when component mounts
-  useScrollToTop();
   return (
-   <Fragment>
-      <div className="sco_agency">
-       
-        <div className="page_content service-single-page">
-          <HeroSectionTitle
-            title="Engineering & Manufacturing IT"
-            subtitle="Accelerate innovation and efficiency with cutting-edge engineering and manufacturing solutions"
-            buttonText="TALK TO OUR EXPERTS"
-            buttonLink="/contact"
-            backgroundImage="/Engineering-and-Manufacturing.webp"
-          />
-          
-          <div className="sd-ser-content_wrap pb-110">
-            <div className="container">
-              <div className="sd-ser-content">
-                <h2 className="sd-title text-center mt-5">
-                  Accelerate innovation and efficiency in Engineering & Manufacturing
-                </h2>
-                <p className="sd-content text-center">
-                 In today’s competitive landscape, engineering and manufacturing companies must continuously evolve to meet rising demands for quality, speed, and sustainability. Our specialized solutions help modernize operations, streamline supply chains, and enhance product development.
-                </p>
-                <p className="sd-content text-center">
-                 We integrate advanced technologies—such as IoT, digital twins, PLM systems, and smart automation—to enable intelligent design, predictive maintenance, and real-time production monitoring. From optimizing factory floors to digitizing engineering workflows, we tailor solutions to drive agility and performance.
-                </p>
-                <br />
-                <p className="sd-content text-center">
-                 Our approach combines deep domain knowledge with cutting-edge tools to deliver scalable, industry-specific results. Whether you're building a smart factory or modernizing legacy systems, we focus on measurable outcomes that improve productivity, quality, and time-to-market.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white">
-             <ServiceCard cards={sampleCards} />
-          </div>
-         
-          {}
-        </div>
-      </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
-
-        </Fragment>
-  )
-}
+    <ServicePageTemplate
+      // Hero Section
+      heroTitle="Engineering & Manufacturing IT"
+      heroSubtitle="Smart Manufacturing Solutions"
+      heroButtonText="Get Started"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/herosectionimages/cloud-computing-illustration.jpg"
+      
+      // Service Cards
+      showServiceCards={true}
+      serviceCards={sampleCards}
+      serviceCardsTitle="Engineering & Manufacturing Solutions"
+      serviceCardsSubtitle="Comprehensive engineering and manufacturing IT services designed to accelerate innovation and drive operational excellence"
+      
+      // Alliances Section
+      showAlliancesSection={true}
+    />
+  );
+};
 
 export default EngineeringManufacturingIT

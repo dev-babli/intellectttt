@@ -7,42 +7,46 @@ import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySectio
 import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
 import About from "../../components/It-Services-Components/about/about";
 import About2 from "../../components/Cyber-Security-Components/about/AboutSection";
-import DataAndAnalyticsHero from "../../components/DataAndAnalyticsHero/DataAndAnalyticsHero";
+import ModernHeroSection from "../../components/common/ModernHeroSection";
 import AboutSection from "../../components/Cyber-Security-Components/about/AboutSection";
 import icon from "../../images/icon/magic02.svg";
 import about1 from "../../images/bg/image-belowhero.webp";
 import about2 from "../../images/bg/abt-cnt_bg.png";
-import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import ModernServiceCard from "../../components/common/ModernServiceCard";
 import AlliancesSection from "../../components/AlliancesSection/AlliancesSection";
 
 const sampleCards = [
   {
     title: "Azure Data Lake, Snowflake & Power BI",
-    description: "Unify, store, and visualize data at scale.",
+    description: "Unify, store, and visualize data at scale with enterprise-grade data platforms and advanced analytics.",
     buttonText: "Explore",
     image: "/images/1d.webp",
-    url:"/service/data-and-analytics/tools"
+    url:"/service/data-and-analytics/tools",
+    features: ["Data warehousing", "Real-time analytics", "Advanced visualization"]
   },
   {
     title: "Business Intelligence & Dashboards",
-    description: "Turn raw data into powerful insights.",
+    description: "Turn raw data into powerful insights with interactive dashboards and real-time reporting solutions.",
     buttonText: "Explore",
     image: "/images/2d.webp",
-     url:"/service/data-and-analytics/bi"
+     url:"/service/data-and-analytics/bi",
+     features: ["Interactive dashboards", "Real-time reporting", "KPI tracking"]
   },
   {
     title: "Data Engineering & ETL",
-    description: "Build and streamline trusted data pipelines.",
+    description: "Build and streamline trusted data pipelines with scalable ETL processes and data quality management.",
     buttonText: "Explore",
     image: "/images/3d.webp",
-     url:"/service/data-and-analytics/etl"
+     url:"/service/data-and-analytics/etl",
+     features: ["ETL pipelines", "Data quality", "Scalable architecture"]
   },
   {
     title: "Data Governance & Security",
-    description: "Ensure compliant, secure, and reliable data.",
+    description: "Ensure compliant, secure, and reliable data with comprehensive governance frameworks and security protocols.",
     buttonText: "Explore",
     image: "/images/4d.webp",
-     url:"/service/data-and-analytics/governance"
+     url:"/service/data-and-analytics/governance",
+     features: ["Data governance", "Security compliance", "Privacy protection"]
   },
 ];
 
@@ -55,7 +59,20 @@ const DataAndAnalytics = () => {
     <Fragment>
       <div className="sco_agency">
         <div className="page_content service-single-page">
-          <DataAndAnalyticsHero />
+          <ModernHeroSection
+            title="Data & Analytics Industrialization Consulting"
+            subtitle="Data-Driven Insights"
+            description="Build. Evaluate. Generate. Transform your data into actionable insights with our comprehensive data and analytics services. From data engineering to advanced analytics, we help organizations unlock the full potential of their data assets."
+            buttonText="Explore Solutions"
+            buttonLink="/contact"
+            backgroundImage="/images/bg/image-belowhero.webp"
+            features={[
+              "Data Engineering & ETL",
+              "Business Intelligence",
+              "Advanced Analytics",
+              "Data Governance"
+            ]}
+          />
 
           <AboutSection
             subtitleIcon={icon}
@@ -68,7 +85,11 @@ const DataAndAnalytics = () => {
             badgeText="Data projects delivered successfully"
           />
 
-          <ServiceCard cards={sampleCards} />
+          <ModernServiceCard 
+            cards={sampleCards} 
+            title="Data & Analytics Solutions"
+            subtitle="Comprehensive data and analytics services designed to transform your business intelligence and decision-making"
+          />
           <AlliancesSection />
           {}
         </div>

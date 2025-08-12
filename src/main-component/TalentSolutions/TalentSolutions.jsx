@@ -4,9 +4,9 @@ import Footer from "../../components/footer/Footer";
 import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
 import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
+import ModernHeroSection from "../../components/common/ModernHeroSection";
 
-import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import ModernServiceCard from "../../components/common/ModernServiceCard";
 
 const sampleCards = [
   {
@@ -47,12 +47,19 @@ const TalentSolutions = () => {
       <div className="body_wrap sco_agency">
      
         {/* <SAPServicesHero /> */}
-        <HeroSectionTitle
+        <ModernHeroSection
           title="Talent Solutions"
-          subtitle="Empower business growth with agile talent solutions"
-          buttonText="TALK TO OUR EXPERTS"
-          buttonLink="#contact"
+          subtitle="Workforce Excellence"
+          description="Empower business growth with agile talent solutions. From IT staff augmentation to specialized healthcare staffing, we provide flexible workforce strategies that help organizations scale quickly and stay competitive."
+          buttonText="Talk to Our Experts"
+          buttonLink="/contact"
           backgroundImage="/Healthcare-and-Life-sciences.webp"
+          features={[
+            "IT Staff Augmentation",
+            "Corp-to-Corp Staffing",
+            "Direct Hire & Contract Hire",
+            "Healthcare & Life Sciences"
+          ]}
         />
         <div className="sd-ser-content_wrap pb-110">
             <div className="container">
@@ -74,7 +81,11 @@ const TalentSolutions = () => {
             </div>
           </div>
           <div className="bg-white">
-             <ServiceCard cards={sampleCards} />
+             <ModernServiceCard 
+               cards={sampleCards} 
+               title="Talent Solutions"
+               subtitle="Comprehensive workforce solutions designed to help organizations scale quickly and access specialized talent"
+             />
           </div>
          
           {}

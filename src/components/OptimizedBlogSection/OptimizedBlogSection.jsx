@@ -78,13 +78,14 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
   };
 
   return (
-    <section className="optimized-blog-section py-120" style={{ 
+    <section className="optimized-blog-section py-160" style={{ 
       background: '#ffffff',
-      position: 'relative'
+      position: 'relative',
+      padding: '120px 0'
     }}>
       <div className="container">
         <motion.div
-          className="text-center mb-100"
+          className="text-center mb-120"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -149,7 +150,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                   boxShadow: '0 6px 24px rgba(0, 0, 0, 0.08)',
                   border: '1px solid #f0f0f0',
                   position: 'relative',
-                  height: '520px',
+                  height: '600px',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
@@ -162,7 +163,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                 {/* Top Half - Image Section */}
                 <div className="blog-image-section" style={{
                   position: 'relative',
-                  height: '65%',
+                  height: '70%',
                   overflow: 'hidden'
                 }}>
                   <motion.div
@@ -217,7 +218,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
 
                 {/* Bottom Half - Content Section */}
                 <div className="blog-content-section" style={{
-                  height: '35%',
+                  height: '30%',
                   padding: '24px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -227,7 +228,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                     <h3
                       className="blog-title mb-4"
                       style={{
-                        fontSize: '18px',
+                        fontSize: '20px',
                         fontWeight: '600',
                         lineHeight: '1.4',
                         color: '#1a1a1a',
@@ -388,7 +389,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                     <h3
                       className="blog-title mb-4"
                       style={{
-                        fontSize: '20px',
+                        fontSize: '22px',
                         fontWeight: '600',
                         lineHeight: '1.3',
                         color: '#ffffff',

@@ -1333,28 +1333,28 @@ const menuData = {
       {
         title: "Our Journey",
         description: "Learn about our journey in AI innovation",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/1.webp",
         items: ["Company Overview", "Vision & Mission", "Core Values"],
         url: "/company/our-journey",
       },
       {
         title: "Leadership Team",
         description: "Meet our executive leadership",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/2.webp",
         items: ["Executive Team", "Board of Directors", "Advisory Board"],
         url: "/Company/leadership-team",
       },
       {
         title: "Global Presence",
         description: "Our worldwide locations and partnerships",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/3.webp",
         items: ["Office Locations", "Global Partners", "Regional Expertise"],
         url: "/company/global-presence",
       },
       {
         title: "Our Companies",
         description: "Explore our subsidiary companies and divisions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/4.webp",
         items: ["Lumin Inc.", "Lumin Innovations"],
         hasDropdown: true,
         companies: [
@@ -1363,7 +1363,7 @@ const menuData = {
             description:
               "Healthcare display and consulting solutions specializing in medical technology",
             focus: "Healthcare Technology",
-            image: "/placeholder.svg?height=60&width=100",
+            image: "/herosectionimages/New ONES/5.webp",
             color: "rgba(59, 130, 246, 0.1)",
             url: "https://lumininc.com/",
           },
@@ -1372,7 +1372,7 @@ const menuData = {
             description:
               "Advanced manufacturing and automation driving Industry 4.0 solutions",
             focus: "Manufacturing & Automation",
-            image: "/placeholder.svg?height=60&width=100",
+            image: "/herosectionimages/New ONES/6.webp",
             color: "rgba(16, 185, 129, 0.1)",
             url: "https://lumin-innovations.com/",
           },
@@ -1399,7 +1399,7 @@ const menuData = {
       {
         title: "AI & GenAI",
         description: "Advanced artificial intelligence and generative AI solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/1.webp",
         items: [
           "AI Strategy",
           "Generative AI",
@@ -1464,7 +1464,7 @@ const menuData = {
       {
         title: "Cloud & Application Services",
         description: "Scalable cloud infrastructure and application development",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/2.webp",
         items: [
           "Cloud Migration",
           "DevOps",
@@ -1513,7 +1513,7 @@ const menuData = {
       {
         title: "Data & Analytics",
         description: "Transform your data into actionable insights",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/3.webp",
         items: [
           "Data Strategy",
           "Data Platforms",
@@ -1562,7 +1562,7 @@ const menuData = {
       {
         title: "IoT Solutions",
         description: "Connect devices and drive automation with next-gen IoT technology",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/4.webp",
         items: [
           "IoT Platform Development",
           "Sensor Integration",
@@ -1611,7 +1611,7 @@ const menuData = {
       {
         title: "Managed IT Services",
         description: "Comprehensive IT management and support solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/5.webp",
         items: [
           "Infrastructure Monitoring",
           "Application Support",
@@ -1660,7 +1660,7 @@ const menuData = {
       {
         title: "SAP Services",
         description: "Comprehensive SAP solutions and consulting services",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/6.webp",
         items: [
           "SAP S/4HANA",
           "SAP Business Technology Platform",
@@ -1700,7 +1700,7 @@ const menuData = {
       {
         title: "Talent Solutions",
         description: "Empower business growth with agile talent solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/7.webp",
         items: [
           "Direct Hire",
           "Contract-to-Hire",
@@ -1749,7 +1749,7 @@ const menuData = {
       {
         title: "Engineering & Manufacturing IT",
         description: "Drive innovation in manufacturing with Industry 4.0 solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/8.webp",
         items: [
           "PLM & CAD Automation",
           "MES Integration",
@@ -1798,7 +1798,7 @@ const menuData = {
       {
         title: "Healthcare & Life Sciences IT",
         description: "Revolutionize healthcare with AI-powered solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/1.webp",
         items: [
           "HL7/FHIR Integration",
           "Clinical Data Platforms",
@@ -1870,7 +1870,7 @@ const menuData = {
       {
         title: "Healthcare & Life Sciences",
         description: "Digital health and medical technology solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/2.webp",
         items: [
           "Digital Health",
           "Medical Devices",
@@ -1914,7 +1914,7 @@ const menuData = {
       {
         title: "Manufacturing & Automotive",
         description: "Industry 4.0 and smart manufacturing solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/3.webp",
         items: [
           "Smart Manufacturing",
           "Digital Twins",
@@ -1955,7 +1955,7 @@ const menuData = {
       {
         title: "Banking & Financial Services",
         description: "Digital banking and fintech solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/4.webp",
         items: [
           "Digital Banking",
           "Payment Systems",
@@ -1996,7 +1996,7 @@ const menuData = {
       {
         title: "Aerospace & Defense",
         description: "Advanced technology solutions for aerospace industry",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/5.webp",
         items: [
           "Aviation Technology",
           "Defense Systems",
@@ -2037,7 +2037,7 @@ const menuData = {
       {
         title: "Retail & E-Commerce",
         description: "Digital commerce and omnichannel retail solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/6.webp",
         items: [
           "E-commerce Platforms",
           "Omnichannel Solutions",
@@ -2078,7 +2078,7 @@ const menuData = {
       {
         title: "Energy & Utilities",
         description: "Smart grid and renewable energy solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/7.webp",
         items: [
           "Smart Grid",
           "Renewable Energy",
@@ -2119,7 +2119,7 @@ const menuData = {
       {
         title: "Education & Training",
         description: "Digital learning and training platform solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/8.webp",
         items: [
           "Learning Management",
           "Virtual Classrooms",
@@ -2160,7 +2160,7 @@ const menuData = {
       {
         title: "Logistics & Transportation",
         description: "Intelligent supply chain and fleet management solutions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/1.webp",
         items: [
           "Fleet Management",
           "Supply Chain Visibility",
@@ -2215,8 +2215,7 @@ const menuData = {
       {
         title: "The Strategy Behind Our $100M Commitment to Data & AI",
         description: "BLOG POST",
-        image:
-          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop&crop=center",
+        image: "/herosectionimages/New ONES/1.webp",
         items: ["AI AND ML"],
         hasDropdown: true,
         url: "/blog/data-ai-commitment",
@@ -2236,8 +2235,7 @@ const menuData = {
       {
         title: "74% Faster Software Delivery: Agentic AI in the Wild",
         description: "BLOG POST",
-        image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+        image: "/herosectionimages/New ONES/2.webp",
         items: ["AI AND ML"],
         hasDropdown: true,
         url: "/blog/agentic-ai-software-delivery",
@@ -2257,8 +2255,7 @@ const menuData = {
       {
         title: "BizTech Forward - Season 2 Recap: Art Data to Travel Tech",
         description: "LANDING PAGE",
-        image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop&crop=center",
+        image: "/herosectionimages/New ONES/3.webp",
         items: ["AI AND ML"],
         hasDropdown: true,
         url: "/podcast/biztech-forward-season2",
@@ -2299,21 +2296,21 @@ const menuData = {
       {
         title: "Overview",
         description: "Learn about our journey in AI innovation",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/2.webp",
         items: ["Company Overview", "Vision & Mission", "Core Values"],
         url: "/about",
       },
       {
         title: "Leadership Team",
         description: "Meet our executive leadership",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/3.webp",
         items: ["Executive Team", "Board of Directors", "Advisory Board"],
         url: "/Company/leadership-team",
       },
       {
         title: "Our Companies",
         description: "Explore our subsidiary companies and divisions",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/4.webp",
         items: ["Lumin Inc.", "Lumin Innovations"],
         hasDropdown: true,
         companies: [
@@ -2322,7 +2319,7 @@ const menuData = {
             description:
               "Healthcare display and consulting solutions specializing in medical technology",
             focus: "Healthcare Technology",
-            image: "/placeholder.svg?height=60&width=100",
+            image: "/herosectionimages/New ONES/5.webp",
             color: "rgba(59, 130, 246, 0.1)",
             url: "https://lumininc.com/",
           },
@@ -2331,7 +2328,7 @@ const menuData = {
             description:
               "Advanced manufacturing and automation driving Industry 4.0 solutions",
             focus: "Manufacturing & Automation",
-            image: "/placeholder.svg?height=60&width=100",
+            image: "/herosectionimages/New ONES/6.webp",
             color: "rgba(16, 185, 129, 0.1)",
             url: "https://lumin-innovations.com/",
           },
@@ -2340,7 +2337,7 @@ const menuData = {
       {
         title: "Our Global Presence",
         description: "Our worldwide locations and partnerships",
-        image: "/placeholder.svg?height=80&width=280",
+        image: "/herosectionimages/New ONES/7.webp",
         items: ["Office Locations", "Global Partners", "Regional Expertise"],
         url: "/global-presence",
       },
@@ -2395,8 +2392,7 @@ const menuData = {
       title: "Life at Intellectt",
       description:
         "Discover the culture and values that make Intellectt a great place to work.",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop&crop=center",
+      image: "/herosectionimages/New ONES/4.webp",
       buttonText: "Visit our page",
       buttonUrl: "/careers/life-at-company",
     },

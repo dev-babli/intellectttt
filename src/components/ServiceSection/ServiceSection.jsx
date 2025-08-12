@@ -106,7 +106,7 @@ const ServiceSection = (props) => {
                         </span>
                       </div>
                       <div className="xb-item--icon ul_li_between">
-                        <div className="xb-item--img">
+                        <div className="xb-item--img" style={{ display: 'none' }}>
                           <img src={service.sImg} alt="" />
                         </div>
                         <Link
@@ -143,7 +143,7 @@ const ServiceSection = (props) => {
                         </span>
                       </div>
                       <div className="xb-item--icon ul_li_between">
-                        <div className="xb-item--img">
+                        <div className="xb-item--img" style={{ display: 'none' }}>
                           <img src={service.sImg} alt="" />
                         </div>
                         <Link

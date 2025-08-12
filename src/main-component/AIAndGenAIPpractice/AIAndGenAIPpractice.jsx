@@ -1,14 +1,5 @@
-import React, { Fragment, useState } from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-
-import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import WhoAreWeSection from "../../components/WhoAreWeSection/WhoAreWeSection";
-import ServiceSection from "../../components/ServiceSection/ServiceSection";
-import AlliancesSection from "../../components/AlliancesSection/AlliancesSection";
+import React from "react";
+import ServicePageTemplate from "../../components/common/ServicePageTemplate";
 
 const paragraphs = [
   "At Intellectt, we are not just adapting to the technology revolution—we are leading it...",
@@ -23,54 +14,69 @@ const stats = [
   { value: "3x", label: "Workforce Upskilling" },
 ];
 
+const sampleCards = [
+  {
+    title: "Agentic AI and AI Agents",
+    description: "Building intelligent, autonomous AI-driven agents that can perform complex tasks and make decisions independently.",
+    image: "/images/bg/ai-brain-network.jpg",
+    url: "/service-single/ai-and-gen-ai/agentic-ai",
+    buttonText: "Learn More",
+    features: ["Autonomous decision making", "Task automation", "Intelligent workflows"]
+  },
+  {
+    title: "Gen AI & LLM Integration",
+    description: "Integrating Generative AI and Large Language Models into business systems for enhanced capabilities.",
+    image: "/images/bg/ai-technology.jpg",
+    url: "/service-single/ai-and-gen-ai/gen-ai-integration",
+    buttonText: "Learn More",
+    features: ["LLM integration", "Content generation", "Natural language processing"]
+  },
+  {
+    title: "AI Advisory and Responsible AI",
+    description: "Strategic AI guidance with a focus on ethics, governance, and responsible implementation.",
+    image: "/images/bg/abt-cnt_bg.png",
+    url: "/service-single/ai-and-gen-ai/ai-advisory",
+    buttonText: "Learn More",
+    features: ["Ethical AI", "Governance frameworks", "Risk assessment"]
+  },
+  {
+    title: "ML Engineering & ML Ops",
+    description: "End-to-end machine learning engineering and operations for scalable AI solutions.",
+    image: "/images/bg/image-belowhero.webp",
+    url: "/service-single/ai-and-gen-ai/mlops",
+    buttonText: "Learn More",
+    features: ["ML pipeline development", "Model deployment", "Monitoring & maintenance"]
+  }
+];
+
 const AIAndGenAIPpractice = () => {
-  const [isOpen, setOpen] = useState(false);
-  
-  // Scroll to top when component mounts
-  useScrollToTop();
-
   return (
-    <Fragment>
-      <div className="sco_agency">
-        <div className="page_content service-single-page">
-          <HeroSectionTitle
-            title="AI & Gen AI Industrialization Consulting"
-            subtitle="We help companies harness the power of AI and Gen AI to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
-            buttonText="TALK TO OUR EXPERTS"
-            buttonLink="/contact"
-            backgroundImage="/AI-and-gen-ai-practice.webp"
-          />
-          <WhoAreWeSection
-            heading="Who Are We?"
-            subheading="About Intellectt"
-            paragraphs={paragraphs}
-            stats={stats}
-          />
-          <ServiceSection />
-          {/* <AwardSection /> */}
-          <AlliancesSection />
-          {/* <IndustrieSection /> */}
-          {}
-        </div>
-      </div>
+    <ServicePageTemplate
+      // Hero Section
+      heroTitle="AI & Gen AI Industrialization Consulting"
+      heroSubtitle="Intelligent Solutions"
+      heroButtonText="Talk to Our Experts"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/AI-and-gen-ai-practice.webp"
       
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
-
-      {/* <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="7e90gBu4pas"
-        onClose={() => setOpen(false)}
-      /> */}
-    </Fragment>
+      // Who Are We Section
+      whoAreWeHeading="Who Are We?"
+      whoAreWeSubheading="About Intellectt"
+      whoAreWeParagraphs={paragraphs}
+      whoAreWeStats={stats}
+      
+      // Service Section
+      showServiceSection={true}
+      
+      // Service Cards
+      showServiceCards={true}
+      serviceCards={sampleCards}
+      serviceCardsTitle="AI & Gen AI Services"
+      serviceCardsSubtitle="Comprehensive AI solutions designed to transform your business"
+      
+      // Alliances Section
+      showAlliancesSection={true}
+    />
   );
 };
 

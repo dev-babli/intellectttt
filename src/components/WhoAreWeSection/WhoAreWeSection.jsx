@@ -80,7 +80,7 @@ const WhoAreWeSection = ({
                   <Typography variant="h4" color={textColor} fontWeight={700} fontSize={"3rem"}>
                     {stat.value}
                   </Typography>
-                  <Typography variant="body2" mt={1}>
+                  <Typography variant="body2" mt={1} color={textColor}>
                     {stat.label}
                   </Typography>
                 </Box>

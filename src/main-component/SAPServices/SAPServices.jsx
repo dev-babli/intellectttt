@@ -1,126 +1,61 @@
-import React, { Fragment, useState } from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-
-import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
-import FeatureSection from '../../components/It-Services-Components/FeatureSection';
-
-import About3 from '../../components/about/about';
-import SAPServicesHero from "../../components/SAPServicesHero/SAPServicesHero";
-import ServiceCard from "../../components/ServiceCard/ServiceCard";
-import AboutSection from "../../components/Cyber-Security-Components/about/AboutSection";
-import icon from "../../images/icon/magic02.svg";
-import about1 from "../../images/bg/image-belowhero.webp";
-import about2 from "../../images/bg/abt-cnt_bg.png";
-import AlliancesSection from "../../components/AlliancesSection/AlliancesSection";
-
+import React from "react";
+import ServicePageTemplate from "../../components/common/ServicePageTemplate";
 
 const sampleCards = [
   {
     title: "SAP S/4HANA Migration",
-    description: "Seamless upgrade to S/4HANA for modern ERP.",
+    description: "Seamless upgrade to S/4HANA for modern ERP with zero-downtime migration strategies and comprehensive testing.",
     buttonText: "Explore",
     image: "/images/1.webp",
-    url:"/service/sap-services/s4hana"
+    url:"/service/sap-services/s4hana",
+    features: ["Zero-downtime migration", "Comprehensive testing", "Performance optimization"]
   },
   {
     title: "SAP BTP, ABAP & Fiori Development",
-    description: "Smart apps with BTP, ABAP & Fiori.",
+    description: "Smart applications with BTP, ABAP & Fiori for enhanced user experience and business process automation.",
     buttonText: "Explore",
     image: "/images/2.webp",
-    url:"/service/sap-services/btp"
+    url:"/service/sap-services/btp",
+    features: ["Custom Fiori apps", "BTP integration", "ABAP development"]
   },
   {
     title: "SAP AMS & Managed Support",
-    description: "Reliable SAP support for smooth operations.",
+    description: "Reliable SAP support for smooth operations with 24/7 monitoring and proactive issue resolution.",
     buttonText: "Explore",
     image: "/images/3.webp",
-    url:"/service/sap-services/s4hana"
+    url:"/service/sap-services/s4hana",
+    features: ["24/7 monitoring", "Proactive support", "Performance tuning"]
   },
   {
     title: "DevOps & DevSecOps",
-    description: "Automate and secure your dev pipeline.",
+    description: "Automate and secure your development pipeline with CI/CD integration and security best practices.",
     buttonText: "Explore",
     image: "/images/3ser.webp",
-    url:"/service/sap-services/s4hana"
+    url:"/service/sap-services/s4hana",
+    features: ["CI/CD automation", "Security scanning", "Infrastructure as code"]
   },
 ];
 
 const SAPServices = () => {
-  // Scroll to top when component mounts
-  useScrollToTop();
-
   return (
-   <Fragment>
-      <div className="sco_agency">
-       
-        <div className="page_content service-single-page">
-          <SAPServicesHero />
-          {/* <div className="video pt-70 pb-65">
-            <div className="container">
-              <div className="xb-video sd-video pos-rel">
-                <img src={vImg} alt="" />
-                <button
-                  className="popup-video btn-video"
-                  onClick={() => setOpen(true)}
-                >
-                  <img src={vImg2} alt="" />
-                </button>
-              </div>
-            </div>
-          </div> */}
-          <div className="sd-ser-content_wrap pb-110">
-            <div className="container">
-              <div className="sd-ser-content">
-                <h2 className="sd-title text-center mt-5">
-                  Accelerate Business Growth with Intelligent SAP Solutions
-                </h2>
-                <p className="sd-content text-center">
-                  Unlock enterprise agility and operational excellence with our comprehensive SAP services. From SAP S/4HANA transformation and cloud migration to analytics and business process automation, we help organizations modernize their ERP landscape.
-                </p>
-                <p className="sd-content text-center">
-                  Our SAP experts combine deep functional knowledge with industry-specific insights to streamline operations, enhance decision-making, and drive measurable results. Whether you're starting your SAP journey or optimizing existing investments, we deliver scalable, secure, and future-ready solutions tailored to your business goals.
-                </p>
-                <br />
-                <p className="sd-content text-center">
-                                  Our approach combines deep SAP expertise with industry-specific insights to deliver scalable, secure, and future-ready ERP solutions. From S/4HANA migration to BTP development, we focus on measurable results that create lasting business value.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white">
-             <FeatureSection />
-          </div>
-           <ServiceCard cards={sampleCards} />
-          {/* <WorkProcess /> */}
-           {/* <About3 /> */}
-           <AlliancesSection />
-             {}
-        </div>
-
-       
-      </div>
+    <ServicePageTemplate
+      // Hero Section
+      heroTitle="SAP Services"
+      heroSubtitle="Enterprise Solutions"
+      heroButtonText="Talk to Our Experts"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/images/bg/image-belowhero.webp"
       
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      // Service Cards
+      showServiceCards={true}
+      serviceCards={sampleCards}
+      serviceCardsTitle="SAP Solutions & Services"
+      serviceCardsSubtitle="Comprehensive SAP services designed to modernize your enterprise and drive digital transformation"
+      
+      // Alliances Section
+      showAlliancesSection={true}
+    />
+  );
+};
 
-      {/* <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="7e90gBu4pas"
-        onClose={() => setOpen(false)}
-      /> */}
-    </Fragment>
-  )
-}
-
-export default SAPServices
+export default SAPServices;

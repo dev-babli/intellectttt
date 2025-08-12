@@ -11,7 +11,7 @@ import Header5 from "../../components/header5/Header5";
 import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
 import WorkProcess from "../../components/It-Services-Components/WorkProcess/WorkProcess";
 import HelpDeskBlogSection from "../../components/Help-Desk-Components/HelpDeskBlogSection/HelpDeskBlogSection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
+import ModernHeroSection from "../../components/common/ModernHeroSection";
 import CtaSection from "../../components/Help-Desk-Components/CtaSection/CtaSection";
 import { HealthcareServices } from "../../api/cardService";
 
@@ -23,36 +23,40 @@ import sIcon2 from "../../images/shape/c2.jpg";
 import sIcon3 from "../../images/shape/c3.jpg";
 import sIcon4 from "../../images/shape/c4.jpg";
 import sIcon5 from "../../images/shape/c5.jpg";
-import ServiceCard from "../../components/ServiceCard/ServiceCard";
+import ModernServiceCard from "../../components/common/ModernServiceCard";
 
 const sampleCards = [
   {
     title: "Compliance & Regulatory IT",
-    description: "Streamline compliance with robust IT frameworks.",
+    description: "Streamline compliance with robust IT frameworks and regulatory management systems for healthcare organizations.",
     buttonText: "Explore",
     image: "/images/CompleianceandRegulatory-IT.webp",
     url: "/service/healthcare-and-life-sciences-it/compliance",
+    features: ["Regulatory compliance", "Audit management", "Risk assessment"]
   },
   {
     title: "Clinical Data Platforms",
-    description: "Power insights with unified clinical data systems.",
+    description: "Power insights with unified clinical data systems and advanced analytics for patient care optimization.",
     buttonText: "Explore",
     image: "/images/Clinicaldataplatforms.webp",
     url: "/service/healthcare-and-life-sciences-it/data",
+    features: ["Clinical analytics", "Patient data management", "Interoperability"]
   },
   {
     title: "AI in Imaging & Diagnostics",
-    description: "Accelerate detection with AI-driven diagnostics.",
+    description: "Accelerate detection with AI-driven diagnostics and intelligent imaging systems for improved patient outcomes.",
     buttonText: "Explore",
     image: "/images/AIinImaginganDiagnostics.webp",
     url: "/service/healthcare-and-life-sciences-it/ai",
+    features: ["AI diagnostics", "Medical imaging", "Predictive analytics"]
   },
   {
     title: "HL7 & FHIR Integration",
-    description: "Enable seamless health data exchange with HL7 & FHIR.",
+    description: "Enable seamless health data exchange with HL7 & FHIR standards for improved care coordination.",
     buttonText: "Explore",
     image: "/images/HL7FHIRIntegration.webp",
     url: "/service/healthcare-and-life-sciences-it/hl7",
+    features: ["Data interoperability", "Care coordination", "Standards compliance"]
   },
 ];
 
@@ -63,12 +67,19 @@ const HealthcareLifeSciencesIT = () => {
     <Fragment>
       <div className="body_wrap sco_agency">
         {/* <SAPServicesHero /> */}
-        <HeroSectionTitle
+        <ModernHeroSection
           title="Healthcare & Life Sciences IT"
-          subtitle="Empowering Better Healthcare Through Technology"
-          buttonText="TALK TO OUR EXPERTS"
-          buttonLink="#contact"
+          subtitle="Digital Health Innovation"
+          description="Empowering Better Healthcare Through Technology. Transform healthcare delivery with advanced technology solutions that improve patient care, streamline operations, and ensure compliance in the rapidly evolving healthcare landscape."
+          buttonText="Talk to Our Experts"
+          buttonLink="/contact"
           backgroundImage="/Healthcare-and-Life-sciences.webp"
+          features={[
+            "Compliance & Regulatory IT",
+            "Clinical Data Platforms",
+            "AI in Imaging & Diagnostics",
+            "HL7 & FHIR Integration"
+          ]}
         />
         <div className="sd-ser-content_wrap pb-110">
           <div className="container">
@@ -90,7 +101,11 @@ const HealthcareLifeSciencesIT = () => {
           </div>
         </div>
         <div className="bg-white">
-          <ServiceCard cards={sampleCards} />
+          <ModernServiceCard 
+            cards={sampleCards} 
+            title="Healthcare & Life Sciences Solutions"
+            subtitle="Comprehensive healthcare IT services designed to transform patient care and drive medical innovation"
+          />
         </div>
 
         {}
