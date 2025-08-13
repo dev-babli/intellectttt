@@ -25,9 +25,8 @@ const AgenticAI = () => {
       heroDescription="We help companies harness the power of autonomous AI agents to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
       heroButtonText="Start Building Agents"
       heroButtonLink="/contact"
-      heroBackgroundImage="/AiGenAi/Agenticagents.webp"
-      heroVariant="minimal"
-      heroTheme="dark"
+      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroTextColor="white"
 
       // Problem/Solution Section
       problemSolutionTitle="The Agentic AI Challenge & Our Solution"

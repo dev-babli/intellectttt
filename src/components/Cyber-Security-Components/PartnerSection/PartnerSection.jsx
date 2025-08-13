@@ -1,22 +1,22 @@
 import React, { useEffect, useRef } from "react";
-import pimg1 from "../../../images/brand/cs-brd01.png";
-import pimg2 from "../../../images/brand/cs-brd02.png";
-import pimg3 from "../../../images/brand/cs-brd03.png";
-import pimg4 from "../../../images/brand/cs-brd04.png";
-import pimg5 from "../../../images/brand/cs-brd05.png";
-import pimg6 from "../../../images/brand/cs-brd06.png";
-import pimg7 from "../../../images/brand/cs-brd07.png";
-import pimg8 from "../../../images/brand/cs-brd08.png";
-import pimg9 from "../../../images/brand/cs-brd09.png";
-import pimg10 from "../../../images/brand/cs-brd10.png";
-import pimg11 from "../../../images/brand/cs-brd11.png";
-import pimg12 from "../../../images/brand/cs-brd12.png";
-import pimg13 from "../../../images/brand/cs-brd13.png";
-import pimg14 from "../../../images/brand/cs-brd14.png";
-import pimg15 from "../../../images/brand/cs-brd15.png";
-import pimg16 from "../../../images/brand/cs-brd16.png";
-import pimg17 from "../../../images/brand/cs-brd17.png";
-import pimg18 from "../../../images/brand/cs-brd18.png";
+import pimg1 from "../../../images/icon/Abbott.webp";
+import pimg2 from "../../../images/icon/Bayer.webp";
+import pimg3 from "../../../images/icon/Cordis.webp";
+import pimg4 from "../../../images/icon/Embecta.webp";
+import pimg5 from "../../../images/icon/Exel.webp";
+import pimg6 from "../../../images/icon/Integra.webp";
+import pimg7 from "../../../images/icon/Livanova.webp";
+import pimg8 from "../../../images/icon/Medline.webp";
+import pimg9 from "../../../images/icon/Philips.webp";
+import pimg10 from "../../../images/icon/ThermoFisher.webp";
+import pimg11 from "../../../images/icon/Terumo.webp";
+import pimg12 from "../../../images/icon/Xylem.webp";
+import pimg13 from "../../../images/icon/Alkermes.webp";
+import pimg14 from "../../../images/icon/PSB.webp";
+import pimg15 from "../../../images/icon/MTRN.webp";
+import pimg16 from "../../../images/icon/Aya.webp";
+import pimg17 from "../../../images/icon/Rentschler.webp";
+import pimg18 from "../../../images/icon/Abbott.webp";
 
 const partnersLeft = [
   { pImg: pimg1 },
@@ -96,8 +96,29 @@ const PartnerSection = () => {
             {partnersLeft.map((partner, index) => (
               <div className="cs-brand-item" key={index}>
                 <div className="xb-inner">
-                  <div className="xb-img">
-                    <img src={partner.pImg} alt={`Brand ${index + 1}`} />
+                  <div className="xb-img" style={{ 
+                    height: "80px", 
+                    width: "160px",
+                    display: "flex", 
+                    alignItems: "center", 
+                    justifyContent: "center",
+                    padding: "10px",
+                    boxSizing: "border-box"
+                  }}>
+                    <img 
+                      src={partner.pImg} 
+                      alt={`Brand ${index + 1}`} 
+                      style={{ 
+                        maxWidth: "100%",
+                        maxHeight: "60px",
+                        width: "auto",
+                        height: "auto",
+                        objectFit: "contain",
+                        filter: "none",
+                        opacity: "1",
+                        transition: "all 0.3s ease"
+                      }} 
+                    />
                   </div>
                 </div>
               </div>
@@ -111,8 +132,29 @@ const PartnerSection = () => {
             {partnersRight.map((partner, index) => (
               <div className="cs-brand-item" key={index}>
                 <div className="xb-inner">
-                  <div className="xb-img">
-                    <img src={partner.pImg} alt={`Brand ${index + 20}`} />
+                  <div className="xb-img" style={{ 
+                    height: "80px", 
+                    width: "160px",
+                    display: "flex", 
+                    alignItems: "center", 
+                    justifyContent: "center",
+                    padding: "10px",
+                    boxSizing: "border-box"
+                  }}>
+                    <img 
+                      src={partner.pImg} 
+                      alt={`Brand ${index + 20}`} 
+                      style={{ 
+                        maxWidth: "100%",
+                        maxHeight: "60px",
+                        width: "auto",
+                        height: "auto",
+                        objectFit: "contain",
+                        filter: "none",
+                        opacity: "1",
+                        transition: "all 0.3s ease"
+                      }} 
+                    />
                   </div>
                 </div>
               </div>

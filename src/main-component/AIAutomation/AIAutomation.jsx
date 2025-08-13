@@ -26,7 +26,8 @@ const AIAutomation = () => {
       heroDescription="We help companies harness the power of AI and RPA to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions. Combine the precision of RPA with the intelligence of AI for unprecedented automation capabilities."
       heroButtonText="Start AI Automation"
       heroButtonLink="/contact"
-      heroBackgroundImage="/AiGenAi/AIAutomation.webp"
+      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroTextColor="white"
       heroFeatures={[
         {
           icon: <AutoFixHigh />,

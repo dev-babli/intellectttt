@@ -2,23 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import sIcon1 from "../../../images/icon/int-icon.svg";
 import sIcon2 from "../../../images/icon/arrow-black.png";
-import Icon1 from "../../../images/icon/BD.webp";
-import Icon2 from "../../../images/icon/Catalent.webp";
+import Icon1 from "../../../images/icon/Abbott.webp";
+import Icon2 from "../../../images/icon/Bayer.webp";
 import Icon3 from "../../../images/icon/Cordis.webp";
-import Icon4 from "../../../images/icon/Deloitte.webp";
-import Icon5 from "../../../images/icon/Edwards-Lifesciences.webp";
-import Icon6 from "../../../images/icon/Fidelity.webp";
-import Icon7 from "../../../images/icon/Getinge.webp";
-import Icon8 from "../../../images/icon/HCL.webp";
-import Icon9 from "../../../images/icon/IBM.webp";
-import Icon10 from "../../../images/icon/johnson and johnson.webp";
-import Icon11 from "../../../images/icon/L&T.webp";
-import Icon12 from "../../../images/icon/Livanova.webp";
-import Icon13 from "../../../images/icon/Moderna.webp";
-import Icon14 from "../../../images/icon/Satate-Street.webp";
-import Icon15 from "../../../images/icon/Terumo.webp";
-import Icon16 from "../../../images/icon/Vertex.webp";
-import Icon17 from "../../../images/icon/Zimmer-Biomet.webp";
+import Icon4 from "../../../images/icon/Embecta.webp";
+import Icon5 from "../../../images/icon/Exel.webp";
+import Icon6 from "../../../images/icon/Integra.webp";
+import Icon7 from "../../../images/icon/Livanova.webp";
+import Icon8 from "../../../images/icon/Medline.webp";
+import Icon9 from "../../../images/icon/Philips.webp";
+import Icon10 from "../../../images/icon/ThermoFisher.webp";
+import Icon11 from "../../../images/icon/Terumo.webp";
+import Icon12 from "../../../images/icon/Xylem.webp";
+import Icon13 from "../../../images/icon/Alkermes.webp";
+import Icon14 from "../../../images/icon/PSB.webp";
+import Icon15 from "../../../images/icon/MTRN.webp";
+import Icon16 from "../../../images/icon/Aya.webp";
+import Icon17 from "../../../images/icon/Rentschler.webp";
 
 const IntegrationSection = (props) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -38,70 +38,70 @@ const IntegrationSection = (props) => {
 
   // Partner companies data - only 9 for the main grid
   const mainPartners = [
-    { name: "BD", logo: Icon1 },
-    { name: "Deloitte", logo: Icon4 },
-    { name: "IBM", logo: Icon9 },
-    { name: "Johnson & Johnson", logo: Icon10 },
-    { name: "Moderna", logo: Icon13 },
-    { name: "Fidelity", logo: Icon6 },
-    { name: "HCL", logo: Icon8 },
-    { name: "L&T", logo: Icon11 },
-    { name: "Vertex", logo: Icon16 },
+    { name: "Abbott", logo: Icon1 },
+    { name: "Bayer", logo: Icon2 },
+    { name: "Cordis", logo: Icon3 },
+    { name: "Embecta", logo: Icon4 },
+    { name: "Exel", logo: Icon5 },
+    { name: "Integra", logo: Icon6 },
+    { name: "Livanova", logo: Icon7 },
+    { name: "Medline", logo: Icon8 },
+    { name: "Philips", logo: Icon9 },
   ];
 
   // All partners for bottom section
   const allPartners = [
-    { name: "BD", logo: Icon1 },
-    { name: "Catalent", logo: Icon2 },
+    { name: "Abbott", logo: Icon1 },
+    { name: "Bayer", logo: Icon2 },
     { name: "Cordis", logo: Icon3 },
-    { name: "Deloitte", logo: Icon4 },
-    { name: "Edwards Lifesciences", logo: Icon5 },
-    { name: "Fidelity", logo: Icon6 },
-    { name: "Getinge", logo: Icon7 },
-    { name: "HCL", logo: Icon8 },
-    { name: "IBM", logo: Icon9 },
-    { name: "Johnson & Johnson", logo: Icon10 },
-    { name: "L&T", logo: Icon11 },
-    { name: "LivaNova", logo: Icon12 },
-    { name: "Moderna", logo: Icon13 },
-    { name: "State Street", logo: Icon14 },
-    { name: "Terumo", logo: Icon15 },
-    { name: "Vertex", logo: Icon16 },
-    { name: "Zimmer Biomet", logo: Icon17 },
+    { name: "Embecta", logo: Icon4 },
+    { name: "Exel", logo: Icon5 },
+    { name: "Integra", logo: Icon6 },
+    { name: "Livanova", logo: Icon7 },
+    { name: "Medline", logo: Icon8 },
+    { name: "Philips", logo: Icon9 },
+    { name: "Thermo Fisher", logo: Icon10 },
+    { name: "Terumo", logo: Icon11 },
+    { name: "Xylem", logo: Icon12 },
+    { name: "Alkermes", logo: Icon13 },
+    { name: "PSB Industries", logo: Icon14 },
+    { name: "MTRN", logo: Icon15 },
+    { name: "Aya", logo: Icon16 },
+    { name: "Rentschler", logo: Icon17 },
   ];
 
   // Testimonials data
   const testimonials = [
     {
-      company: "Johnson & Johnson",
-      companyLogo: Icon10,
+      company: "Abbott",
+      companyLogo: Icon1,
       text: "Intellectt has been a pleasure to work with. They quickly understood our business needs and embedded talented technologists into our engineering teams to help build our modern data platform. Their thoroughness, collaborative working style, and flexibility were greatly appreciated throughout the duration of this engagement and we look forward to opportunities for continued partnership.",
       author: "Sarah Johnson",
-      title: "Chief Technology Officer, Johnson & Johnson",
+      title: "Chief Technology Officer, Abbott",
       rating: 5,
     },
     {
-      company: "Moderna",
-      companyLogo: Icon13,
+      company: "Bayer",
+      companyLogo: Icon2,
       text: "The team at Intellectt demonstrated exceptional technical expertise and deep understanding of our industry challenges. Their innovative solutions and commitment to excellence have been instrumental in our digital transformation journey.",
       author: "Michael Chen",
-      title: "VP of Engineering, Moderna",
+      title: "VP of Engineering, Bayer",
       rating: 5,
     },
     {
-      company: "Deloitte",
-      companyLogo: Icon4,
+      company: "Cordis",
+      companyLogo: Icon3,
       text: "Intellectt's strategic approach and technical capabilities have consistently delivered outstanding results for our organization. Their collaborative partnership model and innovative solutions have been key to our success.",
       author: "Emily Rodriguez",
-      title: "Senior Director, Deloitte",
+      title: "Senior Director, Cordis",
       rating: 5,
     },
     {
-      company: "IBM",
+      company: "Philips",
       companyLogo: Icon9,
       text: "Working with Intellectt has been transformative for our technology initiatives. Their expertise in AI and cloud solutions has accelerated our digital transformation and positioned us for future growth.",
       author: "David Thompson",
-      title: "CTO, IBM",
+      title: "CTO, Philips",
       rating: 5,
     },
   ];
@@ -548,29 +548,46 @@ const IntegrationSection = (props) => {
               opacity: "0.9",
               maxWidth: "1200px",
               margin: "0 auto",
+              alignItems: "center",
             }}
           >
             {allPartners.map((partner, index) => (
-              <img
+              <div
                 key={index}
-                src={partner.logo}
-                alt={partner.name}
                 style={{
-                  height: "45px",
-                  objectFit: "contain",
-                  filter: "none",
-                  opacity: "1",
+                  height: "80px",
+                  width: "160px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "10px",
+                  boxSizing: "border-box",
                   transition: "all 0.3s ease",
                 }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = "scale(1.3)";
-                  e.target.style.opacity = "1";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = "scale(1)";
-                  e.target.style.opacity = "1";
-                }}
-              />
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "60px",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                    filter: "none",
+                    opacity: "1",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = "scale(1.1)";
+                    e.target.style.opacity = "1";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = "scale(1)";
+                    e.target.style.opacity = "1";
+                  }}
+                />
+              </div>
             ))}
           </div>
         </div>

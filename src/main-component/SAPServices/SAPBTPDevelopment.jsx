@@ -1,129 +1,230 @@
-import React, { Fragment, useState } from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
-import { CssBaseline } from "@mui/material";
-import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
-import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
-import BrushIcon from "@mui/icons-material/Brush";
-import CloudDoneIcon from "@mui/icons-material/CloudDone";
-import BugReportIcon from "@mui/icons-material/BugReport";
-import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
-import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
+import React from "react";
+import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
+import { 
+  Speed, 
+  TrendingUp, 
+  Cloud, 
+  Security, 
+  Analytics, 
+  AutoAwesome,
+  SmartToy,
+  DataUsage,
+  Psychology,
+  CheckCircle,
+  Memory,
+  IntegrationInstructions,
+  Sensors,
+  Autorenew,
+  RocketLaunch,
+  Lightbulb,
+  AutoFixHigh,
+  Code,
+  Build,
+  Storage,
+  Web
+} from '@mui/icons-material';
 
-import CodeIcon from "@mui/icons-material/Code";
-import WebAssetIcon from "@mui/icons-material/WebAsset";
-import CloudSyncIcon from "@mui/icons-material/CloudSync";
-
-const features = [
-  {
-    icon: (
-      <IntegrationInstructionsIcon sx={{ color: "#e85d04", fontSize: 34 }} />
-    ),
-    title: "Custom ABAP Development",
-    description:
-      "Enhance standard SAP functionality with custom ABAP programs, reports, interfaces, and workflows tailored to your business needs.",
-  },
-  {
-    icon: <BrushIcon sx={{ color: "#e85d04", fontSize: 34 }} />,
-    title: "Responsive Fiori UI Design",
-    description:
-      "Deliver seamless user experiences with SAP Fiori apps that are fast, intuitive, and consistent across all devices.",
-  },
-  {
-    icon: <CloudDoneIcon sx={{ color: "#e85d04", fontSize: 34 }} />,
-    title: "Cloud Extensibility with BTP",
-    description:
-      "Utilize SAP BTP to build and deploy scalable cloud-native extensions that connect core systems with next-gen services.",
-  },
-  {
-    icon: <BugReportIcon sx={{ color: "#e85d04", fontSize: 34 }} />,
-    title: "Debugging & Performance Tuning",
-    description:
-      "Accelerate system performance with detailed ABAP debugging, memory optimization, and runtime diagnostics.",
-  },
-  {
-    icon: <DeveloperModeIcon sx={{ color: "#e85d04", fontSize: 34 }} />,
-    title: "DevOps & CI/CD for SAP",
-    description:
-      "Implement DevOps best practices including automated testing, transport management, and continuous delivery for SAP projects.",
-  },
-  {
-    icon: <TipsAndUpdatesIcon sx={{ color: "#e85d04", fontSize: 34 }} />,
-    title: "Innovation-Driven Support",
-    description:
-      "Go beyond break-fix with strategic enhancements, modern UI conversions, and value-added recommendations.",
-  },
-];
-
-const Datafeatures = [
-  {
-    icon: <CodeIcon sx={{ color: "#5b5fc7", fontSize: 36 }} />,
-    title: "Advanced ABAP Development",
-    description:
-      "Design and enhance core SAP functionalities with optimized ABAP code, supporting custom logic, performance tuning, and modular reusability across ECC and S/4HANA.",
-  },
-  {
-    icon: <WebAssetIcon sx={{ color: "#f5b400", fontSize: 36 }} />,
-    title: "Modern Fiori UX Design",
-    description:
-      "Build sleek, user-centric applications using SAP Fiori and UI5 that boost productivity and deliver consistent, responsive user experiences across devices.",
-  },
-  {
-    icon: <CloudSyncIcon sx={{ color: "#fb5607", fontSize: 36 }} />,
-    title: "BTP-Driven Innovation",
-    description:
-      "Leverage SAP Business Technology Platform for real-time integration, cloud extensibility, and intelligent services—accelerating digital transformation with minimal disruption.",
-  },
-];
 const SAPBTPDevelopment = () => {
-  // Scroll to top when component mounts
-  useScrollToTop();
   return (
-    <Fragment>
-      <div className="sco_agency">
-        <div className="page_content service-single-page">
-          <HeroSectionTitle
-            title="SAP BTP, ABAP, Fiori Development & Support"
-            subtitle="Unlock the Power of Intelligent Automation with Our Expertise in SAP BTP, ABAP, Fiori Development and Support."
-            buttonText="TALK TO OUR EXPERTS"
-            buttonLink="#contact"
-            backgroundImage="/BTP.webp"
-          />
-          <CssBaseline />
-          <FeaturesSection features={features} />
-          <DataSection
-            title="Empower Innovation with SAP BTP, ABAP & Fiori Development & Support"
-            description={`In today’s digital-first enterprise landscape, success hinges on more than standard SAP support—it requires agile, intelligent platforms that accelerate innovation.
+    <MasterSubServiceTemplate
+      // Hero Section - Minimal
+      heroTitle="SAP BTP, ABAP & Fiori Development"
+      heroSubtitle="SAP Innovation Platform"
+      heroDescription="Unlock the power of SAP Business Technology Platform with custom ABAP development and modern Fiori UI design. Build scalable cloud-native extensions and enhance SAP functionality."
+      heroButtonText="SAP Development"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/herosectionimages/4.webp"
+      heroTextColor="white"
+      heroFeatures={[
+        "SAP BTP Development",
+        "ABAP Programming",
+        "Fiori UI Design",
+        "Cloud Extensions"
+      ]}
 
-Our SAP BTP, ABAP & Fiori Development & Support services deliver next-gen application development, seamless user experiences, and real-time integration across your SAP ecosystem.
+      // Problem/Solution Section
+      problemSolutionTitle="The SAP Development Challenge & Our Solution"
+      problemSolutionSubtitle="We understand the complexities of SAP development and have the expertise to build innovative SAP solutions"
+      problems={[
+        {
+          title: "Limited SAP Functionality",
+          description: "Standard SAP functionality that doesn't meet specific business requirements and lacks customization capabilities."
+        },
+        {
+          title: "Outdated User Interfaces",
+          description: "Poor user experience with outdated SAP interfaces that reduce productivity and user adoption."
+        },
+        {
+          title: "Integration Complexity",
+          description: "Complex integration challenges between SAP systems and external applications or cloud services."
+        }
+      ]}
+      solutions={[
+        {
+          title: "Custom ABAP Development",
+          description: "Custom ABAP programs, reports, and interfaces tailored to specific business requirements and workflows."
+        },
+        {
+          title: "Modern Fiori UI Design",
+          description: "Responsive, intuitive Fiori applications that provide excellent user experience across all devices."
+        },
+        {
+          title: "SAP BTP Cloud Extensions",
+          description: "Build cloud-native extensions using SAP Business Technology Platform."
+        }
+      ]}
+      problemSolutionVariant="split"
 
-From custom ABAP enhancements and modern Fiori UI design to extensibility using SAP Business Technology Platform (BTP), we help you build, deploy, and scale intelligent applications faster.
+      // Service Offerings
+      serviceOfferingsTitle="Our SAP BTP & Development Services"
+      serviceOfferingsSubtitle="Comprehensive SAP development services designed to enhance SAP functionality"
+      services={[
+        {
+          icon: <Code />,
+          title: "Custom ABAP Development",
+          description: "Enhance standard SAP functionality with custom ABAP programs, reports, and workflows.",
+          features: [
+            "Custom programs",
+            "Reports development",
+            "Workflow automation"
+          ],
+          badge: "Most Popular",
+          link: "/contact",
+          ctaText: "ABAP Development"
+        },
+        {
+          icon: <Web />,
+          title: "Fiori UI Design",
+          description: "Design responsive, intuitive Fiori applications for modern user experience.",
+          features: [
+            "Responsive design",
+            "User experience",
+            "Modern interfaces"
+          ],
+          badge: "Trending",
+          link: "/contact",
+          ctaText: "Fiori Design"
+        },
+        {
+          icon: <Storage />,
+          title: "SAP BTP Extensions",
+          description: "Build cloud-native extensions using SAP Business Technology Platform.",
+          features: [
+            "Cloud extensions",
+            "BTP integration",
+            "Scalable solutions"
+          ],
+          link: "/contact",
+          ctaText: "BTP Extensions"
+        },
+        {
+          icon: <Build />,
+          title: "DevOps & CI/CD",
+          description: "Implement DevOps best practices and CI/CD pipelines for SAP development.",
+          features: [
+            "DevOps practices",
+            "CI/CD pipelines",
+            "Automated testing"
+          ],
+          link: "/contact",
+          ctaText: "DevOps & CI/CD"
+        }
+      ]}
+      serviceOfferingsVariant="default"
 
-With certified SAP developers, DevOps best practices, and ongoing support—we ensure your SAP apps are responsive, intuitive, and aligned with your evolving business goals.`}
-            features={Datafeatures}
-            ctaText="Let's Connect"
-            ctaLink="/contact"
-          />
-          <TechnologyLogos />
-          {}
-        </div>
-      </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      // Benefits Section
+      benefitsTitle="Why Choose Our SAP BTP & Development Services"
+      benefitsSubtitle="Discover the tangible benefits and outcomes you can expect from our SAP development solutions"
+      benefits={[
+        {
+          icon: <Speed />,
+          title: "50% Faster Development",
+          description: "Accelerate SAP development by 50% with modern tools, frameworks, and best practices.",
+          features: [
+            "Faster development",
+            "Modern tools",
+            "Best practices"
+          ],
+          metric: {
+            value: "50%",
+            label: "Faster Development"
+          }
+        },
+        {
+          icon: <TrendingUp />,
+          title: "40% Better User Experience",
+          description: "Improve user experience by 40% with modern Fiori interfaces and responsive design.",
+          features: [
+            "Better UX",
+            "Modern interfaces",
+            "Responsive design"
+          ],
+          metric: {
+            value: "40%",
+            label: "Better UX"
+          }
+        },
+        {
+          icon: <CheckCircle />,
+          title: "100% SAP Compliance",
+          description: "Ensure 100% SAP compliance and best practices in all development and integration work.",
+          features: [
+            "SAP compliance",
+            "Best practices",
+            "Quality assurance"
+          ],
+          metric: {
+            value: "100%",
+            label: "SAP Compliance"
+          }
+        }
+      ]}
 
-        </Fragment>
+      // Stats Section
+      statsTitle="Proven SAP Development Results"
+      statsSubtitle="Numbers that speak for themselves - real outcomes from our SAP development implementations"
+      stats={[
+        {
+          icon: <Speed />,
+          value: "50%",
+          label: "Faster Development",
+          description: "Average improvement in development speed"
+        },
+        {
+          icon: <TrendingUp />,
+          value: "40%",
+          label: "Better UX",
+          description: "Average improvement in user experience"
+        },
+        {
+          icon: <CheckCircle />,
+          value: "100%",
+          label: "SAP Compliance",
+          description: "SAP compliance and best practices achieved"
+        },
+        {
+          icon: <Code />,
+          value: "200+",
+          label: "SAP Projects",
+          description: "SAP development projects completed"
+        }
+      ]}
+
+      // Final CTA
+      finalCtaTitle="Ready to Enhance Your SAP Systems?"
+      finalCtaSubtitle="Join hundreds of companies that have already improved their SAP functionality with our development services. Let's discuss how we can help you achieve similar results."
+      finalCtaButtonText="Schedule SAP Development Consultation"
+      finalCtaButtonLink="/contact"
+
+      // Blog & Case Studies
+      blogTitle="SAP Development Insights & Updates"
+      blogSubtitle="Stay informed with our latest SAP development research, industry trends, and thought leadership content"
+      caseStudyTitle="SAP Development Success Stories"
+      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with SAP development"
+
+      // Theme
+      theme="light"
+    />
   );
 };
 

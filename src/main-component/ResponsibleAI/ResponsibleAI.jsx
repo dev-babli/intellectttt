@@ -26,7 +26,8 @@ const ResponsibleAI = () => {
       heroDescription="We help companies build AI with strategy and responsibility. Unlock the power of AI while ensuring ethical standards, governance, and compliance. Our advisory services guide you through the complex landscape of responsible AI implementation."
       heroButtonText="Start Responsible AI Journey"
       heroButtonLink="/contact"
-      heroBackgroundImage="/AiGenAi/AIAdvisoryandResponsibleAI.webp"
+      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroTextColor="white"
       heroFeatures={[
         {
           icon: <Policy />,

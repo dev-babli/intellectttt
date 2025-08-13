@@ -1,127 +1,230 @@
-import React, { Fragment, useState } from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
-import { CssBaseline } from "@mui/material";
-import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
-import VerifiedIcon from "@mui/icons-material/Verified";
-import FlashOnIcon from "@mui/icons-material/FlashOn";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
-import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
-import ArchitectureIcon from "@mui/icons-material/Architecture";
-import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import React from "react";
+import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
+import { 
+  Speed, 
+  TrendingUp, 
+  Cloud, 
+  Security, 
+  Analytics, 
+  AutoAwesome,
+  SmartToy,
+  DataUsage,
+  Psychology,
+  CheckCircle,
+  Memory,
+  IntegrationInstructions,
+  Sensors,
+  Autorenew,
+  RocketLaunch,
+  Lightbulb,
+  AutoFixHigh,
+  Support,
+  Build,
+  Monitor,
+  Verified
+} from '@mui/icons-material';
 
-import AssessmentIcon from "@mui/icons-material/Assessment";
-import PublishedWithChangesIcon from "@mui/icons-material/PublishedWithChanges";
-import SupportIcon from "@mui/icons-material/Support";
-
-const features = [
-  {
-    icon: <VerifiedIcon sx={{ color: "#4CAF50", fontSize: 36 }} />,
-    title: "Certified SAP Experts",
-    description:
-      "Our team includes certified professionals with deep experience in SAP S/4HANA migrations across industries.",
-  },
-  {
-    icon: <FlashOnIcon sx={{ color: "#FF9800", fontSize: 36 }} />,
-    title: "Accelerated Time-to-Value",
-    description:
-      "We leverage proven frameworks and automation tools to reduce downtime and speed up your transformation.",
-  },
-  {
-    icon: <MonetizationOnIcon sx={{ color: "#03A9F4", fontSize: 36 }} />,
-    title: "Cost-Effective Delivery",
-    description:
-      "Optimized migration planning ensures minimal waste, predictable costs, and maximum ROI.",
-  },
-  {
-    icon: <SwapHorizIcon sx={{ color: "#9C27B0", fontSize: 36 }} />,
-    title: "Flexible Migration Approaches",
-    description:
-      "Whether it's Greenfield, Brownfield, or Hybrid, we tailor the method to your business and IT landscape.",
-  },
-  {
-    icon: <ArchitectureIcon sx={{ color: "#FF5722", fontSize: 36 }} />,
-    title: "Future-Ready Architecture",
-    description:
-      "We help modernize your ERP foundation to support innovations like AI, analytics, and cloud-native services.",
-  },
-  {
-    icon: <SupportAgentIcon sx={{ color: "#607D8B", fontSize: 36 }} />,
-    title: "End-to-End Support",
-    description:
-      "From assessment to post-migration optimization, we ensure a smooth, secure, and value-driven journey.",
-  },
-];
-
-const Datafeatures = [
-  {
-    icon: <AssessmentIcon sx={{ color: "#5b5fc7", fontSize: 36 }} />,
-    title: "Readiness & System Assessment",
-    description:
-      "Evaluate your current SAP ECC environment with detailed readiness checks, custom code analysis, and a migration strategy aligned with your business goals.",
-  },
-  {
-    icon: <PublishedWithChangesIcon sx={{ color: "#f5b400", fontSize: 36 }} />,
-    title: "Seamless Data & Process Migration",
-    description:
-      "Ensure smooth transition of master data, transactional data, and business processes to S/4HANA using proven tools, best practices, and minimal downtime techniques.",
-  },
-  {
-    icon: <SupportIcon sx={{ color: "#fb5607", fontSize: 36 }} />,
-    title: "Post-Migration Optimization & Support",
-    description:
-      "Optimize your S/4HANA system post go-live with performance tuning, user enablement, continuous enhancements, and managed support services.",
-  },
-];
 const SAPManagedSupport = () => {
-  // Scroll to top when component mounts
-  useScrollToTop();
   return (
-    <Fragment>
-      <div className="sco_agency">
-        <div className="page_content service-single-page">
-          <HeroSectionTitle
-            title="SAP S/4HANA Migration & Support"
-            subtitle="Accelerate Your SAP S/4HANA Migration with Confidence and Future-Ready Support"
-            buttonText="TALK TO OUR EXPERTS"
-            buttonLink="#contact"
-            backgroundImage="/hana.webp"
-          />
-          <CssBaseline />
-          <FeaturesSection features={features} />
-          <DataSection
-            title="Accelerate Your SAP S/4HANA Migration with Confidence"
-            description={`In today’s evolving digital landscape, migrating to SAP S/4HANA is not just an upgrade—it’s a strategic transformation toward a more intelligent enterprise.
+    <MasterSubServiceTemplate
+      // Hero Section - Minimal
+      heroTitle="SAP S/4HANA Migration & Support"
+      heroSubtitle="SAP Excellence"
+      heroDescription="Accelerate your SAP S/4HANA migration with confidence and future-ready support. From assessment to post-migration optimization, we ensure a smooth, secure, and value-driven journey."
+      heroButtonText="SAP Migration"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/herosectionimages/3.webp"
+      heroTextColor="white"
+      heroFeatures={[
+        "S/4HANA Migration",
+        "System Assessment",
+        "Data Migration",
+        "Post-Migration Support"
+      ]}
 
-Our SAP S/4HANA Migration services help organizations move from legacy SAP ECC systems to S/4HANA seamlessly, minimizing risk while maximizing business value.
+      // Problem/Solution Section
+      problemSolutionTitle="The SAP Migration Challenge & Our Solution"
+      problemSolutionSubtitle="We understand the complexities of SAP S/4HANA migration and have the expertise to ensure successful transformation"
+      problems={[
+        {
+          title: "Migration Complexity",
+          description: "Complex SAP S/4HANA migration processes that are risky, time-consuming, and prone to data loss and system downtime."
+        },
+        {
+          title: "System Assessment Issues",
+          description: "Lack of proper system assessment and readiness checks that lead to migration failures and unexpected costs."
+        },
+        {
+          title: "Post-Migration Support",
+          description: "Inadequate post-migration support and optimization that prevents organizations from realizing full S/4HANA benefits."
+        }
+      ]}
+      solutions={[
+        {
+          title: "Comprehensive Migration Strategy",
+          description: "End-to-end migration strategy with proven frameworks and minimal downtime techniques for successful S/4HANA transformation."
+        },
+        {
+          title: "System Assessment & Readiness",
+          description: "Detailed system assessment and readiness checks to ensure smooth migration and minimize risks."
+        },
+        {
+          title: "Post-Migration Optimization",
+          description: "Complete post-migration optimization and support to maximize S/4HANA benefits and system performance."
+        }
+      ]}
+      problemSolutionVariant="split"
 
-From system assessment and custom code remediation to data migration, process optimization, and post-go-live support—we cover every stage of the migration journey.
+      // Service Offerings
+      serviceOfferingsTitle="Our SAP S/4HANA Migration & Support Services"
+      serviceOfferingsSubtitle="Comprehensive SAP migration services designed to ensure successful S/4HANA transformation"
+      services={[
+        {
+          icon: <Analytics />,
+          title: "System Assessment",
+          description: "Evaluate your current SAP ECC environment with detailed readiness checks and migration strategy.",
+          features: [
+            "Readiness checks",
+            "Custom code analysis",
+            "Migration strategy"
+          ],
+          badge: "Most Popular",
+          link: "/contact",
+          ctaText: "System Assessment"
+        },
+        {
+          icon: <IntegrationInstructions />,
+          title: "Data & Process Migration",
+          description: "Ensure smooth transition of master data, transactional data, and business processes to S/4HANA.",
+          features: [
+            "Data migration",
+            "Process migration",
+            "Minimal downtime"
+          ],
+          badge: "Trending",
+          link: "/contact",
+          ctaText: "Data Migration"
+        },
+        {
+          icon: <Support />,
+          title: "Post-Migration Support",
+          description: "Optimize your S/4HANA system post go-live with performance tuning and continuous enhancements.",
+          features: [
+            "Performance tuning",
+            "User enablement",
+            "Continuous enhancements"
+          ],
+          link: "/contact",
+          ctaText: "Post-Migration Support"
+        },
+        {
+          icon: <Build />,
+          title: "Managed Support Services",
+          description: "Comprehensive managed support services for ongoing S/4HANA optimization and maintenance.",
+          features: [
+            "Ongoing optimization",
+            "System maintenance",
+            "Managed support"
+          ],
+          link: "/contact",
+          ctaText: "Managed Support"
+        }
+      ]}
+      serviceOfferingsVariant="default"
 
-With certified SAP consultants, proven tools, and a roadmap tailored to your business goals, we ensure a smooth, secure, and future-ready S/4HANA transition.`}
-            features={Datafeatures}
-            ctaText="Let's Connect"
-            ctaLink="/contact"
-          />
-          <TechnologyLogos />
-          {}
-        </div>
-      </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      // Benefits Section
+      benefitsTitle="Why Choose Our SAP S/4HANA Migration & Support Services"
+      benefitsSubtitle="Discover the tangible benefits and outcomes you can expect from our SAP migration solutions"
+      benefits={[
+        {
+          icon: <Speed />,
+          title: "50% Faster Migration",
+          description: "Accelerate S/4HANA migration by 50% with proven frameworks and automation tools.",
+          features: [
+            "Faster migration",
+            "Proven frameworks",
+            "Automation tools"
+          ],
+          metric: {
+            value: "50%",
+            label: "Faster Migration"
+          }
+        },
+        {
+          icon: <TrendingUp />,
+          title: "30% Cost Reduction",
+          description: "Reduce migration costs by 30% with optimized planning and efficient processes.",
+          features: [
+            "Cost reduction",
+            "Optimized planning",
+            "Efficient processes"
+          ],
+          metric: {
+            value: "30%",
+            label: "Cost Reduction"
+          }
+        },
+        {
+          icon: <CheckCircle />,
+          title: "100% Success Rate",
+          description: "Ensure 100% migration success with certified experts and comprehensive support.",
+          features: [
+            "Migration success",
+            "Certified experts",
+            "Comprehensive support"
+          ],
+          metric: {
+            value: "100%",
+            label: "Success Rate"
+          }
+        }
+      ]}
 
-        </Fragment>
+      // Stats Section
+      statsTitle="Proven SAP Migration Results"
+      statsSubtitle="Numbers that speak for themselves - real outcomes from our SAP migration implementations"
+      stats={[
+        {
+          icon: <Speed />,
+          value: "50%",
+          label: "Faster Migration",
+          description: "Average improvement in migration speed"
+        },
+        {
+          icon: <TrendingUp />,
+          value: "30%",
+          label: "Cost Reduction",
+          description: "Average reduction in migration costs"
+        },
+        {
+          icon: <CheckCircle />,
+          value: "100%",
+          label: "Success Rate",
+          description: "Successful migration rate achieved"
+        },
+        {
+          icon: <Verified />,
+          value: "200+",
+          label: "SAP Projects",
+          description: "SAP migration projects completed"
+        }
+      ]}
+
+      // Final CTA
+      finalCtaTitle="Ready to Transform Your SAP Systems?"
+      finalCtaSubtitle="Join hundreds of companies that have already successfully migrated to S/4HANA with our services. Let's discuss how we can help you achieve similar results."
+      finalCtaButtonText="Schedule SAP Migration Consultation"
+      finalCtaButtonLink="/contact"
+
+      // Blog & Case Studies
+      blogTitle="SAP Migration Insights & Updates"
+      blogSubtitle="Stay informed with our latest SAP migration research, industry trends, and thought leadership content"
+      caseStudyTitle="SAP Migration Success Stories"
+      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with SAP S/4HANA migration"
+
+      // Theme
+      theme="light"
+    />
   );
 };
 

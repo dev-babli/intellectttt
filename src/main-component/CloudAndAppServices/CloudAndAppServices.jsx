@@ -33,7 +33,7 @@ const CloudAndAppServices = () => {
       heroDescription="Accelerate your digital transformation with our comprehensive cloud and application services. From cloud migration to modern application development, we help organizations build scalable, secure, and innovative solutions."
       heroButtonText="Start Your Journey"
       heroButtonLink="/contact"
-      heroBackgroundImage="/images/bg/image-belowhero.webp"
+      heroBackgroundImage="/herosectionimages/Sliders/cloud.webp"
       heroTextColor="white"
       heroFeatures={[
         "Cloud Migration & Modernization",

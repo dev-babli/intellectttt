@@ -26,7 +26,8 @@ const NLPComputerVision = () => {
       heroDescription="We help companies harness the power of Natural Language Processing and Computer Vision to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions. Transform how your systems understand and process text, images, and video."
       heroButtonText="Start NLP & CV Journey"
       heroButtonLink="/contact"
-      heroBackgroundImage="/AiGenAi/NLPComputer-vision.webp"
+      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroTextColor="white"
       heroFeatures={[
         {
           icon: <Psychology />,

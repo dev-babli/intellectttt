@@ -29,9 +29,8 @@ const AIAndGenAIPpractice = () => {
       heroDescription="Unlock the power of artificial intelligence and generative AI to automate processes, gain insights, and drive unprecedented growth."
       heroButtonText="Start Your AI Journey"
       heroButtonLink="/contact"
-      heroBackgroundImage="/AI-and-gen-ai-practice.webp"
-      heroVariant="minimal"
-      heroTheme="dark"
+      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroTextColor="white"
 
       // Problem/Solution Section
       problemSolutionTitle="The AI Challenge & Our Solution"

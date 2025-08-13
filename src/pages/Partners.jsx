@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Icon1 from "../images/icon/BD.webp";
-import Icon2 from "../images/icon/Catalent.webp";
+import Icon1 from "../images/icon/Abbott.webp";
+import Icon2 from "../images/icon/Bayer.webp";
 import Icon3 from "../images/icon/Cordis.webp";
-import Icon4 from "../images/icon/Deloitte.webp";
-import Icon5 from "../images/icon/Edwards-Lifesciences.webp";
-import Icon6 from "../images/icon/Fidelity.webp";
-import Icon7 from "../images/icon/Getinge.webp";
-import Icon8 from "../images/icon/HCL.webp";
-import Icon9 from "../images/icon/IBM.webp";
-import Icon10 from "../images/icon/johnson and johnson.webp";
-import Icon11 from "../images/icon/L&T.webp";
-import Icon12 from "../images/icon/Livanova.webp";
-import Icon13 from "../images/icon/Moderna.webp";
-import Icon14 from "../images/icon/Satate-Street.webp";
-import Icon15 from "../images/icon/Terumo.webp";
-import Icon16 from "../images/icon/Vertex.webp";
-import Icon17 from "../images/icon/Zimmer-Biomet.webp";
+import Icon4 from "../images/icon/Embecta.webp";
+import Icon5 from "../images/icon/Exel.webp";
+import Icon6 from "../images/icon/Integra.webp";
+import Icon7 from "../images/icon/Livanova.webp";
+import Icon8 from "../images/icon/Medline.webp";
+import Icon9 from "../images/icon/Philips.webp";
+import Icon10 from "../images/icon/ThermoFisher.webp";
+import Icon11 from "../images/icon/Terumo.webp";
+import Icon12 from "../images/icon/Xylem.webp";
+import Icon13 from "../images/icon/Alkermes.webp";
+import Icon14 from "../images/icon/PSB.webp";
+import Icon15 from "../images/icon/MTRN.webp";
+import Icon16 from "../images/icon/Aya.webp";
+import Icon17 from "../images/icon/Rentschler.webp";
 
 const Partners = () => {
   const [selectedIndustry, setSelectedIndustry] = useState("all");
@@ -24,23 +24,23 @@ const Partners = () => {
 
   // All partners data with industry categorization
   const allPartners = [
-    { name: "BD", logo: Icon1, industry: "healthcare" },
-    { name: "Catalent", logo: Icon2, industry: "pharmaceuticals" },
+    { name: "Abbott", logo: Icon1, industry: "healthcare" },
+    { name: "Bayer", logo: Icon2, industry: "pharmaceuticals" },
     { name: "Cordis", logo: Icon3, industry: "healthcare" },
-    { name: "Deloitte", logo: Icon4, industry: "consulting" },
-    { name: "Edwards Lifesciences", logo: Icon5, industry: "healthcare" },
-    { name: "Fidelity", logo: Icon6, industry: "finance" },
-    { name: "Getinge", logo: Icon7, industry: "healthcare" },
-    { name: "HCL", logo: Icon8, industry: "technology" },
-    { name: "IBM", logo: Icon9, industry: "technology" },
-    { name: "Johnson & Johnson", logo: Icon10, industry: "healthcare" },
-    { name: "L&T", logo: Icon11, industry: "engineering" },
-    { name: "LivaNova", logo: Icon12, industry: "healthcare" },
-    { name: "Moderna", logo: Icon13, industry: "pharmaceuticals" },
-    { name: "State Street", logo: Icon14, industry: "finance" },
-    { name: "Terumo", logo: Icon15, industry: "healthcare" },
-    { name: "Vertex", logo: Icon16, industry: "pharmaceuticals" },
-    { name: "Zimmer Biomet", logo: Icon17, industry: "healthcare" },
+    { name: "Embecta", logo: Icon4, industry: "healthcare" },
+    { name: "Exel", logo: Icon5, industry: "healthcare" },
+    { name: "Integra", logo: Icon6, industry: "healthcare" },
+    { name: "Livanova", logo: Icon7, industry: "healthcare" },
+    { name: "Medline", logo: Icon8, industry: "healthcare" },
+    { name: "Philips", logo: Icon9, industry: "healthcare" },
+    { name: "Thermo Fisher", logo: Icon10, industry: "healthcare" },
+    { name: "Terumo", logo: Icon11, industry: "healthcare" },
+    { name: "Xylem", logo: Icon12, industry: "healthcare" },
+    { name: "Alkermes", logo: Icon13, industry: "pharmaceuticals" },
+    { name: "PSB Industries", logo: Icon14, industry: "healthcare" },
+    { name: "MTRN", logo: Icon15, industry: "healthcare" },
+    { name: "Aya", logo: Icon16, industry: "healthcare" },
+    { name: "Rentschler", logo: Icon17, industry: "healthcare" },
   ];
 
   const industries = [
