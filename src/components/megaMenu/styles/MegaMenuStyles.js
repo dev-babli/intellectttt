@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // Header Container
 export const HeaderContainer = styled.header`
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;

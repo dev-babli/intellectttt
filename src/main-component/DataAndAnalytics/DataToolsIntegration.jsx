@@ -1,127 +1,229 @@
-import React, { Fragment, useState } from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
-import { CssBaseline } from "@mui/material";
-import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
-import CloudQueueIcon from "@mui/icons-material/CloudQueue";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import HubIcon from "@mui/icons-material/Hub";
-import InsightsIcon from "@mui/icons-material/Insights";
-import SyncAltIcon from "@mui/icons-material/SyncAlt";
+import React from "react";
+import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
+import { 
+  Speed, 
+  TrendingUp, 
+  Cloud, 
+  Security, 
+  Analytics, 
+  AutoAwesome,
+  SmartToy,
+  DataUsage,
+  Psychology,
+  CheckCircle,
+  Memory,
+  IntegrationInstructions,
+  Sensors,
+  Autorenew,
+  RocketLaunch,
+  Lightbulb,
+  AutoFixHigh,
+  Storage,
+  Dashboard,
+  Build,
+  Shield
+} from '@mui/icons-material';
 
-import StorageIcon from "@mui/icons-material/Storage";
-import DataObjectIcon from "@mui/icons-material/DataObject";
-// import InsightsIcon from "@mui/icons-material/Insights";
-
-const features = [
-  {
-    icon: <CloudQueueIcon sx={{ color: "#0288d1", fontSize: 34 }} />,
-    title: "Cloud-Native Data Lakes",
-    description:
-      "Build scalable and secure data lakes using Azure Data Lake for unified storage and analytics across your enterprise.",
-  },
-  {
-    icon: <AcUnitIcon sx={{ color: "#0288d1", fontSize: 34 }} />,
-    title: "Modern Data Warehousing",
-    description:
-      "Leverage Snowflake’s cloud-native architecture for elastic compute, storage separation, and effortless data sharing.",
-  },
-  {
-    icon: <BarChartIcon sx={{ color: "#0288d1", fontSize: 34 }} />,
-    title: "Power BI Dashboards",
-    description:
-      "Create dynamic dashboards and reports with Power BI to deliver real-time insights and executive visibility.",
-  },
-  {
-    icon: <HubIcon sx={{ color: "#0288d1", fontSize: 34 }} />,
-    title: "Seamless Data Integration",
-    description:
-      "Integrate structured and unstructured data from various sources to fuel advanced analytics and decision-making.",
-  },
-  {
-    icon: <InsightsIcon sx={{ color: "#0288d1", fontSize: 34 }} />,
-    title: "Advanced Analytics Enablement",
-    description:
-      "Enable predictive and prescriptive analytics by aligning your data platforms with AI/ML workflows.",
-  },
-  {
-    icon: <SyncAltIcon sx={{ color: "#0288d1", fontSize: 34 }} />,
-    title: "Real-Time Data Sync",
-    description:
-      "Ensure real-time data availability with robust ETL/ELT pipelines between Azure, Snowflake, and Power BI.",
-  },
-];
-
-const Datafeatures = [
-  {
-    icon: <StorageIcon sx={{ color: "#0078D4", fontSize: 36 }} />,
-    title: "Lakehouse Architecture",
-    description:
-      "Combine data lake flexibility with warehouse performance—bridging batch and streaming pipelines for modern analytics use cases.",
-  },
-  {
-    icon: <DataObjectIcon sx={{ color: "#29B5E8", fontSize: 36 }} />,
-    title: "Snowflake ELT Workflows",
-    description:
-      "Create efficient ELT pipelines within Snowflake—optimizing data transformation, modeling, and sharing with near-zero maintenance overhead.",
-  },
-  {
-    icon: <InsightsIcon sx={{ color: "#F2C811", fontSize: 36 }} />,
-    title: "Interactive BI Dashboards",
-    description:
-      "Deliver real-time business intelligence through interactive dashboards, automated KPIs, and drill-down visualizations in Power BI.",
-  },
-];
 const DataToolsIntegration = () => {
-  // Scroll to top when component mounts
-  useScrollToTop();
   return (
-    <Fragment>
-      <div className="sco_agency">
-        <div className="page_content service-single-page">
-          <HeroSectionTitle
-            title="Azure Data Lake, Snowflake, Power BI"
-            subtitle="Maximize the value of your data with a modern analytics ecosystem powered by Azure Data Lake, Snowflake, and Power BI."
-            buttonText="TALK TO OUR EXPERTS"
-            buttonLink="#contact"
-            backgroundImage="/Data-Analytics-Header.webp"
-          />
-          <CssBaseline />
-          <FeaturesSection features={features} />
-          <DataSection
-            title="Unify. Analyze. Scale."
-            description={`Maximize the value of your data with a modern analytics ecosystem powered by Azure Data Lake, Snowflake, and Power BI.
+    <MasterSubServiceTemplate
+      // Hero Section - Minimal
+      heroTitle="Azure Data Lake, Snowflake & Power BI"
+      heroSubtitle="Enterprise Data Platform"
+      heroDescription="Unify, store, and visualize data at scale with enterprise-grade data platforms and advanced analytics. Build comprehensive data solutions using Azure Data Lake, Snowflake, and Power BI for powerful insights."
+      heroButtonText="Explore Tools"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/images/1d.webp"
+      heroFeatures={[
+        "Data Warehousing",
+        "Real-time Analytics",
+        "Advanced Visualization",
+        "Enterprise Integration"
+      ]}
 
-We help organizations unify disparate data sources, store them efficiently in scalable cloud lakes or warehouses, and visualize actionable insights through interactive dashboards.
+      // Problem/Solution Section
+      problemSolutionTitle="The Data Tools Integration Challenge & Our Solution"
+      problemSolutionSubtitle="We understand the complexities of data platform integration and have the expertise to build unified data solutions"
+      problems={[
+        {
+          title: "Data Platform Fragmentation",
+          description: "Multiple disconnected data platforms that prevent unified analytics and create data silos across the organization."
+        },
+        {
+          title: "Real-time Processing Complexity",
+          description: "Difficulty processing and analyzing data in real-time with traditional data warehouse solutions."
+        },
+        {
+          title: "Visualization & Reporting Gaps",
+          description: "Lack of powerful visualization tools and reporting capabilities that prevent data-driven decision making."
+        }
+      ]}
+      solutions={[
+        {
+          title: "Unified Data Platform",
+          description: "Integrated data platform using Azure Data Lake, Snowflake, and Power BI for comprehensive data management."
+        },
+        {
+          title: "Real-time Analytics Pipeline",
+          description: "End-to-end real-time data processing and analytics pipeline for instant insights and decision making."
+        },
+        {
+          title: "Advanced Visualization & Reporting",
+          description: "Powerful visualization and reporting capabilities with Power BI for data-driven insights and storytelling."
+        }
+      ]}
+      problemSolutionVariant="split"
 
-From ingesting and organizing raw data in Azure Data Lake to building robust Snowflake schemas and delivering business insights via Power BI—we design end-to-end data pipelines that fuel decision-making.
+      // Service Offerings
+      serviceOfferingsTitle="Our Data Tools Integration Services"
+      serviceOfferingsSubtitle="Comprehensive data platform integration services designed to unify your data ecosystem"
+      services={[
+        {
+          icon: <Storage />,
+          title: "Azure Data Lake Integration",
+          description: "Design and implement Azure Data Lake solutions for scalable data storage and processing.",
+          features: [
+            "Data lake architecture",
+            "Scalable storage",
+            "Data processing"
+          ],
+          badge: "Most Popular",
+          link: "/contact",
+          ctaText: "Azure Data Lake"
+        },
+        {
+          icon: <Analytics />,
+          title: "Snowflake Data Warehouse",
+          description: "Implement Snowflake data warehouse for cloud-native analytics and data warehousing.",
+          features: [
+            "Cloud-native warehouse",
+            "Multi-cloud support",
+            "Performance optimization"
+          ],
+          badge: "Trending",
+          link: "/contact",
+          ctaText: "Snowflake Solutions"
+        },
+        {
+          icon: <Dashboard />,
+          title: "Power BI Implementation",
+          description: "Deploy Power BI for advanced data visualization and business intelligence reporting.",
+          features: [
+            "Interactive dashboards",
+            "Real-time reporting",
+            "Advanced analytics"
+          ],
+          link: "/contact",
+          ctaText: "Power BI"
+        },
+        {
+          icon: <Build />,
+          title: "Platform Integration",
+          description: "Seamlessly integrate Azure Data Lake, Snowflake, and Power BI for unified data solutions.",
+          features: [
+            "End-to-end integration",
+            "Data pipeline design",
+            "Unified analytics"
+          ],
+          link: "/contact",
+          ctaText: "Platform Integration"
+        }
+      ]}
+      serviceOfferingsVariant="default"
 
-Whether it's real-time analytics, governed self-service BI, or cross-platform integration—our expertise ensures your data works smarter, faster, and harder for your business.`}
-            features={Datafeatures}
-            ctaText="Let's Connect"
-            ctaLink="/contact"
-          />
-          <TechnologyLogos />
-          {}
-        </div>
-      </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      // Benefits Section
+      benefitsTitle="Why Choose Our Data Tools Integration Services"
+      benefitsSubtitle="Discover the tangible benefits and outcomes you can expect from our data platform solutions"
+      benefits={[
+        {
+          icon: <Speed />,
+          title: "Real-time Data Processing",
+          description: "Process and analyze data in real-time with unified data platforms for instant insights and decision making.",
+          features: [
+            "Real-time analytics",
+            "Instant insights",
+            "Live dashboards"
+          ],
+          metric: {
+            value: "Real-time",
+            label: "Data Processing"
+          }
+        },
+        {
+          icon: <TrendingUp />,
+          title: "Unified Data Platform",
+          description: "Single source of truth for all data with integrated platforms that eliminate silos and improve data quality.",
+          features: [
+            "Data unification",
+            "Quality improvement",
+            "Silo elimination"
+          ],
+          metric: {
+            value: "100%",
+            label: "Data Unification"
+          }
+        },
+        {
+          icon: <Analytics />,
+          title: "Advanced Analytics",
+          description: "Powerful analytics capabilities with advanced visualization and reporting for data-driven insights.",
+          features: [
+            "Advanced visualization",
+            "Predictive analytics",
+            "Business intelligence"
+          ],
+          metric: {
+            value: "50+",
+            label: "Analytics Models"
+          }
+        }
+      ]}
 
-        </Fragment>
+      // Stats Section
+      statsTitle="Proven Data Tools Results"
+      statsSubtitle="Numbers that speak for themselves - real outcomes from our data platform implementations"
+      stats={[
+        {
+          icon: <Speed />,
+          value: "Real-time",
+          label: "Data Processing",
+          description: "Real-time data processing and analytics"
+        },
+        {
+          icon: <TrendingUp />,
+          value: "100%",
+          label: "Data Unification",
+          description: "Complete data platform integration"
+        },
+        {
+          icon: <Analytics />,
+          value: "50+",
+          label: "Analytics Models",
+          description: "Advanced analytics models deployed"
+        },
+        {
+          icon: <CheckCircle />,
+          value: "99.9%",
+          label: "Platform Uptime",
+          description: "Guaranteed uptime for data platforms"
+        }
+      ]}
+
+      // Final CTA
+      finalCtaTitle="Ready to Unify Your Data Platform?"
+      finalCtaSubtitle="Join hundreds of companies that have already transformed their data capabilities with our data tools integration services. Let's discuss how we can help you achieve similar results."
+      finalCtaButtonText="Schedule Data Platform Consultation"
+      finalCtaButtonLink="/contact"
+
+      // Blog & Case Studies
+      blogTitle="Data Tools Integration Insights & Updates"
+      blogSubtitle="Stay informed with our latest data platform research, industry trends, and thought leadership content"
+      caseStudyTitle="Data Platform Success Stories"
+      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with data platform integration"
+
+      // Theme
+      theme="light"
+    />
   );
 };
 

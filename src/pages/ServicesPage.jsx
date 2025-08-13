@@ -394,8 +394,8 @@ const ServicesPage = () => {
                         <Typography
                           variant="h3"
                           sx={{
-                            fontWeight: 700,
-                            fontSize: { xs: '1.8rem', md: '2.5rem' },
+                            fontWeight: 800,
+                            fontSize: { xs: '2.7rem', md: '3.75rem' },
                             mb: 1
                           }}
                         >
@@ -405,7 +405,10 @@ const ServicesPage = () => {
                           variant="h6"
                           sx={{
                             opacity: 0.9,
-                            fontWeight: 400
+                            fontWeight: 400,
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
                           }}
                         >
                           {category.services.length} specialized services

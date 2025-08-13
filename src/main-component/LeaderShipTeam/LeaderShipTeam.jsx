@@ -77,29 +77,7 @@ const LeaderShipTeam = () => {
           </div>
         </section>
 
-        {/* Kranthi Kiran Profile */}
-        <section className="team pt-30">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-12">
-                <TeamIntroSection
-                  imageSrc="/1716540118_12b16ee785c09331faa8.png"
-                  imageAlt="Kranthi Kiran Damuluri - Founder & CEO"
-                  testimonialText="Kranthi Kiran Damuluri is the visionary leader behind Intellectt Inc.'s evolution into a global force in AI, Data Engineering, and Digital Transformation."
-                  testimonialName="Kranthi Kiran Damuluri"
-                  testimonialTitle="Founder & Chief Executive Officer, Intellectt Inc"
-                  sectionOverline="ABOUT KRANTHI"
-                  sectionTitle="The Visionary Leader"
-                  sectionDescription="With a strong foundation in engineering, technology, and business operations, Kranthi has over 15 years of experience driving growth and building high-performing global teams. Under his leadership, Intellectt has transitioned from its staffing roots to become a full-fledged IT Development and Consulting company, delivering intelligent, secure, and scalable solutions to clients worldwide. His deep expertise spans across industries such as Healthcare, Life Sciences, and Technology, where he has successfully led complex projects, streamlined operations, and built future-ready digital ecosystems. Kranthi's passion lies in solving real-world challenges through innovation. His commitment to excellence, operational efficiency, and technology-driven growth has been instrumental in positioning Intellectt as a trusted partner for businesses looking to embrace the future. With a proven track record of building global delivery capabilities, mentoring diverse teams, and fostering a culture of innovation, Kranthi continues to lead Intellectt's mission to engineer intelligent solutions that empower businesses to operate smarter, faster, and more efficiently."
-                  buttonText="LEARN MORE ABOUT KRANTHI"
-                  onButtonClick={() => console.log("Clicked Learn More")}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Kiran Madala Profile */}
+        {/* Kiran Madala Profile - President (First) */}
         <section className="team pt-30">
           <div className="container">
             <div className="row justify-content-center">
@@ -114,6 +92,30 @@ const LeaderShipTeam = () => {
                   sectionTitle="The Strategic Leader"
                   sectionDescription="Kiran Madala serves as President at Intellectt Inc, bringing strategic vision and operational excellence to drive the company's continued growth and success. With extensive experience in business operations and technology leadership, Kiran plays a pivotal role in shaping Intellectt's strategic direction and ensuring operational excellence across all business functions. His leadership combines deep industry knowledge with a forward-thinking approach to technology and business transformation."
                   buttonText="LEARN MORE ABOUT KIRAN"
+                  onButtonClick={() => console.log("Clicked Learn More")}
+                  reversed={false}
+                  textAlign="left"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Kranthi Kiran Profile - CEO (Second) */}
+        <section className="team pt-30">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12">
+                <TeamIntroSection
+                  imageSrc="/1716540118_12b16ee785c09331faa8.png"
+                  imageAlt="Kranthi Kiran Damuluri - Founder & CEO"
+                  testimonialText="Kranthi Kiran Damuluri is the visionary leader behind Intellectt Inc.'s evolution into a global force in AI, Data Engineering, and Digital Transformation."
+                  testimonialName="Kranthi Kiran Damuluri"
+                  testimonialTitle="Founder & Chief Executive Officer, Intellectt Inc"
+                  sectionOverline="ABOUT KRANTHI"
+                  sectionTitle="The Visionary Leader"
+                  sectionDescription="With a strong foundation in engineering, technology, and business operations, Kranthi has over 15 years of experience driving growth and building high-performing global teams. Under his leadership, Intellectt has transitioned from its staffing roots to become a full-fledged IT Development and Consulting company, delivering intelligent, secure, and scalable solutions to clients worldwide. His deep expertise spans across industries such as Healthcare, Life Sciences, and Technology, where he has successfully led complex projects, streamlined operations, and built future-ready digital ecosystems. Kranthi's passion lies in solving real-world challenges through innovation. His commitment to excellence, operational efficiency, and technology-driven growth has been instrumental in positioning Intellectt as a trusted partner for businesses looking to embrace the future. With a proven track record of building global delivery capabilities, mentoring diverse teams, and fostering a culture of innovation, Kranthi continues to lead Intellectt's mission to engineer intelligent solutions that empower businesses to operate smarter, faster, and more efficiently."
+                  buttonText="LEARN MORE ABOUT KRANTHI"
                   onButtonClick={() => console.log("Clicked Learn More")}
                   reversed={true}
                   textAlign="left"

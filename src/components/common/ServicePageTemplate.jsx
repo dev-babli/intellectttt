@@ -52,65 +52,136 @@ const ServicePageTemplate = ({
 
   return (
     <Fragment>
-      <div className="sco_agency">
-        <div className="page_content service-single-page">
+      <div className="sco_agency" style={{ 
+        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+        minHeight: '100vh'
+      }}>
+        <div className="page_content service-single-page" style={{
+          position: 'relative',
+          zIndex: 1
+        }}>
           {/* Hero Section */}
-          <ModernHeroSection
-            title={heroTitle}
-            subtitle={heroSubtitle}
-            description={heroDescription}
-            buttonText={heroButtonText}
-            buttonLink={heroButtonLink}
-            backgroundImage={heroBackgroundImage}
-            features={heroFeatures}
-          />
+          <div style={{ 
+            position: 'relative',
+            marginBottom: '0'
+          }}>
+            <ModernHeroSection
+              title={heroTitle}
+              subtitle={heroSubtitle}
+              description={heroDescription}
+              buttonText={heroButtonText}
+              buttonLink={heroButtonLink}
+              backgroundImage={heroBackgroundImage}
+              features={heroFeatures}
+            />
+          </div>
           
           {/* Who Are We Section */}
           {whoAreWeParagraphs.length > 0 && (
-            <WhoAreWeSection
-              heading={whoAreWeHeading}
-              subheading={whoAreWeSubheading}
-              paragraphs={whoAreWeParagraphs}
-              stats={whoAreWeStats}
-            />
+            <div style={{ 
+              position: 'relative',
+              marginTop: '0',
+              marginBottom: '0'
+            }}>
+              <WhoAreWeSection
+                heading={whoAreWeHeading}
+                subheading={whoAreWeSubheading}
+                paragraphs={whoAreWeParagraphs}
+                stats={whoAreWeStats}
+              />
+            </div>
           )}
           
           {/* Service Section */}
-          {showServiceSection && <ServiceSection {...serviceSectionProps} />}
+          {showServiceSection && (
+            <div style={{ 
+              position: 'relative',
+              marginTop: '0',
+              marginBottom: '0',
+              background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+              borderRadius: '20px 20px 0 0',
+              marginTop: '-20px',
+              paddingTop: '40px'
+            }}>
+              <ServiceSection {...serviceSectionProps} />
+            </div>
+          )}
           
           {/* Service Cards */}
           {showServiceCards && serviceCards.length > 0 && (
-            <ModernServiceCard 
-              cards={serviceCards} 
-              title={serviceCardsTitle}
-              subtitle={serviceCardsSubtitle}
-            />
+            <div style={{ 
+              position: 'relative',
+              marginTop: '0',
+              marginBottom: '0'
+            }}>
+              <ModernServiceCard 
+                cards={serviceCards} 
+                title={serviceCardsTitle}
+                subtitle={serviceCardsSubtitle}
+              />
+            </div>
           )}
           
           {/* Alliances Section */}
-          {showAlliancesSection && <AlliancesSection />}
+          {showAlliancesSection && (
+            <div style={{ 
+              position: 'relative',
+              marginTop: '0',
+              marginBottom: '0',
+              background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+              paddingTop: '40px',
+              paddingBottom: '40px'
+            }}>
+              <AlliancesSection />
+            </div>
+          )}
           
           {/* Additional Components */}
           {additionalComponents.map((Component, index) => (
-            <Component key={index} />
+            <div key={index} style={{ 
+              position: 'relative',
+              marginTop: '0',
+              marginBottom: '0'
+            }}>
+              <Component />
+            </div>
           ))}
         </div>
       </div>
       
       {/* Blog Section */}
-      <OptimizedBlogSection 
-        title={blogTitle}
-        subtitle={blogSubtitle}
-      />
+      <div style={{ 
+        position: 'relative',
+        background: '#ffffff',
+        paddingTop: '40px',
+        paddingBottom: '40px'
+      }}>
+        <OptimizedBlogSection 
+          title={blogTitle}
+          subtitle={blogSubtitle}
+        />
+      </div>
       
       {/* Case Study Section */}
-      <OptimizedCaseStudySection 
-        title={caseStudyTitle}
-        subtitle={caseStudySubtitle}
-      />
+      <div style={{ 
+        position: 'relative',
+        background: '#ffffff',
+        paddingTop: '20px',
+        paddingBottom: '40px'
+      }}>
+        <OptimizedCaseStudySection 
+          title={caseStudyTitle}
+          subtitle={caseStudySubtitle}
+        />
+      </div>
       
       {/* Footer */}
-      <Footer />
+      <div style={{ 
+        position: 'relative',
+        background: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)'
+      }}>
+        <Footer />
+      </div>
     </Fragment>
   );
 };

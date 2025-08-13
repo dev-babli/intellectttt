@@ -17,10 +17,10 @@ const ServicesSection = () => {
             variant="h3"
             sx={{
               textAlign: 'center',
-              fontWeight: 600,
+              fontWeight: 800,
               color: BRAND_COLORS.darkGray,
               mb: 6,
-              fontSize: { xs: '1.25rem', md: '1.75rem' },
+              fontSize: { xs: '1.875rem', md: '2.625rem' },
             }}
           >
             Our Services

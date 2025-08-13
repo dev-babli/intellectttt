@@ -1,128 +1,239 @@
-import React, { Fragment, useState } from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
-import { CssBaseline } from "@mui/material";
-import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
+import React from "react";
+import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
+import { 
+  Speed, 
+  TrendingUp, 
+  Memory, 
+  IntegrationInstructions,
+  Sensors,
+  Autorenew,
+  Security,
+  RocketLaunch,
+  Lightbulb,
+  AutoFixHigh,
+  SmartToy,
+  Psychology,
+  CheckCircle
+} from '@mui/icons-material';
 
-import MemoryIcon from "@mui/icons-material/Memory";
-import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
-import SpeedIcon from "@mui/icons-material/Speed";
-import SensorsIcon from "@mui/icons-material/Sensors";
-import AutorenewIcon from "@mui/icons-material/Autorenew";
-import SecurityIcon from "@mui/icons-material/Security";
-
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import LightbulbIcon from "@mui/icons-material/Lightbulb";
-import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
-
-const features = [
-  {
-    icon: <MemoryIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Autonomous Agent Design",
-    description:
-      "We specialize in building AI agents that can reason, learn, and act independently.",
-  },
-  {
-    icon: (
-      <IntegrationInstructionsIcon sx={{ color: "#e85d04", fontSize: 30 }} />
-    ),
-    title: "End-to-End Integration",
-    description:
-      "From data pipelines to deployment, we handle the full lifecycle of agentic systems.",
-  },
-  {
-    icon: <SpeedIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Fast & Scalable Solutions",
-    description:
-      "Our frameworks are built to scale rapidly across use cases and environments.",
-  },
-  {
-    icon: <SensorsIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Multimodal Intelligence",
-    description:
-      "We create agents that understand and interact using text, voice, images, and IoT data.",
-  },
-  {
-    icon: <AutorenewIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Continuous Adaptation",
-    description:
-      "Our agents are designed to evolve and improve through real-time feedback loops.",
-  },
-  {
-    icon: <SecurityIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Enterprise-Grade Security",
-    description:
-      "All solutions are secured by design—ensuring safety, compliance, and data integrity.",
-  },
-];
-
-const Datafeatures = [
-  {
-    icon: <RocketLaunchIcon sx={{ color: "#5b5fc7", fontSize: 30 }} />,
-    title: "Limitless Career Progression",
-    description:
-      "We offer hands-on exposure to frontier technologies and projects that matter—nurturing both technical excellence and leadership growth.",
-  },
-  {
-    icon: <LightbulbIcon sx={{ color: "#f5b400", fontSize: 30 }} />,
-    title: "Collaborative & Creative Spaces",
-    description:
-      "Enjoy a work culture that values experimentation, idea-sharing, and wellness, with amenities designed to keep your mind sharp and your body energized.",
-  },
-  {
-    icon: <AutoFixHighIcon sx={{ color: "#fb5607", fontSize: 30 }} />,
-    title: "Seamless Transition for Tech Professionals",
-    description:
-      "New to AI? Transition smoothly into the world of intelligent systems with our upskilling support and mentorship programs.",
-  },
-];
 const AgenticAI = () => {
-  // Scroll to top when component mounts
-  useScrollToTop();
   return (
-    <Fragment>
-      <div className="sco_agency">
-        <div className="page_content service-single-page">
-          <HeroSectionTitle
-            title="Agentic AI & AI Agents Consulting"
-            subtitle="We help companies harness the power of Gen AI and LLM to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
-            buttonText="TALK TO OUR EXPERTS"
-            buttonLink="#contact"
-            backgroundImage="/AiGenAi/Agenticagents.webp"
-          />
-          <CssBaseline />
-          <FeaturesSection features={features} />
-          <DataSection
-            title="Unlock Intelligent Autonomy for Your Business"
-            description={`Generative AI is not just about content generation—it's about augmenting decision-making, personalizing customer experiences, and unlocking new operational efficiencies.
+    <MasterSubServiceTemplate
+      // Hero Section - Minimal
+      heroTitle="Agentic AI & AI Agents Consulting"
+      heroSubtitle="Intelligent Autonomous Systems"
+      heroDescription="We help companies harness the power of autonomous AI agents to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
+      heroButtonText="Start Building Agents"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/AiGenAi/Agenticagents.webp"
+      heroVariant="minimal"
+      heroTheme="dark"
 
-We help businesses harness the full potential of Large Language Models (LLMs) and Generative AI by integrating them into core platforms and pipelines—safely, responsibly, and at scale.
+      // Problem/Solution Section
+      problemSolutionTitle="The Agentic AI Challenge & Our Solution"
+      problemSolutionSubtitle="We understand the complexities of building autonomous AI systems and have the expertise to make them work for your business"
+      problems={[
+        {
+          title: "Complex Decision Making",
+          description: "Manual decision-making processes that are slow, error-prone, and don't scale with business growth."
+        },
+        {
+          title: "Limited Automation Scope",
+          description: "Traditional automation can only handle rule-based tasks, missing opportunities for intelligent, adaptive workflows."
+        },
+        {
+          title: "Integration Complexity",
+          description: "Difficulty connecting AI agents with existing systems and ensuring seamless operation across platforms."
+        }
+      ]}
+      solutions={[
+        {
+          title: "Intelligent Autonomous Agents",
+          description: "AI agents that can perceive, reason, plan, and act independently while aligning with business objectives."
+        },
+        {
+          title: "Adaptive Workflow Automation",
+          description: "Dynamic automation that learns from experience and adapts to changing business conditions and requirements."
+        },
+        {
+          title: "Seamless System Integration",
+          description: "End-to-end integration services that connect AI agents with existing infrastructure and business processes."
+        }
+      ]}
+      problemSolutionVariant="split"
 
-Whether it’s a chatbot that adapts to tone and context, or a document assistant that drafts, summarizes, and translates—our Gen AI integrations make your teams faster and smarter.`}
-            features={Datafeatures}
-            ctaText="Let's Connect"
-            ctaLink="/contact"
-          />
-          <TechnologyLogos />
-          {}
-        </div>
-      </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      // Service Offerings (Benefits/Use Cases)
+      serviceOfferingsTitle="Key Benefits of Agentic AI"
+      serviceOfferingsSubtitle="Discover how autonomous AI agents can transform your business operations"
+      services={[
+        {
+          icon: <Memory />,
+          title: "Autonomous Agent Design",
+          description: "We specialize in building AI agents that can reason, learn, and act independently.",
+          features: [
+            "Cognitive reasoning capabilities",
+            "Learning and adaptation",
+            "Goal-oriented behavior"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <IntegrationInstructions />,
+          title: "End-to-End Integration",
+          description: "From data pipelines to deployment, we handle the full lifecycle of agentic systems.",
+          features: [
+            "System architecture design",
+            "API integration",
+            "Data pipeline setup"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <Speed />,
+          title: "Fast & Scalable Solutions",
+          description: "Our frameworks are built to scale rapidly across use cases and environments.",
+          features: [
+            "Horizontal scaling",
+            "Performance optimization",
+            "Load balancing"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <Sensors />,
+          title: "Multimodal Intelligence",
+          description: "We create agents that understand and interact using text, voice, images, and IoT data.",
+          features: [
+            "Natural language processing",
+            "Computer vision",
+            "Voice recognition"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <Autorenew />,
+          title: "Continuous Adaptation",
+          description: "Our agents are designed to evolve and improve through real-time feedback loops.",
+          features: [
+            "Continuous learning",
+            "Performance monitoring",
+            "Adaptive algorithms"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <Security />,
+          title: "Enterprise-Grade Security",
+          description: "All solutions are secured by design—ensuring safety, compliance, and data integrity.",
+          features: [
+            "Access control",
+            "Data encryption",
+            "Audit trails"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        }
+      ]}
+      serviceOfferingsVariant="default"
 
-        </Fragment>
+      // Benefits Section (Process/Workflow)
+      benefitsTitle="How Agentic AI Works"
+      benefitsSubtitle="Our proven process for building and deploying intelligent autonomous agents"
+      benefits={[
+        {
+          icon: <RocketLaunch />,
+          title: "Agent Design & Planning",
+          description: "Define agent capabilities, goals, and decision-making frameworks based on your business requirements.",
+          features: [
+            "Requirement analysis",
+            "Agent architecture design",
+            "Decision tree mapping"
+          ],
+          metric: {
+            value: "2-3",
+            label: "Weeks Design"
+          }
+        },
+        {
+          icon: <Lightbulb />,
+          title: "Development & Training",
+          description: "Build and train AI agents using advanced machine learning models and reinforcement learning techniques.",
+          features: [
+            "Model development",
+            "Training data preparation",
+            "Reinforcement learning"
+          ],
+          metric: {
+            value: "4-6",
+            label: "Weeks Development"
+          }
+        },
+        {
+          icon: <AutoFixHigh />,
+          title: "Integration & Deployment",
+          description: "Seamlessly integrate agents with your existing systems and deploy them in production environments.",
+          features: [
+            "System integration",
+            "API development",
+            "Testing & validation"
+          ],
+          metric: {
+            value: "1-2",
+            label: "Weeks Deployment"
+          }
+        }
+      ]}
+
+      // FAQ Section
+      faqTitle="Frequently Asked Questions"
+      faqSubtitle="Find answers to common questions about Agentic AI and autonomous agents"
+      faqItems={[
+        {
+          question: "What is the difference between traditional automation and Agentic AI?",
+          answer: "Traditional automation follows predefined rules, while Agentic AI can reason, learn, and make decisions independently. AI agents can adapt to new situations, handle complex scenarios, and improve over time through learning."
+        },
+        {
+          question: "How do you ensure AI agents make the right decisions?",
+          answer: "We implement multiple layers of safety including goal alignment, human oversight, monitoring systems, and fallback mechanisms. Agents are trained on extensive data and continuously monitored for performance and safety."
+        },
+        {
+          question: "Can AI agents integrate with our existing systems?",
+          answer: "Yes, our AI agents are designed to integrate seamlessly with existing systems through APIs, data connectors, and custom integration points. We ensure compatibility with your current infrastructure and workflows."
+        },
+        {
+          question: "How long does it take to build and deploy an AI agent?",
+          answer: "Typical development time is 8-12 weeks depending on complexity. This includes design, development, testing, and deployment phases. We follow agile methodologies for iterative improvements."
+        },
+        {
+          question: "What kind of ROI can I expect from Agentic AI?",
+          answer: "Our clients typically see 40-60% efficiency improvements and 5-10x faster processing times. ROI varies by use case, but most see payback within 6-12 months of deployment."
+        },
+        {
+          question: "How do you handle security and compliance for AI agents?",
+          answer: "We implement enterprise-grade security including encryption, access controls, audit trails, and compliance frameworks. All agents are designed with security-first principles and can meet industry-specific compliance requirements."
+        }
+      ]}
+
+      // Final CTA
+      finalCtaTitle="Ready to Build Intelligent Agents?"
+      finalCtaSubtitle="Let's discuss how autonomous AI agents can transform your business operations and drive unprecedented efficiency."
+      finalCtaButtonText="Schedule Agentic AI Consultation"
+      finalCtaButtonLink="/contact"
+
+      // Blog & Case Studies
+      blogTitle="Agentic AI Insights"
+      blogSubtitle="Stay informed with our latest research on autonomous AI systems and intelligent agents"
+      caseStudyTitle="Agentic AI Success Stories"
+      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with autonomous AI agents"
+
+      // Theme
+      theme="light"
+    />
   );
 };
 

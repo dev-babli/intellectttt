@@ -22,12 +22,19 @@ const WhoAreWeSection = ({
       <Grid container spacing={4} alignItems="center">
         {/* Heading + Paragraphs */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" fontWeight={700} color={cardColor} gutterBottom>
+          <Typography variant="h4" fontWeight={800} color={cardColor} gutterBottom sx={{ fontSize: { xs: '2.25rem', md: '3rem' } }}>
             {heading}
           </Typography>
           <Typography
             color="text.secondary"
-            sx={{ mb: 2, fontWeight: "bold", fontSize: "1.2rem" }}
+            sx={{ 
+              mb: 2, 
+              fontWeight: "bold", 
+              fontSize: "1.2rem",
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+            }}
           >
             {subheading}
           </Typography>

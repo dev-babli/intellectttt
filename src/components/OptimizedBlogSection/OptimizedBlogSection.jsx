@@ -9,43 +9,47 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
     window.scrollTo(10, 0);
   };
 
-  // Sample blog data with hero section webp images
+  // Use actual blog data from API
   const sampleBlogs = [
     {
       id: 1,
-      title: "AI-Powered Data Analytics: Transforming Business Intelligence",
-      author: "Dr. Sarah Chen",
-      role: "Data Scientist",
-      image: `/herosectionimages/${encodeURIComponent("Data Driven intelleigence solution.webp")}`,
-      category: "AI & ML",
-      date: "2024-01-15"
+      title: "AI in Neuroimaging: IXICO's Cloud Transformation",
+      author: "farugia",
+      role: "Senior Consultant",
+      image: "/images/blog/blog-1.jpeg",
+      category: "Technology",
+      date: "October 4, 2022",
+      slug: "AI-in-Neuroimaging-IXICOs-Cloud-Transformation"
     },
     {
       id: 2,
-      title: "Cloud Migration Strategies: A Comprehensive Guide for Enterprises",
-      author: "Michael Rodriguez",
-      role: "Cloud Architect",
-      image: `/herosectionimages/${encodeURIComponent("Scalable Cloud and Application.webp")}`,
-      category: "Cloud Computing",
-      date: "2024-01-12"
+      title: "Cutting Clinical Trial Costs with AI Biomarkers",
+      author: "Andrew",
+      role: "Creative Director",
+      image: "/images/blog/blog-2.jpg",
+      category: "Branding",
+      date: "October 4, 2023",
+      slug: "Cutting-Clinical-Trial-Costs-with-AI-Biomarkers"
     },
     {
       id: 3,
-      title: "DevOps Culture: Building High-Performance Development Teams",
-      author: "Jennifer Park",
-      role: "DevOps Engineer",
-      image: `/herosectionimages/${encodeURIComponent("Agentic Ai.webp")}`,
-      category: "DevOps",
-      date: "2024-01-10"
+      title: "Scaling Medical Imaging with Microsoft Cloud",
+      author: "Kurtz",
+      role: "Art Director",
+      image: "/images/blog/blog-3.jpg",
+      category: "SEO",
+      date: "October 4, 2024",
+      slug: "Scaling-Medical-Imaging-with-Microsoft-Cloud"
     },
     {
       id: 4,
-      title: "Digital Transformation in Healthcare: Leveraging Technology for Better Care",
-      author: "Dr. Robert Kim",
-      role: "Healthcare IT Specialist",
-      image: `/herosectionimages/${encodeURIComponent("Data & Analytics.webp")}`,
-      category: "Healthcare",
-      date: "2024-01-08"
+      title: "Faster Neuro Trials with AI-Powered Imaging",
+      author: "Alex",
+      role: "Art Director",
+      image: "/images/blog/da-img04.jpg",
+      category: "Branding",
+      date: "October 5, 2023",
+      slug: "Faster-Neuro-Trials-with-AI-Powered-Imaging"
     }
   ];
 
@@ -81,7 +85,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
     <section className="optimized-blog-section py-160" style={{ 
       background: '#ffffff',
       position: 'relative',
-      padding: '120px 0'
+      padding: '80px 0'
     }}>
       <div className="container">
         <motion.div
@@ -150,7 +154,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                   boxShadow: '0 6px 24px rgba(0, 0, 0, 0.08)',
                   border: '1px solid #f0f0f0',
                   position: 'relative',
-                  height: '600px',
+                  height: '1200px',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
@@ -163,7 +167,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                 {/* Top Half - Image Section */}
                 <div className="blog-image-section" style={{
                   position: 'relative',
-                  height: '70%',
+                  height: '40%',
                   overflow: 'hidden'
                 }}>
                   <motion.div
@@ -201,15 +205,16 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                     top: '16px',
                     left: '16px',
                     background: 'rgba(255, 255, 255, 0.95)',
-                    color: '#1a1a1a',
-                    padding: '8px 12px',
-                    borderRadius: '6px',
-                    fontSize: '11px',
-                    fontWeight: '700',
+                    color: '#1e293b',
+                    padding: '6px 10px',
+                    borderRadius: '4px',
+                    fontSize: '10px',
+                    fontWeight: '600',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.8px',
+                    letterSpacing: '0.1em',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.3)',
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                     zIndex: 3
                   }}>
                     {blog.category}
@@ -218,11 +223,13 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
 
                 {/* Bottom Half - Content Section */}
                 <div className="blog-content-section" style={{
-                  height: '30%',
-                  padding: '24px',
+                  height: '60%',
+                  padding: '40px',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between'
+                  justifyContent: 'flex-start',
+                  overflow: 'visible',
+                  backgroundColor: '#ffffff'
                 }}>
                   <div>
                     <h3
@@ -230,25 +237,29 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                       style={{
                         fontSize: '20px',
                         fontWeight: '600',
-                        lineHeight: '1.4',
-                        color: '#1a1a1a',
+                        lineHeight: '1.3',
+                        color: '#1e293b',
                         margin: 0,
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden'
+                        marginBottom: '24px',
+                        display: 'block',
+                        overflow: 'visible',
+                        wordWrap: 'break-word',
+                        hyphens: 'auto',
+                        letterSpacing: '-0.02em',
+                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                        minHeight: '80px'
                       }}
                     >
                       <Link
                         onClick={ClickHandler}
-                        to={`/blog-single/${blog.id}`}
+                        to={`/blog-single/${blog.slug}`}
                         style={{
                           textDecoration: 'none',
                           color: 'inherit',
                           transition: 'color 0.3s ease'
                         }}
-                        onMouseEnter={(e) => e.target.style.color = '#007bff'}
-                        onMouseLeave={(e) => e.target.style.color = '#1a1a1a'}
+                        onMouseEnter={(e) => e.target.style.color = '#5b21b6'}
+                        onMouseLeave={(e) => e.target.style.color = '#1e293b'}
                       >
                         {blog.title}
                       </Link>
@@ -258,20 +269,25 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                   <div className="blog-bottom-row" style={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    marginTop: 'auto',
+                    paddingTop: '20px'
                   }}>
                     <Link
                       onClick={ClickHandler}
-                      to={`/blog-single/${blog.id}`}
+                      to={`/blog-single/${blog.slug}`}
                       className="view-article-btn"
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
                         textDecoration: 'none',
-                        color: '#007bff',
-                        fontWeight: '600',
+                        color: '#667eea',
+                        fontWeight: '500',
                         fontSize: '13px',
-                        transition: 'all 0.3s ease'
+                        transition: 'all 0.3s ease',
+                        letterSpacing: '0.05em',
+                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                        textTransform: 'uppercase'
                       }}
                       onMouseEnter={(e) => {
                         e.target.style.transform = 'translateX(3px)';

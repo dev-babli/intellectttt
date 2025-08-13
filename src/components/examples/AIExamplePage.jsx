@@ -1,5 +1,5 @@
-import React from "react";
-import MasterMainServiceTemplate from "../../components/templates/MasterMainServiceTemplate";
+import React from 'react';
+import MasterMainServiceTemplate from '../templates/MasterMainServiceTemplate';
 import { 
   Speed, 
   TrendingUp, 
@@ -10,27 +10,36 @@ import {
   SmartToy,
   DataUsage,
   Psychology,
-  CheckCircle,
-  Memory,
-  IntegrationInstructions,
-  Sensors,
-  Autorenew,
-  RocketLaunch,
-  Lightbulb,
-  AutoFixHigh
+  CheckCircle
 } from '@mui/icons-material';
 
-const AIAndGenAIPpractice = () => {
+const AIExamplePage = () => {
   return (
     <MasterMainServiceTemplate
-      // Hero Section - Minimal
-      heroTitle="AI & Gen AI Industrialization Consulting"
-      heroSubtitle="Transform Your Business"
-      heroDescription="Unlock the power of artificial intelligence and generative AI to automate processes, gain insights, and drive unprecedented growth."
+      // Hero Section
+      heroTitle="AI-Powered Business Transformation"
+      heroSubtitle="Next-Generation Intelligence"
+      heroDescription="Unlock the power of artificial intelligence to automate, optimize, and innovate across your entire organization. From machine learning to generative AI, we deliver cutting-edge solutions that drive real business results."
       heroButtonText="Start Your AI Journey"
       heroButtonLink="/contact"
-      heroBackgroundImage="/AI-and-gen-ai-practice.webp"
-      heroVariant="minimal"
+      heroBackgroundImage="/public/images/ai-brain-network.jpg"
+      heroFeatures={[
+        {
+          icon: <Speed />,
+          title: "10x Faster Processing",
+          description: "Accelerate workflows with intelligent automation"
+        },
+        {
+          icon: <TrendingUp />,
+          title: "30% Cost Reduction",
+          description: "Optimize operations and reduce manual overhead"
+        },
+        {
+          icon: <Analytics />,
+          title: "Real-time Insights",
+          description: "Make data-driven decisions with AI-powered analytics"
+        }
+      ]}
       heroTheme="dark"
 
       // Problem/Solution Section
@@ -38,23 +47,23 @@ const AIAndGenAIPpractice = () => {
       problemSolutionSubtitle="We understand the complexities of AI implementation and have the expertise to make it work for your business"
       problems={[
         {
-          title: "AI Implementation Complexity",
-          description: "Overwhelming technical requirements, integration challenges, and uncertainty about ROI and success metrics."
-        },
-        {
           title: "Data Silos & Fragmentation",
           description: "Critical business data scattered across multiple systems, preventing actionable insights and unified decision-making."
         },
         {
           title: "Manual Process Bottlenecks",
           description: "Time-consuming manual tasks reducing productivity and creating operational inefficiencies that impact customer experience."
+        },
+        {
+          title: "Lack of Predictive Capabilities",
+          description: "Reactive decision-making instead of proactive strategies, missing opportunities and failing to anticipate market changes."
+        },
+        {
+          title: "AI Implementation Complexity",
+          description: "Overwhelming technical requirements, integration challenges, and uncertainty about ROI and success metrics."
         }
       ]}
       solutions={[
-        {
-          title: "End-to-End AI Implementation",
-          description: "Complete AI transformation services from strategy to deployment, with proven methodologies and guaranteed ROI tracking."
-        },
         {
           title: "Unified Data Platform",
           description: "Centralized data management with real-time analytics, breaking down silos and providing a single source of truth for all business intelligence."
@@ -62,90 +71,78 @@ const AIAndGenAIPpractice = () => {
         {
           title: "Intelligent Process Automation",
           description: "AI-powered workflow automation that handles repetitive tasks, freeing your team to focus on strategic initiatives and innovation."
+        },
+        {
+          title: "Predictive Analytics Engine",
+          description: "Advanced machine learning models that forecast trends, identify patterns, and provide actionable insights for proactive decision-making."
+        },
+        {
+          title: "End-to-End AI Implementation",
+          description: "Complete AI transformation services from strategy to deployment, with proven methodologies and guaranteed ROI tracking."
         }
       ]}
       problemSolutionVariant="split"
 
       // Service Offerings
-      serviceOfferingsTitle="Our AI & Gen AI Services"
-      serviceOfferingsSubtitle="Comprehensive artificial intelligence solutions designed to transform every aspect of your business"
+      serviceOfferingsTitle="Our AI Solutions"
+      serviceOfferingsSubtitle="Comprehensive artificial intelligence services designed to transform every aspect of your business"
       services={[
         {
           icon: <SmartToy />,
-          title: "Agentic AI & AI Agents",
-          description: "Building intelligent, autonomous AI-driven agents that can perform complex tasks and make decisions independently.",
+          title: "Machine Learning Solutions",
+          description: "Custom ML models tailored to your specific business needs, from predictive analytics to recommendation engines.",
           features: [
-            "Autonomous decision making",
-            "Task automation",
-            "Intelligent workflows"
+            "Custom model development",
+            "Predictive analytics",
+            "Recommendation systems",
+            "Anomaly detection"
           ],
           badge: "Most Popular",
-          link: "/service/ai-and-gen-ai/agents",
-          ctaText: "Explore Agentic AI"
+          link: "/services/machine-learning",
+          ctaText: "Explore ML Solutions"
         },
         {
           icon: <AutoAwesome />,
-          title: "Gen AI & LLM Integration",
-          description: "Integrating Generative AI and Large Language Models into business systems for enhanced capabilities.",
+          title: "Generative AI",
+          description: "Transform content creation, customer interactions, and creative processes with cutting-edge generative AI technology.",
           features: [
-            "LLM integration",
             "Content generation",
-            "Natural language processing"
+            "Chatbot development",
+            "Image and video creation",
+            "Code generation"
           ],
           badge: "Trending",
-          link: "/service/ai-and-gen-ai/llm",
+          link: "/services/generative-ai",
           ctaText: "Discover GenAI"
         },
         {
-          icon: <Psychology />,
-          title: "NLP & Computer Vision",
-          description: "Natural language processing and computer vision solutions for understanding text, images, and video.",
-          features: [
-            "Text analysis & processing",
-            "Image recognition",
-            "Video analytics"
-          ],
-          link: "/service/ai-and-gen-ai/nlp",
-          ctaText: "Learn More"
-        },
-        {
           icon: <DataUsage />,
-          title: "ML Engineering & MLOps",
-          description: "End-to-end machine learning engineering and operations for scalable AI solutions.",
+          title: "Data Analytics & BI",
+          description: "Turn your data into actionable insights with advanced analytics, visualization, and business intelligence solutions.",
           features: [
-            "ML pipeline development",
-            "Model deployment",
-            "Monitoring & maintenance"
+            "Real-time dashboards",
+            "Advanced analytics",
+            "Data visualization",
+            "KPI tracking"
           ],
-          link: "/service/ai-and-gen-ai/mlops",
-          ctaText: "Explore MLOps"
-        },
-        {
-          icon: <Speed />,
-          title: "AI Automation (AI + RPA)",
-          description: "Intelligent process automation combining AI and RPA for streamlined workflows.",
-          features: [
-            "Process automation",
-            "Intelligent workflows",
-            "Cognitive automation"
-          ],
-          link: "/service/ai-and-gen-ai/automation",
+          link: "/services/data-analytics",
           ctaText: "Learn More"
         },
         {
-          icon: <Security />,
-          title: "AI Advisory & Responsible AI",
-          description: "Strategic AI guidance with a focus on ethics, governance, and responsible implementation.",
+          icon: <Psychology />,
+          title: "Natural Language Processing",
+          description: "Enable your systems to understand, interpret, and generate human language for enhanced customer experiences.",
           features: [
-            "Ethical AI frameworks",
-            "Governance & compliance",
-            "Risk assessment"
+            "Sentiment analysis",
+            "Text classification",
+            "Language translation",
+            "Document processing"
           ],
-          link: "/service/ai-and-gen-ai/responsible",
-          ctaText: "Explore Advisory"
+          link: "/services/nlp",
+          ctaText: "Explore NLP"
         }
       ]}
-      serviceOfferingsVariant="default"
+      serviceOfferingsVariant="featured"
 
       // Benefits Section
       benefitsTitle="Why Choose Our AI Solutions"
@@ -158,7 +155,8 @@ const AIAndGenAIPpractice = () => {
           features: [
             "Automated data processing",
             "Real-time analytics",
-            "Instant decision support"
+            "Instant decision support",
+            "Streamlined workflows"
           ],
           metric: {
             value: "10x",
@@ -172,7 +170,8 @@ const AIAndGenAIPpractice = () => {
           features: [
             "Reduced manual work",
             "Optimized resource allocation",
-            "Lower operational costs"
+            "Lower operational costs",
+            "Improved efficiency"
           ],
           metric: {
             value: "30%",
@@ -186,7 +185,8 @@ const AIAndGenAIPpractice = () => {
           features: [
             "Predictive analytics",
             "Trend identification",
-            "Performance optimization"
+            "Performance optimization",
+            "Strategic planning"
           ],
           metric: {
             value: "95%",
@@ -297,4 +297,5 @@ const AIAndGenAIPpractice = () => {
   );
 };
 
-export default AIAndGenAIPpractice;
+export default AIExamplePage;
+

@@ -9,39 +9,47 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
     window.scrollTo(10, 0);
   };
 
-  // Sample case study data with hero section images
+  // Sample case study data with rich content and slugs
   const sampleCaseStudies = [
     {
       id: 1,
-      title: "Digital Transformation Success: Manufacturing Automation",
+      title: "AI-Powered Manufacturing Revolution",
       client: "TechCorp Industries",
       category: "Manufacturing",
       image: "/herosectionimages/engineers-brainstorming-ways-use-ai.jpg",
-      description: "Implemented Industry 4.0 solutions for 40% efficiency improvement"
+      description: "40% efficiency improvement",
+      details: "Implemented Industry 4.0 solutions with predictive maintenance and real-time monitoring systems. Reduced downtime by 60% and increased production capacity by 40%.",
+      slug: "ai-powered-manufacturing-revolution"
     },
     {
       id: 2,
-      title: "Cloud Migration Excellence: Financial Services Platform",
+      title: "Enterprise Cloud Transformation",
       client: "FinServe Solutions",
       category: "Financial Services",
       image: "/herosectionimages/cloud-computing-illustration.jpg",
-      description: "Migrated legacy systems to cloud with 99.9% uptime"
+      description: "99.9% uptime achieved",
+      details: "Migrated legacy systems to AWS with zero downtime. Enhanced security compliance and reduced infrastructure costs by 45% while achieving 99.9% uptime.",
+      slug: "enterprise-cloud-transformation"
     },
     {
       id: 3,
-      title: "AI-Powered Healthcare Analytics Platform",
+      title: "Healthcare AI Diagnostics Platform",
       client: "HealthTech Innovations",
       category: "Healthcare",
       image: "/herosectionimages/ai-human-collaboration.jpg",
-      description: "Developed AI-driven diagnostic tools improving accuracy by 35%"
+      description: "35% accuracy improvement",
+      details: "Developed AI-driven diagnostic tools using machine learning algorithms. Improved diagnostic accuracy by 35% and reduced patient wait times by 50%.",
+      slug: "healthcare-ai-diagnostics-platform"
     },
     {
       id: 4,
-      title: "SAP S/4HANA Implementation & Optimization",
+      title: "SAP S/4HANA Digital Core",
       client: "Global Manufacturing Co.",
       category: "SAP Services",
       image: "/herosectionimages/generative-ai-interface.jpg",
-      description: "Streamlined operations with integrated ERP solution"
+      description: "Streamlined operations",
+      details: "Implemented SAP S/4HANA with integrated ERP solutions. Streamlined operations across 15 global locations and improved data visibility by 80%.",
+      slug: "sap-s4hana-digital-core"
     }
   ];
 
@@ -77,7 +85,7 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
     <section className="optimized-case-study-section py-160" style={{ 
       background: '#ffffff',
       position: 'relative',
-      padding: '120px 0'
+      padding: '80px 0'
     }}>
       <div className="container">
         <motion.div
@@ -137,29 +145,41 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
               key={caseStudy.id}
               variants={itemVariants}
             >
-              <motion.div
-                className="case-study-card h-100"
-                style={{
-                  background: '#ffffff',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  boxShadow: '0 6px 24px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid #f0f0f0',
-                  position: 'relative',
-                  height: '600px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease'
-                }}
-                whileHover={{
-                  y: -6,
-                  boxShadow: '0 16px 48px rgba(0, 0, 0, 0.15)',
-                  transition: { duration: 0.3 }
-                }}
-              >
+                              <motion.div
+                  className="case-study-card h-100"
+                  style={{
+                    background: '#ffffff',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    boxShadow: '0 6px 24px rgba(0, 0, 0, 0.08)',
+                    border: '1px solid #f0f0f0',
+                    position: 'relative',
+                    height: '1200px',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  whileHover={{
+                    y: -6,
+                    boxShadow: '0 16px 48px rgba(0, 0, 0, 0.15)',
+                    transition: { duration: 0.3 }
+                  }}
+                  onMouseEnter={(e) => {
+                    const bottomRow = e.currentTarget.querySelector('.case-study-bottom-row');
+                    const details = e.currentTarget.querySelector('.case-study-details');
+                    if (bottomRow) bottomRow.style.opacity = '1';
+                    if (details) details.style.opacity = '1';
+                  }}
+                  onMouseLeave={(e) => {
+                    const bottomRow = e.currentTarget.querySelector('.case-study-bottom-row');
+                    const details = e.currentTarget.querySelector('.case-study-details');
+                    if (bottomRow) bottomRow.style.opacity = '0';
+                    if (details) details.style.opacity = '0';
+                  }}
+                >
                 {/* Top Half - Image Section */}
                 <div className="case-study-image-section" style={{
                   position: 'relative',
-                  height: '70%',
+                  height: '40%',
                   overflow: 'hidden'
                 }}>
                   <motion.div
@@ -197,15 +217,16 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
                     top: '16px',
                     left: '16px',
                     background: 'rgba(255, 255, 255, 0.95)',
-                    color: '#1a1a1a',
-                    padding: '8px 12px',
-                    borderRadius: '6px',
-                    fontSize: '11px',
-                    fontWeight: '700',
+                    color: '#1e293b',
+                    padding: '6px 10px',
+                    borderRadius: '4px',
+                    fontSize: '10px',
+                    fontWeight: '600',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.8px',
+                    letterSpacing: '0.1em',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255, 255, 255, 0.3)',
+                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                     zIndex: 3
                   }}>
                     {caseStudy.category}
@@ -214,60 +235,97 @@ const OptimizedCaseStudySection = ({ title = "Success Stories", subtitle = "Disc
 
                 {/* Bottom Half - Content Section */}
                 <div className="case-study-content-section" style={{
-                  height: '30%',
-                  padding: '24px',
+                  height: '60%',
+                  padding: '28px',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between'
+                  justifyContent: 'flex-start',
+                  overflow: 'visible',
+                  backgroundColor: '#ffffff'
                 }}>
                   <div>
                     <h3
                       className="case-study-title mb-4"
                       style={{
-                        fontSize: '20px',
+                        fontSize: '18px',
                         fontWeight: '600',
-                        lineHeight: '1.4',
-                        color: '#1a1a1a',
+                        lineHeight: '1.3',
+                        color: '#1e293b',
                         margin: 0,
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden'
+                        marginBottom: '16px',
+                        display: 'block',
+                        overflow: 'visible',
+                        wordWrap: 'break-word',
+                        hyphens: 'auto',
+                        letterSpacing: '-0.02em',
+                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                        minHeight: '50px'
                       }}
                     >
                       <Link
                         onClick={ClickHandler}
-                        to={`/portfolio-single/${caseStudy.id}`}
+                        to={`/portfolio-single/${caseStudy.slug}`}
                         style={{
                           textDecoration: 'none',
                           color: 'inherit',
                           transition: 'color 0.3s ease'
                         }}
-                        onMouseEnter={(e) => e.target.style.color = '#007bff'}
-                        onMouseLeave={(e) => e.target.style.color = '#1a1a1a'}
+                        onMouseEnter={(e) => e.target.style.color = '#5b21b6'}
+                        onMouseLeave={(e) => e.target.style.color = '#1e293b'}
                       >
                         {caseStudy.title}
                       </Link>
                     </h3>
+                    
+                    {/* Description */}
+                    <p style={{
+                      fontSize: '14px',
+                      fontWeight: '500',
+                      color: '#667eea',
+                      margin: '0 0 12px 0',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                    }}>
+                      {caseStudy.description}
+                    </p>
+                    
+                    {/* Details - Hidden by default, shown on hover */}
+                    <div className="case-study-details" style={{
+                      fontSize: '13px',
+                      color: '#64748b',
+                      lineHeight: '1.5',
+                      margin: '0 0 16px 0',
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease',
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                    }}>
+                      {caseStudy.details}
+                    </div>
                   </div>
 
                   <div className="case-study-bottom-row" style={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    marginTop: 'auto',
+                    paddingTop: '20px',
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease'
                   }}>
                     <Link
                       onClick={ClickHandler}
-                      to={`/portfolio-single/${caseStudy.id}`}
+                      to={`/portfolio-single/${caseStudy.slug}`}
                       className="view-case-btn"
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
                         textDecoration: 'none',
-                        color: '#007bff',
-                        fontWeight: '600',
-                        fontSize: '13px',
-                        transition: 'all 0.3s ease'
+                        color: '#667eea',
+                        fontWeight: '500',
+                        fontSize: '12px',
+                        transition: 'all 0.3s ease',
+                        letterSpacing: '0.05em',
+                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                        textTransform: 'uppercase'
                       }}
                       onMouseEnter={(e) => {
                         e.target.style.transform = 'translateX(3px)';

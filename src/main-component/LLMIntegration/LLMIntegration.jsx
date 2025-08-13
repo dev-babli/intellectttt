@@ -1,127 +1,239 @@
-import React, { Fragment, useState } from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
-import { CssBaseline } from "@mui/material";
-import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
-import GroupIcon from "@mui/icons-material/Group";
-import SpeedIcon from "@mui/icons-material/Speed";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import VerifiedIcon from "@mui/icons-material/Verified";
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import SecurityIcon from "@mui/icons-material/Security";
-
-import PsychologyAltIcon from "@mui/icons-material/PsychologyAlt";
-import Diversity3Icon from "@mui/icons-material/Diversity3";
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-
-const features = [
-  {
-    icon: <GroupIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Expert Team Members",
-    description:
-      "We take pride in assembling a diverse and highly skilled team of AI experts.",
-  },
-  {
-    icon: <SpeedIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Fastest Customer Service",
-    description:
-      "We’re known for delivering rapid, reliable customer support whenever you need us.",
-  },
-  {
-    icon: <AttachMoneyIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Reasonable Pricing",
-    description:
-      "Our pricing is fair, flexible, and built to fit businesses of all sizes.",
-  },
-  {
-    icon: <VerifiedIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Proven Expertise",
-    description:
-      "Years of hands-on experience in GenAI and LLM deployment across industries.",
-  },
-  {
-    icon: <RocketLaunchIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Agile Implementation",
-    description:
-      "We ensure faster go-to-market with minimal disruption to your existing systems.",
-  },
-  {
-    icon: <SecurityIcon sx={{ color: "#e85d04", fontSize: 30 }} />,
-    title: "Data-Safe Solutions",
-    description:
-      "Our solutions are built with enterprise-grade security to protect your data and models.",
-  },
-];
-
-const Datafeatures = [
-  {
-    icon: <PsychologyAltIcon sx={{ color: "#5b5fc7", fontSize: 30 }} />,
-    title: "Frontier Tech Opportunities",
-    description:
-      "Join projects at the cutting edge of AI, including LLM tuning, retrieval-augmented generation (RAG), AI copilots, and autonomous agents.",
-  },
-  {
-    icon: <Diversity3Icon sx={{ color: "#f5b400", fontSize: 30 }} />,
-    title: "Supportive Work Culture",
-    description:
-      "Experience a modern, collaborative workspace where innovation thrives—complete with wellness support, flexible schedules, and open communication.",
-  },
-  {
-    icon: <TrendingUpIcon sx={{ color: "#fb5607", fontSize: 30 }} />,
-    title: "Career Shifts Welcome",
-    description:
-      "Looking to move into AI? We help professionals pivot into this exciting field with tailored mentorship, upskilling, and project-based learning.",
-  },
-];
+import React from "react";
+import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
+import { 
+  Speed, 
+  TrendingUp, 
+  Psychology, 
+  AutoAwesome,
+  DataUsage,
+  Security,
+  RocketLaunch,
+  Lightbulb,
+  AutoFixHigh,
+  SmartToy,
+  CheckCircle,
+  IntegrationInstructions,
+  Memory
+} from '@mui/icons-material';
 
 const LLMIntegration = () => {
-  // Scroll to top when component mounts
-  useScrollToTop();
   return (
-    <Fragment>
-      <div className="sco_agency">
-        <div className="page_content service-single-page">
-          <HeroSectionTitle
-            title="Gen AI & LLM Integration Consulting"
-            subtitle="We help companies harness the power of Gen AI and LLM to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
-            buttonText="TALK TO OUR EXPERTS"
-            buttonLink="#contact"
-            backgroundImage="/GenAI-LLM-Integration.webp"
-          />
-          <CssBaseline />
-          <FeaturesSection features={features} />
-          <DataSection
-            title="Unlock Intelligent Autonomy for Your Business"
-            description={`In an era where automation alone is not enough, businesses are turning to Agentic AI—AI systems that can perceive, reason, and act independently. Agentic AI goes beyond task execution. It plans, adapts, collaborates, and aligns with human objectives.
+    <MasterSubServiceTemplate
+      // Hero Section - Minimal
+      heroTitle="Gen AI & LLM Integration Consulting"
+      heroSubtitle="Transform Your Business with Large Language Models"
+      heroDescription="We help companies harness the power of Generative AI and Large Language Models to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
+      heroButtonText="Start LLM Integration"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/GenAI-LLM-Integration.webp"
+      heroVariant="minimal"
+      heroTheme="dark"
 
-Our advanced AI agent frameworks empower organizations to automate high-level decision-making, manage complex workflows, and dynamically respond to real-world environments.
+      // Problem/Solution Section
+      problemSolutionTitle="The LLM Integration Challenge & Our Solution"
+      problemSolutionSubtitle="We understand the complexities of integrating Large Language Models and have the expertise to make them work for your business"
+      problems={[
+        {
+          title: "Content Creation Bottlenecks",
+          description: "Manual content creation processes that are slow, expensive, and don't scale with business growth and customer demands."
+        },
+        {
+          title: "Integration Complexity",
+          description: "Difficulty connecting LLMs with existing systems, APIs, and ensuring seamless operation across platforms and workflows."
+        },
+        {
+          title: "Cost & Performance Concerns",
+          description: "High API costs, latency issues, and uncertainty about ROI and performance optimization for LLM implementations."
+        }
+      ]}
+      solutions={[
+        {
+          title: "Seamless LLM Integration",
+          description: "End-to-end integration services that connect LLMs with your existing infrastructure and business processes."
+        },
+        {
+          title: "Intelligent Content Generation",
+          description: "AI-powered content creation that maintains brand voice, quality standards, and delivers personalized experiences."
+        },
+        {
+          title: "Cost Optimization & Performance",
+          description: "Advanced optimization techniques to reduce costs, improve performance, and maximize ROI from LLM investments."
+        }
+      ]}
+      problemSolutionVariant="split"
 
-From autonomous customer service agents to intelligent supply chain managers—our solutions make AI work with you, not just for you.
-`}
-            features={Datafeatures}
-            ctaText="Let's Connect"
-            ctaLink="/contact"
-          />
-          <TechnologyLogos />
-          {}
-        </div>
-      </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      // Service Offerings (Benefits/Use Cases)
+      serviceOfferingsTitle="Key Benefits of LLM Integration"
+      serviceOfferingsSubtitle="Discover how Large Language Models can transform your business operations"
+      services={[
+        {
+          icon: <AutoAwesome />,
+          title: "Content Generation & Automation",
+          description: "Automate content creation for marketing, documentation, and customer communications.",
+          features: [
+            "Marketing copy generation",
+            "Documentation automation",
+            "Email campaign creation"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <Psychology />,
+          title: "Conversational AI & Chatbots",
+          description: "Build intelligent chatbots and virtual assistants that understand and respond naturally.",
+          features: [
+            "Customer support automation",
+            "Sales assistance",
+            "FAQ handling"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <DataUsage />,
+          title: "Data Analysis & Insights",
+          description: "Extract insights from unstructured data using advanced natural language processing.",
+          features: [
+            "Text analysis",
+            "Sentiment analysis",
+            "Trend identification"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <IntegrationInstructions />,
+          title: "API Integration & Customization",
+          description: "Integrate LLMs with your existing systems and customize them for your specific needs.",
+          features: [
+            "API development",
+            "Custom model training",
+            "System integration"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <Security />,
+          title: "Security & Compliance",
+          description: "Ensure your LLM implementations meet security standards and regulatory requirements.",
+          features: [
+            "Data privacy protection",
+            "Access control",
+            "Audit trails"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        },
+        {
+          icon: <Memory />,
+          title: "Knowledge Management",
+          description: "Build intelligent knowledge bases and document management systems powered by LLMs.",
+          features: [
+            "Document search",
+            "Knowledge extraction",
+            "Information retrieval"
+          ],
+          link: "/contact",
+          ctaText: "Learn More"
+        }
+      ]}
+      serviceOfferingsVariant="default"
 
-        </Fragment>
+      // Benefits Section (Process/Workflow)
+      benefitsTitle="How LLM Integration Works"
+      benefitsSubtitle="Our proven process for integrating Large Language Models into your business"
+      benefits={[
+        {
+          icon: <RocketLaunch />,
+          title: "Strategy & Planning",
+          description: "Define your LLM integration strategy, identify use cases, and plan the implementation roadmap.",
+          features: [
+            "Use case identification",
+            "Technology selection",
+            "ROI analysis"
+          ],
+          metric: {
+            value: "1-2",
+            label: "Weeks Planning"
+          }
+        },
+        {
+          icon: <Lightbulb />,
+          title: "Development & Integration",
+          description: "Develop custom LLM solutions and integrate them with your existing systems and workflows.",
+          features: [
+            "API development",
+            "System integration",
+            "Custom model training"
+          ],
+          metric: {
+            value: "4-8",
+            label: "Weeks Development"
+          }
+        },
+        {
+          icon: <AutoFixHigh />,
+          title: "Deployment & Optimization",
+          description: "Deploy LLM solutions in production and continuously optimize for performance and cost.",
+          features: [
+            "Production deployment",
+            "Performance monitoring",
+            "Cost optimization"
+          ],
+          metric: {
+            value: "1-2",
+            label: "Weeks Deployment"
+          }
+        }
+      ]}
+
+      // FAQ Section
+      faqTitle="Frequently Asked Questions"
+      faqSubtitle="Find answers to common questions about LLM integration and Generative AI"
+      faqItems={[
+        {
+          question: "What LLM models do you support?",
+          answer: "We support all major LLM providers including OpenAI GPT, Anthropic Claude, Google PaLM, and custom models. We help you choose the best model for your specific use case and budget."
+        },
+        {
+          question: "How much does LLM integration cost?",
+          answer: "Costs vary based on complexity and usage. We provide detailed cost analysis including development, API costs, and ongoing maintenance. Most clients see ROI within 3-6 months."
+        },
+        {
+          question: "Can LLMs integrate with our existing systems?",
+          answer: "Yes, we specialize in integrating LLMs with existing systems through APIs, webhooks, and custom connectors. We ensure seamless integration with your current infrastructure."
+        },
+        {
+          question: "How do you ensure content quality and brand consistency?",
+          answer: "We implement quality control systems, brand guidelines, and human oversight to ensure generated content meets your standards. We also provide training and fine-tuning for brand-specific outputs."
+        },
+        {
+          question: "What about data security and privacy?",
+          answer: "We implement enterprise-grade security measures including data encryption, access controls, and compliance with industry standards. We can deploy LLMs on-premise or in secure cloud environments."
+        },
+        {
+          question: "How long does LLM integration take?",
+          answer: "Typical integration time is 6-10 weeks depending on complexity. This includes planning, development, testing, and deployment phases. We follow agile methodologies for iterative improvements."
+        }
+      ]}
+
+      // Final CTA
+      finalCtaTitle="Ready to Integrate LLMs?"
+      finalCtaSubtitle="Let's discuss how Large Language Models can transform your business operations and drive unprecedented efficiency."
+      finalCtaButtonText="Schedule LLM Consultation"
+      finalCtaButtonLink="/contact"
+
+      // Blog & Case Studies
+      blogTitle="LLM Integration Insights"
+      blogSubtitle="Stay informed with our latest research on Large Language Models and Generative AI"
+      caseStudyTitle="LLM Integration Success Stories"
+      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with LLM integration"
+
+      // Theme
+      theme="light"
+    />
   );
 };
 

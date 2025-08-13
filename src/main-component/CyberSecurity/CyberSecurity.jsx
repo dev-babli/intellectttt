@@ -1,256 +1,255 @@
 import React from "react";
-import useScrollToTop from "../../hooks/useScrollToTop";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
-import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  Button,
-} from "@mui/material";
-import { Shield, Lock, Eye, AlertTriangle, Users, Zap } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import MasterMainServiceTemplate from "../../components/templates/MasterMainServiceTemplate";
+import { 
+  Speed, 
+  TrendingUp, 
+  Cloud, 
+  Security, 
+  Analytics, 
+  AutoAwesome,
+  SmartToy,
+  DataUsage,
+  Psychology,
+  CheckCircle,
+  Memory,
+  IntegrationInstructions,
+  Sensors,
+  Autorenew,
+  RocketLaunch,
+  Lightbulb,
+  AutoFixHigh,
+  Shield,
+  Lock,
+  Visibility,
+  Warning,
+  People,
+  FlashOn
+} from '@mui/icons-material';
 
 const CyberSecurity = () => {
-  // Scroll to top when component mounts
-  useScrollToTop();
-  const navigate = useNavigate();
-  const services = [
-    {
-      icon: <Shield size={48} />,
-      title: "Threat Detection & Response",
-      description:
-        "Advanced security monitoring and rapid incident response to protect your digital assets.",
-      color: "#dc2626",
-    },
-    {
-      icon: <Lock size={48} />,
-      title: "Identity & Access Management",
-      description:
-        "Comprehensive IAM solutions to secure user access and prevent unauthorized entry.",
-      color: "#059669",
-    },
-    {
-      icon: <Eye size={48} />,
-      title: "Security Monitoring",
-      description:
-        "24/7 security monitoring with real-time alerts and proactive threat prevention.",
-      color: "#7c3aed",
-    },
-    {
-      icon: <AlertTriangle size={48} />,
-      title: "Vulnerability Assessment",
-      description:
-        "Regular security audits and penetration testing to identify and fix vulnerabilities.",
-      color: "#ea580c",
-    },
-    {
-      icon: <Users size={48} />,
-      title: "Security Training",
-      description:
-        "Employee security awareness training to build a security-first culture.",
-      color: "#0891b2",
-    },
-    {
-      icon: <Zap size={48} />,
-      title: "Incident Response",
-      description:
-        "Rapid response protocols and recovery strategies for security incidents.",
-      color: "#be185d",
-    },
-  ];
-
   return (
-    <Box sx={{ minHeight: "100vh", backgroundColor: "#f8fafc" }}>
-      {/* Hero Section */}
-      <Box
-        sx={{
-          background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)",
-          color: "white",
-          py: 8,
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <Container maxWidth="xl">
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <Typography
-                variant="h1"
-                sx={{
-                  fontSize: { xs: "2.5rem", md: "3.5rem", lg: "4rem" },
-                  fontWeight: 700,
-                  mb: 3,
-                  lineHeight: 1.1,
-                }}
-              >
-                Cybersecurity Excellence
-              </Typography>
-              <Typography
-                variant="h5"
-                sx={{
-                  mb: 4,
-                  opacity: 0.9,
-                  lineHeight: 1.6,
-                  maxWidth: "600px",
-                }}
-              >
-                Protect your digital assets with cutting-edge security solutions
-                and proactive threat detection. Our comprehensive cybersecurity
-                services ensure your business stays secure in an evolving threat
-                landscape.
-              </Typography>
-              <Button
-                variant="contained"
-                size="large"
-                onClick={() => navigate("/contact")}
-                sx={{
-                  backgroundColor: "#dc2626",
-                  color: "white",
-                  px: 4,
-                  py: 1.5,
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                  "&:hover": {
-                    backgroundColor: "#b91c1c",
-                  },
-                }}
-              >
-                Secure Your Business
-              </Button>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "400px",
-                }}
-              >
-                <Shield size={200} color="#dc2626" />
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
+    <MasterMainServiceTemplate
+      // Hero Section - Minimal
+      heroTitle="Cybersecurity Excellence"
+      heroSubtitle="Protect Your Digital Assets"
+      heroDescription="Comprehensive cybersecurity solutions designed to protect your organization from evolving threats. From threat detection to incident response, we help you build a robust security posture."
+      heroButtonText="Secure Your Business"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/images/bg/image-belowhero.webp"
+      heroFeatures={[
+        "Threat Detection & Response",
+        "Identity & Access Management",
+        "Security Monitoring",
+        "Vulnerability Assessment"
+      ]}
 
-      {/* Services Section */}
-      <Container maxWidth="xl" sx={{ py: 8 }}>
-        <Typography
-          variant="h2"
-          sx={{
-            textAlign: "center",
-            mb: 6,
-            fontSize: { xs: "2rem", md: "2.5rem" },
-            fontWeight: 700,
-            color: "#1e293b",
-          }}
-        >
-          Our Cybersecurity Services
-        </Typography>
+      // Problem/Solution Section
+      problemSolutionTitle="The Cybersecurity Challenge & Our Solution"
+      problemSolutionSubtitle="We understand the complexities of cybersecurity and have the expertise to protect your business"
+      problems={[
+        {
+          title: "Evolving Threat Landscape",
+          description: "Sophisticated cyber threats that constantly evolve, making traditional security measures insufficient."
+        },
+        {
+          title: "Security Gaps & Vulnerabilities",
+          description: "Unidentified security weaknesses and gaps in existing infrastructure that expose organizations to risks."
+        },
+        {
+          title: "Compliance & Regulatory Requirements",
+          description: "Complex compliance requirements and regulatory standards that are difficult to maintain and audit."
+        }
+      ]}
+      solutions={[
+        {
+          title: "Advanced Threat Protection",
+          description: "Comprehensive threat detection and response systems that adapt to evolving cyber threats in real-time."
+        },
+        {
+          title: "Proactive Security Posture",
+          description: "Regular security assessments, vulnerability management, and proactive threat hunting to prevent attacks."
+        },
+        {
+          title: "Compliance & Governance",
+          description: "End-to-end compliance management with automated monitoring and reporting for regulatory requirements."
+        }
+      ]}
+      problemSolutionVariant="split"
 
-        <Grid container spacing={4}>
-          {services.map((service, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card
-                sx={{
-                  height: "100%",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  "&:hover": {
-                    transform: "translateY(-8px)",
-                    boxShadow: "0 12px 24px rgba(0,0,0,0.15)",
-                  },
-                }}
-              >
-                <CardContent sx={{ p: 4, textAlign: "center" }}>
-                  <Box sx={{ color: service.color, mb: 2 }}>{service.icon}</Box>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      mb: 2,
-                      fontWeight: 600,
-                      color: "#1e293b",
-                    }}
-                  >
-                    {service.title}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "#64748b",
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+      // Service Offerings
+      serviceOfferingsTitle="Our Cybersecurity Services"
+      serviceOfferingsSubtitle="Comprehensive cybersecurity solutions designed to protect your organization from all types of threats"
+      services={[
+        {
+          icon: <Shield />,
+          title: "Threat Detection & Response",
+          description: "Advanced security monitoring and rapid incident response to protect your digital assets.",
+          features: [
+            "Real-time monitoring",
+            "Incident response",
+            "Threat intelligence"
+          ],
+          badge: "Most Popular",
+          link: "/service/cybersecurity/threat-detection",
+          ctaText: "Explore Detection"
+        },
+        {
+          icon: <Lock />,
+          title: "Identity & Access Management",
+          description: "Comprehensive IAM solutions to secure user access and prevent unauthorized entry.",
+          features: [
+            "User authentication",
+            "Access control",
+            "Privilege management"
+          ],
+          badge: "Trending",
+          link: "/service/cybersecurity/iam",
+          ctaText: "IAM Solutions"
+        },
+        {
+          icon: <Visibility />,
+          title: "Security Monitoring",
+          description: "24/7 security monitoring with real-time alerts and proactive threat prevention.",
+          features: [
+            "24/7 monitoring",
+            "Real-time alerts",
+            "Proactive prevention"
+          ],
+          link: "/service/cybersecurity/monitoring",
+          ctaText: "Security Monitoring"
+        },
+        {
+          icon: <Warning />,
+          title: "Vulnerability Assessment",
+          description: "Regular security audits and penetration testing to identify and fix vulnerabilities.",
+          features: [
+            "Security audits",
+            "Penetration testing",
+            "Vulnerability management"
+          ],
+          link: "/service/cybersecurity/vulnerability",
+          ctaText: "Assessment"
+        },
+        {
+          icon: <People />,
+          title: "Security Training",
+          description: "Employee security awareness training to build a security-first culture.",
+          features: [
+            "Awareness training",
+            "Phishing simulation",
+            "Security culture"
+          ],
+          link: "/service/cybersecurity/training",
+          ctaText: "Security Training"
+        },
+        {
+          icon: <FlashOn />,
+          title: "Incident Response",
+          description: "Rapid response protocols and recovery strategies for security incidents.",
+          features: [
+            "Response protocols",
+            "Recovery strategies",
+            "Forensic analysis"
+          ],
+          link: "/service/cybersecurity/incident-response",
+          ctaText: "Incident Response"
+        }
+      ]}
+      serviceOfferingsVariant="default"
 
-      {/* CTA Section */}
-      <Box
-        sx={{
-          background: "linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)",
-          color: "white",
-          py: 8,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: "center" }}>
-            <Typography
-              variant="h3"
-              sx={{
-                mb: 3,
-                fontWeight: 700,
-              }}
-            >
-              Ready to Secure Your Business?
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                mb: 4,
-                opacity: 0.9,
-                maxWidth: "600px",
-                mx: "auto",
-              }}
-            >
-              Don't wait until it's too late. Contact our cybersecurity experts
-              today to assess your security posture and implement robust
-              protection measures.
-            </Typography>
-            <Button
-              variant="outlined"
-              size="large"
-              onClick={() => navigate("/contact")}
-              sx={{
-                borderColor: "white",
-                color: "white",
-                px: 4,
-                py: 1.5,
-                fontSize: "1.1rem",
-                fontWeight: 600,
-                "&:hover": {
-                  borderColor: "white",
-                  backgroundColor: "rgba(255,255,255,0.1)",
-                },
-              }}
-            >
-              Get Security Assessment
-            </Button>
-          </Box>
-        </Container>
-      </Box>
-    </Box>
+      // Benefits Section
+      benefitsTitle="Why Choose Our Cybersecurity Solutions"
+      benefitsSubtitle="Discover the tangible benefits and outcomes you can expect from our security transformation"
+      benefits={[
+        {
+          icon: <Security />,
+          title: "99.9% Threat Detection",
+          description: "Advanced threat detection capabilities that identify and neutralize threats before they impact your business.",
+          features: [
+            "Real-time detection",
+            "Automated response",
+            "Threat intelligence"
+          ],
+          metric: {
+            value: "99.9%",
+            label: "Detection Rate"
+          }
+        },
+        {
+          icon: <TrendingUp />,
+          title: "60% Risk Reduction",
+          description: "Comprehensive security measures that significantly reduce your organization's cyber risk exposure.",
+          features: [
+            "Risk assessment",
+            "Mitigation strategies",
+            "Continuous monitoring"
+          ],
+          metric: {
+            value: "60%",
+            label: "Risk Reduction"
+          }
+        },
+        {
+          icon: <CheckCircle />,
+          title: "Compliance Excellence",
+          description: "Full compliance with industry standards and regulatory requirements with automated monitoring and reporting.",
+          features: [
+            "Regulatory compliance",
+            "Automated reporting",
+            "Audit readiness"
+          ],
+          metric: {
+            value: "100%",
+            label: "Compliance Rate"
+          }
+        }
+      ]}
+
+      // Stats Section
+      statsTitle="Proven Security Results"
+      statsSubtitle="Numbers that speak for themselves - real outcomes from our cybersecurity implementations"
+      stats={[
+        {
+          icon: <Security />,
+          value: "99.9%",
+          label: "Threat Detection",
+          description: "Average threat detection rate across all security implementations"
+        },
+        {
+          icon: <TrendingUp />,
+          value: "60%",
+          label: "Risk Reduction",
+          description: "Average reduction in cyber risk exposure for our clients"
+        },
+        {
+          icon: <CheckCircle />,
+          value: "100%",
+          label: "Compliance Rate",
+          description: "Clients achieving full regulatory compliance"
+        },
+        {
+          icon: <Speed />,
+          value: "<5min",
+          label: "Response Time",
+          description: "Average incident response time for security threats"
+        }
+      ]}
+
+      // Final CTA
+      finalCtaTitle="Ready to Secure Your Business?"
+      finalCtaSubtitle="Join hundreds of companies that have already protected their operations with our cybersecurity solutions. Let's discuss how we can help you achieve similar results."
+      finalCtaButtonText="Schedule Security Consultation"
+      finalCtaButtonLink="/contact"
+
+      // Blog & Case Studies
+      blogTitle="Cybersecurity Insights & Updates"
+      blogSubtitle="Stay informed with our latest security research, threat intelligence, and thought leadership content"
+      caseStudyTitle="Security Success Stories"
+      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with cybersecurity implementation"
+
+      // Theme
+      theme="light"
+    />
   );
 };
 

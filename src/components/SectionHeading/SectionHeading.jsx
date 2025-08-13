@@ -10,6 +10,9 @@ export default function SectionHeading() {
           fontSize: { xs: "1rem", md: "1.5rem" },
           color: "#0199D3 !important",
           fontWeight: 400,
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
         }}
       >
         Our Suite of
@@ -18,8 +21,8 @@ export default function SectionHeading() {
       <Typography
         variant="h4"
         sx={{
-          fontWeight: "bold !important",
-          fontSize: { xs: "1.8rem", md: "3rem" },
+          fontWeight: 800,
+          fontSize: { xs: "2.7rem", md: "4.5rem" },
           color: "#0199D3!important",
           mt: 1,
         }}

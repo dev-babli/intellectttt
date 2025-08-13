@@ -14,7 +14,8 @@ const ModernHeroSection = ({
   gradient = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   features = [],
   showVideo = false,
-  videoId = null
+  videoId = null,
+  textColor = "auto" // "auto", "white", or "black"
 }) => {
   return (
     <Box
@@ -26,28 +27,16 @@ const ModernHeroSection = ({
         alignItems: 'center',
         overflow: 'hidden',
         background: backgroundImage 
-          ? `linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.6) 100%), url(${backgroundImage})`
+          ? `url(${backgroundImage})`
           : gradient,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* Animated Background Elements */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          opacity: 0.1,
-          background: 'radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%)',
-          animation: 'float 6s ease-in-out infinite',
-        }}
-      />
+      {/* Overlays and filters removed for clean design */}
       
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 3 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} lg={6}>
             <motion.div
@@ -83,13 +72,13 @@ const ModernHeroSection = ({
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem', lg: '4.5rem' },
-                  fontWeight: 800,
-                  color: '#1e293b',
-                  mb: 3,
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.02em',
-                  textShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                  fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem', lg: '2.25rem' },
+                  fontWeight: 700,
+                  color: textColor === "auto" || textColor === "white" ? '#ffffff' : '#1e293b',
+                  mb: 2,
+                  lineHeight: 1.2,
+                  letterSpacing: '-0.01em',
+                  textShadow: textColor === "auto" || textColor === "white" ? '0 2px 8px rgba(0,0,0,0.3)' : '0 1px 5px rgba(0,0,0,0.1)',
                 }}
               >
                 {title}
@@ -98,13 +87,14 @@ const ModernHeroSection = ({
               {/* Description - Hidden for minimal design */}
               {description && (
                 <Typography
-                  variant="h5"
+                  variant="body1"
                   sx={{
-                    color: 'rgba(255, 255, 255, 0.9)',
-                    mb: 4,
-                    lineHeight: 1.6,
+                    color: textColor === "auto" || textColor === "white" ? 'rgba(255, 255, 255, 0.9)' : 'rgba(30, 41, 59, 0.8)',
+                    mb: 3,
+                    lineHeight: 1.5,
                     fontWeight: 400,
-                    maxWidth: '600px',
+                    maxWidth: '500px',
+                    fontSize: { xs: '0.875rem', sm: '1rem' },
                   }}
                 >
                   {description}
