@@ -2,23 +2,13 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import pimg1 from '../../images/icon/Abbott.webp'
-import pimg2 from '../../images/icon/Bayer.webp'
-import pimg3 from '../../images/icon/Cordis.webp'
-import pimg4 from '../../images/icon/Embecta.webp'
-import pimg5 from '../../images/icon/Exel.webp'
-import pimg6 from '../../images/icon/Integra.webp'
-import pimg7 from '../../images/icon/Livanova.webp'
-import pimg8 from '../../images/icon/Medline.webp'
-import pimg9 from '../../images/icon/Philips.webp'
-import pimg10 from '../../images/icon/ThermoFisher.webp'
-import pimg11 from '../../images/icon/Terumo.webp'
-import pimg12 from '../../images/icon/Xylem.webp'
-import pimg13 from '../../images/icon/Alkermes.webp'
-import pimg14 from '../../images/icon/PSB.webp'
-import pimg15 from '../../images/icon/MTRN.webp'
-import pimg16 from '../../images/icon/Aya.webp'
-import pimg17 from '../../images/icon/Rentschler.webp'
+import pimg1 from '../../images/brand/brand-logo01.png'
+import pimg2 from '../../images/brand/brand-logo02.png'
+import pimg3 from '../../images/brand/brand-logo03.png'
+import pimg4 from '../../images/brand/brand-logo04.png'
+import pimg5 from '../../images/brand/brand-logo05.png'
+import pimg6 from '../../images/brand/brand-logo06.png'
+import pimg7 from '../../images/brand/brand-logo05.png'
 
 const partners = [
     {
@@ -41,36 +31,6 @@ const partners = [
     },
     {
         pImg: pimg7,
-    },
-    {
-        pImg: pimg8,
-    },
-    {
-        pImg: pimg9,
-    },
-    {
-        pImg: pimg10,
-    },
-    {
-        pImg: pimg11,
-    },
-    {
-        pImg: pimg12,
-    },
-    {
-        pImg: pimg13,
-    },
-    {
-        pImg: pimg14,
-    },
-    {
-        pImg: pimg15,
-    },
-    {
-        pImg: pimg16,
-    },
-    {
-        pImg: pimg17,
     },
 ]
 
