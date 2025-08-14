@@ -3,21 +3,13 @@ import MasterMainServiceTemplate from "../../components/templates/MasterMainServ
 import { 
   Speed, 
   TrendingUp, 
-  Cloud, 
   Security, 
   Analytics, 
   AutoAwesome,
   SmartToy,
   DataUsage,
   Psychology,
-  CheckCircle,
-  Memory,
-  IntegrationInstructions,
-  Sensors,
-  Autorenew,
-  RocketLaunch,
-  Lightbulb,
-  AutoFixHigh
+  CheckCircle
 } from '@mui/icons-material';
 
 const AIAndGenAIPpractice = () => {
@@ -27,9 +19,7 @@ const AIAndGenAIPpractice = () => {
       heroTitle="AI & Gen AI Industrialization Consulting"
       heroSubtitle="Transform Your Business"
       heroDescription="Unlock the power of artificial intelligence and generative AI to automate processes, gain insights, and drive unprecedented growth."
-      heroButtonText="Start Your AI Journey"
-      heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroBackgroundImage="/AiGenAi/AIAutomation.webp"
       heroTextColor="white"
 
       // Problem/Solution Section
@@ -284,11 +274,7 @@ const AIAndGenAIPpractice = () => {
       finalCtaButtonText="Schedule AI Consultation"
       finalCtaButtonLink="/contact"
 
-      // Blog & Case Studies
-      blogTitle="AI Insights & Updates"
-      blogSubtitle="Stay informed with our latest AI research, industry trends, and thought leadership content"
-      caseStudyTitle="AI Success Stories"
-      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with AI implementation"
+
 
       // Theme
       theme="light"

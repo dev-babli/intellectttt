@@ -33,8 +33,8 @@ const SAPBTPDevelopment = () => {
       heroDescription="Unlock the power of SAP Business Technology Platform with custom ABAP development and modern Fiori UI design. Build scalable cloud-native extensions and enhance SAP functionality."
       heroButtonText="SAP Development"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/4.webp"
-      heroTextColor="white"
+      heroBackgroundImage="/SAP.webp"
+      heroTextColor="black"
       heroFeatures={[
         "SAP BTP Development",
         "ABAP Programming",

@@ -1,7 +1,6 @@
 import React from "react";
 import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
 import { 
-  Speed, 
   TrendingUp, 
   Security, 
   Policy,
@@ -10,9 +9,6 @@ import {
   RocketLaunch,
   Lightbulb,
   CheckCircle,
-  SmartToy,
-  Psychology,
-  Memory,
   Verified,
   GppGood
 } from '@mui/icons-material';
@@ -24,9 +20,7 @@ const ResponsibleAI = () => {
       heroTitle="AI Advisory & Responsible AI Consulting"
       heroSubtitle="Ethical AI Implementation"
       heroDescription="We help companies build AI with strategy and responsibility. Unlock the power of AI while ensuring ethical standards, governance, and compliance. Our advisory services guide you through the complex landscape of responsible AI implementation."
-      heroButtonText="Start Responsible AI Journey"
-      heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroBackgroundImage="/AiGenAi/AIAdvisoryandResponsibleAI.webp"
       heroTextColor="white"
       heroFeatures={[
         {
@@ -259,12 +253,6 @@ const ResponsibleAI = () => {
       finalCtaSubtitle="Let's discuss how responsible AI practices can protect your business, build trust, and ensure long-term success."
       finalCtaButtonText="Schedule Responsible AI Consultation"
       finalCtaButtonLink="/contact"
-
-      // Blog & Case Studies
-      blogTitle="Responsible AI Insights"
-      blogSubtitle="Stay informed with our latest research on ethical AI, governance, and responsible AI practices"
-      caseStudyTitle="Responsible AI Success Stories"
-      caseStudySubtitle="Discover how we've helped businesses implement responsible AI practices successfully"
 
       // Theme
       theme="light"

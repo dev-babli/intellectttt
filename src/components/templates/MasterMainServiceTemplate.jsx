@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../footer/Footer";
-import OptimizedBlogSection from "../OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../OptimizedCaseStudySection/OptimizedCaseStudySection";
 import AlliancesSection from "../AlliancesSection/AlliancesSection";
 
 
@@ -58,13 +56,7 @@ const MasterMainServiceTemplate = ({
   // Alliances Section Props
   showAlliances = true,
 
-  // Blog & Case Study Props
-  showBlog = true,
-  showCaseStudies = true,
-  blogTitle = "Latest Insights & Updates",
-  blogSubtitle = "Stay informed with our latest industry insights and thought leadership content",
-  caseStudyTitle = "Success Stories",
-  caseStudySubtitle = "Discover how we've helped businesses achieve their digital transformation goals",
+
 
   // Final CTA Props
   finalCtaTitle = "Ready to Transform Your Business?",
@@ -84,11 +76,9 @@ const MasterMainServiceTemplate = ({
         title={heroTitle}
         subtitle={heroSubtitle}
         description={heroDescription}
-        buttonText={heroButtonText}
-        buttonLink={heroButtonLink}
         backgroundImage={heroBackgroundImage}
         features={heroFeatures}
-        textColor={heroTextColor}
+        textColor="black"
       />
 
       {/* 2. Problem/Solution Section */}
@@ -150,37 +140,7 @@ const MasterMainServiceTemplate = ({
         </section>
       )}
 
-      {/* 7. Blog Section */}
-      {showBlog && (
-        <section style={{
-          backgroundColor: theme === "dark" ? "#1a1a1a" : "#ffffff",
-          padding: '8px 0',
-          borderTop: '1px solid rgba(0,0,0,0.05)'
-        }}>
-          <div className="container">
-            <OptimizedBlogSection
-              title={blogTitle}
-              subtitle={blogSubtitle}
-            />
-          </div>
-        </section>
-      )}
 
-      {/* 8. Case Study Section */}
-      {showCaseStudies && (
-        <section style={{
-          backgroundColor: theme === "dark" ? "#1a1a1a" : "#f8fafc",
-          padding: '8px 0',
-          borderTop: '1px solid rgba(0,0,0,0.05)'
-        }}>
-          <div className="container">
-            <OptimizedCaseStudySection
-              title={caseStudyTitle}
-              subtitle={caseStudySubtitle}
-            />
-          </div>
-        </section>
-      )}
 
       {/* Footer */}
       <Footer />

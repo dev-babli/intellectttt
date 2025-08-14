@@ -216,11 +216,7 @@ const HealthcareLifeSciencesIT = () => {
       finalCtaButtonText="Schedule Healthcare IT Consultation"
       finalCtaButtonLink="/contact"
 
-      // Blog & Case Studies
-      blogTitle="Healthcare IT Insights & Updates"
-      blogSubtitle="Stay informed with our latest healthcare technology insights, regulatory updates, and industry trends"
-      caseStudyTitle="Healthcare IT Success Stories"
-      caseStudySubtitle="Discover how we've helped healthcare organizations improve patient care and operational efficiency"
+
 
       // Theme
       theme="light"

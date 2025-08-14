@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Container, Typography, Button, Grid, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowForward, PlayCircle } from '@mui/icons-material';
@@ -8,15 +8,33 @@ const ModernHeroSection = ({
   title, 
   subtitle, 
   description, 
-  buttonText = "Get Started", 
+  buttonText = null, 
   buttonLink = "/contact",
   backgroundImage,
   gradient = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
   features = [],
   showVideo = false,
   videoId = null,
-  textColor = "auto" // "auto", "white", or "black"
+  textColor = "black" // "auto", "white", or "black"
 }) => {
+  const [imageError, setImageError] = useState(false);
+  const [fallbackImage] = useState("/herosectionimages/Sliders/Digital Technology.webp");
+
+  useEffect(() => {
+    if (!backgroundImage) return;
+    
+    // Preload the image to check if it exists
+    const img = new Image();
+    img.onload = () => setImageError(false);
+    img.onerror = () => {
+      console.error(`ModernHeroSection image failed to load: ${backgroundImage}`);
+      setImageError(true);
+    };
+    img.src = backgroundImage;
+  }, [backgroundImage]);
+
+  const currentBackgroundImage = imageError ? fallbackImage : backgroundImage;
+
   return (
     <Box
       className="modern-hero-section"
@@ -26,8 +44,8 @@ const ModernHeroSection = ({
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-        background: backgroundImage 
-          ? `url(${backgroundImage})`
+        background: currentBackgroundImage 
+          ? `url(${currentBackgroundImage})`
           : gradient,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -139,40 +157,41 @@ const ModernHeroSection = ({
                 </Box>
               )}
 
-              {/* CTA Buttons */}
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.6 }}
-                >
-                  <Button
-                    className="modern-button"
-                    variant="contained"
-                    size="large"
-                    href={buttonLink}
-                    sx={{
-                      backgroundColor: '#dc2626',
-                      color: 'white',
-                      px: 4,
-                      py: 1.5,
-                      borderRadius: 2,
-                      fontWeight: 700,
-                      fontSize: '1rem',
-                      textTransform: 'none',
-                      boxShadow: '0 8px 25px rgba(220, 38, 38, 0.3)',
-                      '&:hover': {
-                        backgroundColor: '#b91c1c',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 12px 35px rgba(220, 38, 38, 0.4)',
-                      },
-                      transition: 'all 0.3s ease',
-                    }}
-                    endIcon={<ArrowForward />}
+              {/* CTA Buttons - Hidden when no buttonText provided */}
+              {buttonText && (
+                <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
                   >
-                    Let's Connect
-                  </Button>
-                </motion.div>
+                    <Button
+                      className="modern-button"
+                      variant="contained"
+                      size="large"
+                      href={buttonLink}
+                      sx={{
+                        backgroundColor: '#dc2626',
+                        color: 'white',
+                        px: 4,
+                        py: 1.5,
+                        borderRadius: 2,
+                        fontWeight: 700,
+                        fontSize: '1rem',
+                        textTransform: 'none',
+                        boxShadow: '0 8px 25px rgba(220, 38, 38, 0.3)',
+                        '&:hover': {
+                          backgroundColor: '#b91c1c',
+                          transform: 'translateY(-2px)',
+                          boxShadow: '0 12px 35px rgba(220, 38, 38, 0.4)',
+                        },
+                        transition: 'all 0.3s ease',
+                      }}
+                      endIcon={<ArrowForward />}
+                    >
+                      {buttonText}
+                    </Button>
+                  </motion.div>
 
                 {showVideo && videoId && (
                   <motion.div
@@ -206,6 +225,7 @@ const ModernHeroSection = ({
                   </motion.div>
                 )}
               </Box>
+            )}
             </motion.div>
           </Grid>
 

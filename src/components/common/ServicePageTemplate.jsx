@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../footer/Footer";
-import OptimizedBlogSection from "../OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../OptimizedCaseStudySection/OptimizedCaseStudySection";
 import ModernHeroSection from "./ModernHeroSection";
 import ModernServiceCard from "./ModernServiceCard";
 import WhoAreWeSection from "../WhoAreWeSection/WhoAreWeSection";
@@ -38,11 +36,7 @@ const ServicePageTemplate = ({
   // Alliances Section Props
   showAlliancesSection = true,
   
-  // Blog & Case Study Props
-  blogTitle = "Latest Insights & Updates",
-  blogSubtitle = "Stay informed with our latest industry insights, technical articles, and thought leadership content",
-  caseStudyTitle = "Success Stories",
-  caseStudySubtitle = "Discover how we've helped businesses achieve their digital transformation goals",
+
   
   // Additional Components
   additionalComponents = [],
@@ -149,31 +143,7 @@ const ServicePageTemplate = ({
         </div>
       </div>
       
-      {/* Blog Section */}
-      <div style={{ 
-        position: 'relative',
-        background: '#ffffff',
-        paddingTop: '40px',
-        paddingBottom: '40px'
-      }}>
-        <OptimizedBlogSection 
-          title={blogTitle}
-          subtitle={blogSubtitle}
-        />
-      </div>
-      
-      {/* Case Study Section */}
-      <div style={{ 
-        position: 'relative',
-        background: '#ffffff',
-        paddingTop: '20px',
-        paddingBottom: '40px'
-      }}>
-        <OptimizedCaseStudySection 
-          title={caseStudyTitle}
-          subtitle={caseStudySubtitle}
-        />
-      </div>
+
       
       {/* Footer */}
       <div style={{ 

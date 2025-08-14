@@ -90,9 +90,6 @@ const TemplateRenderer = ({ pageData }) => {
           dataCtaText: sections?.data?.ctaText,
           dataCtaLink: sections?.data?.ctaLink,
           
-          // Technology Logos
-          showTechnologyLogos: sections?.technologyLogos?.show,
-          
           // Service Cards (Related Services)
           showServiceCards: sections?.serviceCards?.show,
           serviceCards: sections?.serviceCards?.items || [],
@@ -177,9 +174,6 @@ const TemplateRenderer = ({ pageData }) => {
           dataFeatures: sections?.data?.features || [],
           dataCtaText: sections?.data?.ctaText,
           dataCtaLink: sections?.data?.ctaLink,
-          
-          // Technology Logos
-          showTechnologyLogos: sections?.technologyLogos?.show,
           
           // Service Cards
           showServiceCards: sections?.serviceCards?.show,

@@ -1,13 +1,11 @@
 import React, { Fragment, useState } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
 import { CssBaseline } from "@mui/material";
 import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
+
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
 import SearchIcon from "@mui/icons-material/Search";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
@@ -93,7 +91,7 @@ const AIImagingDiagnostics = () => {
             subtitle="Accelerate your diagnostic workflow with AI-powered image analysis and decision support tools."
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/AI-in-Imaging-and-Diagnotics.webp"
+            backgroundImage="/Healthcare-and-Life-sciences.webp"
           />
           <CssBaseline />
           <FeaturesSection features={features} />
@@ -106,19 +104,9 @@ From radiology to pathology, we build and integrate AI platforms that transform 
             ctaText="Let's Connect"
             ctaLink="/contact"
           />
-          <TechnologyLogos />
-          {}
         </div>
       </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
         </Fragment>
   );

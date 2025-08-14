@@ -33,7 +33,7 @@ const SAPServices = () => {
       heroDescription="Transform your enterprise with comprehensive SAP solutions. From S/4HANA migration to custom development, we help organizations modernize their SAP landscape and drive digital transformation."
       heroButtonText="Talk to Our Experts"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/5.webp"
+      heroBackgroundImage="/SAP.webp"
       heroTextColor="white"
       heroFeatures={[
         "SAP S/4HANA Migration",

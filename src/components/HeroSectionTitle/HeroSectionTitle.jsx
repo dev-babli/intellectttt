@@ -1,5 +1,5 @@
 // src/components/common/HeroSection.jsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "../../css/heroSectionTitle.css";
 
@@ -11,12 +11,28 @@ const HeroSectionTitle = ({
   backgroundImage,
   customClass = "",
 }) => {
+  const [imageError, setImageError] = useState(false);
+  const [fallbackImage] = useState("/herosectionimages/Sliders/Digital Technology.webp");
+
+  useEffect(() => {
+    // Preload the image to check if it exists
+    const img = new Image();
+    img.onload = () => setImageError(false);
+    img.onerror = () => {
+      console.error(`Hero image failed to load: ${backgroundImage}`);
+      setImageError(true);
+    };
+    img.src = backgroundImage;
+  }, [backgroundImage]);
+
+  const currentBackgroundImage = imageError ? fallbackImage : backgroundImage;
+
   return (
     <section
       className={`reusable-hero-section d-flex align-items-center ${customClass}`}
       style={{
         background: `linear-gradient(to right, rgba(255, 255, 255, 0.85) 40%, rgba(0, 0, 255, 0.1) 100%), 
-          url(${backgroundImage}) no-repeat center center / cover`,
+          url(${currentBackgroundImage}) no-repeat center center / cover`,
         minHeight: "90vh",
       }}
     >

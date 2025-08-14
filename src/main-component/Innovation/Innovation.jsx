@@ -2,8 +2,6 @@ import React from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import {
   Box,
   Container,

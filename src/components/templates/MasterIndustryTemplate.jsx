@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../footer/Footer";
-import OptimizedBlogSection from "../OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 
 // Atomic Components
@@ -52,13 +50,7 @@ const MasterIndustryTemplate = ({
 
 
 
-  // Blog & Case Study Props
-  showBlog = true,
-  showCaseStudies = true,
-  blogTitle = "Industry Insights",
-  blogSubtitle = "Stay informed with our latest industry-specific insights and trends",
-  caseStudyTitle = "Industry Success Stories",
-  caseStudySubtitle = "Discover how we've helped businesses in your industry achieve their goals",
+
 
   // Final CTA Props
   finalCtaTitle = "Ready to Transform Your Industry?",
@@ -129,37 +121,7 @@ const MasterIndustryTemplate = ({
         />
       )}
 
-      {/* 6. Blog Section */}
-      {showBlog && (
-        <section style={{
-          backgroundColor: theme === "dark" ? "#1a1a1a" : "#ffffff",
-          padding: '80px 0',
-          borderTop: '1px solid rgba(0,0,0,0.05)'
-        }}>
-          <div className="container">
-            <OptimizedBlogSection
-              title={blogTitle}
-              subtitle={blogSubtitle}
-            />
-          </div>
-        </section>
-      )}
 
-      {/* 7. Case Study Section */}
-      {showCaseStudies && (
-        <section style={{
-          backgroundColor: theme === "dark" ? "#1a1a1a" : "#f8fafc",
-          padding: '80px 0',
-          borderTop: '1px solid rgba(0,0,0,0.05)'
-        }}>
-          <div className="container">
-            <OptimizedCaseStudySection
-              title={caseStudyTitle}
-              subtitle={caseStudySubtitle}
-            />
-          </div>
-        </section>
-      )}
 
       {/* Footer */}
       <Footer />

@@ -10,11 +10,7 @@ import {
   RocketLaunch,
   Lightbulb,
   CheckCircle,
-  SmartToy,
-  Psychology,
-  Memory,
-  SupportAgent,
-  Diversity3
+  SupportAgent
 } from '@mui/icons-material';
 
 const AIAutomation = () => {
@@ -24,9 +20,7 @@ const AIAutomation = () => {
       heroTitle="AI Automation (AI + RPA) Consulting"
       heroSubtitle="Intelligent Process Automation"
       heroDescription="We help companies harness the power of AI and RPA to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions. Combine the precision of RPA with the intelligence of AI for unprecedented automation capabilities."
-      heroButtonText="Start AI Automation"
-      heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroBackgroundImage="/AiGenAi/AIAutomation.webp"
       heroTextColor="white"
       heroFeatures={[
         {
@@ -259,12 +253,6 @@ const AIAutomation = () => {
       finalCtaSubtitle="Let's discuss how AI + RPA can transform your business operations and drive unprecedented efficiency."
       finalCtaButtonText="Schedule AI Automation Consultation"
       finalCtaButtonLink="/contact"
-
-      // Blog & Case Studies
-      blogTitle="AI Automation Insights"
-      blogSubtitle="Stay informed with our latest research on intelligent automation and RPA"
-      caseStudyTitle="AI Automation Success Stories"
-      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with intelligent automation"
 
       // Theme
       theme="light"

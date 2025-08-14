@@ -32,7 +32,7 @@ const IoTSolutions = () => {
       heroDescription="Connect devices and drive automation with next-gen IoT technology. Transform your business with comprehensive IoT solutions that connect devices, collect data, and drive intelligent automation across industries."
       heroButtonText="TALK TO OUR EXPERTS"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/3.webp"
+      heroBackgroundImage="/Smart-Factory.webp"
       heroTextColor="white"
       heroFeatures={[
         "Industrial IoT & Smart Factories",

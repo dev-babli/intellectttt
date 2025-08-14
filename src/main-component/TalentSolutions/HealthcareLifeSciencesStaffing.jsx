@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import AboutSection from "../../components/Cyber-Security-Components/about/AboutSection";
 import { healthcareStaffingCards } from "../../api/cardService";
@@ -23,7 +21,7 @@ const HealthcareLifeSciencesStaffing = () => {
             subtitle=" From clinical trials to healthcare innovation—staff with precision, compliance, and speed. "
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/Hhealthcare-Lifesciences.webp"
+            backgroundImage="/Healthcare-and-Life-sciences.webp"
           />
           <AboutSection
             subtitleIcon={icon}
@@ -46,18 +44,9 @@ const HealthcareLifeSciencesStaffing = () => {
             sectionStyle={{ backgroundColor: "#f8f9fa" }}
           />
           <TechnologyLogos />
-          {}
         </div>
       </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
         </Fragment>
   );

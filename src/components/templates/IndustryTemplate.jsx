@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../footer/Footer";
-import OptimizedBlogSection from "../OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../OptimizedCaseStudySection/OptimizedCaseStudySection";
 import ModernHeroSection from "../common/ModernHeroSection";
 import ModernServiceCard from "../common/ModernServiceCard";
 import WorkProcess from "../It-Services-Components/WorkProcess/WorkProcess";
@@ -47,11 +45,7 @@ const IndustryTemplate = ({
   showTestimonials = true,
   testimonials = [],
 
-  // Blog & Case Study Props
-  blogTitle = "Industry Insights & Updates",
-  blogSubtitle = "Stay informed with our latest industry-specific insights, trends, and thought leadership content",
-  caseStudyTitle = "Industry Success Stories",
-  caseStudySubtitle = "Discover how we've helped businesses in your industry achieve their digital transformation goals",
+
 }) => {
   useScrollToTop();
 
@@ -138,33 +132,7 @@ const IndustryTemplate = ({
         </section>
       )}
 
-      {/* Blog Section - White Background */}
-      <section style={{
-        backgroundColor: '#ffffff',
-        padding: '40px 0',
-        borderTop: '1px solid #f1f5f9'
-      }}>
-        <div className="container">
-          <OptimizedBlogSection
-            title={blogTitle}
-            subtitle={blogSubtitle}
-          />
-        </div>
-      </section>
 
-      {/* Case Study Section - White Background */}
-      <section style={{
-        backgroundColor: '#ffffff',
-        padding: '40px 0',
-        borderTop: '1px solid #f1f5f9'
-      }}>
-        <div className="container">
-          <OptimizedCaseStudySection
-            title={caseStudyTitle}
-            subtitle={caseStudySubtitle}
-          />
-        </div>
-      </section>
 
       {/* Footer */}
       <Footer />

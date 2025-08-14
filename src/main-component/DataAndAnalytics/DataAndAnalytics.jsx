@@ -33,7 +33,7 @@ const DataAndAnalytics = () => {
       heroDescription="Build. Evaluate. Generate. Transform your data into actionable insights with our comprehensive data and analytics services. From data engineering to advanced analytics, we help organizations unlock the full potential of their data assets."
       heroButtonText="Explore Solutions"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Data & Analytics.webp"
+      heroBackgroundImage="/Data-&-Analytics.webp"
       heroTextColor="white"
       heroFeatures={[
         "Data Engineering & ETL",

@@ -33,8 +33,8 @@ const DigitalTwinsFactory = () => {
       heroDescription="Create intelligent, connected, and responsive operations using Digital Twin and Smart Factory technologies. Bridge the physical and digital worlds for real-time monitoring, predictive analytics, and continuous optimization."
       heroButtonText="Digital Twins"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/5.webp"
-      heroTextColor="white"
+      heroBackgroundImage="/Smart-Factory.webp"
+      heroTextColor="black"
       heroFeatures={[
         "Digital Twin Technology",
         "Smart Factory Solutions",

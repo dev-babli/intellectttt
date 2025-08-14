@@ -33,8 +33,8 @@ const ITStaffAugmentation = () => {
       heroDescription="Quickly scale your tech teams with vetted IT talent for project-based or long-term needs. Access skilled professionals and accelerate your development with flexible staffing solutions."
       heroButtonText="Staff Augmentation"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Agentic Ai.webp"
-      heroTextColor="white"
+      heroBackgroundImage="/IT-Staff-Augmentation.webp"
+      heroTextColor="black"
       heroFeatures={[
         "Vetted IT Talent",
         "Quick Scaling",

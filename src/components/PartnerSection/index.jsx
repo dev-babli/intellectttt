@@ -2,36 +2,44 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import pimg1 from '../../images/brand/brand-logo01.png'
-import pimg2 from '../../images/brand/brand-logo02.png'
-import pimg3 from '../../images/brand/brand-logo03.png'
-import pimg4 from '../../images/brand/brand-logo04.png'
-import pimg5 from '../../images/brand/brand-logo05.png'
-import pimg6 from '../../images/brand/brand-logo06.png'
-import pimg7 from '../../images/brand/brand-logo05.png'
 
 const partners = [
     {
-        pImg: pimg1,
+        pImg: "/partners/aws-logo.png",
+        name: "AWS"
     },
     {
-        pImg: pimg2,
+        pImg: "/partners/google-cloud-logo.png",
+        name: "Google Cloud"
     },
     {
-        pImg: pimg3,
+        pImg: "/partners/red-hat-logo.png",
+        name: "Red Hat"
     },
     {
-        pImg: pimg4,
+        pImg: "/partners/ibm.png",
+        name: "IBM"
     },
     {
-        pImg: pimg5,
+        pImg: "/partners/salesforce-logo.png",
+        name: "Salesforce"
     },
     {
-        pImg: pimg6,
+        pImg: "/partners/sap.png",
+        name: "SAP"
     },
     {
-        pImg: pimg7,
+        pImg: "/partners/uipath.png",
+        name: "UiPath"
     },
+    {
+        pImg: "/partners/citrix-logo.svg",
+        name: "Citrix"
+    },
+    {
+        pImg: "/partners/automation-1.png",
+        name: "Automation"
+    }
 ]
 
 var settings = {
@@ -121,7 +129,7 @@ const PartnerSection = (props) => {
                                 >
                                     <img 
                                         src={partner.pImg} 
-                                        alt="Client Logo" 
+                                        alt={partner.name} 
                                         style={{
                                             maxWidth: "100%",
                                             maxHeight: "60px",

@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 import ServicesComponent from "../../components/ServicesComponent/ServicesComponent";
 import { EducationTrainingServices } from "../../api/cardService";
@@ -66,7 +64,7 @@ const EducationTraining = () => {
           subtitle="Enhance education delivery with digital learning platforms"
           buttonText="TALK TO OUR EXPERTS"
           buttonLink="#contact"
-          backgroundImage="/education-training-hero.webp"
+          backgroundImage="/Education-Elearning.webp"
         />
         <WorkProcess
           heading="Digital Learning Transformation"
@@ -86,16 +84,7 @@ const EducationTraining = () => {
         />
         <HelpDeskBlogSection />
       </div>
-     
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
      
         </Fragment>

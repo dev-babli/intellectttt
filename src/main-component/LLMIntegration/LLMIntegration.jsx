@@ -1,7 +1,6 @@
 import React from "react";
 import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
 import { 
-  Speed, 
   TrendingUp, 
   Psychology, 
   AutoAwesome,
@@ -10,7 +9,6 @@ import {
   RocketLaunch,
   Lightbulb,
   AutoFixHigh,
-  SmartToy,
   CheckCircle,
   IntegrationInstructions,
   Memory
@@ -23,9 +21,7 @@ const LLMIntegration = () => {
       heroTitle="Gen AI & LLM Integration Consulting"
       heroSubtitle="Transform Your Business with Large Language Models"
       heroDescription="We help companies harness the power of Generative AI and Large Language Models to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
-      heroButtonText="Start LLM Integration"
-      heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroBackgroundImage="/AiGenAi/AIAutomation.webp"
       heroTextColor="white"
 
       // Problem/Solution Section
@@ -223,12 +219,6 @@ const LLMIntegration = () => {
       finalCtaSubtitle="Let's discuss how Large Language Models can transform your business operations and drive unprecedented efficiency."
       finalCtaButtonText="Schedule LLM Consultation"
       finalCtaButtonLink="/contact"
-
-      // Blog & Case Studies
-      blogTitle="LLM Integration Insights"
-      blogSubtitle="Stay informed with our latest research on Large Language Models and Generative AI"
-      caseStudyTitle="LLM Integration Success Stories"
-      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with LLM integration"
 
       // Theme
       theme="light"

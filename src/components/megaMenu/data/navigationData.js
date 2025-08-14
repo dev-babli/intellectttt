@@ -82,7 +82,7 @@ export const navigationItems = [
       {
         title: "Healthcare",
         items: [
-          { title: "Healthcare Solutions", url: "/industries/healthcare" },
+          { title: "Healthcare Solutions", url: "/industries/helthcare-and-life-sciences" },
           { title: "Medical Devices", url: "/industries/medical-devices" },
           { title: "Pharmaceutical", url: "/industries/pharmaceutical" }
         ]
@@ -90,15 +90,15 @@ export const navigationItems = [
       {
         title: "Manufacturing",
         items: [
-          { title: "Manufacturing Solutions", url: "/industries/manufacturing" },
-          { title: "Automotive", url: "/industries/automotive" },
-          { title: "Aerospace", url: "/industries/aerospace" }
+          { title: "Manufacturing Solutions", url: "/industries/menufacturing-and-automotive" },
+          { title: "Automotive", url: "/industries/menufacturing-and-automotive" },
+          { title: "Aerospace", url: "/industries/aerospace-and-defense" }
         ]
       },
       {
         title: "Financial Services",
         items: [
-          { title: "Banking Solutions", url: "/industries/banking" },
+          { title: "Banking Solutions", url: "/industries/banking-and-financial-services" },
           { title: "Insurance", url: "/industries/insurance" },
           { title: "FinTech", url: "/industries/fintech" }
         ]
@@ -106,9 +106,9 @@ export const navigationItems = [
       {
         title: "Technology",
         items: [
-          { title: "Software Development", url: "/industries/software" },
-          { title: "SaaS Solutions", url: "/industries/saas" },
-          { title: "Digital Transformation", url: "/industries/digital" }
+          { title: "Software Development", url: "/industries/software-development" },
+          { title: "SaaS Solutions", url: "/industries/saas-solutions" },
+          { title: "Digital Transformation", url: "/industries/digital-transformation" }
         ]
       }
     ]
@@ -218,7 +218,7 @@ export const mobileMenuItems = [
       {
         title: "Healthcare",
         items: [
-          { title: "Healthcare Solutions", url: "/industries/healthcare" },
+          { title: "Healthcare Solutions", url: "/industries/helthcare-and-life-sciences" },
           { title: "Medical Devices", url: "/industries/medical-devices" },
           { title: "Pharmaceutical", url: "/industries/pharmaceutical" }
         ]
@@ -226,15 +226,15 @@ export const mobileMenuItems = [
       {
         title: "Manufacturing",
         items: [
-          { title: "Manufacturing Solutions", url: "/industries/manufacturing" },
-          { title: "Automotive", url: "/industries/automotive" },
-          { title: "Aerospace", url: "/industries/aerospace" }
+          { title: "Manufacturing Solutions", url: "/industries/menufacturing-and-automotive" },
+          { title: "Automotive", url: "/industries/menufacturing-and-automotive" },
+          { title: "Aerospace", url: "/industries/aerospace-and-defense" }
         ]
       },
       {
         title: "Financial Services",
         items: [
-          { title: "Banking Solutions", url: "/industries/banking" },
+          { title: "Banking Solutions", url: "/industries/banking-and-financial-services" },
           { title: "Insurance", url: "/industries/insurance" },
           { title: "FinTech", url: "/industries/fintech" }
         ]
@@ -242,9 +242,9 @@ export const mobileMenuItems = [
       {
         title: "Technology",
         items: [
-          { title: "Software Development", url: "/industries/software" },
-          { title: "SaaS Solutions", url: "/industries/saas" },
-          { title: "Digital Transformation", url: "/industries/digital" }
+          { title: "Software Development", url: "/industries/software-development" },
+          { title: "SaaS Solutions", url: "/industries/saas-solutions" },
+          { title: "Digital Transformation", url: "/industries/digital-transformation" }
         ]
       }
     ]

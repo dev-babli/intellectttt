@@ -1,13 +1,11 @@
 import React, { Fragment, useState } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
 import { CssBaseline } from "@mui/material";
 import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
+
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import LockIcon from "@mui/icons-material/Lock";
@@ -89,7 +87,7 @@ const HL7FHIRIntegration = () => {
             subtitle="Maximize the value of your data with a modern analytics ecosystem powered by Azure Data Lake, Snowflake, and Power BI."
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/HL7-FHIR-Integration.webp"
+            backgroundImage="/Healthcare-and-Life-sciences.webp"
           />
           <CssBaseline />
           <FeaturesSection features={features} />
@@ -106,19 +104,9 @@ Whether you're building patient apps, connecting clinical systems, or scaling he
             ctaText="Let's Connect"
             ctaLink="/contact"
           />
-          <TechnologyLogos />
-          {}
         </div>
       </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
         </Fragment>
   );

@@ -33,8 +33,8 @@ const SAPManagedSupport = () => {
       heroDescription="Accelerate your SAP S/4HANA migration with confidence and future-ready support. From assessment to post-migration optimization, we ensure a smooth, secure, and value-driven journey."
       heroButtonText="SAP Migration"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/3.webp"
-      heroTextColor="white"
+      heroBackgroundImage="/SAP.webp"
+      heroTextColor="black"
       heroFeatures={[
         "S/4HANA Migration",
         "System Assessment",

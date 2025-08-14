@@ -1,13 +1,11 @@
 import React, { Fragment, useState } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
 import { CssBaseline } from "@mui/material";
 import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
+
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
@@ -90,7 +88,7 @@ const SAPMigration = () => {
             subtitle="Unlock the Power of Intelligent Automation with Our Expertise in SAP AMS and Managed Support Services."
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/sapmanagsprt.webp"
+            backgroundImage="/SAP.webp"
           />
           <CssBaseline />
           <FeaturesSection features={features} />
@@ -107,19 +105,9 @@ From routine operations to complex enhancements—we empower your business to ru
             ctaText="Let's Connect"
             ctaLink="/contact"
           />
-          <TechnologyLogos />
-          {}
         </div>
       </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
         </Fragment>
   );

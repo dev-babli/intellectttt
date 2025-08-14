@@ -84,6 +84,12 @@ import EnergyUtilities from "../EnergyUtilities/EnergyUtilities";
 import EducationTraining from "../EducationTraining/EducationTraining";
 import LogisticsTransportation from "../LogisticsTransportation/LogisticsTransportation";
 import IoTSolutions from "../IoTSolutions/IoTSolutions";
+import Insurance from "../Insurance/Insurance";
+import FinTech from "../FinTech/FinTech";
+import SoftwareDevelopment from "../SoftwareDevelopment/SoftwareDevelopment";
+import SaaSSolutions from "../SaaSSolutions/SaaSSolutions";
+import MedicalDevices from "../MedicalDevices/MedicalDevices";
+import Pharmaceutical from "../Pharmaceutical/Pharmaceutical";
 
 const AllRoute = () => {
   return (
@@ -312,6 +318,30 @@ const AllRoute = () => {
               <Route
                 path="logistics-and-transportation"
                 element={<LogisticsTransportation />}
+              />
+              <Route
+                path="insurance"
+                element={<Insurance />}
+              />
+              <Route
+                path="fintech"
+                element={<FinTech />}
+              />
+              <Route
+                path="software-development"
+                element={<SoftwareDevelopment />}
+              />
+              <Route
+                path="saas-solutions"
+                element={<SaaSSolutions />}
+              />
+              <Route
+                path="medical-devices"
+                element={<MedicalDevices />}
+              />
+              <Route
+                path="pharmaceutical"
+                element={<Pharmaceutical />}
               />
             </Route>
             <Route path="Company">

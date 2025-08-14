@@ -33,8 +33,8 @@ const ApiIntegration = () => {
       heroDescription="Connect systems seamlessly with robust API development and integration solutions. Unlock seamless connectivity with API & Integration Services that enable businesses to build connected ecosystems through robust API development and seamless integration strategies."
       heroButtonText="TALK TO OUR EXPERTS"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/cloud.webp"
-      heroTextColor="white"
+      heroBackgroundImage="/API-Integration.webp"
+      heroTextColor="black"
       heroFeatures={[
         "REST & GraphQL APIs",
         "Enterprise Service Bus",

@@ -2,8 +2,6 @@ import React from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import {
   Box,
   Container,
@@ -68,15 +66,17 @@ const DigitalTransformation = () => {
   return (
     <Box sx={{ minHeight: "100vh", backgroundColor: "#f8fafc" }}>
       {/* Hero Section */}
-      <Box
-        sx={{
-          background: "linear-gradient(135deg, #1e293b 0%, #334155 100%)",
-          color: "white",
-          py: 8,
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+              <Box
+          sx={{
+            background: "url('/digital-transformation.webp')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            color: "white",
+            py: 8,
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
         <Container maxWidth="xl">
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>

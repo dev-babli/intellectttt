@@ -35,7 +35,7 @@ const CyberSecurity = () => {
       heroDescription="Comprehensive cybersecurity solutions designed to protect your organization from evolving threats. From threat detection to incident response, we help you build a robust security posture."
       heroButtonText="Secure Your Business"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Cyber Security.webp"
+      heroBackgroundImage="/Cyber Security.webp"
       heroTextColor="white"
       heroFeatures={[
         "Threat Detection & Response",

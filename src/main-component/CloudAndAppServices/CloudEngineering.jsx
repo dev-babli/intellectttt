@@ -33,8 +33,8 @@ const CloudEngineering = () => {
       heroDescription="Cloud engineering on Azure, AWS & GCP. Build scalable, secure, and cost-effective cloud infrastructure across major cloud platforms with our expert engineering services."
       heroButtonText="Cloud Engineering"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/cloud.webp"
-      heroTextColor="white"
+      heroBackgroundImage="/cloud-computing.webp"
+      heroTextColor="black"
       heroFeatures={[
         "Multi-Cloud Strategy",
         "Infrastructure as Code",

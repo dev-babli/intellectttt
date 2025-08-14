@@ -33,7 +33,7 @@ const TalentSolutions = () => {
       heroDescription="Empower business growth with agile talent solutions. From IT staff augmentation to specialized healthcare staffing, we provide flexible workforce strategies that help organizations scale quickly and stay competitive."
       heroButtonText="Talent Solutions"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/4.webp"
+      heroBackgroundImage="/IT-Staff-Augmentation.webp"
       heroTextColor="white"
       heroFeatures={[
         "IT Staff Augmentation",

@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import ContactSection from "../../components/ContactSection";
 
 import Bg from "../../images/bg/page_bg01.jpg";
@@ -48,15 +46,7 @@ const TeamPage = (props) => {
         <ContactSection />
       </div>
       {/* <CtaSection /> */}
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
         </Fragment>
   );

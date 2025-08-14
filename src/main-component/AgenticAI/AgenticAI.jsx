@@ -11,8 +11,6 @@ import {
   RocketLaunch,
   Lightbulb,
   AutoFixHigh,
-  SmartToy,
-  Psychology,
   CheckCircle
 } from '@mui/icons-material';
 
@@ -23,9 +21,7 @@ const AgenticAI = () => {
       heroTitle="Agentic AI & AI Agents Consulting"
       heroSubtitle="Intelligent Autonomous Systems"
       heroDescription="We help companies harness the power of autonomous AI agents to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
-      heroButtonText="Start Building Agents"
-      heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroBackgroundImage="/AiGenAi/Agenticagents.webp"
       heroTextColor="white"
 
       // Problem/Solution Section
@@ -223,12 +219,6 @@ const AgenticAI = () => {
       finalCtaSubtitle="Let's discuss how autonomous AI agents can transform your business operations and drive unprecedented efficiency."
       finalCtaButtonText="Schedule Agentic AI Consultation"
       finalCtaButtonLink="/contact"
-
-      // Blog & Case Studies
-      blogTitle="Agentic AI Insights"
-      blogSubtitle="Stay informed with our latest research on autonomous AI systems and intelligent agents"
-      caseStudyTitle="Agentic AI Success Stories"
-      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with autonomous AI agents"
 
       // Theme
       theme="light"

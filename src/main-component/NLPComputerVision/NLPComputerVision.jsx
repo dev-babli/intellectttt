@@ -10,8 +10,6 @@ import {
   RocketLaunch,
   Lightbulb,
   CheckCircle,
-  SmartToy,
-  Memory,
   IntegrationInstructions,
   AutoFixHigh,
   Analytics
@@ -24,9 +22,7 @@ const NLPComputerVision = () => {
       heroTitle="NLP & Computer Vision Consulting"
       heroSubtitle="Intelligent Text & Image Understanding"
       heroDescription="We help companies harness the power of Natural Language Processing and Computer Vision to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions. Transform how your systems understand and process text, images, and video."
-      heroButtonText="Start NLP & CV Journey"
-      heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroBackgroundImage="/AiGenAi/NLPComputer-vision.webp"
       heroTextColor="white"
       heroFeatures={[
         {
@@ -259,12 +255,6 @@ const NLPComputerVision = () => {
       finalCtaSubtitle="Let's discuss how NLP and Computer Vision can transform your data processing and unlock new insights from your text and visual content."
       finalCtaButtonText="Schedule NLP & CV Consultation"
       finalCtaButtonLink="/contact"
-
-      // Blog & Case Studies
-      blogTitle="NLP & Computer Vision Insights"
-      blogSubtitle="Stay informed with our latest research on text and image processing technologies"
-      caseStudyTitle="NLP & Computer Vision Success Stories"
-      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with intelligent text and image processing"
 
       // Theme
       theme="light"

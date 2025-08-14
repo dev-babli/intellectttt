@@ -1,13 +1,11 @@
 import React, { Fragment, useState } from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 import FeaturesSection from "../../components/FeaturesSectionSub/FeaturesSection";
 import { CssBaseline } from "@mui/material";
 import DataSection from "../../components/DataSection/DataSection";
-import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
+
 import HubIcon from "@mui/icons-material/Hub";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
@@ -90,7 +88,7 @@ const ClinicalDataPlatforms = () => {
             subtitle="Transform Clinical Data into Actionable Intelligence with Scalable Clinical Data Platforms"
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/Clinical-Data-Platforms.webp"
+            backgroundImage="/Healthcare-and-Life-sciences.webp"
           />
           <CssBaseline />
           <FeaturesSection features={features} />
@@ -105,19 +103,9 @@ From secure ingestion to real-time analytics, we design end-to-end solutions tha
             ctaText="Let's Connect"
             ctaLink="/contact"
           />
-          <TechnologyLogos />
-          {}
         </div>
       </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
         </Fragment>
   );

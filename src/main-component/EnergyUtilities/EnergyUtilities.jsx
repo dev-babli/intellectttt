@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 import Footer from "../../components/footer/Footer";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 
 import ServicesComponent from "../../components/ServicesComponent/ServicesComponent";
 import { EnergyUtilitiesServices } from "../../api/cardService";
@@ -66,7 +64,7 @@ const EnergyUtilities = () => {
           subtitle="Power energy systems with smart grid and renewable solutions"
           buttonText="TALK TO OUR EXPERTS"
           buttonLink="#contact"
-          backgroundImage="/energy-utilities-hero.webp"
+          backgroundImage="/Energy-and-Utilities.webp"
         />
         <WorkProcess
           heading="Smart Energy Transformation"
@@ -86,16 +84,7 @@ const EnergyUtilities = () => {
         />
         <HelpDeskBlogSection />
       </div>
-     
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
      
         </Fragment>

@@ -8,8 +8,6 @@ import icon from "../../images/icon/magic02.svg";
 import about1 from "../../images/about/img04.png";
 import about2 from "../../images/bg/abt-cnt_bg.png";
 import TechnologyLogos from "../../components/TechnologyLogos/TechnologyLogos";
-import OptimizedBlogSection from "../../components/OptimizedBlogSection/OptimizedBlogSection";
-import OptimizedCaseStudySection from "../../components/OptimizedCaseStudySection/OptimizedCaseStudySection";
 import Footer from "../../components/footer/Footer";
 const DirectHireContractToHire = () => {
   // Scroll to top when component mounts
@@ -23,7 +21,7 @@ const DirectHireContractToHire = () => {
             subtitle=" Direct Hire & Contract-to-Hire Services for Long-Term Workforce Stability"
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/Direct-Hire-and-Contact-Hiring.webp"
+            backgroundImage="/IT-Staff-Augmentation.webp"
           />
           <AboutSection
             subtitleIcon={icon}
@@ -46,18 +44,9 @@ const DirectHireContractToHire = () => {
             sectionStyle={{ backgroundColor: "#f8f9fa" }}
           />
           <TechnologyLogos />
-          {}
         </div>
       </div>
-          
-        <OptimizedBlogSection 
-          title="Latest Insights & Updates"
-          subtitle="Stay informed with our latest industry insights, technical articles, and thought leadership content"
-        />
-        <OptimizedCaseStudySection 
-          title="Success Stories"
-          subtitle="Discover how we've helped businesses achieve their digital transformation goals"
-        /><Footer />
+      <Footer />
 
         </Fragment>
   );

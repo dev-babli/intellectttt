@@ -2,83 +2,51 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import pimg1 from "../../../images/icon/Abbott.webp";
-import pimg2 from "../../../images/icon/Bayer.webp";
-import pimg3 from "../../../images/icon/Cordis.webp";
-import pimg4 from "../../../images/icon/Embecta.webp";
-import pimg5 from "../../../images/icon/Exel.webp";
-import pimg6 from "../../../images/icon/Integra.webp";
-import pimg7 from "../../../images/icon/Livanova.webp";
-import pimg8 from "../../../images/icon/Medline.webp";
-import pimg9 from "../../../images/icon/Philips.webp";
-import pimg10 from "../../../images/icon/ThermoFisher.webp";
-import pimg11 from "../../../images/icon/Terumo.webp";
-import pimg12 from "../../../images/icon/Xylem.webp";
-import pimg13 from "../../../images/icon/Alkermes.webp";
-import pimg14 from "../../../images/icon/PSB.webp";
-import pimg15 from "../../../images/icon/MTRN.webp";
-import pimg16 from "../../../images/icon/Aya.webp";
-import pimg17 from "../../../images/icon/Rentschler.webp";
 
 const partners = [
   {
-    pImg: pimg1,
+    pImg: "/partners/aws-logo.png",
+    name: "AWS"
   },
   {
-    pImg: pimg2,
+    pImg: "/partners/google-cloud-logo.png",
+    name: "Google Cloud"
   },
   {
-    pImg: pimg3,
+    pImg: "/partners/red-hat-logo.png",
+    name: "Red Hat"
   },
   {
-    pImg: pimg4,
+    pImg: "/partners/ibm.png",
+    name: "IBM"
   },
   {
-    pImg: pimg5,
+    pImg: "/partners/salesforce-logo.png",
+    name: "Salesforce"
   },
   {
-    pImg: pimg6,
+    pImg: "/partners/sap.png",
+    name: "SAP"
   },
   {
-    pImg: pimg7,
+    pImg: "/partners/uipath.png",
+    name: "UiPath"
   },
   {
-    pImg: pimg8,
+    pImg: "/partners/citrix-logo.svg",
+    name: "Citrix"
   },
   {
-    pImg: pimg9,
-  },
-  {
-    pImg: pimg10,
-  },
-  {
-    pImg: pimg11,
-  },
-  {
-    pImg: pimg12,
-  },
-  {
-    pImg: pimg13,
-  },
-  {
-    pImg: pimg14,
-  },
-  {
-    pImg: pimg15,
-  },
-  {
-    pImg: pimg16,
-  },
-  {
-    pImg: pimg17,
-  },
+    pImg: "/partners/automation-1.png",
+    name: "Automation"
+  }
 ];
 
 var settings = {
   dots: false,
   infinite: true,
-  speed: 5000,
-  slidesToShow: 5,
+  speed: 3000,
+  slidesToShow: 6,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 0,
@@ -87,7 +55,7 @@ var settings = {
 
   responsive: [
     {
-      breakpoint: 1025,
+      breakpoint: 1200,
       settings: {
         slidesToShow: 5,
         slidesToScroll: 1,
@@ -96,14 +64,14 @@ var settings = {
     {
       breakpoint: 991,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
       },
     },
     {
       breakpoint: 767,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
@@ -124,7 +92,7 @@ var settings = {
     {
       breakpoint: 340,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
       },
     },
@@ -149,27 +117,24 @@ const PartnerSection = (props) => {
                   key={pitem}
                   style={{
                     height: "80px",
-                    width: "160px",
+                    width: "180px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "10px",
+                    padding: "15px",
                     boxSizing: "border-box",
-                    margin: "0 auto"
+                    margin: "0 20px"
                   }}
                 >
                   <img 
                     src={partner.pImg} 
-                    alt="Client Logo" 
+                    alt={partner.name} 
                     style={{
-                      maxWidth: "100%",
-                      maxHeight: "60px",
+                      maxWidth: "150px",
+                      maxHeight: "50px",
                       width: "auto",
                       height: "auto",
-                      objectFit: "contain",
-                      filter: "none",
-                      opacity: "1",
-                      transition: "all 0.3s ease"
+                      objectFit: "contain"
                     }}
                   />
                 </div>

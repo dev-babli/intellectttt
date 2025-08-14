@@ -1,7 +1,6 @@
 import React from "react";
 import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
 import { 
-  Speed, 
   TrendingUp, 
   Settings, 
   Cloud,
@@ -10,9 +9,6 @@ import {
   RocketLaunch,
   Lightbulb,
   CheckCircle,
-  SmartToy,
-  Psychology,
-  Memory,
   IntegrationInstructions,
   AutoFixHigh,
   DataUsage
@@ -25,9 +21,7 @@ const MLEngineeringMLOps = () => {
       heroTitle="ML Engineering & MLOps Consulting"
       heroSubtitle="Scalable Machine Learning Operations"
       heroDescription="We help companies build, deploy, and maintain scalable machine learning systems. From model development to production deployment and ongoing operations, we provide end-to-end ML engineering and MLOps solutions that drive real business value."
-      heroButtonText="Start ML Engineering Journey"
-      heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/Digital Technology.webp"
+      heroBackgroundImage="/AiGenAi/Ml-engineeringML-ops.webp"
       heroTextColor="white"
       heroFeatures={[
         {
@@ -260,12 +254,6 @@ const MLEngineeringMLOps = () => {
       finalCtaSubtitle="Let's discuss how ML Engineering and MLOps can transform your machine learning operations and drive real business value."
       finalCtaButtonText="Schedule ML Engineering Consultation"
       finalCtaButtonLink="/contact"
-
-      // Blog & Case Studies
-      blogTitle="ML Engineering & MLOps Insights"
-      blogSubtitle="Stay informed with our latest research on ML engineering, MLOps, and production ML systems"
-      caseStudyTitle="ML Engineering & MLOps Success Stories"
-      caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with production ML systems"
 
       // Theme
       theme="light"
