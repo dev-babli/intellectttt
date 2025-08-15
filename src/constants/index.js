@@ -34,25 +34,25 @@ export const SERVICES_DATA = [
   {
     title: "AI & GenAI",
     description: "Advanced artificial intelligence and generative AI solutions",
-    image: "/images/ai-and-gen-ai.webp",
+    image: "/agentic-AI.webp",
     features: ["Machine Learning", "Natural Language Processing", "Computer Vision", "Generative AI"],
   },
   {
     title: "Cloud & Application",
     description: "Scalable cloud infrastructure and application development",
-    image: "/images/cloud-and-application.webp",
+    image: "/cloud-computing.webp",
     features: ["Cloud Migration", "DevOps", "Microservices", "Containerization"],
   },
   {
     title: "Data & Analytics",
     description: "Comprehensive data analytics and business intelligence",
-    image: "/images/Data-Analytics.webp",
+    image: "/Data-&-Analytics.webp",
     features: ["Big Data", "Business Intelligence", "Data Warehousing", "Predictive Analytics"],
   },
   {
     title: "Cybersecurity",
     description: "Robust security solutions for digital protection",
-    image: "/images/cybersecurity.webp",
+    image: "/Data-Governance-and-Securuty.webp",
     features: ["Security Audits", "Penetration Testing", "Compliance", "Incident Response"],
   },
 ];

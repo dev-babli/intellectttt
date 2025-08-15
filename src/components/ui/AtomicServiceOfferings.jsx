@@ -19,6 +19,54 @@ const AtomicServiceOfferings = ({
   theme = "light",
   showPricing = false
 }) => {
+  // Array of available images to ensure uniqueness
+  const imagePool = [
+    '/agentic-AI.webp',
+    '/GenAI-LLM-Integration.webp',
+    '/Data-Engineering.webp',
+    '/Data-&-Analytics.webp',
+    '/Smart-Factory.webp',
+    '/Data-Analytics-Header.webp',
+    '/cloud-computing.webp',
+    '/dev.webp',
+    '/azure.webp',
+    '/modernisation.webp',
+    '/Data-Governance-and-Securuty.webp',
+    '/Business-Intelligence.webp',
+    '/SAP.webp',
+    '/sapmanagsprt.webp',
+    '/Manufacturing-and-Automotive.webp',
+    '/Industry-4.0.webp',
+    '/PLM-CAD-CAE-Automation.webp',
+    '/MES-Integration-IOT.webp',
+    '/Healthcare-and-Life-sciences.webp',
+    '/Clinical-Data-Platforms.webp',
+    '/Compleance-and-Regulatory-IT.webp',
+    '/HL7-FHIR-Integration.webp',
+    '/IT-Staff-Augmentation.webp',
+    '/Direct-Hire-and-Contact-Hiring.webp',
+    '/Corp-to-Corp-W2.webp',
+    '/Managed-IT-header.webp',
+    '/Managed-Resources.webp',
+    '/Banking-and-Finance.webp',
+    '/Aerospace-and-Defense.webp',
+    '/digital-transformation.webp'
+  ];
+
+  // Function to determine optimal grid size based on number of services
+  const getOptimalGridSize = (serviceCount) => {
+    // For even numbers, try to create complete rows
+    if (serviceCount % 4 === 0) {
+      return 3; // 4 items per row (12/3 = 4)
+    } else if (serviceCount % 3 === 0) {
+      return 4; // 3 items per row (12/4 = 3)
+    } else if (serviceCount % 2 === 0) {
+      return 6; // 2 items per row (12/6 = 2)
+    } else {
+      // For odd numbers, use 4 items per row for better visual balance
+      return 3;
+    }
+  };
   // Function to get default images based on service title
   const getDefaultImage = (serviceTitle) => {
     const title = serviceTitle.toLowerCase();
@@ -202,7 +250,14 @@ const AtomicServiceOfferings = ({
           }}
         >
           {services.slice(0, 9).map((service, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <Grid 
+              item 
+              xs={12} 
+              sm={6} 
+              md={getOptimalGridSize(services.length)} 
+              key={index} 
+              sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}
+            >
               <Link
                 to={service.link || "#"}
                 style={{ textDecoration: "none", display: 'flex', width: '100%' }}
@@ -301,7 +356,7 @@ const AtomicServiceOfferings = ({
                   {/* Card Image */}
                   <Box sx={{ height: "100%", position: "relative" }}>
                     <img
-                      src={service.image || getDefaultImage(service.title)}
+                      src={service.image || imagePool[index % imagePool.length]}
                       alt={service.title}
                       style={{
                         width: "100%",

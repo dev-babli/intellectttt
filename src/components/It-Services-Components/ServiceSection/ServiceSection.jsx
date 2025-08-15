@@ -51,8 +51,13 @@ const ServiceSection = () => {
     updateActiveBg(0);
   }, []);
 
-  // Service images array
-  const serviceImages = [serviceImg1, serviceImg2, serviceImg3, serviceImg4];
+  // Service images array - using more appropriate images from public folder
+  const serviceImages = [
+    "/agentic-AI.webp",
+    "/GenAI-LLM-Integration.webp", 
+    "/Data-Engineering.webp",
+    "/Data-&-Analytics.webp"
+  ];
 
   console.log("Service Images:", serviceImages);
   console.log("Services:", Services.slice(6, 10));
