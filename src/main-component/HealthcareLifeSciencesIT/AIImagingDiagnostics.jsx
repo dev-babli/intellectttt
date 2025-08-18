@@ -91,7 +91,7 @@ const AIImagingDiagnostics = () => {
             subtitle="Accelerate your diagnostic workflow with AI-powered image analysis and decision support tools."
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/Healthcare-and-Life-sciences.webp"
+            backgroundImage="/Healthcare.png"
           />
           <CssBaseline />
           <FeaturesSection features={features} />

@@ -33,7 +33,7 @@ const ManagedResourceServices = () => {
       heroDescription="Comprehensive managed resource services for IT staffing, project management, and resource optimization. Access expert talent and optimize resource allocation for maximum efficiency."
       heroButtonText="Resource Services"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/3.webp"
+      heroBackgroundImage="/Managed-Resources.webp"
       heroTextColor="white"
       heroFeatures={[
         "IT Staffing",

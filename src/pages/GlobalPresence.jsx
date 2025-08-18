@@ -293,7 +293,7 @@ const StatValue = styled.div`
   margin-bottom: 0.25rem;
 `;
 
-const StatLabel = styled.div`
+const RegionStatLabel = styled.div`
   font-size: 0.8rem;
   color: #64748b;
   text-transform: uppercase;
@@ -517,11 +517,11 @@ const GlobalPresence = () => {
                   <RegionStats>
                     <RegionStat>
                       <StatValue>{region.offices}</StatValue>
-                      <StatLabel>Offices</StatLabel>
+                      <RegionStatLabel>Offices</RegionStatLabel>
                     </RegionStat>
                     <RegionStat>
                       <StatValue>{region.clients}</StatValue>
-                      <StatLabel>Clients</StatLabel>
+                      <RegionStatLabel>Clients</RegionStatLabel>
                     </RegionStat>
                   </RegionStats>
                 </RegionCard>

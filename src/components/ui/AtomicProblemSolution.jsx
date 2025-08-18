@@ -91,7 +91,17 @@ const AtomicProblemSolution = ({
         <div className="sec-title--two text-center mb-60">
           <h2 className="title">{title}</h2>
           {subtitle && (
-            <p className="subtitle" style={{ marginTop: '20px', fontSize: '1.1rem', color: '#64748b' }}>
+            <p className="subtitle" style={{ 
+              marginTop: '15px', 
+              fontSize: '0.95rem', 
+              color: '#64748b',
+              maxWidth: '400px',
+              margin: '15px auto 0',
+              lineHeight: '1.4',
+              whiteSpace: 'normal',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word'
+            }}>
               {subtitle}
             </p>
           )}

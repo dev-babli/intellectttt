@@ -88,7 +88,7 @@ const IoTSolutions = () => {
             "Process optimization"
           ],
           badge: "Most Popular",
-          link: "/service/iot-solutions/industrial",
+          link: "/service/engineering-and-manufacturing-it/mes",
           ctaText: "Industrial IoT"
         },
         {
@@ -101,7 +101,7 @@ const IoTSolutions = () => {
             "Protocol integration"
           ],
           badge: "Trending",
-          link: "/service/iot-solutions/devices",
+          link: "/service/engineering-and-manufacturing-it/twins",
           ctaText: "Connected Devices"
         },
         {
@@ -113,7 +113,7 @@ const IoTSolutions = () => {
             "Machine learning",
             "Business intelligence"
           ],
-          link: "/service/iot-solutions/analytics",
+          link: "/service/engineering-and-manufacturing-it/industry4",
           ctaText: "IoT Analytics"
         },
         {
@@ -125,7 +125,7 @@ const IoTSolutions = () => {
             "Control systems",
             "Efficiency optimization"
           ],
-          link: "/service/iot-solutions/automation",
+          link: "/service/engineering-and-manufacturing-it/plm",
           ctaText: "Automation"
         }
       ]}

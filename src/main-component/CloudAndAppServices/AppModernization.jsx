@@ -33,7 +33,7 @@ const AppModernization = () => {
       heroDescription="Upgrade legacy applications with modern microservice architecture and cloud-native design. Transform your applications with modern architecture, improved performance, and enhanced user experience."
       heroButtonText="Modernize Your Apps"
       heroButtonLink="/contact"
-      heroBackgroundImage="/App-Modernization.webp"
+      heroBackgroundImage="/modernisation.webp"
       heroTextColor="black"
       heroFeatures={[
         "Legacy Migration",

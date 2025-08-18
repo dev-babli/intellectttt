@@ -44,40 +44,6 @@ const AtomicBenefits = ({
             initial="hidden"
             animate="visible"
           >
-            {/* Header */}
-            <Box sx={{ textAlign: 'center', mb: 3 }}>
-              <motion.div variants={itemVariants}>
-                <Typography
-                  variant="h2"
-                  sx={{
-                    fontSize: { xs: '1.5rem', md: '2rem' },
-                    fontWeight: 800,
-                    color: textColor,
-                    mb: 1,
-                  }}
-                >
-                  {title}
-                </Typography>
-                {subtitle && (
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      color: textColorSecondary,
-                      maxWidth: 'none',
-                      mx: 'auto',
-                      lineHeight: 1.2,
-                      fontSize: '0.875rem',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                    }}
-                  >
-                    {subtitle}
-                  </Typography>
-                )}
-              </motion.div>
-            </Box>
-
             {/* Stats Grid */}
             <Grid container spacing={2}>
               {benefits.map((benefit, index) => (
@@ -178,31 +144,32 @@ const AtomicBenefits = ({
           animate="visible"
         >
           {/* Header */}
-          <Box sx={{ textAlign: 'center', mb: 3 }}>
+          <Box sx={{ textAlign: 'center', mb: 4 }}>
             <motion.div variants={itemVariants}>
               <Typography
-                variant="h2"
+                variant="h3"
                 sx={{
-                  fontSize: { xs: '1.5rem', md: '2rem' },
-                  fontWeight: 800,
+                  fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+                  fontWeight: 600,
                   color: textColor,
-                  mb: 1,
+                  mb: 2,
+                  letterSpacing: '-0.01em',
                 }}
               >
                 {title}
               </Typography>
               {subtitle && (
                 <Typography
-                  variant="h5"
+                  variant="body1"
                   sx={{
                     color: textColorSecondary,
-                    maxWidth: 'none',
+                    maxWidth: '350px',
                     mx: 'auto',
-                    lineHeight: 1.2,
-                    fontSize: '0.875rem',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
+                    lineHeight: 1.4,
+                    fontSize: { xs: '0.9rem', sm: '0.95rem' },
+                    whiteSpace: 'normal',
+                    wordWrap: 'break-word',
+                    overflowWrap: 'break-word',
                   }}
                 >
                   {subtitle}

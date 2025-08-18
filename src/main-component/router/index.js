@@ -77,7 +77,7 @@ import CyberSecurity from "../CyberSecurity/CyberSecurity";
 import DigitalTransformation from "../DigitalTransformation/DigitalTransformation";
 import Innovation from "../Innovation/Innovation";
 import Partners from "../../pages/Partners";
-import GlobalPresence from "../../components/GlobalPresence/GlobalPresence";
+import GlobalPresence from "../../components/global_presence/GlobalPresence";
 import HealthCareAndLifeSc from "../HealthCareAndLifeSc/HealthCareAndLifeSc";
 import RetailEcommerce from "../RetailEcommerce/RetailEcommerce";
 import EnergyUtilities from "../EnergyUtilities/EnergyUtilities";

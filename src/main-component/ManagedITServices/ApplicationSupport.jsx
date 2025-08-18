@@ -33,7 +33,7 @@ const ApplicationSupport = () => {
       heroDescription="Multi-tiered application support from first-level incident resolution to expert-level troubleshooting and enhancements. Ensure business continuity with our comprehensive L1-L3 support model."
       heroButtonText="Get Support"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/4.webp"
+      heroBackgroundImage="/Managed-IT-header.webp"
       heroTextColor="white"
       heroFeatures={[
         "L1-L3 Support",

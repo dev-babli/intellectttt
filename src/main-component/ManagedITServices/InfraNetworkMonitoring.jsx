@@ -33,7 +33,7 @@ const InfraNetworkMonitoring = () => {
       heroDescription="Comprehensive infrastructure and network monitoring solutions for proactive issue detection and resolution. Ensure optimal performance and reliability with real-time monitoring and alerting."
       heroButtonText="Monitoring Solutions"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Agentic Ai.webp"
+      heroBackgroundImage="/Infra-Network.webp"
       heroTextColor="white"
       heroFeatures={[
         "Real-time Monitoring",

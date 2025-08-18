@@ -10,9 +10,9 @@ export default function SectionHeading() {
           fontSize: { xs: "1rem", md: "1.5rem" },
           color: "#0199D3 !important",
           fontWeight: 400,
-          whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
+          whiteSpace: 'normal',
+          overflow: 'visible',
+          textOverflow: 'unset',
         }}
       >
         Our Suite of

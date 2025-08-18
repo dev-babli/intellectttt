@@ -33,17 +33,22 @@ const LogoCard = styled(Box)(({ theme }) => ({
 // Professional heading
 const SectionHeading = styled(Typography)(({ theme }) => ({
   color: "#1e293b",
-  fontWeight: 700,
-  letterSpacing: "-0.025em",
+  fontWeight: 600,
+  letterSpacing: "-0.01em",
   lineHeight: 1.2,
+  fontSize: "1.75rem",
 }));
 
 // Professional subtitle
 const SectionSubtitle = styled(Typography)(({ theme }) => ({
   color: "#64748b",
   fontWeight: 400,
-  lineHeight: 1.6,
-  maxWidth: "600px",
+  lineHeight: 1.4,
+  maxWidth: "350px",
+  fontSize: "0.95rem",
+  whiteSpace: "normal",
+  wordWrap: "break-word",
+  overflowWrap: "break-word",
 }));
 
 // Professional feature box
@@ -140,15 +145,13 @@ const AlliancesSection = () => {
     <SectionContainer>
       <Container maxWidth="lg">
         {/* Header Section */}
-        <Box textAlign="center" mb={6}>
-          <SectionHeading variant="h2" component="h2" mb={3}>
+        <Box textAlign="center" mb={5}>
+          <SectionHeading variant="h3" component="h2" mb={2}>
             Strategic Technology Partnerships
           </SectionHeading>
-          <SectionSubtitle variant="h5" sx={{ mx: "auto", mb: 2 }}>
-            We collaborate with industry-leading technology partners to deliver comprehensive, 
-            enterprise-grade solutions that drive digital transformation.
+          <SectionSubtitle variant="body1" sx={{ mx: "auto", mb: 0 }}>
+            We partner with leading technology providers to deliver enterprise solutions.
           </SectionSubtitle>
-          <Divider sx={{ width: "80px", mx: "auto", borderColor: "#3b82f6", borderWidth: "2px" }} />
         </Box>
 
         <Grid container spacing={6} alignItems="center">

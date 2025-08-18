@@ -89,7 +89,7 @@ const ComplianceRegulatoryIT = () => {
             subtitle=" Empowering organizations to meet regulatory demands with secure, audit-ready IT solutions. "
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/Healthcare-and-Life-sciences.webp"
+            backgroundImage="/Compleance-and-Regulatory-IT.webp"
           />
           <CssBaseline />
           <FeaturesSection features={features} />

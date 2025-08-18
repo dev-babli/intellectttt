@@ -88,7 +88,7 @@ const ClinicalDataPlatforms = () => {
             subtitle="Transform Clinical Data into Actionable Intelligence with Scalable Clinical Data Platforms"
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/Healthcare-and-Life-sciences.webp"
+            backgroundImage="/Clinical-Data-Platforms.webp"
           />
           <CssBaseline />
           <FeaturesSection features={features} />

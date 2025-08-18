@@ -33,7 +33,7 @@ const ITSMServiceDesk = () => {
       heroDescription="Streamlined IT Service Management with centralized Service Desk solutions and robust Centers of Excellence. Build agile, resilient, and service-driven IT ecosystems."
       heroButtonText="ITSM Solutions"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/5.webp"
+      heroBackgroundImage="/ITSM-Service-desk.webp"
       heroTextColor="white"
       heroFeatures={[
         "ITSM Framework",

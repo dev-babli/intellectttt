@@ -23,7 +23,7 @@ export const NAVIGATION_MENU = [
   { text: 'Home', path: '/' },
   { text: 'About', path: '/about' },
   { text: 'Services', path: '/services' },
-  { text: 'Global Presence', path: '/global-presence' },
+  { text: 'Global Presence', path: '/company/global-presence' },
   { text: 'Team', path: '/team' },
   { text: 'Blog', path: '/blog' },
   { text: 'Contact', path: '/contact' },

@@ -143,67 +143,34 @@ const AtomicServiceOfferings = ({
       <Box
         sx={{
           textAlign: "center",
-          mb: 10,
+          mb: 8,
           maxWidth: "1200px",
           mx: "auto",
           px: { xs: 2, sm: 3, md: 4 },
           position: "relative",
         }}
       >
-        {/* Decorative background element */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: "-20px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "200px",
-            height: "4px",
-            background:
-              "linear-gradient(90deg, transparent, #667eea, #764ba2, transparent)",
-            borderRadius: "2px",
-            opacity: isVisible ? 1 : 0,
-            transition: "opacity 1s ease-out 0.5s",
-          }}
-        />
-
         <Typography
           ref={titleRef}
-          variant="h1"
+          variant="h2"
           sx={{
             color: "#1a1a1a",
-            fontWeight: 800,
-            fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "3.5rem" },
-            lineHeight: { xs: 1.1, md: 1.05 },
-            mb: 4,
-            letterSpacing: "-0.025em",
+            fontWeight: 600,
+            fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem", lg: "2.25rem" },
+            lineHeight: 1.2,
+            mb: 3,
+            letterSpacing: "-0.01em",
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif",
-            background:
-              "linear-gradient(135deg, #1a1a1a 0%, #2d3748 50%, #4a5568 100%)",
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            textShadow: "none",
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(40px)",
+            transform: isVisible ? "translateY(0)" : "translateY(20px)",
             transition:
-              "opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1)",
+              "opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
             position: "relative",
-            "&::after": {
-              content: '""',
-              position: "absolute",
-              bottom: "-8px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "80px",
-              height: "3px",
-              background: "linear-gradient(90deg, #667eea, #764ba2)",
-              borderRadius: "2px",
-              opacity: isVisible ? 1 : 0,
-              transition:
-                "opacity 1s ease-out 0.3s, transform 0.5s ease-out 0.3s",
-            },
+            px: { xs: 1, sm: 2 },
+            whiteSpace: "normal",
+            wordWrap: "break-word",
+            overflowWrap: "break-word",
           }}
         >
           {title}
@@ -211,23 +178,26 @@ const AtomicServiceOfferings = ({
 
         <Typography
           ref={descRef}
-          variant="h6"
+          variant="body1"
           sx={{
             color: "#4a5568",
             fontWeight: 400,
-            fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.375rem" },
-            lineHeight: 1.6,
-            maxWidth: "850px",
+            fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+            lineHeight: 1.4,
+            maxWidth: { xs: "100%", sm: "400px", md: "450px" },
             mx: "auto",
-            letterSpacing: "0.005em",
+            letterSpacing: "0.01em",
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif",
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+            transform: isVisible ? "translateY(0)" : "translateY(20px)",
             transition:
-              "opacity 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, transform 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
-            mt: 1,
+              "opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s",
             position: "relative",
+            whiteSpace: "normal",
+            wordWrap: "break-word",
+            overflowWrap: "break-word",
+            px: { xs: 1, sm: 2 },
           }}
         >
           {subtitle}
@@ -238,11 +208,11 @@ const AtomicServiceOfferings = ({
       <Box ref={cardsRef}>
         <Grid
           container
-          spacing={3}
+          spacing={{ xs: 2, sm: 3 }}
           sx={{
             maxWidth: "1200px",
             mx: "auto",
-            px: { xs: 2, sm: 3, md: 4 },
+            px: { xs: 1, sm: 2, md: 3 },
             justifyContent: "center",
             alignItems: "stretch",
             display: "flex",
@@ -254,9 +224,15 @@ const AtomicServiceOfferings = ({
               item 
               xs={12} 
               sm={6} 
-              md={getOptimalGridSize(services.length)} 
+              md={4}
+              lg={getOptimalGridSize(services.length)} 
               key={index} 
-              sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}
+              sx={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                width: '100%',
+                mb: { xs: 2, sm: 0 }
+              }}
             >
               <Link
                 to={service.link || "#"}
@@ -266,9 +242,9 @@ const AtomicServiceOfferings = ({
                 <Card
                   className="dimensional-card"
                   sx={{
-                    height: 280,
+                    height: { xs: 240, sm: 260, md: 280 },
                     width: '100%',
-                    maxWidth: 320,
+                    maxWidth: { xs: '100%', sm: 300, md: 320 },
                     background: "#0f0f0f",
                     borderRadius: "8px",
                     position: "relative",
@@ -419,7 +395,7 @@ const AtomicServiceOfferings = ({
                       color: "#ffffff",
                       fontWeight: 600,
                       lineHeight: 1.2,
-                      fontSize: "1rem",
+                      fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
                       transition:
                         "opacity 0.3s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                       zIndex: 2,
@@ -427,6 +403,15 @@ const AtomicServiceOfferings = ({
                         "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
                       letterSpacing: "-0.01em",
                       textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                      wordWrap: "break-word",
+                      overflowWrap: "break-word",
+                      hyphens: "auto",
+                      whiteSpace: "normal",
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
                     }}
                   >
                     {service.title}

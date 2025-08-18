@@ -33,7 +33,7 @@ const HealthcareLifeSciencesIT = () => {
       heroDescription="Empowering Better Healthcare Through Technology. Transform healthcare delivery with advanced technology solutions that improve patient care, streamline operations, and ensure compliance in the rapidly evolving healthcare landscape."
       heroButtonText="Healthcare IT"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/5.webp"
+      heroBackgroundImage="/Healthcare-and-Life-sciences.webp"
       heroTextColor="white"
       heroFeatures={[
         "Compliance & Regulatory IT",

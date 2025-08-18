@@ -33,7 +33,7 @@ const DevOpsAndDevSecOps = () => {
       heroDescription="Automate and secure your development pipeline with modern DevOps practices. Build secure, automated CI/CD pipelines that accelerate delivery while maintaining security and quality standards."
       heroButtonText="DevOps Solutions"
       heroButtonLink="/contact"
-      heroBackgroundImage="/DevOps.webp"
+      heroBackgroundImage="/dev.webp"
       heroFeatures={[
         "CI/CD Automation",
         "Security Integration",

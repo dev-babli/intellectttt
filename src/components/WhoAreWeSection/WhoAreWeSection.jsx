@@ -31,9 +31,9 @@ const WhoAreWeSection = ({
               mb: 2, 
               fontWeight: "bold", 
               fontSize: "1.2rem",
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
+              whiteSpace: 'normal',
+              overflow: 'visible',
+              textOverflow: 'unset',
             }}
           >
             {subheading}

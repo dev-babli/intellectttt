@@ -10,7 +10,7 @@ export const navigationItems = [
           { title: "Our Story", url: "/about" },
           { title: "Mission & Vision", url: "/about/mission-vision" },
           { title: "Leadership Team", url: "/about/leadership" },
-          { title: "Global Presence", url: "/about/global-presence" },
+          { title: "Global Presence", url: "/company/global-presence" },
           { title: "Awards & Recognition", url: "/about/awards" }
         ]
       },
@@ -148,7 +148,7 @@ export const mobileMenuItems = [
           { title: "Our Story", url: "/about" },
           { title: "Mission & Vision", url: "/about/mission-vision" },
           { title: "Leadership Team", url: "/about/leadership" },
-          { title: "Global Presence", url: "/about/global-presence" },
+          { title: "Global Presence", url: "/company/global-presence" },
           { title: "Awards & Recognition", url: "/about/awards" }
         ]
       },

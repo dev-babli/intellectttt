@@ -39,8 +39,8 @@ const HeroSectionTitle = ({
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6" style={{ marginTop: "100px" }}>
-            <h1 className="fw-bold text-dark mb-3" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={title}>{title}</h1>
-            <p className="lead text-dark lh-base ls-lg" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }} title={subtitle}>{subtitle}</p>
+            <h1 className="fw-bold text-dark mb-3" style={{ whiteSpace: 'normal', overflow: 'visible', textOverflow: 'unset', maxWidth: '600px', lineHeight: '1.2' }} title={title}>{title}</h1>
+            <p className="lead text-dark lh-base ls-lg" style={{ whiteSpace: 'normal', overflow: 'visible', textOverflow: 'unset', maxWidth: '500px', lineHeight: '1.4' }} title={subtitle}>{subtitle}</p>
             {/* <a href={buttonLink} className="btn btn-warning btn-lg mt-3 fw-semibold">
               {buttonText}
             </a> */}

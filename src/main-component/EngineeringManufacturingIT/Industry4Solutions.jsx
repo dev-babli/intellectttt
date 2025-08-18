@@ -33,7 +33,7 @@ const Industry4Solutions = () => {
       heroDescription="Embrace the fourth industrial revolution with integrated Industry 4.0 solutions. From IoT-enabled production lines and AI-driven analytics to digital twins and end-to-end system integration, we help transform traditional operations into intelligent, connected, and data-driven ecosystems."
       heroButtonText="Industry 4.0"
       heroButtonLink="/contact"
-      heroBackgroundImage="/Smart-Factory.webp"
+      heroBackgroundImage="/Industry-4.0.webp"
       heroTextColor="black"
       heroFeatures={[
         "IoT-Enabled Production",

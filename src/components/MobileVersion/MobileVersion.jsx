@@ -515,8 +515,8 @@ const MobileVersion = () => {
                 Leadership Team
               </MobileNavItem>
               <MobileNavItem
-                to="/global-presence"
-                onClick={() => handleNavClick("/global-presence")}
+                to="/company/global-presence"
+                onClick={() => handleNavClick("/company/global-presence")}
               >
                 Global Presence
               </MobileNavItem>

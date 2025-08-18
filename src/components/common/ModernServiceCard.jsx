@@ -54,10 +54,14 @@ const ModernServiceCard = ({ cards, title = "Our Services", subtitle = "Explore 
               variant="h6"
               sx={{
                 color: '#64748b',
-                maxWidth: '600px',
+                maxWidth: '400px',
                 mx: 'auto',
-                lineHeight: 1.6,
+                lineHeight: 1.4,
                 fontWeight: 400,
+                fontSize: '0.95rem',
+                whiteSpace: 'normal',
+                wordWrap: 'break-word',
+                overflowWrap: 'break-word',
               }}
             >
               {subtitle}

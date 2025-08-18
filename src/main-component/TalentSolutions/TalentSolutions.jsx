@@ -37,9 +37,9 @@ const TalentSolutions = () => {
       heroTextColor="white"
       heroFeatures={[
         "IT Staff Augmentation",
-        "Corp-to-Corp Staffing",
-        "Direct Hire & Contract Hire",
-        "Healthcare & Life Sciences"
+        "Quick Scaling",
+        "Project-Based Hiring",
+        "Vetted IT Talent"
       ]}
 
       // Problem/Solution Section
@@ -91,43 +91,6 @@ const TalentSolutions = () => {
           badge: "Most Popular",
           link: "/service/talent-solutions/staffing",
           ctaText: "IT Staff Augmentation"
-        },
-        {
-          icon: <Business />,
-          title: "Corp-to-Corp Staffing",
-          description: "Flexible business-to-business workforce solutions for enterprise clients.",
-          features: [
-            "B2B solutions",
-            "Enterprise clients",
-            "Flexible contracts"
-          ],
-          badge: "Trending",
-          link: "/service/talent-solutions/corp",
-          ctaText: "Corp-to-Corp"
-        },
-        {
-          icon: <Work />,
-          title: "Direct Hire & Contract Hire",
-          description: "Hire top talent for long-term or project needs with comprehensive recruitment services.",
-          features: [
-            "Direct hiring",
-            "Contract hiring",
-            "Comprehensive recruitment"
-          ],
-          link: "/service/talent-solutions/direct-hire",
-          ctaText: "Direct Hire"
-        },
-        {
-          icon: <Build />,
-          title: "Healthcare & Life Sciences Staffing",
-          description: "Specialized staffing for clinical and medical roles in healthcare and life sciences.",
-          features: [
-            "Clinical roles",
-            "Medical staffing",
-            "Specialized expertise"
-          ],
-          link: "/service/talent-solutions/healthcare",
-          ctaText: "Healthcare Staffing"
         }
       ]}
       serviceOfferingsVariant="default"

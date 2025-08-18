@@ -87,7 +87,7 @@ const HL7FHIRIntegration = () => {
             subtitle="Maximize the value of your data with a modern analytics ecosystem powered by Azure Data Lake, Snowflake, and Power BI."
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/Healthcare-and-Life-sciences.webp"
+            backgroundImage="/HL7-FHIR-Integration.webp"
           />
           <CssBaseline />
           <FeaturesSection features={features} />

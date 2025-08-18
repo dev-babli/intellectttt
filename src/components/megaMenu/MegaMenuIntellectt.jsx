@@ -1570,45 +1570,45 @@ const menuData = {
         description: "Connect devices and drive automation with next-gen IoT technology",
         image: "/herosectionimages/New ONES/4.webp",
         items: [
-          "IoT Platform Development",
-          "Sensor Integration",
-          "Edge Computing",
-          "Smart City Solutions",
+          "Industrial IoT & Smart Factories",
+          "Connected Devices & Sensors",
+          "Data Analytics & Insights",
+          "Automation & Control Systems",
         ],
         hasDropdown: true,
         url: "/iot",
         services: [
           {
-            name: "Industrial IoT (IIoT)",
-            description: "Manufacturing IoT and smart factory solutions",
+            name: "Industrial IoT & Smart Factories",
+            description: "Transform manufacturing with connected sensors and predictive maintenance",
             focus: "IoT Solutions",
             color: "rgba(20, 184, 166, 0.15)",
             icon: "🏭",
-            url: "/iot",
+            url: "/service/engineering-and-manufacturing-it/mes",
           },
           {
-            name: "Smart Grid & Energy IoT",
-            description: "Intelligent grid systems and IoT monitoring",
+            name: "Connected Devices & Sensors",
+            description: "Comprehensive device connectivity with reliable protocols",
             focus: "IoT Solutions",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "⚡",
-            url: "/iot",
+            icon: "📡",
+            url: "/service/engineering-and-manufacturing-it/twins",
           },
           {
-            name: "Healthcare IoT",
-            description: "Connected medical device technology and IoT solutions",
+            name: "Data Analytics & Insights",
+            description: "Advanced analytics and ML for IoT data processing",
             focus: "IoT Solutions",
             color: "rgba(20, 184, 166, 0.15)",
-            icon: "🏥",
-            url: "/iot",
+            icon: "📊",
+            url: "/service/engineering-and-manufacturing-it/industry4",
           },
           {
-            name: "Smart Logistics IoT",
-            description: "Supply chain monitoring and IoT tracking solutions",
+            name: "Automation & Control Systems",
+            description: "Intelligent automation for operational efficiency",
             focus: "IoT Solutions",
             color: "rgba(59, 130, 246, 0.15)",
-            icon: "🚚",
-            url: "/iot",
+            icon: "⚙️",
+            url: "/service/engineering-and-manufacturing-it/plm",
           },
         ],
         icon: "🌐",
@@ -2345,7 +2345,7 @@ const menuData = {
         description: "Our worldwide locations and partnerships",
         image: "/herosectionimages/New ONES/7.webp",
         items: ["Office Locations", "Global Partners", "Regional Expertise"],
-        url: "/global-presence",
+        url: "/company/global-presence",
       },
     ],
     sideItems: [
@@ -4092,7 +4092,7 @@ function MegaMenuIntellectt() {
                             description:
                               "Worldwide network serving clients across 50+ countries.",
                             buttonText: "View Locations",
-                            buttonUrl: "/global-presence",
+                            buttonUrl: "/company/global-presence",
                           };
                         case "Our Companies":
                           return {
@@ -4348,7 +4348,7 @@ function MegaMenuIntellectt() {
                         e.currentTarget.style.transform = "scale(1)";
                         e.currentTarget.style.boxShadow = "none";
                       }}
-                      onClick={() => handleNavigation('/global-presence')}
+                      onClick={() => handleNavigation('/company/global-presence')}
                     >
                       <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🌍</div>
                       <h4 style={{ margin: "0 0 0.5rem 0", fontSize: "1rem", fontWeight: "600" }}>
@@ -4379,7 +4379,7 @@ function MegaMenuIntellectt() {
                         e.currentTarget.style.transform = "scale(1)";
                         e.currentTarget.style.boxShadow = "none";
                       }}
-                      onClick={() => handleNavigation('/global-presence')}
+                      onClick={() => handleNavigation('/company/global-presence')}
                     >
                       <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🎯</div>
                       <h4 style={{ margin: "0 0 0.5rem 0", fontSize: "1rem", fontWeight: "600" }}>
