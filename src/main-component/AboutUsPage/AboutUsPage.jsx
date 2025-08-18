@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Footer from "../../components/footer/Footer";
 import WhyChoose from "./WhyChoose";
 // import FunFactSection from "../../components/Help-Desk-Components/FunFact/FunFact";
-import PartnerSection from "../../components/Help-Desk-Components/PartnerSection";
+// import PartnerSection from "../../components/Help-Desk-Components/PartnerSection";
 // import GallerySection from "../CareerPage/Gallery";
 import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
 // import WhoAreWeSection from "../../components/WhoAreWeSection/WhoAreWeSection";
@@ -66,7 +66,7 @@ const AboutUsPage = (props) => {
 
         {/* <MissionVision /> */}
         <Hero />
-        <PartnerSection />
+        {/* <PartnerSection /> */}
 
         {/* <GallerySection pClass={"pt-130"} /> */}
       </div>

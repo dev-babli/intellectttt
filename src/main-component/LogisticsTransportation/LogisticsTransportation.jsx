@@ -1,93 +1,105 @@
-import React, { Fragment } from "react";
-import Footer from "../../components/footer/Footer";
-
-import ServicesComponent from "../../components/ServicesComponent/ServicesComponent";
-import { LogisticsTransportationServices } from "../../api/cardService";
-import WorkProcess from "../../components/It-Services-Components/WorkProcess/WorkProcess";
-import HelpDeskBlogSection from "../../components/Help-Desk-Components/HelpDeskBlogSection/HelpDeskBlogSection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-
-import pImg1 from "../../images/shape/process-shape01.png";
-import pImg2 from "../../images/shape/process-shape01.png";
-import sIcon1 from "../../images/process/image01.png";
-import sIcon2 from "../../images/process/image02.png";
-import sIcon3 from "../../images/process/image03.png";
-import sIcon4 from "../../images/process/image04.png";
-import sIcon5 from "../../images/process/image05.png";
-
-const processList = [
-  {
-    id: "01",
-    title: "Logistics Infrastructure Assessment & Strategy",
-    subTitle:
-      "We analyze your current supply chain operations, fleet management, and technology stack to design a comprehensive digital transformation roadmap.",
-    icon: sIcon1,
-  },
-  {
-    id: "02",
-    title: "Smart Logistics Platform Architecture",
-    subTitle:
-      "Our experts design intelligent transportation and warehouse management systems with real-time tracking, route optimization, and automated workflows.",
-    icon: sIcon2,
-  },
-  {
-    id: "03",
-    title: "IoT & Supply Chain Visibility Implementation",
-    subTitle:
-      "We deploy IoT sensors, GPS tracking, and real-time monitoring systems to provide end-to-end visibility across your entire supply chain network.",
-    icon: sIcon3,
-  },
-  {
-    id: "04",
-    title: "Predictive Analytics & Route Optimization",
-    subTitle:
-      "We implement AI-powered analytics to predict demand, optimize routes, reduce costs, and improve delivery performance through data-driven insights.",
-    icon: sIcon4,
-  },
-  {
-    id: "05",
-    title: "Deployment, Integration & Continuous Optimization",
-    subTitle:
-      "From system launch to ongoing operations, we ensure seamless integration, comprehensive testing, and continuous optimization for maximum efficiency.",
-    icon: sIcon5,
-  },
-];
-
-const shapeImages = [pImg1, pImg2];
+import React from "react";
+import IndustryTemplate from "../../components/templates/IndustryTemplate";
+import { 
+  LocalShipping, 
+  Speed, 
+  TrendingUp, 
+  AutoAwesome,
+  Cloud,
+  Security,
+  Analytics,
+  DataUsage,
+  Assessment,
+  Compliance,
+  Logistics,
+  DigitalTransformation,
+  Automation,
+  DataAnalytics,
+  AI,
+  MachineLearning,
+  API,
+  MobileFriendly,
+  Web,
+  Storage,
+  IntegrationInstructions,
+  SupplyChain,
+  Transportation
+} from '@mui/icons-material';
 
 const LogisticsTransportation = () => {
   return (
-    <Fragment>
-      <div className="body_wrap sco_agency">
-        <HeroSectionTitle
-          title="Logistics & Transportation"
-          subtitle="Optimize logistics with intelligent supply chain solutions"
-          buttonText="TALK TO OUR EXPERTS"
-          buttonLink="#contact"
-          backgroundImage="/images/Transportation-andLogistics.webp"
-        />
-        <WorkProcess
-          heading="Intelligent Logistics Transformation"
-          description="Our proven 5-step process helps logistics and transportation companies optimize operations, reduce costs, and deliver superior customer experiences."
-          buttonText="Connect with Logistics Experts"
-          buttonLink="/contact"
-          processList={processList}
-          shapeImages={shapeImages}
-        />
-        <ServicesComponent
-          services={LogisticsTransportationServices}
-          limit={6}
-          showButton={true}
-          buttonText="Schedule a Strategy Call"
-          buttonLink="/contact"
-          sectionStyle={{ backgroundColor: "#f8f9fa" }}
-        />
-        <HelpDeskBlogSection />
-      </div>
-      <Footer />
+    <IndustryTemplate
+      // Hero Section
+      heroTitle="Logistics & Transportation"
+      heroSubtitle="Supply Chain Solutions"
+      heroDescription="Optimize logistics with intelligent supply chain solutions, real-time tracking, and predictive analytics. Transform transportation operations with IoT, AI, and automation for maximum efficiency."
+      heroButtonText="TALK TO OUR EXPERTS"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/SAP.webp"
+      heroFeatures={[
+        "Supply Chain Optimization",
+        "Real-time Tracking",
+        "Predictive Analytics",
+        "Fleet Management"
+      ]}
 
-     
-        </Fragment>
+      // Services Component Props - Industry Solutions
+      showServicesComponent={true}
+      services={[
+        {
+          title: "Supply Chain Management",
+          description: "End-to-end supply chain visibility with real-time tracking, inventory management, and demand forecasting.",
+          image: "/images/supply-chain.webp",
+          features: ["Real-time Tracking", "Inventory Management", "Demand Forecasting", "Supplier Management"],
+          link: "/services/supply-chain",
+          badge: "Supply Chain"
+        },
+        {
+          title: "Fleet Management Systems",
+          description: "Comprehensive fleet management with GPS tracking, route optimization, and vehicle maintenance scheduling.",
+          image: "/images/fleet-management.webp",
+          features: ["GPS Tracking", "Route Optimization", "Maintenance Scheduling", "Driver Management"],
+          link: "/services/fleet-management",
+          badge: "Fleet"
+        },
+        {
+          title: "Warehouse Management",
+          description: "Intelligent warehouse management systems with automation, inventory control, and order fulfillment optimization.",
+          image: "/images/warehouse-management.webp",
+          features: ["Automation", "Inventory Control", "Order Fulfillment", "Space Optimization"],
+          link: "/services/warehouse-management",
+          badge: "Warehouse"
+        },
+        {
+          title: "Transportation Analytics",
+          description: "Advanced analytics platforms for transportation optimization, cost analysis, and performance monitoring.",
+          image: "/images/transportation-analytics.webp",
+          features: ["Cost Analysis", "Performance Monitoring", "Route Analytics", "Predictive Insights"],
+          link: "/services/transportation-analytics",
+          badge: "Analytics"
+        },
+        {
+          title: "Last-Mile Delivery Solutions",
+          description: "Optimized last-mile delivery with real-time tracking, customer notifications, and delivery optimization.",
+          image: "/images/last-mile-delivery.webp",
+          features: ["Real-time Tracking", "Customer Notifications", "Delivery Optimization", "Proof of Delivery"],
+          link: "/services/last-mile-delivery",
+          badge: "Delivery"
+        },
+        {
+          title: "Logistics Automation",
+          description: "Automated logistics processes with robotics, AI-powered decision making, and intelligent workflow optimization.",
+          image: "/images/logistics-automation.webp",
+          features: ["Robotics", "AI Decision Making", "Workflow Optimization", "Process Automation"],
+          link: "/services/logistics-automation",
+          badge: "Automation"
+        }
+      ]}
+      servicesLimit={6}
+      servicesShowButton={true}
+      servicesButtonText="Schedule a Strategy Call"
+      servicesButtonLink="/contact"
+    />
   );
 };
 

@@ -26,22 +26,11 @@ const ServiceCards = () => {
                       </span>
                     </div>
                     <div className="xb-item--icon ul_li_between">
-                      <div className="xb-item--img">
-                        <img src={service.sImg} alt="" />
-                      </div>
-                      <Link
-                        onClick={ClickHandler}
-                        to={`/service-single/${service.slug}`}
-                        className="xb-item--arrow"
-                      >
+                      <div className="xb-item--arrow">
                         <img src={sIcon} alt="" />
-                      </Link>
+                      </div>
                     </div>
-                    <Link
-                      onClick={ClickHandler}
-                      to={`/service-single/${service.slug}`}
-                      className="xb-overlay"
-                    ></Link>
+                    <div className="xb-overlay"></div>
                   </div>
                 ) : (
                   ""

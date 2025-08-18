@@ -179,6 +179,24 @@
 
 .xb-item--icon {
   margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.xb-item--arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f8f9fa;
+}
+
+.xb-item--arrow img {
+  width: 16px;
+  height: 16px;
 }
 
 /* Prevent overflow on small screens */

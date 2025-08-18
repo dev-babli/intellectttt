@@ -99,7 +99,7 @@ const Hero = () => {
                   delay={9}
                 >
                   <div>
-                    <div
+                    {/* <div
                       className="xb-btn mt-60 wow fadeInUp"
                       data-wow-delay="300ms"
                       data-wow-duration="600ms"
@@ -110,7 +110,7 @@ const Hero = () => {
                       >
                         Book a free consultation
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 </Fade>
               </div>

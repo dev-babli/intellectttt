@@ -33,7 +33,7 @@ const ManagedITServices = () => {
       heroDescription="Build. Evaluate. Generate. Optimize your IT operations with our comprehensive managed services. From infrastructure monitoring to application support, we provide reliable, scalable IT solutions that keep your business running smoothly."
       heroButtonText="Get Started"
       heroButtonLink="/contact"
-      heroBackgroundImage="/herosectionimages/Sliders/4.webp"
+      heroBackgroundImage="/Data-&-Analytics.webp"
       heroTextColor="white"
       heroFeatures={[
         "24/7 Infrastructure Monitoring",

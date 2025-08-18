@@ -35,7 +35,7 @@ const RetailEcommerce = () => {
       heroDescription="Transform retail operations with omnichannel commerce solutions, AI-powered personalization, and intelligent inventory management. Build seamless digital shopping experiences that drive growth and customer loyalty."
       heroButtonText="TALK TO OUR EXPERTS"
       heroButtonLink="/contact"
-      heroBackgroundImage="/Retail-and-Ecommerce.webp"
+      heroBackgroundImage="/AiGenAi/AIAutomation.webp"
       heroFeatures={[
         "Omnichannel Commerce",
         "AI-Powered Personalization",
