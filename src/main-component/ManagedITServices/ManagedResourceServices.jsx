@@ -29,7 +29,7 @@ const ManagedResourceServices = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Managed Resource Services"
-      heroSubtitle="Expert Resource Management"
+      heroSubtitle="Resource Management"
       heroDescription="Comprehensive managed resource services for IT staffing, project management, and resource optimization. Access expert talent and optimize resource allocation for maximum efficiency."
       heroButtonText="Resource Services"
       heroButtonLink="/contact"

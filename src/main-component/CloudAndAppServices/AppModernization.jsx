@@ -29,7 +29,7 @@ const AppModernization = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="App Modernization & Microservices"
-      heroSubtitle="Legacy Transformation"
+      heroSubtitle="Legacy Modernization"
       heroDescription="Upgrade legacy applications with modern microservice architecture and cloud-native design. Transform your applications with modern architecture, improved performance, and enhanced user experience."
       heroButtonText="Modernize Your Apps"
       heroButtonLink="/contact"

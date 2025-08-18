@@ -28,9 +28,9 @@ const DataAndAnalytics = () => {
   return (
     <MasterMainServiceTemplate
       // Hero Section - Minimal
-      heroTitle="Data & Analytics Industrialization Consulting"
+      heroTitle="Data & Analytics Solutions"
       heroSubtitle="Data-Driven Insights"
-      heroDescription="Build. Evaluate. Generate. Transform your data into actionable insights with our comprehensive data and analytics services. From data engineering to advanced analytics, we help organizations unlock the full potential of their data assets."
+      heroDescription="Transform data into actionable insights with analytics and BI."
       heroButtonText="Explore Solutions"
       heroButtonLink="/contact"
       heroBackgroundImage="/Data-&-Analytics.webp"

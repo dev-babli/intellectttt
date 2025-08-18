@@ -40,7 +40,7 @@ gsap.registerPlugin(ScrollTrigger);
 const servicesData = [
   {
     category: "AI & Generative AI",
-    icon: <Brain sx={{ fontSize: 40, color: '#667eea' }} />,
+    icon: <Brain sx={{ fontSize: { xs: 32, md: 40 }, color: '#667eea' }} />,
     color: "#667eea",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     services: [
@@ -84,7 +84,7 @@ const servicesData = [
   },
   {
     category: "Cloud & Application Services",
-    icon: <Cloud sx={{ fontSize: 40, color: '#4facfe' }} />,
+    icon: <Cloud sx={{ fontSize: { xs: 32, md: 40 }, color: '#4facfe' }} />,
     color: "#4facfe",
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     services: [
@@ -118,7 +118,7 @@ const servicesData = [
   },
   {
     category: "SAP Services",
-    icon: <Database sx={{ fontSize: 40, color: '#a8edea' }} />,
+    icon: <Database sx={{ fontSize: { xs: 32, md: 40 }, color: '#a8edea' }} />,
     color: "#a8edea",
     gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
     services: [
@@ -147,7 +147,7 @@ const servicesData = [
   },
   {
     category: "Data & Analytics",
-    icon: <TrendingUp sx={{ fontSize: 40, color: '#ff9a9e' }} />,
+    icon: <TrendingUp sx={{ fontSize: { xs: 32, md: 40 }, color: '#ff9a9e' }} />,
     color: "#ff9a9e",
     gradient: "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
     services: [
@@ -181,7 +181,7 @@ const servicesData = [
   },
   {
     category: "Engineering & Manufacturing IT",
-    icon: <Factory sx={{ fontSize: 40, color: '#667eea' }} />,
+    icon: <Factory sx={{ fontSize: { xs: 32, md: 40 }, color: '#667eea' }} />,
     color: "#667eea",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     services: [
@@ -199,7 +199,7 @@ const servicesData = [
       {
         name: "MES Integration & IoT",
         path: "/service/engineering-and-manufacturing-it/mes",
-        description: "Manufacturing execution system and IoT integration"
+        description: "Manufacturing execution systems and IoT integration"
       },
       {
         name: "Digital Twins",
@@ -207,15 +207,15 @@ const servicesData = [
         description: "Digital twin technology and implementation"
       },
       {
-        name: "Industry 4.0 Solutions",
+        name: "Industry 4.0",
         path: "/service/engineering-and-manufacturing-it/industry4",
-        description: "Industry 4.0 and smart manufacturing solutions"
+        description: "Industry 4.0 solutions and smart manufacturing"
       }
     ]
   },
   {
     category: "Healthcare & Life Sciences IT",
-    icon: <Heart sx={{ fontSize: 40, color: '#ff6b6b' }} />,
+    icon: <Heart sx={{ fontSize: { xs: 32, md: 40 }, color: '#ff6b6b' }} />,
     color: "#ff6b6b",
     gradient: "linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)",
     services: [
@@ -223,12 +223,12 @@ const servicesData = [
         name: "Healthcare & Life Sciences IT",
         path: "/service/healthcare-and-life-sciences-it",
         description: "IT solutions for healthcare and life sciences",
-        features: ["HL7 & FHIR Integration", "Clinical Data Platforms", "AI Imaging & Diagnostics", "Compliance & Regulatory"]
+        features: ["HL7 FHIR Integration", "Clinical Data Platforms", "AI Imaging", "Compliance & Regulatory"]
       },
       {
-        name: "HL7 & FHIR Integration",
+        name: "HL7 FHIR Integration",
         path: "/service/healthcare-and-life-sciences-it/hl7",
-        description: "Healthcare data standards and integration"
+        description: "Healthcare data standards and FHIR integration"
       },
       {
         name: "Clinical Data Platforms",
@@ -249,20 +249,20 @@ const servicesData = [
   },
   {
     category: "Managed IT Services",
-    icon: <Shield sx={{ fontSize: 40, color: '#4facfe' }} />,
-    color: "#4facfe",
-    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+    icon: <Shield sx={{ fontSize: { xs: 32, md: 40 }, color: '#4ecdc4' }} />,
+    color: "#4ecdc4",
+    gradient: "linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%)",
     services: [
       {
         name: "Managed IT Services",
         path: "/service/managed-it-services",
         description: "Comprehensive managed IT services",
-        features: ["Infrastructure & Network Monitoring", "Application Support", "ITSM Service Desk", "Managed Resource Services"]
+        features: ["Infrastructure & Network", "Application Support", "ITSM Service Desk", "Managed Resources"]
       },
       {
-        name: "Infrastructure & Network Monitoring",
+        name: "Infrastructure & Network",
         path: "/service/managed-it-services/infra",
-        description: "IT infrastructure and network monitoring services"
+        description: "IT infrastructure and network management"
       },
       {
         name: "Application Support",
@@ -275,7 +275,7 @@ const servicesData = [
         description: "IT service management and service desk"
       },
       {
-        name: "Managed Resource Services",
+        name: "Managed Resources",
         path: "/service/managed-it-services/tms",
         description: "Managed talent and resource services"
       }
@@ -283,9 +283,9 @@ const servicesData = [
   },
   {
     category: "Talent Solutions",
-    icon: <Users sx={{ fontSize: 40, color: '#a8edea' }} />,
-    color: "#a8edea",
-    gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+    icon: <Users sx={{ fontSize: { xs: 32, md: 40 }, color: '#f093fb' }} />,
+    color: "#f093fb",
+    gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     services: [
       {
         name: "Talent Solutions",
@@ -296,7 +296,7 @@ const servicesData = [
       {
         name: "IT Staff Augmentation",
         path: "/service/talent-solutions/staffing",
-        description: "IT talent augmentation and staffing services"
+        description: "IT staff augmentation and consulting"
       },
       {
         name: "Healthcare Staffing",
@@ -304,7 +304,7 @@ const servicesData = [
         description: "Healthcare and life sciences staffing"
       },
       {
-        name: "Direct Hire & Contract-to-Hire",
+        name: "Direct Hire & Contract",
         path: "/service/talent-solutions/direct-hire",
         description: "Direct hire and contract-to-hire solutions"
       },
@@ -321,37 +321,20 @@ const ServicesPage = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [hoveredCard, setHoveredCard] = useState(null);
 
   useEffect(() => {
-    // Animate service categories
-    gsap.fromTo('.service-category', 
-      { y: 100, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.services-grid',
-          start: 'top 80%'
-        }
-      }
-    );
-
-    // Animate service cards
+    // GSAP animations for service cards
     gsap.fromTo('.service-card', 
-      { scale: 0.8, opacity: 0 },
+      { opacity: 0, y: 50 },
       { 
-        scale: 1, 
         opacity: 1, 
-        duration: 0.6, 
+        y: 0, 
+        duration: 0.8, 
         stagger: 0.1,
-        ease: 'back.out(1.7)',
         scrollTrigger: {
           trigger: '.services-grid',
-          start: 'top 70%'
+          start: 'top 80%',
+          end: 'bottom 20%',
         }
       }
     );
@@ -363,268 +346,168 @@ const ServicesPage = () => {
 
   return (
     <Layout>
-      {/* Hero Section from Homepage */}
-      <HeroSection />
-
-      {/* Services Grid */}
-      <Box sx={{ py: { xs: 6, md: 10 }, backgroundColor: '#f8fafc' }}>
-        <Container maxWidth="xl">
-          <Grid container spacing={4} className="services-grid">
-            {servicesData.map((category, categoryIndex) => (
-              <Grid item xs={12} key={categoryIndex}>
-                <Fade in timeout={1000} style={{ transitionDelay: `${categoryIndex * 200}ms` }}>
-                  <Box className="service-category">
-                    {/* Category Header */}
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        mb: 4,
-                        p: 3,
-                        background: category.gradient,
-                        borderRadius: 3,
-                        color: 'white',
-                        boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
-                      }}
-                    >
-                      <Box sx={{ mr: 3 }}>
-                        {category.icon}
-                      </Box>
-                      <Box>
-                        <Typography
-                          variant="h3"
-                          sx={{
-                            fontWeight: 800,
-                            fontSize: { xs: '2.7rem', md: '3.75rem' },
-                            mb: 1
-                          }}
-                        >
-                          {category.category}
-                        </Typography>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            opacity: 0.9,
-                            fontWeight: 400,
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                          }}
-                        >
-                          {category.services.length} specialized services
-                        </Typography>
-                      </Box>
-                    </Box>
-
-                    {/* Services Grid */}
-                    <Grid container spacing={3}>
-                      {category.services.map((service, serviceIndex) => (
-                        <Grid item xs={12} sm={6} md={4} key={serviceIndex}>
-                          <Slide direction="up" in timeout={800} style={{ transitionDelay: `${serviceIndex * 100}ms` }}>
-                            <Card
-                              className="service-card"
-                              sx={{
-                                height: '100%',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                transform: hoveredCard === `${categoryIndex}-${serviceIndex}` ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
-                                boxShadow: hoveredCard === `${categoryIndex}-${serviceIndex}` 
-                                  ? '0 20px 40px rgba(0,0,0,0.15)' 
-                                  : '0 4px 20px rgba(0,0,0,0.08)',
-                                '&:hover': {
-                                  boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
-                                }
-                              }}
-                              onMouseEnter={() => setHoveredCard(`${categoryIndex}-${serviceIndex}`)}
-                              onMouseLeave={() => setHoveredCard(null)}
-                              onClick={() => handleServiceClick(service.path)}
-                            >
-                              <CardMedia
-                                component="img"
-                                height="200"
-                                image={`/herosectionimages/${categoryIndex === 0 ? 'ai-technology.jpg' : 
-                                       categoryIndex === 1 ? 'cloud-computing-illustration.jpg' :
-                                       categoryIndex === 2 ? 'saas-concept-collage.jpg' :
-                                       categoryIndex === 3 ? 'data-analytics-concept.jpg' :
-                                       categoryIndex === 4 ? 'engineers-brainstorming-ways-use-ai.jpg' :
-                                       categoryIndex === 5 ? 'ai-human-collaboration.jpg' :
-                                       categoryIndex === 6 ? 'cloud-computing-illustration.jpg' :
-                                       'woman-scrolling-laptop.jpg'}`}
-                                alt={service.name}
-                                sx={{
-                                  filter: 'brightness(0.8) contrast(1.1)',
-                                  transition: 'all 0.3s ease'
-                                }}
-                              />
-                              <CardContent sx={{ p: 3 }}>
-                                <Typography
-                                  variant="h5"
-                                  sx={{
-                                    fontWeight: 700,
-                                    mb: 2,
-                                    color: category.color,
-                                    fontSize: { xs: '1.2rem', md: '1.4rem' }
-                                  }}
-                                >
-                                  {service.name}
-                                </Typography>
-                                <Typography
-                                  variant="body1"
-                                  sx={{
-                                    color: 'text.secondary',
-                                    mb: 3,
-                                    lineHeight: 1.6,
-                                    fontSize: { xs: '0.9rem', md: '1rem' }
-                                  }}
-                                >
-                                  {service.description}
-                                </Typography>
-                                
-                                {/* Features list for main services */}
-                                {service.features && (
-                                  <Box sx={{ mb: 3 }}>
-                                    <Typography
-                                      variant="body2"
-                                      sx={{
-                                        fontWeight: 600,
-                                        mb: 1,
-                                        color: 'text.primary'
-                                      }}
-                                    >
-                                      Key offerings:
-                                    </Typography>
-                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                                      {service.features.map((feature, featureIndex) => (
-                                        <Chip
-                                          key={featureIndex}
-                                          label={feature}
-                                          size="small"
-                                          sx={{
-                                            backgroundColor: `${category.color}15`,
-                                            color: category.color,
-                                            fontWeight: 500,
-                                            fontSize: '0.75rem'
-                                          }}
-                                        />
-                                      ))}
-                                    </Box>
-                                  </Box>
-                                )}
-
-                                <Button
-                                  variant="contained"
-                                  endIcon={<ArrowForward />}
-                                  sx={{
-                                    background: category.gradient,
-                                    color: 'white',
-                                    fontWeight: 600,
-                                    textTransform: 'none',
-                                    borderRadius: 2,
-                                    px: 3,
-                                    py: 1,
-                                    '&:hover': {
-                                      background: category.gradient,
-                                      transform: 'translateX(4px)',
-                                      boxShadow: '0 8px 25px rgba(0,0,0,0.2)'
-                                    },
-                                    transition: 'all 0.3s ease'
-                                  }}
-                                >
-                                  Learn More
-                                </Button>
-                              </CardContent>
-                            </Card>
-                          </Slide>
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </Box>
-                </Fade>
-              </Grid>
-            ))}
-          </Grid>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+          color: 'white',
+          py: { xs: 6, sm: 8, md: 10, lg: 12 },
+          px: { xs: 2, sm: 3, md: 4 },
+          minHeight: { xs: '60vh', md: '50vh' },
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+          <Box sx={{ textAlign: 'center', maxWidth: '800px', mx: 'auto' }}>
+            <Typography
+              variant="h1"
+              sx={{
+                fontWeight: 800,
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem', lg: '4rem' },
+                mb: { xs: 2, md: 3 },
+                lineHeight: { xs: 1.1, md: 1.2 },
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Our Services
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{
+                mb: { xs: 3, md: 4 },
+                opacity: 0.9,
+                lineHeight: 1.6,
+                fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
+              }}
+            >
+              Comprehensive technology solutions designed to transform your business and drive innovation across all industries.
+            </Typography>
+          </Box>
         </Container>
       </Box>
 
-      {/* CTA Section */}
-      <Box
-        sx={{
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          py: { xs: 6, md: 10 },
-          textAlign: 'center',
-          color: 'white'
-        }}
-      >
-        <Container maxWidth="lg">
+      {/* Services Grid */}
+      <Box sx={{ 
+        py: { xs: 6, sm: 8, md: 10 }, 
+        px: { xs: 2, sm: 3, md: 4 },
+        background: '#f8fafc'
+      }}>
+        <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
           <Typography
             variant="h2"
             sx={{
+              textAlign: 'center',
               fontWeight: 700,
-              mb: 3,
-              fontSize: { xs: '2rem', md: '3rem' }
+              color: '#0f172a',
+              mb: { xs: 4, md: 6 },
+              fontSize: { xs: '1.75rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
+              lineHeight: { xs: 1.2, md: 1.1 },
+              letterSpacing: '-0.01em',
             }}
           >
-            Ready to Transform Your Business?
+            Service Categories
           </Typography>
-          <Typography
-            variant="h5"
-            sx={{
-              mb: 4,
-              opacity: 0.9,
-              maxWidth: '600px',
-              mx: 'auto'
-            }}
-          >
-            Let's discuss how our comprehensive services can accelerate your digital transformation journey
-          </Typography>
-          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button
-              variant="contained"
-              size="large"
-              onClick={() => navigate('/contact')}
-              sx={{
-                backgroundColor: 'white',
-                color: '#667eea',
-                fontWeight: 600,
-                px: 4,
-                py: 2,
-                fontSize: '1.1rem',
-                textTransform: 'none',
-                borderRadius: 3,
-                '&:hover': {
-                  backgroundColor: '#f8f9fa',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
-                },
-                transition: 'all 0.3s ease'
-              }}
-            >
-              Get Started Today
-            </Button>
-            <Button
-              variant="outlined"
-              size="large"
-              onClick={() => navigate('/contact')}
-              sx={{
-                borderColor: 'white',
-                color: 'white',
-                fontWeight: 600,
-                px: 4,
-                py: 2,
-                fontSize: '1.1rem',
-                textTransform: 'none',
-                borderRadius: 3,
-                '&:hover': {
-                  borderColor: 'white',
-                  backgroundColor: 'rgba(255,255,255,0.1)',
-                  transform: 'translateY(-2px)'
-                },
-                transition: 'all 0.3s ease'
-              }}
-            >
-              Schedule a Consultation
-            </Button>
-          </Box>
+
+          <Grid container spacing={{ xs: 3, md: 4 }} className="services-grid">
+            {servicesData.map((category, index) => (
+              <Grid item xs={12} md={6} lg={4} key={index}>
+                <Card
+                  className="service-card"
+                  sx={{
+                    height: '100%',
+                    borderRadius: 3,
+                    overflow: 'hidden',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease',
+                    border: '1px solid rgba(0,0,0,0.05)',
+                    cursor: 'pointer',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      boxShadow: '0 16px 48px rgba(0,0,0,0.12)',
+                      borderColor: category.color,
+                    },
+                  }}
+                  onClick={() => handleServiceClick(category.services[0].path)}
+                >
+                  <Box
+                    sx={{
+                      background: category.gradient,
+                      p: { xs: 3, md: 4 },
+                      color: 'white',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <Box sx={{ mb: 2 }}>
+                      {category.icon}
+                    </Box>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: { xs: '1.125rem', md: '1.25rem' },
+                        lineHeight: 1.3,
+                        letterSpacing: '-0.01em',
+                      }}
+                    >
+                      {category.category}
+                    </Typography>
+                  </Box>
+                  
+                  <CardContent sx={{ p: { xs: 2.5, md: 3 } }}>
+                    <Box sx={{ mb: 2 }}>
+                      {category.services[0].features?.map((feature, idx) => (
+                        <Chip
+                          key={idx}
+                          label={feature}
+                          size="small"
+                          sx={{
+                            mr: 1,
+                            mb: 1,
+                            background: 'rgba(59, 130, 246, 0.1)',
+                            color: '#1e40af',
+                            fontSize: '0.75rem',
+                            fontWeight: 500,
+                          }}
+                        />
+                      ))}
+                    </Box>
+                    
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: '#64748b',
+                        lineHeight: 1.6,
+                        fontSize: { xs: '0.8rem', md: '0.875rem' },
+                        mb: 2,
+                      }}
+                    >
+                      {category.services[0].description}
+                    </Typography>
+                    
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      endIcon={<ArrowForward sx={{ fontSize: 16 }} />}
+                      sx={{
+                        borderColor: category.color,
+                        color: category.color,
+                        fontSize: '0.8rem',
+                        fontWeight: 600,
+                        '&:hover': {
+                          background: category.color,
+                          color: 'white',
+                          borderColor: category.color,
+                        },
+                      }}
+                    >
+                      Learn More
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
       </Box>
     </Layout>

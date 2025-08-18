@@ -29,7 +29,7 @@ const TalentSolutions = () => {
     <MasterMainServiceTemplate
       // Hero Section - Minimal
       heroTitle="Talent Solutions"
-      heroSubtitle="Workforce Excellence"
+      heroSubtitle="Workforce Solutions"
       heroDescription="Empower business growth with agile talent solutions. From IT staff augmentation to specialized healthcare staffing, we provide flexible workforce strategies that help organizations scale quickly and stay competitive."
       heroButtonText="Talent Solutions"
       heroButtonLink="/contact"

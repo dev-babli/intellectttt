@@ -709,11 +709,13 @@ const MegaMenuContainer = styled(motion.div)`
   top: 100%;
   left: 0;
   right: 0;
-  background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   z-index: 999;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 const MegaMenuContent = styled.div`
@@ -721,24 +723,28 @@ const MegaMenuContent = styled.div`
   margin: 0 auto;
   padding: 1.5rem 1rem;
   min-height: fit-content;
-  max-height: 50vh;
+  max-height: 60vh;
   overflow-y: auto;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(24px);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 1024px) {
     padding: 1.25rem 0.75rem;
+    border-radius: 16px;
   }
 
   @media (max-width: 768px) {
     padding: 1rem 0.5rem;
+    border-radius: 12px;
   }
 
   @media (max-width: 480px) {
     padding: 0.75rem 0.25rem;
+    border-radius: 8px;
   }
 `;
 
@@ -2412,6 +2418,8 @@ function MegaMenuIntellectt() {
   const [hoveredService, setHoveredService] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const [isCompaniesView, setIsCompaniesView] = useState(false);
+  const [isGlobalPresenceView, setIsGlobalPresenceView] = useState(false);
   const timeoutRef = useRef(null);
   const searchInputRef = useRef(null);
   const navigate = useNavigate();
@@ -2434,6 +2442,24 @@ function MegaMenuIntellectt() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Helper function to handle double-click navigation
+  const handleDoubleClickNavigation = (url, e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    
+    // Add visual feedback
+    const target = e.currentTarget;
+    target.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      target.style.transform = "scale(1)";
+    }, 150);
+    
+    // Navigate after a short delay for visual feedback
+    setTimeout(() => {
+      handleNavigation(url);
+    }, 200);
+  };
+
   // Check if we're on the homepage
   const isHomePage = location.pathname === "/";
 
@@ -2451,6 +2477,35 @@ function MegaMenuIntellectt() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mega menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const megaMenu = document.querySelector('[data-mega-menu="true"]');
+      const navItems = document.querySelectorAll('[data-nav-item="true"]');
+      
+      if (megaMenu && !megaMenu.contains(event.target)) {
+        const isNavItem = Array.from(navItems).some(item => item.contains(event.target));
+        if (!isNavItem) {
+                setActiveMenu(null);
+      setHoveredItem(null);
+      setSelectedService(null);
+      setIsCompaniesView(false);
+      setIsGlobalPresenceView(false);
+        }
+      }
+    };
+
+    if (activeMenu) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [activeMenu]);
 
   const handleMouseEnter = (menuName) => {
     // Disable hover for all menus - use click only
@@ -2476,6 +2531,8 @@ function MegaMenuIntellectt() {
     if (activeMenu === menuName) {
       setActiveMenu(null);
       setSelectedService(null);
+      setIsCompaniesView(false);
+      setIsGlobalPresenceView(false);
     } else {
       setActiveMenu(menuName);
       setSelectedService(null);
@@ -2777,6 +2834,7 @@ function MegaMenuIntellectt() {
                  margin: "0 auto",
                  maxHeight: "60vh",
                  overflowY: "auto",
+                 flexDirection: window.innerWidth <= 768 ? "column" : "row",
                }}
             >
               {/* Left Column - Service Categories */}
@@ -2784,7 +2842,7 @@ function MegaMenuIntellectt() {
                                  style={{
                    flex: 1,
                    display: "grid",
-                   gridTemplateColumns: "repeat(3, 1fr)",
+                   gridTemplateColumns: window.innerWidth <= 768 ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
                    gap: "0.4rem",
                  }}
               >
@@ -2817,6 +2875,26 @@ function MegaMenuIntellectt() {
                      onMouseLeave={() => setHoveredService(null)}
                      onClick={() => {
                        handleServiceClick(item.title);
+                     }}
+                     onDoubleClick={(e) => {
+                       if (item.url) {
+                         handleDoubleClickNavigation(item.url, e);
+                       }
+                     }}
+                     onTouchEnd={(e) => {
+                       // Handle double-tap on mobile
+                       const now = Date.now();
+                       const lastTap = e.currentTarget.lastTap || 0;
+                       const timeDiff = now - lastTap;
+                       
+                       if (timeDiff < 300 && timeDiff > 0) {
+                         // Double tap detected
+                         if (item.url) {
+                           handleDoubleClickNavigation(item.url, e);
+                         }
+                       }
+                       
+                       e.currentTarget.lastTap = now;
                      }}
                   >
                     {/* Service Icon */}
@@ -2870,8 +2948,10 @@ function MegaMenuIntellectt() {
               <div
                 style={{
                   flex: 1,
-                  borderLeft: "1px solid #e2e8f0",
-                  paddingLeft: "1.5rem",
+                  borderLeft: window.innerWidth <= 768 ? "none" : "1px solid #e2e8f0",
+                  borderTop: window.innerWidth <= 768 ? "1px solid #e2e8f0" : "none",
+                  paddingLeft: window.innerWidth <= 768 ? "0" : "1.5rem",
+                  paddingTop: window.innerWidth <= 768 ? "1.5rem" : "0",
                   background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
                   borderRadius: "12px",
                   padding: "1.5rem",
@@ -2903,7 +2983,7 @@ function MegaMenuIntellectt() {
                              <div
                                style={{
                                  display: "grid",
-                                 gridTemplateColumns: "repeat(3, 1fr)",
+                                 gridTemplateColumns: window.innerWidth <= 768 ? "repeat(2, 1fr)" : "repeat(3, 1fr)",
                                  gap: "0.5rem",
                                }}
                              >
@@ -2926,18 +3006,18 @@ function MegaMenuIntellectt() {
                                     position: "relative",
                                     overflow: "hidden",
                                   }}
-                                  onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
-                                    e.currentTarget.style.borderColor = "#cbd5e1";
-                                    e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
-                                    e.currentTarget.style.boxShadow = "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)";
-                                  }}
-                                  onMouseLeave={(e) => {
-                                    e.currentTarget.style.background = "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)";
-                                    e.currentTarget.style.borderColor = "#e2e8f0";
-                                    e.currentTarget.style.transform = "translateY(0) scale(1)";
-                                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.06)";
-                                  }}
+                                                    onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
+                    e.currentTarget.style.borderColor = "#cbd5e1";
+                    e.currentTarget.style.transform = "translateY(-4px) scale(1.03)";
+                    e.currentTarget.style.boxShadow = "0 12px 30px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)";
+                    e.currentTarget.style.borderColor = "#e2e8f0";
+                    e.currentTarget.style.transform = "translateY(0) scale(1)";
+                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.06)";
+                  }}
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     if (serviceItem.url) {
@@ -3109,77 +3189,77 @@ function MegaMenuIntellectt() {
           }}
         >
           <MegaMenuContent>
-            <div
+                                      <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(4, 1fr)",
-                gap: "1rem",
+                gridTemplateColumns: window.innerWidth <= 768 ? "repeat(2, 1fr)" : window.innerWidth <= 1024 ? "repeat(3, 1fr)" : "repeat(4, 1fr)",
+                gap: "1.2rem",
                 padding: "1.5rem",
                 maxWidth: "1200px",
                 margin: "0 auto",
-                maxHeight: "60vh",
+                maxHeight: "65vh",
               }}
             >
               {[
                 {
-                  title: "Healthcare & Life Sciences",
-                  description: "Transform healthcare delivery with cutting-edge digital solutions.",
+                  title: "Healthcare",
+                  description: "Digital healthcare solutions & medical tech.",
                   icon: "🏥",
                   color: "rgba(20, 184, 166, 0.15)",
                   url: "/industries/helthcare-and-life-sciences",
                   features: ["Electronic Health Records", "Telemedicine Platforms", "Medical Device Integration"]
                 },
                 {
-                  title: "Manufacturing & Automotive",
-                  description: "Optimize manufacturing processes with intelligent automation.",
+                  title: "Manufacturing",
+                  description: "Smart manufacturing & automation solutions.",
                   icon: "🏭",
                   color: "rgba(59, 130, 246, 0.15)",
                   url: "/industries/menufacturing-and-automotive",
                   features: ["Smart Manufacturing", "Digital Twin Technology", "Quality Control Systems"]
                 },
                 {
-                  title: "Banking & Financial Services",
-                  description: "Secure financial operations with advanced digital banking solutions.",
+                  title: "Banking & Finance",
+                  description: "Digital banking & financial solutions.",
                   icon: "🏦",
                   color: "rgba(16, 185, 129, 0.15)",
                   url: "/industries/banking-and-financial-services",
                   features: ["Digital Banking Platforms", "Payment Processing Systems", "Risk Management"]
                 },
                 {
-                  title: "Aerospace & Defense",
-                  description: "Advance aerospace technology with precision engineering solutions.",
+                  title: "Aerospace",
+                  description: "Aerospace tech & defense solutions.",
                   icon: "✈️",
                   color: "rgba(245, 158, 11, 0.15)",
                   url: "/industries/aerospace-and-defense",
                   features: ["Aircraft Systems", "Defense Technology", "Satellite Communications"]
                 },
                 {
-                  title: "Retail & E-Commerce",
-                  description: "Accelerate retail transformation with digital commerce solutions.",
+                  title: "Retail & E-commerce",
+                  description: "Digital commerce & retail solutions.",
                   icon: "🛍️",
                   color: "rgba(139, 92, 246, 0.15)",
                   url: "/industries/retail-and-ecommerce",
                   features: ["E-commerce Platforms", "Omnichannel Solutions", "Inventory Management"]
                 },
                 {
-                  title: "Energy & Utilities",
-                  description: "Power energy systems with smart grid and renewable solutions.",
+                  title: "Energy",
+                  description: "Smart grid & renewable energy solutions.",
                   icon: "⚡",
                   color: "rgba(239, 68, 68, 0.15)",
                   url: "/industries/energy-and-utilities",
                   features: ["Smart Grid Technology", "Renewable Energy", "Energy Management"]
                 },
                 {
-                  title: "Education & Training",
-                  description: "Enhance education delivery with digital learning platforms.",
+                  title: "Education",
+                  description: "Digital learning & training platforms.",
                   icon: "🎓",
                   color: "rgba(34, 197, 94, 0.15)",
                   url: "/industries/education-and-training",
                   features: ["Learning Management Systems", "Virtual Classrooms", "Student Analytics"]
                 },
                 {
-                  title: "Logistics & Transportation",
-                  description: "Optimize logistics with intelligent supply chain solutions.",
+                  title: "Logistics",
+                  description: "Supply chain & transportation solutions.",
                   icon: "🚚",
                   color: "rgba(168, 85, 247, 0.15)",
                   url: "/industries/logistics-and-transportation",
@@ -3193,14 +3273,14 @@ function MegaMenuIntellectt() {
                     flexDirection: "row",
                     alignItems: "center",
                     textAlign: "left",
-                    gap: "0.875rem",
-                    padding: "1rem",
+                    gap: window.innerWidth <= 768 ? "0.6rem" : "0.875rem",
+                    padding: window.innerWidth <= 768 ? "0.75rem" : "1rem",
                     borderRadius: "12px",
                     background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
                     border: "1px solid #e2e8f0",
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                     cursor: "pointer",
-                    height: "70px",
+                    height: window.innerWidth <= 768 ? "75px" : "85px",
                     boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)",
                     position: "relative",
                     overflow: "hidden",
@@ -3208,12 +3288,12 @@ function MegaMenuIntellectt() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = "linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)";
                     e.currentTarget.style.borderColor = "#cbd5e1";
-                    e.currentTarget.style.transform = "translateY(-3px) scale(1.02)";
-                    e.currentTarget.style.boxShadow = "0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1)";
+                    e.currentTarget.style.transform = "translateY(-4px) scale(1.03)";
+                    e.currentTarget.style.boxShadow = "0 12px 30px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1)";
                     // Animate arrow
                     const arrow = e.currentTarget.querySelector('div:last-child');
                     if (arrow) {
-                      arrow.style.transform = "translateX(3px)";
+                      arrow.style.transform = "translateX(4px)";
                       arrow.style.opacity = "1";
                       arrow.style.color = "#3b82f6";
                     }
@@ -3240,14 +3320,14 @@ function MegaMenuIntellectt() {
                   {/* Industry Icon */}
                   <div
                     style={{
-                      width: "40px",
-                      height: "40px",
+                      width: window.innerWidth <= 768 ? "40px" : "45px",
+                      height: window.innerWidth <= 768 ? "40px" : "45px",
                       background: `linear-gradient(135deg, ${industry.color} 0%, ${industry.color.replace('0.15', '0.25')} 100%)`,
-                      borderRadius: "10px",
+                      borderRadius: window.innerWidth <= 768 ? "10px" : "12px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontSize: "1.25rem",
+                      fontSize: window.innerWidth <= 768 ? "1.2rem" : "1.4rem",
                       flexShrink: 0,
                       boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
                       position: "relative",
@@ -3273,12 +3353,12 @@ function MegaMenuIntellectt() {
                     {/* Industry Title */}
                     <h3
                       style={{
-                        fontSize: "0.875rem",
+                        fontSize: window.innerWidth <= 768 ? "0.65rem" : "0.7rem",
                         fontWeight: "600",
                         color: "#1e293b",
                         fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
-                        margin: "0 0 0.25rem 0",
-                        lineHeight: "1.2",
+                        margin: "0 0 0.3rem 0",
+                        lineHeight: "1.3",
                         whiteSpace: "nowrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
@@ -3291,7 +3371,7 @@ function MegaMenuIntellectt() {
                     {/* Industry Description */}
                     <p
                       style={{
-                        fontSize: "0.625rem",
+                        fontSize: window.innerWidth <= 768 ? "0.5rem" : "0.55rem",
                         color: "#64748b",
                         lineHeight: "1.3",
                         margin: "0",
@@ -3308,13 +3388,13 @@ function MegaMenuIntellectt() {
                   {/* Arrow Indicator */}
                   <div
                     style={{
-                      width: "16px",
-                      height: "16px",
+                      width: "18px",
+                      height: "18px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       color: "#94a3b8",
-                      fontSize: "0.75rem",
+                      fontSize: "0.8rem",
                       opacity: "0.6",
                       transition: "all 0.3s ease",
                       flexShrink: 0,
@@ -3654,7 +3734,7 @@ function MegaMenuIntellectt() {
                         case "Join our team":
                           return {
                             image:
-                              "/images/talent-solution.png",
+                              "/herosectionimages/New ONES/5.webp",
                             title: "Join Our Team",
                             description:
                               "Browse current job openings and grow your career with us.",
@@ -3665,7 +3745,7 @@ function MegaMenuIntellectt() {
                         case "Life at Intellectt":
                           return {
                             image:
-                              "/images/cloud-and-application.png",
+                              "/herosectionimages/New ONES/6.webp",
                             title: "Life at Intellectt",
                             description:
                               "Discover our culture and values that make us great.",
@@ -3676,7 +3756,7 @@ function MegaMenuIntellectt() {
                         case "How we hire":
                           return {
                             image:
-                              "/images/Data-Analytics.png",
+                              "/herosectionimages/New ONES/7.webp",
                             title: "How We Hire",
                             description:
                               "Learn about our hiring process and what we look for.",
@@ -3687,7 +3767,7 @@ function MegaMenuIntellectt() {
                         default:
                           return {
                             image:
-                              "/images/cloud-and-application.png",
+                              "/herosectionimages/New ONES/6.webp",
                             title: "Life at Intellectt",
                             description:
                               "Discover our culture and values that make us great.",
@@ -3737,7 +3817,7 @@ function MegaMenuIntellectt() {
 
                           setHoveredItem(item.title);
 
-                          // Update content based on hover
+                          // Update content based on hover with smooth transitions
                           const content = getItemContent(item.title);
                           const imageElement =
                             document.getElementById("careers-image");
@@ -3755,13 +3835,24 @@ function MegaMenuIntellectt() {
                             descriptionElement &&
                             buttonElement
                           ) {
-                            // Update image
-                            imageElement.src = content.image;
+                            // Add fade effect to image
+                            imageElement.style.opacity = "0.7";
+                            setTimeout(() => {
+                              imageElement.src = content.image;
+                              imageElement.alt = content.title;
+                              imageElement.style.opacity = "1";
+                            }, 150);
 
-                            // Update text content
-                            titleElement.textContent = content.title;
-                            descriptionElement.textContent =
-                              content.description;
+                            // Smooth text transitions
+                            titleElement.style.opacity = "0.7";
+                            descriptionElement.style.opacity = "0.7";
+                            
+                            setTimeout(() => {
+                              titleElement.textContent = content.title;
+                              descriptionElement.textContent = content.description;
+                              titleElement.style.opacity = "1";
+                              descriptionElement.style.opacity = "1";
+                            }, 150);
 
                             // Update button
                             buttonElement.textContent = content.buttonText;
@@ -3976,7 +4067,7 @@ function MegaMenuIntellectt() {
                         case "Our Journey":
                           return {
                             image:
-                              "/images/cloud-and-application.png",
+                              "/herosectionimages/New ONES/1.webp",
                             title: "Our Journey",
                             description:
                               "From startup to global leader in AI & technology solutions.",
@@ -3986,7 +4077,7 @@ function MegaMenuIntellectt() {
                         case "Leadership Team":
                           return {
                             image:
-                              "/images/talent-solution.png",
+                              "/herosectionimages/New ONES/2.webp",
                             title: "Meet Our Leaders",
                             description:
                               "Visionary leaders driving innovation and excellence.",
@@ -3996,17 +4087,17 @@ function MegaMenuIntellectt() {
                         case "Global Presence":
                           return {
                             image:
-                              "/images/cloud-computing-hero.webp",
+                              "/herosectionimages/New ONES/3.webp",
                             title: "Global Reach",
                             description:
                               "Worldwide network serving clients across 50+ countries.",
                             buttonText: "View Locations",
-                            buttonUrl: "/company/global-presence",
+                            buttonUrl: "/global-presence",
                           };
                         case "Our Companies":
                           return {
                             image:
-                              "/images/lumin-logo.png",
+                              "/herosectionimages/New ONES/4.webp",
                             title: "Our Companies",
                             description:
                               "Specialized divisions driving innovation across industries.",
@@ -4016,7 +4107,7 @@ function MegaMenuIntellectt() {
                         default:
                           return {
                             image:
-                              "/images/cloud-and-application.png",
+                              "/herosectionimages/New ONES/1.webp",
                             title: "About Intellectt",
                             description:
                               "Leading AI & technology company with global presence.",
@@ -4072,53 +4163,44 @@ function MegaMenuIntellectt() {
                               "0 2px 8px rgba(0, 0, 0, 0.1)";
                           }
 
-                          // Update content based on hover
+                          // Update content based on hover with smooth transitions
                           const content = getItemContent(item.title);
-                          const imageElement =
-                            document.getElementById("who-we-are-image");
-                          const titleElement =
-                            document.getElementById("who-we-are-title");
-                          const descriptionElement = document.getElementById(
-                            "who-we-are-description"
-                          );
-                          const buttonElement =
-                            document.getElementById("who-we-are-button");
+                          
+                          if (item.title === "Our Companies") {
+                            setIsCompaniesView(true);
+                            setIsGlobalPresenceView(false);
+                          } else if (item.title === "Global Presence") {
+                            setIsCompaniesView(false);
+                            setIsGlobalPresenceView(true);
+                          } else {
+                            setIsCompaniesView(false);
+                            setIsGlobalPresenceView(false);
+                            
+                            // Update content for other items
+                            const imageElement = document.getElementById("who-we-are-image");
+                            const titleElement = document.getElementById("who-we-are-title");
+                            const descriptionElement = document.getElementById("who-we-are-description");
+                            const buttonElement = document.getElementById("who-we-are-button");
 
-                          if (
-                            imageElement &&
-                            titleElement &&
-                            descriptionElement &&
-                            buttonElement
-                          ) {
-                            if (item.title === "Our Companies") {
-                              // For Our Companies, show two company boxes
-                              const rightContent = document.querySelector('[data-right-content="who-we-are"]');
-                              if (rightContent) {
-                                rightContent.innerHTML = `
-                                  <div style="display: flex; flexDirection: column; gap: 1rem; padding: 1rem;">
-                                    <!-- Lumin Inc. -->
-                                    <div style="background: white; border: 1px solid #e5e7eb; borderRadius: 8px; padding: 1rem; cursor: pointer;" 
-                                         onclick="window.open('https://lumininc.com/', '_blank')">
-                                      <img src="/images/lumin-logo.png" alt="Lumin Inc" style="width: 100%; height: auto; maxWidth: 200px;" />
-                                    </div>
-                                    
-                                    <!-- Lumin Innovations -->
-                                    <div style="background: white; border: 1px solid #e5e7eb; borderRadius: 8px; padding: 1rem; cursor: pointer;" 
-                                         onclick="window.open('https://lumin-innovations.com/', '_blank')">
-                                      <img src="/images/lumin-innovations-horizontal.png" alt="Lumin Innovations" style="width: 100%; height: auto; maxWidth: 200px;" />
-                                    </div>
-                                  </div>
-                                `;
-                              }
-                            } else {
-                              // For other items, update the content as before
-                              // Update image src
-                              imageElement.src = content.image;
-                              imageElement.alt = content.title;
+                            if (imageElement && titleElement && descriptionElement && buttonElement) {
+                              // Add fade effect to image
+                              imageElement.style.opacity = "0.7";
+                              setTimeout(() => {
+                                imageElement.src = content.image;
+                                imageElement.alt = content.title;
+                                imageElement.style.opacity = "1";
+                              }, 150);
 
-                              // Update text content
-                              titleElement.textContent = content.title;
-                              descriptionElement.textContent = content.description;
+                              // Smooth text transitions
+                              titleElement.style.opacity = "0.7";
+                              descriptionElement.style.opacity = "0.7";
+                              
+                              setTimeout(() => {
+                                titleElement.textContent = content.title;
+                                descriptionElement.textContent = content.description;
+                                titleElement.style.opacity = "1";
+                                descriptionElement.style.opacity = "1";
+                              }, 150);
 
                               // Update button
                               buttonElement.textContent = content.buttonText;
@@ -4139,6 +4221,12 @@ function MegaMenuIntellectt() {
                         onClick={() => {
                           if (item.url) {
                             handleNavigation(item.url);
+                          }
+                        }}
+                        onDoubleClick={() => {
+                          // Navigate to the service page on double click
+                          if (item.url) {
+                            window.location.href = item.url;
                           }
                         }}
                       >
@@ -4168,7 +4256,7 @@ function MegaMenuIntellectt() {
                 </div>
               </div>
 
-              {/* Right Content Area - Careers Style */}
+              {/* Right Content Area - Dynamic Content */}
               <div
                 data-right-content="who-we-are"
                 style={{
@@ -4180,101 +4268,228 @@ function MegaMenuIntellectt() {
                   background: "#ffffff",
                 }}
               >
-                {/* Featured Image */}
-                <div
-                  style={{
-                    width: "100%",
-                    height: "160px",
-                    borderRadius: "12px",
-                    overflow: "hidden",
-                    marginBottom: "1.5rem",
-                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
-                  }}
-                >
-                  <img
-                    id="who-we-are-image"
-                    src="/images/cloud-and-application.png"
-                    alt="About Intellectt"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      transition: "all 0.3s ease",
-                    }}
-                  />
-                </div>
+                {isCompaniesView ? (
+                  // Companies View
+                  <div style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: "1rem" }}>
+                    {/* Lumin Inc. */}
+                    <div 
+                      style={{
+                        background: "white", 
+                        border: "1px solid #e5e7eb", 
+                        borderRadius: "8px", 
+                        padding: "1rem", 
+                        cursor: "pointer", 
+                        transition: "all 0.3s ease"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.02)";
+                        e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.boxShadow = "none";
+                      }}
+                      onClick={() => window.open('https://lumininc.com/', '_blank')}
+                    >
+                      <img 
+                        src="/images/lumin-logo.png" 
+                        alt="Lumin Inc" 
+                        style={{ width: "100%", height: "auto", maxWidth: "200px" }} 
+                      />
+                    </div>
+                    
+                    {/* Lumin Innovations */}
+                    <div 
+                      style={{
+                        background: "white", 
+                        border: "1px solid #e5e7eb", 
+                        borderRadius: "8px", 
+                        padding: "1rem", 
+                        cursor: "pointer", 
+                        transition: "all 0.3s ease"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.02)";
+                        e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.boxShadow = "none";
+                      }}
+                      onClick={() => window.open('https://lumin-innovations.com/', '_blank')}
+                    >
+                      <img 
+                        src="/images/lumin-innovations-horizontal.png" 
+                        alt="Lumin Innovations" 
+                        style={{ width: "100%", height: "auto", maxWidth: "200px" }} 
+                      />
+                    </div>
+                  </div>
+                ) : isGlobalPresenceView ? (
+                  // Global Presence View
+                  <div style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: "1rem" }}>
+                    {/* Global Offices */}
+                    <div 
+                      style={{
+                        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)", 
+                        border: "1px solid #e5e7eb", 
+                        borderRadius: "12px", 
+                        padding: "1.5rem", 
+                        cursor: "pointer", 
+                        transition: "all 0.3s ease",
+                        color: "white",
+                        textAlign: "center"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.02)";
+                        e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.2)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.boxShadow = "none";
+                      }}
+                      onClick={() => handleNavigation('/global-presence')}
+                    >
+                      <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🌍</div>
+                      <h4 style={{ margin: "0 0 0.5rem 0", fontSize: "1rem", fontWeight: "600" }}>
+                        Global Offices
+                      </h4>
+                      <p style={{ margin: 0, fontSize: "0.8rem", opacity: 0.9 }}>
+                        Serving clients across 50+ countries
+                      </p>
+                    </div>
+                    
+                    {/* Regional Expertise */}
+                    <div 
+                      style={{
+                        background: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)", 
+                        border: "1px solid #e5e7eb", 
+                        borderRadius: "12px", 
+                        padding: "1.5rem", 
+                        cursor: "pointer", 
+                        transition: "all 0.3s ease",
+                        color: "white",
+                        textAlign: "center"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.02)";
+                        e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.2)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.boxShadow = "none";
+                      }}
+                      onClick={() => handleNavigation('/global-presence')}
+                    >
+                      <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>🎯</div>
+                      <h4 style={{ margin: "0 0 0.5rem 0", fontSize: "1rem", fontWeight: "600" }}>
+                        Regional Expertise
+                      </h4>
+                      <p style={{ margin: 0, fontSize: "0.8rem", opacity: 0.9 }}>
+                        Local knowledge, global solutions
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  // Default Content View
+                  <>
+                    {/* Featured Image */}
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "160px",
+                        borderRadius: "12px",
+                        overflow: "hidden",
+                        marginBottom: "1.5rem",
+                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
+                      }}
+                    >
+                      <img
+                        id="who-we-are-image"
+                        src="/herosectionimages/New ONES/1.webp"
+                        alt="About Intellectt"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          transition: "all 0.3s ease",
+                        }}
+                      />
+                    </div>
 
-                {/* Content */}
-                <h3
-                  id="who-we-are-title"
-                  style={{
-                    color: "#111827",
-                    fontSize: "1.125rem",
-                    fontWeight: "700",
-                    margin: "0 0 0.5rem 0",
-                    fontFamily: "Inter, sans-serif",
-                    letterSpacing: "-0.02em",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  About Intellectt
-                </h3>
+                    {/* Content */}
+                    <h3
+                      id="who-we-are-title"
+                      style={{
+                        color: "#111827",
+                        fontSize: "1.125rem",
+                        fontWeight: "700",
+                        margin: "0 0 0.5rem 0",
+                        fontFamily: "Inter, sans-serif",
+                        letterSpacing: "-0.02em",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      About Intellectt
+                    </h3>
 
-                <p
-                  id="who-we-are-description"
-                  style={{
-                    color: "#6b7280",
-                    fontSize: "0.8rem",
-                    lineHeight: "1.5",
-                    margin: "0 0 1rem 0",
-                    fontFamily: "Inter, sans-serif",
-                    maxWidth: "300px",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  Leading AI & technology company with global presence.
-                </p>
+                    <p
+                      id="who-we-are-description"
+                      style={{
+                        color: "#6b7280",
+                        fontSize: "0.8rem",
+                        lineHeight: "1.5",
+                        margin: "0 0 1rem 0",
+                        fontFamily: "Inter, sans-serif",
+                        maxWidth: "300px",
+                        transition: "all 0.3s ease",
+                      }}
+                    >
+                      Leading AI & technology company with global presence.
+                    </p>
 
-                {/* Button */}
-                <RouterButton
-                  id="who-we-are-button"
-                  to="/company/our-journey"
-                  onNavigate={handleNavigation}
-                  style={{
-                    background: "transparent",
-                    border: "2px solid #e53e3e",
-                    color: "#e53e3e",
-                    padding: "0.6rem 1.25rem",
-                    borderRadius: "8px",
-                    fontSize: "0.8rem",
-                    fontWeight: "600",
-                    transition: "all 0.3s ease",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                    alignSelf: "flex-start",
-                    fontFamily: "Inter, sans-serif",
-                    letterSpacing: "0.02em",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.background = "#e53e3e";
-                    e.target.style.color = "#ffffff";
-                    e.target.style.transform = "translateY(-2px)";
-                    e.target.style.boxShadow =
-                      "0 8px 25px rgba(229, 62, 62, 0.3)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.background = "transparent";
-                    e.target.style.color = "#e53e3e";
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow = "none";
-                  }}
-                >
-                  Learn More
-                  <span style={{ fontSize: "0.75rem", fontWeight: "700" }}>
-                    →
-                  </span>
-                </RouterButton>
+                    {/* Button */}
+                    <RouterButton
+                      id="who-we-are-button"
+                      to="/company/our-journey"
+                      onNavigate={handleNavigation}
+                      style={{
+                        background: "transparent",
+                        border: "2px solid #e53e3e",
+                        color: "#e53e3e",
+                        padding: "0.6rem 1.25rem",
+                        borderRadius: "8px",
+                        fontSize: "0.8rem",
+                        fontWeight: "600",
+                        transition: "all 0.3s ease",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        alignSelf: "flex-start",
+                        fontFamily: "Inter, sans-serif",
+                        letterSpacing: "0.02em",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.background = "#e53e3e";
+                        e.target.style.color = "#ffffff";
+                        e.target.style.transform = "translateY(-2px)";
+                        e.target.style.boxShadow =
+                          "0 8px 25px rgba(229, 62, 62, 0.3)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.background = "transparent";
+                        e.target.style.color = "#e53e3e";
+                        e.target.style.transform = "translateY(0)";
+                        e.target.style.boxShadow = "none";
+                      }}
+                    >
+                      Learn More
+                      <span style={{ fontSize: "0.75rem", fontWeight: "700" }}>
+                        →
+                      </span>
+                    </RouterButton>
+                  </>
+                )}
               </div>
             </div>
           </MegaMenuContent>

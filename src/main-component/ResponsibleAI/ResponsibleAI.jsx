@@ -18,7 +18,7 @@ const ResponsibleAI = () => {
     <MasterSubServiceTemplate
       // Hero Section
       heroTitle="AI Advisory & Responsible AI Consulting"
-      heroSubtitle="Ethical AI Implementation"
+      heroSubtitle="Ethical AI"
       heroDescription="We help companies build AI with strategy and responsibility. Unlock the power of AI while ensuring ethical standards, governance, and compliance. Our advisory services guide you through the complex landscape of responsible AI implementation."
       heroBackgroundImage="/AiGenAi/AIAdvisoryandResponsibleAI.webp"
       heroTextColor="white"

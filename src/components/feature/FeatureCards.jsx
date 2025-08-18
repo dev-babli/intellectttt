@@ -17,7 +17,7 @@ const industries = [
     description:
       "Digital health solutions, medical device technology, and life sciences innovation for improved patient care and research outcomes.",
     category: "HEALTHCARE & LIFE SCIENCES",
-    image: "/herosectionimages/3.webp",
+    image: "/Industry Card images/Healthcar and Lifesciences.webp",
     features: [
       "Digital Health Platforms",
       "Medical Device Technology",
@@ -34,7 +34,7 @@ const industries = [
     description:
       "Smart manufacturing solutions, automotive innovation, and Industry 4.0 technologies to optimize production and drive efficiency.",
     category: "MANUFACTURING & AUTOMOTIVE",
-    image: "/herosectionimages/4.webp",
+    image: "/Industry Card images/Manufacturing and Automotive.webp",
     features: [
       "Smart Factory Solutions",
       "Predictive Maintenance",
@@ -51,7 +51,7 @@ const industries = [
     description:
       "Mission-critical aerospace software, defense technology solutions, and precision engineering for advanced aerospace systems.",
     category: "AEROSPACE & DEFENSE",
-    image: "/herosectionimages/Digital Technology.webp",
+    image: "/Industry Card images/Aerospace and Defense.webp",
     features: [
       "Mission-Critical Software",
       "Embedded Systems",
@@ -68,7 +68,7 @@ const industries = [
     description:
       "Digital banking platforms, fintech solutions, and secure financial technology to transform banking operations and customer experiences.",
     category: "BANKING & FINANCIAL SERVICES",
-    image: "/herosectionimages/Data & Analytics.webp",
+    image: "/Industry Card images/Baking and Financial.webp",
     features: [
       "Core Banking Modernization",
       "Digital Wallet Integration",
@@ -85,7 +85,7 @@ const industries = [
     description:
       "Omnichannel retail platforms, e-commerce solutions, and AI-powered personalization to revolutionize customer shopping experiences.",
     category: "RETAIL & E-COMMERCE",
-    image: "/herosectionimages/Agentic Ai.webp",
+    image: "/Industry Card images/Retail and Ecommerce.webp",
     features: [
       "E-commerce Platforms",
       "Omnichannel Solutions",
@@ -102,7 +102,7 @@ const industries = [
     description:
       "Smart grid solutions, renewable energy management, and utility technology to power sustainable energy systems and infrastructure.",
     category: "ENERGY & UTILITIES",
-    image: "/herosectionimages/Scalable Cloud and Application.webp",
+    image: "/Industry Card images/Energy and Utilities.webp",
     features: [
       "Smart Grid Solutions",
       "Renewable Energy Management",
@@ -119,7 +119,7 @@ const industries = [
     description:
       "Digital learning platforms, virtual classrooms, and adaptive learning solutions to transform education and corporate training.",
     category: "EDUCATION & TRAINING",
-    image: "/herosectionimages/Digital Journey.webp",
+    image: "/Industry Card images/Education and Training.webp",
     features: [
       "Learning Management Systems",
       "Virtual Classrooms",
@@ -136,7 +136,7 @@ const industries = [
     description:
       "Intelligent supply chain solutions, fleet management systems, and transportation technology to optimize logistics operations.",
     category: "LOGISTICS & TRANSPORTATION",
-    image: "/herosectionimages/Digital Partner.webp",
+    image: "/Industry Card images/Logotstic and Transportation.webp",
     features: [
       "Fleet Management",
       "Supply Chain Visibility",
@@ -173,27 +173,14 @@ function FeatureCards() {
   return (
     <Box
       sx={{
-        background:
-          "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)",
+        background: "#ffffff",
         minHeight: "100vh",
         py: 8,
-        px: 2,
+        px: { xs: 3, sm: 4, md: 6 },
         position: "relative",
         overflow: "hidden",
         opacity: isVisible ? 1 : 0,
         transition: "opacity 1s ease-out",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background:
-            "radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.03) 0%, transparent 50%)",
-          opacity: isVisible ? 1 : 0,
-          transition: "opacity 1.5s ease-out 0.5s",
-        },
       }}
     >
       {/* Header Section */}
@@ -203,26 +190,10 @@ function FeatureCards() {
           mb: 10,
           maxWidth: "1200px",
           mx: "auto",
-          px: 2,
+          px: { xs: 1, sm: 2 },
           position: "relative",
         }}
       >
-        {/* Decorative background element */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: "-20px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "200px",
-            height: "4px",
-            background:
-              "linear-gradient(90deg, transparent, #667eea, #764ba2, transparent)",
-            borderRadius: "2px",
-            opacity: isVisible ? 1 : 0,
-            transition: "opacity 1s ease-out 0.5s",
-          }}
-        />
 
         <Typography
           ref={titleRef}
@@ -230,7 +201,7 @@ function FeatureCards() {
           sx={{
             color: "#1a1a1a",
             fontWeight: 800,
-            fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "3.5rem" },
+            fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.2rem", lg: "2.5rem" },
             lineHeight: { xs: 1.1, md: 1.05 },
             mb: 4,
             letterSpacing: "-0.025em",
@@ -272,7 +243,7 @@ function FeatureCards() {
           sx={{
             color: "#4a5568",
             fontWeight: 400,
-            fontSize: { xs: "1.125rem", sm: "1.25rem", md: "1.375rem" },
+            fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
             lineHeight: 1.6,
             maxWidth: "850px",
             mx: "auto",
@@ -285,9 +256,12 @@ function FeatureCards() {
               "opacity 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, transform 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
             mt: 1,
             position: "relative",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
         >
-          Delivering innovative technology solutions tailored to industry-specific challenges and opportunities.
+          Innovative technology solutions for industry-specific challenges.
         </Typography>
       </Box>
 
@@ -295,11 +269,12 @@ function FeatureCards() {
       <Box ref={cardsRef}>
         <Grid
           container
-          spacing={3}
+          spacing={{ xs: 2, sm: 3, md: 4 }}
           sx={{
             maxWidth: "1400px",
             mx: "auto",
-            px: 2,
+            px: 0,
+            justifyContent: "center",
           }}
         >
           {industries.map((industry, index) => (
@@ -416,7 +391,7 @@ function FeatureCards() {
                         right: 0,
                         bottom: 0,
                         background:
-                          "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)",
+                          "linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%)",
                       }}
                     />
                   </Box>
@@ -484,7 +459,7 @@ function FeatureCards() {
                       alignItems: "flex-start",
                       padding: 3,
                       background:
-                        "linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)",
+                        "linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.5) 100%)",
                       backdropFilter: "blur(15px)",
                       opacity: 0,
                       transform: "translateY(20px)",

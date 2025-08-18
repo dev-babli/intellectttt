@@ -69,32 +69,38 @@ const Partners = () => {
       <section
         style={{
           background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
-          padding: "120px 0 80px 0",
+          padding: "6rem 0 4rem 0",
           textAlign: "center",
         }}
       >
         <div
-          style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 40px" }}
+          style={{ 
+            maxWidth: "1400px", 
+            margin: "0 auto", 
+            padding: "0 1.5rem" 
+          }}
         >
           <h1
             style={{
-              fontSize: "4rem",
+              fontSize: "clamp(2rem, 5vw, 3.5rem)",
               fontWeight: "700",
-              color: "#1a1a1a",
-              margin: "0 0 20px 0",
+              color: "#1f2937",
+              margin: "0 0 1.5rem 0",
               lineHeight: "1.1",
+              letterSpacing: "-0.01em",
             }}
           >
             Our Partners
           </h1>
           <p
             style={{
-              fontSize: "1.3rem",
+              fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
               color: "#6b7280",
-              margin: "0 0 40px 0",
+              margin: "0 0 3rem 0",
               maxWidth: "600px",
               marginLeft: "auto",
               marginRight: "auto",
+              lineHeight: "1.6",
             }}
           >
             Trusted by 400+ leading companies across industries worldwide.
@@ -107,9 +113,9 @@ const Partners = () => {
             style={{
               display: "flex",
               justifyContent: "center",
-              gap: "20px",
+              gap: "1rem",
               flexWrap: "wrap",
-              marginBottom: "60px",
+              marginBottom: "3rem",
             }}
           >
             {/* Search Input */}
@@ -120,19 +126,22 @@ const Partners = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
-                  padding: "12px 20px",
+                  padding: "0.75rem 1rem",
                   border: "2px solid #e5e7eb",
                   borderRadius: "8px",
-                  fontSize: "1rem",
-                  width: "300px",
+                  fontSize: "0.875rem",
+                  width: "clamp(250px, 30vw, 300px)",
                   outline: "none",
-                  transition: "border-color 0.3s ease",
+                  transition: "all 0.2s ease",
+                  backgroundColor: "#ffffff",
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = "#0199d3";
+                  e.target.style.borderColor = "#3b82f6";
+                  e.target.style.boxShadow = "0 0 0 3px rgba(59, 130, 246, 0.1)";
                 }}
                 onBlur={(e) => {
                   e.target.style.borderColor = "#e5e7eb";
+                  e.target.style.boxShadow = "none";
                 }}
               />
             </div>
@@ -142,20 +151,23 @@ const Partners = () => {
               value={selectedIndustry}
               onChange={(e) => setSelectedIndustry(e.target.value)}
               style={{
-                padding: "12px 20px",
+                padding: "0.75rem 1rem",
                 border: "2px solid #e5e7eb",
                 borderRadius: "8px",
-                fontSize: "1rem",
+                fontSize: "0.875rem",
                 backgroundColor: "#ffffff",
                 cursor: "pointer",
                 outline: "none",
-                transition: "border-color 0.3s ease",
+                transition: "all 0.2s ease",
+                minWidth: "150px",
               }}
               onFocus={(e) => {
-                e.target.style.borderColor = "#0199d3";
+                e.target.style.borderColor = "#3b82f6";
+                e.target.style.boxShadow = "0 0 0 3px rgba(59, 130, 246, 0.1)";
               }}
               onBlur={(e) => {
                 e.target.style.borderColor = "#e5e7eb";
+                e.target.style.boxShadow = "none";
               }}
             >
               {industries.map((industry) => (
@@ -169,13 +181,22 @@ const Partners = () => {
       </section>
 
       {/* Partners Grid */}
-      <section style={{ padding: "80px 0" }}>
+      <section style={{ padding: "4rem 0" }}>
         <div
-          style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 40px" }}
+          style={{ 
+            maxWidth: "1400px", 
+            margin: "0 auto", 
+            padding: "0 1.5rem" 
+          }}
         >
           {/* Results Count */}
-          <div style={{ marginBottom: "40px" }}>
-            <p style={{ fontSize: "1.1rem", color: "#6b7280", margin: "0" }}>
+          <div style={{ marginBottom: "2rem" }}>
+            <p style={{ 
+              fontSize: "0.875rem", 
+              color: "#6b7280", 
+              margin: "0",
+              fontWeight: "500",
+            }}>
               Showing {filteredPartners.length} of {allPartners.length} partners
             </p>
           </div>
@@ -185,7 +206,7 @@ const Partners = () => {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-              gap: "30px",
+              gap: "1.5rem",
             }}
           >
             {filteredPartners.map((partner, index) => (
@@ -193,34 +214,43 @@ const Partners = () => {
                 key={index}
                 style={{
                   backgroundColor: "#ffffff",
-                  borderRadius: "16px",
-                  padding: "40px",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                  borderRadius: "12px",
+                  padding: "2rem",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.05)",
                   border: "1px solid #e5e7eb",
                   transition: "all 0.3s ease",
                   cursor: "pointer",
                   textAlign: "center",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.transform = "translateY(-5px)";
-                  e.target.style.boxShadow = "0 8px 30px rgba(0,0,0,0.12)";
+                  e.target.style.transform = "translateY(-4px)";
+                  e.target.style.boxShadow = "0 8px 32px rgba(0,0,0,0.1)";
+                  e.target.style.borderColor = "#3b82f6";
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.transform = "translateY(0)";
-                  e.target.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)";
+                  e.target.style.boxShadow = "0 4px 16px rgba(0,0,0,0.05)";
+                  e.target.style.borderColor = "#e5e7eb";
                 }}
               >
                 {/* Partner Logo */}
-                <div style={{ marginBottom: "20px" }}>
+                <div style={{ marginBottom: "1.5rem" }}>
                   <img
                     src={partner.logo}
                     alt={partner.name}
                     style={{
                       maxWidth: "100%",
-                      maxHeight: "80px",
+                      maxHeight: "60px",
                       objectFit: "contain",
                       filter: "none",
                       opacity: "1",
+                      transition: "transform 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = "scale(1.05)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = "scale(1)";
                     }}
                   />
                 </div>
@@ -228,10 +258,11 @@ const Partners = () => {
                 {/* Partner Name */}
                 <h3
                   style={{
-                    fontSize: "1.3rem",
+                    fontSize: "1.125rem",
                     fontWeight: "600",
-                    color: "#1a1a1a",
-                    margin: "0 0 10px 0",
+                    color: "#1f2937",
+                    margin: "0 0 0.5rem 0",
+                    lineHeight: "1.3",
                   }}
                 >
                   {partner.name}
@@ -240,12 +271,12 @@ const Partners = () => {
                 {/* Industry */}
                 <p
                   style={{
-                    fontSize: "0.9rem",
-                    color: "#0199d3",
+                    fontSize: "0.75rem",
+                    color: "#3b82f6",
                     margin: "0",
-                    fontWeight: "500",
+                    fontWeight: "600",
                     textTransform: "uppercase",
-                    letterSpacing: "0.5px",
+                    letterSpacing: "0.05em",
                   }}
                 >
                   {industries.find((i) => i.id === partner.industry)?.name}
@@ -259,14 +290,22 @@ const Partners = () => {
             <div
               style={{
                 textAlign: "center",
-                padding: "80px 20px",
+                padding: "4rem 1rem",
                 color: "#6b7280",
               }}
             >
-              <h3 style={{ fontSize: "1.5rem", margin: "0 0 10px 0" }}>
+              <h3 style={{ 
+                fontSize: "1.25rem", 
+                margin: "0 0 0.5rem 0",
+                fontWeight: "600",
+              }}>
                 No partners found
               </h3>
-              <p style={{ fontSize: "1rem", margin: "0" }}>
+              <p style={{ 
+                fontSize: "0.875rem", 
+                margin: "0",
+                color: "#9ca3af",
+              }}>
                 Try adjusting your search or filter criteria
               </p>
             </div>
@@ -278,26 +317,32 @@ const Partners = () => {
       <section
         style={{
           backgroundColor: "#f8fafc",
-          padding: "80px 0",
+          padding: "4rem 0",
           textAlign: "center",
         }}
       >
-        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 40px" }}>
+        <div style={{ 
+          maxWidth: "800px", 
+          margin: "0 auto", 
+          padding: "0 1.5rem" 
+        }}>
           <h2
             style={{
-              fontSize: "2.5rem",
+              fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
               fontWeight: "700",
-              color: "#1a1a1a",
-              margin: "0 0 20px 0",
+              color: "#1f2937",
+              margin: "0 0 1rem 0",
+              lineHeight: "1.2",
+              letterSpacing: "-0.01em",
             }}
           >
             Ready to Partner with Us?
           </h2>
           <p
             style={{
-              fontSize: "1.2rem",
+              fontSize: "clamp(1rem, 2vw, 1.125rem)",
               color: "#6b7280",
-              margin: "0 0 40px 0",
+              margin: "0 0 2rem 0",
               lineHeight: "1.6",
             }}
           >
@@ -308,22 +353,24 @@ const Partners = () => {
             to="/contact"
             style={{
               display: "inline-block",
-              backgroundColor: "#0199d3",
+              backgroundColor: "#3b82f6",
               color: "#ffffff",
-              padding: "16px 32px",
+              padding: "0.875rem 2rem",
               borderRadius: "8px",
               textDecoration: "none",
-              fontSize: "1.1rem",
+              fontSize: "0.875rem",
               fontWeight: "600",
-              transition: "all 0.3s ease",
+              transition: "all 0.2s ease",
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = "#dc2626";
+              e.target.style.backgroundColor = "#2563eb";
               e.target.style.transform = "translateY(-2px)";
+              e.target.style.boxShadow = "0 4px 12px rgba(59, 130, 246, 0.3)";
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = "#0199d3";
+              e.target.style.backgroundColor = "#3b82f6";
               e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "none";
             }}
           >
             Get Started Today
@@ -335,16 +382,13 @@ const Partners = () => {
       <style jsx>{`
         @media (max-width: 768px) {
           .hero-section {
-            padding: 80px 0 60px 0;
-          }
-
-          h1 {
-            font-size: 2.5rem !important;
+            padding: 4rem 0 3rem 0;
           }
 
           .search-filter {
             flex-direction: column !important;
             align-items: center !important;
+            gap: 1rem !important;
           }
 
           .search-input {
@@ -357,17 +401,13 @@ const Partners = () => {
               auto-fill,
               minmax(250px, 1fr)
             ) !important;
-            gap: 20px !important;
+            gap: 1rem !important;
           }
         }
 
         @media (max-width: 480px) {
           .container {
-            padding: 0 20px !important;
-          }
-
-          h1 {
-            font-size: 2rem !important;
+            padding: 0 1rem !important;
           }
 
           .partners-grid {

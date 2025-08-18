@@ -28,7 +28,7 @@ const BusinessIntelligenceDashboards = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Business Intelligence & Dashboards"
-      heroSubtitle="Data-Driven Insights"
+      heroSubtitle="Business Intelligence"
       heroDescription="Turn raw data into powerful insights with interactive dashboards and real-time reporting solutions. Transform your business intelligence with advanced analytics, interactive dashboards, and real-time reporting capabilities."
       heroButtonText="BI Solutions"
       heroButtonLink="/contact"

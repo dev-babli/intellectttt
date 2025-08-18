@@ -24,31 +24,106 @@ const Footer = (props) => {
     >
       <style>
         {`
-           @media (min-width: 768px) {
-             .footer-row {
-               display: flex !important;
-               flex-wrap: nowrap !important;
-             }
-             .footer-col {
-               flex: 0 0 20% !important;
-               min-width: 0 !important;
-             }
-           }
-         `}
+          @media (max-width: 768px) {
+            .footer-container {
+              padding: 0 1rem !important;
+            }
+            .footer-row {
+              flex-direction: row !important;
+              flex-wrap: wrap !important;
+              gap: 1.5rem !important;
+            }
+            .footer-col {
+              flex: 0 0 calc(50% - 0.75rem) !important;
+              min-width: calc(50% - 0.75rem) !important;
+              padding-left: 1rem !important;
+              margin-bottom: 1.5rem !important;
+            }
+            .footer-col:first-child {
+              flex: 0 0 100% !important;
+              min-width: 100% !important;
+            }
+            .footer-bottom {
+              flex-direction: column !important;
+              text-align: center !important;
+              gap: 1rem !important;
+            }
+            .footer-social {
+              justify-content: center !important;
+            }
+            .footer-newsletter {
+              margin-top: 1rem !important;
+            }
+          }
+          
+          /* Specific breakpoint for tablet screens (770px to 983px) */
+          @media (min-width: 769px) and (max-width: 983px) {
+            .footer-container {
+              padding: 0 1.5rem !important;
+            }
+            .footer-row {
+              flex-direction: row !important;
+              flex-wrap: wrap !important;
+              gap: 2rem !important;
+            }
+            .footer-col {
+              flex: 0 0 calc(33.333% - 1.33rem) !important;
+              min-width: calc(33.333% - 1.33rem) !important;
+              padding-left: 1.5rem !important;
+              margin-bottom: 2rem !important;
+            }
+            .footer-col:first-child {
+              flex: 0 0 calc(50% - 1rem) !important;
+              min-width: calc(50% - 1rem) !important;
+            }
+            .footer-col:nth-child(2) {
+              flex: 0 0 calc(50% - 1rem) !important;
+              min-width: calc(50% - 1rem) !important;
+            }
+            .footer-col:nth-child(3),
+            .footer-col:nth-child(4),
+            .footer-col:nth-child(5) {
+              flex: 0 0 calc(33.333% - 1.33rem) !important;
+              min-width: calc(33.333% - 1.33rem) !important;
+            }
+            .footer-bottom {
+              flex-direction: row !important;
+              text-align: left !important;
+              gap: 0 !important;
+            }
+            .footer-social {
+              justify-content: flex-end !important;
+            }
+            .footer-newsletter {
+              margin-top: 0 !important;
+            }
+          }
+          
+          @media (min-width: 984px) {
+            .footer-row {
+              display: flex !important;
+              flex-wrap: nowrap !important;
+            }
+            .footer-col {
+              flex: 0 0 20% !important;
+              min-width: 0 !important;
+            }
+          }
+        `}
       </style>
-      <div className="container">
+      <div className="container footer-container">
         {/* Main Content */}
         <div
           className="row footer-row"
           style={{
-            padding: "30px 0 20px 0",
+            padding: "40px 0 30px 0",
             display: "flex",
-            flexWrap: "nowrap",
+            flexWrap: "wrap",
           }}
         >
           {/* Company Info */}
           <div
-            className="col-lg-3 col-md-2 col-sm-12 mb-4 mb-lg-0 footer-col"
+            className="col-lg-3 col-md-6 col-sm-12 footer-col"
             style={{ flex: "0 0 20%", minWidth: "0" }}
           >
             <h4
@@ -113,7 +188,7 @@ const Footer = (props) => {
             </div>
 
             {/* Newsletter */}
-            <div>
+            <div className="footer-newsletter">
               <h5
                 style={{
                   color: "#1f2937",
@@ -172,7 +247,7 @@ const Footer = (props) => {
 
           {/* What We Do */}
           <div
-            className="col-lg-3 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            className="col-lg-2 col-md-6 col-sm-6 footer-col"
             style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
@@ -216,7 +291,7 @@ const Footer = (props) => {
 
           {/* Who We Work With */}
           <div
-            className="col-lg-3 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            className="col-lg-2 col-md-6 col-sm-6 footer-col"
             style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
@@ -262,7 +337,7 @@ const Footer = (props) => {
 
           {/* Insights */}
           <div
-            className="col-lg-2 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            className="col-lg-2 col-md-6 col-sm-6 footer-col"
             style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
@@ -304,7 +379,7 @@ const Footer = (props) => {
 
           {/* Who We Are */}
           <div
-            className="col-lg-2 col-md-2 col-sm-6 mb-4 mb-lg-0 footer-col"
+            className="col-lg-2 col-md-6 col-sm-6 footer-col"
             style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
@@ -354,7 +429,7 @@ const Footer = (props) => {
             padding: "12px 0",
           }}
         >
-          <div className="row align-items-center">
+          <div className="row align-items-center footer-bottom">
             <div className="col-md-6 col-sm-12 mb-3 mb-md-0">
               <p
                 style={{
@@ -368,6 +443,7 @@ const Footer = (props) => {
             </div>
             <div className="col-md-6 col-sm-12">
               <div
+                className="footer-social"
                 style={{
                   display: "flex",
                   justifyContent: "flex-end",

@@ -19,7 +19,7 @@ const AgenticAI = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Agentic AI & AI Agents Consulting"
-      heroSubtitle="Intelligent Autonomous Systems"
+      heroSubtitle="Autonomous Systems"
       heroDescription="We help companies harness the power of autonomous AI agents to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
       heroBackgroundImage="/AiGenAi/Agenticagents.webp"
       heroTextColor="white"

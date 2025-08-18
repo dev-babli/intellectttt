@@ -191,6 +191,7 @@ const IntegrationSection = (props) => {
         >
           {/* Left Side - Current Company Logo */}
           <div
+            className="left-side-section"
             style={{
               position: "relative",
               display: "flex",
@@ -318,6 +319,7 @@ const IntegrationSection = (props) => {
 
           {/* Right Side - Testimonial Slide Show */}
           <div
+            className="right-side-section"
             style={{
               position: "relative",
               minHeight: "500px",
@@ -514,6 +516,7 @@ const IntegrationSection = (props) => {
 
         {/* Additional Partners Row */}
         <div
+          className="additional-partners-section"
           style={{
             marginBottom: "60px",
             textAlign: "center",
@@ -594,6 +597,7 @@ const IntegrationSection = (props) => {
 
         {/* Explore Partners Button */}
         <div
+          className="explore-partners-button"
           style={{
             textAlign: "center",
             marginTop: "60px",
@@ -669,8 +673,81 @@ const IntegrationSection = (props) => {
             padding: 0 20px;
           }
 
+          /* Reduce header text sizes for mobile */
           h2 {
+            font-size: 1.8rem !important;
+            margin-bottom: 15px !important;
+          }
+
+          h2 + p {
+            font-size: 0.9rem !important;
+            white-space: normal !important;
+          }
+
+          /* Hide left side and bottom section on mobile */
+          .left-side-section {
+            display: none !important;
+          }
+
+          .additional-partners-section {
+            display: none !important;
+          }
+
+          /* Make right side take full width */
+          .right-side-section {
+            grid-column: 1 / -1 !important;
+          }
+
+          /* Adjust main grid to single column */
+          .main-content-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0 !important;
+          }
+
+          /* Reduce testimonial card padding and text sizes */
+          .right-side-section > div {
+            padding: 30px 25px !important;
+            min-height: 400px !important;
+          }
+
+          /* Reduce company logo size */
+          .right-side-section img {
+            height: 50px !important;
+          }
+
+          /* Reduce quote icon size */
+          .right-side-section > div > div:nth-child(3) {
             font-size: 2.5rem !important;
+            top: 20px !important;
+            right: 20px !important;
+          }
+
+          /* Reduce testimonial text size */
+          .right-side-section p {
+            font-size: 1rem !important;
+            line-height: 1.6 !important;
+          }
+
+          /* Reduce author name size */
+          .right-side-section > div > div:nth-child(6) p:first-child {
+            font-size: 1rem !important;
+          }
+
+          /* Reduce author title size */
+          .right-side-section > div > div:nth-child(6) p:last-child {
+            font-size: 0.85rem !important;
+          }
+
+          /* Reduce star rating size */
+          .right-side-section > div > div:nth-child(5) span {
+            font-size: 1rem !important;
+          }
+
+          /* Reduce navigation button size */
+          .right-side-section button {
+            width: 40px !important;
+            height: 40px !important;
+            font-size: 1.2rem !important;
           }
 
           .partner-grid {
@@ -686,6 +763,17 @@ const IntegrationSection = (props) => {
             flex-direction: column !important;
             align-items: center !important;
           }
+
+          /* Keep explore partners button visible and reduce size */
+          .explore-partners-button {
+            display: block !important;
+            margin-top: 40px !important;
+          }
+
+          .explore-partners-button a {
+            padding: 14px 30px !important;
+            font-size: 1rem !important;
+          }
         }
 
         @media (max-width: 480px) {
@@ -694,12 +782,50 @@ const IntegrationSection = (props) => {
             gap: 12px !important;
           }
 
+          /* Further reduce text sizes for very small screens */
           h2 {
-            font-size: 2rem !important;
+            font-size: 1.5rem !important;
+          }
+
+          h2 + p {
+            font-size: 0.8rem !important;
           }
 
           .container {
             padding: 0 15px;
+          }
+
+          /* Ensure right side takes full width on very small screens */
+          .right-side-section {
+            grid-column: 1 / -1 !important;
+            width: 100% !important;
+          }
+
+          /* Further reduce testimonial card padding */
+          .right-side-section > div {
+            padding: 25px 20px !important;
+            min-height: 350px !important;
+          }
+
+          /* Further reduce testimonial text */
+          .right-side-section p {
+            font-size: 0.9rem !important;
+            line-height: 1.5 !important;
+          }
+
+          /* Further reduce author info */
+          .right-side-section > div > div:nth-child(6) p:first-child {
+            font-size: 0.9rem !important;
+          }
+
+          .right-side-section > div > div:nth-child(6) p:last-child {
+            font-size: 0.75rem !important;
+          }
+
+          /* Further reduce button size */
+          .explore-partners-button a {
+            padding: 12px 25px !important;
+            font-size: 0.9rem !important;
           }
         }
       `}</style>

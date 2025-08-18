@@ -30,7 +30,7 @@ const SAPServices = () => {
       // Hero Section - Minimal
       heroTitle="SAP Services"
       heroSubtitle="Enterprise Solutions"
-      heroDescription="Transform your enterprise with comprehensive SAP solutions. From S/4HANA migration to custom development, we help organizations modernize their SAP landscape and drive digital transformation."
+      heroDescription="Transform enterprise with SAP S/4HANA migration and modern development."
       heroButtonText="Talk to Our Experts"
       heroButtonLink="/contact"
       heroBackgroundImage="/SAP.webp"

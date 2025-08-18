@@ -29,7 +29,7 @@ const SAPManagedSupport = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="SAP S/4HANA Migration & Support"
-      heroSubtitle="SAP Excellence"
+      heroSubtitle="SAP Support"
       heroDescription="Accelerate your SAP S/4HANA migration with confidence and future-ready support. From assessment to post-migration optimization, we ensure a smooth, secure, and value-driven journey."
       heroButtonText="SAP Migration"
       heroButtonLink="/contact"

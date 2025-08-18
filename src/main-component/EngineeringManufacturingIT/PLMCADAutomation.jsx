@@ -28,7 +28,7 @@ const PLMCADAutomation = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="PLM & CAD Automation"
-      heroSubtitle="Digital Engineering Excellence"
+      heroSubtitle="Digital Engineering"
       heroDescription="Streamline product development with PLM and CAD automation solutions. Enhance design accuracy, reduce time-to-market, and empower engineering teams to innovate faster with greater precision and control."
       heroButtonText="PLM & CAD"
       heroButtonLink="/contact"

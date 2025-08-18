@@ -28,7 +28,7 @@ const IoTSolutions = () => {
     <MasterMainServiceTemplate
       // Hero Section - Minimal
       heroTitle="IoT Solutions"
-      heroSubtitle="Connected Intelligence"
+      heroSubtitle="IoT Intelligence"
       heroDescription="Connect devices and drive automation with next-gen IoT technology. Transform your business with comprehensive IoT solutions that connect devices, collect data, and drive intelligent automation across industries."
       heroButtonText="TALK TO OUR EXPERTS"
       heroButtonLink="/contact"

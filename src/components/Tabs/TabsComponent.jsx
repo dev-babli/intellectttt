@@ -345,17 +345,21 @@ export default function TabsComponent() {
           sx={{
             display: "flex",
             justifyContent: "center",
-            marginBottom: "4rem",
+            marginBottom: { xs: "2rem", md: "4rem" },
+            width: "100%",
+            overflow: "hidden",
           }}
         >
           <Paper
             elevation={0}
             sx={{
               backgroundColor: "#ffffff",
-              borderRadius: "16px",
-              padding: "0.5rem",
+              borderRadius: { xs: "12px", md: "16px" },
+              padding: { xs: "0.25rem", md: "0.5rem" },
               border: "1px solid rgba(229, 231, 235, 0.8)",
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
+              width: { xs: "95%", sm: "90%", md: "auto" },
+              maxWidth: { xs: "100%", md: "none" },
             }}
           >
             <Tabs
@@ -369,13 +373,19 @@ export default function TabsComponent() {
                 "& .MuiTabs-indicator": {
                   display: "none",
                 },
+                "& .MuiTabs-scrollButtons": {
+                  color: "#1e40af",
+                  "&.Mui-disabled": {
+                    opacity: 0.3,
+                  },
+                },
               }}
             >
               {tabData.map((tab, index) => (
                 <Tab
                   key={index}
                   label={
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: { xs: 0.5, md: 1 } }}>
                       <Box
                         sx={{
                           display: "flex",
@@ -384,7 +394,15 @@ export default function TabsComponent() {
                           color: "inherit",
                         }}
                       >
-                        {tab.icon}
+                        <Box sx={{ 
+                          width: { xs: 18, sm: 20, md: 32 }, 
+                          height: { xs: 18, sm: 20, md: 32 } 
+                        }}>
+                          {React.cloneElement(tab.icon, {
+                            width: "100%",
+                            height: "100%"
+                          })}
+                        </Box>
                       </Box>
                       <span>{tab.label}</span>
                     </Box>
@@ -392,15 +410,16 @@ export default function TabsComponent() {
                   sx={{
                     background: value === index ? tab.gradient : "transparent",
                     color: value === index ? "#ffffff" : "#1e40af",
-                    borderRadius: "16px",
+                    borderRadius: { xs: "10px", md: "16px" },
                     fontWeight: 600,
                     textTransform: "none",
-                    minWidth: { xs: 160, sm: 180 },
-                    mx: 0.5,
-                    fontSize: { xs: "0.875rem", sm: "1rem" },
+                    minWidth: { xs: 100, sm: 120, md: 180 },
+                    maxWidth: { xs: 140, sm: 160, md: "none" },
+                    mx: { xs: 0.2, md: 0.5 },
+                    fontSize: { xs: "0.7rem", sm: "0.8rem", md: "1rem" },
                     flexShrink: 0,
                     transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                    padding: "14px 28px",
+                    padding: { xs: "6px 12px", sm: "8px 16px", md: "14px 28px" },
                     fontFamily: "'Inter', sans-serif",
                     letterSpacing: "-0.01em",
                     border:
@@ -440,10 +459,10 @@ export default function TabsComponent() {
             display: "flex",
             flexDirection: { xs: "column", lg: "row" },
             alignItems: "center",
-            gap: { xs: "3rem", lg: "5rem" },
+            gap: { xs: "2rem", sm: "2.5rem", lg: "5rem" },
             backgroundColor: "#ffffff",
-            borderRadius: "20px",
-            padding: { xs: "3rem", md: "4rem" },
+            borderRadius: { xs: "16px", md: "20px" },
+            padding: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "4rem" },
             boxShadow: "0 10px 40px rgba(0, 0, 0, 0.1)",
             border: "1px solid rgba(229, 231, 235, 0.8)",
             position: "relative",
@@ -456,7 +475,7 @@ export default function TabsComponent() {
               right: 0,
               height: "3px",
               background: "#0199D3",
-              borderRadius: "20px 20px 0 0",
+              borderRadius: { xs: "16px 16px 0 0", md: "20px 20px 0 0" },
             },
           }}
         >
@@ -469,8 +488,9 @@ export default function TabsComponent() {
                 color: "#111827",
                 fontFamily: "'Inter', sans-serif",
                 letterSpacing: "-0.02em",
-                marginBottom: "1.5rem",
+                marginBottom: { xs: "1rem", md: "1.5rem" },
                 lineHeight: 1.2,
+                fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem" },
               }}
             >
               {activeTab.title}
@@ -479,9 +499,9 @@ export default function TabsComponent() {
               variant="body1"
               sx={{
                 color: "#6b7280",
-                fontSize: "1.2rem",
+                fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
                 lineHeight: 1.8,
-                marginBottom: "3rem",
+                marginBottom: { xs: "2rem", md: "3rem" },
                 fontFamily: "'Inter', sans-serif",
               }}
             >
@@ -494,10 +514,10 @@ export default function TabsComponent() {
               sx={{
                 background: "linear-gradient(135deg, #dc2626 0%, #ef4444 100%)",
                 borderRadius: "12px",
-                padding: "16px 36px",
+                padding: { xs: "12px 24px", md: "16px 36px" },
                 fontWeight: 600,
                 textTransform: "none",
-                fontSize: "1.1rem",
+                fontSize: { xs: "0.9rem", md: "1.1rem" },
                 fontFamily: "'Inter', sans-serif",
                 letterSpacing: "-0.01em",
                 boxShadow: "0 8px 24px rgba(220, 38, 38, 0.25)",
@@ -521,7 +541,7 @@ export default function TabsComponent() {
           <Box
             sx={{
               flex: 1,
-              borderRadius: "16px",
+              borderRadius: { xs: "12px", md: "16px" },
               overflow: "hidden",
               boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
               position: "relative",
@@ -537,7 +557,7 @@ export default function TabsComponent() {
               style={{
                 width: "100%",
                 height: "auto",
-                borderRadius: "16px",
+                borderRadius: { xs: "12px", md: "16px" },
                 display: "block",
               }}
             />

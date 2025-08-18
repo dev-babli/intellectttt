@@ -19,7 +19,7 @@ const LLMIntegration = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Gen AI & LLM Integration Consulting"
-      heroSubtitle="Transform Your Business with Large Language Models"
+      heroSubtitle="Large Language Models"
       heroDescription="We help companies harness the power of Generative AI and Large Language Models to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
       heroBackgroundImage="/AiGenAi/AIAutomation.webp"
       heroTextColor="white"

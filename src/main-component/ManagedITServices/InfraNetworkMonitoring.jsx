@@ -29,7 +29,7 @@ const InfraNetworkMonitoring = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Infrastructure & Network Monitoring"
-      heroSubtitle="Proactive Monitoring"
+      heroSubtitle="Network Monitoring"
       heroDescription="Comprehensive infrastructure and network monitoring solutions for proactive issue detection and resolution. Ensure optimal performance and reliability with real-time monitoring and alerting."
       heroButtonText="Monitoring Solutions"
       heroButtonLink="/contact"

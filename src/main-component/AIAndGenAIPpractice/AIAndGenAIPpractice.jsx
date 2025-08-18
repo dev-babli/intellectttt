@@ -16,9 +16,9 @@ const AIAndGenAIPpractice = () => {
   return (
     <MasterMainServiceTemplate
       // Hero Section - Minimal
-      heroTitle="AI & Gen AI Industrialization Consulting"
+      heroTitle="AI & Gen AI Solutions"
       heroSubtitle="Transform Your Business"
-      heroDescription="Unlock the power of artificial intelligence and generative AI to automate processes, gain insights, and drive unprecedented growth."
+      heroDescription="Unlock AI power to automate processes and drive growth."
       heroBackgroundImage="/AiGenAi/AIAutomation.webp"
       heroTextColor="white"
 

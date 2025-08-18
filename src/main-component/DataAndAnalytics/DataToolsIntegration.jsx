@@ -29,7 +29,7 @@ const DataToolsIntegration = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Azure Data Lake, Snowflake & Power BI"
-      heroSubtitle="Enterprise Data Platform"
+      heroSubtitle="Data Platform"
       heroDescription="Unify, store, and visualize data at scale with enterprise-grade data platforms and advanced analytics. Build comprehensive data solutions using Azure Data Lake, Snowflake, and Power BI for powerful insights."
       heroButtonText="Explore Tools"
       heroButtonLink="/contact"

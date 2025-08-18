@@ -123,19 +123,19 @@ export const TESTIMONIALS_DATA = [
     name: 'Sarah Johnson',
     role: 'CTO, TechCorp',
     content: 'Intellectt delivered exceptional AI solutions that transformed our business processes. Their expertise and professionalism exceeded our expectations.',
-    avatar: '/images/testimonial-1.jpg',
+    avatar: '/team/sarah.jpg',
   },
   {
     name: 'Michael Chen',
     role: 'VP Engineering, DataFlow',
     content: 'The cloud migration project was executed flawlessly. Intellectt\'s team demonstrated deep technical knowledge and excellent project management.',
-    avatar: '/images/testimonial-2.jpg',
+    avatar: '/team/michael.jpg',
   },
   {
     name: 'Emily Rodriguez',
     role: 'Director, HealthTech',
     content: 'Working with Intellectt has been a game-changer for our healthcare platform. Their cybersecurity solutions gave us peace of mind.',
-    avatar: '/images/testimonial-3.jpg',
+    avatar: '/team/emily.jpg',
   },
 ];
 

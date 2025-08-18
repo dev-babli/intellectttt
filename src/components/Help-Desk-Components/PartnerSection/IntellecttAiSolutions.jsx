@@ -18,7 +18,7 @@ const solutions = [
     description:
       "Transform your business with cutting-edge AI solutions that drive innovation and accelerate growth across all industries.",
     category: "AI & GEN AI",
-    image: "/images/AI-and-Genn-AI.webp",
+    image: "/Service Cards images/AI Gen AI.webp",
     features: [
       "Machine Learning & Deep Learning",
       "Natural Language Processing",
@@ -35,7 +35,7 @@ const solutions = [
     description:
       "Build robust, scalable applications with enterprise-grade cloud infrastructure and modern development practices.",
     category: "CLOUD & APPLICATION SERVICES",
-    image: "/images/Cloud.webp",
+    image: "/Service Cards images/Cloud and Application Service.webp",
     features: [
       "Cloud Migration & Strategy",
       "Microservices Architecture",
@@ -52,7 +52,7 @@ const solutions = [
     description:
       "Safeguard your organization with advanced cybersecurity solutions and proactive threat detection systems.",
     category: "DIGITAL SECURITY",
-    image: "/images/CompleianceandRegulatory-IT.webp",
+    image: "/Service Cards images/Digital Security.webp",
     features: [
       "Zero Trust Architecture",
       "Threat Detection & Response",
@@ -69,7 +69,7 @@ const solutions = [
     description:
       "Build intelligent connected systems that collect, analyze, and act on data in real-time.",
     category: "IoT TECH",
-    image: "/images/Smart-Factory.webp",
+    image: "/Service Cards images/IOT Tech.webp",
     features: [
       "IoT Platform Development",
       "Sensor Integration",
@@ -86,7 +86,7 @@ const solutions = [
     description:
       "Transform raw data into strategic insights that drive business growth and operational excellence.",
     category: "DATA & ANALYTICS",
-    image: "/images/Data-andAnalytics.webp",
+    image: "/Service Cards images/Data Analytics.webp",
     features: [
       "Big Data Processing",
       "Business Intelligence",
@@ -103,7 +103,7 @@ const solutions = [
     description:
       "Optimize manufacturing and engineering processes with intelligent automation and digital transformation.",
     category: "ENGINEERING & MANUFACTURING",
-    image: "/images/Engineering.webp",
+    image: "/Service Cards images/Engineering and Manufacturing.webp",
     features: [
       "Smart Manufacturing",
       "Digital Twin Technology",
@@ -120,7 +120,7 @@ const solutions = [
     description:
       "Transform healthcare delivery with cutting-edge technology solutions and secure patient data management.",
     category: "HEALTHCARE & LIFE SCIENCES",
-    image: "/images/Healthcare-and-Lifesciences.webp",
+    image: "/Service Cards images/Healthcare and Lifesciences.webp",
     features: [
       "Electronic Health Records",
       "Telemedicine Platforms",
@@ -138,7 +138,7 @@ const solutions = [
     description:
       "Access specialized talent and build high-performing teams with our comprehensive workforce solutions.",
     category: "TALENT SOLUTIONS",
-    image: "/images/Talent.webp",
+    image: "/Service Cards images/Talent Solution.webp",
     features: [
       "Staff Augmentation",
       "Project-Based Teams",
@@ -173,7 +173,7 @@ export default function IntellecttAiSolutions() {
         background: "#ffffff",
         minHeight: "100vh",
         py: 8,
-        px: 2,
+        px: { xs: 3, sm: 4, md: 6 },
         position: "relative",
         overflow: "hidden",
         opacity: isVisible ? 1 : 0,
@@ -187,7 +187,7 @@ export default function IntellecttAiSolutions() {
           mb: 8,
           maxWidth: "1200px",
           mx: "auto",
-          px: 2,
+          px: { xs: 1, sm: 2 },
         }}
       >
         <Typography
@@ -216,11 +216,12 @@ export default function IntellecttAiSolutions() {
       <Box ref={cardsRef}>
         <Grid
           container
-          spacing={3}
+          spacing={{ xs: 2, sm: 3, md: 4 }}
           sx={{
             maxWidth: "1400px",
             mx: "auto",
-            px: 2,
+            px: 0,
+            justifyContent: "center",
           }}
         >
           {solutions.map((solution, index) => (
@@ -229,7 +230,7 @@ export default function IntellecttAiSolutions() {
                 <Card
                   className="dimensional-card"
                   sx={{
-                    height: 360,
+                    height: { xs: 280, sm: 320, md: 360 },
                     background: "#0f0f0f",
                     borderRadius: "8px",
                     position: "relative",
@@ -333,7 +334,7 @@ export default function IntellecttAiSolutions() {
                         right: 0,
                         bottom: 0,
                         background:
-                          "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)",
+                          "linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%)",
                       }}
                     />
                   </Box>
@@ -343,11 +344,11 @@ export default function IntellecttAiSolutions() {
                     className="card-category"
                     sx={{
                       position: "absolute",
-                      top: 20,
-                      left: 20,
+                      top: { xs: 15, sm: 20 },
+                      left: { xs: 15, sm: 20 },
                       color: "#ffffff",
                       fontWeight: 700,
-                      fontSize: "0.75rem",
+                      fontSize: { xs: "0.65rem", sm: "0.75rem" },
                       letterSpacing: "0.05em",
                       textTransform: "uppercase",
                       transition:
@@ -366,13 +367,13 @@ export default function IntellecttAiSolutions() {
                     className="card-title"
                     sx={{
                       position: "absolute",
-                      bottom: 20,
-                      left: 20,
-                      right: 20,
+                      bottom: { xs: 15, sm: 20 },
+                      left: { xs: 15, sm: 20 },
+                      right: { xs: 15, sm: 20 },
                       color: "#ffffff",
                       fontWeight: 600,
                       lineHeight: 1.2,
-                      fontSize: "1.2rem",
+                      fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
                       transition:
                         "opacity 0.3s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                       zIndex: 2,
@@ -399,9 +400,9 @@ export default function IntellecttAiSolutions() {
                       flexDirection: "column",
                       justifyContent: "space-between",
                       alignItems: "flex-start",
-                      padding: 3,
+                      padding: { xs: 2, sm: 2.5, md: 3 },
                       background:
-                        "linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)",
+                        "linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.5) 100%)",
                       backdropFilter: "blur(15px)",
                       opacity: 0,
                       transform: "translateY(20px)",
@@ -427,7 +428,7 @@ export default function IntellecttAiSolutions() {
                             color: "#ffffff",
                             mb: 2,
                             lineHeight: 1.4,
-                            fontSize: "0.95rem",
+                            fontSize: { xs: "0.85rem", sm: "0.9rem", md: "0.95rem" },
                             fontWeight: 500,
                             letterSpacing: "0.01em",
                             fontFamily:
@@ -453,7 +454,7 @@ export default function IntellecttAiSolutions() {
                               className={`content-feature-${idx}`}
                               sx={{
                                 color: "#e2e8f0",
-                                fontSize: "0.8rem",
+                                fontSize: { xs: "0.7rem", sm: "0.75rem", md: "0.8rem" },
                                 mb: 0.4,
                                 display: "flex",
                                 alignItems: "center",
@@ -494,7 +495,7 @@ export default function IntellecttAiSolutions() {
                             className="content-benefits"
                             sx={{
                               color: "#00ffff",
-                              fontSize: "0.75rem",
+                              fontSize: { xs: "0.65rem", sm: "0.7rem", md: "0.75rem" },
                               fontWeight: 600,
                               mb: 0.5,
                               textTransform: "uppercase",
@@ -516,7 +517,7 @@ export default function IntellecttAiSolutions() {
                             className="content-benefit-text"
                             sx={{
                               color: "#b8c5d6",
-                              fontSize: "0.75rem",
+                              fontSize: { xs: "0.65rem", sm: "0.7rem", md: "0.75rem" },
                               lineHeight: 1.3,
                               opacity: 0,
                               transform: "translateY(10px)",
@@ -558,14 +559,14 @@ export default function IntellecttAiSolutions() {
                       className="content-button"
                       sx={{
                         alignSelf: "flex-start",
-                        px: 2.5,
-                        py: 1,
+                        px: { xs: 2, sm: 2.5 },
+                        py: { xs: 0.75, sm: 1 },
                         borderRadius: "6px",
                         borderColor: "#00ffff",
                         color: "#00ffff",
                         fontWeight: 600,
                         textTransform: "none",
-                        fontSize: "0.85rem",
+                        fontSize: { xs: "0.75rem", sm: "0.8rem", md: "0.85rem" },
                         letterSpacing: "0.02em",
                         fontFamily:
                           "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",

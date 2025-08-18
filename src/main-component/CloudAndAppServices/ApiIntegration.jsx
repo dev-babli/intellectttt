@@ -29,7 +29,7 @@ const ApiIntegration = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="API & Integration Services"
-      heroSubtitle="Seamless System Connectivity"
+      heroSubtitle="System Connectivity"
       heroDescription="Connect systems seamlessly with robust API development and integration solutions. Unlock seamless connectivity with API & Integration Services that enable businesses to build connected ecosystems through robust API development and seamless integration strategies."
       heroButtonText="TALK TO OUR EXPERTS"
       heroButtonLink="/contact"

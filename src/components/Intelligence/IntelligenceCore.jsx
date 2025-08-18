@@ -6,6 +6,7 @@ import { Award, Target, Users, Brain, TrendingUp, Globe } from "lucide-react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -266,76 +267,51 @@ export default function IntelligenceCore() {
       sx={{
         position: "relative",
         overflow: "hidden",
-        minHeight: "100vh",
+        minHeight: "60vh",
         maxWidth: "1400px",
         margin: "0 auto",
         background: BRAND_COLORS.white, // Simple white background
-        py: 12,
+        py: 6,
         px: 3,
         borderRadius: 0, // Remove border radius to merge with website
         boxShadow: "none", // Remove shadow to merge with website
         backdropFilter: "none", // Remove backdrop filter
         border: "none", // Remove border
+        "&::before, &::after": {
+          display: "none", // Remove any pseudo-elements that might create the semicircle
+        },
+        "& *::before, & *::after": {
+          display: "none", // Remove any pseudo-elements from child elements
+        },
+        // Remove any background elements that might create semicircles
+        "& [style*='border-radius']": {
+          display: "none",
+        },
+        "& [class*='circle'], & [class*='semi']": {
+          display: "none",
+        },
+        // Target any elements positioned in top-left corner
+        "& > *:first-child": {
+          "&::before, &::after": {
+            display: "none !important",
+          },
+        },
       }}
     >
-      {/* Enhanced Background Effects */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          width: 1200,
-          height: 1200,
-          transform: "translate(-50%, -50%)",
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${BRAND_COLORS.primary}8, ${BRAND_COLORS.secondary}5, transparent 70%)`, // Reduced opacity
-          zIndex: 0,
-          filter: "blur(120px)",
-        }}
-      />
-
-      {/* Floating Particles */}
-      {[...Array(15)].map(
-        (
-          _,
-          i // Reduced number of particles
-        ) => (
-          <Box
-            key={i}
-            sx={{
-              position: "absolute",
-              width: Math.random() * 6 + 3, // Smaller particles
-              height: Math.random() * 6 + 3, // Smaller particles
-              background: [
-                BRAND_COLORS.primary, // Blue
-                BRAND_COLORS.secondary, // Red
-                BRAND_COLORS.primary, // Blue
-                BRAND_COLORS.secondary, // Red
-              ][i % 4],
-              borderRadius: "50%",
-              opacity: 0.15, // Reduced opacity
-              animation: `float ${Math.random() * 15 + 15}s infinite linear`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              zIndex: 1,
-              filter: "blur(1px)",
-            }}
-          />
-        )
-      )}
+      {/* Clean white background - no effects */}
 
       {/* Enhanced Heading */}
       <Box
         className="fade-in"
-        sx={{ textAlign: "center", mb: 8, position: "relative", zIndex: 2 }}
+        sx={{ textAlign: "center", mb: 4, position: "relative", zIndex: 2 }}
       >
         <Typography
           variant="h3"
           fontWeight={700}
           sx={{
             color: BRAND_COLORS.neutral[900],
-            mb: 2,
-            fontSize: { xs: "1.75rem", md: "2.25rem" },
+            mb: 1,
+            fontSize: { xs: "1.25rem", md: "1.5rem" },
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
           }}
@@ -738,31 +714,35 @@ export default function IntelligenceCore() {
       )}
 
       {/* Enhanced Stats Section */}
-      <Grid container spacing={4} justifyContent="center" className="fade-in">
+      <Grid container spacing={2} justifyContent="center" className="fade-in">
         {[
           {
-            number: "200+",
+            number: 200,
+            suffix: "+",
             label: "Solutions",
             gradient: BRAND_COLORS.gradient.primary, // Blue
             icon: "🚀",
             color: BRAND_COLORS.primary, // Blue
           },
           {
-            number: "1800+",
+            number: 1800,
+            suffix: "+",
             label: "Engineers",
             gradient: BRAND_COLORS.gradient.secondary, // Red
             icon: "👨‍💻",
             color: BRAND_COLORS.secondary, // Red
           },
           {
-            number: "250+",
+            number: 250,
+            suffix: "+",
             label: "Architects",
             gradient: BRAND_COLORS.gradient.primary, // Blue
             icon: "🏗️",
             color: BRAND_COLORS.primary, // Blue
           },
           {
-            number: "15",
+            number: 15,
+            suffix: "",
             label: "Global Centers",
             gradient: BRAND_COLORS.gradient.secondary, // Red
             icon: "🌍",
@@ -778,16 +758,16 @@ export default function IntelligenceCore() {
             >
               <Box
                 sx={{
-                  p: 4,
-                  borderRadius: "20px",
-                  background: "rgba(255, 255, 255, 0.98)", // More opaque white
+                  p: 2,
+                  borderRadius: "12px",
+                  background: "rgba(255, 255, 255, 0.98)",
                   textAlign: "center",
-                  border: `1px solid ${stat.color}30`, // Increased border opacity
+                  border: `1px solid ${stat.color}20`,
                   transition: "all 0.3s",
                   position: "relative",
                   overflow: "hidden",
                   backdropFilter: "blur(20px)",
-                  boxShadow: BRAND_COLORS.shadow.large,
+                  boxShadow: BRAND_COLORS.shadow.medium,
                   "&::before": {
                     content: '""',
                     position: "absolute",
@@ -796,44 +776,51 @@ export default function IntelligenceCore() {
                     right: 0,
                     bottom: 0,
                     background: stat.gradient,
-                    opacity: 0.08, // Much reduced opacity
+                    opacity: 0.05,
                     zIndex: -1,
                   },
                   "&:hover": {
-                    transform: "scale(1.02) translateY(-2px)", // Reduced hover effect
-                    boxShadow: BRAND_COLORS.shadow.xl,
-                    border: `1px solid ${stat.color}40`, // Reduced border opacity
+                    transform: "scale(1.02) translateY(-1px)",
+                    boxShadow: BRAND_COLORS.shadow.large,
+                    border: `1px solid ${stat.color}30`,
                   },
                 }}
               >
                 <Typography
-                  variant="h3"
+                  variant="h4"
                   sx={{
-                    fontSize: "2.5rem",
+                    fontSize: { xs: "1.5rem", md: "1.8rem" },
                     fontWeight: 800,
                     color: BRAND_COLORS.neutral[900],
-                    mb: 1,
+                    mb: 0.5,
                     textShadow: "none",
                   }}
                 >
-                  {stat.number}
+                  <CountUp
+                    end={stat.number}
+                    duration={2.5}
+                    delay={0.5 + idx * 0.2}
+                    separator=","
+                  />
+                  {stat.suffix}
                 </Typography>
                 <Typography
-                  variant="h6"
+                  variant="body2"
                   sx={{
                     color: BRAND_COLORS.neutral[700],
                     fontWeight: 600,
-                    mb: 2,
-                    fontSize: "1.1rem",
+                    mb: 1,
+                    fontSize: { xs: "0.8rem", md: "0.9rem" },
                   }}
                 >
                   {stat.label}
                 </Typography>
                 <Typography
-                  variant="h4"
+                  variant="h6"
                   sx={{
                     color: stat.color,
                     opacity: 0.8,
+                    fontSize: { xs: "1.2rem", md: "1.4rem" },
                   }}
                 >
                   {stat.icon}

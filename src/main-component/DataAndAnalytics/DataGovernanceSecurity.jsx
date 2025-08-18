@@ -29,7 +29,7 @@ const DataGovernanceSecurity = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Data Governance & Security"
-      heroSubtitle="Compliance & Protection"
+      heroSubtitle="Data Protection"
       heroDescription="Ensure compliant, secure, and reliable data with comprehensive governance frameworks and security protocols. Protect your data assets with enterprise-grade governance, security compliance, and privacy protection."
       heroButtonText="Governance"
       heroButtonLink="/contact"

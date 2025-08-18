@@ -55,42 +55,42 @@ var settings = {
 
   responsive: [
     {
-      breakpoint: 1200,
+      breakpoint: 1400,
       settings: {
         slidesToShow: 5,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 991,
+      breakpoint: 1200,
       settings: {
         slidesToShow: 4,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 767,
+      breakpoint: 991,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 450,
+      breakpoint: 576,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 340,
+      breakpoint: 480,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -116,22 +116,22 @@ const PartnerSection = (props) => {
                   className="brand-logo" 
                   key={pitem}
                   style={{
-                    height: "80px",
-                    width: "180px",
+                    height: "100px",
+                    width: "200px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "15px",
+                    padding: "20px",
                     boxSizing: "border-box",
-                    margin: "0 20px"
+                    margin: "0 15px"
                   }}
                 >
                   <img 
                     src={partner.pImg} 
                     alt={partner.name} 
                     style={{
-                      maxWidth: "150px",
-                      maxHeight: "50px",
+                      maxWidth: "120px",
+                      maxHeight: "60px",
                       width: "auto",
                       height: "auto",
                       objectFit: "contain"
@@ -143,6 +143,90 @@ const PartnerSection = (props) => {
           </div>
         </div>
       </div>
+      
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .brand {
+            display: none !important;
+          }
+        }
+        
+        @media (max-width: 1400px) {
+          .brand-logo {
+            width: 180px !important;
+            height: 90px !important;
+          }
+          .brand-logo img {
+            max-width: 110px !important;
+            max-height: 55px !important;
+          }
+        }
+        
+        @media (max-width: 1200px) {
+          .brand-logo {
+            width: 160px !important;
+            height: 80px !important;
+            padding: 18px !important;
+            margin: 0 12px !important;
+          }
+          .brand-logo img {
+            max-width: 100px !important;
+            max-height: 50px !important;
+          }
+        }
+        
+        @media (max-width: 991px) {
+          .brand-logo {
+            width: 140px !important;
+            height: 70px !important;
+            padding: 15px !important;
+            margin: 0 10px !important;
+          }
+          .brand-logo img {
+            max-width: 90px !important;
+            max-height: 45px !important;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .brand-logo {
+            width: 120px !important;
+            height: 60px !important;
+            padding: 12px !important;
+            margin: 0 8px !important;
+          }
+          .brand-logo img {
+            max-width: 80px !important;
+            max-height: 40px !important;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          .brand-logo {
+            width: 100px !important;
+            height: 50px !important;
+            padding: 10px !important;
+            margin: 0 6px !important;
+          }
+          .brand-logo img {
+            max-width: 70px !important;
+            max-height: 35px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .brand-logo {
+            width: 80px !important;
+            height: 40px !important;
+            padding: 8px !important;
+            margin: 0 5px !important;
+          }
+          .brand-logo img {
+            max-width: 60px !important;
+            max-height: 30px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

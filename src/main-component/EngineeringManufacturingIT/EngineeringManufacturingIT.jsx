@@ -29,7 +29,7 @@ const EngineeringManufacturingIT = () => {
     <MasterMainServiceTemplate
       // Hero Section - Minimal
       heroTitle="Engineering & Manufacturing IT"
-      heroSubtitle="Smart Manufacturing Solutions"
+      heroSubtitle="Smart Manufacturing"
       heroDescription="Transform manufacturing with Industry 4.0 technologies, IoT integration, and digital twin solutions. Build intelligent factories with advanced automation, real-time monitoring, and data-driven insights."
       heroButtonText="Smart Manufacturing"
       heroButtonLink="/contact"

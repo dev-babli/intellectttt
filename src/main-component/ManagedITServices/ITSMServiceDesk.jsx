@@ -29,7 +29,7 @@ const ITSMServiceDesk = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="ITSM, Service Desk & CoE"
-      heroSubtitle="Operational Excellence"
+      heroSubtitle="Service Desk"
       heroDescription="Streamlined IT Service Management with centralized Service Desk solutions and robust Centers of Excellence. Build agile, resilient, and service-driven IT ecosystems."
       heroButtonText="ITSM Solutions"
       heroButtonLink="/contact"

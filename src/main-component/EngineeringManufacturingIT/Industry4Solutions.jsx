@@ -29,7 +29,7 @@ const Industry4Solutions = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Industry 4.0 Solutions"
-      heroSubtitle="Smart Manufacturing Revolution"
+      heroSubtitle="Industry 4.0"
       heroDescription="Embrace the fourth industrial revolution with integrated Industry 4.0 solutions. From IoT-enabled production lines and AI-driven analytics to digital twins and end-to-end system integration, we help transform traditional operations into intelligent, connected, and data-driven ecosystems."
       heroButtonText="Industry 4.0"
       heroButtonLink="/contact"

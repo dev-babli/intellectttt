@@ -29,7 +29,7 @@ const DataEngineeringETL = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Data Engineering & ETL"
-      heroSubtitle="Scalable Data Pipelines"
+      heroSubtitle="Data Pipelines"
       heroDescription="Build and streamline trusted data pipelines with scalable ETL processes and data quality management. Transform your data engineering with robust ETL pipelines, data quality management, and scalable architecture."
       heroButtonText="Data Engineering"
       heroButtonLink="/contact"

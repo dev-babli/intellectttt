@@ -18,7 +18,7 @@ const AIAutomation = () => {
     <MasterSubServiceTemplate
       // Hero Section
       heroTitle="AI Automation (AI + RPA) Consulting"
-      heroSubtitle="Intelligent Process Automation"
+      heroSubtitle="Process Automation"
       heroDescription="We help companies harness the power of AI and RPA to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions. Combine the precision of RPA with the intelligence of AI for unprecedented automation capabilities."
       heroBackgroundImage="/AiGenAi/AIAutomation.webp"
       heroTextColor="white"

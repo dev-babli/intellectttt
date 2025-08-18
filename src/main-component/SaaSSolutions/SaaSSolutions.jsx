@@ -1,5 +1,5 @@
 import React from "react";
-import MasterIndustryTemplate from "../../components/templates/MasterIndustryTemplate";
+import IndustryTemplate from "../../components/templates/IndustryTemplate";
 import { 
   Cloud, 
   Speed, 
@@ -28,10 +28,10 @@ import {
 
 const SaaSSolutions = () => {
   return (
-    <MasterIndustryTemplate
+    <IndustryTemplate
       // Hero Section
       heroTitle="SaaS Development Solutions"
-      heroSubtitle="Build Scalable SaaS Applications"
+      heroSubtitle="Scalable SaaS"
       heroDescription="Transform your business idea into a successful SaaS product with our comprehensive development services. From MVP to enterprise-scale applications, we build scalable, secure, and user-friendly SaaS solutions."
       heroButtonText="Build Your SaaS"
       heroButtonLink="/contact"
@@ -43,67 +43,8 @@ const SaaSSolutions = () => {
         "Cloud-Native Solutions"
       ]}
 
-      // Problem/Solution Section (Industry Challenges)
-      showProblemSolution={true}
-      problemSolutionTitle="SaaS Development Challenges & Solutions"
-      problemSolutionSubtitle="We understand the unique challenges facing SaaS companies and provide innovative solutions"
-      problems={[
-        {
-          title: "Multi-Tenant Architecture Complexity",
-          description: "Building scalable multi-tenant applications that efficiently serve multiple customers with data isolation."
-        },
-        {
-          title: "Subscription & Billing Management",
-          description: "Complex subscription models, billing cycles, and payment processing require sophisticated systems."
-        },
-        {
-          title: "Scalability & Performance",
-          description: "SaaS applications must handle growing user bases while maintaining optimal performance and uptime."
-        },
-        {
-          title: "Security & Data Privacy",
-          description: "Protecting customer data and ensuring compliance with privacy regulations is critical for SaaS success."
-        },
-        {
-          title: "User Onboarding & Adoption",
-          description: "Creating seamless user experiences that drive adoption and reduce churn rates."
-        },
-        {
-          title: "Analytics & Business Intelligence",
-          description: "Gathering insights from user behavior and business metrics to drive product decisions and growth."
-        }
-      ]}
-      solutions={[
-        {
-          title: "Scalable Multi-Tenant Architecture",
-          description: "Cloud-native architecture designed for multi-tenancy with efficient resource utilization and data isolation."
-        },
-        {
-          title: "Advanced Subscription Management",
-          description: "Comprehensive subscription and billing systems with flexible pricing models and automated payment processing."
-        },
-        {
-          title: "Performance Optimization",
-          description: "Optimized infrastructure and application performance to handle high user loads and ensure fast response times."
-        },
-        {
-          title: "Enterprise-Grade Security",
-          description: "Robust security measures including encryption, access controls, and compliance with industry standards."
-        },
-        {
-          title: "User Experience Design",
-          description: "Intuitive user interfaces and seamless onboarding processes that maximize user adoption and retention."
-        },
-        {
-          title: "Advanced Analytics Platform",
-          description: "Comprehensive analytics and reporting systems to track user behavior and business metrics."
-        }
-      ]}
-
-      // Service Offerings Section (Industry Solutions)
-      showServiceOfferings={true}
-      serviceOfferingsTitle="SaaS Development Services"
-      serviceOfferingsSubtitle="Comprehensive SaaS development solutions designed for modern business needs"
+      // Services Component Props - Industry Solutions
+      showServicesComponent={true}
       services={[
         {
           title: "SaaS MVP Development",
@@ -154,57 +95,10 @@ const SaaSSolutions = () => {
           badge: "Integration"
         }
       ]}
-
-      // Benefits Section (Industry Process)
-      showBenefits={true}
-      benefitsTitle="Our SaaS Development Approach"
-      benefitsSubtitle="Proven methodology for delivering successful SaaS products"
-      benefits={[
-        {
-          title: "Lean Startup Methodology",
-          description: "Rapid iteration and validation approach to build, measure, and learn from user feedback.",
-          features: ["MVP Development", "User Testing", "Iterative Improvement", "Market Validation"]
-        },
-        {
-          title: "Cloud-Native Architecture",
-          description: "Scalable, resilient cloud infrastructure designed for SaaS applications and growth.",
-          features: ["Microservices", "Auto-scaling", "Load Balancing", "Disaster Recovery"]
-        },
-        {
-          title: "Continuous Deployment",
-          description: "Automated deployment and monitoring systems for rapid feature delivery and updates.",
-          features: ["CI/CD Pipelines", "Automated Testing", "Feature Flags", "Rollback Capabilities"]
-        }
-      ]}
-
-      // Stats Section (Industry Results)
-      showStats={true}
-      statsTitle="SaaS Development Results"
-      statsSubtitle="Proven outcomes for SaaS companies implementing our solutions"
-      stats={[
-        {
-          metric: { value: "60%", label: "Faster Time to Market" },
-          description: "Reduced development time with lean methodology"
-        },
-        {
-          metric: { value: "99.9%", label: "Uptime" },
-          description: "High availability for SaaS applications"
-        },
-        {
-          metric: { value: "40%", label: "Reduced Churn" },
-          description: "Improved user retention with better UX"
-        },
-        {
-          metric: { value: "3x", label: "Revenue Growth" },
-          description: "Increased revenue with optimized SaaS metrics"
-        }
-      ]}
-
-      // Final CTA
-      finalCtaTitle="Ready to Build Your SaaS Product?"
-      finalCtaSubtitle="Let's discuss how our SaaS development expertise can help you create a successful software product"
-      finalCtaButtonText="Schedule SaaS Consultation"
-      finalCtaButtonLink="/contact"
+      servicesLimit={6}
+      servicesShowButton={true}
+      servicesButtonText="Schedule a Strategy Call"
+      servicesButtonLink="/contact"
     />
   );
 };

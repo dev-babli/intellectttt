@@ -29,7 +29,7 @@ const SAPBTPDevelopment = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="SAP BTP, ABAP & Fiori Development"
-      heroSubtitle="SAP Innovation Platform"
+      heroSubtitle="SAP Innovation"
       heroDescription="Unlock the power of SAP Business Technology Platform with custom ABAP development and modern Fiori UI design. Build scalable cloud-native extensions and enhance SAP functionality."
       heroButtonText="SAP Development"
       heroButtonLink="/contact"

@@ -5,8 +5,12 @@ import { TESTIMONIALS_DATA, BRAND_COLORS } from '../../constants';
 
 const TestimonialsSection = () => {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, background: BRAND_COLORS.lightGray }}>
-      <Container maxWidth="lg">
+    <Box sx={{ 
+      py: { xs: 4, sm: 5, md: 6 }, 
+      px: { xs: 2, sm: 3, md: 4 },
+      background: BRAND_COLORS.lightGray 
+    }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,14 +23,16 @@ const TestimonialsSection = () => {
               textAlign: 'center',
               fontWeight: 700,
               color: BRAND_COLORS.darkGray,
-              mb: 6,
-              fontSize: { xs: '2rem', md: '3rem' },
+              mb: { xs: 3, md: 4 },
+              fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem', lg: '2.5rem' },
+              lineHeight: { xs: 1.2, md: 1.1 },
+              letterSpacing: '-0.01em',
             }}
           >
             What Our Clients Say
           </Typography>
 
-          <Grid container spacing={4}>
+          <Grid container spacing={{ xs: 2, md: 3 }}>
             {TESTIMONIALS_DATA.map((testimonial, index) => (
               <Grid item xs={12} md={4} key={index}>
                 <motion.div
@@ -38,23 +44,27 @@ const TestimonialsSection = () => {
                   <Card
                     sx={{
                       height: '100%',
-                      borderRadius: 3,
-                      boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+                      borderRadius: 2,
+                      boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
                       transition: 'all 0.3s ease',
+                      border: '1px solid rgba(0,0,0,0.05)',
                       '&:hover': {
-                        transform: 'translateY(-8px)',
-                        boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
+                        transform: 'translateY(-4px)',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
+                        borderColor: 'rgba(59, 130, 246, 0.2)',
                       },
                     }}
                   >
-                    <CardContent sx={{ p: 4 }}>
+                    <CardContent sx={{ p: { xs: 2, md: 3 } }}>
                       <Typography
                         variant="body1"
                         sx={{
-                          mb: 3,
+                          mb: { xs: 2, md: 2.5 },
                           fontStyle: 'italic',
                           color: '#334155',
-                          lineHeight: 1.8,
+                          lineHeight: 1.6,
+                          fontSize: { xs: '0.8rem', md: '0.9rem' },
+                          fontWeight: 400,
                         }}
                       >
                         "{testimonial.content}"
@@ -63,26 +73,35 @@ const TestimonialsSection = () => {
                       <Box sx={{ display: 'flex', alignItems: 'center' }}>
                         <Avatar
                           src={testimonial.avatar}
-                          sx={{ width: 56, height: 56, mr: 2 }}
+                          sx={{ 
+                            width: { xs: 40, md: 48 }, 
+                            height: { xs: 40, md: 48 }, 
+                            mr: 2,
+                            border: '2px solid rgba(59, 130, 246, 0.1)',
+                          }}
                         />
                         <Box>
-                                                  <Typography
-                          variant="h6"
-                          sx={{
-                            fontWeight: 600,
-                            color: BRAND_COLORS.darkGray,
-                          }}
-                        >
-                          {testimonial.name}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: BRAND_COLORS.slate,
-                          }}
-                        >
-                          {testimonial.role}
-                        </Typography>
+                          <Typography
+                            variant="h6"
+                            sx={{
+                              fontWeight: 600,
+                              color: BRAND_COLORS.darkGray,
+                              fontSize: { xs: '0.8rem', md: '0.9rem' },
+                              lineHeight: 1.3,
+                            }}
+                          >
+                            {testimonial.name}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: BRAND_COLORS.slate,
+                              fontSize: { xs: '0.7rem', md: '0.8rem' },
+                              fontWeight: 500,
+                            }}
+                          >
+                            {testimonial.role}
+                          </Typography>
                         </Box>
                       </Box>
                     </CardContent>

@@ -6,253 +6,75 @@ import { useNavigate } from "react-router-dom";
 const slides = [
   {
     id: 1,
-    title: "74% Faster Software Delivery: Agentic AI in the Wild",
-    subtitle:
-      "How one 'simple' change request shrank from seven weeks to ten days — and what that means for every enterprise SDLC.",
-    ctaText: "Read More",
+    title: "AI & GenAI Solutions",
+    subtitle: "Harness the power of AI and GenAI to unlock new growth opportunities. Transform your business with cutting-edge AI solutions that drive innovation and accelerate growth across all industries.",
+    ctaText: "Explore AI Solutions",
     ctaLink: "/service/ai-and-gen-ai",
     accent: "#667eea",
     backgroundImage: "/herosectionimages/Agentic Ai.webp",
   },
   {
     id: 2,
-    title: "Unleash the Power of Agentic AI",
-    subtitle:
-      "Intelligent automation that learns, adapts, and grows with your business needs.",
-    ctaText: "Discover Agentic AI",
-    ctaLink: "/service/ai-and-gen-ai/agents",
-    accent: "#4facfe",
-    backgroundImage: "/herosectionimages/New ONES/2.webp",
-  },
-  {
-    id: 3,
-    title: "Scalable Cloud & Application Services",
-    subtitle:
-      "Modern solutions built for the digital age with enterprise-grade reliability and performance.",
-    ctaText: "View Cloud Services",
+    title: "Cloud & Application Services",
+    subtitle: "Accelerate growth with scalable, secure cloud platforms. Build robust, scalable applications with enterprise-grade cloud infrastructure and modern development practices.",
+    ctaText: "Discover Cloud Services",
     ctaLink: "/service/cloud-and-application-services",
-    accent: "#a8edea",
+    accent: "#4facfe",
     backgroundImage: "/herosectionimages/Scalable Cloud and Application.webp",
   },
   {
-    id: 4,
-    title: "Accelerate Your Digital Journey",
-    subtitle:
-      "From vision to reality, faster than ever with our comprehensive solutions and expertise.",
-    ctaText: "Start Your Journey",
-    ctaLink: "/contact",
-    accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/Digital Journey.webp",
-  },
-  {
-    id: 5,
-    title: "Data-Driven Intelligence Solutions",
-    subtitle:
-      "Transform your business with advanced analytics and AI-powered insights that drive strategic decisions.",
-    ctaText: "Explore Data Solutions",
+    id: 3,
+    title: "Data & Analytics",
+    subtitle: "Turn data into actionable insights for smarter decisions. Transform raw data into strategic insights that drive business growth and operational excellence.",
+    ctaText: "Analyze Data",
     ctaLink: "/service/data-and-analytics",
-    accent: "#667eea",
-    backgroundImage: "/herosectionimages/Data Driven intelleigence solution.webp",
+    accent: "#a8edea",
+    backgroundImage: "/herosectionimages/Data & Analytics.webp",
   },
   {
-    id: 6,
-    title: "Cybersecurity Excellence",
-    subtitle:
-      "Protect your digital assets with cutting-edge security solutions and proactive threat detection.",
+    id: 4,
+    title: "Digital Security",
+    subtitle: "Protect your digital assets with intelligent security frameworks. Safeguard your organization with advanced cybersecurity solutions and proactive threat detection systems.",
     ctaText: "Secure Your Business",
     ctaLink: "/cybersecurity",
-    accent: "#4facfe",
+    accent: "#ff9a9e",
     backgroundImage: "/herosectionimages/Cyber Security.webp",
   },
   {
-    id: 7,
-    title: "Digital Transformation Partner",
-    subtitle:
-      "Navigate the future with confidence through our comprehensive digital transformation services.",
-    ctaText: "Transform Now",
-    ctaLink: "/digital-transformation",
-    accent: "#a8edea",
-    backgroundImage: "/herosectionimages/Digital Partner.webp",
-  },
-  {
-    id: 8,
-    title: "Innovation at Scale",
-    subtitle:
-      "Leverage emerging technologies to create sustainable competitive advantages for your organization.",
-    ctaText: "Innovate Today",
-    ctaLink: "/innovation",
-    accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/New ONES/1.webp",
-  },
-  {
-    id: 9,
-    title: "Digital Technology Solutions",
-    subtitle:
-      "Embrace the future with cutting-edge digital technology that transforms your business operations.",
-    ctaText: "Explore Digital Tech",
-    ctaLink: "/digital-technology",
+    id: 5,
+    title: "IoT Technology",
+    subtitle: "Connect devices and drive automation with next-gen IoT tech. Build intelligent connected systems that collect, analyze, and act on data in real-time.",
+    ctaText: "Connect Everything",
+    ctaLink: "/service/engineering-and-manufacturing-it/twins",
     accent: "#667eea",
-    backgroundImage: "/herosectionimages/Digital Technology.webp",
+    backgroundImage: "/herosectionimages/New ONES/2.webp",
   },
   {
-    id: 10,
-    title: "Cloud Computing Excellence",
-    subtitle:
-      "Scalable cloud solutions that drive innovation and accelerate your digital transformation journey.",
-    ctaText: "Cloud Solutions",
-    ctaLink: "/cloud-solutions",
+    id: 6,
+    title: "Engineering & Manufacturing",
+    subtitle: "Integrate smart devices to streamline production and processes. Optimize manufacturing and engineering processes with intelligent automation and digital transformation.",
+    ctaText: "Optimize Production",
+    ctaLink: "/service/engineering-and-manufacturing-it",
     accent: "#4facfe",
-    backgroundImage: "/herosectionimages/cloud.webp",
+    backgroundImage: "/herosectionimages/New ONES/7.webp",
   },
   {
-    id: 11,
-    title: "Digital Journey Transformation",
-    subtitle:
-      "Navigate your digital transformation with expert guidance and proven methodologies.",
-    ctaText: "Start Transformation",
-    ctaLink: "/digital-journey",
+    id: 7,
+    title: "Healthcare & Life Sciences",
+    subtitle: "Empower care through digital innovation and secure systems. Transform healthcare delivery with cutting-edge technology solutions and secure patient data management.",
+    ctaText: "Transform Healthcare",
+    ctaLink: "/service/healthcare-and-life-sciences-it",
     accent: "#a8edea",
     backgroundImage: "/herosectionimages/New ONES/3.webp",
   },
   {
-    id: 12,
-    title: "Digital Partnership Excellence",
-    subtitle:
-      "Partner with us to build lasting digital solutions that drive growth and innovation.",
-    ctaText: "Partner With Us",
-    ctaLink: "/partnership",
+    id: 8,
+    title: "Talent Solutions",
+    subtitle: "Bridge your talent gap with flexible, industry-aligned workforce solutions. Access specialized talent and build high-performing teams with our comprehensive workforce solutions.",
+    ctaText: "Find Talent",
+    ctaLink: "/service/talent-solutions",
     accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/New ONES/4.webp",
-  },
-  {
-    id: 13,
-    title: "Scalable Cloud & Application Services",
-    subtitle:
-      "Enterprise-grade cloud and application services designed for scale and performance.",
-    ctaText: "Cloud Services",
-    ctaLink: "/cloud-services",
-    accent: "#667eea",
-    backgroundImage: "/herosectionimages/Sliders/cloud.webp",
-  },
-  {
-    id: 14,
-    title: "Agentic AI Solutions",
-    subtitle:
-      "Intelligent AI agents that automate complex tasks and drive business efficiency.",
-    ctaText: "AI Solutions",
-    ctaLink: "/ai-solutions",
-    accent: "#4facfe",
-    backgroundImage: "/herosectionimages/New ONES/5.webp",
-  },
-  {
-    id: 15,
-    title: "Cybersecurity Excellence",
-    subtitle:
-      "Advanced security solutions that protect your digital assets and ensure business continuity.",
-    ctaText: "Security Solutions",
-    ctaLink: "/security",
-    accent: "#a8edea",
-    backgroundImage: "/herosectionimages/New ONES/6.webp",
-  },
-  {
-    id: 16,
-    title: "Data & Analytics Intelligence",
-    subtitle:
-      "Transform raw data into actionable insights that drive strategic business decisions.",
-    ctaText: "Data Solutions",
-    ctaLink: "/data-analytics",
-    accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/Data & Analytics.webp",
-  },
-  {
-    id: 17,
-    title: "Data-Driven Intelligence Solutions",
-    subtitle:
-      "Leverage the power of data to create intelligent solutions that drive business growth.",
-    ctaText: "Intelligence Solutions",
-    ctaLink: "/intelligence-solutions",
-    accent: "#667eea",
-    backgroundImage: "/herosectionimages/New ONES/7.webp",
-  },
-  {
-    id: 18,
-    title: "Advanced Technology Solutions",
-    subtitle:
-      "Cutting-edge technology solutions that keep you ahead of the competition.",
-    ctaText: "Tech Solutions",
-    ctaLink: "/technology-solutions",
-    accent: "#4facfe",
-    backgroundImage: "/herosectionimages/New ONES/8.webp",
-  },
-  {
-    id: 19,
-    title: "Innovation & Growth",
-    subtitle:
-      "Drive innovation and accelerate growth with our comprehensive technology solutions.",
-    ctaText: "Innovate Now",
-    ctaLink: "/innovation",
-    accent: "#a8edea",
-    backgroundImage: "/herosectionimages/3.webp",
-  },
-  {
-    id: 20,
-    title: "Digital Excellence",
-    subtitle:
-      "Achieve digital excellence with our comprehensive suite of technology solutions.",
-    ctaText: "Achieve Excellence",
-    ctaLink: "/excellence",
-    accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/4.webp",
-  },
-  {
-    id: 21,
-    title: "Cloud Innovation Hub",
-    subtitle:
-      "Your hub for cloud innovation and digital transformation excellence.",
-    ctaText: "Cloud Innovation",
-    ctaLink: "/cloud-innovation",
-    accent: "#667eea",
-    backgroundImage: "/herosectionimages/Sliders/3.webp",
-  },
-  {
-    id: 22,
-    title: "Advanced Digital Solutions",
-    subtitle:
-      "Next-generation digital solutions that transform your business landscape.",
-    ctaText: "Digital Solutions",
-    ctaLink: "/digital-solutions",
-    accent: "#4facfe",
-    backgroundImage: "/herosectionimages/Sliders/4.webp",
-  },
-  {
-    id: 23,
-    title: "Technology Leadership",
-    subtitle:
-      "Lead the way with innovative technology solutions that drive business success.",
-    ctaText: "Lead with Tech",
-    ctaLink: "/technology-leadership",
-    accent: "#a8edea",
-    backgroundImage: "/herosectionimages/Sliders/5.webp",
-  },
-  {
-    id: 24,
-    title: "Digital Technology Excellence",
-    subtitle:
-      "Excellence in digital technology solutions that power your business future.",
-    ctaText: "Digital Excellence",
-    ctaLink: "/digital-excellence",
-    accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/Sliders/Digital Technology.webp",
-  },
-  {
-    id: 25,
-    title: "Cloud Computing Solutions",
-    subtitle:
-      "Comprehensive cloud computing solutions that scale with your business needs.",
-    ctaText: "Cloud Computing",
-    ctaLink: "/cloud-computing",
-    accent: "#667eea",
-    backgroundImage: "/herosectionimages/5.webp",
+    backgroundImage: "/herosectionimages/New ONES/1.webp",
   },
 ];
 
@@ -349,7 +171,7 @@ const HeroSection = () => {
       ref={containerRef}
       sx={{
         position: "relative",
-        height: "100vh",
+        height: { xs: "70vh", sm: "80vh", md: "90vh", lg: "100vh" },
         width: "100vw",
         overflow: "hidden",
         backgroundColor: "#000",
@@ -360,7 +182,7 @@ const HeroSection = () => {
         className="slides-container"
         sx={{
           position: "relative",
-          height: "100vh",
+          height: { xs: "70vh", sm: "80vh", md: "90vh", lg: "100vh" },
           width: "100vw",
         }}
       >
@@ -374,7 +196,7 @@ const HeroSection = () => {
               top: 0,
               left: 0,
               width: "100vw",
-              height: "100vh",
+              height: { xs: "70vh", sm: "80vh", md: "90vh", lg: "100vh" },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -416,31 +238,35 @@ const HeroSection = () => {
                 display: "flex",
                 alignItems: "center",
                 height: "100%",
-                padding: "0 2rem",
+                padding: { xs: "0 1rem", sm: "0 1.5rem", md: "0 2rem" },
               }}
             >
               {/* Left Side - Text Content */}
               <Box
                 sx={{
                   flex: 1,
-                  maxWidth: "800px",
+                  maxWidth: { xs: "100%", sm: "600px", md: "800px" },
                   color: "#ffffff",
                   position: "relative",
-                  padding: "2rem",
+                  padding: { xs: "1rem", sm: "1.5rem", md: "2rem" },
                 }}
               >
                 <Typography
                   className="slide-title"
                   variant="h1"
                   sx={{
-                    fontSize: { xs: "2.5rem", md: "3.5rem", lg: "4rem" },
+                    fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2.5rem", lg: "3rem" },
                     fontWeight: 700,
-                    lineHeight: 1.1,
-                    marginBottom: "1.5rem",
+                    lineHeight: { xs: 1.1, sm: 1.2 },
+                    marginBottom: { xs: "1rem", sm: "1.5rem" },
                     fontFamily: "'SF Pro Display', 'Inter', sans-serif",
                     letterSpacing: "-0.02em",
                     color: "#ffffff !important",
                     textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                    whiteSpace: 'normal',
+                    overflow: 'visible',
+                    textOverflow: 'unset',
+                    maxWidth: { xs: "100%", sm: "600px" }
                   }}
                 >
                   {slide.title}
@@ -450,16 +276,19 @@ const HeroSection = () => {
                   className="slide-subtitle"
                   variant="h5"
                   sx={{
-                    fontSize: { xs: "1.1rem", md: "1.3rem", lg: "1.4rem" },
+                    fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1rem", lg: "1.1rem" },
                     fontWeight: 400,
-                    lineHeight: 1.5,
-                    marginBottom: "3rem",
+                    lineHeight: { xs: 1.3, sm: 1.4 },
+                    marginBottom: { xs: "2rem", sm: "3rem" },
                     fontFamily: "'SF Pro Display', 'Inter', sans-serif",
                     letterSpacing: "-0.01em",
                     color: "#ffffff !important",
                     opacity: 0.9,
                     textShadow: "0 1px 4px rgba(0,0,0,0.2)",
-                    maxWidth: "600px",
+                    maxWidth: { xs: "100%", sm: "500px" },
+                    whiteSpace: 'normal',
+                    overflow: 'visible',
+                    textOverflow: 'unset'
                   }}
                 >
                   {slide.subtitle}
@@ -473,9 +302,9 @@ const HeroSection = () => {
                   sx={{
                     backgroundColor: "#dc2626",
                     color: "#ffffff",
-                    fontSize: "1.1rem",
+                    fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
                     fontWeight: 600,
-                    padding: "1rem 2rem",
+                    padding: { xs: "0.75rem 1.5rem", sm: "0.875rem 1.75rem", md: "1rem 2rem" },
                     borderRadius: "8px",
                     textTransform: "none",
                     transition: "all 0.3s ease",
@@ -488,7 +317,7 @@ const HeroSection = () => {
                   }}
                 >
                   {slide.ctaText}
-                  <span style={{ marginLeft: "0.5rem", fontSize: "1rem" }}>
+                  <span style={{ marginLeft: "0.5rem", fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1rem" } }}>
                     →
                   </span>
                 </Button>

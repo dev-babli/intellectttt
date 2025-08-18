@@ -62,7 +62,7 @@ const blogs = [
         id: '4',
         title: 'Faster Neuro Trials with AI-Powered Imaging',
         slug: 'Faster-Neuro-Trials-with-AI-Powered-Imaging',
-        screens: blogImg4,
+        screens: blogImg1,
         description: 'Digital transformation with IT solutions is about using.',
         author: 'Alex',
         authorTitle:'Art Director',

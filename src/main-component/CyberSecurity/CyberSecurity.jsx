@@ -31,7 +31,7 @@ const CyberSecurity = () => {
     <MasterMainServiceTemplate
       // Hero Section - Minimal
       heroTitle="Cybersecurity Excellence"
-      heroSubtitle="Protect Your Digital Assets"
+      heroSubtitle="Digital Protection"
       heroDescription="Comprehensive cybersecurity solutions designed to protect your organization from evolving threats. From threat detection to incident response, we help you build a robust security posture."
       heroButtonText="Secure Your Business"
       heroButtonLink="/contact"

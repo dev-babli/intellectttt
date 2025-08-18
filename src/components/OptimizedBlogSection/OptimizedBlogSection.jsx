@@ -85,24 +85,24 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
     <section className="optimized-blog-section py-160" style={{ 
       background: '#ffffff',
       position: 'relative',
-      padding: '80px 0'
+      padding: '40px 0' // Reduced from 80px 0
     }}>
       <div className="container">
         <motion.div
-          className="text-center mb-120"
+          className="text-center mb-60" // Reduced from mb-120
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="section-title mb-6"
+            className="section-title mb-4" // Reduced from mb-6
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
             style={{
-              fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', // Reduced from 2.5rem, 5vw, 3.5rem
               fontWeight: '700',
               color: '#1a1a1a',
               lineHeight: '1.2',
@@ -120,10 +120,10 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
             transition={{ delay: 0.4, duration: 0.6 }}
             viewport={{ once: true }}
             style={{
-              fontSize: 'clamp(1.125rem, 2vw, 1.25rem)',
+              fontSize: 'clamp(1rem, 1.5vw, 1.125rem)', // Reduced from 1.125rem, 2vw, 1.25rem
               color: '#666666',
-              lineHeight: '1.6',
-              maxWidth: '600px',
+              lineHeight: '1.5', // Reduced from 1.6
+              maxWidth: '500px', // Reduced from 600px
               margin: '0 auto',
               fontWeight: '400'
             }}
@@ -133,7 +133,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
         </motion.div>
 
         <motion.div
-          className="row g-4"
+          className="row g-3" // Reduced from g-4
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -149,25 +149,25 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                 className="blog-card h-100"
                 style={{
                   background: '#ffffff',
-                  borderRadius: '12px',
+                  borderRadius: '8px', // Reduced from 12px
                   overflow: 'hidden',
-                  boxShadow: '0 6px 24px rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.06)', // Reduced shadow
                   border: '1px solid #f0f0f0',
                   position: 'relative',
-                  height: '1200px',
+                  height: '600px', // Reduced from 1200px
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}
                 whileHover={{
-                  y: -6,
-                  boxShadow: '0 16px 48px rgba(0, 0, 0, 0.15)',
+                  y: -4, // Reduced from -6
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)', // Reduced shadow
                   transition: { duration: 0.3 }
                 }}
               >
                 {/* Top Half - Image Section */}
                 <div className="blog-image-section" style={{
                   position: 'relative',
-                  height: '40%',
+                  height: '35%', // Reduced from 40%
                   overflow: 'hidden'
                 }}>
                   <motion.div
@@ -183,7 +183,7 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                       zIndex: 1
                     }}
                     whileHover={{
-                      scale: 1.08,
+                      scale: 1.05, // Reduced from 1.08
                       transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }
                     }}
                   />
@@ -199,23 +199,19 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                     zIndex: 2
                   }}></div>
 
-                  {/* Improved category badge */}
+                  {/* Category Badge */}
                   <div style={{
                     position: 'absolute',
-                    top: '16px',
-                    left: '16px',
-                    background: 'rgba(255, 255, 255, 0.95)',
-                    color: '#1e293b',
-                    padding: '6px 10px',
-                    borderRadius: '4px',
-                    fontSize: '10px',
+                    top: '8px', // Reduced from 12px
+                    left: '8px', // Reduced from 12px
+                    background: 'rgba(30, 64, 175, 0.9)',
+                    color: '#ffffff',
+                    padding: '3px 6px', // Reduced from 4px 8px
+                    borderRadius: '4px', // Reduced from 6px
+                    fontSize: '0.6rem', // Reduced from 0.7rem
                     fontWeight: '600',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
-                    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                    zIndex: 3
+                    zIndex: 3,
+                    backdropFilter: 'blur(10px)'
                   }}>
                     {blog.category}
                   </div>
@@ -223,8 +219,8 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
 
                 {/* Bottom Half - Content Section */}
                 <div className="blog-content-section" style={{
-                  height: '60%',
-                  padding: '40px',
+                  height: '65%', // Increased from 60%
+                  padding: '20px', // Reduced from 40px
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'flex-start',
@@ -233,21 +229,21 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                 }}>
                   <div>
                     <h3
-                      className="blog-title mb-4"
+                      className="blog-title mb-3" // Reduced from mb-4
                       style={{
-                        fontSize: '20px',
+                        fontSize: '16px', // Reduced from 20px
                         fontWeight: '600',
                         lineHeight: '1.3',
                         color: '#1e293b',
                         margin: 0,
-                        marginBottom: '24px',
+                        marginBottom: '16px', // Reduced from 24px
                         display: 'block',
                         overflow: 'visible',
                         wordWrap: 'break-word',
                         hyphens: 'auto',
                         letterSpacing: '-0.02em',
                         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                        minHeight: '80px'
+                        minHeight: '60px' // Reduced from 80px
                       }}
                     >
                       <Link
@@ -271,59 +267,23 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     marginTop: 'auto',
-                    paddingTop: '20px'
+                    paddingTop: '16px', // Reduced from 20px
                   }}>
-                    <Link
-                      onClick={ClickHandler}
-                      to={`/blog-single/${blog.slug}`}
-                      className="view-article-btn"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        textDecoration: 'none',
-                        color: '#667eea',
-                        fontWeight: '500',
-                        fontSize: '13px',
-                        transition: 'all 0.3s ease',
-                        letterSpacing: '0.05em',
-                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
-                        textTransform: 'uppercase'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.transform = 'translateX(3px)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.transform = 'translateX(0)';
-                      }}
-                    >
-                      View article
-                      <img 
-                        src="/images/right.png" 
-                        alt="arrow" 
-                        style={{ 
-                          width: '10px', 
-                          height: '10px', 
-                          marginLeft: '6px',
-                          filter: 'invert(40%) sepia(100%) saturate(1000%) hue-rotate(200deg) brightness(1) contrast(1)'
-                        }} 
-                      />
-                    </Link>
-
                     <div className="blog-author" style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '10px'
+                      gap: '8px' // Reduced from 10px
                     }}>
                       <div style={{
-                        width: '32px',
-                        height: '32px',
+                        width: '28px', // Reduced from 32px
+                        height: '28px', // Reduced from 32px
                         borderRadius: '50%',
                         background: '#f8f9fa',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         color: '#666666',
-                        fontSize: '13px',
+                        fontSize: '12px', // Reduced from 13px
                         fontWeight: '600',
                         border: '2px solid #e9ecef'
                       }}>
@@ -332,219 +292,32 @@ const OptimizedBlogSection = ({ title = "Our Expert Insights", subtitle = "Stay 
                       <div>
                         <div style={{
                           color: '#1a1a1a',
-                          fontSize: '13px',
+                          fontSize: '12px', // Reduced from 13px
                           fontWeight: '600'
                         }}>
                           {blog.author}
                         </div>
                         <div style={{
                           color: '#666666',
-                          fontSize: '11px'
+                          fontSize: '10px' // Reduced from 11px
                         }}>
                           {blog.role}
                         </div>
                       </div>
+                    </div>
+
+                    <div className="blog-date" style={{
+                      color: '#666666',
+                      fontSize: '11px', // Reduced from 12px
+                      fontWeight: '500'
+                    }}>
+                      {blog.date}
                     </div>
                   </div>
                 </div>
-
-                {/* Hover Overlay - Full Image Coverage */}
-                <motion.div
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundImage: `url(${blog.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    zIndex: 10,
-                    opacity: 0,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    padding: '24px'
-                  }}
-                  whileHover={{
-                    opacity: 1,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  {/* Enhanced dark overlay */}
-                  <div style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.7) 100%)',
-                    zIndex: 11
-                  }}></div>
-
-                  {/* Hover Content */}
-                  <div style={{ position: 'relative', zIndex: 12 }}>
-                    <div style={{
-                      background: 'rgba(255, 255, 255, 0.95)',
-                      color: '#1a1a1a',
-                      padding: '8px 12px',
-                      borderRadius: '6px',
-                      fontSize: '11px',
-                      fontWeight: '700',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.8px',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255, 255, 255, 0.3)',
-                      display: 'inline-block'
-                    }}>
-                      {blog.category}
-                    </div>
-                  </div>
-
-                  <div style={{ position: 'relative', zIndex: 12 }}>
-                    <h3
-                      className="blog-title mb-4"
-                      style={{
-                        fontSize: '22px',
-                        fontWeight: '600',
-                        lineHeight: '1.3',
-                        color: '#ffffff',
-                        margin: 0,
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden'
-                      }}
-                    >
-                      {blog.title}
-                    </h3>
-
-                    <div className="blog-author" style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      marginBottom: '16px'
-                    }}>
-                      <div style={{
-                        width: '36px',
-                        height: '36px',
-                        borderRadius: '50%',
-                        background: 'rgba(255, 255, 255, 0.2)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#ffffff',
-                        fontSize: '14px',
-                        fontWeight: '600',
-                        border: '2px solid rgba(255, 255, 255, 0.3)'
-                      }}>
-                        {blog.author.charAt(0)}
-                      </div>
-                      <div>
-                        <div style={{
-                          color: '#ffffff',
-                          fontSize: '14px',
-                          fontWeight: '600'
-                        }}>
-                          {blog.author}
-                        </div>
-                        <div style={{
-                          color: 'rgba(255, 255, 255, 0.8)',
-                          fontSize: '12px'
-                        }}>
-                          {blog.role}
-                        </div>
-                      </div>
-                    </div>
-
-                    <Link
-                      onClick={ClickHandler}
-                      to={`/blog-single/${blog.id}`}
-                      className="view-article-btn"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        textDecoration: 'none',
-                        color: '#ffffff',
-                        fontWeight: '600',
-                        fontSize: '13px',
-                        transition: 'all 0.3s ease',
-                        padding: '6px 0',
-                        borderBottom: '2px solid transparent'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.borderBottomColor = '#ffffff';
-                        e.target.style.transform = 'translateX(3px)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.borderBottomColor = 'transparent';
-                        e.target.style.transform = 'translateX(0)';
-                      }}
-                    >
-                      View article
-                      <img 
-                        src="/images/right.png" 
-                        alt="arrow" 
-                        style={{ 
-                          width: '10px', 
-                          height: '10px', 
-                          marginLeft: '6px',
-                          filter: 'invert(1)'
-                        }} 
-                      />
-                    </Link>
-                  </div>
-                </motion.div>
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="text-center mt-5"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Link
-            onClick={ClickHandler}
-            to="/blog"
-            className="view-all-btn"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              padding: '16px 36px',
-              background: '#1a1a1a',
-              color: '#fff',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontWeight: '600',
-              fontSize: '16px',
-              transition: 'all 0.3s ease',
-              border: 'none'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'translateY(-2px)';
-              e.target.style.boxShadow = '0 8px 25px rgba(26, 26, 26, 0.2)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'translateY(0)';
-              e.target.style.boxShadow = 'none';
-            }}
-          >
-            View All Articles
-            <img 
-              src="/images/right.png" 
-              alt="arrow" 
-              style={{ 
-                width: '14px', 
-                height: '14px', 
-                marginLeft: '12px',
-                filter: 'invert(1)'
-              }} 
-            />
-          </Link>
         </motion.div>
       </div>
     </section>

@@ -29,7 +29,7 @@ const MESIntegrationIoT = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="MES Integration & IoT"
-      heroSubtitle="Smart Manufacturing Excellence"
+      heroSubtitle="Smart Manufacturing"
       heroDescription="Bridge the gap between operational technology (OT) and information technology (IT) through robust MES integration and Industrial IoT solutions. Enable real-time visibility, production optimization, and data-driven decision-making."
       heroButtonText="MES & IoT"
       heroButtonLink="/contact"

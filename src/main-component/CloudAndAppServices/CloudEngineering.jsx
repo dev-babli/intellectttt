@@ -29,7 +29,7 @@ const CloudEngineering = () => {
     <MasterSubServiceTemplate
       // Hero Section - Minimal
       heroTitle="Azure, AWS & GCP Engineering"
-      heroSubtitle="Multi-Cloud Excellence"
+      heroSubtitle="Multi-Cloud"
       heroDescription="Cloud engineering on Azure, AWS & GCP. Build scalable, secure, and cost-effective cloud infrastructure across major cloud platforms with our expert engineering services."
       heroButtonText="Cloud Engineering"
       heroButtonLink="/contact"

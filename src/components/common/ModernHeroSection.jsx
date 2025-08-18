@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Box, Container, Typography, Button, Grid, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ArrowForward, PlayCircle } from '@mui/icons-material';
@@ -20,6 +20,38 @@ const ModernHeroSection = ({
   const [imageError, setImageError] = useState(false);
   const [fallbackImage] = useState("/herosectionimages/Sliders/Digital Technology.webp");
 
+  // Refs and dynamic font sizes to keep text on a single line without wrapping
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const [titleFontSize, setTitleFontSize] = useState(() => {
+    const width = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    if (width < 600) return 22;
+    if (width < 900) return 26;
+    if (width < 1200) return 28;
+    return 32;
+  });
+  const [descriptionFontSize, setDescriptionFontSize] = useState(() => {
+    const width = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    if (width < 600) return 12;
+    if (width < 900) return 13;
+    return 14;
+  });
+
+  const fitTextToWidth = (element, setFontSize, minPx = 10) => {
+    if (!element) return;
+    const computedStyle = window.getComputedStyle(element);
+    let currentSize = parseFloat(computedStyle.fontSize);
+    const maxIterations = 40;
+    let iterations = 0;
+    // Reduce font size until text fits on one line within the element width
+    while (element.scrollWidth > element.clientWidth && currentSize > minPx && iterations < maxIterations) {
+      currentSize -= 1;
+      element.style.fontSize = `${currentSize}px`;
+      iterations += 1;
+    }
+    setFontSize(currentSize);
+  };
+
   useEffect(() => {
     if (!backgroundImage) return;
     
@@ -32,6 +64,28 @@ const ModernHeroSection = ({
     };
     img.src = backgroundImage;
   }, [backgroundImage]);
+
+  // Ensure title and description stay in a single line without wrapping
+  useEffect(() => {
+    const handleResize = () => {
+      if (titleRef.current) {
+        // Reset to baseline before fitting again
+        const base = window.innerWidth < 600 ? 22 : window.innerWidth < 900 ? 26 : window.innerWidth < 1200 ? 28 : 32;
+        titleRef.current.style.fontSize = `${base}px`;
+        fitTextToWidth(titleRef.current, setTitleFontSize, 14);
+      }
+      if (descriptionRef.current) {
+        const baseD = window.innerWidth < 600 ? 12 : window.innerWidth < 900 ? 13 : 14;
+        descriptionRef.current.style.fontSize = `${baseD}px`;
+        fitTextToWidth(descriptionRef.current, setDescriptionFontSize, 11);
+      }
+    };
+    // Run on mount
+    handleResize();
+    // Re-run on resize
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [title, description]);
 
   const currentBackgroundImage = imageError ? fallbackImage : backgroundImage;
 
@@ -86,34 +140,44 @@ const ModernHeroSection = ({
                 </motion.div>
               )}
 
-              {/* Main Title */}
+              {/* Main Title - force single line, auto-fit */}
               <Typography
                 variant="h1"
+                ref={titleRef}
                 sx={{
-                  fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem', lg: '2.25rem' },
+                  fontSize: `${titleFontSize}px`,
                   fontWeight: 700,
                   color: textColor === "auto" || textColor === "white" ? '#ffffff' : '#1e293b',
                   mb: 2,
-                  lineHeight: 1.2,
+                  lineHeight: 1.1,
                   letterSpacing: '-0.01em',
                   textShadow: textColor === "auto" || textColor === "white" ? '0 2px 8px rgba(0,0,0,0.3)' : '0 1px 5px rgba(0,0,0,0.1)',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis'
                 }}
+                title={title}
               >
                 {title}
               </Typography>
 
-              {/* Description - Hidden for minimal design */}
+              {/* Description - single line, auto-fit */}
               {description && (
                 <Typography
                   variant="body1"
+                  ref={descriptionRef}
                   sx={{
                     color: textColor === "auto" || textColor === "white" ? 'rgba(255, 255, 255, 0.9)' : 'rgba(30, 41, 59, 0.8)',
                     mb: 3,
-                    lineHeight: 1.5,
+                    lineHeight: 1.2,
                     fontWeight: 400,
-                    maxWidth: '500px',
-                    fontSize: { xs: '0.875rem', sm: '1rem' },
+                    maxWidth: '100%',
+                    fontSize: `${descriptionFontSize}px`,
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
                   }}
+                  title={description}
                 >
                   {description}
                 </Typography>
