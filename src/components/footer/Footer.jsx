@@ -263,11 +263,14 @@ const Footer = (props) => {
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
               {[
                 { text: "AI & GenAI", link: "/service/ai-and-gen-ai" },
-                { text: "Cloud & Application", link: "/service/cloud-and-application-services" },
+                { text: "Cloud & Application Services", link: "/service/cloud-and-application-services" },
                 { text: "Data & Analytics", link: "/service/data-and-analytics" },
-                { text: "SAP Services", link: "/service/sap-services" },
+                { text: "IoT Solutions", link: "/iot" },
                 { text: "Managed IT Services", link: "/service/managed-it-services" },
+                { text: "SAP Services", link: "/service/sap-services" },
                 { text: "Talent Solutions", link: "/service/talent-solutions" },
+                { text: "Engineering Services", link: "/service/engineering-services" },
+                { text: "Healthcare & Life Sciences", link: "/service/healthcare-and-life-sciences-it" },
               ].map((item, index) => (
                 <li key={index} style={{ marginBottom: "10px" }}>
                   <Link
@@ -308,8 +311,8 @@ const Footer = (props) => {
               {[
                 { text: "Healthcare & Life Sciences", link: "/industries/helthcare-and-life-sciences" },
                 { text: "Manufacturing & Automotive", link: "/industries/menufacturing-and-automotive" },
-                { text: "Aerospace & Defense", link: "/industries/aerospace-and-defense" },
                 { text: "Banking & Financial Services", link: "/industries/banking-and-financial-services" },
+                { text: "Aerospace & Defense", link: "/industries/aerospace-and-defense" },
                 { text: "Retail & E-Commerce", link: "/industries/retail-and-ecommerce" },
                 { text: "Energy & Utilities", link: "/industries/energy-and-utilities" },
                 { text: "Education & Training", link: "/industries/education-and-training" },
@@ -353,9 +356,9 @@ const Footer = (props) => {
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
               {[
                 { text: "Blog", link: "/blog" },
-                { text: "Case Studies", link: "/case-studies" },
-                { text: "Whitepapers", link: "/whitepapers" },
-                { text: "Webinars", link: "/webinars" },
+                { text: "Articles", link: "/insights/blog" },
+                { text: "Whitepapers & Case Studies", link: "/insights/whitepapers-and-case-studies" },
+                { text: "News & Events", link: "/insights/news-and-announcements" },
               ].map((item, index) => (
                 <li key={index} style={{ marginBottom: "10px" }}>
                   <Link
@@ -394,11 +397,10 @@ const Footer = (props) => {
             </h5>
             <ul style={{ listStyle: "none", padding: "0", margin: "0" }}>
               {[
-                { text: "About Us", link: "/about" },
-                { text: "Our Journey", link: "/company/our-journey" },
-                { text: "Leadership Team", link: "/company/leadership-team" },
-                { text: "Global Presence", link: "/company/global-presence" },
-                { text: "Careers", link: "/careers" },
+                { text: "Overview", link: "/about" },
+                { text: "Leadership Team", link: "/Company/leadership-team" },
+                { text: "Our Companies", link: "/about" },
+                { text: "Our Global Presence", link: "/company/global-presence" },
                 { text: "Contact", link: "/contact" },
               ].map((item, index) => (
                 <li key={index} style={{ marginBottom: "10px" }}>

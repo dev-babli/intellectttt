@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
               letterSpacing: '-0.01em',
             }}
           >
-            What Our Clients Say
+            Client Testimonials
           </Typography>
 
           <Grid container spacing={{ xs: 2, md: 3 }}>

@@ -208,7 +208,7 @@ const TestimonialSliderHome = () => {
               letterSpacing: "-0.02em",
             }}
           >
-            What Our Clients Say
+            Client Testimonials
           </Typography>
           <Typography
             variant="h5"

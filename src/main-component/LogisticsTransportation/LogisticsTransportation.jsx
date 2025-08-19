@@ -35,7 +35,7 @@ const LogisticsTransportation = () => {
       heroDescription="Optimize logistics with intelligent supply chain solutions, real-time tracking, and predictive analytics. Transform transportation operations with IoT, AI, and automation for maximum efficiency."
       heroButtonText="TALK TO OUR EXPERTS"
       heroButtonLink="/contact"
-      heroBackgroundImage="/SAP.webp"
+      heroBackgroundImage="/industrial-port-container-yard.jpg"
       heroFeatures={[
         "Supply Chain Optimization",
         "Real-time Tracking",

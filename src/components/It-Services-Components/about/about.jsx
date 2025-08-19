@@ -17,9 +17,9 @@ const About = () => {
     {
       img: about1,
       icon: aIcon1,
-      heading: "Tag line",
+      heading: "About us",
       content:
-        "Innovating with Intelligence. Delivering with Trust.",
+        "Intellectt Inc delivers tailored workforce solutions that connect top talent with leading businesses. We specialize in staffing, recruitment, and consulting services that drive agility, efficiency, and long-term success.",
     },
     {
       img: about3,

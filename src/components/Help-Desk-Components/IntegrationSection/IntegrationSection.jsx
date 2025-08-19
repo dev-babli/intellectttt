@@ -200,7 +200,7 @@ const IntegrationSection = (props) => {
               lineHeight: "1.1",
             }}
           >
-            Clients Testimonials
+            Client Testimonials
           </h2>
           <p
             style={{

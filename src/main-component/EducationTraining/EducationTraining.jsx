@@ -35,7 +35,7 @@ const EducationTraining = () => {
       heroDescription="Enhance education delivery with digital learning platforms, AI-powered personalization, and virtual classroom solutions. Transform learning experiences with modern technology and data-driven insights."
       heroButtonText="TALK TO OUR EXPERTS"
       heroButtonLink="/contact"
-      heroBackgroundImage="/cloud-computing.webp"
+      heroBackgroundImage="/meeting-mature-office-showing-presenter.jpg"
       heroFeatures={[
         "Digital Learning Platforms",
         "AI-Powered Personalization",

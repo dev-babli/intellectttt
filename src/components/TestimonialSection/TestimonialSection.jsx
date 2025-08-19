@@ -91,7 +91,7 @@ const TestimonialSlider = () => {
       </Typography>
 
       <Typography variant="h4" fontWeight={700} mb={6}>
-        The customer experience
+        Client Testimonials
       </Typography>
 
       <Slider {...settings}>
