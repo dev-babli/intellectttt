@@ -8,7 +8,7 @@ const DataAndAnalyticsHero = () => {
         <div className="row align-items-center">
           <div className="col-md-6 " style={{ marginTop: '100px' }}>
             <h1 className="fw-bold text-dark mb-3">
-             Data & Analytics <br /> Industrialization Consulting
+             Data & Analytics <br /> Industrialization
             </h1>
             <p className="lead text-dark">Build. Evaluate. Generate.</p>
           </div>

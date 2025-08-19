@@ -322,18 +322,6 @@ export default function TabsComponent() {
               lineHeight: 1.1,
               position: "relative",
               transition: "all 0.3s ease",
-              "&::after": {
-                content: '""',
-                position: "absolute",
-                bottom: "-0.5rem",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "60px",
-                height: "3px",
-                background: "linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)",
-                borderRadius: "2px",
-                transition: "all 0.3s ease",
-              },
             }}
           >
             Technology Processes

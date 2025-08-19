@@ -53,20 +53,31 @@ const AtomicServiceOfferings = ({
     '/digital-transformation.webp'
   ];
 
-  // Function to determine optimal grid size based on number of services
-  const getOptimalGridSize = (serviceCount) => {
-    // For even numbers, try to create complete rows
-    if (serviceCount % 4 === 0) {
-      return 3; // 4 items per row (12/3 = 4)
-    } else if (serviceCount % 3 === 0) {
-      return 4; // 3 items per row (12/4 = 3)
-    } else if (serviceCount % 2 === 0) {
-      return 6; // 2 items per row (12/6 = 2)
+  // Function to get responsive grid size based on screen size and service count
+  const getResponsiveGridSize = (serviceCount) => {
+    // For 6 services: 3x2 grid (3 columns, 2 rows)
+    // For 4 services: 4x1 grid (4 columns, 1 row)
+    if (serviceCount <= 4) {
+      // 4x1 layout: 4 columns on desktop, 2 on tablet, 1 on mobile
+      return {
+        xs: 12, // 1 item per row on mobile
+        sm: 6,  // 2 items per row on small tablets
+        md: 6,  // 2 items per row on tablets
+        lg: 3,  // 4 items per row on desktop
+        xl: 3   // 4 items per row on large desktop
+      };
     } else {
-      // For odd numbers, use 4 items per row for better visual balance
-      return 3;
+      // 3x2 layout: 3 columns on desktop, 2 on tablet, 1 on mobile
+      return {
+        xs: 12, // 1 item per row on mobile
+        sm: 6,  // 2 items per row on small tablets
+        md: 4,  // 3 items per row on tablets
+        lg: 4,  // 3 items per row on desktop
+        xl: 4   // 3 items per row on large desktop
+      };
     }
   };
+
   // Function to get default images based on service title
   const getDefaultImage = (serviceTitle) => {
     const title = serviceTitle.toLowerCase();
@@ -94,6 +105,7 @@ const AtomicServiceOfferings = ({
     // Default AI image
     return '/agentic-AI.webp';
   };
+
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const cardsRef = useRef(null);
@@ -116,37 +128,25 @@ const AtomicServiceOfferings = ({
   return (
     <Box
       sx={{
-        background:
-          "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)",
+        background: "#ffffff",
         minHeight: "100vh",
-        py: 8,
-        px: { xs: 2, sm: 3, md: 4 },
+        py: { xs: 4, sm: 6, md: 8 },
+        px: { xs: 3, sm: 4, md: 5, lg: 6 },
         position: "relative",
         overflow: "hidden",
         opacity: isVisible ? 1 : 0,
         transition: "opacity 1s ease-out",
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background:
-            "radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.03) 0%, transparent 50%)",
-          opacity: isVisible ? 1 : 0,
-          transition: "opacity 1.5s ease-out 0.5s",
-        },
+
       }}
     >
       {/* Header Section */}
       <Box
         sx={{
           textAlign: "center",
-          mb: 8,
+          mb: { xs: 4, sm: 6, md: 8 },
           maxWidth: "1200px",
           mx: "auto",
-          px: { xs: 2, sm: 3, md: 4 },
+          px: { xs: 0, sm: 0, md: 0 },
           position: "relative",
         }}
       >
@@ -156,9 +156,9 @@ const AtomicServiceOfferings = ({
           sx={{
             color: "#1a1a1a",
             fontWeight: 600,
-            fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem", lg: "2.25rem" },
+            fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.75rem", lg: "2rem", xl: "2.25rem" },
             lineHeight: 1.2,
-            mb: 3,
+            mb: { xs: 2, sm: 3 },
             letterSpacing: "-0.01em",
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif",
@@ -167,7 +167,7 @@ const AtomicServiceOfferings = ({
             transition:
               "opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)",
             position: "relative",
-            px: { xs: 1, sm: 2 },
+            px: { xs: 0, sm: 0 },
             whiteSpace: "normal",
             wordWrap: "break-word",
             overflowWrap: "break-word",
@@ -182,9 +182,9 @@ const AtomicServiceOfferings = ({
           sx={{
             color: "#4a5568",
             fontWeight: 400,
-            fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+            fontSize: { xs: "0.875rem", sm: "0.9rem", md: "0.95rem", lg: "1rem" },
             lineHeight: 1.4,
-            maxWidth: { xs: "100%", sm: "400px", md: "450px" },
+            maxWidth: { xs: "100%", sm: "400px", md: "450px", lg: "500px" },
             mx: "auto",
             letterSpacing: "0.01em",
             fontFamily:
@@ -197,7 +197,7 @@ const AtomicServiceOfferings = ({
             whiteSpace: "normal",
             wordWrap: "break-word",
             overflowWrap: "break-word",
-            px: { xs: 1, sm: 2 },
+            px: { xs: 0, sm: 0 },
           }}
         >
           {subtitle}
@@ -208,30 +208,28 @@ const AtomicServiceOfferings = ({
       <Box ref={cardsRef}>
         <Grid
           container
-          spacing={{ xs: 2, sm: 3 }}
+          spacing={{ xs: 1.5, sm: 2, md: 3 }}
           sx={{
-            maxWidth: "1200px",
+            maxWidth: "1400px",
             mx: "auto",
-            px: { xs: 1, sm: 2, md: 3 },
+            px: { xs: 2, sm: 3, md: 4 },
             justifyContent: "center",
             alignItems: "stretch",
             display: "flex",
             flexWrap: "wrap",
           }}
         >
-          {services.slice(0, 9).map((service, index) => (
+          {services.slice(0, services.length <= 4 ? 4 : 6).map((service, index) => (
             <Grid 
               item 
-              xs={12} 
-              sm={6} 
-              md={4}
-              lg={getOptimalGridSize(services.length)} 
+              {...getResponsiveGridSize(services.length)}
               key={index} 
               sx={{ 
                 display: 'flex', 
                 justifyContent: 'center', 
+                alignItems: 'center',
                 width: '100%',
-                mb: { xs: 2, sm: 0 }
+                mb: { xs: 1.5, sm: 0 }
               }}
             >
               <Link
@@ -242,9 +240,23 @@ const AtomicServiceOfferings = ({
                 <Card
                   className="dimensional-card"
                   sx={{
-                    height: { xs: 240, sm: 260, md: 280 },
+                    height: { 
+                      xs: 240, 
+                      sm: 260, 
+                      md: 280, 
+                      lg: 300, 
+                      xl: 320 
+                    },
                     width: '100%',
-                    maxWidth: { xs: '100%', sm: 300, md: 320 },
+                    maxWidth: { 
+                      xs: '100%', 
+                      sm: 280, 
+                      md: 300, 
+                      lg: 320, 
+                      xl: 340 
+                    },
+                    minWidth: { xs: '100%', sm: 250 },
+                    mx: 'auto',
                     background: "#0f0f0f",
                     borderRadius: "8px",
                     position: "relative",
@@ -362,11 +374,11 @@ const AtomicServiceOfferings = ({
                       className="card-category"
                       sx={{
                         position: "absolute",
-                        top: 12,
-                        left: 12,
+                        top: { xs: 8, sm: 10, md: 12 },
+                        left: { xs: 8, sm: 10, md: 12 },
                         color: "#ffffff",
                         fontWeight: 700,
-                        fontSize: "0.625rem",
+                        fontSize: { xs: "0.5rem", sm: "0.625rem" },
                         letterSpacing: "0.05em",
                         textTransform: "uppercase",
                         transition:
@@ -376,7 +388,7 @@ const AtomicServiceOfferings = ({
                           "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
                         textShadow: "0 2px 4px rgba(0,0,0,0.5)",
                         backgroundColor: "#dc2626",
-                        padding: "3px 8px",
+                        padding: { xs: "2px 6px", sm: "3px 8px" },
                         borderRadius: "8px",
                       }}
                     >
@@ -389,13 +401,19 @@ const AtomicServiceOfferings = ({
                     className="card-title"
                     sx={{
                       position: "absolute",
-                      bottom: 12,
-                      left: 12,
-                      right: 12,
+                      bottom: { xs: 8, sm: 10, md: 12 },
+                      left: { xs: 8, sm: 10, md: 12 },
+                      right: { xs: 8, sm: 10, md: 12 },
                       color: "#ffffff",
                       fontWeight: 600,
                       lineHeight: 1.2,
-                      fontSize: { xs: "0.9rem", sm: "0.95rem", md: "1rem" },
+                      fontSize: { 
+                        xs: "0.85rem", 
+                        sm: "0.9rem", 
+                        md: "0.95rem", 
+                        lg: "1rem", 
+                        xl: "1.1rem" 
+                      },
                       transition:
                         "opacity 0.3s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                       zIndex: 2,
@@ -431,7 +449,7 @@ const AtomicServiceOfferings = ({
                       flexDirection: "column",
                       justifyContent: "space-between",
                       alignItems: "flex-start",
-                      padding: 3,
+                      padding: { xs: 2.5, sm: 3, md: 3.5 },
                       background:
                         "linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)",
                       backdropFilter: "blur(15px)",
@@ -457,9 +475,9 @@ const AtomicServiceOfferings = ({
                           className="content-description"
                           sx={{
                             color: "#ffffff",
-                            mb: 2,
+                            mb: { xs: 1, sm: 1.5 },
                             lineHeight: 1.4,
-                            fontSize: "0.95rem",
+                            fontSize: { xs: "0.85rem", sm: "0.9rem", md: "0.95rem", lg: "1rem" },
                             fontWeight: 500,
                             letterSpacing: "0.01em",
                             fontFamily:
@@ -477,15 +495,15 @@ const AtomicServiceOfferings = ({
                           {service.description}
                         </Typography>
 
-                        <Box sx={{ mb: 2 }}>
-                          {service.features && service.features.slice(0, 2).map((feature, idx) => (
+                        <Box sx={{ mb: { xs: 1, sm: 1.5 } }}>
+                          {service.features && service.features.slice(0, 1).map((feature, idx) => (
                             <Typography
                               key={idx}
                               variant="body2"
                               className={`content-feature-${idx}`}
                               sx={{
                                 color: "#e2e8f0",
-                                fontSize: "0.8rem",
+                                fontSize: { xs: "0.7rem", sm: "0.75rem", md: "0.8rem" },
                                 mb: 0.4,
                                 display: "flex",
                                 alignItems: "center",
@@ -520,13 +538,13 @@ const AtomicServiceOfferings = ({
                         </Box>
 
                         {/* Additional Info Section */}
-                        <Box sx={{ mb: 2 }}>
+                        <Box sx={{ mb: { xs: 1, sm: 1.5 } }}>
                           <Typography
                             variant="body2"
                             className="content-benefits"
                             sx={{
                               color: "#00ffff",
-                              fontSize: "0.75rem",
+                              fontSize: { xs: "0.65rem", sm: "0.7rem", md: "0.75rem" },
                               fontWeight: 600,
                               mb: 0.5,
                               textTransform: "uppercase",
@@ -548,7 +566,7 @@ const AtomicServiceOfferings = ({
                             className="content-benefit-text"
                             sx={{
                               color: "#b8c5d6",
-                              fontSize: "0.75rem",
+                              fontSize: { xs: "0.65rem", sm: "0.7rem", md: "0.75rem" },
                               lineHeight: 1.3,
                               opacity: 0,
                               transform: "translateY(10px)",
@@ -560,7 +578,7 @@ const AtomicServiceOfferings = ({
                               },
                             }}
                           >
-                            {service.features && service.features.slice(2, 4).join(" • ")}
+                            {service.features && service.features.slice(2, 3).join(" • ")}
                           </Typography>
                         </Box>
                       </Box>
@@ -572,14 +590,14 @@ const AtomicServiceOfferings = ({
                       className="content-button"
                       sx={{
                         alignSelf: "flex-start",
-                        px: 2.5,
-                        py: 1,
+                        px: { xs: 2, sm: 2.5 },
+                        py: { xs: 0.75, sm: 1 },
                         borderRadius: "6px",
                         borderColor: "#00ffff",
                         color: "#00ffff",
                         fontWeight: 600,
                         textTransform: "none",
-                        fontSize: "0.85rem",
+                        fontSize: { xs: "0.75rem", sm: "0.8rem", md: "0.85rem" },
                         letterSpacing: "0.02em",
                         fontFamily:
                           "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",

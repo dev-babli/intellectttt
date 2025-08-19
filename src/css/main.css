@@ -7058,21 +7058,7 @@ body[data-aos-easing="ease"] [data-aos] {
   margin-bottom: 70px;
 }
 
-.brand-sub_title::before {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  content: "";
-  height: 1px;
-  width: 100%;
-  background: rgba(12, 17, 29, 0.1);
-}
-
-@media (max-width: 767px) {
-  .brand-sub_title::before {
-    display: none;
-  }
-}
+/* Removed underline styling */
 
 .brand-sub_title span {
   position: relative;

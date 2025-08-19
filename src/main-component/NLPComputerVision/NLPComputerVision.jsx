@@ -19,7 +19,7 @@ const NLPComputerVision = () => {
   return (
     <MasterSubServiceTemplate
       // Hero Section
-      heroTitle="NLP & Computer Vision Consulting"
+      heroTitle="NLP & Computer Vision"
       heroSubtitle="Text & Image AI"
       heroDescription="We help companies harness the power of Natural Language Processing and Computer Vision to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions. Transform how your systems understand and process text, images, and video."
       heroBackgroundImage="/AiGenAi/NLPComputer-vision.webp"

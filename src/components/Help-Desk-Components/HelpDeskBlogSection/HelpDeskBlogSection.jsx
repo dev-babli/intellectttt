@@ -39,7 +39,7 @@ const HelpDeskBlogSection = (props) => {
     <Box
       className="blog-section-container"
       sx={{
-        backgroundColor: props.bg || "#f8fafc",
+        backgroundColor: props.bg || "#ffffff",
         py: { xs: 4, md: 6 }, // Reduced from py: 12
         px: 2, // Reduced from px: 3
       }}

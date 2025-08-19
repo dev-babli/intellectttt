@@ -19,6 +19,34 @@ import Icon14 from "../../../images/icon/PSB.webp";
 import Icon15 from "../../../images/icon/MTRN.webp";
 import Icon16 from "../../../images/icon/Aya.webp";
 import Icon17 from "../../../images/icon/Rentschler.webp";
+// New logos from Logo's folder - using public URLs
+const Icon18 = "/logos/Logo's/elevance health.webp";
+const Icon19 = "/logos/Logo's/TechM.webp";
+const Icon20 = "/logos/Logo's/HCL .webp";
+const Icon21 = "/logos/Logo's/LTT.webp";
+const Icon22 = "/logos/Logo's/L N T.webp";
+const Icon23 = "/logos/Logo's/aBTHEM.webp";
+const Icon24 = "/logos/Logo's/Diageo.webp";
+const Icon25 = "/logos/Logo's/xylem-logo-social-sharing.jpg";
+const Icon26 = "/logos/Logo's/terumo-aortic-1080x1080-1.png";
+const Icon27 = "/logos/Logo's/unnamed.jpg";
+const Icon28 = "/logos/Logo's/logo-aya-primary.jpg";
+const Icon29 = "/logos/Logo's/logo-rentschler.jpg";
+const Icon30 = "/logos/Logo's/images.png";
+const Icon31 = "/logos/Logo's/livanova-logo.jpg";
+const Icon32 = "/logos/Logo's/exel-logo.jpg";
+const Icon33 = "/logos/Logo's/cordis-logo-black.jpg";
+const Icon34 = "/logos/Logo's/embecta.jpg";
+const Icon35 = "/logos/Logo's/Thermo_Fisher_Scientific_Logo.svg.png";
+const Icon36 = "/logos/Logo's/abbott-logo.jpg";
+const Icon37 = "/logos/Logo's/PSB-INDUSTRIES-LOGO-2023.jpg";
+const Icon38 = "/logos/Logo's/Philips.png";
+const Icon39 = "/logos/Logo's/MTRN_BIG.jpg";
+const Icon40 = "/logos/Logo's/Medline-logo.svg.png";
+const Icon41 = "/logos/Logo's/Logo_Bayer.jpg";
+const Icon42 = "/logos/Logo's/Integra_LifeSciences_logo.jpg";
+const Icon43 = "/logos/Logo's/Alkermes_plc_Logo.jpg";
+const Icon44 = "/logos/Logo's/1631334329392.jpg";
 
 const IntegrationSection = (props) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -68,6 +96,17 @@ const IntegrationSection = (props) => {
     { name: "MTRN", logo: Icon15 },
     { name: "Aya", logo: Icon16 },
     { name: "Rentschler", logo: Icon17 },
+    // New logos from Logo's folder (unique ones only)
+    { name: "Elevance Health", logo: Icon18 },
+    { name: "TechM", logo: Icon19 },
+    { name: "HCL", logo: Icon20 },
+    { name: "LTT", logo: Icon21 },
+    { name: "L&T", logo: Icon22 },
+    { name: "ABTHEM", logo: Icon23 },
+    { name: "Diageo", logo: Icon24 },
+    { name: "Terumo Aortic", logo: Icon26 },
+    { name: "Company", logo: Icon27 },
+    { name: "Company", logo: Icon30 },
   ];
 
   // Testimonials data
@@ -161,7 +200,7 @@ const IntegrationSection = (props) => {
               lineHeight: "1.1",
             }}
           >
-            400+ Leading Companies
+            Clients Testimonials
           </h2>
           <p
             style={{
@@ -326,20 +365,20 @@ const IntegrationSection = (props) => {
             }}
           >
             <div
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.9)",
-                backdropFilter: "blur(20px)",
-                borderRadius: "30px",
-                padding: "50px",
-                boxShadow: "0 20px 80px rgba(0,0,0,0.15)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                position: "relative",
-                overflow: "hidden",
-                minHeight: "500px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
+                          style={{
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
+              backdropFilter: "blur(20px)",
+              borderRadius: "20px",
+              padding: "35px",
+              boxShadow: "0 15px 60px rgba(0,0,0,0.15)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              position: "relative",
+              overflow: "hidden",
+              minHeight: "400px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
             >
               {/* Company Logo */}
               <div 
@@ -354,7 +393,7 @@ const IntegrationSection = (props) => {
                   src={testimonials[currentTestimonial].companyLogo}
                   alt={testimonials[currentTestimonial].company}
                   style={{
-                    height: "70px",
+                    height: "50px",
                     objectFit: "contain",
                     filter: "none",
                     opacity: "1",
@@ -366,9 +405,9 @@ const IntegrationSection = (props) => {
               <div
                 style={{
                   position: "absolute",
-                  top: "30px",
-                  right: "30px",
-                  fontSize: "4rem",
+                  top: "25px",
+                  right: "25px",
+                  fontSize: "3rem",
                   color: "#e2e8f0",
                   opacity: "0.5",
                 }}
@@ -387,8 +426,8 @@ const IntegrationSection = (props) => {
               >
                 <p
                   style={{
-                    fontSize: "1.4rem",
-                    lineHeight: "1.8",
+                    fontSize: "1.1rem",
+                    lineHeight: "1.6",
                     color: "#334155",
                     margin: "0",
                     fontStyle: "italic",
@@ -422,10 +461,10 @@ const IntegrationSection = (props) => {
               >
                 <p
                   style={{
-                    fontSize: "1.3rem",
+                    fontSize: "1.1rem",
                     fontWeight: "700",
                     color: "#1e293b",
-                    margin: "0 0 8px 0",
+                    margin: "0 0 6px 0",
                   }}
                 >
                   {testimonials[currentTestimonial].author}
@@ -457,15 +496,15 @@ const IntegrationSection = (props) => {
                     background: "rgba(255, 255, 255, 0.9)",
                     border: "none",
                     borderRadius: "50%",
-                    width: "50px",
-                    height: "50px",
+                    width: "40px",
+                    height: "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     cursor: "pointer",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                    boxShadow: "0 3px 15px rgba(0,0,0,0.1)",
                     transition: "all 0.3s ease",
-                    fontSize: "1.5rem",
+                    fontSize: "1.2rem",
                     color: "#64748b",
                   }}
                   onMouseEnter={(e) => {
@@ -485,15 +524,15 @@ const IntegrationSection = (props) => {
                     background: "rgba(255, 255, 255, 0.9)",
                     border: "none",
                     borderRadius: "50%",
-                    width: "50px",
-                    height: "50px",
+                    width: "40px",
+                    height: "40px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     cursor: "pointer",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                    boxShadow: "0 3px 15px rgba(0,0,0,0.1)",
                     transition: "all 0.3s ease",
-                    fontSize: "1.5rem",
+                    fontSize: "1.2rem",
                     color: "#64748b",
                   }}
                   onMouseEnter={(e) => {
@@ -558,12 +597,12 @@ const IntegrationSection = (props) => {
               <div
                 key={index}
                 style={{
-                  height: "80px",
-                  width: "160px",
+                  height: "60px",
+                  width: "120px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  padding: "10px",
+                  padding: "8px",
                   boxSizing: "border-box",
                   transition: "all 0.3s ease",
                 }}
@@ -573,7 +612,7 @@ const IntegrationSection = (props) => {
                   alt={partner.name}
                   style={{
                     maxWidth: "100%",
-                    maxHeight: "60px",
+                    maxHeight: "45px",
                     width: "auto",
                     height: "auto",
                     objectFit: "contain",

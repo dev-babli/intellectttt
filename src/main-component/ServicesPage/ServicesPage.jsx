@@ -36,13 +36,13 @@ const ServicesPage = () => {
       badge: "Trending"
     },
     {
-      title: "Engineering & Manufacturing IT",
-      description: "Drive innovation in manufacturing with Industry 4.0 and engineering solutions",
+      title: "Engineering Services",
+      description: "Comprehensive engineering services for medical device development and manufacturing",
       color: "#be123c",
       gradient: "linear-gradient(135deg, #be123c 0%, #e11d48 100%)",
-      url: "/service/engineering-and-manufacturing-it",
-      features: ["PLM & CAD Automation", "MES Integration", "Digital Twins", "Industry 4.0"],
-      count: "18+ Solutions",
+      url: "/service/engineering-services",
+      features: ["R&D & Product Development", "Manufacturing Setup", "Quality Management", "Regulatory Affairs"],
+      count: "9+ Services",
       badge: "Premium"
     },
     {

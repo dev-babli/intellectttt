@@ -180,36 +180,36 @@ const servicesData = [
     ]
   },
   {
-    category: "Engineering & Manufacturing IT",
+    category: "Engineering Services",
     icon: <Factory sx={{ fontSize: { xs: 32, md: 40 }, color: '#667eea' }} />,
     color: "#667eea",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     services: [
       {
-        name: "Engineering & Manufacturing IT",
-        path: "/service/engineering-and-manufacturing-it",
-        description: "IT solutions for engineering and manufacturing",
-        features: ["PLM & CAD Automation", "MES Integration & IoT", "Digital Twins", "Industry 4.0"]
+        name: "Engineering Services",
+        path: "/service/engineering-services",
+        description: "Comprehensive engineering services for medical device development and manufacturing",
+        features: ["R&D & Product Development", "Manufacturing Setup", "Quality Management", "Regulatory Affairs"]
       },
       {
-        name: "PLM & CAD Automation",
-        path: "/service/engineering-and-manufacturing-it/plm",
-        description: "Product lifecycle management and CAD automation"
+        name: "R&D & Product Development",
+        path: "/service/engineering-services",
+        description: "Research and development for medical devices"
       },
       {
-        name: "MES Integration & IoT",
-        path: "/service/engineering-and-manufacturing-it/mes",
-        description: "Manufacturing execution systems and IoT integration"
+        name: "Manufacturing Line Setup",
+        path: "/service/engineering-services",
+        description: "Advanced manufacturing line setup and optimization"
       },
       {
-        name: "Digital Twins",
-        path: "/service/engineering-and-manufacturing-it/twins",
-        description: "Digital twin technology and implementation"
+        name: "Quality Management Systems",
+        path: "/service/engineering-services",
+        description: "Quality management and regulatory compliance"
       },
       {
-        name: "Industry 4.0",
-        path: "/service/engineering-and-manufacturing-it/industry4",
-        description: "Industry 4.0 solutions and smart manufacturing"
+        name: "Regulatory Affairs",
+        path: "/service/engineering-services",
+        description: "FDA submissions and regulatory compliance"
       }
     ]
   },

@@ -218,20 +218,7 @@ function FeatureCards() {
             transition:
               "opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1)",
             position: "relative",
-            "&::after": {
-              content: '""',
-              position: "absolute",
-              bottom: "-8px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "80px",
-              height: "3px",
-              background: "linear-gradient(90deg, #667eea, #764ba2)",
-              borderRadius: "2px",
-              opacity: isVisible ? 1 : 0,
-              transition:
-                "opacity 1s ease-out 0.3s, transform 0.5s ease-out 0.3s",
-            },
+            /* Removed underline styling */
           }}
         >
           Industries We Work With

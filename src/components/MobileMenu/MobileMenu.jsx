@@ -60,8 +60,8 @@ const menus = [
       },
       {
         id: 3455,
-        title: "Engineering & Manufacturing IT",
-        link: "/service/engineering-and-manufacturing-it",
+        title: "Engineering Services",
+        link: "/service/engineering-services",
       },
       {
         id: 3456,

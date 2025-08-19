@@ -84,7 +84,7 @@ const SAPMigration = () => {
       <div className="sco_agency">
         <div className="page_content service-single-page">
           <HeroSectionTitle
-            title="SAP AMS & Managed Support Consulting"
+            title="SAP AMS & Managed Support"
             subtitle="Unlock the Power of Intelligent Automation with Our Expertise in SAP AMS and Managed Support Services."
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"

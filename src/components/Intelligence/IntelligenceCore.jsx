@@ -283,19 +283,6 @@ export default function IntelligenceCore() {
         "& *::before, & *::after": {
           display: "none", // Remove any pseudo-elements from child elements
         },
-        // Remove any background elements that might create semicircles
-        "& [style*='border-radius']": {
-          display: "none",
-        },
-        "& [class*='circle'], & [class*='semi']": {
-          display: "none",
-        },
-        // Target any elements positioned in top-left corner
-        "& > *:first-child": {
-          "&::before, &::after": {
-            display: "none !important",
-          },
-        },
       }}
     >
       {/* Clean white background - no effects */}
@@ -453,24 +440,7 @@ export default function IntelligenceCore() {
               </motion.div>
             ))}
 
-            {/* Subtle Orbit Rings */}
-            {[140, 200, 260, 320].map((size, i) => (
-              <Box
-                key={i}
-                sx={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  width: size,
-                  height: size,
-                  marginTop: -size / 2,
-                  marginLeft: -size / 2,
-                  border: `2px solid ${BRAND_COLORS.primary}15`,
-                  borderRadius: "50%",
-                  zIndex: 3,
-                }}
-              />
-            ))}
+            {/* Removed orbit rings to prevent visual overlap */}
 
             {/* Enhanced Energy Lines */}
             {[...Array(12)].map((_, i) => (

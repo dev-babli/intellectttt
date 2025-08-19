@@ -22,6 +22,9 @@ const AIAndGenAIPpractice = () => {
       heroBackgroundImage="/AiGenAi/AIAutomation.webp"
       heroTextColor="white"
 
+      // Alliances Section - Enable for this important service
+      showAlliances={true}
+
       // Problem/Solution Section
       problemSolutionTitle="The AI Challenge & Our Solution"
       problemSolutionSubtitle="We understand the complexities of AI implementation and have the expertise to make it work for your business"

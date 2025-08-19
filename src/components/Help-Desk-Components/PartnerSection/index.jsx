@@ -106,7 +106,7 @@ const PartnerSection = (props) => {
         <div className="o-hidden">
           <div className="brand-sub_title">
             <span>
-              Trusted by <b>500+</b> teams to empower <b>2,00,000+</b> people
+              Trusted Partners
             </span>
           </div>
           <div className="brand-wrap brand-marquee">

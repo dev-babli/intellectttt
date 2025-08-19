@@ -42,6 +42,9 @@ const DataAndAnalytics = () => {
         "Data Governance"
       ]}
 
+      // Alliances Section - Enable for this important service
+      showAlliances={true}
+
       // Problem/Solution Section
       problemSolutionTitle="The Data & Analytics Challenge & Our Solution"
       problemSolutionSubtitle="We understand the complexities of data transformation and have the expertise to make it work for your business"

@@ -73,13 +73,13 @@ const menuStructure = [
     ],
   },
   {
-    label: "Engineering & Manufacturing IT",
-    to: "/service/engineering-and-manufacturing-it",
+    label: "Engineering Services",
+    to: "/service/engineering-services",
     submenu: [
-      { label: "PLM, CAD/CAE Automation", to: "/service/engineering-and-manufacturing-it/plm" },
-      { label: "MES Integration & IoT", to: "/service/engineering-and-manufacturing-it/mes" },
-      { label: "Digital Twins & Smart Factory", to: "/service/engineering-and-manufacturing-it/twins" },
-      { label: "Industry 4.0 Solutions", to: "/service/engineering-and-manufacturing-it/industry4" },
+      { label: "R&D & Product Development", to: "/service/engineering-services" },
+      { label: "Manufacturing Line Setup", to: "/service/engineering-services" },
+      { label: "Quality Management Systems", to: "/service/engineering-services" },
+      { label: "Regulatory Affairs", to: "/service/engineering-services" },
     ],
   },
   {

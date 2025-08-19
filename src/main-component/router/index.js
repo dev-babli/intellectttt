@@ -212,9 +212,9 @@ const AllRoute = () => {
                 path="service/data-and-analytics/tools"
                 element={<DataToolsIntegration />}
               />
-              {/* Engineering */}
+              {/* Engineering Services */}
               <Route
-                path="service/engineering-and-manufacturing-it"
+                path="service/engineering-services"
                 element={<EngineeringManufacturingIT />}
               />
               <Route

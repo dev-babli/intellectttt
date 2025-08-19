@@ -41,6 +41,9 @@ const CloudAndAppServices = () => {
         "DevOps & Automation",
         "API & Integration"
       ]}
+
+      // Alliances Section - Enable for this important service
+      showAlliances={true}
       
       // Problem/Solution Section
       problemSolutionTitle="The Cloud & App Challenge & Our Solution"

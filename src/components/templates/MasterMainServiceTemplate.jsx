@@ -54,7 +54,7 @@ const MasterMainServiceTemplate = ({
 
 
   // Alliances Section Props
-  showAlliances = true,
+  showAlliances = false, // Default to false, must be explicitly enabled
 
 
 

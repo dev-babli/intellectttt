@@ -18,7 +18,7 @@ const MLEngineeringMLOps = () => {
   return (
     <MasterSubServiceTemplate
       // Hero Section
-      heroTitle="ML Engineering & MLOps Consulting"
+      heroTitle="ML Engineering & MLOps"
       heroSubtitle="ML Operations"
       heroDescription="We help companies build, deploy, and maintain scalable machine learning systems. From model development to production deployment and ongoing operations, we provide end-to-end ML engineering and MLOps solutions that drive real business value."
       heroBackgroundImage="/AiGenAi/Ml-engineeringML-ops.webp"
