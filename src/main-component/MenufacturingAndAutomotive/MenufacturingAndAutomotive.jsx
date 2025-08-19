@@ -30,7 +30,7 @@ const MenufacturingAndAutomotive = () => {
   return (
     <IndustryTemplate
       // Hero Section
-      heroTitle="Manufacturing & Automotive IT"
+      heroTitle="Manufacturing & Automotive"
       heroSubtitle="Build. Evaluate."
       heroDescription="Transform manufacturing operations with Industry 4.0 technologies, IoT integration, and digital twin solutions. Build intelligent factories with advanced automation, real-time monitoring, and data-driven insights."
       heroButtonText="TALK TO OUR EXPERTS"

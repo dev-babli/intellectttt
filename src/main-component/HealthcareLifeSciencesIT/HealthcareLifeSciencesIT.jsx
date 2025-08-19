@@ -28,7 +28,7 @@ const HealthcareLifeSciencesIT = () => {
   return (
     <MasterMainServiceTemplate
       // Hero Section - Minimal
-      heroTitle="Healthcare & Life Sciences IT"
+      heroTitle="Healthcare & Life Sciences"
       heroSubtitle="Digital Health"
       heroDescription="Empowering Better Healthcare Through Technology. Transform healthcare delivery with advanced technology solutions that improve patient care, streamline operations, and ensure compliance in the rapidly evolving healthcare landscape."
       heroButtonText="Healthcare IT"

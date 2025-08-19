@@ -17,23 +17,23 @@ const About = () => {
     {
       img: about1,
       icon: aIcon1,
-      heading: "About us",
+      heading: "Tag line",
       content:
-        "Intellectt Inc delivers tailored workforce solutions that connect top talent with leading businesses. We specialize in staffing, recruitment, and consulting services that drive agility, efficiency, and long-term success.",
-    },
-    {
-      img: about2,
-      icon: aIcon2,
-      heading: "Our mission",
-      content:
-        "To empower companies through strategic talent solutions, providing expert guidance, personalized service, and exceptional candidates that align with business goals and foster sustainable growth across all industries.",
+        "Innovating with Intelligence. Delivering with Trust.",
     },
     {
       img: about3,
       icon: aIcon3,
       heading: "Our vision",
       content:
-        "To become a global leader in workforce transformation by building lasting partnerships, embracing innovation, and shaping the future of work through trust, adaptability, and a people-first approach.",
+        "To be the most trusted global partner in technology and consulting, transforming industries through intelligence, innovation, and uncompromising trust.",
+    },
+    {
+      img: about2,
+      icon: aIcon2,
+      heading: "Our mission",
+      content:
+        "At Intellectt, we empower businesses across healthcare, engineering, and technology by delivering intelligent, secure, and scalable solutions. We are committed to: Driving innovation with AI, Cloud, and next-gen technologies. Ensuring compliance and security through global standards (FDA, HIPAA, ISO, ITAR). Accelerating digital transformation with agility and excellence. Building sustainable value through global talent and partnerships.",
     },
   ];
 

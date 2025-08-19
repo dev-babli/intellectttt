@@ -28,8 +28,8 @@ const ManagedITServices = () => {
   return (
     <MasterMainServiceTemplate
       // Hero Section - Minimal
-      heroTitle="Managed IT Services"
-      heroSubtitle="IT Operations"
+      heroTitle="Managed Services"
+      heroSubtitle="Operations"
       heroDescription="Build. Evaluate. Generate. Optimize your IT operations with our comprehensive managed services. From infrastructure monitoring to application support, we provide reliable, scalable IT solutions that keep your business running smoothly."
       heroButtonText="Get Started"
       heroButtonLink="/contact"

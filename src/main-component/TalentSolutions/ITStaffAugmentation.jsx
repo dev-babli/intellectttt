@@ -28,7 +28,7 @@ const ITStaffAugmentation = () => {
   return (
     <MasterSubServiceTemplate
       // Hero Section - Minimal
-      heroTitle="IT Staff Augmentation"
+      heroTitle="Staff Augmentation"
       heroSubtitle="Tech Team Scaling"
       heroDescription="Quickly scale your tech teams with vetted IT talent for project-based or long-term needs. Access skilled professionals and accelerate your development with flexible staffing solutions."
       heroButtonText="Staff Augmentation"
