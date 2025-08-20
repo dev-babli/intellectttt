@@ -12,6 +12,7 @@ const slides = [
     ctaLink: "/service/ai-and-gen-ai",
     accent: "#667eea",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/1.webp",
+    hasLightBackground: false,
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const slides = [
     ctaLink: "/service/ai-and-gen-ai",
     accent: "#4facfe",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/2.webp",
+    hasLightBackground: false,
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ const slides = [
     ctaLink: "/service/ai-and-gen-ai",
     accent: "#ff9a9e",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/3.webp",
+    hasLightBackground: false,
   },
   {
     id: 4,
@@ -39,6 +42,7 @@ const slides = [
     ctaLink: "/service/ai-and-gen-ai",
     accent: "#a8edea",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/4.webp",
+    hasLightBackground: false,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ const slides = [
     ctaLink: "/service/ai-and-gen-ai",
     accent: "#667eea",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/5.webp",
+    hasLightBackground: false,
   },
   {
     id: 6,
@@ -57,6 +62,7 @@ const slides = [
     ctaLink: "/service/engineering-services",
     accent: "#4facfe",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/1 eng.webp",
+    hasLightBackground: false,
   },
   {
     id: 7,
@@ -66,6 +72,7 @@ const slides = [
     ctaLink: "/service/engineering-services",
     accent: "#ff9a9e",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/2 eng.webp",
+    hasLightBackground: false,
   },
   {
     id: 8,
@@ -75,6 +82,7 @@ const slides = [
     ctaLink: "/service/engineering-services",
     accent: "#a8edea",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/3 eng.webp",
+    hasLightBackground: false,
   },
   {
     id: 9,
@@ -84,6 +92,7 @@ const slides = [
     ctaLink: "/service/engineering-services",
     accent: "#667eea",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/4 eng.webp",
+    hasLightBackground: false,
   },
   {
     id: 10,
@@ -93,6 +102,7 @@ const slides = [
     ctaLink: "/service/cloud-and-application-services",
     accent: "#4facfe",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/Cloud Application.webp",
+    hasLightBackground: false,
   },
   {
     id: 11,
@@ -102,33 +112,28 @@ const slides = [
     ctaLink: "/cybersecurity",
     accent: "#ff9a9e",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/Cyber security.webp",
+    hasLightBackground: false,
   },
+
   {
     id: 12,
-    title: "IoT Technology",
-    subtitle: "Connect devices and drive automation with next-gen IoT tech. Build intelligent connected systems that collect, analyze, and act on data in real-time.",
-    ctaText: "Connect Everything",
-    ctaLink: "/service/engineering-services",
-    accent: "#a8edea",
-    backgroundImage: "/herosectionimages/Intellectt SE Sliders/IOT Tech.webp",
-  },
-  {
-    id: 13,
     title: "Data & Analytics",
     subtitle: "Turn data into actionable insights for smarter decisions. Transform raw data into strategic insights that drive business growth and operational excellence.",
     ctaText: "Analyze Data",
     ctaLink: "/service/data-and-analytics",
     accent: "#667eea",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/Data & Analytics.webp",
+    hasLightBackground: false,
   },
   {
-    id: 14,
+    id: 13,
     title: "Healthcare & Life Sciences",
     subtitle: "Empower care through digital innovation and secure systems. Transform healthcare delivery with cutting-edge technology solutions and secure patient data management.",
     ctaText: "Transform Healthcare",
     ctaLink: "/service/healthcare-and-life-sciences-it",
     accent: "#a8edea",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/Healthcare and Lifesciences.webp",
+    hasLightBackground: true,
   },
 ];
 
@@ -300,7 +305,7 @@ const HeroSection = () => {
                 sx={{
                   flex: 1,
                   maxWidth: { xs: "100%", sm: "600px", md: "800px" },
-                  color: "#ffffff",
+                  color: slide.hasLightBackground ? "#1a1a1a" : "#ffffff",
                   position: "relative",
                   padding: { xs: "1rem", sm: "1.5rem", md: "2rem" },
                 }}
@@ -315,8 +320,10 @@ const HeroSection = () => {
                     marginBottom: { xs: "1rem", sm: "1.5rem" },
                     fontFamily: "'SF Pro Display', 'Inter', sans-serif",
                     letterSpacing: "-0.02em",
-                    color: "#ffffff !important",
-                    textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                    color: slide.hasLightBackground ? "#1a1a1a !important" : "#ffffff !important",
+                    textShadow: slide.hasLightBackground 
+                      ? "0 2px 8px rgba(255,255,255,0.8)" 
+                      : "0 2px 8px rgba(0,0,0,0.3)",
                     whiteSpace: 'normal',
                     overflow: 'visible',
                     textOverflow: 'unset',
@@ -336,9 +343,11 @@ const HeroSection = () => {
                     marginBottom: { xs: "2rem", sm: "3rem" },
                     fontFamily: "'SF Pro Display', 'Inter', sans-serif",
                     letterSpacing: "-0.01em",
-                    color: "#ffffff !important",
-                    opacity: 0.9,
-                    textShadow: "0 1px 4px rgba(0,0,0,0.2)",
+                    color: slide.hasLightBackground ? "#333333 !important" : "#ffffff !important",
+                    opacity: slide.hasLightBackground ? 0.8 : 0.9,
+                    textShadow: slide.hasLightBackground 
+                      ? "0 1px 4px rgba(255,255,255,0.6)" 
+                      : "0 1px 4px rgba(0,0,0,0.2)",
                     maxWidth: { xs: "100%", sm: "500px" },
                     whiteSpace: 'normal',
                     overflow: 'visible',
@@ -354,19 +363,23 @@ const HeroSection = () => {
                   size="large"
                   onClick={() => navigate(slide.ctaLink)}
                   sx={{
-                    backgroundColor: "#dc2626",
-                    color: "#ffffff",
+                    backgroundColor: slide.hasLightBackground ? "#1a1a1a" : "#dc2626",
+                    color: slide.hasLightBackground ? "#ffffff" : "#ffffff",
                     fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
                     fontWeight: 600,
                     padding: { xs: "0.75rem 1.5rem", sm: "0.875rem 1.75rem", md: "1rem 2rem" },
                     borderRadius: "8px",
                     textTransform: "none",
                     transition: "all 0.3s ease",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                    boxShadow: slide.hasLightBackground 
+                      ? "0 4px 12px rgba(0,0,0,0.3)" 
+                      : "0 4px 12px rgba(0,0,0,0.2)",
                     "&:hover": {
-                      backgroundColor: "#b91c1c",
+                      backgroundColor: slide.hasLightBackground ? "#000000" : "#b91c1c",
                       transform: "translateY(-2px)",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
+                      boxShadow: slide.hasLightBackground 
+                        ? "0 8px 24px rgba(0,0,0,0.4)" 
+                        : "0 8px 24px rgba(0,0,0,0.3)",
                     },
                   }}
                 >
