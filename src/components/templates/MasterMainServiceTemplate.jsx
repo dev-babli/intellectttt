@@ -56,6 +56,9 @@ const MasterMainServiceTemplate = ({
   // Alliances Section Props
   showAlliances = false, // Default to false, must be explicitly enabled
 
+  // Footer Props
+  showFooter = true, // Default to true, can be disabled
+
 
 
   // Final CTA Props
@@ -143,7 +146,7 @@ const MasterMainServiceTemplate = ({
 
 
       {/* Footer */}
-      <Footer />
+      {showFooter && <Footer />}
     </Fragment>
   );
 };

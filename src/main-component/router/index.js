@@ -22,6 +22,14 @@ import CloudAndAppServices from "../CloudAndAppServices/CloudAndAppServices";
 import SAPServices from "../SAPServices/SAPServices";
 import DataAndAnalytics from "../DataAndAnalytics/DataAndAnalytics";
 import EngineeringManufacturingIT from "../EngineeringManufacturingIT/EngineeringManufacturingIT";
+import EngineeringServices from "../EngineeringServices/EngineeringServices";
+import ProductDesignDevelopment from "../EngineeringServices/ProductDesignDevelopment";
+import CADCAESimulation from "../EngineeringServices/CADCAESimulation";
+import EmbeddedIoT from "../EngineeringServices/EmbeddedIoT";
+import ElectricalMechanical from "../EngineeringServices/ElectricalMechanical";
+import PrototypingTesting from "../EngineeringServices/PrototypingTesting";
+import ValueEngineering from "../EngineeringServices/ValueEngineering";
+import ProjectManagementConsulting from "../EngineeringServices/ProjectManagementConsulting";
 import HealthcareLifeSciencesIT from "../HealthcareLifeSciencesIT/HealthcareLifeSciencesIT";
 import TalentSolutions from "../TalentSolutions/TalentSolutions";
 import ManagedITServices from "../ManagedITServices/ManagedITServices";
@@ -215,7 +223,35 @@ const AllRoute = () => {
               {/* Engineering Services */}
               <Route
                 path="service/engineering-services"
-                element={<EngineeringManufacturingIT />}
+                element={<EngineeringServices />}
+              />
+              <Route
+                path="service/engineering-services/product-design"
+                element={<ProductDesignDevelopment />}
+              />
+              <Route
+                path="service/engineering-services/cad-cae-simulation"
+                element={<CADCAESimulation />}
+              />
+              <Route
+                path="service/engineering-services/embedded-iot"
+                element={<EmbeddedIoT />}
+              />
+              <Route
+                path="service/engineering-services/electrical-mechanical"
+                element={<ElectricalMechanical />}
+              />
+              <Route
+                path="service/engineering-services/prototyping-testing"
+                element={<PrototypingTesting />}
+              />
+              <Route
+                path="service/engineering-services/value-engineering"
+                element={<ValueEngineering />}
+              />
+              <Route
+                path="service/engineering-services/project-management"
+                element={<ProjectManagementConsulting />}
               />
               <Route
                 path="service/engineering-and-manufacturing-it/plm"

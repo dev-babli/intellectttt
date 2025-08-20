@@ -55,27 +55,34 @@ const AtomicServiceOfferings = ({
 
   // Function to get responsive grid size based on screen size and service count
   const getResponsiveGridSize = (serviceCount) => {
-    // For 6 services: 3x2 grid (3 columns, 2 rows)
-    // For 4 services: 4x1 grid (4 columns, 1 row)
-    if (serviceCount <= 4) {
-      // 4x1 layout: 4 columns on desktop, 2 on tablet, 1 on mobile
-      return {
-        xs: 12, // 1 item per row on mobile
-        sm: 6,  // 2 items per row on small tablets
-        md: 6,  // 2 items per row on tablets
-        lg: 3,  // 4 items per row on desktop
-        xl: 3   // 4 items per row on large desktop
-      };
+    // Calculate optimal grid layout for complete rows
+    let columns = 3; // Default to 3 columns
+    
+    if (serviceCount <= 3) {
+      columns = 3; // 3x1 layout
+    } else if (serviceCount <= 4) {
+      columns = 4; // 4x1 layout
+    } else if (serviceCount <= 6) {
+      columns = 3; // 3x2 layout
+    } else if (serviceCount <= 8) {
+      columns = 4; // 4x2 layout
+    } else if (serviceCount <= 10) {
+      columns = 5; // 5x2 layout
+    } else if (serviceCount <= 12) {
+      columns = 4; // 4x3 layout
     } else {
-      // 3x2 layout: 3 columns on desktop, 2 on tablet, 1 on mobile
-      return {
-        xs: 12, // 1 item per row on mobile
-        sm: 6,  // 2 items per row on small tablets
-        md: 4,  // 3 items per row on tablets
-        lg: 4,  // 3 items per row on desktop
-        xl: 4   // 3 items per row on large desktop
-      };
+      columns = 5; // 5x3+ layout
     }
+    
+    const gridSize = 12 / columns;
+    
+    return {
+      xs: 12, // 1 item per row on mobile
+      sm: 6,  // 2 items per row on small tablets
+      md: 6,  // 2 items per row on tablets
+      lg: gridSize,  // Dynamic columns on desktop
+      xl: gridSize   // Dynamic columns on large desktop
+    };
   };
 
   // Function to get default images based on service title
@@ -219,7 +226,7 @@ const AtomicServiceOfferings = ({
             flexWrap: "wrap",
           }}
         >
-          {services.slice(0, services.length <= 4 ? 4 : 6).map((service, index) => (
+          {services.map((service, index) => (
             <Grid 
               item 
               {...getResponsiveGridSize(services.length)}
@@ -241,11 +248,11 @@ const AtomicServiceOfferings = ({
                   className="dimensional-card"
                   sx={{
                     height: { 
-                      xs: 240, 
-                      sm: 260, 
-                      md: 280, 
-                      lg: 300, 
-                      xl: 320 
+                      xs: 280, 
+                      sm: 300, 
+                      md: 320, 
+                      lg: 340, 
+                      xl: 360 
                     },
                     width: '100%',
                     maxWidth: { 
@@ -477,7 +484,7 @@ const AtomicServiceOfferings = ({
                             color: "#ffffff",
                             mb: { xs: 1, sm: 1.5 },
                             lineHeight: 1.4,
-                            fontSize: { xs: "0.85rem", sm: "0.9rem", md: "0.95rem", lg: "1rem" },
+                            fontSize: { xs: "0.7rem", sm: "0.75rem", md: "0.8rem", lg: "0.85rem" },
                             fontWeight: 500,
                             letterSpacing: "0.01em",
                             fontFamily:
@@ -490,20 +497,29 @@ const AtomicServiceOfferings = ({
                               opacity: 1,
                               transform: "translateY(0)",
                             },
+                            wordWrap: "break-word",
+                            overflowWrap: "break-word",
+                            hyphens: "auto",
+                            whiteSpace: "normal",
+                            display: "-webkit-box",
+                            WebkitLineClamp: 3,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
                           }}
                         >
                           {service.description}
                         </Typography>
 
                         <Box sx={{ mb: { xs: 1, sm: 1.5 } }}>
-                          {service.features && service.features.slice(0, 1).map((feature, idx) => (
+                          {service.features && service.features.slice(0, 2).map((feature, idx) => (
                             <Typography
                               key={idx}
                               variant="body2"
                               className={`content-feature-${idx}`}
                               sx={{
                                 color: "#e2e8f0",
-                                fontSize: { xs: "0.7rem", sm: "0.75rem", md: "0.8rem" },
+                                fontSize: { xs: "0.65rem", sm: "0.7rem", md: "0.75rem" },
                                 mb: 0.4,
                                 display: "flex",
                                 alignItems: "center",
@@ -578,7 +594,7 @@ const AtomicServiceOfferings = ({
                               },
                             }}
                           >
-                            {service.features && service.features.slice(2, 3).join(" • ")}
+                            {service.features && service.features.slice(2, 4).join(" • ")}
                           </Typography>
                         </Box>
                       </Box>

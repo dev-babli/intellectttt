@@ -31,6 +31,23 @@ const solutions = [
     url: "/service/ai-and-gen-ai",
   },
   {
+    title: "Comprehensive engineering services for medical device development and manufacturing.",
+    description:
+      "We lead in R&D and new product development, specializing in design, prototyping, and testing for medical devices.",
+    category: "ENGINEERING SERVICES",
+    image: "/Service Cards images/Engineering and Manufacturing.webp",
+    features: [
+      "R&D & Product Development",
+      "Manufacturing Setup",
+      "Quality Management",
+      "Regulatory Affairs",
+      "Process Development",
+      "Audit Preparation",
+    ],
+    buttonLabel: "Engineering Services",
+    url: "/service/engineering-services",
+  },
+  {
     title: "Accelerate growth with scalable, secure cloud platforms.",
     description:
       "Build robust, scalable applications with enterprise-grade cloud infrastructure and modern development practices.",
@@ -97,23 +114,6 @@ const solutions = [
     ],
     buttonLabel: "Analyze Data",
     url: "/service/data-and-analytics",
-  },
-  {
-    title: "Comprehensive engineering services for medical device development and manufacturing.",
-    description:
-      "We lead in R&D and new product development, specializing in design, prototyping, and testing for medical devices.",
-    category: "ENGINEERING SERVICES",
-    image: "/Service Cards images/Engineering and Manufacturing.webp",
-    features: [
-      "R&D & Product Development",
-      "Manufacturing Setup",
-      "Quality Management",
-      "Regulatory Affairs",
-      "Process Development",
-      "Audit Preparation",
-    ],
-    buttonLabel: "Engineering Services",
-    url: "/service/engineering-services",
   },
   {
     title: "Empower care through digital innovation and secure systems.",
