@@ -16,16 +16,26 @@ const slides = [
   },
   {
     id: 2,
+    title: "Engineering Excellence",
+    subtitle: "Comprehensive engineering services for product development and manufacturing. We lead in R&D and new product development, specializing in design, prototyping, and testing across industries.",
+    ctaText: "Engineering Services",
+    ctaLink: "/service/engineering-services",
+    accent: "#4facfe",
+    backgroundImage: "/herosectionimages/Intellectt SE Sliders/1 eng.webp",
+    hasLightBackground: true,
+  },
+  {
+    id: 3,
     title: "Advanced AI & Machine Learning",
     subtitle: "Leverage state-of-the-art machine learning algorithms and AI models to automate processes, enhance decision-making, and create intelligent systems that adapt and learn from data.",
     ctaText: "Discover AI Capabilities",
     ctaLink: "/service/ai-and-gen-ai",
     accent: "#4facfe",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/2.webp",
-    hasLightBackground: false,
+    hasLightBackground: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "Generative AI Innovation",
     subtitle: "Unlock creative potential with generative AI technologies. From content creation to product design, our GenAI solutions revolutionize how businesses approach innovation and creativity.",
     ctaText: "Explore GenAI",
@@ -35,7 +45,17 @@ const slides = [
     hasLightBackground: false,
   },
   {
-    id: 4,
+    id: 5,
+    title: "Advanced Manufacturing",
+    subtitle: "Revolutionize manufacturing with cutting-edge engineering solutions. From precision engineering to smart manufacturing systems, we deliver innovative solutions that optimize production and quality.",
+    ctaText: "Manufacturing Solutions",
+    ctaLink: "/service/engineering-services",
+    accent: "#ff9a9e",
+    backgroundImage: "/herosectionimages/Intellectt SE Sliders/2 eng.webp",
+    hasLightBackground: true,
+  },
+  {
+    id: 6,
     title: "AI-Powered Analytics",
     subtitle: "Transform data into actionable intelligence with AI-driven analytics. Our advanced algorithms provide deep insights, predictive modeling, and automated reporting for informed decision-making.",
     ctaText: "Analyze with AI",
@@ -45,47 +65,7 @@ const slides = [
     hasLightBackground: false,
   },
   {
-    id: 5,
-    title: "Intelligent Automation",
-    subtitle: "Streamline operations with intelligent automation solutions. From robotic process automation to cognitive automation, we help businesses achieve unprecedented efficiency and accuracy.",
-    ctaText: "Automate Now",
-    ctaLink: "/service/ai-and-gen-ai",
-    accent: "#667eea",
-    backgroundImage: "/herosectionimages/Intellectt SE Sliders/5.webp",
-    hasLightBackground: false,
-  },
-  {
-    id: 6,
-    title: "Engineering Excellence",
-    subtitle: "Comprehensive engineering services for product development and manufacturing. We lead in R&D and new product development, specializing in design, prototyping, and testing across industries.",
-    ctaText: "Engineering Services",
-    ctaLink: "/service/engineering-services",
-    accent: "#4facfe",
-    backgroundImage: "/herosectionimages/Intellectt SE Sliders/1 eng.webp",
-    hasLightBackground: false,
-  },
-  {
     id: 7,
-    title: "Advanced Manufacturing",
-    subtitle: "Revolutionize manufacturing with cutting-edge engineering solutions. From precision engineering to smart manufacturing systems, we deliver innovative solutions that optimize production and quality.",
-    ctaText: "Manufacturing Solutions",
-    ctaLink: "/service/engineering-services",
-    accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/Intellectt SE Sliders/2 eng.webp",
-    hasLightBackground: false,
-  },
-  {
-    id: 8,
-    title: "Product Design & Development",
-    subtitle: "From concept to commercialization, our engineering expertise covers the entire product lifecycle. We specialize in innovative design, rapid prototyping, and seamless product development.",
-    ctaText: "Design & Develop",
-    ctaLink: "/service/engineering-services",
-    accent: "#a8edea",
-    backgroundImage: "/herosectionimages/Intellectt SE Sliders/3 eng.webp",
-    hasLightBackground: false,
-  },
-  {
-    id: 9,
     title: "Engineering Innovation",
     subtitle: "Pioneering engineering solutions that drive technological advancement. Our multidisciplinary approach combines mechanical, electrical, and software engineering to create breakthrough innovations.",
     ctaText: "Innovate with Us",
@@ -95,7 +75,17 @@ const slides = [
     hasLightBackground: false,
   },
   {
-    id: 10,
+    id: 8,
+    title: "Intelligent Automation",
+    subtitle: "Streamline operations with intelligent automation solutions. From robotic process automation to cognitive automation, we help businesses achieve unprecedented efficiency and accuracy.",
+    ctaText: "Automate Now",
+    ctaLink: "/service/ai-and-gen-ai",
+    accent: "#667eea",
+    backgroundImage: "/herosectionimages/Intellectt SE Sliders/5.webp",
+    hasLightBackground: false,
+  },
+  {
+    id: 9,
     title: "Cloud & Application Services",
     subtitle: "Accelerate growth with scalable, secure cloud platforms. Build robust, scalable applications with enterprise-grade cloud infrastructure and modern development practices.",
     ctaText: "Discover Cloud Services",
@@ -105,8 +95,8 @@ const slides = [
     hasLightBackground: false,
   },
   {
-    id: 11,
-    title: "Digital Security",
+    id: 10,
+    title: "Cybersecurity",
     subtitle: "Protect your digital assets with intelligent security frameworks. Safeguard your organization with advanced cybersecurity solutions and proactive threat detection systems.",
     ctaText: "Secure Your Business",
     ctaLink: "/cybersecurity",
@@ -114,9 +104,8 @@ const slides = [
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/Cyber security.webp",
     hasLightBackground: false,
   },
-
   {
-    id: 12,
+    id: 11,
     title: "Data & Analytics",
     subtitle: "Turn data into actionable insights for smarter decisions. Transform raw data into strategic insights that drive business growth and operational excellence.",
     ctaText: "Analyze Data",
@@ -124,16 +113,6 @@ const slides = [
     accent: "#667eea",
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/Data & Analytics.webp",
     hasLightBackground: false,
-  },
-  {
-    id: 13,
-    title: "Healthcare & Life Sciences",
-    subtitle: "Empower care through digital innovation and secure systems. Transform healthcare delivery with cutting-edge technology solutions and secure patient data management.",
-    ctaText: "Transform Healthcare",
-    ctaLink: "/service/healthcare-and-life-sciences-it",
-    accent: "#a8edea",
-    backgroundImage: "/herosectionimages/Intellectt SE Sliders/Healthcare and Lifesciences.webp",
-    hasLightBackground: true,
   },
 ];
 
@@ -363,23 +342,19 @@ const HeroSection = () => {
                   size="large"
                   onClick={() => navigate(slide.ctaLink)}
                   sx={{
-                    backgroundColor: slide.hasLightBackground ? "#1a1a1a" : "#dc2626",
-                    color: slide.hasLightBackground ? "#ffffff" : "#ffffff",
+                    backgroundColor: "#dc2626",
+                    color: "#ffffff",
                     fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
                     fontWeight: 600,
                     padding: { xs: "0.75rem 1.5rem", sm: "0.875rem 1.75rem", md: "1rem 2rem" },
                     borderRadius: "8px",
                     textTransform: "none",
                     transition: "all 0.3s ease",
-                    boxShadow: slide.hasLightBackground 
-                      ? "0 4px 12px rgba(0,0,0,0.3)" 
-                      : "0 4px 12px rgba(0,0,0,0.2)",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
                     "&:hover": {
-                      backgroundColor: slide.hasLightBackground ? "#000000" : "#b91c1c",
+                      backgroundColor: "#b91c1c",
                       transform: "translateY(-2px)",
-                      boxShadow: slide.hasLightBackground 
-                        ? "0 8px 24px rgba(0,0,0,0.4)" 
-                        : "0 8px 24px rgba(0,0,0,0.3)",
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
                     },
                   }}
                 >

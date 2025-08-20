@@ -77,7 +77,7 @@ export const GLOBAL_DATA = {
     {
       name: "India",
       flag: "/flags/india.png",
-      offices: 4,
+      offices: 8,
       employees: 800,
       cities: ["Bangalore", "Hyderabad", "Mumbai", "Chennai"],
       specialties: ["Software Development", "Data Analytics", "DevOps"],

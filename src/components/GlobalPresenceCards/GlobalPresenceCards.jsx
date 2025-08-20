@@ -1,13 +1,14 @@
 // src/components/GlobalPresence.js
 import React from "react";
 import { Box, Grid, Typography, Divider, Stack } from "@mui/material";
+import { GLOBAL_DATA } from "../../constants";
 
 const countries = [
-  { name: "India", flag: "/flags/india.png" },
-  { name: "USA", flag: "/flags/usa.png" },
-  { name: "Canada", flag: "/flags/canada.png" },
-  { name: "Mexico", flag: "/flags/mexico.png" },
-  { name: "Ireland", flag: "/flags/ireland.png" },
+  { name: "India", flag: "/flags/india.png", offices: 8 },
+  { name: "USA", flag: "/flags/usa.png", offices: 6 },
+  { name: "Canada", flag: "/flags/canada.png", offices: 2 },
+  { name: "Mexico", flag: "/flags/mexico.png", offices: 2 },
+  { name: "Ireland", flag: "/flags/ireland.png", offices: 1 },
 ];
 
 const GlobalPresenceCards = () => {
@@ -82,35 +83,16 @@ const GlobalPresenceCards = () => {
 
               {/* <Divider sx={{ mb: 2, borderColor: "black!important", height: 2 }} /> */}
 
-              {/* Offices and Resources Side-by-Side */}
-              <Stack
-                direction="column"
-                spacing={4}
-                justifyContent="center"
-                alignItems="center"
-              >
-                {/* Offices */}
-                <Box>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: 600, color: "#0071bc", lineHeight: 1 }}
-                  >
-                    2
-                  </Typography>
-                  <Typography variant="body2">Offices</Typography>
-                </Box>
-
-                {/* Resources */}
-                <Box>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: 600, color: "#0071bc", lineHeight: 1 }}
-                  >
-                    34
-                  </Typography>
-                  <Typography variant="body2">Resources</Typography>
-                </Box>
-              </Stack>
+              {/* Offices */}
+              <Box>
+                <Typography
+                  variant="h4"
+                  sx={{ fontWeight: 600, color: "#0071bc", lineHeight: 1 }}
+                >
+                  {country.offices}
+                </Typography>
+                <Typography variant="body2">Offices</Typography>
+              </Box>
             </Box>
           </Grid>
         ))}

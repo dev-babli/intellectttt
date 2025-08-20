@@ -116,7 +116,7 @@ const Footer = (props) => {
         <div
           className="row footer-row"
           style={{
-            padding: "40px 0 30px 0",
+            padding: "25px 0 20px 0",
             display: "flex",
             flexWrap: "wrap",
           }}
@@ -129,9 +129,9 @@ const Footer = (props) => {
             <h4
               style={{
                 color: "#1f2937",
-                fontSize: "20px",
+                fontSize: "18px",
                 fontWeight: "700",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               Intellectt
@@ -139,10 +139,10 @@ const Footer = (props) => {
             <p
               style={{
                 color: "#6b7280",
-                fontSize: "14px",
-                lineHeight: "1.5",
-                marginBottom: "12px",
-                maxWidth: "300px",
+                fontSize: "13px",
+                lineHeight: "1.4",
+                marginBottom: "10px",
+                maxWidth: "280px",
               }}
             >
               Empowering businesses with cutting-edge AI and technology
@@ -150,24 +150,24 @@ const Footer = (props) => {
             </p>
 
             {/* Contact Info */}
-            <div style={{ marginBottom: "12px" }}>
+            <div style={{ marginBottom: "10px" }}>
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  marginBottom: "8px",
+                  marginBottom: "6px",
                 }}
               >
                 <i
                   className="fas fa-envelope"
                   style={{
                     color: "#e53e3e",
-                    fontSize: "16px",
-                    marginRight: "12px",
-                    width: "16px",
+                    fontSize: "14px",
+                    marginRight: "10px",
+                    width: "14px",
                   }}
                 ></i>
-                <span style={{ color: "#6b7280", fontSize: "14px" }}>
+                <span style={{ color: "#6b7280", fontSize: "13px" }}>
                   contact@intellectt.com
                 </span>
               </div>
@@ -176,12 +176,12 @@ const Footer = (props) => {
                   className="fas fa-phone"
                   style={{
                     color: "#e53e3e",
-                    fontSize: "16px",
-                    marginRight: "12px",
-                    width: "16px",
+                    fontSize: "14px",
+                    marginRight: "10px",
+                    width: "14px",
                   }}
                 ></i>
-                <span style={{ color: "#6b7280", fontSize: "14px" }}>
+                <span style={{ color: "#6b7280", fontSize: "13px" }}>
                   +17324126999
                 </span>
               </div>
@@ -192,9 +192,9 @@ const Footer = (props) => {
               <h5
                 style={{
                   color: "#1f2937",
-                  fontSize: "15px",
+                  fontSize: "14px",
                   fontWeight: "600",
-                  marginBottom: "10px",
+                  marginBottom: "8px",
                 }}
               >
                 Newsletter
@@ -206,12 +206,12 @@ const Footer = (props) => {
                     placeholder="Enter your email"
                     style={{
                       width: "100%",
-                      padding: "12px 16px",
+                      padding: "10px 14px",
                       border: "1px solid #d1d5db",
                       borderRadius: "6px",
                       backgroundColor: "#ffffff",
                       color: "#374151",
-                      fontSize: "14px",
+                      fontSize: "13px",
                       outline: "none",
                     }}
                     onFocus={(e) => {
@@ -232,9 +232,9 @@ const Footer = (props) => {
                       border: "none",
                       color: "#ffffff",
                       cursor: "pointer",
-                      padding: "6px 12px",
+                      padding: "5px 10px",
                       borderRadius: "4px",
-                      fontSize: "13px",
+                      fontSize: "12px",
                       fontWeight: "500",
                     }}
                   >
@@ -248,14 +248,14 @@ const Footer = (props) => {
           {/* What We Do */}
           <div
             className="col-lg-2 col-md-6 col-sm-6 footer-col"
-            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
+            style={{ paddingLeft: "25px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
               style={{
                 color: "#1f2937",
-                fontSize: "15px",
+                fontSize: "14px",
                 fontWeight: "600",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               What We Do
@@ -269,16 +269,14 @@ const Footer = (props) => {
                 { text: "Managed IT Services", link: "/service/managed-it-services" },
                 { text: "SAP Services", link: "/service/sap-services" },
                 { text: "Talent Solutions", link: "/service/talent-solutions" },
-                { text: "Engineering Services", link: "/service/engineering-services" },
-                { text: "Healthcare & Life Sciences", link: "/service/healthcare-and-life-sciences-it" },
               ].map((item, index) => (
-                <li key={index} style={{ marginBottom: "10px" }}>
+                <li key={index} style={{ marginBottom: "8px" }}>
                   <Link
                     onClick={ClickHandler}
                     to={item.link}
                     style={{
                       color: "#6b7280",
-                      fontSize: "14px",
+                      fontSize: "13px",
                       textDecoration: "none",
                       transition: "color 0.2s ease",
                     }}
@@ -295,14 +293,14 @@ const Footer = (props) => {
           {/* Who We Work With */}
           <div
             className="col-lg-2 col-md-6 col-sm-6 footer-col"
-            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
+            style={{ paddingLeft: "25px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
               style={{
                 color: "#1f2937",
-                fontSize: "15px",
+                fontSize: "14px",
                 fontWeight: "600",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               Who We Work With
@@ -315,16 +313,14 @@ const Footer = (props) => {
                 { text: "Aerospace & Defense", link: "/industries/aerospace-and-defense" },
                 { text: "Retail & E-Commerce", link: "/industries/retail-and-ecommerce" },
                 { text: "Energy & Utilities", link: "/industries/energy-and-utilities" },
-                { text: "Education & Training", link: "/industries/education-and-training" },
-                { text: "Logistics & Transportation", link: "/industries/logistics-and-transportation" },
               ].map((item, index) => (
-                <li key={index} style={{ marginBottom: "10px" }}>
+                <li key={index} style={{ marginBottom: "8px" }}>
                   <Link
                     onClick={ClickHandler}
                     to={item.link}
                     style={{
                       color: "#6b7280",
-                      fontSize: "14px",
+                      fontSize: "13px",
                       textDecoration: "none",
                       transition: "color 0.2s ease",
                     }}
@@ -341,14 +337,14 @@ const Footer = (props) => {
           {/* Insights */}
           <div
             className="col-lg-2 col-md-6 col-sm-6 footer-col"
-            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
+            style={{ paddingLeft: "25px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
               style={{
                 color: "#1f2937",
-                fontSize: "15px",
+                fontSize: "14px",
                 fontWeight: "600",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               Insights
@@ -358,15 +354,14 @@ const Footer = (props) => {
                 { text: "Blog", link: "/blog" },
                 { text: "Articles", link: "/insights/blog" },
                 { text: "Whitepapers & Case Studies", link: "/insights/whitepapers-and-case-studies" },
-                { text: "News & Events", link: "/insights/news-and-announcements" },
               ].map((item, index) => (
-                <li key={index} style={{ marginBottom: "10px" }}>
+                <li key={index} style={{ marginBottom: "8px" }}>
                   <Link
                     onClick={ClickHandler}
                     to={item.link}
                     style={{
                       color: "#6b7280",
-                      fontSize: "14px",
+                      fontSize: "13px",
                       textDecoration: "none",
                       transition: "color 0.2s ease",
                     }}
@@ -383,14 +378,14 @@ const Footer = (props) => {
           {/* Who We Are */}
           <div
             className="col-lg-2 col-md-6 col-sm-6 footer-col"
-            style={{ paddingLeft: "30px", flex: "0 0 20%", minWidth: "0" }}
+            style={{ paddingLeft: "25px", flex: "0 0 20%", minWidth: "0" }}
           >
             <h5
               style={{
                 color: "#1f2937",
-                fontSize: "15px",
+                fontSize: "14px",
                 fontWeight: "600",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               Who We Are
@@ -403,13 +398,13 @@ const Footer = (props) => {
                 { text: "Our Global Presence", link: "/company/global-presence" },
                 { text: "Contact", link: "/contact" },
               ].map((item, index) => (
-                <li key={index} style={{ marginBottom: "10px" }}>
+                <li key={index} style={{ marginBottom: "8px" }}>
                   <Link
                     onClick={ClickHandler}
                     to={item.link}
                     style={{
                       color: "#6b7280",
-                      fontSize: "14px",
+                      fontSize: "13px",
                       textDecoration: "none",
                       transition: "color 0.2s ease",
                     }}
@@ -428,15 +423,15 @@ const Footer = (props) => {
         <div
           style={{
             borderTop: "1px solid #e5e7eb",
-            padding: "12px 0",
+            padding: "4px 0",
           }}
         >
           <div className="row align-items-center footer-bottom">
-            <div className="col-md-6 col-sm-12 mb-3 mb-md-0">
+            <div className="col-md-6 col-sm-12 mb-2 mb-md-0">
               <p
                 style={{
                   color: "#9ca3af",
-                  fontSize: "14px",
+                  fontSize: "13px",
                   margin: "0",
                 }}
               >
@@ -449,7 +444,7 @@ const Footer = (props) => {
                 style={{
                   display: "flex",
                   justifyContent: "flex-end",
-                  gap: "24px",
+                  gap: "16px",
                   alignItems: "center",
                   flexWrap: "wrap",
                 }}
@@ -459,7 +454,7 @@ const Footer = (props) => {
                   onClick={ClickHandler}
                   style={{
                     color: "#9ca3af",
-                    fontSize: "14px",
+                    fontSize: "13px",
                     textDecoration: "none",
                     transition: "color 0.2s ease",
                   }}
@@ -473,7 +468,7 @@ const Footer = (props) => {
                   onClick={ClickHandler}
                   style={{
                     color: "#9ca3af",
-                    fontSize: "14px",
+                    fontSize: "13px",
                     textDecoration: "none",
                     transition: "color 0.2s ease",
                   }}
@@ -502,7 +497,7 @@ const Footer = (props) => {
                       to={social.link}
                       style={{
                         color: "#9ca3af",
-                        fontSize: "16px",
+                        fontSize: "14px",
                         transition: "color 0.2s ease",
                       }}
                       onMouseEnter={(e) => (e.target.style.color = "#e53e3e")}

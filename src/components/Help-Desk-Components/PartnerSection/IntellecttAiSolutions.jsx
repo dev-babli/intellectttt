@@ -214,22 +214,35 @@ export default function IntellecttAiSolutions() {
 
       {/* Cards Grid */}
       <Box ref={cardsRef}>
-        <Grid
-          container
-          spacing={{ xs: 2, sm: 3, md: 4 }}
+        <Box
           sx={{
             maxWidth: "1400px",
             mx: "auto",
-            px: 0,
+            px: { xs: 2, sm: 3, md: 4 },
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              md: "repeat(3, 1fr)",
+              lg: "repeat(4, 1fr)",
+            },
+            gap: { xs: "16px", sm: "24px", md: "32px" },
             justifyContent: "center",
           }}
         >
           {solutions.map((solution, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-              <Link to={solution.url} style={{ textDecoration: "none" }}>
+            <Box
+              key={index}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Link to={solution.url} style={{ textDecoration: "none", width: "100%" }}>
                 <Card
                   className="dimensional-card"
                   sx={{
+                    width: "100%",
                     height: { xs: 280, sm: 320, md: 360 },
                     background: "#0f0f0f",
                     borderRadius: "8px",
@@ -591,9 +604,9 @@ export default function IntellecttAiSolutions() {
                   </CardContent>
                 </Card>
               </Link>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Box>
 
       <style jsx>{`
