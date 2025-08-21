@@ -51,6 +51,9 @@ const MasterSubServiceTemplate = ({
 
   // Theme
   theme = "light",
+  
+  // Footer Control
+  showFooter = true,
 }) => {
   useScrollToTop();
 
@@ -101,7 +104,7 @@ const MasterSubServiceTemplate = ({
       )}
 
       {/* Footer */}
-      <Footer />
+      {showFooter && <Footer />}
     </Fragment>
   );
 };

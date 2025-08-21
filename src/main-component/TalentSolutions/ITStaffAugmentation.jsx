@@ -227,6 +227,7 @@ const ITStaffAugmentation = () => {
 
         // Theme
         theme="light"
+        showFooter={false}
       />
       
       {/* Custom Staff Augmentation Details Section */}
