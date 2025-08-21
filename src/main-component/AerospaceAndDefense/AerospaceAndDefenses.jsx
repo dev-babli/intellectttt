@@ -1,96 +1,104 @@
-import React, { Fragment } from "react";
-import Footer from "../../components/footer/Footer";
+import React from "react";
+import IndustryTemplate from "../../components/templates/IndustryTemplate";
+import { 
+  Flight, 
+  Security, 
+  Analytics, 
+  Speed, 
+  TrendingUp, 
+  AutoAwesome,
+  Shield,
+  Assessment,
+  Policy,
+  Compliance,
+  DataAnalytics,
+  AI,
+  MachineLearning,
+  Cloud,
+  MobileFriendly,
+  API,
+  IntegrationInstructions,
+  Satellite,
+  Radar,
+  Engineering,
+  PrecisionManufacturing,
+  Build
+} from '@mui/icons-material';
 
-import ServicesComponent from "../../components/ServicesComponent/ServicesComponent";
-
-import IndustrieSection from "../../components/IndustrieSection/IndustrieSection";
-import WorkProcess from "../../components/It-Services-Components/WorkProcess/WorkProcess";
-import HelpDeskBlogSection from "../../components/Help-Desk-Components/HelpDeskBlogSection/HelpDeskBlogSection";
-import HeroSectionTitle from "../../components/HeroSectionTitle/HeroSectionTitle";
-import { AerospaceServices } from "../../api/cardService";
-
-import pImg1 from "../../images/shape/process-shape01.png";
-import pImg2 from "../../images/shape/process-shape01.png";
-import sIcon1 from "../../images/process/image01.png";
-import sIcon2 from "../../images/process/image02.png";
-import sIcon3 from "../../images/process/image03.png";
-import sIcon4 from "../../images/process/image04.png";
-import sIcon5 from "../../images/process/image05.png";
-
-const processList = [
-  {
-    id: "01",
-    title: "Requirement Discovery & Risk Assessment",
-    subTitle:
-      "We start by understanding your aerospace or defense mission needs while evaluating security, compliance, and risk exposure.",
-    icon: sIcon1,
-  },
-  {
-    id: "02",
-    title: "System Architecture & Compliance Mapping",
-    subTitle:
-      "Our experts design robust architectures aligned with standards like ITAR, DFARS, NIST, and aerospace regulations.",
-    icon: sIcon2,
-  },
-  {
-    id: "03",
-    title: "Secure Development & Integration",
-    subTitle:
-      "We build scalable, high-assurance software systems with secure-by-design principles and real-time system integration.",
-    icon: sIcon3,
-  },
-  {
-    id: "04",
-    title: "Verification, Validation & Penetration Testing",
-    subTitle:
-      "Advanced testing including functional validation, stress testing, and red-team penetration assessments for defense readiness.",
-    icon: sIcon4,
-  },
-  {
-    id: "05",
-    title: "Deployment, Monitoring & Long-Term Support",
-    subTitle:
-      "We ensure smooth deployment in air-gapped or hybrid environments with 24/7 monitoring and mission-critical SLAs.",
-    icon: sIcon5,
-  },
-];
-
-
-const shapeImages = [pImg1, pImg2];
 const AerospaceAndDefenses = () => {
   return (
-    <Fragment>
-      <div className="body_wrap sco_agency">
-      
-        <HeroSectionTitle
-          title="Areospace & Defense IT"
-          subtitle="Secure, Scalable & Mission-Focused IT Solutions"
-          buttonText="TALK TO OUR EXPERTS"
-          buttonLink="#contact"
-          backgroundImage="/Aerospace-and-Defense.webp"
-        />
-        <WorkProcess
-          heading="Aerospace & Defense IT Solutions"
-          description="Secure, Compliant, Mission-Critical Systems for the Most Demanding Environments"
-          buttonText="Speak to a Defense Consultant"
-          buttonLink="/contact"
-          processList={processList}
-          shapeImages={shapeImages}
-        />
-        <ServicesComponent
-          services={AerospaceServices}
-          limit={6}
-          showButton={true}
-          buttonText="Schedule a Strategy Call"
-          buttonLink="/contact"
-          sectionStyle={{ backgroundColor: "#f8f9fa" }}
-        />
-        <HelpDeskBlogSection />
-      </div>
-      <Footer />
+    <IndustryTemplate
+      // Hero Section
+      heroTitle="Aerospace & Defense"
+      heroSubtitle="Secure IT Solutions"
+      heroDescription="Mission-critical aerospace software, defense technology solutions, and precision engineering for advanced aerospace systems."
+      heroButtonText="TALK TO OUR EXPERTS"
+      heroButtonLink="/contact"
+      heroBackgroundImage="/Aerospace-and-Defense.webp"
+      heroFeatures={[
+        "Mission-Critical Software",
+        "Embedded Systems",
+        "Aerospace Simulation",
+        "Defense Networks"
+      ]}
 
-   
-        </Fragment>
+      // Services Component Props - Industry Solutions
+      showServicesComponent={true}
+      services={[
+        {
+          title: "Mission-Critical Software",
+          description: "High-assurance, fault-tolerant software for avionics and aerospace control systems with real-time processing capabilities.",
+          image: "/images/mission-critical.webp",
+          features: ["Real-Time Processing", "High Reliability", "Fault Tolerance", "Avionics Systems"],
+          link: "/services/mission-critical",
+          badge: "Critical"
+        },
+        {
+          title: "Embedded Systems Engineering",
+          description: "Design and develop embedded firmware for guidance, navigation, and control systems in aircrafts and satellites.",
+          image: "/images/embedded-systems.webp",
+          features: ["RTOS", "Firmware Development", "Guidance Systems", "Navigation Control"],
+          link: "/services/embedded-systems",
+          badge: "Embedded"
+        },
+        {
+          title: "Aerospace Simulation Tools",
+          description: "Build complex simulation systems for aircraft testing, digital twin modeling, and operator training.",
+          image: "/images/aerospace-simulation.webp",
+          features: ["Flight Simulation", "Hardware-in-Loop", "Digital Twin", "Operator Training"],
+          link: "/services/aerospace-simulation",
+          badge: "Simulation"
+        },
+        {
+          title: "Secure Defense Networks",
+          description: "Design secure, resilient communication networks for defense infrastructure with end-to-end encryption.",
+          image: "/images/defense-networks.webp",
+          features: ["Encryption", "Zero Trust", "Resilient Networks", "Defense Infrastructure"],
+          link: "/services/defense-networks",
+          badge: "Security"
+        },
+        {
+          title: "Supply Chain Intelligence",
+          description: "Optimize aerospace manufacturing & maintenance supply chains with intelligent tracking and forecasting tools.",
+          image: "/images/supply-chain-intelligence.webp",
+          features: ["Predictive Analytics", "Logistics AI", "Intelligent Tracking", "Forecasting"],
+          link: "/services/supply-chain-intelligence",
+          badge: "Intelligence"
+        },
+        {
+          title: "Compliance & Airworthiness Automation",
+          description: "Automate documentation, traceability, and audit trails to meet industry standards and regulatory approvals.",
+          image: "/images/compliance-automation.webp",
+          features: ["AS9100", "DO-178C", "Documentation", "Audit Trails"],
+          link: "/services/compliance-automation",
+          badge: "Compliance"
+        }
+      ]}
+      servicesLimit={6}
+      servicesShowButton={true}
+      servicesButtonText="Schedule a Strategy Call"
+      servicesButtonLink="/contact"
+    />
   );
 };
 
