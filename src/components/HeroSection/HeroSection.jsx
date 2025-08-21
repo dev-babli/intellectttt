@@ -85,18 +85,9 @@ const slides = [
     backgroundImage: "/herosectionimages/Intellectt SE Sliders/Cloud Application.webp",
     hasLightBackground: false,
   },
+
   {
     id: 9,
-    title: "Cybersecurity",
-    subtitle: "Protect your digital assets with intelligent security frameworks. Safeguard your organization with advanced cybersecurity solutions and proactive threat detection systems.",
-    ctaText: "Secure Your Business",
-    ctaLink: "/cybersecurity",
-    accent: "#ff9a9e",
-    backgroundImage: "/herosectionimages/Intellectt SE Sliders/Cyber security.webp",
-    hasLightBackground: false,
-  },
-  {
-    id: 10,
     title: "Data & Analytics",
     subtitle: "Turn data into actionable insights for smarter decisions. Transform raw data into strategic insights that drive business growth and operational excellence.",
     ctaText: "Analyze Data",
