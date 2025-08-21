@@ -241,6 +241,9 @@ const ContactSection = (props) => {
                 background: '#f8fafc',
                 height: '400px',
                 width: '100%',
+                marginBottom: '2rem',
+                position: 'relative',
+                zIndex: 1,
             }}>
                 <iframe 
                     title='map' 

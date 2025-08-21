@@ -20,6 +20,9 @@ const Footer = (props) => {
         backgroundColor: "#f8f9fa",
         color: "#333333",
         borderTop: "1px solid #e5e7eb",
+        position: "relative",
+        zIndex: 2,
+        marginTop: "2rem",
       }}
     >
       <style>

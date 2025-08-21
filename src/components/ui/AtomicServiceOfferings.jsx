@@ -19,37 +19,49 @@ const AtomicServiceOfferings = ({
   theme = "light",
   showPricing = false
 }) => {
-  // Array of available images to ensure uniqueness
+  // Track used images to prevent repetition
+  const [usedImages, setUsedImages] = useState(new Set());
+  // Enhanced image pool with hero section images prioritized
   const imagePool = [
+    // Hero Section Images (Priority)
+    '/herosectionimages/Intellectt SE Sliders/Agentic AI.webp',
+    '/herosectionimages/Intellectt SE Sliders/Agentic Ai-2.webp',
+    '/herosectionimages/Intellectt SE Sliders/Agentic Ai-3.webp',
+    '/herosectionimages/Intellectt SE Sliders/Agentic Ai-4.webp',
+    '/herosectionimages/Intellectt SE Sliders/Agentic Ai-5.webp',
+    '/herosectionimages/Intellectt SE Sliders/Cloud Application.webp',
+    '/herosectionimages/Intellectt SE Sliders/Data & Analytics.webp',
+    '/herosectionimages/Intellectt SE Sliders/Cyber security.webp',
+    '/herosectionimages/Intellectt SE Sliders/Digital Journey.webp',
+    '/herosectionimages/Intellectt SE Sliders/Digital Partnership.webp',
+    '/herosectionimages/Intellectt SE Sliders/Engineering and Manufacturing.webp',
+    '/herosectionimages/Intellectt SE Sliders/Healthcare and Lifesciences.webp',
+    '/herosectionimages/Intellectt SE Sliders/IOT Tech.webp',
+    '/herosectionimages/Intellectt SE Sliders/Talent Solution.webp',
+    '/herosectionimages/Intellectt SE Sliders/innovation.webp',
+    
+    // Additional Hero Images
+    '/herosectionimages/Agentic Ai.webp',
+    '/herosectionimages/Data & Analytics.webp',
+    '/herosectionimages/Data Driven intelleigence solution.webp',
+    '/herosectionimages/Digital Technology.webp',
+    '/herosectionimages/Scalable Cloud and Application.webp',
+    '/herosectionimages/Cyber Security.webp',
+    
+    // Fallback Images
     '/agentic-AI.webp',
+    '/Gen-AI.webp',
     '/GenAI-LLM-Integration.webp',
-    '/Data-Engineering.webp',
-    '/Data-&-Analytics.webp',
-    '/Smart-Factory.webp',
-    '/Data-Analytics-Header.webp',
     '/cloud-computing.webp',
     '/dev.webp',
     '/azure.webp',
     '/modernisation.webp',
-    '/Data-Governance-and-Securuty.webp',
-    '/Business-Intelligence.webp',
+    '/Data-Engineering.webp',
     '/SAP.webp',
-    '/sapmanagsprt.webp',
-    '/Manufacturing-and-Automotive.webp',
-    '/Industry-4.0.webp',
-    '/PLM-CAD-CAE-Automation.webp',
-    '/MES-Integration-IOT.webp',
-    '/Healthcare-and-Life-sciences.webp',
-    '/Clinical-Data-Platforms.webp',
-    '/Compleance-and-Regulatory-IT.webp',
-    '/HL7-FHIR-Integration.webp',
-    '/IT-Staff-Augmentation.webp',
-    '/Direct-Hire-and-Contact-Hiring.webp',
-    '/Corp-to-Corp-W2.webp',
     '/Managed-IT-header.webp',
-    '/Managed-Resources.webp',
-    '/Banking-and-Finance.webp',
-    '/Aerospace-and-Defense.webp',
+    '/Smart-Factory.webp',
+    '/Healthcare-and-Life-sciences.webp',
+    '/IT-Staff-Augmentation.webp',
     '/digital-transformation.webp'
   ];
 
@@ -85,38 +97,176 @@ const AtomicServiceOfferings = ({
     };
   };
 
-  // Function to get default images based on service title
-  const getDefaultImage = (serviceTitle) => {
+  // Function to get unique image that hasn't been used yet
+  const getUniqueImage = (serviceTitle, serviceDescription = '', usedImagesSet = usedImages) => {
     const title = serviceTitle.toLowerCase();
+    const description = serviceDescription.toLowerCase();
+    const combinedText = `${title} ${description}`;
     
-    // AI & GenAI related images
-    if (title.includes('agentic') || title.includes('ai agent')) {
-      return '/agentic-AI.webp';
-    }
-    if (title.includes('llm') || title.includes('gen ai') || title.includes('generative')) {
-      return '/Gen-AI.webp';
-    }
-    if (title.includes('nlp') || title.includes('computer vision') || title.includes('vision')) {
-      return '/GenAI-LLM-Integration.webp';
-    }
-    if (title.includes('ml') || title.includes('mlops') || title.includes('engineering')) {
-      return '/Data-&-Analytics.webp';
-    }
-    if (title.includes('automation') || title.includes('rpa')) {
-      return '/Smart-Factory.webp';
-    }
-    if (title.includes('responsible') || title.includes('advisory')) {
-      return '/Data-Analytics-Header.webp';
-    }
+    // Define image mappings with hero section images prioritized
+    const imageMappings = [
+      // AI & Generative AI Services
+      {
+        keywords: ['agentic', 'ai agent', 'autonomous'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Agentic AI.webp',
+          '/herosectionimages/Intellectt SE Sliders/Agentic Ai-2.webp',
+          '/herosectionimages/Intellectt SE Sliders/Agentic Ai-3.webp',
+          '/herosectionimages/Intellectt SE Sliders/Agentic Ai-4.webp',
+          '/herosectionimages/Intellectt SE Sliders/Agentic Ai-5.webp',
+          '/herosectionimages/Agentic Ai.webp',
+          '/agentic-AI.webp'
+        ]
+      },
+      {
+        keywords: ['llm', 'gen ai', 'generative', 'large language model'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Agentic AI.webp',
+          '/herosectionimages/Intellectt SE Sliders/Agentic Ai-3.webp',
+          '/herosectionimages/Intellectt SE Sliders/innovation.webp',
+          '/Gen-AI.webp'
+        ]
+      },
+      {
+        keywords: ['ai', 'artificial intelligence'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Agentic AI.webp',
+          '/herosectionimages/Intellectt SE Sliders/Agentic Ai-2.webp',
+          '/herosectionimages/Intellectt SE Sliders/Agentic Ai-3.webp',
+          '/herosectionimages/Data Driven intelleigence solution.webp',
+          '/agentic-AI.webp'
+        ]
+      },
+      
+      // Cloud & Application Services
+      {
+        keywords: ['cloud', 'aws', 'azure', 'gcp'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Cloud Application.webp',
+          '/herosectionimages/Scalable Cloud and Application.webp',
+          '/cloud-computing.webp'
+        ]
+      },
+      {
+        keywords: ['application', 'app development', 'software'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Cloud Application.webp',
+          '/herosectionimages/Scalable Cloud and Application.webp',
+          '/dev.webp'
+        ]
+      },
+      
+      // Data & Analytics Services
+      {
+        keywords: ['data', 'analytics', 'bi', 'business intelligence'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Data & Analytics.webp',
+          '/herosectionimages/Data & Analytics.webp',
+          '/herosectionimages/Data Driven intelleigence solution.webp',
+          '/Data-Engineering.webp'
+        ]
+      },
+      
+      // Engineering & Manufacturing
+      {
+        keywords: ['engineering', 'manufacturing', 'automotive'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Engineering and Manufacturing.webp',
+          '/Smart-Factory.webp'
+        ]
+      },
+      
+      // IoT & Technology
+      {
+        keywords: ['iot', 'internet of things', 'sensors'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/IOT Tech.webp',
+          '/Smart-Factory.webp'
+        ]
+      },
+      
+      // Healthcare & Life Sciences
+      {
+        keywords: ['healthcare', 'medical', 'clinical', 'life sciences'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Healthcare and Lifesciences.webp',
+          '/Healthcare-and-Life-sciences.webp'
+        ]
+      },
+      
+      // Talent & Staffing
+      {
+        keywords: ['talent', 'staffing', 'recruitment', 'hiring'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Talent Solution.webp',
+          '/IT-Staff-Augmentation.webp'
+        ]
+      },
+      
+      // Security & Cybersecurity
+      {
+        keywords: ['security', 'cyber', 'threat'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Cyber security.webp',
+          '/herosectionimages/Cyber Security.webp'
+        ]
+      },
+      
+      // Digital Transformation
+      {
+        keywords: ['digital transformation', 'innovation', 'strategy'],
+        images: [
+          '/herosectionimages/Intellectt SE Sliders/Digital Journey.webp',
+          '/herosectionimages/Intellectt SE Sliders/Digital Partnership.webp',
+          '/herosectionimages/Digital Technology.webp',
+          '/digital-transformation.webp'
+        ]
+      }
+    ];
     
-    // Default AI image
-    return '/agentic-AI.webp';
+         // Find matching category
+     for (const mapping of imageMappings) {
+       if (mapping.keywords.some(keyword => combinedText.includes(keyword))) {
+         // Find first unused image in this category
+         for (const image of mapping.images) {
+           if (!usedImagesSet.has(image)) {
+             return image;
+           }
+         }
+       }
+     }
+     
+     // If no specific match or all images used, find any unused image
+     for (const image of imagePool) {
+       if (!usedImagesSet.has(image)) {
+         return image;
+       }
+     }
+    
+    // If all images are used, return placeholder
+    return '/Placeholder.webp';
   };
 
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const cardsRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Pre-calculate unique images for each service to prevent repetition
+  const getServiceImages = () => {
+    const serviceImages = [];
+    const tempUsedImages = new Set();
+    
+    services.forEach((service, index) => {
+      const imageSrc = service.image || getUniqueImage(service.title, service.description, tempUsedImages);
+      serviceImages.push(imageSrc);
+      tempUsedImages.add(imageSrc);
+    });
+    
+    return serviceImages;
+  };
+  
+  const serviceImages = getServiceImages();
 
   useEffect(() => {
     // Trigger entrance animations
@@ -351,7 +501,7 @@ const AtomicServiceOfferings = ({
                   {/* Card Image */}
                   <Box sx={{ height: "100%", position: "relative" }}>
                     <img
-                      src={service.image || imagePool[index % imagePool.length]}
+                      src={serviceImages[index]}
                       alt={service.title}
                       style={{
                         width: "100%",
@@ -370,7 +520,7 @@ const AtomicServiceOfferings = ({
                         right: 0,
                         bottom: 0,
                         background:
-                          "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)",
+                          "linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.4) 100%)",
                       }}
                     />
                   </Box>
@@ -458,7 +608,7 @@ const AtomicServiceOfferings = ({
                       alignItems: "flex-start",
                       padding: { xs: 2.5, sm: 3, md: 3.5 },
                       background:
-                        "linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.7) 100%)",
+                        "linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%)",
                       backdropFilter: "blur(15px)",
                       opacity: 0,
                       transform: "translateY(20px)",

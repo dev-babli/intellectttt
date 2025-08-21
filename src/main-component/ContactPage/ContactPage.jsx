@@ -12,7 +12,7 @@ import bImg2 from "../../images/shape/brd_shape.png";
 const TeamPage = (props) => {
   return (
     <Fragment>
-      <div className="body_wrap sco_agency">
+      <div className="body_wrap sco_agency" style={{ overflow: 'visible' }}>
         <section
           className="page-title  pt-200 pos-rel bg_img"
           style={{ backgroundImage: `url(${Bg})` }}

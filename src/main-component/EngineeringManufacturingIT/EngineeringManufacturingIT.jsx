@@ -90,7 +90,8 @@ const EngineeringManufacturingIT = () => {
           ],
           badge: "Most Popular",
           link: "/service/engineering-and-manufacturing-it/industry4",
-          ctaText: "Industry 4.0"
+          ctaText: "Industry 4.0",
+          image: "/images/Industry.webp"
         },
         {
           icon: <Sensors />,
@@ -103,7 +104,8 @@ const EngineeringManufacturingIT = () => {
           ],
           badge: "Trending",
           link: "/service/engineering-and-manufacturing-it/mes",
-          ctaText: "MES & IoT"
+          ctaText: "MES & IoT",
+          image: "/images/mes.webp"
         },
         {
           icon: <Engineering />,
@@ -115,7 +117,8 @@ const EngineeringManufacturingIT = () => {
             "Design optimization"
           ],
           link: "/service/engineering-and-manufacturing-it/plm",
-          ctaText: "PLM & CAD"
+          ctaText: "PLM & CAD",
+          image: "/images/PLM.webp"
         },
         {
           icon: <PrecisionManufacturing />,
@@ -127,7 +130,8 @@ const EngineeringManufacturingIT = () => {
             "Agile manufacturing"
           ],
           link: "/service/engineering-and-manufacturing-it/twins",
-          ctaText: "Smart Factory"
+          ctaText: "Smart Factory",
+          image: "/images/Smart-Factory.webp"
         }
       ]}
       serviceOfferingsVariant="default"
