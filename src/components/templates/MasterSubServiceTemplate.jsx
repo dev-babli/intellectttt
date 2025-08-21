@@ -99,9 +99,6 @@ const MasterSubServiceTemplate = ({
           theme={theme}
         />
       )}
-
-      {/* Footer */}
-      <Footer />
     </Fragment>
   );
 };

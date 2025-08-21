@@ -17,69 +17,54 @@ const AtomicProblemSolution = ({
   variant = "default",
   theme = "light"
 }) => {
-  // Combine problems and solutions into work items format
-  const workItems = [
-    ...problems.map((problem, index) => ({
-      id: `problem-${index}`,
-      icon: [icon1, icon3, icon5][index % 3], // Rotate through odd-numbered icons for problems
-      title: problem.title || `Challenge ${index + 1}`,
-      content: problem.description || problem,
-      type: 'problem'
-    })),
-    ...solutions.map((solution, index) => ({
-      id: `solution-${index}`,
-      icon: [icon2, icon4, icon6][index % 3], // Rotate through even-numbered icons for solutions
-      title: solution.title || `Solution ${index + 1}`,
-      content: solution.description || solution,
-      type: 'solution'
-    }))
-  ];
+  // Create items with only solutions
+  const displayItems = [];
+  
+  // If we have solutions, create items
+  if (solutions.length > 0) {
+    solutions.forEach((solution, i) => {
+      displayItems.push({
+        id: i + 1,
+        icon: [icon1, icon2, icon3, icon4, icon5, icon6][i % 6],
+        title: solution.title || `Solution ${i + 1}`, // Solution title
+        content: solution.description || solution, // Solution description
+      });
+    });
+  }
 
   // If no items provided, use default content
-  const displayItems = workItems.length > 0 ? workItems : [
+  const defaultItems = [
     {
       id: 1,
       icon: icon1,
-      title: 'Complex AI Integration',
-      content: 'Organizations struggle with integrating AI solutions into existing systems, facing compatibility issues and steep learning curves.',
-      type: 'problem'
+      title: 'Vetted IT Talent Pool',
+      content: 'Access to pre-vetted, skilled IT professionals ready to contribute to your projects immediately.'
     },
     {
       id: 2,
       icon: icon2,
-      title: 'Seamless Integration',
-      content: 'Our expert team provides end-to-end AI integration services, ensuring smooth implementation and minimal disruption to your operations.',
-      type: 'solution'
+      title: 'Flexible Staffing Solutions',
+      content: 'Flexible staffing options that scale with your project needs and business requirements.'
     },
     {
       id: 3,
       icon: icon3,
-      title: 'Lack of AI Expertise',
-      content: 'Many companies lack the internal expertise needed to develop and maintain sophisticated AI solutions.',
-      type: 'problem'
-    },
-    {
-      id: 4,
-      icon: icon4,
-      title: 'Expert Guidance',
-      content: 'We provide comprehensive AI consulting and development services, bringing deep expertise to every project.',
-      type: 'solution'
-    },
-    {
-      id: 5,
-      icon: icon5,
-      title: 'Scalability Concerns',
-      content: 'AI solutions often fail to scale with business growth, leading to performance bottlenecks and increased costs.',
-      type: 'problem'
-    },
-    {
-      id: 6,
-      icon: icon6,
-      title: 'Scalable Architecture',
-      content: 'Our AI solutions are built with scalability in mind, ensuring they grow with your business needs.',
-      type: 'solution'
+      title: 'Rapid Team Scaling',
+      content: 'Quick team scaling capabilities that allow you to meet project deadlines and business objectives.'
     }
   ];
+
+  let finalDisplayItems = displayItems.length > 0 ? displayItems : defaultItems;
+  
+  // Ensure even number of items by adding a placeholder if odd
+  if (finalDisplayItems.length % 2 !== 0) {
+    finalDisplayItems.push({
+      id: finalDisplayItems.length + 1,
+      icon: icon4,
+      title: 'Custom Solutions',
+      content: 'Tailored staffing solutions designed specifically for your unique business requirements and industry needs.'
+    });
+  }
 
   const ClickHandler = () => {
     window.scrollTo(10, 0);
@@ -108,7 +93,7 @@ const AtomicProblemSolution = ({
         </div>
         <div className="tp-work-wrapp">
           <div className="row mt-none-30">
-            {displayItems.map((item) => (
+            {finalDisplayItems.map((item) => (
               <div className="col-lg-6 mt-30" key={item.id}>
                 <div className="tp-work-item">
                   <div className="xb-item--inner ul_li">
@@ -116,8 +101,19 @@ const AtomicProblemSolution = ({
                       <img src={item.icon} alt={item.title} />
                     </div>
                     <div className="xb-item--holder">
-                      <h3 className="xb-item--title">{item.title}</h3>
-                      <p className="xb-item--content">{item.content}</p>
+                      <h3 className="xb-item--title" style={{ 
+                        fontSize: '1.3rem', 
+                        fontWeight: '700', 
+                        color: '#1e293b',
+                        marginBottom: '10px',
+                        lineHeight: '1.3'
+                      }}>{item.title}</h3>
+                      <p className="xb-item--content" style={{ 
+                        color: '#64748b', 
+                        lineHeight: '1.6',
+                        fontSize: '1rem',
+                        margin: 0
+                      }}>{item.content}</p>
                     </div>
                   </div>
                 </div>
