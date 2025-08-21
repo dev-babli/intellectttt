@@ -21,7 +21,7 @@ const LLMIntegration = () => {
       heroTitle="Gen AI & LLM Integration"
       heroSubtitle="Large Language Models"
       heroDescription="We help companies harness the power of Generative AI and Large Language Models to unlock new growth opportunities, automate complex tasks, and make smarter, faster decisions."
-      heroBackgroundImage="/AiGenAi/AIAutomation.webp"
+      heroBackgroundImage="/GenAI-LLM-Integration.webp"
       heroTextColor="white"
 
       // Problem/Solution Section

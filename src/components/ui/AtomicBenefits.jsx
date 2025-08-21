@@ -135,9 +135,10 @@ const AtomicBenefits = ({
       sx={{
         py: 4,
         backgroundColor: isDark ? '#0f172a' : '#ffffff',
+        overflow: 'visible',
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ overflow: 'visible' }}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -179,9 +180,9 @@ const AtomicBenefits = ({
           </Box>
 
           {/* Benefits Grid */}
-          <Grid container spacing={4}>
+          <Grid container spacing={4} justifyContent="center" sx={{ overflow: 'visible' }}>
             {benefits.map((benefit, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
+              <Grid item xs={12} sm={6} md={4} key={index}>
                 <motion.div
                   variants={itemVariants}
                   initial={{ opacity: 0, y: 30 }}
@@ -190,7 +191,8 @@ const AtomicBenefits = ({
                 >
                   <Card
                     sx={{
-                      height: { xs: 'auto', sm: '280px', md: '300px' },
+                      height: 'auto',
+                      minHeight: { xs: 'auto', sm: '280px', md: '300px' },
                       p: 3,
                       backgroundColor: isDark ? 'rgba(255,255,255,0.05)' : '#ffffff',
                       border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : '#e2e8f0'}`,
@@ -199,13 +201,14 @@ const AtomicBenefits = ({
                       transition: 'all 0.3s ease',
                       display: 'flex',
                       flexDirection: 'column',
+                      overflow: 'visible',
                       '&:hover': {
                         transform: 'translateY(-4px)',
                         boxShadow: '0 12px 25px rgba(0,0,0,0.1)',
                       }
                     }}
                   >
-                    <CardContent sx={{ p: 0, height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <CardContent sx={{ p: 0, height: '100%', display: 'flex', flexDirection: 'column', overflow: 'visible' }}>
                       {/* Icon */}
                       {benefit.icon && (
                         <Box sx={{ mb: 3, color: '#dc2626' }}>

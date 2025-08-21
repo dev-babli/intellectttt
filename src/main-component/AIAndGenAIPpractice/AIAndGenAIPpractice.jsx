@@ -19,7 +19,7 @@ const AIAndGenAIPpractice = () => {
       heroTitle="AI & Gen AI Solutions"
       heroSubtitle="Transform Your Business"
       heroDescription="Unlock AI power to automate processes and drive growth."
-      heroBackgroundImage="/AiGenAi/AIAutomation.webp"
+      heroBackgroundImage="/AI-and-gen-ai-practice.webp"
       heroTextColor="white"
 
       // Alliances Section - Enable for this important service

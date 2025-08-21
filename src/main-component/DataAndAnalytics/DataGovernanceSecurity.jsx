@@ -33,7 +33,7 @@ const DataGovernanceSecurity = () => {
       heroDescription="Ensure compliant, secure, and reliable data with comprehensive governance frameworks and security protocols. Protect your data assets with enterprise-grade governance, security compliance, and privacy protection."
       heroButtonText="Governance"
       heroButtonLink="/contact"
-      heroBackgroundImage="/Data-&-Analytics.webp"
+      heroBackgroundImage="/Data-Governance-and-Securuty.webp"
       heroFeatures={[
         "Data Governance",
         "Security Compliance",

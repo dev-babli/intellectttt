@@ -52,7 +52,7 @@ const EngineeringServices = () => {
         heroDescription="Accelerate innovation with end-to-end product engineering. We help clients take products from concept to market using robust engineering, compliance, and digital integration frameworks."
         heroButtonText="Start Engineering"
         heroButtonLink="/contact"
-        heroBackgroundImage="/Manufacturing-and-Automotive.webp"
+        heroBackgroundImage="/engineeringservices.webp"
         heroTextColor="white"
         heroFeatures={[
           "Product Design & Development",

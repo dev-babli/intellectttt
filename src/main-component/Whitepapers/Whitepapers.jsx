@@ -14,6 +14,7 @@ const Whitepapers = () => {
         backgroundImage="/Blog-header.webp"
       />
       <CaseStudySection />
+      <Footer />
     </>
   );
 };

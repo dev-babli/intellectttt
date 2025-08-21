@@ -32,7 +32,7 @@ const BusinessIntelligenceDashboards = () => {
       heroDescription="Turn raw data into powerful insights with interactive dashboards and real-time reporting solutions. Transform your business intelligence with advanced analytics, interactive dashboards, and real-time reporting capabilities."
       heroButtonText="BI Solutions"
       heroButtonLink="/contact"
-      heroBackgroundImage="/Data-&-Analytics.webp"
+      heroBackgroundImage="/Business-Intelligence.webp"
       heroFeatures={[
         "Interactive Dashboards",
         "Real-time Reporting",

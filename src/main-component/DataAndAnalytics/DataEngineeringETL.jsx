@@ -33,7 +33,7 @@ const DataEngineeringETL = () => {
       heroDescription="Build and streamline trusted data pipelines with scalable ETL processes and data quality management. Transform your data engineering with robust ETL pipelines, data quality management, and scalable architecture."
       heroButtonText="Data Engineering"
       heroButtonLink="/contact"
-      heroBackgroundImage="/Data-&-Analytics.webp"
+      heroBackgroundImage="/Data-Engineering.webp"
       heroFeatures={[
         "ETL Pipeline Development",
         "Data Quality Management",

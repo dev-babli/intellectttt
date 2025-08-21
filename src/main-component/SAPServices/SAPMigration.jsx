@@ -88,7 +88,7 @@ const SAPMigration = () => {
             subtitle="Unlock the Power of Intelligent Automation with Our Expertise in SAP AMS and Managed Support Services."
             buttonText="TALK TO OUR EXPERTS"
             buttonLink="#contact"
-            backgroundImage="/SAP.webp"
+            backgroundImage="/sapmanagsprt.webp"
           />
           <CssBaseline />
           <FeaturesSection features={features} />

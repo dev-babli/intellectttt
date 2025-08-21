@@ -1710,8 +1710,8 @@ const menuData = {
         items: [
           "IT Staff Augmentation",
         ],
-        hasDropdown: true,
-        url: "/service/talent-solutions",
+        hasDropdown: false,
+        url: "/service/talent-solutions/staffing",
         services: [
           {
             name: "IT Staff Augmentation",
@@ -4494,6 +4494,8 @@ function MegaMenuIntellectt() {
                       "Global Presence",
                     ].includes(item.title)
                       ? undefined
+                      : item.hasDropdown === false && item.url
+                      ? () => handleNavigation(item.url)
                       : () => toggleMegaMenuSection(menuName, item.title)
                   }
                   style={
@@ -4503,6 +4505,8 @@ function MegaMenuIntellectt() {
                       "Global Presence",
                     ].includes(item.title)
                       ? { cursor: "default" }
+                      : item.hasDropdown === false && item.url
+                      ? { cursor: "pointer" }
                       : {}
                   }
                 >

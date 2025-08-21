@@ -33,7 +33,7 @@ const EngineeringManufacturingIT = () => {
       heroDescription="Transform manufacturing with Industry 4.0 technologies, IoT integration, and digital twin solutions. Build intelligent factories with advanced automation, real-time monitoring, and data-driven insights."
       heroButtonText="Smart Manufacturing"
       heroButtonLink="/contact"
-      heroBackgroundImage="/Manufacturing-and-Automotive.webp"
+      heroBackgroundImage={null}
       heroTextColor="white"
       heroFeatures={[
         "Industry 4.0",
