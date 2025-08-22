@@ -1,6 +1,21 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
+import { 
+  ArrowForward, 
+  CheckCircle, 
+  Star, 
+  TrendingUp, 
+  People,
+  Security,
+  Speed,
+  Verified,
+  Work,
+  Assignment,
+  SwapHoriz,
+  Receipt,
+  Business
+} from '@mui/icons-material';
 
 const StaffAugmentationDetails = () => {
   const ClickHandler = () => {
@@ -9,400 +24,125 @@ const StaffAugmentationDetails = () => {
 
   return (
     <>
-      {/* Hero Tagline Section */}
-      <section className="hero-section pt-120 pb-80" style={{ 
-        background: 'linear-gradient(135deg, #fafbfc 0%, #f1f5f9 100%)',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        {/* Subtle Deep Blue Accent Overlay */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%)',
-          pointerEvents: 'none'
-        }}></div>
-        {/* Background Pattern */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'url("/images/bg/pattern-dots.png")',
-          opacity: 0.03,
-          backgroundSize: '20px 20px'
-        }}></div>
-        
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="row align-items-center">
-            <div className="col-lg-6">
-              <Fade direction="up" triggerOnce={false} duration={1000}>
-                <div className="sec-title--two">
-                  <h2 className="title" style={{ 
-                    fontSize: '3.5rem', 
-                    fontWeight: '800', 
-                    color: '#0f172a',
-                    lineHeight: '1.1',
-                    marginBottom: '1.5rem',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.05)'
-                  }}>
-                    Build Smarter, Faster, Stronger Teams
-                  </h2>
-                  <p className="content" style={{ 
-                    fontSize: '1.3rem', 
-                    color: '#475569',
-                    lineHeight: '1.6',
-                    fontWeight: '500',
-                    marginBottom: '2rem'
-                  }}>
-                    with Intellectt's Global Staff Augmentation Model
-                  </p>
-                  <div style={{
-                    display: 'flex',
-                    gap: '20px',
-                    flexWrap: 'wrap'
-                  }}>
-                    <div style={{
-                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
-                      color: '#374151',
-                      padding: '15px 25px',
-                      borderRadius: '12px',
-                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)',
-                      fontWeight: '600',
-                      border: '1px solid rgba(30, 58, 138, 0.2)'
-                    }}>
-                      ✓ Pre-vetted Talent
-                    </div>
-                    <div style={{
-                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
-                      color: '#374151',
-                      padding: '15px 25px',
-                      borderRadius: '12px',
-                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)',
-                      fontWeight: '600',
-                      border: '1px solid rgba(30, 58, 138, 0.2)'
-                    }}>
-                      ✓ Flexible Scaling
-                    </div>
-                  </div>
-                </div>
-              </Fade>
-            </div>
-            <div className="col-lg-6">
-              <Fade direction="right" triggerOnce={false} duration={1400}>
-                <div style={{ textAlign: 'center' }}>
-                  <img 
-                    src="/herosectionimages/New ONES/7.webp" 
-                    alt="Team Collaboration" 
-                    style={{ 
-                      borderRadius: '25px', 
-                      boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
-                      width: '100%',
-                      maxWidth: '500px',
-                      height: 'auto'
-                    }} 
-                  />
-                </div>
-              </Fade>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* About Section - Staff Augmentation Model */}
-      <section className="about pt-60 pb-100">
+
+      {/* Modern About Section */}
+      <section style={{
+        background: 'white',
+        padding: '6rem 0'
+      }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
               <Fade direction="up" triggerOnce={false} duration={1000}>
-                <div className="sec-title--two sec-title--three">
-                  <div className="sub-title">
-                    <span>Our Model</span>
+                <div>
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    background: 'rgba(59, 130, 246, 0.1)',
+                    color: '#1d4ed8',
+                    padding: '8px 16px',
+                    borderRadius: '50px',
+                    marginBottom: '1rem',
+                    fontSize: '0.9rem',
+                    fontWeight: '600'
+                  }}>
+                    Our Model
                   </div>
-                  <h2 className="title">Staff Augmentation</h2>
-                  <p className="content">
+                  
+                  <h2 style={{
+                    fontSize: '3rem',
+                    fontWeight: '800',
+                    color: '#1e293b',
+                    marginBottom: '1.5rem'
+                  }}>
+                    Staff Augmentation
+                  </h2>
+                  
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#64748b',
+                    lineHeight: '1.7',
+                    marginBottom: '1.5rem'
+                  }}>
                     At Intellectt, we understand that organizations need flexibility and speed when building teams. Our Staff Augmentation services provide highly skilled professionals who integrate seamlessly into your in-house teams, giving you the agility to scale up or down as business needs evolve.
                   </p>
-                  <p className="content">
+                  
+                  <p style={{
+                    fontSize: '1.1rem',
+                    color: '#64748b',
+                    lineHeight: '1.7',
+                    marginBottom: '2rem'
+                  }}>
                     Unlike traditional outsourcing, our model ensures that you retain full control of your projects, while we take care of sourcing, screening, and onboarding the right talent.
                   </p>
+                  
+                  <button style={{
+                    background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+                    color: 'white',
+                    border: 'none',
+                    padding: '16px 32px',
+                    borderRadius: '12px',
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 8px 25px rgba(59, 130, 246, 0.3)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 12px 35px rgba(59, 130, 246, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.3)';
+                  }}>
+                    Find Specialized Talent
+                    <ArrowForward style={{ marginLeft: '8px', fontSize: '1.2rem' }} />
+                  </button>
                 </div>
               </Fade>
             </div>
             <div className="col-lg-6">
               <Fade direction="right" triggerOnce={false} duration={1400}>
-                <div className="about-right">
-                  <div className="xb-img">
-                    <img src="/herosectionimages/engineers-brainstorming-ways-use-ai.jpg" alt="Team Collaboration" style={{ 
+                <div style={{ position: 'relative' }}>
+                  <img 
+                    src="/herosectionimages/engineers-brainstorming-ways-use-ai.jpg" 
+                    alt="Team Collaboration" 
+                    style={{ 
                       borderRadius: '20px', 
-                      boxShadow: '0 15px 40px rgba(0,0,0,0.15)',
                       width: '100%',
                       height: '400px',
-                      objectFit: 'cover'
-                    }} />
-                  </div>
-                  <div className="xb-content" style={{ 
-                    background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)', 
-                    borderRadius: '20px', 
-                    padding: '30px', 
-                    boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)', 
-                    border: '1px solid rgba(30, 58, 138, 0.2)',
-                    marginTop: '-60px',
-                    marginLeft: '30px',
-                    position: 'relative',
-                    zIndex: 2,
-                    backdropFilter: 'blur(10px)'
+                      objectFit: 'cover',
+                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)'
+                    }} 
+                  />
+                  
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '-30px',
+                    right: '-30px',
+                    background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+                    borderRadius: '20px',
+                    padding: '2rem',
+                    color: 'white',
+                    boxShadow: '0 20px 40px rgba(59, 130, 246, 0.3)',
+                    textAlign: 'center',
+                    minWidth: '200px'
                   }}>
-                    <div className="xb-item--inner">
-                      <h3 className="xb-item--number" style={{ color: '#1e3a8a', fontSize: '3.5rem', fontWeight: '800', marginBottom: '10px', textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>100%</h3>
-                      <span className="xb-item--content" style={{ color: '#64748b', fontWeight: '600', fontSize: '1.2rem' }}>Project Control Retained</span>
-                    </div>
-                  </div>
-                </div>
-              </Fade>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="feature pt-150 pb-150" style={{ 
-        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(59, 130, 246, 0.01) 100%)'
-      }}>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-8 col-lg-10">
-              <Fade direction="up" triggerOnce={false} duration={1000}>
-                <div className="sec-title--two text-center mb-70">
-                  <h2 className="title">Our Augmentation Model</h2>
-                  <p className="content">We follow a clear, proven process to ensure efficiency and reliability:</p>
-                </div>
-              </Fade>
-            </div>
-          </div>
-          
-          <div className="row mt-none-30">
-            <div className="col-lg-3 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={100}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(30, 58, 138, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(30, 58, 138, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '90px', 
-                    height: '90px', 
-                    background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)', 
-                    borderRadius: '22px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)',
-                    position: 'relative',
-                    border: '1px solid rgba(30, 58, 138, 0.2)'
-                  }}>
-                    <span style={{ color: '#1e3a8a', fontSize: '2.5rem', fontWeight: '800' }}>1</span>
-                  </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.3rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>Requirement Analysis</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>Understanding your project scope, skills, and timelines.</p>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-3 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={200}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(100, 116, 139, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(30, 58, 138, 0.15)';
-                  e.currentTarget.style.border = '1px solid rgba(30, 58, 138, 0.2)';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                  e.currentTarget.style.border = '1px solid rgba(100, 116, 139, 0.1)';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '90px', 
-                    height: '90px', 
-                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
-                    borderRadius: '22px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 12px 35px rgba(100, 116, 139, 0.2)',
-                    position: 'relative'
-                  }}>
-                    <span style={{ color: 'white', fontSize: '2.5rem', fontWeight: '800' }}>2</span>
-                  </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.3rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>Talent Identification & Screening</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>Pre-vetted professionals shortlisted for technical and cultural fit.</p>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-3 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={300}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '90px', 
-                    height: '90px', 
-                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
-                    borderRadius: '22px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 12px 35px rgba(100, 116, 139, 0.2)',
-                    position: 'relative'
-                  }}>
-                    <span style={{ color: 'white', fontSize: '2.5rem', fontWeight: '800' }}>3</span>
-                  </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.3rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>Onboarding & Integration</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>Quick onboarding to ensure minimal downtime.</p>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-3 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={400}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '90px', 
-                    height: '90px', 
-                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
-                    borderRadius: '22px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 12px 35px rgba(100, 116, 139, 0.2)',
-                    position: 'relative'
-                  }}>
-                    <span style={{ color: 'white', fontSize: '2.5rem', fontWeight: '800' }}>4</span>
-                  </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.3rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>Ongoing Support & Flexibility</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>Continuous support with the ability to scale resources up or down.</p>
-                </div>
-              </Fade>
-            </div>
-          </div>
-          
-          <div className="row justify-content-center mt-70">
-            <div className="col-lg-8">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={500}>
-                <div className="text-center">
-                  <div style={{ 
-                    background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)', 
-                    color: '#374151',
-                    padding: '30px',
-                    borderRadius: '15px',
-                    display: 'inline-block',
-                    boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)',
-                    border: '1px solid rgba(30, 58, 138, 0.2)'
-                  }}>
-                    <p style={{ fontSize: '1.1rem', fontWeight: '600', fontStyle: 'italic', margin: 0 }}>
-                      This approach reduces hiring time, optimizes costs, and ensures continuity in delivery.
+                    <h3 style={{
+                      fontSize: '3rem',
+                      fontWeight: '800',
+                      marginBottom: '0.5rem'
+                    }}>
+                      100%
+                    </h3>
+                    <p style={{
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      opacity: 0.9
+                    }}>
+                      Project Control Retained
                     </p>
                   </div>
                 </div>
@@ -412,773 +152,568 @@ const StaffAugmentationDetails = () => {
         </div>
       </section>
 
-      {/* Types of Augmentation Section */}
-      <section className="about pt-60 pb-100" style={{ 
-        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(59, 130, 246, 0.01) 100%)'
+      {/* Modern Process Section */}
+      <section style={{
+        background: 'white',
+        padding: '6rem 0'
       }}>
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-8 col-lg-10">
-              <Fade direction="up" triggerOnce={false} duration={1000}>
-                <div className="sec-title--two text-center mb-70">
-                  <h2 className="title">Types of Augmentation</h2>
-                </div>
-              </Fade>
-            </div>
+          <div className="text-center mb-5">
+            <h2 style={{
+              fontSize: '3rem',
+              fontWeight: '800',
+              color: '#1e293b',
+              marginBottom: '1rem'
+            }}>
+              Our Augmentation Model
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#64748b',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              We follow a clear, proven process to ensure efficiency and reliability
+            </p>
           </div>
           
-          <div className="row mt-none-30">
-            <div className="col-lg-4 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={100}>
-                <div className="augmentation-card" style={{ 
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="card-image" style={{ marginBottom: '25px', position: 'relative' }}>
-                    <img src="/herosectionimages/New ONES/1.webp" alt="Onshore Augmentation" style={{ 
-                      borderRadius: '15px', 
-                      boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
-                      width: '100%',
-                      height: '200px',
-                      objectFit: 'cover',
-                      display: 'block'
-                    }} />
-                  </div>
-                  <div className="card-content">
-                                      <h3 style={{ 
-                    color: '#374151', 
-                    fontSize: '1.5rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px',
+          <div className="row">
+            {[
+              {
+                number: '1',
+                title: 'Requirement Analysis',
+                description: 'Understanding your project scope, skills, and timelines.',
+                icon: <TrendingUp style={{ fontSize: '2rem' }} />
+              },
+              {
+                number: '2',
+                title: 'Talent Identification & Screening',
+                description: 'Pre-vetted professionals shortlisted for technical and cultural fit.',
+                icon: <People style={{ fontSize: '2rem' }} />
+              },
+              {
+                number: '3',
+                title: 'Onboarding & Integration',
+                description: 'Quick onboarding to ensure minimal downtime.',
+                icon: <Speed style={{ fontSize: '2rem' }} />
+              },
+              {
+                number: '4',
+                title: 'Ongoing Support & Flexibility',
+                description: 'Continuous support with the ability to scale resources up or down.',
+                icon: <Verified style={{ fontSize: '2rem' }} />
+              }
+            ].map((step, index) => (
+              <div className="col-lg-3 col-md-6 mb-4" key={index}>
+                <Fade direction="up" triggerOnce={false} duration={1000} delay={index * 100}>
+                  <div style={{
+                    background: 'white',
+                    borderRadius: '20px',
+                    padding: '2.5rem 2rem',
+                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+                    border: '1px solid rgba(0, 0, 0, 0.05)',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer',
                     textAlign: 'center',
-                    lineHeight: '1.2'
-                  }}>Onshore Augmentation</h3>
-                  <p style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6', 
-                    marginBottom: '20px',
-                    textAlign: 'center',
-                    fontSize: '1rem'
-                  }}>Resources placed within your region for real-time collaboration and compliance.</p>
-                  <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%)',
-                      border: '1px solid rgba(30, 58, 138, 0.1)'
+                    height: '400px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+                  }}>
+                    <div style={{
+                      width: '80px',
+                      height: '80px',
+                      background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+                      borderRadius: '20px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 1.5rem',
+                      color: 'white'
                     }}>
-                      <span style={{ color: '#1e3a8a', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Real-time collaboration</span>
-                    </li>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'rgba(100, 116, 139, 0.05)',
-                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                      {step.icon}
+                    </div>
+                    
+                    <div style={{
+                      width: '40px',
+                      height: '40px',
+                      background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 1rem',
+                      color: 'white',
+                      fontSize: '1.2rem',
+                      fontWeight: '800'
                     }}>
-                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Local compliance</span>
-                    </li>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'rgba(100, 116, 139, 0.05)',
-                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                      {step.number}
+                    </div>
+                    
+                    <h3 style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#1e293b',
+                      marginBottom: '1rem'
                     }}>
-                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Direct oversight</span>
-                    </li>
-                  </ul>
+                      {step.title}
+                    </h3>
+                    
+                    <p style={{
+                      color: '#64748b',
+                      lineHeight: '1.6',
+                      fontSize: '1rem'
+                    }}>
+                      {step.description}
+                    </p>
                   </div>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-4 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={200}>
-                <div className="augmentation-card" style={{ 
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="card-image" style={{ marginBottom: '25px', position: 'relative' }}>
-                    <img src="/herosectionimages/New ONES/2.webp" alt="Offshore Augmentation" style={{ 
-                      borderRadius: '15px', 
-                      boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
-                      width: '100%',
-                      height: '200px',
-                      objectFit: 'cover',
-                      display: 'block'
-                    }} />
-                  </div>
-                  <div className="card-content">
-                                      <h3 style={{ 
-                    color: '#374151', 
-                    fontSize: '1.5rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px',
-                    textAlign: 'center',
-                    lineHeight: '1.2'
-                  }}>Offshore Augmentation</h3>
-                  <p style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6', 
-                    marginBottom: '20px',
-                    textAlign: 'center',
-                    fontSize: '1rem'
-                  }}>Skilled professionals from global locations for cost efficiency and round-the-clock delivery.</p>
-                  <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'rgba(100, 116, 139, 0.05)',
-                      border: '1px solid rgba(100, 116, 139, 0.1)'
-                    }}>
-                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Cost efficiency</span>
-                    </li>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'rgba(100, 116, 139, 0.05)',
-                      border: '1px solid rgba(100, 116, 139, 0.1)'
-                    }}>
-                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Round-the-clock delivery</span>
-                    </li>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'rgba(100, 116, 139, 0.05)',
-                      border: '1px solid rgba(100, 116, 139, 0.1)'
-                    }}>
-                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Global talent pool</span>
-                    </li>
-                  </ul>
-                  </div>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-4 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={300}>
-                <div className="augmentation-card" style={{ 
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="card-image" style={{ marginBottom: '25px', position: 'relative' }}>
-                    <img src="/herosectionimages/New ONES/3.webp" alt="Hybrid Model" style={{ 
-                      borderRadius: '15px', 
-                      boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
-                      width: '100%',
-                      height: '200px',
-                      objectFit: 'cover',
-                      display: 'block'
-                    }} />
-                  </div>
-                  <div className="card-content">
-                                      <h3 style={{ 
-                    color: '#374151', 
-                    fontSize: '1.5rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px',
-                    textAlign: 'center',
-                    lineHeight: '1.2'
-                  }}>Hybrid Model</h3>
-                  <p style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6', 
-                    marginBottom: '20px',
-                    textAlign: 'center',
-                    fontSize: '1rem'
-                  }}>A blend of onshore and offshore teams, balancing cost, quality, and collaboration.</p>
-                  <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'rgba(100, 116, 139, 0.05)',
-                      border: '1px solid rgba(100, 116, 139, 0.1)'
-                    }}>
-                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Cost optimization</span>
-                    </li>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'rgba(100, 116, 139, 0.05)',
-                      border: '1px solid rgba(100, 116, 139, 0.1)'
-                    }}>
-                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Quality balance</span>
-                    </li>
-                    <li style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      marginBottom: '12px',
-                      padding: '8px 12px',
-                      borderRadius: '8px',
-                      background: 'rgba(100, 116, 139, 0.05)',
-                      border: '1px solid rgba(100, 116, 139, 0.1)'
-                    }}>
-                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                      <span style={{ color: '#475569', fontWeight: '500' }}>Flexible collaboration</span>
-                    </li>
-                  </ul>
-                  </div>
-                </div>
-              </Fade>
+                </Fade>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-5">
+            <div style={{
+              background: 'white',
+              color: '#1e293b',
+              padding: '2rem',
+              borderRadius: '20px',
+              display: 'inline-block',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+              border: '1px solid rgba(0, 0, 0, 0.05)',
+              maxWidth: '600px'
+            }}>
+              <p style={{
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                fontStyle: 'italic',
+                margin: 0,
+                color: '#64748b'
+              }}>
+                This approach reduces hiring time, optimizes costs, and ensures continuity in delivery.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Engagement Models Section */}
-      <section className="feature pt-150 pb-150" style={{ 
-        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(59, 130, 246, 0.01) 100%)'
+      {/* Modern Types of Augmentation Section */}
+      <section style={{
+        background: 'white',
+        padding: '6rem 0'
       }}>
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-8 col-lg-10">
-              <Fade direction="up" triggerOnce={false} duration={1000}>
-                <div className="sec-title--two text-center mb-70">
-                  <h2 className="title">Flexible Engagement Models</h2>
-                  <p className="content">We provide flexible engagement models to suit your business needs:</p>
-                </div>
-              </Fade>
-            </div>
+          <div className="text-center mb-5">
+            <h2 style={{
+              fontSize: '3rem',
+              fontWeight: '800',
+              color: '#1e293b',
+              marginBottom: '1rem'
+            }}>
+              Types of Augmentation
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#64748b',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              Choose the model that best fits your business needs and requirements
+            </p>
           </div>
           
-          <div className="row mt-none-30">
-            <div className="col-lg-4 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={100}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(30, 58, 138, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(30, 58, 138, 0.15)';
-                  e.currentTarget.style.border = '1px solid rgba(30, 58, 138, 0.2)';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                  e.currentTarget.style.border = '1px solid rgba(30, 58, 138, 0.1)';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '70px', 
-                    height: '70px', 
-                    background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)', 
-                    borderRadius: '18px',
+          <div className="row">
+                         {[
+               {
+                 title: 'Onshore Augmentation',
+                 description: 'Resources placed within your region for real-time collaboration and compliance.',
+                 image: '/meeting-mature-office-showing-presenter.jpg',
+                 features: ['Real-time collaboration', 'Local compliance', 'Direct oversight'],
+                 color: '#3b82f6'
+               },
+               {
+                 title: 'Offshore Augmentation',
+                 description: 'Skilled professionals from global locations for cost efficiency and round-the-clock delivery.',
+                 image: '/global.jpg',
+                 features: ['Cost efficiency', 'Round-the-clock delivery', 'Global talent pool'],
+                 color: '#10b981'
+               },
+               {
+                 title: 'Hybrid Model',
+                 description: 'A blend of onshore and offshore teams, balancing cost, quality, and collaboration.',
+                 image: '/aerial-view-business-team.jpg',
+                 features: ['Cost optimization', 'Quality balance', 'Flexible collaboration'],
+                 color: '#8b5cf6'
+               }
+             ].map((type, index) => (
+              <div className="col-lg-4 col-md-6 mb-4" key={index}>
+                <Fade direction="up" triggerOnce={false} duration={1000} delay={index * 100}>
+                  <div style={{
+                    background: 'white',
+                    borderRadius: '20px',
+                    padding: '0',
+                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+                    border: '1px solid rgba(0, 0, 0, 0.05)',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer',
+                    overflow: 'hidden',
+                    height: '550px',
                     display: 'flex',
+                    flexDirection: 'column'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+                  }}>
+                    <img 
+                      src={type.image} 
+                      alt={type.title} 
+                      style={{ 
+                        width: '100%',
+                        height: '250px',
+                        objectFit: 'cover',
+                        flexShrink: 0
+                      }} 
+                    />
+                    
+                    <div style={{ 
+                      padding: '2rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      flex: 1,
+                      justifyContent: 'space-between',
+                      height: '100%'
+                    }}>
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{
+                          fontSize: '1.5rem',
+                          fontWeight: '700',
+                          color: '#1e293b',
+                          marginBottom: '1rem',
+                          textAlign: 'center'
+                        }}>
+                          {type.title}
+                        </h3>
+                        
+                        <p style={{
+                          color: '#64748b',
+                          lineHeight: '1.6',
+                          marginBottom: '1.5rem',
+                          textAlign: 'center',
+                          fontSize: '1rem'
+                        }}>
+                          {type.description}
+                        </p>
+                      </div>
+                      
+                      <div style={{ flex: 1 }}>
+                        {type.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            marginBottom: '0.75rem',
+                            padding: '0.5rem',
+                            borderRadius: '8px',
+                            background: 'rgba(59, 130, 246, 0.05)'
+                          }}>
+                            <CheckCircle style={{
+                              color: type.color,
+                              fontSize: '1.2rem',
+                              marginRight: '0.75rem',
+                              flexShrink: 0
+                            }} />
+                            <span style={{
+                              color: '#475569',
+                              fontWeight: '500',
+                              fontSize: '0.95rem'
+                            }}>
+                              {feature}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </Fade>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Modern Engagement Models Section */}
+      <section style={{
+        background: 'white',
+        padding: '6rem 0'
+      }}>
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 style={{
+              fontSize: '3rem',
+              fontWeight: '800',
+              color: '#1e293b',
+              marginBottom: '1rem'
+            }}>
+              Flexible Engagement Models
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              color: '#64748b',
+              maxWidth: '600px',
+              margin: '0 auto'
+            }}>
+              We provide flexible engagement models to suit your business needs
+            </p>
+          </div>
+          
+          <div className="row">
+                         {[
+               {
+                 title: 'Full-Time (FTE)',
+                 description: 'Long-term dedicated resources for sustained projects.',
+                 icon: <Work style={{ fontSize: '2.5rem' }} />,
+                 color: '#3b82f6'
+               },
+               {
+                 title: 'Contract',
+                 description: 'Short-term professionals for specific project requirements.',
+                 icon: <Assignment style={{ fontSize: '2.5rem' }} />,
+                 color: '#10b981'
+               },
+               {
+                 title: 'Contract-to-Hire (C2H)',
+                 description: 'Flexibility to evaluate performance before converting to full-time.',
+                 icon: <SwapHoriz style={{ fontSize: '2.5rem' }} />,
+                 color: '#f59e0b'
+               },
+               {
+                 title: 'W2/1099 Models',
+                 description: 'U.S.-compliant payroll and tax engagement structures.',
+                 icon: <Receipt style={{ fontSize: '2.5rem' }} />,
+                 color: '#8b5cf6'
+               },
+               {
+                 title: 'Corp-to-Corp (C2C)',
+                 description: 'Engagement with incorporated vendors/partners for resource deployment under corporate agreements.',
+                 icon: <Business style={{ fontSize: '2.5rem' }} />,
+                 color: '#ef4444'
+               },
+               {
+                 title: 'Project-Based',
+                 description: 'Fixed-scope engagements for specific project deliverables and milestones.',
+                 icon: <Assignment style={{ fontSize: '2.5rem' }} />,
+                 color: '#06b6d4'
+               }
+             ].map((model, index) => (
+              <div className="col-lg-4 col-md-6 mb-4" key={index}>
+                <Fade direction="up" triggerOnce={false} duration={1000} delay={index * 100}>
+                  <div style={{
+                    background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                    borderRadius: '25px',
+                    padding: '3rem 2rem',
+                    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.08)',
+                    border: '1px solid rgba(0, 0, 0, 0.03)',
+                    transition: 'all 0.4s ease',
+                    cursor: 'pointer',
+                    textAlign: 'center',
+                    height: '350px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)',
                     position: 'relative',
-                    border: '1px solid rgba(30, 58, 138, 0.2)'
+                    overflow: 'hidden'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
                   }}>
-                    <span style={{ color: '#1e3a8a', fontSize: '1.8rem', fontWeight: '800' }}>FTE</span>
+                    <div style={{
+                      width: '100px',
+                      height: '100px',
+                      background: `linear-gradient(135deg, ${model.color} 0%, ${model.color}dd 100%)`,
+                      borderRadius: '25px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 2rem',
+                      color: 'white',
+                      fontSize: '2.2rem',
+                      fontWeight: '800',
+                      boxShadow: `0 15px 35px ${model.color}40`,
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}>
+                      <div style={{
+                        position: 'absolute',
+                        top: '-50%',
+                        left: '-50%',
+                        width: '200%',
+                        height: '200%',
+                        background: `radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)`,
+                        transform: 'rotate(45deg)'
+                      }}></div>
+                      {model.icon}
+                    </div>
+                    
+                    <h3 style={{
+                      fontSize: '1.4rem',
+                      fontWeight: '700',
+                      color: '#1e293b',
+                      marginBottom: '1rem'
+                    }}>
+                      {model.title}
+                    </h3>
+                    
+                    <p style={{
+                      color: '#64748b',
+                      lineHeight: '1.6',
+                      fontSize: '1rem'
+                    }}>
+                      {model.description}
+                    </p>
                   </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.4rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>Full-Time (FTE)</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>Long-term dedicated resources for sustained projects.</p>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-4 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={200}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '70px', 
-                    height: '70px', 
-                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
-                    borderRadius: '18px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(100, 116, 139, 0.2)',
-                    position: 'relative'
-                  }}>
-                    <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>C</span>
-                  </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.4rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>Contract</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>Short-term professionals for specific project requirements.</p>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-4 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={300}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '70px', 
-                    height: '70px', 
-                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
-                    borderRadius: '18px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(100, 116, 139, 0.2)',
-                    position: 'relative'
-                  }}>
-                    <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>C2H</span>
-                  </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.4rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>Contract-to-Hire (C2H)</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>Flexibility to evaluate performance before converting to full-time.</p>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-4 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={400}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '70px', 
-                    height: '70px', 
-                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
-                    borderRadius: '18px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(100, 116, 139, 0.2)',
-                    position: 'relative'
-                  }}>
-                    <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>W2</span>
-                  </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.4rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>W2/1099 Models</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>U.S.-compliant payroll and tax engagement structures.</p>
-                </div>
-              </Fade>
-            </div>
-            
-            <div className="col-lg-4 col-md-6 mt-30">
-              <Fade direction="up" triggerOnce={false} duration={1000} delay={500}>
-                <div className="feature-item text-center" style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                  borderRadius: '20px',
-                  padding: '30px',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-                }}>
-                  <div className="xb-item--icon" style={{ 
-                    width: '70px', 
-                    height: '70px', 
-                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
-                    borderRadius: '18px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(100, 116, 139, 0.2)',
-                    position: 'relative'
-                  }}>
-                    <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>C2C</span>
-                  </div>
-                  <h3 className="xb-item--title" style={{ 
-                    color: '#374151', 
-                    fontSize: '1.4rem', 
-                    fontWeight: '700', 
-                    marginBottom: '15px'
-                  }}>Corp-to-Corp (C2C)</h3>
-                  <p className="xb-item--content" style={{ 
-                    color: '#64748b', 
-                    lineHeight: '1.6',
-                    fontSize: '1rem'
-                  }}>Engagement with incorporated vendors/partners for resource deployment under corporate agreements.</p>
-                </div>
-              </Fade>
-            </div>
+                </Fade>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Intellectt Section with Parallax */}
-      <section className="cta-section pt-120 pb-120" style={{ 
+      {/* Modern Why Intellectt Section */}
+      <section style={{
         background: `url("/herosectionimages/New ONES/8.webp")`,
-        backgroundSize: 'auto',
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
-        backgroundRepeat: 'no-repeat',
         color: 'white',
         position: 'relative',
         overflow: 'hidden',
-        minHeight: '600px',
+        minHeight: '450px',
         display: 'flex',
         alignItems: 'center'
       }}>
-        {/* Overlay Pattern */}
+        {/* Overlay */}
         <div style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'url("/images/bg/pattern-dots.png")',
-          opacity: 0.1,
-          backgroundSize: '20px 20px',
-          pointerEvents: 'none'
-        }}></div>
-        
-        {/* Animated Background Elements */}
-        <div style={{
-          position: 'absolute',
-          top: '10%',
-          right: '10%',
-          width: '200px',
-          height: '200px',
-          background: 'rgba(255,255,255,0.1)',
-          borderRadius: '50%',
-          animation: 'float 6s ease-in-out infinite',
-          pointerEvents: 'none'
-        }}></div>
-        
-        <div style={{
-          position: 'absolute',
-          bottom: '20%',
-          left: '5%',
-          width: '150px',
-          height: '150px',
-          background: 'rgba(255,255,255,0.05)',
-          borderRadius: '50%',
-          animation: 'float 8s ease-in-out infinite reverse',
-          pointerEvents: 'none'
+          background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.5) 100%)'
         }}></div>
         
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div className="row align-items-center">
             <div className="col-lg-8 col-md-10">
               <Fade direction="left" triggerOnce={false} duration={1000}>
-                <div style={{ textAlign: 'left' }}>
-                  <div style={{
-                    width: '80px',
-                    height: '80px',
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%)',
-                    borderRadius: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '2rem',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255,255,255,0.3)',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
-                  }}>
-                    <span style={{ color: 'white', fontSize: '2.5rem', fontWeight: '700' }}>↑</span>
-                  </div>
-                  
-                  <h2 style={{ 
-                    fontSize: '3.5rem', 
-                    fontWeight: '800', 
-                    marginBottom: '2rem',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                    lineHeight: '1.1',
-                    color: 'white'
+                <div>
+                  <h2 style={{
+                    fontSize: '2.8rem',
+                    fontWeight: '800',
+                    marginBottom: '1.5rem',
+                    lineHeight: '1.2',
+                    color: 'white',
+                    textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                    letterSpacing: '-0.01em'
                   }}>
                     Why Intellectt
                   </h2>
                   
-                  <p style={{ 
-                    fontSize: '1.3rem', 
-                    lineHeight: '1.8', 
-                    opacity: 0.95,
-                    maxWidth: '700px',
-                    marginBottom: '2.5rem',
-                    fontWeight: '500',
-                    textShadow: '0 1px 2px rgba(0,0,0,0.2)'
+                  <p style={{
+                    fontSize: '1.1rem',
+                    lineHeight: '1.6',
+                    color: 'white',
+                    maxWidth: '600px',
+                    marginBottom: '2rem',
+                    fontWeight: '400',
+                    textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)',
+                    letterSpacing: '0.005em',
+                    opacity: 0.95
                   }}>
                     With Intellectt, you gain the right talent at the right time—without the overhead of lengthy recruitment cycles. Whether you need onshore presence, offshore scalability, or a hybrid approach, our Staff Augmentation model ensures flexibility, cost-effectiveness, and direct control over outcomes.
                   </p>
                   
                   <div style={{
                     display: 'flex',
-                    gap: '20px',
+                    gap: '0.75rem',
                     flexWrap: 'wrap',
-                    marginBottom: '2rem'
+                    marginBottom: '1.5rem'
                   }}>
-                    <div style={{
-                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
-                      color: 'white',
-                      padding: '12px 20px',
-                      borderRadius: '25px',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(30, 58, 138, 0.2)',
-                      fontWeight: '600',
-                      fontSize: '0.95rem',
-                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)'
-                    }}>
-                      ✓ Pre-vetted Professionals
-                    </div>
-                    <div style={{
-                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
-                      color: 'white',
-                      padding: '12px 20px',
-                      borderRadius: '25px',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(30, 58, 138, 0.2)',
-                      fontWeight: '600',
-                      fontSize: '0.95rem',
-                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)'
-                    }}>
-                      ✓ Flexible Scaling
-                    </div>
-                    <div style={{
-                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
-                      color: 'white',
-                      padding: '12px 20px',
-                      borderRadius: '25px',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(30, 58, 138, 0.2)',
-                      fontWeight: '600',
-                      fontSize: '0.95rem',
-                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)'
-                    }}>
-                      ✓ Cost-Effective
-                    </div>
-                    <div style={{
-                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
-                      color: 'white',
-                      padding: '12px 20px',
-                      borderRadius: '25px',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(30, 58, 138, 0.2)',
-                      fontWeight: '600',
-                      fontSize: '0.95rem',
-                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)'
-                    }}>
-                      ✓ Global Expertise
-                    </div>
+                    {[
+                      'Pre-vetted Professionals',
+                      'Flexible Scaling',
+                      'Cost-Effective',
+                      'Global Expertise'
+                    ].map((feature, index) => (
+                                              <div key={index} style={{
+                          background: 'rgba(255, 255, 255, 0.1)',
+                          color: 'white',
+                          padding: '10px 16px',
+                          borderRadius: '20px',
+                          backdropFilter: 'blur(10px)',
+                          border: '1px solid rgba(255, 255, 255, 0.2)',
+                          fontWeight: '600',
+                          fontSize: '0.9rem',
+                          display: 'flex',
+                          alignItems: 'center'
+                        }}>
+                          <CheckCircle style={{ fontSize: '1rem', marginRight: '6px' }} />
+                          {feature}
+                        </div>
+                    ))}
                   </div>
                   
-                  <div>
-                                          <Link 
-                        onClick={ClickHandler} 
-                        to="/contact" 
-                        className="thm-btn thm-btn--aso"
-                        style={{
-                          background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                          color: '#64748b',
-                          padding: '15px 35px',
-                          borderRadius: '30px',
-                          textDecoration: 'none',
-                          fontWeight: '700',
-                          fontSize: '1.1rem',
-                          display: 'inline-block',
-                          boxShadow: '0 8px 25px rgba(0,0,0,0.2)',
-                          transition: 'all 0.3s ease',
-                          border: 'none'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.target.style.transform = 'translateY(-2px)';
-                          e.target.style.boxShadow = '0 8px 25px rgba(30, 58, 138, 0.15)';
-                          e.target.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)';
-                          e.target.style.color = '#1e3a8a';
-                          e.target.style.border = '1px solid rgba(30, 58, 138, 0.2)';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.target.style.transform = 'translateY(0)';
-                          e.target.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
-                          e.target.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
-                          e.target.style.color = '#64748b';
-                          e.target.style.border = 'none';
-                        }}
-                      >
-                        Get Started Today →
-                      </Link>
-                  </div>
+                  <Link 
+                    onClick={ClickHandler} 
+                    to="/contact" 
+                    style={{
+                      background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+                      color: 'white',
+                      padding: '16px 32px',
+                      borderRadius: '12px',
+                      textDecoration: 'none',
+                      fontWeight: '700',
+                      fontSize: '1.1rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      boxShadow: '0 8px 25px rgba(59, 130, 246, 0.3)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'translateY(-2px)';
+                      e.target.style.boxShadow = '0 12px 35px rgba(59, 130, 246, 0.4)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'translateY(0)';
+                      e.target.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.3)';
+                    }}
+                  >
+                    Get Started Today
+                    <ArrowForward style={{ marginLeft: '8px', fontSize: '1.2rem' }} />
+                  </Link>
                 </div>
               </Fade>
             </div>
           </div>
         </div>
-        
-        {/* CSS Animation for floating elements */}
-        <style jsx>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-          }
-        `}</style>
       </section>
     </>
   );

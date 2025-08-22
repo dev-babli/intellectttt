@@ -1,14 +1,8 @@
 import React from "react";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../../components/footer/Footer";
-
-// Atomic Components
-import ModernHeroSection from "../../components/common/ModernHeroSection";
-import AtomicProblemSolution from "../../components/ui/AtomicProblemSolution";
-import AtomicServiceOfferings from "../../components/ui/AtomicServiceOfferings";
-import AtomicBenefits from "../../components/ui/AtomicBenefits";
 import StaffAugmentationDetails from "../../components/StaffAugmentationDetails/StaffAugmentationDetails";
-
+import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
 import { 
   Speed, 
   TrendingUp, 
@@ -30,181 +24,181 @@ import {
   People,
   Build,
   Code,
-  Computer
+  Computer,
+  ArrowForward,
+  Star,
+  Verified,
+  Assignment,
+  SwapHoriz,
+  Receipt
 } from '@mui/icons-material';
+import icon1 from '../../images/icon/tp-work-icon01.svg';
+import icon2 from '../../images/icon/tp-work-icon02.svg';
+import icon3 from '../../images/icon/tp-work-icon03.svg';
+import icon4 from '../../images/icon/tp-work-icon04.svg';
+import icon5 from '../../images/icon/tp-work-icon05.svg';
+import icon6 from '../../images/icon/tp-work-icon06.svg';
 
 const ITStaffAugmentation = () => {
   useScrollToTop();
 
   return (
     <>
-      {/* 1. Hero Section */}
-      <ModernHeroSection
-        title="Staff Augmentation"
-        subtitle="Tech Team Scaling"
-        description="Quickly scale your tech teams with vetted IT talent for project-based or long-term needs. Access skilled professionals and accelerate your development with flexible staffing solutions."
-        backgroundImage="/IT-Staff-Augmentation.webp"
-        features={[
+      {/* 1. Staff Augmentation - Hero Section */}
+      <MasterSubServiceTemplate
+        // Hero Section Props
+        heroTitle="Staff Augmentation"
+        heroSubtitle="Tech Team Scaling"
+        heroDescription="Quickly scale your tech teams with vetted IT talent for project-based or long-term needs. Access skilled professionals and accelerate your development with flexible staffing solutions."
+        heroBackgroundImage="/IT-Staff-Augmentation.webp"
+        heroFeatures={[
           "Vetted IT Talent",
           "Quick Scaling",
           "Project-Based Hiring",
           "Flexible Contracts"
         ]}
-        textColor="black"
+        heroTheme="minimal"
+        heroTextColor="black"
+
+        // Disable all other sections from template
+        showProblemSolution={false}
+        showServiceOfferings={false}
+        showBenefits={false}
+        showFooter={false}
       />
 
-      {/* 2. Problem/Solution Section */}
-      <AtomicProblemSolution
-        title="The IT Staffing Challenge & Our Solution"
-        subtitle="We understand the complexities of IT staffing and have the expertise to provide flexible workforce solutions"
-        problems={[
-          {
-            title: "Talent Shortages",
-            description: "Critical shortage of skilled IT professionals that delays projects and impacts business growth and innovation."
-          },
-          {
-            title: "High Hiring Costs",
-            description: "Expensive and time-consuming hiring processes that drain resources and slow down development cycles."
-          },
-          {
-            title: "Scalability Issues",
-            description: "Difficulty scaling teams quickly to meet project demands and changing business requirements."
-          }
-        ]}
-        solutions={[
-          {
-            title: "Vetted IT Talent Pool",
-            description: "Access to pre-vetted, skilled IT professionals ready to contribute to your projects immediately."
-          },
-          {
-            title: "Flexible Staffing Solutions",
-            description: "Flexible staffing options that scale with your project needs and business requirements."
-          },
-          {
-            title: "Rapid Team Scaling",
-            description: "Quick team scaling capabilities that allow you to meet project deadlines and business objectives."
-          }
-        ]}
-        variant="split"
-        theme="minimal"
-      />
-
-      {/* 3. Service Offerings Section */}
-      <AtomicServiceOfferings
-        title="Our IT Staff Augmentation Services"
-        subtitle="Comprehensive IT staffing services designed to scale your tech teams quickly"
-        services={[
-          {
-            icon: <Code />,
-            title: "Development Teams",
-            description: "Full-stack developers, frontend specialists, and backend engineers for your development projects.",
-            features: [
-              "Full-stack developers",
-              "Frontend specialists",
-              "Backend engineers"
-            ],
-            badge: "Most Popular",
-            link: "/contact",
-            ctaText: "Development Teams"
-          },
-          {
-            icon: <Computer />,
-            title: "DevOps Engineers",
-            description: "DevOps specialists and infrastructure engineers for automation and deployment needs.",
-            features: [
-              "DevOps specialists",
-              "Infrastructure engineers",
-              "Automation experts"
-            ],
-            badge: "Trending",
-            link: "/contact",
-            ctaText: "DevOps Engineers"
-          },
-          {
-            icon: <Analytics />,
-            title: "Data Specialists",
-            description: "Data scientists, analysts, and engineers for your data and analytics projects.",
-            features: [
-              "Data scientists",
-              "Data analysts",
-              "Data engineers"
-            ],
-            link: "/contact",
-            ctaText: "Data Specialists"
-          },
-          {
-            icon: <Security />,
-            title: "Security Experts",
-            description: "Cybersecurity specialists and security engineers for your security and compliance needs.",
-            features: [
-              "Cybersecurity specialists",
-              "Security engineers",
-              "Compliance experts"
-            ],
-            link: "/contact",
-            ctaText: "Security Experts"
-          }
-        ]}
-        variant="default"
-        theme="minimal"
-      />
-
-      {/* 4. Benefits Section */}
-      <AtomicBenefits
-        title="Why Choose Our IT Staff Augmentation Services"
-        subtitle="Discover the tangible benefits and outcomes you can expect from our IT staffing solutions"
-        benefits={[
-          {
-            icon: <Speed />,
-            title: "50% Faster Hiring",
-            description: "Reduce hiring time by 50% with our pre-vetted talent pool and streamlined processes.",
-            features: [
-              "Faster hiring",
-              "Pre-vetted talent",
-              "Streamlined processes"
-            ],
-            metric: {
-              value: "50%",
-              label: "Faster Hiring"
-            }
-          },
-          {
-            icon: <TrendingUp />,
-            title: "40% Cost Reduction",
-            description: "Reduce staffing costs by 40% with flexible contracts and optimized resource allocation.",
-            features: [
-              "Cost reduction",
-              "Flexible contracts",
-              "Optimized allocation"
-            ],
-            metric: {
-              value: "40%",
-              label: "Cost Reduction"
-            }
-          },
-          {
-            icon: <CheckCircle />,
-            title: "100% Talent Quality",
-            description: "Ensure 100% talent quality with our rigorous vetting and quality assurance processes.",
-            features: [
-              "Talent quality",
-              "Rigorous vetting",
-              "Quality assurance"
-            ],
-            metric: {
-              value: "100%",
-              label: "Talent Quality"
-            }
-          }
-        ]}
-        variant="default"
-        theme="minimal"
-      />
-
-      {/* 5. Custom Staff Augmentation Details Section */}
+      {/* 2. Our Augmentation Model */}
       <StaffAugmentationDetails />
+
+      {/* 3. Talent Acquisition Challenges & Strategic Solutions - with original icons */}
+      <section style={{ 
+        backgroundColor: '#ffffff', 
+        background: '#ffffff',
+        paddingTop: '50px',
+        paddingBottom: '130px',
+        marginTop: '50px'
+      }}>
+        <div className="container">
+          <div className="sec-title--two text-center mb-60">
+            <h2 className="title">Talent Acquisition Challenges & Strategic Solutions</h2>
+            <p className="subtitle" style={{ 
+              marginTop: '15px', 
+              fontSize: '0.95rem', 
+              color: '#64748b',
+              maxWidth: '400px',
+              margin: '15px auto 0',
+              lineHeight: '1.4',
+              whiteSpace: 'normal',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word'
+            }}>
+              We understand the complexities of IT staffing and have the expertise to provide flexible workforce solutions
+            </p>
+          </div>
+          <div className="tp-work-wrapp">
+            <div className="row mt-none-30">
+              <div className="col-lg-6 mt-30">
+                <div className="tp-work-item">
+                  <div className="xb-item--inner ul_li">
+                    <div className="xb-item--icon">
+                      <img src={icon1} alt="Vetted IT Talent Pool" />
+                    </div>
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--title" style={{ 
+                        fontSize: '1.3rem', 
+                        fontWeight: '700', 
+                        color: '#1e293b',
+                        marginBottom: '10px',
+                        lineHeight: '1.3'
+                      }}>Vetted IT Talent Pool</h3>
+                      <p className="xb-item--content" style={{ 
+                        color: '#64748b', 
+                        lineHeight: '1.6',
+                        fontSize: '1rem',
+                        margin: 0
+                      }}>Access to pre-vetted, skilled IT professionals ready to contribute to your projects immediately.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 mt-30">
+                <div className="tp-work-item">
+                  <div className="xb-item--inner ul_li">
+                    <div className="xb-item--icon">
+                      <img src={icon2} alt="Flexible Staffing Solutions" />
+                    </div>
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--title" style={{ 
+                        fontSize: '1.3rem', 
+                        fontWeight: '700', 
+                        color: '#1e293b',
+                        marginBottom: '10px',
+                        lineHeight: '1.3'
+                      }}>Flexible Staffing Solutions</h3>
+                      <p className="xb-item--content" style={{ 
+                        color: '#64748b', 
+                        lineHeight: '1.6',
+                        fontSize: '1rem',
+                        margin: 0
+                      }}>Flexible staffing options that scale with your project needs and business requirements.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 mt-30">
+                <div className="tp-work-item">
+                  <div className="xb-item--inner ul_li">
+                    <div className="xb-item--icon">
+                      <img src={icon3} alt="Rapid Team Scaling" />
+                    </div>
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--title" style={{ 
+                        fontSize: '1.3rem', 
+                        fontWeight: '700', 
+                        color: '#1e293b',
+                        marginBottom: '10px',
+                        lineHeight: '1.3'
+                      }}>Rapid Team Scaling</h3>
+                      <p className="xb-item--content" style={{ 
+                        color: '#64748b', 
+                        lineHeight: '1.6',
+                        fontSize: '1rem',
+                        margin: 0
+                      }}>Quick team scaling capabilities that allow you to meet project deadlines and business objectives.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6 mt-30">
+                <div className="tp-work-item">
+                  <div className="xb-item--inner ul_li">
+                    <div className="xb-item--icon">
+                      <img src={icon4} alt="Custom Solutions" />
+                    </div>
+                    <div className="xb-item--holder">
+                      <h3 className="xb-item--title" style={{ 
+                        fontSize: '1.3rem', 
+                        fontWeight: '700', 
+                        color: '#1e293b',
+                        marginBottom: '10px',
+                        lineHeight: '1.3'
+                      }}>Custom Solutions</h3>
+                      <p className="xb-item--content" style={{ 
+                        color: '#64748b', 
+                        lineHeight: '1.6',
+                        fontSize: '1rem',
+                        margin: 0
+                      }}>Tailored staffing solutions designed specifically for your unique business requirements and industry needs.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
-      {/* 6. Footer */}
+      {/* Footer */}
       <Footer />
     </>
   );

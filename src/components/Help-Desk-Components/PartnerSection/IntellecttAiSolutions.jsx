@@ -18,7 +18,7 @@ const solutions = [
     description:
       "Transform your business with cutting-edge AI solutions that drive innovation and accelerate growth across all industries.",
     category: "AI & GEN AI",
-    image: "/Service Cards images/AI Gen AI.webp",
+    image: "/Untitled design/6534538.jpg",
     features: [
       "Machine Learning & Deep Learning",
       "Natural Language Processing",

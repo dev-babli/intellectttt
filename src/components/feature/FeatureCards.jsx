@@ -51,7 +51,7 @@ const industries = [
     description:
       "Mission-critical aerospace software, defense technology solutions, and precision engineering for advanced aerospace systems.",
     category: "AEROSPACE & DEFENSE",
-    image: "/Industry Card images/Aerospace and Defense.webp",
+    image: "/Aerospace-and-Defense.webp",
     features: [
       "Mission-Critical Software",
       "Embedded Systems",
