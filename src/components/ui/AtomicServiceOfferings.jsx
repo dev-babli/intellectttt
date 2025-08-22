@@ -285,7 +285,7 @@ const AtomicServiceOfferings = ({
   return (
     <Box
       sx={{
-        background: "#ffffff",
+        background: theme === "minimal" ? "#fafbfc" : "#ffffff",
         minHeight: "100vh",
         py: { xs: 4, sm: 6, md: 8 },
         px: { xs: 3, sm: 4, md: 5, lg: 6 },

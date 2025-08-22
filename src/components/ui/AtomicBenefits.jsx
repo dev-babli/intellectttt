@@ -10,8 +10,9 @@ const AtomicBenefits = ({
   theme = "light"
 }) => {
   const isDark = theme === "dark";
-  const textColor = isDark ? "#ffffff" : "#1e293b";
-  const textColorSecondary = isDark ? "rgba(255,255,255,0.8)" : "#64748b";
+  const isMinimal = theme === "minimal";
+  const textColor = isDark ? "#ffffff" : isMinimal ? "#374151" : "#1e293b";
+  const textColorSecondary = isDark ? "rgba(255,255,255,0.8)" : isMinimal ? "#64748b" : "#64748b";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -35,7 +36,7 @@ const AtomicBenefits = ({
         component="section"
         sx={{
           py: 4,
-          backgroundColor: isDark ? '#0f172a' : '#f8fafc',
+          backgroundColor: isDark ? '#0f172a' : isMinimal ? '#fafbfc' : '#f8fafc',
         }}
       >
         <Container maxWidth="xl">

@@ -71,7 +71,7 @@ const AtomicProblemSolution = ({
   }
 
   return (
-    <section className={`work mt-50 pb-130 ${theme === "dark" ? "dark-bg" : ""}`}>
+    <section className={`work mt-50 pb-130 ${theme === "dark" ? "dark-bg" : theme === "minimal" ? "minimal-bg" : ""}`}>
       <div className="container">
         <div className="sec-title--two text-center mb-60">
           <h2 className="title">{title}</h2>

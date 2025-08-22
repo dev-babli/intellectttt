@@ -1,0 +1,173 @@
+/* Minimal Theme Styles for Staffing Page */
+
+.minimal-bg {
+  background: linear-gradient(135deg, #fafbfc 0%, #f1f5f9 100%);
+}
+
+/* Deep Blue Accent Gradient - Minimal */
+.minimal-accent-gradient {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+}
+
+.minimal-accent-gradient-subtle {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+}
+
+.minimal-accent-border {
+  border: 1px solid rgba(30, 58, 138, 0.2);
+}
+
+.minimal-accent-shadow {
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.15);
+}
+
+/* Hero Section Minimal Styles */
+.minimal-hero {
+  background: linear-gradient(135deg, #fafbfc 0%, #f1f5f9 100%);
+  color: #0f172a;
+}
+
+.minimal-hero h1,
+.minimal-hero h2 {
+  color: #0f172a;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.minimal-hero p {
+  color: #475569;
+}
+
+/* Card Styles for Minimal Theme */
+.minimal-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(100, 116, 139, 0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.minimal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(100, 116, 139, 0.12);
+}
+
+/* Icon Styles for Minimal Theme */
+.minimal-icon {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  box-shadow: 0 12px 35px rgba(100, 116, 139, 0.2);
+}
+
+/* Button Styles for Minimal Theme */
+.minimal-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #64748b;
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  transition: all 0.3s ease;
+}
+
+.minimal-btn:hover {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(100, 116, 139, 0.3);
+}
+
+/* Text Colors for Minimal Theme */
+.minimal-text-primary {
+  color: #374151;
+}
+
+.minimal-text-secondary {
+  color: #64748b;
+}
+
+.minimal-text-muted {
+  color: #9ca3af;
+}
+
+/* Section Backgrounds for Minimal Theme */
+.minimal-section-light {
+  background: #fafbfc;
+}
+
+.minimal-section-white {
+  background: #ffffff;
+}
+
+/* Border Colors for Minimal Theme */
+.minimal-border {
+  border-color: rgba(100, 116, 139, 0.1);
+}
+
+.minimal-border-hover {
+  border-color: rgba(100, 116, 139, 0.2);
+}
+
+/* Shadow Styles for Minimal Theme */
+.minimal-shadow {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.minimal-shadow-hover {
+  box-shadow: 0 20px 40px rgba(100, 116, 139, 0.12);
+}
+
+/* Badge Styles for Minimal Theme */
+.minimal-badge {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(100, 116, 139, 0.2);
+}
+
+/* Feature List Styles for Minimal Theme */
+.minimal-feature-item {
+  background: rgba(100, 116, 139, 0.05);
+  border: 1px solid rgba(100, 116, 139, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.minimal-feature-item span:first-child {
+  color: #64748b;
+}
+
+.minimal-feature-item span:last-child {
+  color: #475569;
+}
+
+/* Responsive adjustments for minimal theme */
+@media (max-width: 768px) {
+  .minimal-card {
+    margin-bottom: 20px;
+  }
+  
+  .minimal-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Animation for minimal theme elements */
+@keyframes minimalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.minimal-fade-in {
+  animation: minimalFadeIn 0.6s ease-out;
+}
+
+/* Hover effects for minimal theme */
+.minimal-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.minimal-hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(100, 116, 139, 0.15);
+}

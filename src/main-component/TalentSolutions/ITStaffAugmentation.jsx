@@ -1,7 +1,14 @@
 import React from "react";
-import MasterSubServiceTemplate from "../../components/templates/MasterSubServiceTemplate";
-import StaffAugmentationDetails from "../../components/StaffAugmentationDetails/StaffAugmentationDetails";
+import useScrollToTop from "../../hooks/useScrollToTop";
 import Footer from "../../components/footer/Footer";
+
+// Atomic Components
+import ModernHeroSection from "../../components/common/ModernHeroSection";
+import AtomicProblemSolution from "../../components/ui/AtomicProblemSolution";
+import AtomicServiceOfferings from "../../components/ui/AtomicServiceOfferings";
+import AtomicBenefits from "../../components/ui/AtomicBenefits";
+import StaffAugmentationDetails from "../../components/StaffAugmentationDetails/StaffAugmentationDetails";
+
 import { 
   Speed, 
   TrendingUp, 
@@ -27,27 +34,29 @@ import {
 } from '@mui/icons-material';
 
 const ITStaffAugmentation = () => {
+  useScrollToTop();
+
   return (
     <>
-      <MasterSubServiceTemplate
-        // Hero Section - Minimal
-        heroTitle="Staff Augmentation"
-        heroSubtitle="Tech Team Scaling"
-        heroDescription="Quickly scale your tech teams with vetted IT talent for project-based or long-term needs. Access skilled professionals and accelerate your development with flexible staffing solutions."
-        heroButtonText="Staff Augmentation"
-        heroButtonLink="/contact"
-        heroBackgroundImage="/IT-Staff-Augmentation.webp"
-        heroTextColor="black"
-        heroFeatures={[
+      {/* 1. Hero Section */}
+      <ModernHeroSection
+        title="Staff Augmentation"
+        subtitle="Tech Team Scaling"
+        description="Quickly scale your tech teams with vetted IT talent for project-based or long-term needs. Access skilled professionals and accelerate your development with flexible staffing solutions."
+        backgroundImage="/IT-Staff-Augmentation.webp"
+        features={[
           "Vetted IT Talent",
           "Quick Scaling",
           "Project-Based Hiring",
           "Flexible Contracts"
         ]}
+        textColor="black"
+      />
 
-        // Problem/Solution Section
-        problemSolutionTitle="The IT Staffing Challenge & Our Solution"
-        problemSolutionSubtitle="We understand the complexities of IT staffing and have the expertise to provide flexible workforce solutions"
+      {/* 2. Problem/Solution Section */}
+      <AtomicProblemSolution
+        title="The IT Staffing Challenge & Our Solution"
+        subtitle="We understand the complexities of IT staffing and have the expertise to provide flexible workforce solutions"
         problems={[
           {
             title: "Talent Shortages",
@@ -76,11 +85,14 @@ const ITStaffAugmentation = () => {
             description: "Quick team scaling capabilities that allow you to meet project deadlines and business objectives."
           }
         ]}
-        problemSolutionVariant="split"
+        variant="split"
+        theme="minimal"
+      />
 
-        // Service Offerings
-        serviceOfferingsTitle="Our IT Staff Augmentation Services"
-        serviceOfferingsSubtitle="Comprehensive IT staffing services designed to scale your tech teams quickly"
+      {/* 3. Service Offerings Section */}
+      <AtomicServiceOfferings
+        title="Our IT Staff Augmentation Services"
+        subtitle="Comprehensive IT staffing services designed to scale your tech teams quickly"
         services={[
           {
             icon: <Code />,
@@ -133,11 +145,14 @@ const ITStaffAugmentation = () => {
             ctaText: "Security Experts"
           }
         ]}
-        serviceOfferingsVariant="default"
+        variant="default"
+        theme="minimal"
+      />
 
-        // Benefits Section
-        benefitsTitle="Why Choose Our IT Staff Augmentation Services"
-        benefitsSubtitle="Discover the tangible benefits and outcomes you can expect from our IT staffing solutions"
+      {/* 4. Benefits Section */}
+      <AtomicBenefits
+        title="Why Choose Our IT Staff Augmentation Services"
+        subtitle="Discover the tangible benefits and outcomes you can expect from our IT staffing solutions"
         benefits={[
           {
             icon: <Speed />,
@@ -182,58 +197,14 @@ const ITStaffAugmentation = () => {
             }
           }
         ]}
-
-        // Stats Section
-        statsTitle="Proven IT Staff Augmentation Results"
-        statsSubtitle="Numbers that speak for themselves - real outcomes from our IT staffing implementations"
-        stats={[
-          {
-            icon: <Speed />,
-            value: "50%",
-            label: "Faster Hiring",
-            description: "Average reduction in hiring time"
-          },
-          {
-            icon: <TrendingUp />,
-            value: "40%",
-            label: "Cost Reduction",
-            description: "Average reduction in staffing costs"
-          },
-          {
-            icon: <CheckCircle />,
-            value: "100%",
-            label: "Talent Quality",
-            description: "Quality assurance achieved"
-          },
-          {
-            icon: <People />,
-            value: "500+",
-            label: "IT Professionals",
-            description: "IT professionals deployed"
-          }
-        ]}
-
-        // Final CTA
-        finalCtaTitle="Ready to Scale Your IT Team?"
-        finalCtaSubtitle="Join hundreds of companies that have already improved their IT capabilities with our staff augmentation services. Let's discuss how we can help you achieve similar results."
-        finalCtaButtonText="Schedule IT Staffing Consultation"
-        finalCtaButtonLink="/contact"
-
-        // Blog & Case Studies
-        blogTitle="IT Staffing Insights & Updates"
-        blogSubtitle="Stay informed with our latest IT staffing research, industry trends, and thought leadership content"
-        caseStudyTitle="IT Staffing Success Stories"
-        caseStudySubtitle="Discover how we've helped businesses achieve remarkable results with IT staff augmentation"
-
-        // Theme
-        theme="light"
-        showFooter={false}
+        variant="default"
+        theme="minimal"
       />
-      
-      {/* Custom Staff Augmentation Details Section */}
+
+      {/* 5. Custom Staff Augmentation Details Section */}
       <StaffAugmentationDetails />
       
-      {/* Footer */}
+      {/* 6. Footer */}
       <Footer />
     </>
   );

@@ -11,10 +11,20 @@ const StaffAugmentationDetails = () => {
     <>
       {/* Hero Tagline Section */}
       <section className="hero-section pt-120 pb-80" style={{ 
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
+        background: 'linear-gradient(135deg, #fafbfc 0%, #f1f5f9 100%)',
         position: 'relative',
         overflow: 'hidden'
       }}>
+        {/* Subtle Deep Blue Accent Overlay */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%)',
+          pointerEvents: 'none'
+        }}></div>
         {/* Background Pattern */}
         <div style={{
           position: 'absolute',
@@ -23,7 +33,7 @@ const StaffAugmentationDetails = () => {
           right: 0,
           bottom: 0,
           background: 'url("/images/bg/pattern-dots.png")',
-          opacity: 0.05,
+          opacity: 0.03,
           backgroundSize: '20px 20px'
         }}></div>
         
@@ -35,16 +45,16 @@ const StaffAugmentationDetails = () => {
                   <h2 className="title" style={{ 
                     fontSize: '3.5rem', 
                     fontWeight: '800', 
-                    color: '#1e293b',
+                    color: '#0f172a',
                     lineHeight: '1.1',
                     marginBottom: '1.5rem',
-                    textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                    textShadow: '0 2px 4px rgba(0,0,0,0.05)'
                   }}>
                     Build Smarter, Faster, Stronger Teams
                   </h2>
                   <p className="content" style={{ 
                     fontSize: '1.3rem', 
-                    color: '#64748b',
+                    color: '#475569',
                     lineHeight: '1.6',
                     fontWeight: '500',
                     marginBottom: '2rem'
@@ -57,22 +67,24 @@ const StaffAugmentationDetails = () => {
                     flexWrap: 'wrap'
                   }}>
                     <div style={{
-                      background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)',
-                      color: 'white',
+                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
+                      color: '#374151',
                       padding: '15px 25px',
                       borderRadius: '12px',
-                      boxShadow: '0 8px 25px rgba(33, 40, 119, 0.3)',
-                      fontWeight: '600'
+                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)',
+                      fontWeight: '600',
+                      border: '1px solid rgba(30, 58, 138, 0.2)'
                     }}>
                       ✓ Pre-vetted Talent
                     </div>
                     <div style={{
-                      background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)',
-                      color: 'white',
+                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
+                      color: '#374151',
                       padding: '15px 25px',
                       borderRadius: '12px',
-                      boxShadow: '0 8px 25px rgba(33, 40, 119, 0.3)',
-                      fontWeight: '600'
+                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)',
+                      fontWeight: '600',
+                      border: '1px solid rgba(30, 58, 138, 0.2)'
                     }}>
                       ✓ Flexible Scaling
                     </div>
@@ -134,11 +146,11 @@ const StaffAugmentationDetails = () => {
                     }} />
                   </div>
                   <div className="xb-content" style={{ 
-                    backgroundColor: '#212877', 
+                    background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)', 
                     borderRadius: '20px', 
                     padding: '30px', 
-                    boxShadow: '0 15px 40px rgba(33, 40, 119, 0.2)', 
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)', 
+                    border: '1px solid rgba(30, 58, 138, 0.2)',
                     marginTop: '-60px',
                     marginLeft: '30px',
                     position: 'relative',
@@ -146,8 +158,8 @@ const StaffAugmentationDetails = () => {
                     backdropFilter: 'blur(10px)'
                   }}>
                     <div className="xb-item--inner">
-                      <h3 className="xb-item--number" style={{ color: '#ffffff', fontSize: '3.5rem', fontWeight: '800', marginBottom: '10px', textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>100%</h3>
-                      <span className="xb-item--content" style={{ color: '#BDC3C7', fontWeight: '600', fontSize: '1.2rem' }}>Project Control Retained</span>
+                      <h3 className="xb-item--number" style={{ color: '#1e3a8a', fontSize: '3.5rem', fontWeight: '800', marginBottom: '10px', textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>100%</h3>
+                      <span className="xb-item--content" style={{ color: '#64748b', fontWeight: '600', fontSize: '1.2rem' }}>Project Control Retained</span>
                     </div>
                   </div>
                 </div>
@@ -158,7 +170,9 @@ const StaffAugmentationDetails = () => {
       </section>
 
       {/* Process Section */}
-      <section className="feature pt-150 pb-150" style={{ backgroundColor: '#f4f5fc' }}>
+      <section className="feature pt-150 pb-150" style={{ 
+        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(59, 130, 246, 0.01) 100%)'
+      }}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-8 col-lg-10">
@@ -179,14 +193,14 @@ const StaffAugmentationDetails = () => {
                   borderRadius: '20px',
                   padding: '30px',
                   boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
+                  border: '1px solid rgba(30, 58, 138, 0.1)',
                   transition: 'all 0.3s ease',
                   height: '100%',
                   cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(30, 58, 138, 0.15)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
@@ -195,19 +209,20 @@ const StaffAugmentationDetails = () => {
                   <div className="xb-item--icon" style={{ 
                     width: '90px', 
                     height: '90px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)', 
                     borderRadius: '22px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 12px 35px rgba(33, 40, 119, 0.3)',
-                    position: 'relative'
+                    boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)',
+                    position: 'relative',
+                    border: '1px solid rgba(30, 58, 138, 0.2)'
                   }}>
-                    <span style={{ color: 'white', fontSize: '2.5rem', fontWeight: '800' }}>1</span>
+                    <span style={{ color: '#1e3a8a', fontSize: '2.5rem', fontWeight: '800' }}>1</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.3rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -228,35 +243,39 @@ const StaffAugmentationDetails = () => {
                   borderRadius: '20px',
                   padding: '30px',
                   boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
+                  border: '1px solid rgba(100, 116, 139, 0.1)',
                   transition: 'all 0.3s ease',
                   height: '100%',
                   cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(30, 58, 138, 0.15)';
+                  e.currentTarget.style.border = '1px solid rgba(30, 58, 138, 0.2)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+                  e.currentTarget.style.border = '1px solid rgba(100, 116, 139, 0.1)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
                 }}>
                   <div className="xb-item--icon" style={{ 
                     width: '90px', 
                     height: '90px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
                     borderRadius: '22px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 12px 35px rgba(33, 40, 119, 0.3)',
+                    boxShadow: '0 12px 35px rgba(100, 116, 139, 0.2)',
                     position: 'relative'
                   }}>
                     <span style={{ color: 'white', fontSize: '2.5rem', fontWeight: '800' }}>2</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.3rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -293,19 +312,19 @@ const StaffAugmentationDetails = () => {
                   <div className="xb-item--icon" style={{ 
                     width: '90px', 
                     height: '90px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
                     borderRadius: '22px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 12px 35px rgba(33, 40, 119, 0.3)',
+                    boxShadow: '0 12px 35px rgba(100, 116, 139, 0.2)',
                     position: 'relative'
                   }}>
                     <span style={{ color: 'white', fontSize: '2.5rem', fontWeight: '800' }}>3</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.3rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -342,19 +361,19 @@ const StaffAugmentationDetails = () => {
                   <div className="xb-item--icon" style={{ 
                     width: '90px', 
                     height: '90px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
                     borderRadius: '22px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 12px 35px rgba(33, 40, 119, 0.3)',
+                    boxShadow: '0 12px 35px rgba(100, 116, 139, 0.2)',
                     position: 'relative'
                   }}>
                     <span style={{ color: 'white', fontSize: '2.5rem', fontWeight: '800' }}>4</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.3rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -374,12 +393,13 @@ const StaffAugmentationDetails = () => {
               <Fade direction="up" triggerOnce={false} duration={1000} delay={500}>
                 <div className="text-center">
                   <div style={{ 
-                    backgroundColor: '#212877', 
-                    color: 'white',
+                    background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)', 
+                    color: '#374151',
                     padding: '30px',
                     borderRadius: '15px',
                     display: 'inline-block',
-                    boxShadow: '0 10px 30px rgba(33, 40, 119, 0.2)'
+                    boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)',
+                    border: '1px solid rgba(30, 58, 138, 0.2)'
                   }}>
                     <p style={{ fontSize: '1.1rem', fontWeight: '600', fontStyle: 'italic', margin: 0 }}>
                       This approach reduces hiring time, optimizes costs, and ensures continuity in delivery.
@@ -393,7 +413,9 @@ const StaffAugmentationDetails = () => {
       </section>
 
       {/* Types of Augmentation Section */}
-      <section className="about pt-60 pb-100">
+      <section className="about pt-60 pb-100" style={{ 
+        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(59, 130, 246, 0.01) 100%)'
+      }}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-8 col-lg-10">
@@ -439,59 +461,59 @@ const StaffAugmentationDetails = () => {
                     }} />
                   </div>
                   <div className="card-content">
-                    <h3 style={{ 
-                      color: '#212877', 
-                      fontSize: '1.5rem', 
-                      fontWeight: '700', 
-                      marginBottom: '15px',
-                      textAlign: 'center',
-                      lineHeight: '1.2'
-                    }}>Onshore Augmentation</h3>
-                    <p style={{ 
-                      color: '#64748b', 
-                      lineHeight: '1.6', 
-                      marginBottom: '20px',
-                      textAlign: 'center',
-                      fontSize: '1rem'
-                    }}>Resources placed within your region for real-time collaboration and compliance.</p>
-                    <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Real-time collaboration</span>
-                      </li>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Local compliance</span>
-                      </li>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Direct oversight</span>
-                      </li>
-                    </ul>
+                                      <h3 style={{ 
+                    color: '#374151', 
+                    fontSize: '1.5rem', 
+                    fontWeight: '700', 
+                    marginBottom: '15px',
+                    textAlign: 'center',
+                    lineHeight: '1.2'
+                  }}>Onshore Augmentation</h3>
+                  <p style={{ 
+                    color: '#64748b', 
+                    lineHeight: '1.6', 
+                    marginBottom: '20px',
+                    textAlign: 'center',
+                    fontSize: '1rem'
+                  }}>Resources placed within your region for real-time collaboration and compliance.</p>
+                  <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%)',
+                      border: '1px solid rgba(30, 58, 138, 0.1)'
+                    }}>
+                      <span style={{ color: '#1e3a8a', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Real-time collaboration</span>
+                    </li>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(100, 116, 139, 0.05)',
+                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                    }}>
+                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Local compliance</span>
+                    </li>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(100, 116, 139, 0.05)',
+                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                    }}>
+                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Direct oversight</span>
+                    </li>
+                  </ul>
                   </div>
                 </div>
               </Fade>
@@ -530,59 +552,59 @@ const StaffAugmentationDetails = () => {
                     }} />
                   </div>
                   <div className="card-content">
-                    <h3 style={{ 
-                      color: '#212877', 
-                      fontSize: '1.5rem', 
-                      fontWeight: '700', 
-                      marginBottom: '15px',
-                      textAlign: 'center',
-                      lineHeight: '1.2'
-                    }}>Offshore Augmentation</h3>
-                    <p style={{ 
-                      color: '#64748b', 
-                      lineHeight: '1.6', 
-                      marginBottom: '20px',
-                      textAlign: 'center',
-                      fontSize: '1rem'
-                    }}>Skilled professionals from global locations for cost efficiency and round-the-clock delivery.</p>
-                    <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Cost efficiency</span>
-                      </li>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Round-the-clock delivery</span>
-                      </li>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Global talent pool</span>
-                      </li>
-                    </ul>
+                                      <h3 style={{ 
+                    color: '#374151', 
+                    fontSize: '1.5rem', 
+                    fontWeight: '700', 
+                    marginBottom: '15px',
+                    textAlign: 'center',
+                    lineHeight: '1.2'
+                  }}>Offshore Augmentation</h3>
+                  <p style={{ 
+                    color: '#64748b', 
+                    lineHeight: '1.6', 
+                    marginBottom: '20px',
+                    textAlign: 'center',
+                    fontSize: '1rem'
+                  }}>Skilled professionals from global locations for cost efficiency and round-the-clock delivery.</p>
+                  <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(100, 116, 139, 0.05)',
+                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                    }}>
+                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Cost efficiency</span>
+                    </li>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(100, 116, 139, 0.05)',
+                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                    }}>
+                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Round-the-clock delivery</span>
+                    </li>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(100, 116, 139, 0.05)',
+                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                    }}>
+                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Global talent pool</span>
+                    </li>
+                  </ul>
                   </div>
                 </div>
               </Fade>
@@ -621,59 +643,59 @@ const StaffAugmentationDetails = () => {
                     }} />
                   </div>
                   <div className="card-content">
-                    <h3 style={{ 
-                      color: '#212877', 
-                      fontSize: '1.5rem', 
-                      fontWeight: '700', 
-                      marginBottom: '15px',
-                      textAlign: 'center',
-                      lineHeight: '1.2'
-                    }}>Hybrid Model</h3>
-                    <p style={{ 
-                      color: '#64748b', 
-                      lineHeight: '1.6', 
-                      marginBottom: '20px',
-                      textAlign: 'center',
-                      fontSize: '1rem'
-                    }}>A blend of onshore and offshore teams, balancing cost, quality, and collaboration.</p>
-                    <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Cost optimization</span>
-                      </li>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Quality balance</span>
-                      </li>
-                      <li style={{ 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        marginBottom: '12px',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        background: 'rgba(33, 40, 119, 0.05)',
-                        border: '1px solid rgba(33, 40, 119, 0.1)'
-                      }}>
-                        <span style={{ color: '#212877', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
-                        <span style={{ color: '#475569', fontWeight: '500' }}>Flexible collaboration</span>
-                      </li>
-                    </ul>
+                                      <h3 style={{ 
+                    color: '#374151', 
+                    fontSize: '1.5rem', 
+                    fontWeight: '700', 
+                    marginBottom: '15px',
+                    textAlign: 'center',
+                    lineHeight: '1.2'
+                  }}>Hybrid Model</h3>
+                  <p style={{ 
+                    color: '#64748b', 
+                    lineHeight: '1.6', 
+                    marginBottom: '20px',
+                    textAlign: 'center',
+                    fontSize: '1rem'
+                  }}>A blend of onshore and offshore teams, balancing cost, quality, and collaboration.</p>
+                  <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(100, 116, 139, 0.05)',
+                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                    }}>
+                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Cost optimization</span>
+                    </li>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(100, 116, 139, 0.05)',
+                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                    }}>
+                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Quality balance</span>
+                    </li>
+                    <li style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      borderRadius: '8px',
+                      background: 'rgba(100, 116, 139, 0.05)',
+                      border: '1px solid rgba(100, 116, 139, 0.1)'
+                    }}>
+                      <span style={{ color: '#64748b', marginRight: '12px', fontWeight: 'bold', fontSize: '1.1rem' }}>✓</span>
+                      <span style={{ color: '#475569', fontWeight: '500' }}>Flexible collaboration</span>
+                    </li>
+                  </ul>
                   </div>
                 </div>
               </Fade>
@@ -683,7 +705,9 @@ const StaffAugmentationDetails = () => {
       </section>
 
       {/* Engagement Models Section */}
-      <section className="feature pt-150 pb-150" style={{ backgroundColor: '#f4f5fc' }}>
+      <section className="feature pt-150 pb-150" style={{ 
+        background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.02) 0%, rgba(59, 130, 246, 0.01) 100%)'
+      }}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-xl-8 col-lg-10">
@@ -704,35 +728,40 @@ const StaffAugmentationDetails = () => {
                   borderRadius: '20px',
                   padding: '30px',
                   boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-                  border: '1px solid rgba(33, 40, 119, 0.1)',
+                  border: '1px solid rgba(30, 58, 138, 0.1)',
                   transition: 'all 0.3s ease',
                   height: '100%',
                   cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(33, 40, 119, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(30, 58, 138, 0.15)';
+                  e.currentTarget.style.border = '1px solid rgba(30, 58, 138, 0.2)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+                  e.currentTarget.style.border = '1px solid rgba(30, 58, 138, 0.1)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
                 }}>
                   <div className="xb-item--icon" style={{ 
                     width: '70px', 
                     height: '70px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)', 
                     borderRadius: '18px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(33, 40, 119, 0.3)',
-                    position: 'relative'
+                    boxShadow: '0 8px 25px rgba(30, 58, 138, 0.15)',
+                    position: 'relative',
+                    border: '1px solid rgba(30, 58, 138, 0.2)'
                   }}>
-                    <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>FTE</span>
+                    <span style={{ color: '#1e3a8a', fontSize: '1.8rem', fontWeight: '800' }}>FTE</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.4rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -769,19 +798,19 @@ const StaffAugmentationDetails = () => {
                   <div className="xb-item--icon" style={{ 
                     width: '70px', 
                     height: '70px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
                     borderRadius: '18px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(33, 40, 119, 0.3)',
+                    boxShadow: '0 10px 30px rgba(100, 116, 139, 0.2)',
                     position: 'relative'
                   }}>
                     <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>C</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.4rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -818,19 +847,19 @@ const StaffAugmentationDetails = () => {
                   <div className="xb-item--icon" style={{ 
                     width: '70px', 
                     height: '70px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
                     borderRadius: '18px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(33, 40, 119, 0.3)',
+                    boxShadow: '0 10px 30px rgba(100, 116, 139, 0.2)',
                     position: 'relative'
                   }}>
                     <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>C2H</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.4rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -867,19 +896,19 @@ const StaffAugmentationDetails = () => {
                   <div className="xb-item--icon" style={{ 
                     width: '70px', 
                     height: '70px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
                     borderRadius: '18px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(33, 40, 119, 0.3)',
+                    boxShadow: '0 10px 30px rgba(100, 116, 139, 0.2)',
                     position: 'relative'
                   }}>
                     <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>W2</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.4rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -916,19 +945,19 @@ const StaffAugmentationDetails = () => {
                   <div className="xb-item--icon" style={{ 
                     width: '70px', 
                     height: '70px', 
-                    background: 'linear-gradient(135deg, #212877 0%, #1a1f66 100%)', 
+                    background: 'linear-gradient(135deg, #64748b 0%, #475569 100%)', 
                     borderRadius: '18px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 25px',
-                    boxShadow: '0 10px 30px rgba(33, 40, 119, 0.3)',
+                    boxShadow: '0 10px 30px rgba(100, 116, 139, 0.2)',
                     position: 'relative'
                   }}>
                     <span style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800' }}>C2C</span>
                   </div>
                   <h3 className="xb-item--title" style={{ 
-                    color: '#212877', 
+                    color: '#374151', 
                     fontSize: '1.4rem', 
                     fontWeight: '700', 
                     marginBottom: '15px'
@@ -1048,76 +1077,94 @@ const StaffAugmentationDetails = () => {
                     marginBottom: '2rem'
                   }}>
                     <div style={{
-                      background: 'rgba(255,255,255,0.15)',
+                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
                       color: 'white',
                       padding: '12px 20px',
                       borderRadius: '25px',
                       backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.2)',
+                      border: '1px solid rgba(30, 58, 138, 0.2)',
                       fontWeight: '600',
-                      fontSize: '0.95rem'
+                      fontSize: '0.95rem',
+                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)'
                     }}>
                       ✓ Pre-vetted Professionals
                     </div>
                     <div style={{
-                      background: 'rgba(255,255,255,0.15)',
+                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
                       color: 'white',
                       padding: '12px 20px',
                       borderRadius: '25px',
                       backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.2)',
+                      border: '1px solid rgba(30, 58, 138, 0.2)',
                       fontWeight: '600',
-                      fontSize: '0.95rem'
+                      fontSize: '0.95rem',
+                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)'
                     }}>
                       ✓ Flexible Scaling
                     </div>
                     <div style={{
-                      background: 'rgba(255,255,255,0.15)',
+                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
                       color: 'white',
                       padding: '12px 20px',
                       borderRadius: '25px',
                       backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.2)',
+                      border: '1px solid rgba(30, 58, 138, 0.2)',
                       fontWeight: '600',
-                      fontSize: '0.95rem'
+                      fontSize: '0.95rem',
+                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)'
                     }}>
                       ✓ Cost-Effective
+                    </div>
+                    <div style={{
+                      background: 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)',
+                      color: 'white',
+                      padding: '12px 20px',
+                      borderRadius: '25px',
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(30, 58, 138, 0.2)',
+                      fontWeight: '600',
+                      fontSize: '0.95rem',
+                      boxShadow: '0 4px 15px rgba(30, 58, 138, 0.1)'
+                    }}>
+                      ✓ Global Expertise
                     </div>
                   </div>
                   
                   <div>
-                    <Link 
-                      onClick={ClickHandler} 
-                      to="/contact" 
-                      className="thm-btn thm-btn--aso"
-                      style={{
-                        background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
-                        color: '#212877',
-                        padding: '15px 35px',
-                        borderRadius: '30px',
-                        textDecoration: 'none',
-                        fontWeight: '700',
-                        fontSize: '1.1rem',
-                        display: 'inline-block',
-                        boxShadow: '0 8px 25px rgba(0,0,0,0.2)',
-                        transition: 'all 0.3s ease',
-                        border: 'none'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.transform = 'translateY(-2px)';
-                        e.target.style.boxShadow = '0 12px 35px rgba(0,0,0,0.3)';
-                        e.target.style.background = 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)';
-                        e.target.style.color = 'white';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.transform = 'translateY(0)';
-                        e.target.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
-                        e.target.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
-                        e.target.style.color = '#212877';
-                      }}
-                    >
-                      Get Started Today →
-                    </Link>
+                                          <Link 
+                        onClick={ClickHandler} 
+                        to="/contact" 
+                        className="thm-btn thm-btn--aso"
+                        style={{
+                          background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                          color: '#64748b',
+                          padding: '15px 35px',
+                          borderRadius: '30px',
+                          textDecoration: 'none',
+                          fontWeight: '700',
+                          fontSize: '1.1rem',
+                          display: 'inline-block',
+                          boxShadow: '0 8px 25px rgba(0,0,0,0.2)',
+                          transition: 'all 0.3s ease',
+                          border: 'none'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.transform = 'translateY(-2px)';
+                          e.target.style.boxShadow = '0 8px 25px rgba(30, 58, 138, 0.15)';
+                          e.target.style.background = 'linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%)';
+                          e.target.style.color = '#1e3a8a';
+                          e.target.style.border = '1px solid rgba(30, 58, 138, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.transform = 'translateY(0)';
+                          e.target.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
+                          e.target.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
+                          e.target.style.color = '#64748b';
+                          e.target.style.border = 'none';
+                        }}
+                      >
+                        Get Started Today →
+                      </Link>
                   </div>
                 </div>
               </Fade>
