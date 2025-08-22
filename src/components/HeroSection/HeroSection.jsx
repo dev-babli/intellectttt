@@ -86,13 +86,14 @@ const slides = [
   },
   {
     id: 9,
-    title: "Data & Analytics",
+    title: "DATA AND ANALYTICS",
     subtitle: "Turn data into actionable insights for smarter decisions. Transform raw data into strategic insights that drive business growth and operational excellence.",
     ctaText: "Analyze Data",
     ctaLink: "/service/data-and-analytics",
     accent: "#667eea",
     backgroundImage: "/Untitled design/pexels-googledeepmind-25626448.jpg",
     hasLightBackground: false,
+    hasOverlay: true,
   },
   {
     id: 10,
@@ -285,6 +286,20 @@ const HeroSection = () => {
                   objectFit: "cover",
                 }}
               />
+              {/* Overlay for better text visibility */}
+              {slide.hasOverlay && (
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "rgba(0, 0, 0, 0.4)",
+                    zIndex: 2,
+                  }}
+                />
+              )}
             </Box>
 
             {/* Content Container */}
